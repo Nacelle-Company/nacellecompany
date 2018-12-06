@@ -1,0 +1,36 @@
+.cards-container {
+
+  @include xy-grid;
+
+  .card {
+    @include breakpoint(small) {
+      @include xy-cell(12);
+
+      .card-content {
+        padding: 1rem;
+      }
+
+    }
+
+    @include breakpoint(medium) {
+      @include xy-cell(1 of 3, true, 0.7rem );
+
+    }
+
+  }
+}
+
+.callout,
+.callout-body {
+    box-shadow: $callout-shadow;
+}
+.callout-hover-reveal .callout-footer {
+    display: none;
+}
+.callout-footer {
+    padding: $callout-footer-padding;
+}
+.media-callout-container {
+    @include xy-grid-collapse(cell, margin, top, medium);
+
+}

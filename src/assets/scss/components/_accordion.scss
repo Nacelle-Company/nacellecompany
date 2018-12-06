@@ -1,0 +1,26 @@
+.accordion-content {
+    // @include xy-grid-container;
+    padding: 0;
+    box-shadow: $thumbnail-shadow-inner;
+    .extra-metadata a {
+        color: $medium-gray;
+    }
+}
+.accordian-open > .grid-x {
+    @include xy-gutters($gutter-position: left right bottom);
+    @include flex-align($x: center, $y: center);
+}
+.accordion-line {
+    height: 1px;
+    background: $white;
+    padding-right: 1em;
+}
+.accordion-title {
+    padding: 0;
+    margin-bottom: 0;
+    span {
+        padding-left: 1em;
+        font-size: 120%;
+        color: $success-color;
+    }
+}

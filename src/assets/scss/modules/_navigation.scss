@@ -1,0 +1,106 @@
+.site-header {
+    box-shadow: $thumbnail-shadow;
+    z-index: 999999;
+}
+
+// Navigation breakpoints
+.mobile-menu,
+.site-title-bar {
+  @include hide-for(large);
+}
+
+.desktop-menu,
+.site-navigation .top-bar-left {
+  @include show-for(large);
+}
+
+// Site title
+.site-desktop-title a {
+  font-weight: bold;
+}
+
+// Mobile menu
+.mobile-menu {
+  display: none; // prevents repaint caused by JS hiding menu onload
+}
+
+.off-canvas {
+  > ul.menu {
+    height: 100vh;
+    padding: 1rem;
+
+    a {
+      color: $primary-color;
+      font-weight: 600;
+      font-size: rem-calc(18);
+    }
+  }
+
+.title-bar-title {
+  a {
+    font-size: 1rem;
+    color: $primary-color;
+  }
+}
+}
+
+.mobile-menu,
+.mobile-off-canvas-menu {
+
+  .menu .is-active > a {
+    background-color: lighten($dark-gray, 5%);
+  }
+}
+
+// Tablet and desktop menu
+
+.top-bar {
+    justify-content: center;
+    .top-bar-left,
+    .top-bar-right {
+        flex: 0 1 auto;
+        margin: 0;
+    }
+
+  .dropdown.menu .submenu { border: 0; }
+  .dropdown.menu .has-submenu.is-down-arrow a { padding-right: 1rem; }
+  .dropdown.menu .has-submenu.is-down-arrow > a::after { border: 0; }
+  .dropdown.menu:first-child > li.is-dropdown-submenu-parent > a::after { display: none; }
+}
+
+.site-navigation {
+  @include breakpoint(small only) {
+    padding: 0; // prevents container visibility on small screens
+  }
+}
+
+// WP post navigation
+.post-navigation {
+  @include clearfix;
+}
+
+.nav-previous {
+  float:left;
+  position: relative;
+  ::before {
+      content: "";
+      background: url(http://localhost/comedydynamics/wp-content/uploads/2018/11/arrow-previous.svg) no-repeat 0 0;
+      height: 48px;
+      width: 48px;
+      position: absolute;
+      top: -41px;
+  }
+}
+
+.nav-next {
+  float:right;
+  position: relative;
+  ::after {
+      content: "";
+      background: url(http://localhost/comedydynamics/wp-content/uploads/2018/11/arrow-next.svg) no-repeat 0 0;
+      height: 48px;
+      width: 48px;
+      position: absolute;
+      bottom: -41px;
+  }
+}

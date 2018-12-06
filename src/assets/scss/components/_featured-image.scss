@@ -1,0 +1,59 @@
+
+.featured-hero {
+  display: none;
+  background-size: 2px !important;
+  @include breakpoint(medium) {
+      display: flex;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    height: rem-calc(175);
+    // box-shadow: $thumbnail-shadow-overlay;
+
+      padding: 0 1em;
+
+      @include flex;
+      @include flex-align(flex-start, middle);
+  }
+
+  @include breakpoint(xlarge) {
+    height: rem-calc(250);
+    }
+
+    .entry-title {
+        color: $white;
+    }
+}
+// album/dvd/ cover
+.feat {
+
+    z-index: 9;
+    @include breakpoint(medium) {
+        margin-top: rem-calc(-100);
+    }
+    @include breakpoint(xlarge) {
+        margin-top: rem-calc(-150);
+    }
+    .wp-post-image {
+        box-shadow: $thumbnail-shadow;
+    }
+    >.grid-x {
+        @include flex-align($x: center, $y: center);
+    }
+    .artwork-container {
+        .link-icons-container {
+            @include flex-align($x: center, $y: center);
+        }
+        .link-icons {
+            padding: 8px 16px;
+            background: $dark-gray;
+            box-shadow: $thumbnail-shadow;
+            border-bottom-right-radius: $card-border-radius;
+            border-bottom-left-radius: $card-border-radius;
+            a img {
+                padding: 4px;
+            }
+        }
+    }
+
+}
