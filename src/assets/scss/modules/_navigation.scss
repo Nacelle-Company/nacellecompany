@@ -79,28 +79,30 @@
   @include clearfix;
 }
 
-.nav-previous {
-  float:left;
-  position: relative;
-  ::before {
-      content: "";
-      background: url(http://localhost/comedydynamics/wp-content/uploads/2018/11/arrow-previous.svg) no-repeat 0 0;
-      height: 48px;
-      width: 48px;
-      position: absolute;
-      top: -41px;
-  }
+.pagination {
+    // position: absolute;
+    // right: 0;
+    // top: 50vh;
 }
 
-.nav-next {
-  float:right;
-  position: relative;
-  ::after {
-      content: "";
-      background: url(http://localhost/comedydynamics/wp-content/uploads/2018/11/arrow-next.svg) no-repeat 0 0;
-      height: 48px;
-      width: 48px;
-      position: absolute;
-      bottom: -41px;
-  }
+.prev {
+    ::after {
+        content: "";
+        background: url(http://localhost:3000/comedydynamics/wp-content/themes/comedy-dynamics/dist/assets/images/arrow-prev.svg) no-repeat;
+        width: 37px;
+        height: 21px;
+        display: flex;
+        position: absolute;
+    }
+}
+
+.next {
+    ::after {
+        content: "";
+        background: url(http://localhost:3000/comedydynamics/wp-content/themes/comedy-dynamics/dist/assets/images/arrow-next.svg) no-repeat;
+        width: 37px;
+        height: 21px;
+        display: flex;
+        position: absolute;
+    }
 }

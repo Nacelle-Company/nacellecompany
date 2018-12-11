@@ -20,7 +20,7 @@ get_header(); ?>
 		<main class="main-content-full-width grid-x grid-padding-y">
 			<div class="cell medium-12 ">
 				<div class="grid-x small-up-2 medium-up-4">
-					<?php  if (is_category('distributions')) :?>
+					<?php  if (is_category('distribution')) :?>
 
 						<?php
 
@@ -130,10 +130,10 @@ get_header(); ?>
 
 								<div class="cell medium-3">
 									<div class="cell">
-										<a href="/comedydynamics/media/stand-up/"><h2>Stand Up</h2></a>
+										<a href="/comedydynamics/media/special/"><h2>Special</h2></a>
 									</div>
 
-									<a href="/comedydynamics/media/stand-up/">
+									<a href="/comedydynamics/media/special/">
 										<div class="callout">
 											<div class="callout-body">
 												<img class="cell medium-6 category-feat" src="<?php echo $square_image['url']; ?>">
@@ -196,7 +196,7 @@ get_header(); ?>
 						<!-- end SERIES SECTION -->
 
 
-					<?php endif;?> <!-- END category is distributions -->
+					<?php endif;?> <!-- END category is distribution -->
 				</div>
 			</div>
 			<div class="cell medium-12">

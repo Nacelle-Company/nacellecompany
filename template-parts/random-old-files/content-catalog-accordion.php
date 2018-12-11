@@ -4,7 +4,9 @@
         <div class="accordion-item" data-accordion-item>
             <a href="#" class="accordian-open">
                 <div class="grid-x">
-                    <div class="cell medium-5 accordion-line"></div>
+                    <div class="cell medium-5 accordion-line">
+                        <div class="accordion-line"></div>
+                    </div>
                     <div class="cell medium-7">
                         <p class="accordion-title">See all credits<span class="accordian-+">+</span></p>
                     </div>

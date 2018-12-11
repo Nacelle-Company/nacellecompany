@@ -1,3 +1,12 @@
-.home .cell a img {
-    max-height: 38vh;
+.home {
+    .home-img-container {
+        padding: 0.25rem;
+    }
+    .cell a img {
+        height: 100%;
+        width: 100%;
+        object-fit: fill;
+        border-radius: $button-radius;
+        box-shadow: $thumbnail-shadow
+    }
 }

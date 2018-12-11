@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying archive pages
+ * The template for displaying the media taxonomy archive pages
  *
  * Used to display archive-type pages if nothing more specific matches a query.
  * For example, puts together date-based pages if no date.php file exists.
@@ -64,13 +64,13 @@ get_header(); ?>
 			</div>
 		<?php /* Display navigation to next/previous pages when applicable */ ?>
 		<?php
-        if (function_exists('foundationpress_pagination')) :
-            foundationpress_pagination();
+        if (function_exists('comedy_dynamics_pagination')) :
+            comedy_dynamics_pagination();
         elseif (is_paged()) :
         ?>
 			<nav id="post-nav">
-				<div class="post-previous"><?php next_posts_link(__('&larr; Older posts', 'foundationpress')); ?></div>
-				<div class="post-next"><?php previous_posts_link(__('Newer posts &rarr;', 'foundationpress')); ?></div>
+				<div class="post-previous"><?php next_posts_link(__('&larr; Older posts', 'comedy-dynamics')); ?></div>
+				<div class="post-next"><?php previous_posts_link(__('Newer posts &rarr;', 'comedy-dynamics')); ?></div>
 			</nav>
 		<?php endif; ?>
 

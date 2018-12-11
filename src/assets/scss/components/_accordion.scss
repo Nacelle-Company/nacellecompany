@@ -14,13 +14,17 @@
     height: 1px;
     background: $white;
     padding-right: 1em;
+    margin-bottom: 1em;
 }
 .accordion-title {
     padding: 0;
-    margin-bottom: 0;
+    margin-bottom: 1em;
     span {
         padding-left: 1em;
         font-size: 120%;
         color: $success-color;
     }
+}
+.accordion-item:last-child > :last-child {
+    border-radius: 0;
 }

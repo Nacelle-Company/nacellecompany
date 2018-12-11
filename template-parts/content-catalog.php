@@ -13,8 +13,9 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('cell medium-7'); ?>>
 	<div class="entry-content">
 
-		<?php $synopsis = get_field('synopsis');
-        if ($synopsis): ?>
+		<?php 	$synopsis = get_field('synopsis');
+                if ($synopsis):
+                    ?>
 		<div class="grid-x grid-padding-y synopsis">
 			<div class="cell medium-4 title">
 				<p>Synopsis</p>
@@ -102,12 +103,14 @@
 	<div class="meta-accordion catalog-bottom-meta grid-container-full">
 		<div class="grid-x">
 
-		    <section class="accordion cell" data-accordion data-allow-all-closed="true">
-		        <div class="accordion-item" data-accordion-item>
+		    <ul class="accordion cell" data-accordion data-allow-all-closed="true">
+		        <li class="accordion-item" data-accordion-item>
 		            <a href="#" class="accordian-open">
 		                <div class="grid-container">
-							<div class="grid-x grid-margin-x align-middle">
-			                    <div class="cell medium-5 accordion-line"></div>
+							<div class="grid-x grid-margin-x grid-padding-y align-middle">
+			                    <div class="cell medium-5">
+			                    	<div class="grid-x accordion-line"></div>
+			                    </div>
 			                    <div class="cell medium-7">
 			                        <p class="accordion-title">See all credits<span class="accordian-+">+</span></p>
 			                    </div>
@@ -116,7 +119,7 @@
 		            </a>
 		            <div class="accordion-content grid-container-full" data-tab-content >
 		                <div class="grid-container">
-		                    <div class="grid-x grid-padding-y">
+		                    <div class="grid-x">
 		                        <div class="cell medium-7">
 		                            <div class="grid-x">
 
@@ -210,9 +213,9 @@
 		                    </div>
 		                </div>
 		            </div>
-		        </div>
-		        </section>
-		    </div>
+		        </li>
+			</ul>
+	    </div>
 
 	</div>
 </article>

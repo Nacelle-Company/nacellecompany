@@ -1,9 +1,4 @@
-#footer {
-    margin-top: rem-calc(10);
-    // position: absolute;
-    // bottom: 0;
-    // width: 100%;
-}
+
 .footer-container {
   // @include xy-grid-container;
   border-top: 1px solid $medium-gray;
@@ -61,4 +56,20 @@
     margin: 0;
     padding: 0;
   }
+}
+
+
+.off-canvas-content {
+  min-height: 100%;
+  /* equal to footer height */
+    margin-bottom: -78px;
+}
+.off-canvas-content:after {
+  content: "";
+  display: block;
+}
+#footer,
+.off-canvas-content:after {
+  /* .push must be the same height as footer */
+    // height: 78px;
 }
