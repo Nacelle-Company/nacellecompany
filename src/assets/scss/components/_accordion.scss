@@ -1,3 +1,8 @@
+.meta-accordion.catalog-bottom-meta {
+    width: 150vw;
+    margin-left: -50%;
+    margin-top: 1rem;
+}
 .accordion-content {
     // @include xy-grid-container;
     padding: 0;
@@ -18,7 +23,7 @@
 }
 .accordion-title {
     padding: 0;
-    margin-bottom: 1em;
+    margin-bottom: 2em;
     span {
         padding-left: 1em;
         font-size: 120%;

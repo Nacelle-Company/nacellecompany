@@ -15,14 +15,14 @@
  * @since FoundationPress 1.0.0
  */
 
-get_header(); ?>
+//get_header();?>
 
-	<main class="main-content-full-width grid-x grid-padding-y">
+	<!-- <main class="main-content-full-width grid-x grid-padding-y"> -->
 		<div class="cell medium-12">
 			<div class="grid-container">
 				<div class="grid-x grid-margin-y align-center-middle">
 					<div class="cell medium-6">
-						<h1><?php $term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy')); echo $term->name;?></h1>
+						<h1><?php single_cat_title();?></h1>
 					</div>
 					<div class="cell medium-6 text-right ">
 						<a data-toggle="searchOffCanvas">Filter & Search</a>
@@ -33,20 +33,20 @@ get_header(); ?>
 				<?php if (have_posts()) : ?>
 
 					<?php /* Start the Loop */ ?>
-					<?php while (have_posts()) : the_post(); ?>
+					<?php while (have_posts()) : the_post();?>
 
-						<div class="cell medium-2 medium-collapse-y">
+						<div class="media-container cell medium-2 medium-collapse-y">
 							<a href="<?php the_permalink(); ?>">
 								<div class="callout callout-hover-reveal" data-callout-hover-reveal>
 								    <div class="callout-body">
-										<?php
-                                        // vars
-                                        $square_image = get_field('square_image');
-                                        if (!empty($square_image)): ?>
-										<img class="cell medium-6 category-feat" src="<?php echo $square_image['url']; ?>">
-										<noscript><img src="<?php echo $square_image['url']; ?>" alt="<?php echo $square_image['alt']; ?>" /></noscript>
-											<?php //the_post_thumbnail();?>
-										<?php endif?>
+									<?php
+                                    $image = get_field('square_image');
+                                    $size = 'full'; // (thumbnail, medium, large, full or custom size)
+
+                                    if ($image) {
+                                        echo wp_get_attachment_image($image, $size);
+                                    }
+                                    ?>
 								    </div>
 								    <div class="callout-footer">
 										<?php $summary = get_field('synopsis'); echo substr($summary, 0, 100); ?>
@@ -55,13 +55,16 @@ get_header(); ?>
 							</a>
 						</div>
 
-					<?php endwhile; ?>
+					<?php endwhile;?>
 
-					<?php else : ?>
+				<?php else : ?>
+					<h5>why not!</h5>
 						<?php get_template_part('template-parts/content', 'none'); ?>
 
 				<?php endif; // End have_posts() check.?>
 			</div>
+
+
 		<?php /* Display navigation to next/previous pages when applicable */ ?>
 		<?php
         if (function_exists('comedy_dynamics_pagination')) :
@@ -74,7 +77,7 @@ get_header(); ?>
 			</nav>
 		<?php endif; ?>
 
-	</main>
+	<!-- </main> -->
 
 
-<?php get_footer();
+<?php //get_footer();

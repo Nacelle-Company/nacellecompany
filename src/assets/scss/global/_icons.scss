@@ -1,0 +1,22 @@
+.catalog-title {
+    color: $white;
+    &::before {
+        content: '';
+        display: inline-flex;
+        width: 30px;
+        height: 25px;
+        padding-right: 3rem;
+    }
+    &.film::before {
+        background: url(http://localhost:3000/comedydynamics/wp-content/themes/comedy-dynamics/dist/assets/images/film.svg) no-repeat center;
+    }
+    &.album::before {
+        background: url(http://localhost:3000/comedydynamics/wp-content/themes/comedy-dynamics/dist/assets/images/album.svg) no-repeat center;
+    }
+    &.special::before {
+        background: url(http://localhost:3000/comedydynamics/wp-content/themes/comedy-dynamics/dist/assets/images/special.svg) no-repeat center;
+    }
+    &.series::before {
+        background: url(http://localhost:3000/comedydynamics/wp-content/themes/comedy-dynamics/dist/assets/images/series.svg) no-repeat center;
+    }
+}

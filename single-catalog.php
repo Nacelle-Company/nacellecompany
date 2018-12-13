@@ -19,7 +19,7 @@ get_header(); ?>
 </div> <!-- closing div for featured-image.php topmost "grid-container" -->
 
 
-<div class="grid-container">
+<div class="space-please grid-container">
 	<div class="grid-x grid-padding-y grid-margin-y grid-margin-x align-middle">
 			<?php if (have_rows('embedded_content')): ?>
 

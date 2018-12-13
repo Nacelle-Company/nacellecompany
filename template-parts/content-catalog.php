@@ -11,7 +11,7 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('cell medium-7'); ?>>
-	<div class="entry-content">
+	<div class="entry-content grid-container">
 
 		<?php 	$synopsis = get_field('synopsis');
                 if ($synopsis):
@@ -107,7 +107,7 @@
 		        <li class="accordion-item" data-accordion-item>
 		            <a href="#" class="accordian-open">
 		                <div class="grid-container">
-							<div class="grid-x grid-margin-x grid-padding-y align-middle">
+							<div class="grid-container grid-x grid-margin-x grid-padding-y align-middle">
 			                    <div class="cell medium-5">
 			                    	<div class="grid-x accordion-line"></div>
 			                    </div>
@@ -119,7 +119,7 @@
 		            </a>
 		            <div class="accordion-content grid-container-full" data-tab-content >
 		                <div class="grid-container">
-		                    <div class="grid-x">
+		                    <div class="grid-container grid-x grid-padding-y">
 		                        <div class="cell medium-7">
 		                            <div class="grid-x">
 

@@ -6,7 +6,9 @@
   background: $footer-background;
   color: $dark-gray;
 }
-
+.space-please {
+    padding-bottom: 11rem;
+}
 .footer-grid {
   @include xy-grid;
   padding: rem-calc(15) 0;
@@ -59,17 +61,17 @@
 }
 
 
-.off-canvas-content {
-  min-height: 100%;
-  /* equal to footer height */
-    margin-bottom: -78px;
-}
-.off-canvas-content:after {
-  content: "";
-  display: block;
-}
-#footer,
-.off-canvas-content:after {
-  /* .push must be the same height as footer */
-    // height: 78px;
-}
+// .off-canvas-content {
+//   min-height: 100%;
+//   /* equal to footer height */
+//     margin-bottom: -78px;
+// }
+// .off-canvas-content:after {
+//   content: "";
+//   display: block;
+// }
+// #footer,
+// .off-canvas-content:after {
+//   /* .push must be the same height as footer */
+//     // height: 78px;
+// }

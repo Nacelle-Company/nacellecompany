@@ -15,7 +15,7 @@
 			</button>
 			<div class="grid-x grid-margin-y align-center-middle" style="height: 90vh;">
 				<div class="cell align-self-middle">
-					<?php echo do_shortcode('[searchandfilter fields="search,category,media_category,main_talent,producers,directors,writers,genre" types=",select,checkbox,select,select,select,select,checkbox" submit_label="Filter"]'); ?>
+					<?php echo do_shortcode('[searchandfilter fields="search,category,post_tag,main_talent,genre,producers,directors,writers,media_category"]'); ?>
 				</div>
 			</div>
 		</div>

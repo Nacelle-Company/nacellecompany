@@ -9,7 +9,7 @@ get_header(); ?>
 <?php while (have_posts('')) : the_post();?>
 
 	<main class="grid-container">
-		<div class="grid-x"  style="height:77vh;">
+		<div class="grid-x small-up-1 medium-up-2">
 
 			<?php $post_objects = get_field('home_feat_posts');
 
@@ -17,7 +17,7 @@ get_header(); ?>
 
 				  <?php foreach ($post_objects as $post_object): ?>
 
-					  <div class="cell medium-6 home-img-container">
+					  <div class="cell home-img-container">
 
 						  <a href="<?php echo get_permalink($post_object->ID); ?>">
 							  <img src="<?php the_field('home_image', $post_object->ID); ?>">

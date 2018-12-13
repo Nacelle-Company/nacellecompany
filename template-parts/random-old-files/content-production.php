@@ -19,11 +19,12 @@
             the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
         }
     ?>
-		<?php comedy_dynamics_entry_meta(); ?>
+		<?php //comedy_dynamics_entry_meta();?>
 	</header>
 	<div class="entry-content">
-		<?php the_content(); ?>
-		<?php edit_post_link(__('(Edit)', 'comedy-dynamics'), '<span class="edit-link">', '</span>'); ?>
+		<h1>distribution content file!!</h1>
+		<?php //the_content();?>
+		<?php //edit_post_link(__('(Edit)', 'comedy-dynamics'), '<span class="edit-link">', '</span>');?>
 	</div>
 	<footer>
 		<?php
