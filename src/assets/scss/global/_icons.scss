@@ -20,3 +20,9 @@
         background: url(http://localhost:3000/comedydynamics/wp-content/themes/comedy-dynamics/dist/assets/images/series.svg) no-repeat center;
     }
 }
+
+.social a.nav-link {
+    color: $success-color;
+    font-size: 30px;
+    padding: 1rem;
+}

@@ -1,0 +1,14 @@
+.no-mobile {
+    display: b;
+}
+.no-desktop {
+    display: block;
+}
+@include breakpoint(medium) {
+    .no-desktop {
+        display: none;
+    }
+    .no-mobile {
+        display: block;
+    }
+}

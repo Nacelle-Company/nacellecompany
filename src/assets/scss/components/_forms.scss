@@ -1,3 +1,11 @@
 .searchandfilter label {
     color: $secondary-color;
 }
+
+// ninja forms hide top required text
+.nf-before-form-content .nf-form-fields-required {
+    display: none;
+}
+#mc_embed_signup label {
+    color: $primary-color;
+}

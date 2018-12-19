@@ -29,6 +29,10 @@
 }
 .callout-footer {
     padding: $callout-footer-padding;
+    font-size: 0.75rem;
+    p {
+        margin-bottom: 0;
+    }
 }
 .media-callout-container {
     @include xy-grid-collapse(cell, margin, top, medium);

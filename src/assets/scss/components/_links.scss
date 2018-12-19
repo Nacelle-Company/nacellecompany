@@ -2,9 +2,19 @@
 // remove :focus style via What Input using progressive enhancement
 // so :focus isn't left broken if JavaScript fails
 
+$anchor-dark-color: $black;
+$anchor-dark-color-hover: scale-color($black, $lightness: 20%);
+
 [data-whatinput="mouse"] a:focus, button:focus
 [data-whatinput="touch"] a:focus, button:focus {
   outline: none;
+}
+
+footer.footer a {
+    color: $anchor-dark-color;
+    &:hover {
+        color: $anchor-dark-color-hover;
+    }
 }
 
 // embedded content

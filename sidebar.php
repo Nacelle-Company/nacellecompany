@@ -9,4 +9,9 @@
 ?>
 <aside class="sidebar">
 	<?php dynamic_sidebar('sidebar-widgets'); ?>
+	<?php if (!empty(the_field('contact_info'))) : ?>
+    <h3>Contact</h3>
+    <?php the_field('contact_info'); ?>
+	<?php endif; ?>
+
 </aside>

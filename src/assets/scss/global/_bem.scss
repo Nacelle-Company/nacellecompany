@@ -1,0 +1,13 @@
+.tbp-1 {
+    padding: 1rem 0;
+}
+.dk-txt {
+    color: $dark-gray;
+    :hover {
+        color: scale-color($dark-gray, $lightness: 24%);
+    }
+}
+
+.success {
+    color: $success-color;
+}

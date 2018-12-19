@@ -44,8 +44,8 @@
 
 
 	<header class="site-header" role="banner">
-		<div class="site-title-bar title-bar" <?php comedy_dynamics_title_bar_responsive_toggle(); ?>>
-			<div class="title-bar-left">
+		<div class="site-title-bar title-bar mobile-nav" <?php comedy_dynamics_title_bar_responsive_toggle(); ?>>
+			<div class="title-bar-left grid-x align-middle">
 				<button aria-label="<?php _e('Main Menu', 'comedy-dynamics'); ?>" class="menu-icon" type="button" data-toggle="<?php comedy_dynamics_mobile_menu_id(); ?>"></button>
 				<span class="site-mobile-title title-bar-title">
 						<?php
@@ -64,7 +64,6 @@
 			</div>
 			<div class="site-desktop-title top-bar-title">
 					<?php
-                    // bloginfo('name');
                     if (function_exists('the_custom_logo')) {
                         the_custom_logo();
                     }

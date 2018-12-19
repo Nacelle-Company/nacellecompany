@@ -3,7 +3,10 @@ main.top-meta {
 }
 
 .main-container {
-  @include xy-grid-container;
+  margin-top: 3rem;
+  @include breakpoint(medium) {
+      @include xy-grid-container;
+  }
 }
 
 .main-grid {
@@ -51,7 +54,7 @@ main.top-meta {
 
     @include breakpoint(medium) {
       @include xy-cell(4);
-      margin-top: 1rem;
+      // margin-top: 1rem;
     }
 
   }
@@ -62,36 +65,80 @@ main.top-meta {
 .category-special,
 .category-series, {
      .media-container {
-        height: 325px !important;
+        // height: 325px !important;
      }
  }
-// .catalog-top-meta-container {
-// }
-//
-// .catalog-bottom-meta,
-// .catalog-top-meta {
-//     .title {
-//         text-transform: uppercase;
-//     }
-// }
-//
-// .catalog-top-meta {
-//     @include xy-gutters($gutter-position: left right top bottom);
-//     z-index: 9;
-//     .synopsis {
-// 		text-align: justify;
-//     }
-//     .title {
-//         color: $primary-color;
-//     }
-// }
-//
-// .catalog-bottom-meta {
-//     position: absolute;
-//     width: 100%;
-//     left: 0;
-//     right: 0;
-//     .title {
-//         color: $white;
-//     }
-// }
+
+.single {
+    &.single-catalog {
+        article.catalog {
+            position: relative;
+        }
+        .entry-content {
+            padding-bottom: 4rem;
+            .title {
+                color: $primary-color;
+            }
+        }
+        aside {
+            margin-bottom: 4rem;
+        }
+    }
+// press releases
+    &.single-press_release {
+        .press {
+            padding-bottom: 1rem;
+        }
+        .press,
+        .intro {
+            margin-bottom: 1rem;
+            border-bottom: 3px solid $primary-color;
+        }
+        .press h1 {
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        .intro h4 {
+            color: $success-color;
+            margin-bottom: 0;
+        }
+        .nav-links {
+            @include xy-grid;
+            justify-content: space-between;
+            color: $success-color;
+        }
+        .content {
+            footer {
+                .title b {
+                    border-bottom: 1px solid $primary-color;
+                }
+
+            }
+        }
+    }
+}
+
+.feed-container {
+    border-bottom: 1px solid $light-gray;
+
+    .archive-title {
+        text-transform: uppercase;
+        @include breakpoint(medium) {
+            padding-left: 1rem;
+        }
+
+    }
+}
+
+header.press {
+    footer {
+        p {
+            margin-bottom: 0;
+        }
+    }
+}
+
+
+.sya_date {
+    font-weight: 600;
+}

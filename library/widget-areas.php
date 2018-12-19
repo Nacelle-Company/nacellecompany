@@ -16,8 +16,8 @@ if (! function_exists('comedy_dynamics_sidebar_widgets')) :
                 'description'   => __('Drag widgets to this sidebar container.', 'comedy-dynamics'),
                 'before_widget' => '<section id="%1$s" class="widget %2$s">',
                 'after_widget'  => '</section>',
-                'before_title'  => '<h6>',
-                'after_title'   => '</h6>',
+                'before_title'  => '<h3>',
+                'after_title'   => '</h3>',
             )
         );
 
@@ -26,10 +26,10 @@ if (! function_exists('comedy_dynamics_sidebar_widgets')) :
                 'id'            => 'l-footer-widgets',
                 'name'          => __('Left Footer widgets', 'comedy-dynamics'),
                 'description'   => __('Drag widgets to this footer container', 'comedy-dynamics'),
-                'before_widget' => '<section id="%1$s" class="widget %2$s">',
+                'before_widget' => '<section id="%1$s" class="widget %2$s newsletter">',
                 'after_widget'  => '</section>',
-                'before_title'  => '<h6>',
-                'after_title'   => '</h6>',
+                'before_title'  => '<h3>',
+                'after_title'   => '</h3>',
             )
         );
         register_sidebar(
@@ -39,8 +39,8 @@ if (! function_exists('comedy_dynamics_sidebar_widgets')) :
                 'description'   => __('Drag widgets to this footer container', 'comedy-dynamics'),
                 'before_widget' => '<section id="%1$s" class="widget %2$s">',
                 'after_widget'  => '</section>',
-                'before_title'  => '<h6>',
-                'after_title'   => '</h6>',
+                'before_title'  => '<h3>',
+                'after_title'   => '</h3>',
             )
         );
         register_sidebar(
@@ -50,8 +50,8 @@ if (! function_exists('comedy_dynamics_sidebar_widgets')) :
                 'description'   => __('Drag widgets to this footer container', 'comedy-dynamics'),
                 'before_widget' => '<section id="%1$s" class="widget %2$s">',
                 'after_widget'  => '</section>',
-                'before_title'  => '<h6>',
-                'after_title'   => '</h6>',
+                'before_title'  => '<h3>',
+                'after_title'   => '</h3>',
             )
         );
     }

@@ -1,0 +1,11 @@
+
+header {
+        h1.entry-title {
+        font-weight: 600;
+    }
+}
+header:not(.catalog):not(.archive) {
+        h1.entry-title {
+        border-bottom: $hr-border;
+    }
+}

@@ -17,12 +17,12 @@
 
 get_header(); ?>
 
-<div class="space-please grid-container full">
+<div class="grid-container full">
 	<main class="main-grid grid-x">
 
 <!-- is category distribution -->
-<?php if (is_category('Distribution')) : ?> <!--category -->
-	<?php if (have_posts('')) : the_post();?>
+<?php if (is_category(307)) : ?> <!--category -->
+	<?php if (have_posts('')) : the_post(); ?>
 
 			<div class="cell">
 				<div class="grid-x small-up-1 medium-up-4">
@@ -161,55 +161,41 @@ get_header(); ?>
 
 				</div>
 			</div>
-<!-- embedded content -->
-<?php endif; ?> <!-- END LOOP -->
-
-<?php
-// get the current taxonomy term
-$term = get_queried_object();
 
 
-// vars
-$lefttitle = get_field('left_title', $term);
-$leftembed = get_field('left_embed', $term);
-$righttitle = get_field('right_title', $term);
-$rightembed = get_field('right_embed', $term);
-// $color = get_field('color', $term);
-?>
-	<div class="grid-x">
-		<div class="medium-6 cell">
-			<?php echo $lefttitle; ?>
-			<div class="embed-container">
-				<?php echo $leftembed; ?>
-			</div>
-		</div>
+			<?php
+            // get the current taxonomy term
+            $term = get_queried_object();
 
-		<div class="medium-6 cell">
+            // show content below the 4 categories
+            // vars
+            $lefttitle = get_field('left_title', $term);
+            $leftembed = get_field('left_embed', $term);
+            $righttitle = get_field('right_title', $term);
+            $rightembed = get_field('right_embed', $term);
+            // $color = get_field('color', $term);
+            ?>
+				<div class="grid-x">
+					<div class="medium-6 cell">
+						<?php echo $lefttitle; ?>
+						<div class="embed-container">
+							<?php echo $leftembed; ?>
+						</div>
+					</div>
 
-		</div>
+					<div class="medium-6 cell">
 
-		</div>
+					</div>
+
+					</div>
 
 
-<!-- is category production-->
-<?php elseif (is_category('1973')) :?>
 
-	<?php get_template_part('taxonomy-media');?>
+	<!-- embedded content -->
+	<?php endif; ?> <!-- END MAIN CATEGORY LOOP -->
 
-	<!-- is category production-->
-<?php elseif (is_category('1974')) :?>
 
-		<?php get_template_part('taxonomy-media');?>
 
-<!-- is category production-->
-<?php elseif (is_category('1975')) :?>
-
-	<?php get_template_part('taxonomy-media');?>
-
-	<!-- is category production-->
-<?php elseif (is_category('1976')) :?>
-
-		<?php get_template_part('taxonomy-media');?>
 
 <!-- is category production-->
 <?php elseif (is_category('Production')) : ?>
@@ -295,15 +281,10 @@ $rightembed = get_field('right_embed', $term);
 					</div>
 				</div>
 
-<!-- is production special-->
-<?php elseif (is_category('1979')) :?>
-
-	<?php get_template_part('taxonomy-media');?>
-
 	<!-- is category production-->
-<?php elseif (is_category('1978')) :?>
+<?php elseif (is_category(array( 1973, 1974, 1975, 1976, 1979, 1980 ))) :?>
 
-		<?php get_template_part('taxonomy-media');?>
+	<?php get_template_part('/template-parts/content-categories'); ?>
 
 
 

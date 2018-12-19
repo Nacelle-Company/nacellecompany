@@ -1,34 +1,48 @@
 .meta-accordion.catalog-bottom-meta {
-    width: 150vw;
-    margin-left: -50%;
-    margin-top: 1rem;
+    // width: 150vw;
+    // margin-left: -50%;
+    // margin-top: 1rem;
 }
 .accordion-content {
     // @include xy-grid-container;
     padding: 0;
     box-shadow: $thumbnail-shadow-inner;
-    .extra-metadata a {
+    .title {
         color: $medium-gray;
     }
+    .extra-metadata {
+        .title p {
+            color: $medium-gray;
+        }
+        p {
+
+        }
+    }
 }
-.accordian-open > .grid-x {
-    @include xy-gutters($gutter-position: left right bottom);
-    @include flex-align($x: center, $y: center);
+.accordian-open {
+    button {
+        display: flex;
+        align-items: center;
+    }
+    .fas {
+        color: $success-color;
+        font-size: 40px;
+        padding-left: 1rem;
+    }
+    > .grid-x {
+        @include xy-gutters($gutter-position: left right bottom);
+        @include flex-align($x: center, $y: middle);
+    }
 }
 .accordion-line {
     height: 1px;
     background: $white;
     padding-right: 1em;
-    margin-bottom: 1em;
+    margin-right: 1rem;
 }
 .accordion-title {
     padding: 0;
-    margin-bottom: 2em;
-    span {
-        padding-left: 1em;
-        font-size: 120%;
-        color: $success-color;
-    }
+    font-size: 1rem;
 }
 .accordion-item:last-child > :last-child {
     border-radius: 0;

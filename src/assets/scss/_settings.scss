@@ -144,17 +144,17 @@ $header-margin-bottom: 0.5rem;
 $header-styles: (
   small: (
     'h1': ('font-size': 24),
-    'h2': ('font-size': 20),
+    'h2': ('font-size': 28),
     'h3': ('font-size': 19),
     'h4': ('font-size': 18),
     'h5': ('font-size': 17),
     'h6': ('font-size': 16),
   ),
   medium: (
-    'h1': ('font-size': 50),
+    'h1': ('font-size': 35),
     'h2': ('font-size': 40),
     'h3': ('font-size': 31),
-    'h4': ('font-size': 25),
+    'h4': ('font-size': 20),
     'h5': ('font-size': 13),
     'h6': ('font-size': 16),
   ),
@@ -176,7 +176,7 @@ $anchor-color-hover: scale-color($anchor-color, $lightness: -14%);
 $anchor-text-decoration: none;
 $anchor-text-decoration-hover: none;
 $hr-width: $global-width;
-$hr-border: 1px solid $white;
+$hr-border: 3px solid $primary-color;
 $hr-margin: rem-calc(20) auto;
 $list-lineheight: $paragraph-lineheight;
 $list-margin-bottom: $paragraph-margin-bottom;
@@ -357,8 +357,8 @@ $closebutton-size: (
   medium: 2em,
 );
 $closebutton-lineheight: 1;
-$closebutton-color: $dark-gray;
-$closebutton-color-hover: $black;
+$closebutton-color: $white;
+$closebutton-color-hover: $light-gray;
 
 // 16. Drilldown
 // -------------
@@ -516,7 +516,7 @@ $offcanvas-reveal-zindex: 12;
 $offcanvas-transition-length: 0.5s;
 $offcanvas-transition-timing: ease;
 $offcanvas-fixed-reveal: true;
-$offcanvas-exit-background: rgba($black, 0.25);
+$offcanvas-exit-background: rgba($black, 0.45);
 $maincontent-class: 'off-canvas-content';
 
 // 26. Orbit
@@ -734,8 +734,8 @@ $responsive-embed-ratios: (
 // 47. Reveal
 // ----------
 
-$reveal-background: $white;
-$reveal-width: 600px;
+$reveal-background: $dark-gray;
+$reveal-width: 60vw;
 $reveal-max-width: $global-width;
 $reveal-padding: $global-padding;
 $reveal-border: 1px solid $medium-gray;

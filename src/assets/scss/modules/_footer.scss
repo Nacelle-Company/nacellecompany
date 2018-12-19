@@ -7,7 +7,7 @@
   color: $dark-gray;
 }
 .space-please {
-    padding-bottom: 11rem;
+    padding-top: 11rem;
 }
 .footer-grid {
   @include xy-grid;
@@ -19,13 +19,12 @@
     @include xy-cell();
     @include breakpoint(large) {
       @include xy-cell(auto);
+
     }
     p {
         margin-bottom: 0;
     }
-    a {
-        font-weight: 900;
-    }
+
     &:nth-child(1) {
         justify-content:  flex-start;
     }
@@ -42,8 +41,10 @@
             padding: 0.7rem 0.5rem;
         }
     }
-  }
-
+} // end SECTION
+    .newsletter a {
+        font-weight: 900;
+    }
     .c-footer-widgets {
         text-align: center;
     }
