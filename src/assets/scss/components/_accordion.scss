@@ -30,7 +30,7 @@
         padding-left: 1rem;
     }
     > .grid-x {
-        @include xy-gutters($gutter-position: left right bottom);
+        // @include xy-gutters($gutter-position: left right bottom);
         @include flex-align($x: center, $y: middle);
     }
 }

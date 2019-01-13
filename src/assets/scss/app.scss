@@ -68,6 +68,8 @@
 @import "global/icons";
 @import "global/bem";
 @import "global/animations";
+@import "global/spacing";
+@import "global/mobile";
 
 // Modules
 @import "modules/navigation";
@@ -90,4 +92,5 @@
 // Templates
 @import "templates/front";
 @import "templates/kitchen-sink";
-@import "global/mobile";
+@import "templates/featured-page";
+@import "templates/search";

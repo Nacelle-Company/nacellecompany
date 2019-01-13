@@ -20,21 +20,95 @@
   }
 }
 
+// main category cards
+.macro-cat-cards {
+    a {
+        .catalog-title + img {
+            box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.5);
+            transition: box-shadow .2s ease;
+        }
+        &:hover .catalog-title + img {
+            box-shadow: 0 1px 1px 0 rgba(0,0,0,0.5);
+        }
+    }
+}
+
+
+
+
 .callout,
 .callout-body {
     box-shadow: $callout-shadow;
 }
+
+.callout-body img {object-fit: cover;width: 100%;}
 .callout-hover-reveal .callout-footer {
     display: none;
 }
 .callout-footer {
+    position: absolute;
+    background-color: $secondary-color;
     padding: $callout-footer-padding;
-    font-size: 0.75rem;
+    font-size: .75rem;
+
     p {
         margin-bottom: 0;
+        color: $black;
+        border-radius: $card-border-radius;
     }
 }
 .media-callout-container {
     @include xy-grid-collapse(cell, margin, top, medium);
 
+}
+
+
+/* TRUNKATE mixin for multiline */
+// http://hackingui.com/front-end/a-pure-css-solution-for-multiline-text-truncation/
+@mixin multiLineEllipsis($lineHeight: 1.2em, $lineCount: 1, $bgColor: white){
+  overflow: hidden;
+  position: relative;
+  line-height: $lineHeight;
+  max-height: $lineHeight * $lineCount;
+  text-align: justify;
+  margin-right: -0.2em;
+  padding-right: 1em;
+  &:before {
+    content: '...';
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    width: 1em;
+    height: 1em;
+    margin-top: 0.2em;
+    background: $bgColor;
+  }
+}
+
+.callout-footer p {
+  @include multiLineEllipsis($lineHeight: 1.2em, $lineCount: 3, $bgColor: white);
+}
+
+
+#breadcrumbs{
+    list-style:none;
+    margin:10px 0;
+    overflow:hidden;
+}
+
+#breadcrumbs li{
+    display:inline-block;
+    vertical-align:middle;
+    margin-right:15px;
+}
+
+#breadcrumbs .separator{
+    font-size:18px;
+    font-weight:100;
+    color:#ccc;
 }

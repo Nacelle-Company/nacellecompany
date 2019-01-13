@@ -10,10 +10,10 @@
 
 ?>
 
-<aside class="cell medium-5 feat  medium-order-2">
-	<div class="grid-x grid-margin-x">
+<aside class="cell medium-5 feat medium-order-2">
+	<div class="grid-x">
 
-		<div class="cell medium-10 artwork-container">
+		<div class="cell medium-10 artwork-container pr-medium-2 pt-medium-3">
 			<?php the_post_thumbnail('full'); ?>
 
 <!-- LINKS -->
@@ -40,6 +40,7 @@
                             $amazonA = get_field('amazon_audio');
                             $spotifyA = get_field('spotify_audio');
                             $pandoraA = get_field('pandora_audio');
+                            $huluV = get_field('hulu_video');
                              ?>
 							<?php if ($imdb) : ?>
 								<a href="<?php echo $imdb; ?>" target="_blank">
@@ -210,6 +211,7 @@
                         $firstPostName = $loop[$last_post_int]['post_name'];
                         echo '<a href="http://localhost:3000/comedydynamics/catalog/' . $firstPostName . '">Next</a>';
                     };
+
                     ?>
 				</div>
 				<div class="cell prev">
@@ -222,6 +224,7 @@
                         echo '<a href="' . get_permalink() . '">Prev</a>';
                         wp_reset_query();
                     };
+
                     ?>
 				</div>
 			</div>

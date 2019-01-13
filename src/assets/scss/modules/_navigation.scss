@@ -10,8 +10,19 @@
 }
 
 .desktop-menu,
-.site-navigation .top-bar-left {
+.site-navigation .top-bar-left,
+.site-navigation .top-bar-right {
   @include show-for(large);
+  .menu-item a {
+      @include breakpoint(large) {
+          padding: 0.7rem 0.7rem;
+      }
+  }
+}
+
+.dropdown.menu > li.is-dropdown-submenu-parent > a {
+    position: relative;
+    padding-right: .5rem;
 }
 
 // Site title
@@ -26,7 +37,7 @@
 
 .off-canvas {
   > ul.menu {
-    height: 100vh;
+    height: auto;
     padding: 1rem;
 
     a {
@@ -61,7 +72,18 @@
         flex: 0 1 auto;
         margin: 0;
     }
-
+    // hover nav elements
+    .menu-item a {
+        transition: text-shadow .1s ease;
+        &:hover {
+            text-shadow: 0.5px 0.5px 0px $primary-color;
+            color: $primary-color;
+        }
+    }
+    .dropdown.menu .is-active > a {
+        text-shadow: 0.3px 0.3px 0px $primary-color;
+        color: $primary-color;
+    }
   .dropdown.menu .submenu { border: 0; }
   .dropdown.menu .has-submenu.is-down-arrow a { padding-right: 1rem; }
   .dropdown.menu .has-submenu.is-down-arrow > a::after { border: 0; }
@@ -105,5 +127,147 @@
         height: 21px;
         display: flex;
         position: absolute;
+    }
+}
+
+// filter sidebar
+.filter-sidebar input[type="submit"] {
+    display: block;
+    width: 200px;
+    margin: 0;
+    cursor: pointer;
+    &:hover {
+        background: $primary-color;
+    }
+}
+
+// sidebar
+.sidebar {
+    .searchandfilter ul {
+        margin-left: 0;
+    }
+    .widget_nav_menu .sub-menu {
+        list-style: none;
+        font-weight: 500;
+    }
+    .widget_nav_menu .menu {
+        flex-direction: column;
+        font-weight: 600;
+    }
+}
+
+// search bar slide out
+// https://codepen.io/arthurra/pen/KhCyk
+
+.searchandfilter {
+    select {
+        width: 200px;
+        max-width: 200px;
+    }
+}
+
+
+
+.header-search-container {
+
+        ul {
+            margin-bottom: 0;
+        }
+
+
+    .search-container {
+        display: flex;
+        overflow: hidden;
+        float: right;
+        width: 40px;
+        background: $dark-gray;
+        align-items: center;
+        border-radius: $input-radius;
+        -moz-transition: all 0.35s;
+        -webkit-transition: all 0.35s;
+      .fa-search {
+          opacity: 1;
+          font-size: 20px;
+          color: $primary-color;
+          padding: 1rem;
+          -moz-transition: opacity 0.35s;
+          -webkit-transition: opacity 0.35s;
+      }
+      &:hover .fa-search,
+      &:hover .fa-search {
+          opacity: 0;
+          display: none;
+      }
+    }
+    .search-container input[type="text"] {
+        opacity: 0;
+        margin: 0;
+        -moz-transition: all 0.35s;
+        -webkit-transition: all 0.35s;
+    }
+    .search-container:hover input[type="text"] {
+        opacity: 1;
+    }
+    .search-container {
+        form.searchandfilter {
+            line-height: 1;
+        }
+        ul {
+            margin-left: .5rem;
+            line-height: 1;
+        }
+    }
+    .search-container input[type="text"],
+    .search-container li,
+    .search-container ul {
+        max-width: 200px;
+        width: 200px;
+    }
+    .search-container:hover,
+    .search-container:focus {
+      width: 218px;
+      outline: none;
+    }
+    .search-container:hover input,
+    .search-container:focus input {
+      display: inline-block;
+      padding: 10px;
+    }
+
+    input {
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      appearance: none;
+      float: left;
+      width: 0em;
+      height: 2em;
+      margin: 1em;
+      margin-right: -4.5em;
+      background: #fff;
+      color: #6A5D4F;
+      font-size: 1em;
+      padding: 0px;
+      border: 0;
+      border-radius: 5px;
+      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2) inset;
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.15);
+      -moz-transition: all 0.25s;
+      -webkit-transition: all 0.25s;
+    }
+    input:focus {
+      outline: none;
+      box-shadow: 0 -1px 1px rgba(255, 255, 255, 0.25), 0 1px 5px rgba(0, 0, 0, 0.15);
+    }
+    .searchandfilter h4 {
+        margin: 0;
+        font-size: 13px;
+        text-transform: uppercase;
+    }
+    .button i {
+      margin-top: 0.3em;
+    }
+    .button:active {
+      border: 0 !important;
+      text-shadow: 0 0 0;
     }
 }

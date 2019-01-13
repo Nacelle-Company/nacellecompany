@@ -1,0 +1,22 @@
+#search-results,
+header {
+    .bookmark i.fas,
+    .bookmark i.far {
+        color: $success-color;
+    }
+}
+
+.catalog-search.main-grid {
+    margin-top: 0;
+    .main-content {
+        margin: 0;
+    }
+    .sf-field-submit input[type="submit"] {
+        background: $primary-color;
+        padding: .4em;
+        width: 100%;
+    }
+    .chosen-container {
+        width: 100% !important;
+    }
+}

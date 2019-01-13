@@ -9,3 +9,7 @@ header:not(.catalog):not(.archive) {
         border-bottom: $hr-border;
     }
 }
+// mobile title bar
+.title-bar .menu-icon {
+    position: absolute !important;
+}

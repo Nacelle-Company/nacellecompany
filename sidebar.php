@@ -7,7 +7,7 @@
  */
 
 ?>
-<aside class="sidebar">
+<aside class="sidebar mt-3">
 	<?php dynamic_sidebar('sidebar-widgets'); ?>
 	<?php if (!empty(the_field('contact_info'))) : ?>
     <h3>Contact</h3>

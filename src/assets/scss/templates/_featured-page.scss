@@ -1,0 +1,96 @@
+
+body:not(.mce-content-body):not(.edit-post-visual-editor).page-template-featured-page {
+    background: #f2c400;
+    background-image: none;
+    .off-canvas-content {
+        border: 16px solid #f2c400;
+        @include breakpoint(large) {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+    }
+    header.site-header,
+    footer.footer {
+        display: none;
+    }
+    .main-grid {
+        margin-top: 0;
+        margin-bottom: 0;
+        height: 100vh;
+    }
+    .feat-img img {
+        height: 100%;
+        width: 100%;
+    }
+    .feat-content {
+        position: relative;
+        padding: 20px 10px 10px 10px;
+        box-sizing: border-box;
+        overflow: scroll;
+        height: 95vh;
+        background-color: $black;
+        @include breakpoint(medium) {
+            padding: 40px 25px 25px 25px;
+        }
+        .dk-border {
+            border: 1px solid $success-color;
+            padding: 0 0.5em;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            @include breakpoint(medium) {
+                padding: 0 1em;
+            }
+            .icons-container {
+                flex-direction: column;
+            }
+            button,
+            a.button {
+                background-color: #434375;
+                color: $white;
+                border-radius: 999px;
+                font-family: Montserrat;
+                font-weight: 700;
+                font-style: normal;
+                font-size: 8px;
+                text-transform: uppercase;
+                letter-spacing: .14em;
+                margin-top: 40px;
+                text-align: center;
+                @include breakpoint(medium) {
+                    font-size: 12px;
+                }
+            }
+            .fab {
+                font-size: 60px;
+                color: #434375;
+            }
+            a {
+                margin: 0 0 1rem 0;
+            }
+        }
+        .main {
+            @include xy-gutters($gutter-position: bottom );
+        }
+    }
+    .feat-info {
+      @include xy-gutters($gutter-position: left );
+    }
+    h4 {
+        font-style: normal;
+        font-size: 16px;
+        color: $white;
+    }
+    footer.feat-pg .cell{
+        display: flex;
+        justify-content: start;
+        color: $white;
+        p {
+            margin-right: 1rem;
+        }
+    }
+}

@@ -16,48 +16,33 @@
  */
 
 get_header(); ?>
-<?php
-$img_size_lg = 'fp-large';
-$img_size_md = 'fp-medium';
-$img_size_sm = 'fp-small';
 
-$hero_image = get_field('press_release_header', 'option');
-
-/* Get custom sizes of our image sub_field */
-$hero_lg = $hero_image['sizes'][ $img_size_lg ];
-$hero_md = $hero_image['sizes'][ $img_size_md ];
-$hero_sm = $hero_image['sizes'][ $img_size_sm ];
-
-if (!empty('press_release_header')):
-    ?>
 
 	<header class="featured-hero" role="banner" data-interchange="[<?php echo $hero_sm; ?>, small], [<?php echo $hero_md; ?>, medium], [<?php echo $hero_lg; ?>, large]">
-
+        <div class="grid-x">
+		    <div class="cell">
+		    	<h1 class="text-center">Press Releases</h1>
+		    </div>
+		</div>
 	</header>
 
-<?php endif;?>
-
-<?php // get_template_part('template-parts/featured-image-lg-title');?>
-
-
 <div class="main-container">
-	<!-- <header class="grid-container">
-		<h1 class="entry-title">Press</h1>
-	</header> -->
 	<div class="main-grid">
 		<main class="main-content">
+
 		<?php
         // https://developer.wordpress.org/reference/functions/query_posts/
+
         $current_year = date('Y');
-        $current_month = date('m');
-        $posts = query_posts($query_string . "&year=$current_year&monthnum=$current_month&order=DESC");
+        $current_month = date('M');
+        $posts = query_posts($query_string . "&post_status=future,publish&posts_per_page=20&order=DESC");
         if (have_posts()) : ?>
 
 			<?php /* Start the Loop */ ?>
 			<?php while (have_posts()) : the_post(); ?>
 
-				<article id="post-<?php the_ID(); ?>" <?php post_class('cell'); ?>>
-						<div class="grid-x grid-padding-y feed-container">
+				<article id="post-<?php the_ID(); ?>" class="cell pt-3">
+						<div class="grid-x feed-container">
 
 							<?php
                             // If a featured image is set, insert into layout and use Interchange
@@ -95,7 +80,7 @@ if (!empty('press_release_header')):
 										<p><?php the_time('m.j.y'); ?></p>
 									</div>
 									<div class="cell text-right">
-										<a class="clear button success medium" href="<?php echo get_permalink(); ?>">Read More</a>
+										<a class="clear button success medium pr-0" href="<?php echo get_permalink(); ?>">Read More</a>
 									</div>
 								</div>
 							</div>
@@ -123,8 +108,7 @@ if (!empty('press_release_header')):
 								</div>
 							<footer>
 								<div class="entry-content">
-									<?php //the_content();?>
-									<?php edit_post_link(__('(Edit)', 'comedy-dynamics'), '<span class="edit-link">', '</span>'); ?>
+									<?php // edit_post_link(__('(Edit)', 'comedy-dynamics'), '<span class="edit-link">', '</span>');?>
 								</div>
 								<?php $tag = get_the_tags(); if ($tag) {
                                         ?><p><?php the_tags(); ?></p><?php

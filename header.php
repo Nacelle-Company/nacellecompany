@@ -62,20 +62,42 @@
 			<div class="top-bar-left">
 				<?php comedy_dynamics_top_bar_l(); ?>
 			</div>
+
+			<!-- custom logo -->
 			<div class="site-desktop-title top-bar-title">
-					<?php
-                    if (function_exists('the_custom_logo')) {
-                        the_custom_logo();
-                    }
-                    ?>
+
+				<?php if (function_exists('the_custom_logo')) {
+                            the_custom_logo();
+                        } ?>
+
 			</div>
+
+			<!-- top bar right -->
 			<div class="top-bar-right">
+
 				<?php comedy_dynamics_top_bar_r(); ?>
 
 				<?php if (! get_theme_mod('wpt_mobile_menu_layout') || get_theme_mod('wpt_mobile_menu_layout') === 'topbar') : ?>
+
 					<?php get_template_part('template-parts/mobile-top-bar'); ?>
+
 				<?php endif; ?>
+
 			</div>
+
+			<!-- search icon -->
+		    <div class='header-search-container' tabindex='1'>
+
+				<div class='search-container' tabindex='1'>
+
+					<i class="fas fa-search"></i>
+
+					<?php echo do_shortcode('[searchandfilter id="4711" fields="search" search_placeholder="Search. . ."]'); ?>
+
+				</div>
+
+			</div>
+
 		</nav>
 
 	</header>

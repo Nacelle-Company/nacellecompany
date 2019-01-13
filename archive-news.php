@@ -32,7 +32,11 @@ if (!empty('news_header_image')):
     ?>
 
 	<header class="featured-hero" role="banner" data-interchange="[<?php echo $hero_sm; ?>, small], [<?php echo $hero_md; ?>, medium], [<?php echo $hero_lg; ?>, large]">
-
+        <div class="grid-x">
+		    <div class="cell">
+		    	<h1 class="text-center">News</h1>
+		    </div>
+		</div>
 	</header>
 <?php else:?>
 
@@ -49,7 +53,8 @@ if (!empty('news_header_image')):
 		<?php
         // https://developer.wordpress.org/reference/functions/query_posts/
         $current_year = date('Y');
-        $posts = query_posts($query_string . "&year=$current_year&order=DESC");
+        $current_month = date('M');
+        $posts = query_posts($query_string . "&posts_per_page=10&order=DESC");
         if (have_posts()) : ?>
 
 			<?php /* Start the Loop */ ?>

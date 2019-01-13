@@ -15,17 +15,19 @@
 	</header>
 	<div class="entry-content">
 		<?php the_content(); ?>
-		<?php edit_post_link( __( '(Edit)', 'comedy-dynamics' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php // edit_post_link( __( '(Edit)', 'comedy-dynamics' ), '<span class="edit-link">', '</span>' );?>
 	</div>
 	<footer>
 		<?php
-			wp_link_pages(
-				array(
-					'before' => '<nav id="page-nav"><p>' . __( 'Pages:', 'comedy-dynamics' ),
-					'after'  => '</p></nav>',
-				)
-			);
-		?>
-		<?php $tag = get_the_tags(); if ( $tag ) { ?><p><?php the_tags(); ?></p><?php } ?>
+            wp_link_pages(
+                array(
+                    'before' => '<nav id="page-nav"><p>' . __('Pages:', 'comedy-dynamics'),
+                    'after'  => '</p></nav>',
+                )
+            );
+        ?>
+		<?php $tag = get_the_tags(); if ($tag) {
+            ?><p><?php the_tags(); ?></p><?php
+        } ?>
 	</footer>
 </article>

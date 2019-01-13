@@ -99,7 +99,7 @@
 		</div>
 	</div>
 
-		<?php edit_post_link(__('(Edit)', 'comedy-dynamics'), '<span class="edit-link">', '</span>'); ?>
+		<?php // edit_post_link(__('(Edit)', 'comedy-dynamics'), '<span class="edit-link">', '</span>');?>
 	</div>
 	<footer>
 		<?php

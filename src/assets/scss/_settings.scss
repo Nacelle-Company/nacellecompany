@@ -110,8 +110,8 @@ $print-transparent-backgrounds: true;
 
 $breakpoints: (
   small: 0,
-  medium: 840px,
-  large: 1055px,
+  medium: 640px,
+  large: 1024px,
   xlarge: 1200px,
   xxlarge: 1440px,
 );
@@ -143,8 +143,8 @@ $header-lineheight: 1.4;
 $header-margin-bottom: 0.5rem;
 $header-styles: (
   small: (
-    'h1': ('font-size': 24),
-    'h2': ('font-size': 28),
+    'h1': ('font-size': 28),
+    'h2': ('font-size': 30),
     'h3': ('font-size': 19),
     'h4': ('font-size': 18),
     'h5': ('font-size': 17),
@@ -152,7 +152,7 @@ $header-styles: (
   ),
   medium: (
     'h1': ('font-size': 35),
-    'h2': ('font-size': 40),
+    'h2': ('font-size': 27),
     'h3': ('font-size': 31),
     'h4': ('font-size': 20),
     'h5': ('font-size': 13),
@@ -288,7 +288,7 @@ $button-margin: 0 0 $global-margin 0;
 $button-fill: solid;
 $button-background: $primary-color;
 $button-background-hover: scale-color($button-background, $lightness: -15%);
-$button-color: $white;
+$button-color: $black;
 $button-color-alt: $black;
 $button-radius: $global-radius;
 $button-hollow-border-width: 1px;
@@ -316,7 +316,7 @@ $buttongroup-radius-on-each: true;
 // 13. Callout
 // -----------
 
-$callout-background: $secondary-color;
+$callout-background: transparent;
 $callout-background-fade: 0%;
 $callout-border: 0;
 $callout-margin: 0 0 1rem 0;

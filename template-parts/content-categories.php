@@ -14,78 +14,130 @@
  * @package FoundationPress
  * @since FoundationPress 1.0.0
  */
+?>
 
-//get_header();?>
+<div class="cell medium-12"> <!-- cell for the content -->
 
-	<!-- <main class="main-content-full-width grid-x grid-padding-y"> -->
-		<div class="cell medium-12">
-			<header class="grid-container archive">
-				<div class="grid-x align-center-middle">
-					<div class="cell medium-6">
-						<h1 class="entry-title"><?php single_cat_title();?></h1>
-					</div>
-					<div class="cell medium-6 text-right sorting">
-						<a data-toggle="searchOffCanvas">Sort & Filter</a>
-					</div>
-				</div>
-			</header>
-			<div class="grid-x grid-margin-y grid-padding-y small-up-2 medium-up-4 large-up-6">
-				<?php if (have_posts()) : ?>
+	<header class="grid-container archive">
 
-					<?php /* Start the Loop */ ?>
-					<?php while (have_posts()) : the_post();?>
+		<div class="grid-x align-center-middle">
 
+			<div class="cell small-6">
+
+				<h1 class="entry-title"><?php single_cat_title();?></h1>
+
+			</div>
+
+			<div class="cell small-6 text-right sorting">
+
+				<a data-toggle="searchOffCanvas">Sort & Filter</a>
+
+			</div>
+
+		</div>
+
+	</header>
+
+	<!-- start the cards -->
+	<div class="grid-x small-up-2 medium-up-4 large-up-6 align-center-middle">
+
+		<?php
+        // sort posts by title
+        // https://www.shilling.id.au/2011/11/30/how-to-change-the-order-of-posts-in-the-wordpress-loop/
+        $args = array_merge($wp_query->query, array( 'orderby' => 'title','order' => 'ASC' ));
+
+        query_posts($args);
+
+        if (have_posts($args)) : ?>
+
+			<!-- Start the Loop -->
+			<?php while (have_posts()) : the_post();?>
+
+				<!-- if the catalog item has a square image uploaded. . . -->
+				<?php
+                $image = get_field('square_image');
+
+                if ($image) :
+                    ?>
+
+					<!-- img container -->
+					<div class="media-container cell medium-2 mb-4 mb-medium-5 mb-medium-4 mb-large-5 mb-xlarge-3">
+
+						<!-- if catalog item has a "Custom Page Redirect" link. . . -->
 						<?php
-                        $image = get_field('square_image');
-                        if ($image) : ?>
+                        $link = get_field('custom_page_redirect');
 
-							<div class="media-container cell medium-2 medium-collapse-y">
+                        if ($link):
+
+                            $link_url = $link['url'];
+                            ?>
+
+							<!-- link to the "Custom Page Redirect" page -->
+							<a href="<?php echo esc_url($link_url); ?>">
+
+							<?php else: ?>
+
+								<!-- if no "Custom Page Redirect" get the original post link -->
 								<a href="<?php the_permalink(); ?>">
-									<div class="callout callout-hover-reveal" data-callout-hover-reveal>
-									    <div class="callout-body">
+
+								<?php endif; ?>
+
+								<div class="callout callout-hover-reveal" data-callout-hover-reveal>
+
+									<div class="callout-body">
+
 										<?php
                                         $size = 'medium'; // (thumbnail, medium, large, full or custom size)
 
+                                        // display the img
                                         if ($image) {
                                             echo wp_get_attachment_image($image, $size);
-                                        }
-                                        ?>
-									    </div>
-									    <div class="callout-footer">
-											<p>
-												<?php $summary = get_field('synopsis'); echo mb_substr($summary, 0, 100); ?>...
-											</p>
-									    </div>
+                                        } ?>
+
 									</div>
-								</a>
-							</div>
 
-						<?php endif; ?>
+									<!-- img hover footer -->
+									<div class="callout-footer">
 
+										<!-- display the synopsis -->
+										<p><?php $synopsis = get_field('synopsis'); echo $synopsis; ?></p>
 
-					<?php endwhile;?>
+									</div> <!-- END the footer -->
 
-				<?php else : ?>
+								</div> <!-- END the callout -->
 
-						<?php get_template_part('template-parts/content', 'none'); ?>
+							</a> <!-- END the link, whether its a "Custom Page Redirect" or the post link -->
 
-				<?php endif; // End have_posts() check.?>
-			</div>
+						</div> <!-- END img container -->
 
+					<?php endif; ?> <!-- END if catalog item has a "Custom Page Redirect" link. . . -->
 
-		<?php /* Display navigation to next/previous pages when applicable */ ?>
-		<?php
-        if (function_exists('comedy_dynamics_pagination')) :
-            comedy_dynamics_pagination();
-        elseif (is_paged()) :
-        ?>
-			<nav id="post-nav">
-				<div class="post-previous"><?php next_posts_link(__('&larr; Older posts', 'comedy-dynamics')); ?></div>
-				<div class="post-next"><?php previous_posts_link(__('Newer posts &rarr;', 'comedy-dynamics')); ?></div>
-			</nav>
-		<?php endif; ?>
+				<?php endwhile;?> <!-- END the loop -->
 
-	<!-- </main> -->
+		<?php else : ?>
 
+			<?php get_template_part('template-parts/content', 'none'); ?>
 
-<?php //get_footer();
+		<?php endif; // End have_posts() check.?>
+
+	</div> 	<!-- END the cards -->
+
+	<!-- Display navigation to next/previous pages when applicable -->
+	<?php
+    if (function_exists('comedy_dynamics_pagination')) :
+
+        comedy_dynamics_pagination();
+
+    elseif (is_paged()) :
+    ?>
+		<nav id="post-nav">
+
+			<div class="post-previous"><?php next_posts_link(__('&larr; Older posts', 'comedy-dynamics')); ?></div>
+
+			<div class="post-next"><?php previous_posts_link(__('Newer posts &rarr;', 'comedy-dynamics')); ?></div>
+
+		</nav>
+
+	<?php endif; ?>
+
+</div> <!-- END of cell for the content -->

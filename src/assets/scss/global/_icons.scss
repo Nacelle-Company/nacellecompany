@@ -1,5 +1,6 @@
 .catalog-title {
     color: $white;
+    text-transform: uppercase;
     &::before {
         content: '';
         display: inline-flex;

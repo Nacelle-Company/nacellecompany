@@ -15,6 +15,7 @@ main.top-meta {
 
   @include breakpoint(medium) {
     margin-top: 3rem;
+    margin-bottom: 9rem;
   }
 
   &.sidebar-left {
@@ -43,7 +44,7 @@ main.top-meta {
     }
 
     @include breakpoint(medium) {
-      @include xy-cell(8);
+      @include xy-cell(9);
     }
   }
 
@@ -53,8 +54,8 @@ main.top-meta {
     }
 
     @include breakpoint(medium) {
-      @include xy-cell(4);
-      // margin-top: 1rem;
+      @include xy-cell(3);
+      margin-right: 0;
     }
 
   }
@@ -79,9 +80,6 @@ main.top-meta {
             .title {
                 color: $primary-color;
             }
-        }
-        aside {
-            margin-bottom: 4rem;
         }
     }
 // press releases

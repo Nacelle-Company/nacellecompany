@@ -23,7 +23,7 @@
             ?>
 		</div>
 
-		<div class="cell medium-1">
+		<div class="cell medium-1 success">
 			<p><?php the_time('m.j.y'); ?></p>
 		</div>
 
@@ -42,7 +42,7 @@
 
 		<?php endif; ?>
 
-		<?php edit_post_link(__('(Edit)', 'comedy-dynamics'), '<span class="edit-link">', '</span>'); ?>
+		<?php // edit_post_link(__('(Edit)', 'comedy-dynamics'), '<span class="edit-link">', '</span>');?>
 	</div>
 	<footer>
 		<?php

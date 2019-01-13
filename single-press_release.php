@@ -51,8 +51,7 @@ get_header(); ?>
 									<?php echo '<p class="text-center">###</p>'; ?>
 									<!-- PDF download -->
 									<footer>
-											<h6 class="text-center"><b>Downloads</b></h6>
-											<h4 class="text-center" >
+										<h4 class="text-center" >
 												<?php if (get_field('stills_download')): ?>
 													<a href="<?php the_field('stills_download'); ?>" download>Stills, </a>
 												<?php endif; ?>
@@ -72,7 +71,7 @@ get_header(); ?>
 
 					<div class="entry-content">
 
-						<?php edit_post_link(__('(Edit)', 'comedy-dynamics'), '<span class="edit-link">', '</span>'); ?>
+						<?php // edit_post_link(__('(Edit)', 'comedy-dynamics'), '<span class="edit-link">', '</span>');?>
 					</div>
 					<footer>
 						<?php

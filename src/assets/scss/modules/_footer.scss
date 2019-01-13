@@ -26,7 +26,9 @@
     }
 
     &:nth-child(1) {
-        justify-content:  flex-start;
+        @include breakpoint(large) {
+            justify-content:  flex-start;
+        }
     }
     &:nth-child(2) {
         // justify-content: center;
@@ -39,6 +41,11 @@
         a {
             color: $dark-gray;
             padding: 0.7rem 0.5rem;
+        }
+    }
+    .footer-grid section section:last-child {
+        @include breakpoint(large) {
+            margin: 0;
         }
     }
 } // end SECTION
