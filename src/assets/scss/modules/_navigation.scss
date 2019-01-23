@@ -36,23 +36,22 @@
 }
 
 .off-canvas {
-  > ul.menu {
-    height: auto;
-    padding: 1rem;
-
-    a {
-      color: $primary-color;
-      font-weight: 400;
-      font-size: rem-calc(18);
+    > ul.menu {
+        height: auto;
+        padding: 1rem;
+        a {
+            color: $primary-color;
+            font-weight: 400;
+            font-size: rem-calc(18);
+        }
     }
-  }
 
-.title-bar-title {
-  a {
-    font-size: 1rem;
-    color: $primary-color;
-  }
-}
+    .title-bar-title {
+        a {
+            font-size: 1rem;
+            color: $primary-color;
+        }
+    }
 }
 
 .mobile-menu,
@@ -108,27 +107,27 @@
     }
 }
 
-.prev {
-    ::after {
-        content: "";
-        background: url(http://localhost:3000/comedydynamics/wp-content/themes/comedy-dynamics/dist/assets/images/arrow-prev.svg) no-repeat;
-        width: 37px;
-        height: 21px;
-        display: flex;
-        position: absolute;
-    }
-}
-
-.next {
-    ::after {
-        content: "";
-        background: url(http://localhost:3000/comedydynamics/wp-content/themes/comedy-dynamics/dist/assets/images/arrow-next.svg) no-repeat;
-        width: 37px;
-        height: 21px;
-        display: flex;
-        position: absolute;
-    }
-}
+// .prev {
+//     ::after {
+//         content: "";
+//         background: url(http://localhost:3000/comedydynamics/wp-content/themes/comedy-dynamics/dist/assets/images/arrow-prev.svg) no-repeat;
+//         width: 37px;
+//         height: 21px;
+//         display: flex;
+//         position: absolute;
+//     }
+// }
+//
+// .next {
+//     ::after {
+//         content: "";
+//         // background: url("comedy-dynamics/src/assets/images/arrow-next.svg") no-repeat;
+//         width: 37px;
+//         height: 21px;
+//         display: flex;
+//         position: absolute;
+//     }
+// }
 
 // filter sidebar
 .filter-sidebar input[type="submit"] {
@@ -158,13 +157,29 @@
 
 // search bar slide out
 // https://codepen.io/arthurra/pen/KhCyk
-
-.searchandfilter {
-    select {
-        width: 200px;
-        max-width: 200px;
+.off-canvas-content {
+    .oc-container {
+        height: 100vh;
+    }
+    .searchandfilter {
+        select,
+        input {
+            width: 200px;
+            max-width: 200px;
+        }
+        select {
+            margin: 0;
+        }
+        input[type="submit"] {
+            background: scale-color($primary-color, $lightness: -15%);
+            padding: 0.5rem;
+            &:hover {
+                background: $primary-color;
+            }
+        }
     }
 }
+
 
 
 

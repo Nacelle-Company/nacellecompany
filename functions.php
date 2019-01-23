@@ -165,9 +165,3 @@ function Comedy_Dynamics_cpt_order($orderby)
 
     return $orderby;
 }
-
-
-add_action('wp_footer', function () {
-    $taxonomies = get_taxonomies(array( '_builtin' => false ));
-    print '<pre>' . print_r($taxonomies, 1) . '</pre>';
-});

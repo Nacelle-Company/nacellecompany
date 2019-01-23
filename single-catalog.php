@@ -8,21 +8,22 @@
  */
 
 get_header(); ?>
-<?php // get_template_part('template-parts/featured-image-catalog');?>
 
-
-<?php
-// If a featured image is set, insert into layout and use Interchange
-// to select the optimal image size per named media query.
-if (has_post_thumbnail($post->ID)) : ?>
+<!-- START featured header -->
+<?php if (has_post_thumbnail($post->ID)) : ?>
 
 	<header style="background:transparent;" class="catalog featured-hero grid-container fluid">
+
 		<div class="grid-x catalog grid-padding-y">
+
 			<div class="cell">
 
 				<div class="grid-container px-0 px-medium-3">
+
 					<div class="grid-x align-middle">
+
 						<div class="cell medium-12 large-5 grid-offset-5">
+
 							<?php
                                   if (is_single()) {
                                       the_title('<h1 class="entry-title">', '</h1>');
@@ -30,161 +31,240 @@ if (has_post_thumbnail($post->ID)) : ?>
                                       the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
                                   }
                               ?>
+
 						</div>
+
 					</div>
 
-					<!-- modal trailer button -->
+					<!-- modal button -->
 					<?php
-
                     $videoEmbedd = get_field('video_embedd');
 
                     if (!empty($videoEmbedd)): ?>
 
 					<div class="grid-x align-middle">
+
 						<div class="cell medium-5 grid-offset-5">
+
 							<div class="play grid-x align-start">
+
 								<div class="cell">
+
 									<button class="bounce hollow button success" data-open="videoModal1">
+
 										<i class="far fa-play-circle"></i>Watch Trailer
+
 									</button>
+
 								</div>
+
 							</div>
+
 						</div>
+
 					</div>
 
-					<?php endif; ?> <!-- modal trailer button -->
+					<?php endif; ?>
+					<!-- END modal button -->
 
-				</div>
+				</div> <!-- END grid-container -->
 
-		  	</div>
+		  	</div> <!-- END cell -->
 
-		</div>
+		</div> <!-- END catalog -->
 
 	</header>
 
-	<!-- Watch Trailer MODAL -->
+	<!-- modal -->
 	<?php
 
     $videoEmbeddPlease = get_field('video_embedd');
 
     if (!empty($videoEmbeddPlease)): ?>
+
 		<div class="reveal single-cat" id="videoModal1" data-reveal data-reset-on-close="true">
 
-				<div class="embed-container">
-					<iframe width="560" height="315" src="<?php echo $videoEmbeddPlease ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<div class="embed-container">
 
-				</div>
-		  <button class="close-button" data-close aria-label="Close reveal" type="button">
-			<span aria-hidden="true">&times;</span>
-		  </button>
+				<?php echo $videoEmbeddPlease ?> 
+
+			</div>
+
+			<!-- close modal X -->
+			<button class="close-button" data-close aria-label="Close reveal" type="button">
+
+				<span aria-hidden="true">&times;</span>
+
+			</button>
+
 		</div>
+
 	<?php endif ?>
 	<!-- Watch Trailer MODAL END-->
 
-<?php endif; ?> <!-- end of featured header -->
+<?php endif; ?> <!-- END featured header -->
 
 
 <div class="grid-container">
+
 	<main class="top-meta grid-x grid-padding-y">
 
 		<?php while (have_posts()) : the_post(); ?>
 
 			<article id="post-<?php the_ID(); ?>" <?php post_class('cell medium-7 small-order-2'); ?>>
+
 				<div class="entry-content grid-container px-0 px-medium-3">
 
-					<?php 	$synopsis = get_field('synopsis');
-                            if ($synopsis):
-                                ?>
-					<div class="grid-x grid-padding-y synopsis">
-						<div class="cell medium-4 title">
-							<p>Synopsis</p>
-						</div>
-						<div class="cell medium-8">
-							<?php the_field('synopsis'); ?>
-						</div>
-			        </div>
-					<?php endif; ?>
+					<!-- START synopsis -->
+					<?php $synopsis = get_field('synopsis'); if ($synopsis): ?>
 
-					<div class="grid-x grid-padding-y">
-						<div class="cell medium-4 title">
-							<div class="grid-x">
-								<p>Credits</p>
+						<div class="grid-x grid-padding-y synopsis">
+
+							<!-- synopsis title -->
+							<div class="cell medium-4 title">
+
+								<p><?php _e('Synopsis', 'comedy-dynamics'); ?></p>
+
+							</div>
+
+							<!-- synopsis -->
+							<div class="cell medium-8">
+
+								<?php the_field('synopsis'); ?>
+
 							</div>
 
 						</div>
 
-							<div class="cell medium-8">
-			<!-- main talent -->
-								  <?php
-                                  if (get_field('talent')): ?>
-			  			            <div class="grid-x">
-			  			              <div class="cell small-4 title">
-			  			                <p>Talent</p>
-			  			              </div>
-			  			              <div class="cell small-8">
+					<?php endif; ?> <!-- END synopsis -->
 
-			  							  <p>
-			  								  <?php
-                                              $terms = get_field('talent');
-                                              $termstr = array();
-                                                  foreach ($terms as $term) {
-                                                      $termstr[] = $term->name;
-                                                  }
-                                                  echo implode(", ", $termstr);
-                                                  ?>
-			  							  </p>
+					<!-- START credits -->
+					<div class="grid-x grid-padding-y">
 
-			  			              </div>
-			  			            </div>
-			  				  <?php endif; ?>
-			<!-- directors -->
-								<?php $terms = get_field('directors');
-                                if ($terms): ?>
-						            <div class="grid-x">
-						              <div class="cell small-4 title">
-						                <p>Director(s)</p>
-						              </div>
-						              <div class="cell small-8">
+						<div class="cell medium-4 title">
 
-										  <p>
-											  <?php $termstr = array();
-                                                foreach ($terms as $term) {
-                                                    $termstr[] = $term->name;
-                                                }
-                                                echo implode(", ", $termstr);
-                                                ?>
-										  </p>
-						              </div>
-						            </div>
-							  <?php endif; ?>
-			<!-- Producers -->
-								<?php
-                                $terms = get_field('producers');
-                                    if ($terms):
-                                ?>
+							<div class="grid-x">
+
+								<p><?php _e('Credits', 'comedy-dynamics'); ?></p>
+
+							</div>
+
+						</div>
+
+						<!-- START the crew -->
+						<div class="cell medium-8">
+
+<!-- TALENT -->
+							<?php $talents = get_field('talent'); if ($talents): ?>
 
 								<div class="grid-x">
-									<div class="cell small-4 title">
-										<p>Producer(s)</p>
-									</div>
-									<div class="cell small-8">
-										<p>
 
-								  			<?php
+									<!-- talent title -->
+									<div class="cell small-4 title">
+
+										<p><?php _e('Talent', 'comedy-dynamics'); ?></p>
+
+									</div>
+
+									<!-- talent list -->
+									<div class="cell small-8">
+
+										<p>
+											<?php
+
+                                            $terms = get_field('talent');
+
                                             $termstr = array();
+
                                             foreach ($terms as $term) {
                                                 $termstr[] = $term->name;
                                             }
-                                            echo implode(", ", $termstr);
-                                            ?>
 
+                                            echo implode(", ", $termstr);
+
+                                            ?>
 										</p>
+
 									</div>
+
 								</div>
+
 							<?php endif; ?>
-						</div>
-					</div>
+
+<!-- end TALENT -->
+<!-- DIRECTORS -->
+
+							<?php $directors = get_field('directors'); if ($directors): ?>
+
+								<div class="grid-x">
+
+									<!-- directors title -->
+									<div class="cell small-4 title">
+
+										<p><?php _e('Director(s)', 'comedy-dynamics'); ?></p>
+
+									</div>
+
+									<div class="cell small-8">
+
+										<p>
+											<?php
+
+                                            $directorsstr = array();
+
+                                            foreach ($directors as $director) {
+                                                $directorsstr[] = $director->name;
+                                            }
+                                            echo implode(", ", $directorsstr);
+
+                                            ?>
+										</p>
+
+									</div>
+
+								</div>
+
+						<?php endif; ?>
+						<!-- end DIRECTORS -->
+
+						<!-- PRODUCERS -->
+						<?php $terms = get_field('producers'); if ($terms): ?>
+
+							<div class="grid-x">
+
+								<div class="cell small-4 title">
+
+									<p><?php _e('Producer(s)', 'comedy-dynamics'); ?></p>
+
+								</div>
+
+								<div class="cell small-8">
+
+									<p>
+										<?php
+
+                                        $termstr = array();
+
+                                        foreach ($terms as $term) {
+                                            $termstr[] = $term->name;
+                                        }
+                                        echo implode(", ", $termstr);
+
+                                        ?>
+
+									</p>
+
+								</div>
+
+							</div>
+							<?php endif; ?>
+							<!-- end PRODUCERS -->
+
+					</div> <!-- end CREW -->
+
 				</div>
+
+			</div>
 
 				<div class="meta-accordion catalog-bottom-meta grid-container-full pl-medium-3">
 					<div class="grid-x">
@@ -294,13 +374,13 @@ if (has_post_thumbnail($post->ID)) : ?>
 				                              </div>
 										  <?php endif; ?>
 											  <!-- rating -->
-  				                                <?php if (get_field('rt')): ?>
+  				                                <?php if (get_field('rating')): ?>
 													<div class="grid-x">
 														<div class="cell small-4 title">
 															<p class="title">Rating:</p>
 														</div>
 														<div class="cell small-8">
-															<p><?php the_field('rt')['value'] ?></p>
+															<p><?php the_field('rating')['value'] ?></p>
 														</div>
 													</div>
   				                                <?php endif ?>

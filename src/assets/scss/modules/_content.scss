@@ -14,8 +14,8 @@ main.top-meta {
   margin-top: 1rem;
 
   @include breakpoint(medium) {
-    margin-top: 3rem;
-    margin-bottom: 9rem;
+    // margin-top: 3rem;
+    // margin-bottom: 9rem;
   }
 
   &.sidebar-left {

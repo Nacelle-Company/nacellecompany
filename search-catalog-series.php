@@ -1,14 +1,17 @@
 <?php
 /**
- * The template for displaying search results pages.
+ * The template for displaying Series search results pages.
  *
  * @package FoundationPress
  * @since FoundationPress 1.0.0
  */
 
 get_header(); ?>
+
 <main class="mt-3">
+
 	<div class="grid-container full">
+
 		<div class="grid-x">
 
 			<div class="cell medium-12">
@@ -19,13 +22,13 @@ get_header(); ?>
 
 						<div class="cell small-6">
 
-							<h1 class="entry-title">Series</h1>
+							<h1 class="entry-title"> <?php _e('Series', 'comedy-dynamics'); ?> </h1>
 
 						</div>
 
 						<div class="cell small-6 text-right sorting">
 
-							<a data-toggle="searchSeriesOffCanvas">Sort & Filter</a>
+							<a data-toggle="searchSeriesOffCanvas"> <?php _e('Sort & Filter', 'comedy-dynamics'); ?> </a>
 
 						</div>
 
@@ -33,10 +36,10 @@ get_header(); ?>
 
 				</header>
 
-				<div class="grid-x small-2 medium-4 large-6 align-center-middle">
+				<div class="grid-x small-2 medium-4 large-6 align-center-middle" id="results">
 
 					<?php
-                    if (have_posts($args)) : ?>
+                    if (have_posts()) : ?>
 
 						<?php while (have_posts()) : the_post(); ?>
 
@@ -73,21 +76,7 @@ get_header(); ?>
 										</div>
 
 									</a>
-									<!-- Premiere -->
-							   				 <?php
-                                             // get raw date
-                                             $date = get_field('premiere_date', false, false);
 
-                                             // make date object
-                                             $date = new DateTime($date);
-
-                                             ?>
-							   				 <div class="grid-x">
-
-							   					 <div class="cell small-8">
-							   						 <p><?php echo $date->format('m/d/Y'); ?></p>
-							   					 </div>
-							   				 </div>
 								</div>
 
 							<?php endif; ?>
@@ -95,11 +84,15 @@ get_header(); ?>
 						<?php endwhile; ?>
 
 						<?php else : ?>
+
 							<div class="cell text-center">
-								<h3>Sorry, no results for that search.</h3>
-								<a class="button" data-toggle="searchSeriesOffCanvas">Try another search!</a>
-								<input type="submit" class="button search-filter-reset" name="_sf_reset" value="Or Reset" data-search-form-id="4737" data-sf-submit-form="auto">
+
+								<h3><?php _e('Sorry, no results for that search.', 'comedy-dynamics'); ?></h3>
+
+								<a class="button" data-toggle="searchSeriesOffCanvas"><?php _e('Try another search!', 'comedy-dynamics'); ?></a>
+
 							</div>
+
 					<?php endif; ?>
 
 				</div>
@@ -110,22 +103,32 @@ get_header(); ?>
 </main>
 
 <div class="off-canvas-wrapper">
+
 	<div class="off-canvas position-right" id="searchSeriesOffCanvas" data-off-canvas>
+
 		<div class="off-canvas-content" data-off-canvas-content>
+
 			<button class="close-button" aria-label="Close menu" type="button" data-close>
+
 			  <span aria-hidden="true">&times;</span>
+
 			</button>
-			<div class="grid-x grid-margin-y align-center-middle" style="height: 90vh;">
+
+			<div class="grid-x grid-margin-y align-center-middle oc-container">
+
 				<div class="cell align-self-middle filter-sidebar">
 
-					<?php
-                        echo '<h4 class="ml-2">Search Series</h4>';
-                        echo do_shortcode('[searchandfilter id="4737"]'); // film
-                    ?>
+					<h4 class="ml-2"><?php _e('Search Series', 'comedy-dynamics'); ?></h4>
+
+					<?php echo do_shortcode('[searchandfilter slug="series-search"]'); ?>
 
 				</div>
 			</div>
+
 		</div>
+
 	</div>
+
 </div>
+
 <?php get_footer();

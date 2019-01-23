@@ -8,7 +8,7 @@
  * @since Comedy_Dynamics 1.0.0
  */
 ?>
-<footer class="footer">
+<footer class="cell shrink footer">
     <div class="footer-container">
         <div class="footer-grid grid-x align-center-middle small-up-1 medium-up-1">
             <?php dynamic_sidebar('l-footer-widgets');?>

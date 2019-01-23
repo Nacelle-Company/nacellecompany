@@ -13,4 +13,6 @@
 		  <?php echo do_shortcode('[searchandfilter fields="search" search_placeholder="Search"]'); ?>
 </nav>
 
-<div class="off-canvas-content" data-off-canvas-content>
+<div class=" <?php if (is_page('home')) {
+    echo "grid-y medium-grid-frame";
+} ?> off-canvas-content" data-off-canvas-content>

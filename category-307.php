@@ -17,17 +17,20 @@
 
 get_header(); ?>
 
-<main class="main-grid grid-x">
-	<h1 class="hide">Distribution</h1>
-	<!-- is category distribution -->
+<main class="main-grid cell medium-auto medium-cell-block-container">
+
+	<h1 class="hide"><?php _e('Distribution', 'comedy-dynamics'); ?></h1>
+
 	<?php $count = 0; ?>
 
-	<?php if (have_posts('')) : the_post(); ?>
+	<!-- is category distribution -->
+	<?php if (have_posts('distribution')) : the_post(); ?>
 
 		<div class="cell macro-cat-cards">
-			<div class="grid-x small-up-1 medium-up-4 grid-margin-y">
-<!-- film category -->
 
+			<div class="grid-x small-up-1 medium-up-4 grid-margin-y">
+
+				<!-- film category -->
 				<?php
                 $posts = get_posts(array(
                     'meta_query' => array(
@@ -38,6 +41,7 @@ get_header(); ?>
                         )
                     )
                 )); ?>
+
 				<?php foreach ($posts as $post): setup_postdata($post); $count ++; ?>
 
 				<a class="medium-6 cell" href="<?php echo get_home_url() ?>/category/distribution/film/">

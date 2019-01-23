@@ -43,7 +43,7 @@
 	<?php get_template_part('template-parts/search-off-canvas'); ?>
 
 
-	<header class="site-header" role="banner">
+	<header class="site-header cell shrink medium-cell-block-container" role="banner">
 		<div class="site-title-bar title-bar mobile-nav" <?php comedy_dynamics_title_bar_responsive_toggle(); ?>>
 			<div class="title-bar-left grid-x align-middle">
 				<button aria-label="<?php _e('Main Menu', 'comedy-dynamics'); ?>" class="menu-icon" type="button" data-toggle="<?php comedy_dynamics_mobile_menu_id(); ?>"></button>
