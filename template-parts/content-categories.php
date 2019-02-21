@@ -1,19 +1,19 @@
 <?php
 /**
- * The template for displaying the media taxonomy archive pages
- *
- * Used to display archive-type pages if nothing more specific matches a query.
- * For example, puts together date-based pages if no date.php file exists.
- *
- * If you'd like to further customize these archive views, you may create a
- * new template file for each one. For example, tag.php (Tag archives),
- * category.php (Category archives), author.php (Author archives), etc.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package FoundationPress
- * @since FoundationPress 1.0.0
- */
+* The template for displaying the media taxonomy archive pages
+*
+* Used to display archive-type pages if nothing more specific matches a query.
+* For example, puts together date-based pages if no date.php file exists.
+*
+* If you'd like to further customize these archive views, you may create a
+* new template file for each one. For example, tag.php (Tag archives),
+* category.php (Category archives), author.php (Author archives), etc.
+*
+* @link https://codex.wordpress.org/Template_Hierarchy
+*
+* @package FoundationPress
+* @since FoundationPress 1.0.0
+*/
 ?>
 
 <div class="cell medium-12"> <!-- cell for the content -->
@@ -24,7 +24,11 @@
 
 			<div class="cell small-6">
 
-				<h1 class="entry-title"><?php single_cat_title();?></h1>
+				<h1 class="entry-title">
+
+					<?php single_cat_title();?>
+
+				</h1>
 
 			</div>
 
@@ -50,69 +54,69 @@
 
         if (have_posts($args)) : ?>
 
-			<!-- Start the Loop -->
-			<?php while (have_posts()) : the_post();?>
+		<!-- Start the Loop -->
+		<?php while (have_posts()) : the_post();?>
 
-				<!-- if the catalog item has a square image uploaded. . . -->
-				<?php
-                $image = get_field('square_image');
+			<!-- if the catalog item has a square image uploaded. . . -->
+			<?php
+            $image = get_field('square_image');
 
-                if ($image) :
-                    ?>
+            if ($image) :
+                ?>
 
-					<!-- img container -->
-					<div class="media-container cell medium-2 mb-4 mb-medium-5 mb-medium-4 mb-large-5 mb-xlarge-3">
+				<!-- img container -->
+				<div class="media-container animation-element cell medium-2 mb-4 mb-medium-5 mb-medium-4 mb-large-5 mb-xlarge-3">
 
-						<!-- if catalog item has a "Custom Page Redirect" link. . . -->
-						<?php
-                        $link = get_field('custom_page_redirect');
+					<!-- if catalog item has a "Custom Page Redirect" link. . . -->
+					<?php
+                    $link = get_field('custom_page_redirect');
 
-                        if ($link):
+                    if ($link):
 
-                            $link_url = $link['url'];
-                            ?>
+                        $link_url = $link['url'];
+                        ?>
 
-							<!-- link to the "Custom Page Redirect" page -->
-							<a href="<?php echo esc_url($link_url); ?>">
+						<!-- link to the "Custom Page Redirect" page -->
+						<a href="<?php echo esc_url($link_url); ?>">
 
-							<?php else: ?>
+						<?php else: ?>
 
-								<!-- if no "Custom Page Redirect" get the original post link -->
-								<a href="<?php the_permalink(); ?>">
+							<!-- if no "Custom Page Redirect" get the original post link -->
+							<a href="<?php the_permalink(); ?>">
 
-								<?php endif; ?>
+							<?php endif; ?>
 
-								<div class="callout callout-hover-reveal" data-callout-hover-reveal>
+							<div class="callout callout-hover-reveal" data-callout-hover-reveal>
 
-									<div class="callout-body">
+								<div class="callout-body">
 
-										<?php
-                                        $size = 'medium'; // (thumbnail, medium, large, full or custom size)
+									<?php
+                                    $size = 'medium'; // (thumbnail, medium, large, full or custom size)
 
-                                        // display the img
-                                        if ($image) {
-                                            echo wp_get_attachment_image($image, $size);
-                                        } ?>
+                                    // display the img
+                                    if ($image) {
+                                        echo wp_get_attachment_image($image, $size);
+                                    } ?>
 
-									</div>
+								</div>
 
-									<!-- img hover footer -->
-									<div class="callout-footer">
+								<!-- img hover footer -->
+								<div class="callout-footer">
 
-										<!-- display the synopsis -->
-										<p><?php $synopsis = get_field('synopsis'); echo $synopsis; ?></p>
+									<!-- display the synopsis -->
+									<p><?php $synopsis = get_field('synopsis'); echo $synopsis; ?></p>
 
-									</div> <!-- END the footer -->
+								</div> <!-- END the footer -->
 
-								</div> <!-- END the callout -->
+							</div> <!-- END the callout -->
 
-							</a> <!-- END the link, whether its a "Custom Page Redirect" or the post link -->
+						</a> <!-- END the link, whether its a "Custom Page Redirect" or the post link -->
 
-						</div> <!-- END img container -->
+					</div> <!-- END img container -->
 
-					<?php endif; ?> <!-- END if catalog item has a "Custom Page Redirect" link. . . -->
+				<?php endif; ?> <!-- END if catalog item has a "Custom Page Redirect" link. . . -->
 
-				<?php endwhile;?> <!-- END the loop -->
+			<?php endwhile;?> <!-- END the loop -->
 
 		<?php else : ?>
 
@@ -121,23 +125,5 @@
 		<?php endif; // End have_posts() check.?>
 
 	</div> 	<!-- END the cards -->
-
-	<!-- Display navigation to next/previous pages when applicable -->
-	<?php
-    if (function_exists('comedy_dynamics_pagination')) :
-
-        comedy_dynamics_pagination();
-
-    elseif (is_paged()) :
-    ?>
-		<nav id="post-nav">
-
-			<div class="post-previous"><?php next_posts_link(__('&larr; Older posts', 'comedy-dynamics')); ?></div>
-
-			<div class="post-next"><?php previous_posts_link(__('Newer posts &rarr;', 'comedy-dynamics')); ?></div>
-
-		</nav>
-
-	<?php endif; ?>
 
 </div> <!-- END of cell for the content -->

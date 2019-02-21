@@ -10,3 +10,23 @@
         }
     }
 }
+
+// snapwidget
+.snapwidget.mobile {
+  display: block;
+}
+
+.snapwidget.desktop {
+  display: none;
+}
+
+
+@include breakpoint(medium) {
+  .snapwidget.desktop {
+    display: block;
+  }
+
+  .snapwidget.mobile {
+    display: none;
+  }
+}

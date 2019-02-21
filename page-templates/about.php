@@ -7,17 +7,17 @@ get_header(); ?>
 <?php get_template_part('template-parts/featured-image'); ?>
 
 <main class="main-grid">
-	<?php while (have_posts()) : the_post(); ?>
+<?php while (have_posts()) : the_post(); ?>
 
 		<article id="post-<?php the_ID(); ?>" <?php post_class('grid-container'); ?>>
 			<header class="text-center">
-			<?php
+				<?php
                 if (is_single()) {
                     the_title('<h1 class="entry-title">', '</h1>');
                 } else {
                     the_title('<h2 class="entry-title">', '</h2>');
                 }
-            ?>
+                ?>
 			</header>
 			<div class="entry-content">
 				<div class="grid-x align-center">
@@ -25,79 +25,94 @@ get_header(); ?>
 						<?php the_content(); ?>
 					</div>
 				</div>
-		<!-- https://gist.github.com/morgyface/d8c1c4246843bf0f0c76959b68faa95f -->
+				<!-- https://gist.github.com/morgyface/d8c1c4246843bf0f0c76959b68faa95f -->
 				<?php if (have_rows('social_media', 'option')): ?>
 					<div class="grid-x social align-center">
 						<?php while (have_rows('social_media', 'option')) : the_row(); ?>
-			            <?php $socialchannel = get_sub_field('social_channel', 'option');
+							<?php $socialchannel = get_sub_field('social_channel', 'option');
                             $socialurl = get_sub_field('social_url', 'option');
                             echo '<a class="nav-link" rel="nofollow noopener noreferrer" href="' . $socialurl . '" target="_blank">';
                             echo '<i class="fab fa-' . $socialchannel . '" aria-hidden="true"></i>';
                             echo '<span class="sr-only hidden">' . ucfirst($socialchannel) . '</span>';
                             echo "</a>";
                             ?>
-			            <?php endwhile; ?>
+						<?php endwhile; ?>
 					</div>
 
-		        <?php endif; ?>
+				<?php endif; ?>
 
 				<div class="grid-x align-center">
 
-				<div class="cell">
-					<h4>On Instagram: <a href="<?php the_field('ig_feed_link');?>" target="_blank"><?php the_field('ig_feed_title'); ?></a></h4>
-				</div>
-				<div class="cell mb-3">
-					<?php if (the_field('instagram')) {
-                                the_field('instagram');
+					<div class="cell">
+						<h4>On Instagram: <a href="<?php the_field('ig_feed_link');?>" target="_blank"><?php the_field('ig_feed_title'); ?></a></h4>
+					</div>
+					<div class="cell mb-3 snapwidget mobile">
+						<?php if (the_field('instagram_mobile')) {
+                                the_field('instagram_mobile');
                             } ?>
-				</div>
-
-				<div class="cell">
-					<h4>On Twitter: <a href="<?php the_field('t_feed_link');?>" target="_blank"><?php the_field('t_feed_title'); ?></a></h4>
-				</div>
-				<div class="cell mb-3">
-					<?php if (the_field('twitter')) {
-                                the_field('twitter');
+					</div>
+					<div class="cell mb-3 snapwidget desktop">
+						<?php if (the_field('instagram_desktop')) {
+                                the_field('instagram_desktop');
                             } ?>
-				</div>
+					</div>
 
+					<!-- twitter -->
+					<div class="cell">
 
-				<div class="cell">
-					<div class="embed-container">
-					<?php
+						<h4>On Twitter: <a href="<?php the_field('t_feed_link');?>" target="_blank"><?php the_field('t_feed_title'); ?></a></h4>
 
-                    // check if the repeater field has rows of data
-                    if (have_rows('embed_content')):
+					</div>
 
-                        // loop through the rows of data
-                        while (have_rows('embed_content')) : the_row();
+					<div class="cell mb-3 snapwidget mobile">
 
-                            // display a sub field value
-                            the_sub_field('embed_content_subfield');
+						<?php if (the_field('twitter_mobile')) {
+                                the_field('twitter_mobile');
+                            } ?>
+					</div>
+					<div class="cell mb-3 snapwidget desktop">
+						<?php if (the_field('twitter_desktop')) {
+                                the_field('twitter_desktop');
+                            } ?>
+					</div>
 
-                        endwhile;
+					<!-- Embedd content -->
+					<div class="cell medium-6 mb-4">
+						<div class="embed-container">
+							<?php
 
-                    else :
+                            // check if the repeater field has rows of data
+                            if (have_rows('embed_content')):
 
-                        // no rows found
+                                // loop through the rows of data
+                                while (have_rows('embed_content')) : the_row();
 
-                    endif;
+                                // display a sub field value
+                                the_sub_field('embed_content_subfield');
 
-                    ?>
+                            endwhile;
+
+                            else :
+
+                                // no rows found
+
+                            endif;
+
+                            ?>
+						</div>
 					</div>
 				</div>
-			</div>
 
 				<?php // edit_post_link(__('(Edit)', 'comedy-dynamics'), '<span class="edit-link">', '</span>');?>
 			</div>
 			<footer>
 				<?php
-                    wp_link_pages(
-                        array(
-                            'before' => '<nav id="page-nav"><p>' . __('Pages:', 'comedy-dynamics'),
-                            'after'  => '</p></nav>',
-                        )
-                    );
+                wp_link_pages(
+                    array(
+                        'before' => '<nav id="page-nav"><p>' . __('Pages:', 'comedy-dynamics'),
+                        'after'  => '</p></nav>',
+                    )
+                );
                 ?>
 				<?php $tag = get_the_tags(); if ($tag) {
                     ?><p><?php the_tags(); ?></p><?php
@@ -107,6 +122,7 @@ get_header(); ?>
 
 		<?php comments_template(); ?>
 	<?php endwhile; ?>
+	<script src="https://snapwidget.com/js/snapwidget.js"></script>
 </main>
 
 <?php get_footer();

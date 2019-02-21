@@ -1,5 +1,6 @@
-main.top-meta {
-    // position: relative;
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 .main-container {
@@ -7,6 +8,10 @@ main.top-meta {
   @include breakpoint(medium) {
       @include xy-grid-container;
   }
+}
+
+.grid-y.medium-grid-frame {
+    z-index: 1;
 }
 
 .main-grid {
@@ -65,8 +70,9 @@ main.top-meta {
 .category-album,
 .category-special,
 .category-series, {
-     .media-container {
+     .in-view {
         // height: 325px !important;
+        @include transform(slideInFromBottom)
      }
  }
 

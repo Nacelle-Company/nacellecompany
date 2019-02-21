@@ -1,4 +1,6 @@
-
+header + main {
+    min-height: calc(100vh - 180px);
+}
 .footer-container {
   // @include xy-grid-container;
   border-top: 1px solid $medium-gray;
@@ -12,11 +14,18 @@
 .footer-grid {
   @include xy-grid;
   padding: rem-calc(15) 0;
-
+  &, .widget_custom_html i.fab {
+    @include breakpoint(medium) {
+      font-size: 80%;
+      justify-content: space-around;
+    }
+    @include breakpoint(large) {
+      font-size: 100%;
+    }
+  }
   section {
     display: flex;
     justify-content: center;
-    @include xy-cell();
     @include breakpoint(large) {
       @include xy-cell(auto);
 
@@ -68,18 +77,25 @@
   }
 }
 
+.reveal-overlay {
+    z-index: 2;
+    .reveal {
+        // mailchimp signup form
+        #mc_embed_signup {
+            background: transparent;
+            font-family: $body-font-family;
+        }
 
-// .off-canvas-content {
-//   min-height: 100%;
-//   /* equal to footer height */
-//     margin-bottom: -78px;
-// }
-// .off-canvas-content:after {
-//   content: "";
-//   display: block;
-// }
-// #footer,
-// .off-canvas-content:after {
-//   /* .push must be the same height as footer */
-//     // height: 78px;
-// }
+        #mc_embed_signup .button {
+            background: $secondary-color;
+            font-family: $body-font-family;
+        }
+
+        #mc_embed_signup .mc-field-group {
+            padding-bottom: 1%;
+        }
+        &:focus {
+            outline: $medium-gray auto 5px;
+        }
+    }
+}

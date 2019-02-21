@@ -17,92 +17,106 @@
 
 get_header(); ?>
 
-<main class="main-grid grid-x">
-	<h1 class="hide">Production</h1>
+<main class="main-grid grid-x medium-auto medium-cell-block-container">
 
+	<h1 class="hide">
+		<?php _e('Production', 'comedy-dynamics'); ?>
+	</h1>
+
+	<?php $count = 0; ?>
 <!-- is category production-->
-<?php if (have_posts('')) : the_post(); ?>
+<?php if (have_posts('production')) : the_post(); ?>
 
-			<div class="cell">
-				<div class="grid-x">
-					<div class="cell medium-6">
-						<div class="grid-x medium-12">
-							<div class="cell small-12">
-								<h2 class="text-center catalog-title special">Special</h2>
-							</div>
-							<?php
-                            $posts = get_posts(array(
-                                'meta_query' => array(
+	<div class="grid-x macro-cat-cards small-up-1 medium-up-2 large-up-2">
+
+		<div class="cell">
+
+					<?php
+                    $posts = get_posts(array(
+                            'meta_query' => array(
                                     array(
-                                        'key' => 'production_special_featured',
-                                        'compare' => '=',
-                                        'value' => '1'
+                                            'key' => 'production_special_featured',
+                                            'compare' => '=',
+                                            'value' => '1'
                                     )
-                                )
-                            )); ?>
-							<?php foreach ($posts as $post):
+                            )
+                    )); ?>
 
-                                setup_postdata($post)
+					<h2 class="text-center catalog-title special">
+						<i class="fas fa-microphone-alt"></i>
+						<?php _e('Specials', 'comedy-dynamics'); ?>
+					</h2>
 
-                                ?>
-									<a class="cell medium-6" href="<?php echo get_home_url() ?>/category/production/special-production/">
-										<?php
+					<?php foreach ($posts as $post): setup_postdata($post) ?>
 
-                                        $image = get_field('square_image');
-                                        $size = 'large'; // (thumbnail, medium, large, full or custom size)
-
-                                        if ($image) {
-                                            echo wp_get_attachment_image($image, $size);
-                                        }
-
-                                        ?>
-									</a>
-
-							<?php endforeach; ?>
-							<?php wp_reset_postdata(); ?>
+						<a class="cell cat-container" href="<?php echo get_home_url() ?>/category/production/special-production/">
 
 
-						</div>
-					</div>
-					<div class="cell medium-6">
-						<div class="grid-x medium-12">
-							<div class="cell small-12">
-								<h2 class="text-center catalog-title series">Series</h2>
+
+							<div class="img-container">
+
+								<?php
+
+                                    $image = get_field('square_image');
+                                    $size = 'large'; // (thumbnail, medium, large, full or custom size)
+
+                                    if ($image) {
+                                        echo wp_get_attachment_image($image, $size);
+                                    }
+
+                                    ?>
 							</div>
-							<?php
-                            $posts = get_posts(array(
-                                'meta_query' => array(
-                                    array(
-                                        'key' => 'production_series_featured',
-                                        'compare' => '=',
-                                        'value' => '1'
-                                    )
-                                )
-                            )); ?>
-							<?php foreach ($posts as $post):
+						</a>
+					<?php endforeach; ?>
+					<?php wp_reset_postdata(); ?>
 
-                                setup_postdata($post)
-
-                                ?>
-									<a class="cell medium-6" href="<?php echo get_home_url() ?>/category/production/series-production/">
-										<?php
-
-                                        $image = get_field('square_image');
-                                        $size = 'large'; // (thumbnail, medium, large, full or custom size)
-
-                                        if ($image) {
-                                            echo wp_get_attachment_image($image, $size);
-                                        }
-
-                                        ?>
-									</a>
-
-							<?php endforeach; ?>
-							<?php wp_reset_postdata(); ?>
-						</div>
-					</div>
 				</div>
-			</div>
+
+
+					<!-- series category -->
+				<div class="cell">
+
+					<?php
+                    $posts = get_posts(array(
+                            'meta_query' => array(
+                                    array(
+                                            'key' => 'production_series_featured',
+                                            'compare' => '=',
+                                            'value' => '1'
+                                    )
+                            )
+                    )); ?>
+
+										<h2 class="text-center catalog-title series">
+											<i class="fas fa-video"></i>
+											<?php _e('Series', 'comedy-dynamics'); ?>
+										</h2>
+
+					<?php foreach ($posts as $post): setup_postdata($post); ?>
+
+							<a class="cell cat-container" href="<?php echo get_home_url() ?>/category/production/series-production/">
+
+								<div class="img-container">
+
+								<?php
+
+                                $image = get_field('square_image');
+                                $size = 'large'; // (thumbnail, medium, large, full or custom size)
+
+                                if ($image) {
+                                    echo wp_get_attachment_image($image, $size);
+                                }
+
+                                ?>
+									</div>
+								</a>
+
+					<?php endforeach; ?>
+					<?php wp_reset_postdata(); ?>
+				</div>
+
+	</div>
+
 
 
 <?php else : ?>

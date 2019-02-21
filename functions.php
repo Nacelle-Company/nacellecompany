@@ -165,3 +165,30 @@ function Comedy_Dynamics_cpt_order($orderby)
 
     return $orderby;
 }
+
+// add body class to body
+function wp_body_classes($classes)
+{
+    if (is_page_template('page-templates/front.php')) {
+        $classes[] = 'medium-grid-frame grid-y';
+    }
+    return $classes;
+}
+add_filter('body_class', 'wp_body_classes');
+
+
+add_filter(‘wpseo_metadesc’, ‘show_event_description’, 10, 1);
+
+function show_event_description($str)
+{
+
+    // e.g. only Single 'Event' page
+    if (is_singular('catalog')) {
+        $str = '';
+
+        $content = get_field('synopsis');
+
+        $str = sanitize_text_field(mb_substr($content, 0, 300, 'UTF-8'));
+    }
+    return $str;
+}

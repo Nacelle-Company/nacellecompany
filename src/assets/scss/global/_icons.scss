@@ -1,29 +1,30 @@
 .catalog-title {
     color: $white;
     text-transform: uppercase;
-    &::before {
-        content: '';
-        display: inline-flex;
-        width: 30px;
-        height: 25px;
-        padding-right: 3rem;
+    .fas {
+        margin: 0 0.3em;
+        color: $success-color;
     }
-    &.film::before {
-        background: url(http://localhost:3000/comedydynamics/wp-content/themes/comedy-dynamics/dist/assets/images/film.svg) no-repeat center;
-    }
-    &.album::before {
-        background: url(http://localhost:3000/comedydynamics/wp-content/themes/comedy-dynamics/dist/assets/images/album.svg) no-repeat center;
-    }
-    &.special::before {
-        background: url(http://localhost:3000/comedydynamics/wp-content/themes/comedy-dynamics/dist/assets/images/special.svg) no-repeat center;
-    }
-    &.series::before {
-        background: url(http://localhost:3000/comedydynamics/wp-content/themes/comedy-dynamics/dist/assets/images/series.svg) no-repeat center;
-    }
+}
+
+// catalog pagination
+.cell.pagination .fas,
+.cell.pagination .fas {
+    font-size: 2.5em;
+    line-height: 0.4;
+}
+
+// desktop pagination
+.no-mobile .pagination {
+    display: flex;
+    flex-direction: column-reverse;
 }
 
 .social a.nav-link {
     color: $success-color;
-    font-size: 30px;
+    font-size: 23px;
     padding: 1rem;
+    @include breakpoint(medium) {
+      font-size: 30px;
+    }
 }

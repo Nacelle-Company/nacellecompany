@@ -19,7 +19,9 @@ get_header(); ?>
 
 <main class="main-grid cell medium-auto medium-cell-block-container">
 
-	<h1 class="hide"><?php _e('Distribution', 'comedy-dynamics'); ?></h1>
+	<h1 class="hide">
+		<?php _e('Distribution', 'comedy-dynamics'); ?>
+	</h1>
 
 	<?php $count = 0; ?>
 
@@ -28,7 +30,7 @@ get_header(); ?>
 
 		<div class="cell macro-cat-cards">
 
-			<div class="grid-x small-up-1 medium-up-4 grid-margin-y">
+			<div class="grid-x small-up-2 medium-up-2 large-up-4 grid-margin-y">
 
 				<!-- film category -->
 				<?php
@@ -44,22 +46,30 @@ get_header(); ?>
 
 				<?php foreach ($posts as $post): setup_postdata($post); $count ++; ?>
 
-				<a class="medium-6 cell" href="<?php echo get_home_url() ?>/category/distribution/film/">
-					<h2 class="text-center catalog-title film">Films</h2>
-					<?php
+				<a class="cell cat-container" href="<?php echo get_home_url() ?>/category/distribution/film/">
 
-                    $image = get_field('square_image');
-                    $size = 'large'; // (thumbnail, medium, large, full or custom size)
+					<h2 class="text-center catalog-title film">
+						<i class="fas fa-film"></i>
+						<?php _e('Films', 'comedy-dynamics'); ?>
+					</h2>
 
-                    if ($image) {
-                        echo wp_get_attachment_image($image, $size);
-                    }
+					<div class="img-container">
 
-                    ?>
+						<?php
+
+                        $image = get_field('square_image');
+                        $size = 'large'; // (thumbnail, medium, large, full or custom size)
+
+                        if ($image) {
+                            echo wp_get_attachment_image($image, $size);
+                        }
+
+                        ?>
+					</div>
 				</a>
 				<?php if ($count === 1) {
-                        break;
-                    } ?>
+                            break;
+                        } ?>
 				<?php endforeach; ?>
 				<?php wp_reset_postdata(); ?>
 
@@ -74,24 +84,33 @@ get_header(); ?>
                         )
                     )
                 )); ?>
+
 				<?php foreach ($posts as $post): setup_postdata($post); $count ++; ?>
 
-					<a class="medium-6 cell" href="<?php echo get_home_url() ?>/category/distribution/album/">
-						<h2 class="text-center catalog-title album">Albums</h2>
-						<?php
+					<a class="cell cat-container" href="<?php echo get_home_url() ?>/category/distribution/album/">
 
-                        $image = get_field('square_image');
-                        $size = 'large'; // (thumbnail, medium, large, full or custom size)
+						<h2 class="text-center catalog-title album">
+							<i class="fas fa-compact-disc"></i>
+							<?php _e('Albums', 'comedy-dynamics'); ?>
+						</h2>
 
-                        if ($image) {
-                            echo wp_get_attachment_image($image, $size);
-                        }
+						<div class="img-container">
 
-                        ?>
+							<?php
+
+                            $image = get_field('square_image');
+                            $size = 'large'; // (thumbnail, medium, large, full or custom size)
+
+                            if ($image) {
+                                echo wp_get_attachment_image($image, $size);
+                            }
+
+                            ?>
+						</div>
 					</a>
 					<?php if ($count === 1) {
-                            break;
-                        } ?>
+                                break;
+                            } ?>
 				<?php endforeach; ?>
 				<?php wp_reset_postdata(); ?>
 
@@ -109,22 +128,29 @@ get_header(); ?>
                 )); ?>
 				<?php foreach ($posts as $post): setup_postdata($post); $count ++; ?>
 
-					<a class="medium-6 cell" href="<?php echo get_home_url() ?>/category/distribution/special/">
-						<h2 class="text-center catalog-title special">Specials</h2>
-						<?php
+					<a class="cell cat-container" href="<?php echo get_home_url() ?>/category/distribution/special/">
 
-                        $image = get_field('square_image');
-                        $size = 'large'; // (thumbnail, medium, large, full or custom size)
+						<h2 class="text-center catalog-title special">
+							<i class="fas fa-microphone-alt"></i>
+							<?php _e('Specials', 'comedy-dynamics'); ?>
+						</h2>
 
-                        if ($image) {
-                            echo wp_get_attachment_image($image, $size);
-                        }
+						<div class="img-container">
+							<?php
 
-                        ?>
+                            $image = get_field('square_image');
+                            $size = 'large'; // (thumbnail, medium, large, full or custom size)
+
+                            if ($image) {
+                                echo wp_get_attachment_image($image, $size);
+                            }
+
+                            ?>
+						</div>
 					</a>
 					<?php if ($count === 1) {
-                            break;
-                        } ?>
+                                break;
+                            } ?>
 				<?php endforeach; ?>
 				<?php wp_reset_postdata(); ?>
 
@@ -142,22 +168,29 @@ get_header(); ?>
                 )); ?>
 				<?php foreach ($posts as $post): setup_postdata($post); $count ++; ?>
 
-					<a class="medium-6 cell" href="<?php echo get_home_url() ?>/category/distribution/series/">
-						<h2 class="text-center catalog-title series">Series</h2>
-						<?php
+					<a class="cell cat-container" href="<?php echo get_home_url() ?>/category/distribution/series/">
 
-                        $image = get_field('square_image');
-                        $size = 'large'; // (thumbnail, medium, large, full or custom size)
+						<h2 class="text-center catalog-title series">
+							<i class="fas fa-video"></i>
+							<?php _e('Series', 'comedy-dynamics'); ?>
+						</h2>
 
-                        if ($image) {
-                            echo wp_get_attachment_image($image, $size);
-                        }
+						<div class="img-container">
+							<?php
 
-                        ?>
+                            $image = get_field('square_image');
+                            $size = 'large'; // (thumbnail, medium, large, full or custom size)
+
+                            if ($image) {
+                                echo wp_get_attachment_image($image, $size);
+                            }
+
+                            ?>
+						</div>
 					</a>
 					<?php if ($count === 1) {
-                            break;
-                        } ?>
+                                break;
+                            } ?>
 
 				<?php endforeach; ?>
 

@@ -67,12 +67,12 @@ header.featured-hero {
 // album/dvd/ cover
 .feat {
 
-    z-index: 9;
+    // z-index: 9;
     @include breakpoint(medium) {
-        margin-top: rem-calc(-100);
+        margin-top: -60px;
     }
     @include breakpoint(xlarge) {
-        margin-top: rem-calc(-150);
+        margin-top: -70px;
     }
     .wp-post-image {
         box-shadow: $thumbnail-shadow;

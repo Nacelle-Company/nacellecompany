@@ -144,7 +144,7 @@ $header-margin-bottom: 0.5rem;
 $header-styles: (
   small: (
     'h1': ('font-size': 28),
-    'h2': ('font-size': 30),
+    'h2': ('font-size': 25),
     'h3': ('font-size': 19),
     'h4': ('font-size': 18),
     'h5': ('font-size': 17),
@@ -152,7 +152,7 @@ $header-styles: (
   ),
   medium: (
     'h1': ('font-size': 35),
-    'h2': ('font-size': 27),
+    'h2': ('font-size': 30),
     'h3': ('font-size': 31),
     'h4': ('font-size': 20),
     'h5': ('font-size': 13),
@@ -874,3 +874,24 @@ $grid-padding-gutters: $grid-margin-gutters;
 $grid-container-padding: $grid-padding-gutters;
 $grid-container-max: $global-width;
 $xy-block-grid-max: 8;
+
+
+// mixins
+@mixin nothover {
+    transition: all .2s ease-in-out;
+    box-shadow: 3px 2px 2px #0a0a0a6b;
+}
+
+@mixin hover {
+    box-shadow: 2px 4px 21px #0a0a0a;
+    transform: scale(1.01);
+}
+
+// hover without Shadow
+@mixin nothoverNS {
+    transition: all .2s ease-in-out;
+}
+
+@mixin hoverNS {
+    transform: scale(1.06);
+}

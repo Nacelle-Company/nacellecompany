@@ -10,3 +10,22 @@
   80% { transform: scale(0.95) }
   100% { transform: scale(0.85) }
 }
+
+// https://codepen.io/davidvdbor/pen/KazXow
+@mixin transform($animation) {
+  animation: 1s ease-out 0s 1 $animation;
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(60%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+// @import "compass/css3";

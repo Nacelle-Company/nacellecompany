@@ -23,19 +23,16 @@ get_header(); ?>
 							<div class="grid-x align-center grid-padding-y icons-container">
 
 								<a class="bounce button success" href="<?php the_field('feat_trailer_embed'); ?>" target="_blank">
-									Watch Trailer
+									<?php _e('Watch Trailer', 'comedy-dynamics'); ?>
 								</a>
-								<!-- <button class="bounce button success" data-open="videoModal1">
-									<i class="far fa-play-circle"></i>Watch Trailer
-								</button> -->
 								<?php
 
-                                $imdb = get_field('imdb');
-                                $instagram = get_field('instagram');
-                                $twitter = get_field('twitter');
-                                $facebook = get_field('facebook');
+                $imdb = get_field('imdb');
+                $instagram = get_field('instagram');
+                $twitter = get_field('twitter');
+                $facebook = get_field('facebook');
 
-                                ?>
+                ?>
 								<?php if ($imdb) : ?>
 									<a class="text-center" href="<?php echo $imdb; ?>" target="_blank">
 										<i class="fab fa-imdb"></i>

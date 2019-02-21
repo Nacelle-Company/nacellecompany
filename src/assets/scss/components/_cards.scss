@@ -23,12 +23,23 @@
 // main category cards
 .macro-cat-cards {
     a {
-        .catalog-title + img {
-            box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.5);
-            transition: box-shadow .2s ease;
+        .catalog-title {
+            @include nothoverNS;
         }
-        &:hover .catalog-title + img {
-            box-shadow: 0 1px 1px 0 rgba(0,0,0,0.5);
+        .img-container {
+            padding: 0.25em;
+            img {
+                border-radius: $callout-radius;
+                @include nothover;
+            }
+        }
+        &:hover {
+            img {
+                @include hover;
+            }
+            .catalog-title {
+                @include hoverNS;
+            }
         }
     }
 }
