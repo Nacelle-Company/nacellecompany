@@ -33,79 +33,80 @@
 
 
 .home {
-  .orbit-posts {
-    @include breakpoint(medium) {
-      top: 30vh;
-      position: absolute;
-      width: 100%;
-    }
-    @include breakpoint(large) {
-      top: 50vh;
-    }
-    @include breakpoint(xlarge) {
-      top: 41vh;
-    }
-  }
-
-  .circle-container {
-    @include breakpoint ( medium ) {
-      @include on-circle($item-count: 8, $circle-size: 65vw, $item-size: 18vw);
-      margin: 10vh auto 4vw auto;
-    }
-    @include breakpoint ( large ) {
-
-    }
-    @include breakpoint ( xlarge ) {
-
-    }
-    @include breakpoint ( xxlarge ) {
-      @include on-circle($item-count: 8, $circle-size: 56vw, $item-size: 15vw);
-      margin: 16vh auto 4vw auto;
-    }
-  }
-
-
+  // .orbit-posts {
+  //   @include breakpoint(medium) {
+  //     top: 30vh;
+  //     position: absolute;
+  //     width: 100%;
+  //   }
+  //   @include breakpoint(large) {
+  //     top: 50vh;
+  //   }
+  //   @include breakpoint(xlarge) {
+  //     top: 41vh;
+  //   }
+  // }
+  //
+  // .circle-container {
+  //   @include breakpoint ( medium ) {
+  //     @include on-circle($item-count: 8, $circle-size: 65vw, $item-size: 18vw);
+  //     margin: 10vh auto 4vw auto;
+  //   }
+  //   @include breakpoint ( large ) {
+  //
+  //   }
+  //   @include breakpoint ( xlarge ) {
+  //
+  //   }
+  //   @include breakpoint ( xxlarge ) {
+  //     @include on-circle($item-count: 8, $circle-size: 56vw, $item-size: 15vw);
+  //     margin: 16vh auto 4vw auto;
+  //   }
+  // }
 
 
 
 
-    .medium-cell-block-container > .grid-x {
-        flex-wrap: wrap;
-    }
-    .img-container {
-        padding: 0.25em;
-        @include breakpoint(large) {
-          width: 36.33333%;
-          margin-left: 13.66667%;
-        }
-        &:nth-child(even) {
-            margin: 0;
-        }
-        img {
-            border-radius: $callout-radius;
-            @include nothover;
-        }
-        &:hover img {
-            @include hover;
-        }
-    }
-    footer {
-      position: relative;
-    }
+
+
+    // .medium-cell-block-container > .grid-x {
+    //     flex-wrap: wrap;
+    // }
+    // .img-container {
+    //     padding: 0.25em;
+    //     @include breakpoint(large) {
+    //       width: 36.33333%;
+    //       margin-left: 13.66667%;
+    //     }
+    //     &:nth-child(even) {
+    //         margin: 0;
+    //     }
+    //     img {
+    //         border-radius: $callout-radius;
+    //         @include nothover;
+    //     }
+    //     &:hover img {
+    //         @include hover;
+    //     }
+    // }
+    // footer {
+    //   position: relative;
+    // }
 }
 
-.circle-posts {
-  .cell {
-    display: flex;
-    flex-direction: column-reverse;
-    @include breakpoint(medium) {
-      display: block;
-    }
-  }
-}
+// .circle-posts {
+//   .cell {
+//     display: flex;
+//     flex-direction: column-reverse;
+//     @include breakpoint(medium) {
+//       display: block;
+//     }
+//   }
+// }
 
 // carousel
-.orbit-container {
+.orbit-container,
+.home-image {
   box-shadow: $thumbnail-shadow;
   animation-name: slideintop;
   animation-duration: 3s;
@@ -113,24 +114,41 @@
     border-radius: 4px;
   }
 }
-
-
-.circle-container {
-  margin-left: 0;
-
-  img {
-    display: block;
-    max-width: 100%;
-    border-radius: 4px;
-    transition: .15s;
-    box-shadow: $thumbnail-shadow;
-    animation-name: slideintop;
-    animation-duration: 2s;
-    &:hover {
-      filter: grayscale(0);
-    }
+.home-image {
+  &:first-child {
+    margin-bottom: 0.5em;
+  }
+    &:last-child {
+    margin-top: 0.5em;
   }
 }
+.orbit-slide img,
+.home-image img {
+    transform: scale(1);
+    transition: 0.4s;
+}
+.orbit-slide a:hover img,
+.home-image a:hover img {
+    transform: scale(1.03);
+    border-radius: 4px;
+}
+
+// .circle-container {
+//   margin-left: 0;
+//
+//   img {
+//     display: block;
+//     max-width: 100%;
+//     border-radius: 4px;
+//     transition: .15s;
+//     box-shadow: $thumbnail-shadow;
+//     animation-name: slideintop;
+//     animation-duration: 2s;
+//     &:hover {
+//       filter: grayscale(0);
+//     }
+//   }
+// }
 
 @keyframes slideintop {
   0% {
@@ -141,4 +159,22 @@
     transform: translateY(0);
     opacity: 1;
   }
+}
+
+
+main.main {
+    display: flex;
+    align-items: center;
+}
+
+.first-home-images,
+.orbit,
+.last-home-images {
+    @include breakpoint(medium) {
+      flex: 0 1 33.33%;
+    }
+}
+
+.orbit-container {
+    height: auto;
 }

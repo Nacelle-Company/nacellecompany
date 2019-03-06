@@ -127,6 +127,13 @@ html, body {
 
     .archive-title {
         text-transform: uppercase;
+        h4 p,
+        h4 strong {
+          text-align: left !important;
+          font-weight: 400 !important;
+          margin-bottom: 0 !important;
+          line-height: inherit !important;
+        }
         @include breakpoint(medium) {
             padding-left: 1rem;
         }
