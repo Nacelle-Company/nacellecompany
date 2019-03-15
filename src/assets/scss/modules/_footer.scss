@@ -50,6 +50,12 @@ header + main {
         a {
             color: $dark-gray;
             padding: 0.7rem 0.5rem;
+            @include breakpoint(medium) {
+              padding: 0
+            }
+            @include breakpoint(large) {
+              padding: 0.7rem 0.5rem;
+            }
         }
     }
     .footer-grid section section:last-child {

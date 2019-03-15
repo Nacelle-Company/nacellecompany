@@ -1,0 +1,34 @@
+.feed-container {
+    border-bottom: 1px solid $light-gray;
+
+    .archive-title {
+        text-transform: uppercase;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        h4 p,
+        h4 strong {
+          text-align: left !important;
+          font-weight: 400 !important;
+          margin-bottom: 0 !important;
+          line-height: inherit !important;
+          color: $primary-color;
+        }
+        @include breakpoint(medium) {
+            padding-left: 1rem;
+        }
+    }
+    footer {
+      align-items: flex-end;
+
+      .date p {
+        margin-bottom: 0;
+        line-height: 1;
+      }
+    }
+
+    .mic img {
+        width: 20px;
+        @include transform(slideInFromBottom);
+    }
+}

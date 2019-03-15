@@ -20,11 +20,33 @@
     flex-direction: column-reverse;
 }
 
-.social a.nav-link {
-    color: $success-color;
-    font-size: 23px;
-    padding: 1rem;
+
+// social icons main part of page
+.entry-content {
+  .grid-x.social {
+    margin-bottom: 1rem;
+  }
+  .social a.nav-link {
+      color: $success-color;
+      font-size: 23px;
+      padding: 1rem .25rem;
     @include breakpoint(medium) {
-      font-size: 30px;
+        font-size: 30px;
+      }
+  }
+}
+
+// social icons footer
+footer .social {
+
+  a {
+    @include breakpoint(medium) {
+      width: 1rem;
     }
+  }
+  svg {
+    width: 1rem;
+    height: 1rem;
+    height: auto;
+  }
 }

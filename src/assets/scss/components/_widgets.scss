@@ -1,5 +1,13 @@
-.sidebar h3 {
+.sidebar {
+  h3 {
     font-weight: 600;
+  }
+  i.fas + a,
+  i.fas + p {
+  	font-size: .85rem;
+  	display: inline-flex;
+  	padding-left: 0.5rem;
+  }
 }
 
 .sya_container ul { list-style: none; }

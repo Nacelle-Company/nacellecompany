@@ -22,6 +22,9 @@
 
 // main category cards
 .macro-cat-cards {
+  h2 {
+    	font-family: Montserrat,Helvetica,sans-serif
+    }
     a {
         .catalog-title {
             @include nothoverNS;

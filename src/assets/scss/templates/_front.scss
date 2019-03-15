@@ -1,108 +1,16 @@
 
-// circle mixin
-@mixin on-circle($item-count, $circle-size, $item-size) {
-  position: relative;
-  width:  $circle-size;
-  height: $circle-size;
-  border-radius: 50%;
-  padding: 0;
-  list-style: none;
-
-  > * {
-    display: block;
-    position: absolute;
-    top:  50%;
-    left: 50%;
-    margin: -($item-size / 2);
-    width:  $item-size;
-    height: $item-size;
-
-    $angle: (-340 / $item-count);
-    $rot: -5;
-
-    @for $i from 1 through $item-count {
-      &:nth-of-type(#{$i}) {
-        transform: rotate($rot * 1deg) translate($circle-size / 2) rotate($rot * -1deg);
-      }
-
-      $rot: $rot + $angle;
-    }
+.home {
+  .medium-grid-frame {
+    height: calc(100vh - 17vh);
   }
 }
 
-
-
-.home {
-  // .orbit-posts {
-  //   @include breakpoint(medium) {
-  //     top: 30vh;
-  //     position: absolute;
-  //     width: 100%;
-  //   }
-  //   @include breakpoint(large) {
-  //     top: 50vh;
-  //   }
-  //   @include breakpoint(xlarge) {
-  //     top: 41vh;
-  //   }
-  // }
-  //
-  // .circle-container {
-  //   @include breakpoint ( medium ) {
-  //     @include on-circle($item-count: 8, $circle-size: 65vw, $item-size: 18vw);
-  //     margin: 10vh auto 4vw auto;
-  //   }
-  //   @include breakpoint ( large ) {
-  //
-  //   }
-  //   @include breakpoint ( xlarge ) {
-  //
-  //   }
-  //   @include breakpoint ( xxlarge ) {
-  //     @include on-circle($item-count: 8, $circle-size: 56vw, $item-size: 15vw);
-  //     margin: 16vh auto 4vw auto;
-  //   }
-  // }
-
-
-
-
-
-
-    // .medium-cell-block-container > .grid-x {
-    //     flex-wrap: wrap;
-    // }
-    // .img-container {
-    //     padding: 0.25em;
-    //     @include breakpoint(large) {
-    //       width: 36.33333%;
-    //       margin-left: 13.66667%;
-    //     }
-    //     &:nth-child(even) {
-    //         margin: 0;
-    //     }
-    //     img {
-    //         border-radius: $callout-radius;
-    //         @include nothover;
-    //     }
-    //     &:hover img {
-    //         @include hover;
-    //     }
-    // }
-    // footer {
-    //   position: relative;
-    // }
+.tagline {
+  margin: 2.5rem 0 2rem 0;
+  h2 {
+    font-size: 2.5rem;
+  }
 }
-
-// .circle-posts {
-//   .cell {
-//     display: flex;
-//     flex-direction: column-reverse;
-//     @include breakpoint(medium) {
-//       display: block;
-//     }
-//   }
-// }
 
 // carousel
 .orbit-container,
@@ -132,23 +40,6 @@
     transform: scale(1.03);
     border-radius: 4px;
 }
-
-// .circle-container {
-//   margin-left: 0;
-//
-//   img {
-//     display: block;
-//     max-width: 100%;
-//     border-radius: 4px;
-//     transition: .15s;
-//     box-shadow: $thumbnail-shadow;
-//     animation-name: slideintop;
-//     animation-duration: 2s;
-//     &:hover {
-//       filter: grayscale(0);
-//     }
-//   }
-// }
 
 @keyframes slideintop {
   0% {

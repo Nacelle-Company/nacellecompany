@@ -27,5 +27,7 @@
   }
 }
 
-
+.slideInFromBottom {
+  @include transform(slideInFromBottom);
+}
 // @import "compass/css3";

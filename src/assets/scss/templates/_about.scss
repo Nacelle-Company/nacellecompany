@@ -1,0 +1,7 @@
+.extra-content iframe {
+  max-height: none;
+  margin-bottom: 1em;
+  @include breakpoint(large) {
+    max-height: 42vw;
+  }
+}

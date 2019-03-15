@@ -86,7 +86,7 @@ $white: #E2E4E4;
 $body-background: #2c2c2c;
 $footer-background: #D39A00;
 $body-font-color: $white;
-$body-font-family: 'Montserrat', sans-serif;
+$body-font-family: 'MontserratRegular', sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;
@@ -134,7 +134,7 @@ $block-grid-max: 8;
 // 4. Base Typography
 // ------------------
 
-$header-font-family: $body-font-family;
+$header-font-family: "MontserratBold", Helvetica, sans-serif;
 $header-font-weight: $global-weight-normal;
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
@@ -841,8 +841,8 @@ $titlebar-icon-spacing: 0.25rem;
 $has-tip-cursor: help;
 $has-tip-font-weight: $global-weight-bold;
 $has-tip-border-bottom: dotted 1px $dark-gray;
-$tooltip-background-color: $black;
-$tooltip-color: $white;
+$tooltip-background-color: $primary-color;
+$tooltip-color: $black;
 $tooltip-padding: 0.75rem;
 $tooltip-max-width: 10rem;
 $tooltip-font-size: $small-font-size;
