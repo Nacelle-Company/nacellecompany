@@ -11,8 +11,8 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package Comedy_Dynamics
- * @since Comedy_Dynamics 1.0.0
+ * @package Nacelle
+ * @since Nacelle 1.0.0
  */
 
 get_header(); ?>

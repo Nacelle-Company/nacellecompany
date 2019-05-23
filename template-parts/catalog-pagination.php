@@ -5,8 +5,8 @@
  *
  * Used on content-catalog.php
  *
- * @package Comedy_Dynamics
- * @since Comedy_Dynamics 1.0.0
+ * @package Nacelle
+ * @since Nacelle 1.0.0
  */
 
 // http://www.ambrosite.com/plugins/next-previous-post-link-plus-for-wordpress#faq

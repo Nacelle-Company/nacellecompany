@@ -2,11 +2,11 @@
 /**
  * Comedy Dynamics Comments
  *
- * @package Comedy_Dynamics
+ * @package Nacelle
  */
 
-if ( ! class_exists( 'Comedy_Dynamics_Comments' ) ) :
-	class Comedy_Dynamics_Comments extends Walker_Comment {
+if ( ! class_exists( 'Nacelle_Comments' ) ) :
+	class Nacelle_Comments extends Walker_Comment {
 
 		// Init classwide variables.
 		public $tree_type = 'comment';

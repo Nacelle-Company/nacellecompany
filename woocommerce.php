@@ -4,8 +4,8 @@
  * For an alternative integration method see WC docs
  * http://docs.woothemes.com/document/third-party-custom-theme-compatibility/
  *
- * @package Comedy_Dynamics
- * @since Comedy_Dynamics 1.0.0
+ * @package Nacelle
+ * @since Nacelle 1.0.0
  */
 
 get_header(); ?>

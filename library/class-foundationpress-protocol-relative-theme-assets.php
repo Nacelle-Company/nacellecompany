@@ -2,12 +2,12 @@
 /**
  * Protocol Relative Theme Assets
  *
- * @package Comedy_Dynamics
- * @since Comedy_Dynamics 1.1.0
+ * @package Nacelle
+ * @since Nacelle 1.1.0
  */
 
-if ( ! class_exists( 'Comedy_Dynamics_Protocol_Relative_Theme_Assets' ) ) :
-	class Comedy_Dynamics_Protocol_Relative_Theme_Assets {
+if ( ! class_exists( 'Nacelle_Protocol_Relative_Theme_Assets' ) ) :
+	class Nacelle_Protocol_Relative_Theme_Assets {
 		/**
 		 * Plugin URI: https://github.com/ryanjbonnell/Protocol-Relative-Theme-Assets
 		 * Description: Transforms enqueued CSS and JavaScript theme URLs to use protocol-relative paths.
@@ -86,5 +86,5 @@ if ( ! class_exists( 'Comedy_Dynamics_Protocol_Relative_Theme_Assets' ) ) :
 		}
 	}
 
-	$comedy_dynamics_protocol_relative_theme_assets = new Comedy_Dynamics_Protocol_Relative_Theme_Assets;
+	$Nacelle_protocol_relative_theme_assets = new Nacelle_Protocol_Relative_Theme_Assets;
 endif;

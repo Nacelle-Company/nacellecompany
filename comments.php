@@ -5,8 +5,8 @@
  * The area of the page that contains both current comments
  * and the comment form.
  *
- * @package Comedy_Dynamics
- * @since Comedy_Dynamics 1.0.0
+ * @package Nacelle
+ * @since Nacelle 1.0.0
  */
 
 if ( have_comments() ) :
@@ -16,7 +16,7 @@ if ( have_comments() ) :
 
 		wp_list_comments(
 			array(
-				'walker'            => new Comedy_Dynamics_Comments(),
+				'walker'            => new Nacelle_Comments(),
 				'max_depth'         => '',
 				'style'             => 'ol',
 				'callback'          => null,
@@ -37,7 +37,7 @@ if ( have_comments() ) :
 
 		?>
 		<?php
-			comedy_dynamics_the_comments_pagination();
+			Nacelle_the_comments_pagination();
 	 	?>
 	</section>
 <?php

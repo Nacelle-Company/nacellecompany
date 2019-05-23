@@ -39,14 +39,5 @@
 // social icons footer
 footer .social {
 
-  a {
-    @include breakpoint(medium) {
-      width: 1rem;
-    }
-  }
-  svg {
-    width: 1rem;
-    height: 1rem;
-    height: auto;
-  }
+
 }

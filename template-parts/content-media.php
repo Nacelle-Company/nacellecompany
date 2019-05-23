@@ -4,8 +4,8 @@
  *
  * Used for both single and index/archive/search.
  *
- * @package Comedy_Dynamics
- * @since Comedy_Dynamics 1.0.0
+ * @package Nacelle
+ * @since Nacelle 1.0.0
  */
 
 ?>
@@ -19,7 +19,7 @@
         //     the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
         }
     ?>
-		<?php //comedy_dynamics_entry_meta();?>
+		<?php //Nacelle_entry_meta();?>
 	</header>
 	<div class="entry-content">
 

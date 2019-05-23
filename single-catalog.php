@@ -3,8 +3,8 @@
 /**
  * The template for displaying all category posts
  *
- * @package Comedy_Dynamics
- * @since Comedy_Dynamics 1.0.0
+ * @package Nacelle
+ * @since Nacelle 1.0.0
  */
 
 get_header(); ?>
@@ -27,8 +27,17 @@ get_header(); ?>
     $genres = get_the_terms($post->ID, 'genre');
     $videoEmbeddPlease = get_field('video_embedd');
     $videoEmbedd = get_field('video_embedd');
+	$ticketsButtonTitle = get_field('tickets_button_title');
+	$titleColor = get_field('title_color');
+
 
     ?>
+
+<style media="screen">
+	.entry-title {
+		color: <?php echo $titleColor; ?>;
+	}
+</style>
 
 <header style="background:transparent;" class="catalog featured-hero grid-container fluid">
 
@@ -54,32 +63,40 @@ get_header(); ?>
 
 				</div>
 
-				<!-- modal button -->
-				<?php if (!empty($videoEmbedd)): ?>
-
 				<div class="grid-x align-middle">
 
 					<div class="cell medium-5 grid-offset-5">
 
-						<div class="play grid-x align-start">
+							<div class="play grid-x align-start">
 
-							<div class="cell">
+								<!-- modal button -->
+								<?php if (!empty($videoEmbedd)): ?>
 
-								<button class="bounce hollow button success" data-open="videoModal1">
+								<div class="cell medium-4">
 
-									<i class="far fa-play-circle"></i>Watch Trailer
+									<button class="bounce hollow button success" data-open="videoModal1">
 
-								</button>
+										<i class="far fa-play-circle"></i>Watch Trailer
 
-							</div>
+									</button>
+
+								</div>
+
+								<?php endif; ?>
+								<!-- END modal button -->
+
+							<?php if (!empty($ticketsButtonTitle)): ?>
+
+								<!-- include tickets modal -->
+								<?php get_template_part('template-parts/tickets-modal', 'none'); ?>
+
+							<?php endif; ?>
 
 						</div>
 
 					</div>
 
 				</div>
-				<?php endif; ?>
-				<!-- END modal button -->
 
 			</div> <!-- END grid-container -->
 
@@ -97,9 +114,6 @@ get_header(); ?>
 
 				<div class="entry-content grid-container px-0 px-medium-3">
 
-					<!-- START synopsis -->
-					<?php if ($synopsis): ?>
-
 						<div class="grid-x grid-padding-y synopsis">
 
 							<!-- synopsis title -->
@@ -112,13 +126,13 @@ get_header(); ?>
 							<!-- synopsis -->
 							<div class="cell medium-8">
 
-								<?php the_field('synopsis'); ?>
+								<?php the_content(); ?>
 
 							</div>
 
 						</div>
 
-					<?php endif; ?> <!-- END synopsis -->
+				<?php if( get_field('show_crew') ): ?>
 
 					<!-- START credits -->
 					<div class="grid-x grid-padding-y">
@@ -242,9 +256,13 @@ get_header(); ?>
 
 					</div> <!-- end CREW -->
 
-				</div>
+				</div> <!-- end CREDITS -->
+
+			<?php endif; ?>
 
 			</div>
+
+			<?php if( get_field('show_metadata') ): ?>
 
 				<div class="meta-accordion catalog-bottom-meta grid-container-full pl-medium-3">
 					<div class="grid-x">
@@ -395,6 +413,8 @@ get_header(); ?>
 						</article>
 				    </div>
 				</div> <!-- end catalog-bottom-meta -->
+
+			<?php endif; ?>
 
 				<div class="edit-post">
 					<pre><?php edit_post_link(__('(Edit this post)', 'comedy-dynamics'), '<span class="edit-link">', '</span>');?></pre>

@@ -2,12 +2,12 @@
 /**
  * Register theme support for languages, menus, post-thumbnails, post-formats etc.
  *
- * @package Comedy_Dynamics
- * @since Comedy_Dynamics 1.0.0
+ * @package Nacelle
+ * @since Nacelle 1.0.0
  */
 
-if ( ! function_exists( 'comedy_dynamics_theme_support' ) ) :
-	function comedy_dynamics_theme_support() {
+if ( ! function_exists( 'Nacelle_theme_support' ) ) :
+	function Nacelle_theme_support() {
 		// Add language support
 		load_theme_textdomain( 'comedy-dynamics', get_template_directory() . '/languages' );
 
@@ -46,9 +46,9 @@ if ( ! function_exists( 'comedy_dynamics_theme_support' ) ) :
 
 		add_editor_style( get_stylesheet_directory_uri() . '/dist/assets/css/editor.css' );
 
-		// Add comedy_dynamics.css as editor style https://codex.wordpress.org/Editor_Style
-		// add_editor_style( 'dist/assets/css/' . comedy_dynamics_asset_path( 'editor.css' ) );
+		// Add Nacelle.css as editor style https://codex.wordpress.org/Editor_Style
+		// add_editor_style( 'dist/assets/css/' . Nacelle_asset_path( 'editor.css' ) );
 	}
 
-	add_action( 'after_setup_theme', 'comedy_dynamics_theme_support' );
+	add_action( 'after_setup_theme', 'Nacelle_theme_support' );
 endif;

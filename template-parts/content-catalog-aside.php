@@ -4,8 +4,8 @@
  *
  * Used on content-catalog.php
  *
- * @package Comedy_Dynamics
- * @since Comedy_Dynamics 1.0.0
+ * @package Nacelle
+ * @since Nacelle 1.0.0
  */
 
 ?>
@@ -23,6 +23,8 @@
 				<img src="<?php bloginfo('template_directory'); ?>/dist/assets/images/default-image.png" alt="<?php the_title(); ?>" />
 			<?php
 } ?>
+
+		<?php if( get_field('show_icons') ): ?>
 
 			<div class="grid-x link-icons-container text-center">
 
@@ -244,6 +246,8 @@
 				</div>
 
 			</div>
+
+		<?php endif; ?>
 
 		</div> <!-- END artwork-container -->
 

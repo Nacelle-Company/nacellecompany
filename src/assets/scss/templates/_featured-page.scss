@@ -49,7 +49,7 @@ body:not(.mce-content-body):not(.edit-post-visual-editor).page-template-featured
             @include breakpoint(medium) {
                 padding: 0 1em;
             }
-            
+
         }
         .main {
             @include xy-gutters($gutter-position: bottom );
@@ -85,7 +85,7 @@ body:not(.mce-content-body):not(.edit-post-visual-editor).page-template-featured
 
 .icons-container {
   flex-direction: column;
-           
+
   button.success,
   a.button {
       background-color: #434375;
@@ -115,40 +115,53 @@ body:not(.mce-content-body):not(.edit-post-visual-editor).page-template-featured
 }
 
 
-
+// MODAL
+.reveal {
+    header {
+        border-bottom: 0.5px solid $primary-color;
+    }
+}
 .details-container {
   margin: 1rem 0;
+  p {
+      margin-bottom: 0;
+      line-height: 18px;
+      color: $white;
+      border-bottom: 0.5px solid #FFBC00;
+      padding-bottom: 5px;
+  }
   .info {
     padding: 0.25rem 0.25rem 0.5rem 0.25rem;
     background: $primary-color;
     color: $black;
-    
+    border-radius: 0 0 4px 4px;
+
     .info-text {
       margin-bottom: .5rem;
     }
-
+    p {
+        color: $black;
+    }
     a {
       color: $black;
-      border: 1px solid $black;
       padding: .35rem;
       text-transform: uppercase;
       cursor: pointer;
       transition: .4s;
+      background: $success-color;
+      border-radius: 4px;
+
       &:hover {
-        color: $primary-color;
-        background: $black;
+        background: #8de4f9;
 
       }
     }
   }
 
-  h4 {
-    margin-bottom: 0;
-    line-height: 18px;
-  }
 
   h5 {
     display: inline;
+    color: $success-color;
   }
 
   hr {
@@ -158,22 +171,33 @@ body:not(.mce-content-body):not(.edit-post-visual-editor).page-template-featured
 
   summary {
     cursor: pointer;
+    padding: 5px 0;
+    &:hover {
+        outline: rgba(255, 188, 0, 0.02) auto 1px;
+    }
   }
 
 
-  
+
   details {
     font-size: 85%;
     text-align: center;
-
+    border-radius: 4px 4px 0 0;
     p {
       margin-bottom: 0;
     }
     .on-sale {
       color: $black
     }
-    &[open] summary {
-      border: 1px solid #ffbc00;
+    &[open] {
+        summary {
+          border: 1px solid #ffbc00;
+          border-radius: 4px 4px 0 0;
+        }
+        .info {
+            border-left: 0.5px solid $primary-color;
+            border-right: 0.5px solid $primary-color;
+        }
     }
   }
 
@@ -181,5 +205,7 @@ body:not(.mce-content-body):not(.edit-post-visual-editor).page-template-featured
   summary {
     color: $primary-color;
   }
-
+  :focus {
+      outline: 0 !important;
+  }
 }

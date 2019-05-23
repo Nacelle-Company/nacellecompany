@@ -2,8 +2,8 @@
 /**
  * The template for displaying search form
  *
- * @package Comedy_Dynamics
- * @since Comedy_Dynamics 1.0.0
+ * @package Nacelle
+ * @since Nacelle 1.0.0
  */
 
 ?>

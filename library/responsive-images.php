@@ -4,7 +4,7 @@
  *
  * @package WordPress
  * @subpackage Comedy Dynamics
- * @since Comedy_Dynamics 2.6.0
+ * @since Nacelle 2.6.0
  */
 
 // Add featured image sizes
@@ -23,7 +23,7 @@ add_image_size('fp-large', 1200);
 add_image_size('fp-xlarge', 1920);
 
 // Register the new image sizes for use in the add media modal in wp-admin
-function comedy_dynamics_custom_sizes($sizes)
+function Nacelle_custom_sizes($sizes)
 {
     return array_merge(
         $sizes,
@@ -35,10 +35,10 @@ function comedy_dynamics_custom_sizes($sizes)
         )
     );
 }
-add_filter('image_size_names_choose', 'comedy_dynamics_custom_sizes');
+add_filter('image_size_names_choose', 'Nacelle_custom_sizes');
 
 // Add custom image sizes attribute to enhance responsive image functionality for content images
-function comedy_dynamics_adjust_image_sizes_attr($sizes, $size)
+function Nacelle_adjust_image_sizes_attr($sizes, $size)
 {
 
     // Actual width of image
@@ -61,7 +61,7 @@ function comedy_dynamics_adjust_image_sizes_attr($sizes, $size)
 
     return $sizes;
 }
-add_filter('wp_calculate_image_sizes', 'comedy_dynamics_adjust_image_sizes_attr', 10, 2);
+add_filter('wp_calculate_image_sizes', 'Nacelle_adjust_image_sizes_attr', 10, 2);
 
 // Remove inline width and height attributes for post thumbnails
 function remove_thumbnail_dimensions($html, $post_id, $post_image_id)

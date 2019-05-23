@@ -4,7 +4,7 @@ Template Name: Front Grid
 */
 get_header(); ?>
 
-<?php do_action('comedy_dynamics_before_content'); ?>
+<?php do_action('Nacelle_before_content'); ?>
 
 <?php while (have_posts('')) : the_post();?>
 

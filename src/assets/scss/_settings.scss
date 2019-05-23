@@ -72,21 +72,21 @@ $global-font-size: 100%;
 $global-width: rem-calc(1440);
 $global-lineheight: 1.5;
 $foundation-palette: (
-  primary: #FFBC00,
+  primary: #4591E5,
   secondary: #D39A00,
   success: #7FD2E6,
   warning: #ffae00,
   alert: #cc4b37,
 );
-$light-gray: #989898;
+$light-gray: #f6f6f6;
 $medium-gray: #2C2C2C;
-$dark-gray: #202020;
-$black: #0a0a0a;
-$white: #E2E4E4;
-$body-background: #2c2c2c;
-$footer-background: #D39A00;
-$body-font-color: $white;
-$body-font-family: 'MontserratRegular', sans-serif;
+$dark-gray: #8d8d8d;
+$black: #5e5e5e;
+$white: #ffffff;
+$body-background: $white;
+$footer-background: $light-gray;
+$body-font-color: $dark-gray;
+$body-font-family: 'Raleway', 'Helvetica', sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
 $global-padding: 1rem;
@@ -134,11 +134,11 @@ $block-grid-max: 8;
 // 4. Base Typography
 // ------------------
 
-$header-font-family: "MontserratBold", Helvetica, sans-serif;
-$header-font-weight: $global-weight-normal;
+$header-font-family: "Raleway", Helvetica, sans-serif;
+$header-font-weight: $global-weight-bold;
 $header-font-style: normal;
 $font-family-monospace: Consolas, 'Liberation Mono', Courier, monospace;
-$header-color: $secondary-color;
+$header-color: $black;
 $header-lineheight: 1.4;
 $header-margin-bottom: 0.5rem;
 $header-styles: (
@@ -161,7 +161,7 @@ $header-styles: (
 );
 $header-text-rendering: optimizeLegibility;
 $small-font-size: 80%;
-$header-small-font-color: $primary-color;
+$header-small-font-color: $black;
 $paragraph-lineheight: 1.6;
 $paragraph-margin-bottom: 1rem;
 $paragraph-text-rendering: optimizeLegibility;
@@ -171,12 +171,12 @@ $code-font-weight: $global-weight-normal;
 $code-background: $light-gray;
 $code-border: 1px solid $medium-gray;
 $code-padding: rem-calc(2 5 1);
-$anchor-color: $primary-color;
+$anchor-color: $black;
 $anchor-color-hover: scale-color($anchor-color, $lightness: -14%);
 $anchor-text-decoration: none;
 $anchor-text-decoration-hover: none;
 $hr-width: $global-width;
-$hr-border: 3px solid $primary-color;
+$hr-border: 3px solid $medium-gray;
 $hr-margin: rem-calc(20) auto;
 $list-lineheight: $paragraph-lineheight;
 $list-margin-bottom: $paragraph-margin-bottom;
@@ -505,7 +505,7 @@ $offcanvas-sizes: (
 $offcanvas-vertical-sizes: (
   small: 250px,
 );
-$offcanvas-background: rgba($dark-gray, 0.9);
+$offcanvas-background: rgba($white, 0.9);
 $offcanvas-shadow: 0 0 10px rgba($black, 0.7);
 $offcanvas-inner-shadow-size: 20px;
 $offcanvas-inner-shadow-color: rgba($black, 0.25);
@@ -827,11 +827,11 @@ $thumbnail-radius: $global-radius;
 // 53. Title Bar
 // -------------
 
-$titlebar-background: $dark-gray;
+$titlebar-background: $light-gray;
 $titlebar-color: $white;
 $titlebar-padding: 0.5rem;
 $titlebar-text-font-weight: bold;
-$titlebar-icon-color: $white;
+$titlebar-icon-color: $dark-gray;
 $titlebar-icon-color-hover: $medium-gray;
 $titlebar-icon-spacing: 0.25rem;
 
@@ -854,7 +854,7 @@ $tooltip-radius: $global-radius;
 // -----------
 
 $topbar-padding: .5em;
-$topbar-background: $dark-gray;
+$topbar-background: $white;
 $topbar-submenu-background: $topbar-background;
 $topbar-title-spacing: .25em 2em;
 $topbar-input-width: 200px;

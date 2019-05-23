@@ -9,8 +9,8 @@
  *
  * Learn more: {@link https://codex.wordpress.org/Template_Hierarchy}
  *
- * @package Comedy_Dynamics
- * @since Comedy_Dynamics 1.0.0
+ * @package Nacelle
+ * @since Nacelle 1.0.0
  */
 
 get_header(); ?>
@@ -32,8 +32,8 @@ get_header(); ?>
 
 			<?php /* Display navigation to next/previous pages when applicable */ ?>
 			<?php
-			if ( function_exists( 'comedy_dynamics_pagination' ) ) :
-				comedy_dynamics_pagination();
+			if ( function_exists( 'Nacelle_pagination' ) ) :
+				Nacelle_pagination();
 			elseif ( is_paged() ) :
 			?>
 				<nav id="post-nav">

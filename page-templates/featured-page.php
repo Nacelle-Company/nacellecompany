@@ -82,96 +82,8 @@ get_header(); ?>
 
 								</div>
 
-								<div class="cell">
-
-									<div class="grid-x">
-
-									<?php if( have_rows('repeater') ): ?>
-
-										<div class="cell">
-
-											<header class="text-center">
-												<h3><?php _e('Theatres', 'comedy-dynamics'); ?></h3>
-												<hr>
-											</header>
-
-										</div>
-
-										<?php while( have_rows('repeater') ): the_row();
-
-											// vars
-											$title = get_sub_field('title');
-											$link = get_sub_field('link');
-											$date = get_sub_field('date');
-											$info = get_sub_field('info');
-											$onSale = get_sub_field('on_sale');
-
-											?>
-
-											<div class="cell medium-6 text-center details-container">
-
-												<h4><?php echo $title; ?></h4>
-
-
-
-												<details name="hello">
-													<summary>
-
-														<h5>
-															<strong>
-															<?php _e('Info', 'comedy-dynamics'); ?>
-															</strong>
-														</h5>
-
-													</summary>
-
-													<div class="info">
-
-															<!-- 			on sale -->
-													<?php // if( $onSale ): ?>
-
-														<!-- <p class="on-sale"><strong>ON SALE</strong></p> -->
-
-													<?php //else: ?>
-
-														<!-- <p>Not on sale</p> -->
-
-													<?php //endif; ?>
-										<!-- 			on sale END -->
-
-														<p>
-														<?php echo $date; ?>
-														</p>
-
-														<p class="info-text">
-														<strong><?php echo $info; ?></strong>
-														</p>
-
-										<!-- 				link -->
-														<?php if( $link ): ?>
-															<a class="hollow" href="<?php echo $link; ?>" target="_blank">
-														<?php endif; ?>
-
-															<?php _e('View', 'comedy-dynamics'); ?>
-
-														<?php if( $link ): ?>
-														</a>
-														<?php endif; ?>
-										<!-- 				link END-->
-
-													</div>
-
-												</details>
-
-											</div>
-
-										<?php endwhile; ?>
-
-									<?php endif; ?>
-
-									</div>
-
-								</div>
+								<!-- include tickets modal -->
+								<?php get_template_part('template-parts/tickets-modal', 'none'); ?>
 
 							</div>
 
@@ -196,14 +108,16 @@ get_header(); ?>
 						</footer>
 
 					</a>
-
+					<?php edit_post_link(__('(Edit)', 'comedy-dynamics'), '<span class="edit-link">', '</span>');?>
 
 				</div>
 
-				<?php comments_template(); ?>
 			<?php endwhile; ?>
+
 		</main>
+
 	</div>
+
 </div>
 
 <!-- VIDEO MODAL -->
@@ -228,6 +142,11 @@ if (!empty($featTrailerEmbed)): ?>
 	  </button>
 
 	</div>
+
 <?php endif ?>
+<!-- end video modal -->
+
+
+
 
 <?php get_footer();

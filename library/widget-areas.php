@@ -2,12 +2,12 @@
 /**
  * Register widget areas
  *
- * @package Comedy_Dynamics
- * @since Comedy_Dynamics 1.0.0
+ * @package Nacelle
+ * @since Nacelle 1.0.0
  */
 
-if (! function_exists('comedy_dynamics_sidebar_widgets')) :
-    function comedy_dynamics_sidebar_widgets()
+if (! function_exists('Nacelle_sidebar_widgets')) :
+    function Nacelle_sidebar_widgets()
     {
         register_sidebar(
             array(
@@ -56,5 +56,5 @@ if (! function_exists('comedy_dynamics_sidebar_widgets')) :
         );
     }
 
-    add_action('widgets_init', 'comedy_dynamics_sidebar_widgets');
+    add_action('widgets_init', 'Nacelle_sidebar_widgets');
 endif;

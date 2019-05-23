@@ -2,35 +2,35 @@
 /**
  * Clean up WordPress defaults
  *
- * @package Comedy_Dynamics
- * @since Comedy_Dynamics 1.0.0
+ * @package Nacelle
+ * @since Nacelle 1.0.0
  */
 
-if ( ! function_exists( 'comedy_dynamics_start_cleanup' ) ) :
-	function comedy_dynamics_start_cleanup() {
+if ( ! function_exists( 'Nacelle_start_cleanup' ) ) :
+	function Nacelle_start_cleanup() {
 
 		// Launching operation cleanup.
-		add_action( 'init', 'comedy_dynamics_cleanup_head' );
+		add_action( 'init', 'Nacelle_cleanup_head' );
 
 		// Remove WP version from RSS.
-		add_filter( 'the_generator', 'comedy_dynamics_remove_rss_version' );
+		add_filter( 'the_generator', 'Nacelle_remove_rss_version' );
 
 		// Remove pesky injected css for recent comments widget.
-		add_filter( 'wp_head', 'comedy_dynamics_remove_wp_widget_recent_comments_style', 1 );
+		add_filter( 'wp_head', 'Nacelle_remove_wp_widget_recent_comments_style', 1 );
 
 		// Clean up comment styles in the head.
-		add_action( 'wp_head', 'comedy_dynamics_remove_recent_comments_style', 1 );
+		add_action( 'wp_head', 'Nacelle_remove_recent_comments_style', 1 );
 
 	}
-	add_action( 'after_setup_theme', 'comedy_dynamics_start_cleanup' );
+	add_action( 'after_setup_theme', 'Nacelle_start_cleanup' );
 endif;
 /**
  * Clean up head.+
  * ----------------------------------------------------------------------------
  */
 
-if ( ! function_exists( 'comedy_dynamics_cleanup_head' ) ) :
-	function comedy_dynamics_cleanup_head() {
+if ( ! function_exists( 'Nacelle_cleanup_head' ) ) :
+	function Nacelle_cleanup_head() {
 
 		// EditURI link.
 		remove_action( 'wp_head', 'rsd_link' );
@@ -74,15 +74,15 @@ if ( ! function_exists( 'comedy_dynamics_cleanup_head' ) ) :
 endif;
 
 // Remove WP version from RSS.
-if ( ! function_exists( 'comedy_dynamics_remove_rss_version' ) ) :
-	function comedy_dynamics_remove_rss_version() {
+if ( ! function_exists( 'Nacelle_remove_rss_version' ) ) :
+	function Nacelle_remove_rss_version() {
 		return '';
 	}
 endif;
 
 // Remove injected CSS for recent comments widget.
-if ( ! function_exists( 'comedy_dynamics_remove_wp_widget_recent_comments_style' ) ) :
-	function comedy_dynamics_remove_wp_widget_recent_comments_style() {
+if ( ! function_exists( 'Nacelle_remove_wp_widget_recent_comments_style' ) ) :
+	function Nacelle_remove_wp_widget_recent_comments_style() {
 		if ( has_filter( 'wp_head', 'wp_widget_recent_comments_style' ) ) {
 			remove_filter( 'wp_head', 'wp_widget_recent_comments_style' );
 		}
@@ -90,8 +90,8 @@ if ( ! function_exists( 'comedy_dynamics_remove_wp_widget_recent_comments_style'
 endif;
 
 // Remove injected CSS from recent comments widget.
-if ( ! function_exists( 'comedy_dynamics_remove_recent_comments_style' ) ) :
-	function comedy_dynamics_remove_recent_comments_style() {
+if ( ! function_exists( 'Nacelle_remove_recent_comments_style' ) ) :
+	function Nacelle_remove_recent_comments_style() {
 		global $wp_widget_factory;
 		if ( isset( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'] ) ) {
 			remove_action( 'wp_head', array( $wp_widget_factory->widgets['WP_Widget_Recent_Comments'], 'recent_comments_style' ) );

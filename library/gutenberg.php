@@ -1,7 +1,7 @@
 <?php
 
-if ( ! function_exists( 'comedy_dynamics_gutenberg_support' ) ) :
-	function comedy_dynamics_gutenberg_support() {
+if ( ! function_exists( 'Nacelle_gutenberg_support' ) ) :
+	function Nacelle_gutenberg_support() {
 
     // Add foundation color palette to the editor
     add_theme_support( 'editor-color-palette', array(
@@ -34,5 +34,5 @@ if ( ! function_exists( 'comedy_dynamics_gutenberg_support' ) ) :
 
 	}
 
-	add_action( 'after_setup_theme', 'comedy_dynamics_gutenberg_support' );
+	add_action( 'after_setup_theme', 'Nacelle_gutenberg_support' );
 endif;

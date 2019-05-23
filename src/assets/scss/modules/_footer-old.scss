@@ -1,0 +1,107 @@
+header + main {
+    min-height: calc(100vh - 180px);
+}
+.footer-container {
+  // @include xy-grid-container;
+  border-top: 1px solid $medium-gray;
+  // margin-top: rem-calc(10);
+  background: $footer-background;
+  color: $dark-gray;
+}
+// .space-please {
+//     padding-top: 11rem;
+// }
+.footer-grid {
+  @include xy-grid;
+  padding: rem-calc(15) 0;
+  &, .widget_custom_html i.fab {
+    @include breakpoint(medium) {
+      font-size: 80%;
+      justify-content: space-around;
+    }
+    @include breakpoint(large) {
+      font-size: 100%;
+    }
+  }
+  section {
+    display: flex;
+    justify-content: center;
+    @include breakpoint(large) {
+      @include xy-cell(auto);
+
+    }
+    p {
+        margin-bottom: 0;
+    }
+
+    &:nth-child(1) {
+        @include breakpoint(large) {
+            justify-content:  flex-start;
+        }
+    }
+    &:nth-child(2) {
+        // justify-content: center;
+    }
+    &:nth-child(3) {
+        font-size: 25px;
+        @include breakpoint(large) {
+            justify-content: flex-end;
+        }
+        a {
+            color: $dark-gray;
+            padding: 0.7rem 0.5rem;
+            @include breakpoint(medium) {
+              padding: 0
+            }
+            @include breakpoint(large) {
+              padding: 0.7rem 0.5rem;
+            }
+        }
+    }
+    .footer-grid section section:last-child {
+        @include breakpoint(large) {
+            margin: 0;
+        }
+    }
+} // end SECTION
+    .newsletter a {
+        font-weight: 900;
+    }
+    .c-footer-widgets {
+        text-align: center;
+    }
+    .r-footer-widgets {
+        span {
+
+        }
+    }
+
+  ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.reveal-overlay {
+    z-index: 2;
+    .reveal {
+        // mailchimp signup form
+        #mc_embed_signup {
+            background: transparent;
+            font-family: $body-font-family;
+        }
+
+        #mc_embed_signup .button {
+            background: $secondary-color;
+            font-family: $body-font-family;
+        }
+
+        #mc_embed_signup .mc-field-group {
+            padding-bottom: 1%;
+        }
+        &:focus {
+            outline: $medium-gray auto 5px;
+        }
+    }
+}

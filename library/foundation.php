@@ -2,13 +2,13 @@
 /**
  * Foundation PHP template
  *
- * @package Comedy_Dynamics
- * @since Comedy_Dynamics 1.0.0
+ * @package Nacelle
+ * @since Nacelle 1.0.0
  */
 
 // Pagination.
-if (! function_exists('comedy_dynamics_pagination')) :
-    function comedy_dynamics_pagination()
+if (! function_exists('Nacelle_pagination')) :
+    function Nacelle_pagination()
     {
         global $wp_query;
 
@@ -44,8 +44,8 @@ if (! function_exists('comedy_dynamics_pagination')) :
 endif;
 
 // Custom Comments Pagination.
-if (! function_exists('comedy_dynamics_get_the_comments_pagination')) :
-    function comedy_dynamics_get_the_comments_pagination($args = array())
+if (! function_exists('Nacelle_get_the_comments_pagination')) :
+    function Nacelle_get_the_comments_pagination($args = array())
     {
         $navigation = '';
         $args = wp_parse_args($args, array(
@@ -98,10 +98,10 @@ if (! function_exists('comedy_dynamics_get_the_comments_pagination')) :
 endif;
 
 // Custom Comments Pagination.
-if (! function_exists('comedy_dynamics_the_comments_pagination')) :
-    function comedy_dynamics_the_comments_pagination($args = array())
+if (! function_exists('Nacelle_the_comments_pagination')) :
+    function Nacelle_the_comments_pagination($args = array())
     {
-        echo comedy_dynamics_get_the_comments_pagination($args);
+        echo Nacelle_get_the_comments_pagination($args);
     }
 endif;
 
@@ -110,8 +110,8 @@ endif;
  * A fallback when no navigation is selected by default.
  */
 
-if (! function_exists('comedy_dynamics_menu_fallback')) :
-    function comedy_dynamics_menu_fallback()
+if (! function_exists('Nacelle_menu_fallback')) :
+    function Nacelle_menu_fallback()
     {
         echo '<div class="alert-box secondary">';
         /* translators: %1$s: link to menus, %2$s: link to customize. */
@@ -133,23 +133,23 @@ if (! function_exists('comedy_dynamics_menu_fallback')) :
 endif;
 
 // Add Foundation 'is-active' class for the current menu item.
-if (! function_exists('comedy_dynamics_active_nav_class')) :
-    function comedy_dynamics_active_nav_class($classes, $item)
+if (! function_exists('Nacelle_active_nav_class')) :
+    function Nacelle_active_nav_class($classes, $item)
     {
         if ($item->current == 1 || $item->current_item_ancestor == true) {
             $classes[] = 'is-active';
         }
         return $classes;
     }
-    add_filter('nav_menu_css_class', 'comedy_dynamics_active_nav_class', 10, 2);
+    add_filter('nav_menu_css_class', 'Nacelle_active_nav_class', 10, 2);
 endif;
 
 /**
  * Use the is-active class of ZURB Foundation on wp_list_pages output.
  * From required+ Foundation http://themes.required.ch.
  */
-if (! function_exists('comedy_dynamics_active_list_pages_class')) :
-    function comedy_dynamics_active_list_pages_class($input)
+if (! function_exists('Nacelle_active_list_pages_class')) :
+    function Nacelle_active_list_pages_class($input)
     {
         $pattern = '/current_page_item/';
         $replace = 'current_page_item is-active';
@@ -158,7 +158,7 @@ if (! function_exists('comedy_dynamics_active_list_pages_class')) :
 
         return $output;
     }
-    add_filter('wp_list_pages', 'comedy_dynamics_active_list_pages_class', 10, 2);
+    add_filter('wp_list_pages', 'Nacelle_active_list_pages_class', 10, 2);
 endif;
 
 
@@ -167,8 +167,8 @@ endif;
  * Get mobile menu ID
  */
 
-if (! function_exists('comedy_dynamics_mobile_menu_id')) :
-    function comedy_dynamics_mobile_menu_id()
+if (! function_exists('Nacelle_mobile_menu_id')) :
+    function Nacelle_mobile_menu_id()
     {
         if (get_theme_mod('wpt_mobile_menu_layout') === 'offcanvas') {
             echo 'off-canvas-menu';
@@ -182,8 +182,8 @@ endif;
  * Get title bar responsive toggle attribute
  */
 
-if (! function_exists('comedy_dynamics_title_bar_responsive_toggle')) :
-    function comedy_dynamics_title_bar_responsive_toggle()
+if (! function_exists('Nacelle_title_bar_responsive_toggle')) :
+    function Nacelle_title_bar_responsive_toggle()
     {
         if (! get_theme_mod('wpt_mobile_menu_layout') || get_theme_mod('wpt_mobile_menu_layout') === 'topbar') {
             echo 'data-responsive-toggle="mobile-menu"';
@@ -194,8 +194,8 @@ endif;
 /**
  * Custom markup for Wordpress gallery
  */
-if (! function_exists('comedy_dynamics_gallery')) :
-    function comedy_dynamics_gallery($attr)
+if (! function_exists('Nacelle_gallery')) :
+    function Nacelle_gallery($attr)
     {
         $post = get_post();
         static $instance = 0;
@@ -331,5 +331,5 @@ if (! function_exists('comedy_dynamics_gallery')) :
 
         return $output;
     }
-    add_shortcode('gallery', 'comedy_dynamics_gallery');
+    add_shortcode('gallery', 'Nacelle_gallery');
 endif;

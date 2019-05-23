@@ -10,8 +10,8 @@
  * hooks in WordPress to change core functionality.
  *
  * @link https://codex.wordpress.org/Theme_Development
- * @package Comedy_Dynamics
- * @since Comedy_Dynamics 1.0.0
+ * @package Nacelle
+ * @since Nacelle 1.0.0
  */
 
 /** Various clean up functions */
@@ -62,14 +62,14 @@ require_once('library/gutenberg.php');
  * Create Custom Image Sizes for Responsive
  * Based on Foundations breakpoints for SM, MD, LG
 **/
-function Comedy_Dynamics_add_image_sizes()
+function Nacelle_add_image_sizes()
 {
     /* Soft proportional crops */
     add_image_size('large-hero', 1400);
     add_image_size('medium-hero', 1024);
     add_image_size('mobile-hero', 640);
 }
-add_action('init', 'Comedy_Dynamics_add_image_sizes');
+add_action('init', 'Nacelle_add_image_sizes');
 
 
 
@@ -127,9 +127,9 @@ if (function_exists('acf_add_options_page')) {
  * https://spigotdesign.com/wordpress-show-all-posts-on-a-custom-post-type-archive-page/
  */
 
-add_action('pre_get_posts', 'Comedy_Dynamics_show_all_work');
+add_action('pre_get_posts', 'Nacelle_show_all_work');
 
-function Comedy_Dynamics_show_all_work($query)
+function Nacelle_show_all_work($query)
 {
     if (! is_admin() && $query->is_main_query()) {
         if (is_post_type_archive('press_archive')) {
@@ -139,7 +139,7 @@ function Comedy_Dynamics_show_all_work($query)
 }
 
 // https://css-tricks.com/snippets/wordpress/make-archives-php-include-custom-post-types/
-function Comedy_Dynamics_add_custom_types($query)
+function Nacelle_add_custom_types($query)
 {
     if (is_category() || is_tag() && empty($query->query_vars['suppress_filters'])) {
         $query->set('post_type', array(
@@ -148,12 +148,12 @@ function Comedy_Dynamics_add_custom_types($query)
         return $query;
     }
 }
-add_filter('pre_get_posts', 'Comedy_Dynamics_add_custom_types');
+add_filter('pre_get_posts', 'Nacelle_add_custom_types');
 
 
 
-add_filter('posts_orderby', 'Comedy_Dynamics_cpt_order');
-function Comedy_Dynamics_cpt_order($orderby)
+add_filter('posts_orderby', 'Nacelle_cpt_order');
+function Nacelle_cpt_order($orderby)
 {
     global $wpdb;
 
