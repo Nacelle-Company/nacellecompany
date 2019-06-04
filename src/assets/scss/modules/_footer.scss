@@ -1,6 +1,7 @@
 .footer-container {
   @include xy-grid-container;
-  margin-top: rem-calc(60);
+  // margin-top: rem-calc(60);
+  background: $white;
 }
 
 .footer-grid {
@@ -17,6 +18,7 @@
                 text-align: center;
             }
         }
+
         .icon-container {
             text-align: center;
 
@@ -29,6 +31,12 @@
             svg {
                 width: 2rem;
             }
+        }
+    }
+
+    .widget.logo {
+        @include breakpoint(small only) {
+            text-align: center;
         }
     }
 

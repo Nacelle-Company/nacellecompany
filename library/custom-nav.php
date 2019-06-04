@@ -14,15 +14,15 @@ if ( ! function_exists( 'wpt_register_theme_customizer' ) ) :
 			'mobile_menu_settings', array(
 				'priority'       => 1000,
 				'theme_supports' => '',
-				'title'          => __( 'Mobile Menu Settings', 'comedy-dynamics' ),
-				'description'    => __( 'Controls the mobile menu', 'comedy-dynamics' ),
+				'title'          => __( 'Mobile Menu Settings', 'nacelle' ),
+				'description'    => __( 'Controls the mobile menu', 'nacelle' ),
 			)
 		);
 
 		// Create custom field for mobile navigation layout
 		$wp_customize->add_section(
 			'mobile_menu_layout', array(
-				'title'    => __( 'Mobile navigation layout', 'comedy-dynamics' ),
+				'title'    => __( 'Mobile navigation layout', 'nacelle' ),
 				'panel'    => 'mobile_menu_settings',
 				'priority' => 1000,
 			)
@@ -32,7 +32,7 @@ if ( ! function_exists( 'wpt_register_theme_customizer' ) ) :
 		$wp_customize->add_setting(
 			'wpt_mobile_menu_layout',
 			array(
-				'default' => __( 'topbar', 'comedy-dynamics' ),
+				'default' => __( 'topbar', 'nacelle' ),
 			)
 		);
 

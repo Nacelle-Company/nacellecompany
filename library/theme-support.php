@@ -9,7 +9,7 @@
 if ( ! function_exists( 'Nacelle_theme_support' ) ) :
 	function Nacelle_theme_support() {
 		// Add language support
-		load_theme_textdomain( 'comedy-dynamics', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'nacelle', get_template_directory() . '/languages' );
 
 		// Switch default core markup for search form, comment form, and comments to output valid HTML5
 		add_theme_support(

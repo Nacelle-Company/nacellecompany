@@ -84,7 +84,7 @@ $dark-gray: #8d8d8d;
 $black: #5e5e5e;
 $white: #ffffff;
 $body-background: $white;
-$footer-background: $light-gray;
+$footer-background: $white;
 $body-font-color: $dark-gray;
 $body-font-family: 'Raleway', 'Helvetica', sans-serif;
 $body-antialiased: true;
@@ -143,12 +143,12 @@ $header-lineheight: 1.4;
 $header-margin-bottom: 0.5rem;
 $header-styles: (
   small: (
-    'h1': ('font-size': 28),
-    'h2': ('font-size': 25),
-    'h3': ('font-size': 19),
-    'h4': ('font-size': 18),
-    'h5': ('font-size': 17),
-    'h6': ('font-size': 16),
+    'h1': ('font-size': 22),
+    'h2': ('font-size': 19),
+    'h3': ('font-size': 16),
+    'h4': ('font-size': 14),
+    'h5': ('font-size': 12),
+    'h6': ('font-size': 10),
   ),
   medium: (
     'h1': ('font-size': 35),
@@ -288,8 +288,8 @@ $button-margin: 0 0 $global-margin 0;
 $button-fill: solid;
 $button-background: $primary-color;
 $button-background-hover: scale-color($button-background, $lightness: -15%);
-$button-color: $black;
-$button-color-alt: $black;
+$button-color: $white;
+$button-color-alt: $light-gray;
 $button-radius: $global-radius;
 $button-hollow-border-width: 1px;
 $button-sizes: (
@@ -831,8 +831,8 @@ $titlebar-background: $light-gray;
 $titlebar-color: $white;
 $titlebar-padding: 0.5rem;
 $titlebar-text-font-weight: bold;
-$titlebar-icon-color: $dark-gray;
-$titlebar-icon-color-hover: $medium-gray;
+$titlebar-icon-color: $white;
+$titlebar-icon-color-hover: $light-gray;
 $titlebar-icon-spacing: 0.25rem;
 
 // 54. Tooltip

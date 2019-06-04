@@ -37,8 +37,8 @@ get_header(); ?>
 			elseif ( is_paged() ) :
 			?>
 				<nav id="post-nav">
-					<div class="post-previous"><?php next_posts_link( __( '&larr; Older posts', 'comedy-dynamics' ) ); ?></div>
-					<div class="post-next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'comedy-dynamics' ) ); ?></div>
+					<div class="post-previous"><?php next_posts_link( __( '&larr; Older posts', 'nacelle' ) ); ?></div>
+					<div class="post-next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'nacelle' ) ); ?></div>
 				</nav>
 			<?php endif; ?>
 

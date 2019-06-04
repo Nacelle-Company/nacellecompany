@@ -11,7 +11,7 @@
 	<?php if (is_post_type_archive('press_release') || is_singular('press_release')): ?>
 
 		<h3>
-			<?php _e('Contact Us', 'comedy-dynamics'); ?>
+			<?php _e('Contact Us', 'nacelle'); ?>
 		</h3>
 
 		<main>
@@ -19,7 +19,7 @@
 			<section>
 				<i class="fas fa-user-circle"></i>
 				<p>
-					<?php _e('PR & Marketing: ', 'comedy-dynamics'); ?>
+					<?php _e('PR & Marketing: ', 'nacelle'); ?>
 					<?php the_field('media_contact'); ?>
 				</p>
 			</section>

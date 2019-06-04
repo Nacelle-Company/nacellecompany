@@ -27,7 +27,7 @@
 		<?php
             wp_link_pages(
                 array(
-                    'before' => '<nav id="page-nav"><p>' . __('Pages:', 'comedy-dynamics'),
+                    'before' => '<nav id="page-nav"><p>' . __('Pages:', 'nacelle'),
                     'after'  => '</p></nav>',
                 )
             );

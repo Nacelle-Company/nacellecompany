@@ -42,13 +42,13 @@
 
 		<?php endif; ?>
 
-		<?php // edit_post_link(__('(Edit)', 'comedy-dynamics'), '<span class="edit-link">', '</span>');?>
+		<?php // edit_post_link(__('(Edit)', 'nacelle'), '<span class="edit-link">', '</span>');?>
 	</div>
 	<footer>
 		<?php
             wp_link_pages(
                 array(
-                    'before' => '<nav id="page-nav"><p>' . __('Pages:', 'comedy-dynamics'),
+                    'before' => '<nav id="page-nav"><p>' . __('Pages:', 'nacelle'),
                     'after'  => '</p></nav>',
                 )
             );

@@ -20,7 +20,7 @@ get_header(); ?>
 <main class="main-grid cell medium-auto medium-cell-block-container">
 
 	<h1 class="hide">
-		<?php _e('Distribution', 'comedy-dynamics'); ?>
+		<?php _e('Distribution', 'nacelle'); ?>
 	</h1>
 
 	<?php $count = 0; ?>
@@ -50,7 +50,7 @@ get_header(); ?>
 
 					<h2 class="text-center catalog-title film">
 						<i class="fas fa-film"></i>
-						<?php _e('Films', 'comedy-dynamics'); ?>
+						<?php _e('Films', 'nacelle'); ?>
 					</h2>
 
 					<div class="img-container">
@@ -91,7 +91,7 @@ get_header(); ?>
 
 						<h2 class="text-center catalog-title album">
 							<i class="fas fa-compact-disc"></i>
-							<?php _e('Albums', 'comedy-dynamics'); ?>
+							<?php _e('Albums', 'nacelle'); ?>
 						</h2>
 
 						<div class="img-container">
@@ -132,7 +132,7 @@ get_header(); ?>
 
 						<h2 class="text-center catalog-title special">
 							<i class="fas fa-microphone-alt"></i>
-							<?php _e('Specials', 'comedy-dynamics'); ?>
+							<?php _e('Specials', 'nacelle'); ?>
 						</h2>
 
 						<div class="img-container">
@@ -172,7 +172,7 @@ get_header(); ?>
 
 						<h2 class="text-center catalog-title series">
 							<i class="fas fa-video"></i>
-							<?php _e('Series', 'comedy-dynamics'); ?>
+							<?php _e('Series', 'nacelle'); ?>
 						</h2>
 
 						<div class="img-container">

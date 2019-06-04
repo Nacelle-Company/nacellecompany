@@ -1,6 +1,7 @@
 .site-header {
   box-shadow: $thumbnail-shadow;
   z-index: 999999;
+  position: relative;
 }
 // Navigation breakpoints
 .mobile-menu,
@@ -69,6 +70,9 @@
     justify-content: center;
     @include breakpoint(medium) {
       flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+      padding: 0 2rem;
     }
   }
 
@@ -92,7 +96,8 @@
     }
   }
 
-  .left {
+  .left,
+  .right {
     justify-content: flex-end;
     .desktop-menu {
       @include breakpoint(medium) {

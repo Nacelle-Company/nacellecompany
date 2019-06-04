@@ -31,42 +31,42 @@
 					<!-- film -->
 					<?php if (is_category(1973)) : ?>
 
-	                    <h4 class="ml-2"><?php _e('Search Films', 'comedy-dynamics'); ?></h4>
+	                    <h4 class="ml-2"><?php _e('Search Films', 'nacelle'); ?></h4>
 
 	                    <?php echo do_shortcode('[searchandfilter slug="film-search"]'); ?>
 
 					<!-- series -->
 	            	<?php elseif (is_category(1976)) : ?>
 
-						<h4 class="ml-2"><?php _e('Search Series', 'comedy-dynamics'); ?></h4>
+						<h4 class="ml-2"><?php _e('Search Series', 'nacelle'); ?></h4>
 
 						<?php echo do_shortcode('[searchandfilter slug="series-search"]'); ?>
 
 					<!-- specials -->
 	                <?php elseif (is_category(1975)) : ?>
 
-						<h4 class="ml-2"><?php _e('Search Specials', 'comedy-dynamics'); ?></h4>
+						<h4 class="ml-2"><?php _e('Search Specials', 'nacelle'); ?></h4>
 
 	                    <?php echo do_shortcode('[searchandfilter slug="special-search"]'); ?>
 
 					<!-- albums -->
 	                <?php elseif (is_category(1974)) : ?>
 
-	                    <h4 class="ml-2"><?php _e('Search Albums', 'comedy-dynamics'); ?></h4>
+	                    <h4 class="ml-2"><?php _e('Search Albums', 'nacelle'); ?></h4>
 
 	                    <?php echo do_shortcode('[searchandfilter slug="album-search"]'); ?>
 
 					<!-- production series -->
 	                <?php elseif (is_category(1979)) : ?>
 
-	                    <h4 class="ml-2"><?php _e('Search Series', 'comedy-dynamics'); ?></h4>
+	                    <h4 class="ml-2"><?php _e('Search Series', 'nacelle'); ?></h4>
 
 	                    <?php echo do_shortcode('[searchandfilter slug="production-series-search"]'); ?>
 
 					<!-- production special -->
 	                <?php elseif (is_category(1980)) : ?>
 
-	                    <h4 class="ml-2"><?php _e('Search Specials', 'comedy-dynamics'); ?></h4>
+	                    <h4 class="ml-2"><?php _e('Search Specials', 'nacelle'); ?></h4>
 
 	                    <?php echo do_shortcode('[searchandfilter slug="production-special-search"]'); ?>
 

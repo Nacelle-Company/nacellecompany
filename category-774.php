@@ -22,7 +22,7 @@ get_header(); ?>
 <main class="main-grid">
 
 	<h1 class="hide">
-		<?php _e('Production', 'comedy-dynamics'); ?>
+		<?php _e('Production', 'nacelle'); ?>
 	</h1>
 
 	<?php $count = 0; ?>
@@ -38,7 +38,7 @@ get_header(); ?>
 
 			<h2 class="cell small-12 text-center catalog-title special">
 				<i class="fas fa-microphone-alt"></i>
-				<?php _e('Specials', 'comedy-dynamics'); ?>
+				<?php _e('Specials', 'nacelle'); ?>
 			</h2>
 
 
@@ -96,7 +96,7 @@ get_header(); ?>
 
 			<h2 class="cell small-12 text-center catalog-title series">
 				<i class="fas fa-video"></i>
-				<?php _e('Series', 'comedy-dynamics'); ?>
+				<?php _e('Series', 'nacelle'); ?>
 			</h2>
 
 				<?php

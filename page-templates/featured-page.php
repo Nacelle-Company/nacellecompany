@@ -23,7 +23,7 @@ get_header(); ?>
 							<div class="grid-x align-center grid-padding-y icons-container">
 
 								<a class="bounce button success" href="<?php the_field('feat_trailer_embed'); ?>" target="_blank">
-									<?php _e('Watch Trailer', 'comedy-dynamics'); ?>
+									<?php _e('Watch Trailer', 'nacelle'); ?>
 								</a>
 								<?php
 
@@ -103,12 +103,12 @@ get_header(); ?>
 								<?php the_field('footer'); ?>
 							</div>
 							<div class="cell small-12 medium-3">
-								<img src="<?php bloginfo('template_directory'); ?>/dist/assets/images/comedy-dynamics-officail-logo.svg" />
+								<img src="<?php bloginfo('template_directory'); ?>/dist/assets/images/nacelle-officail-logo.svg" />
 							</div>
 						</footer>
 
 					</a>
-					<?php edit_post_link(__('(Edit)', 'comedy-dynamics'), '<span class="edit-link">', '</span>');?>
+					<?php edit_post_link(__('(Edit)', 'nacelle'), '<span class="edit-link">', '</span>');?>
 
 				</div>
 

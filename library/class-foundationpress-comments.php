@@ -22,7 +22,7 @@ if ( ! class_exists( 'Nacelle_Comments' ) ) :
 	 * start_lvl() only goes as high as 1 deep nested comments */
 		function __construct() { ?>
 
-			<h3><?php comments_number( __( 'No Responses to', 'comedy-dynamics' ), __( 'One Response to', 'comedy-dynamics' ), __( '% Responses to', 'comedy-dynamics' ) ); ?> &#8220;<?php the_title(); ?>&#8221;</h3>
+			<h3><?php comments_number( __( 'No Responses to', 'nacelle' ), __( 'One Response to', 'nacelle' ), __( '% Responses to', 'nacelle' ) ); ?> &#8220;<?php the_title(); ?>&#8221;</h3>
 			<ol class="comment-list">
 
 		<?php }
@@ -65,7 +65,7 @@ if ( ! class_exists( 'Nacelle_Comments' ) ) :
 				<?php
 				/* translators: %s: comment author link */
 				printf(
-					__( '<cite class="fn">%s</cite>', 'comedy-dynamics' ),
+					__( '<cite class="fn">%s</cite>', 'nacelle' ),
 					get_comment_author_link()
 				);
 				?>
@@ -78,7 +78,7 @@ if ( ! class_exists( 'Nacelle_Comments' ) ) :
 				<section id="comment-content-<?php comment_ID(); ?>" class="comment">
 					<?php if ( ! $comment->comment_approved ) : ?>
 							<div class="notice">
-					<p class="bottom"><?php _e( 'Your comment is awaiting moderation.', 'comedy-dynamics' ); ?></p>
+					<p class="bottom"><?php _e( 'Your comment is awaiting moderation.', 'nacelle' ); ?></p>
 				</div>
 					<?php else : comment_text(); ?>
 					<?php endif; ?>

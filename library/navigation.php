@@ -9,9 +9,9 @@
 
 register_nav_menus(
     array(
-        'top-bar-r'  => esc_html__('Right Top Bar', 'comedy-dynamics'),
-        'mobile-nav' => esc_html__('Mobile', 'comedy-dynamics'),
-        'footer'  => esc_html__('Footer', 'comedy-dynamics'),
+        'top-bar-r'  => esc_html__('Right Top Bar', 'nacelle'),
+        'mobile-nav' => esc_html__('Mobile', 'nacelle'),
+        'footer'  => esc_html__('Footer', 'nacelle'),
     )
 );
 
@@ -90,7 +90,7 @@ if (! function_exists('Nacelle_mobile_nav')) {
         wp_nav_menu(
             array(
                 'container'      => false,                         // Remove nav container
-                'menu'           => __('mobile-nav', 'comedy-dynamics'),
+                'menu'           => __('mobile-nav', 'nacelle'),
                 'menu_class'     => 'vertical menu',
                 'theme_location' => 'mobile-nav',
                 'items_wrap'     => '<ul id="%1$s" class="%2$s" data-accordion-menu data-submenu-toggle="true">%3$s</ul>',

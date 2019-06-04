@@ -12,8 +12,8 @@ if (! function_exists('Nacelle_sidebar_widgets')) :
         register_sidebar(
             array(
                 'id'            => 'sidebar-widgets',
-                'name'          => __('Sidebar widgets', 'comedy-dynamics'),
-                'description'   => __('Drag widgets to this sidebar container.', 'comedy-dynamics'),
+                'name'          => __('Sidebar widgets', 'nacelle'),
+                'description'   => __('Drag widgets to this sidebar container.', 'nacelle'),
                 'before_widget' => '<section id="%1$s" class="widget %2$s">',
                 'after_widget'  => '</section>',
                 'before_title'  => '<h3>',
@@ -24,9 +24,9 @@ if (! function_exists('Nacelle_sidebar_widgets')) :
         register_sidebar(
             array(
                 'id'            => 'l-footer-widgets',
-                'name'          => __('Left Footer widgets', 'comedy-dynamics'),
-                'description'   => __('Drag widgets to this footer container', 'comedy-dynamics'),
-                'before_widget' => '<section id="%1$s" class="widget %2$s newsletter">',
+                'name'          => __('Left Footer widgets', 'nacelle'),
+                'description'   => __('Drag widgets to this footer container', 'nacelle'),
+                'before_widget' => '<section id="%1$s" class="widget %2$s logo">',
                 'after_widget'  => '</section>',
                 'before_title'  => '<h3>',
                 'after_title'   => '</h3>',
@@ -35,8 +35,8 @@ if (! function_exists('Nacelle_sidebar_widgets')) :
         register_sidebar(
             array(
                 'id'            => 'c-footer-widgets',
-                'name'          => __('Center Footer widgets', 'comedy-dynamics'),
-                'description'   => __('Drag widgets to this footer container', 'comedy-dynamics'),
+                'name'          => __('Center Footer widgets', 'nacelle'),
+                'description'   => __('Drag widgets to this footer container', 'nacelle'),
                 'before_widget' => '<section id="%1$s" class="widget %2$s">',
                 'after_widget'  => '</section>',
                 'before_title'  => '<h3>',
@@ -46,8 +46,8 @@ if (! function_exists('Nacelle_sidebar_widgets')) :
         register_sidebar(
             array(
                 'id'            => 'r-footer-widgets',
-                'name'          => __('Right Footer widgets', 'comedy-dynamics'),
-                'description'   => __('Drag widgets to this footer container', 'comedy-dynamics'),
+                'name'          => __('Right Footer widgets', 'nacelle'),
+                'description'   => __('Drag widgets to this footer container', 'nacelle'),
                 'before_widget' => '<section id="%1$s" class="widget %2$s">',
                 'after_widget'  => '</section>',
                 'before_title'  => '<h3>',

@@ -39,7 +39,7 @@ get_header(); ?>
 
 			<h3><?php _e('Sorry, we dont have anything here :(', 'comdey-dynamics'); ?></h3>
 
-			<a class="button" data-toggle="searchFilmOffCanvas"><?php _e('Try a search!', 'comedy-dynamics'); ?></a>
+			<a class="button" data-toggle="searchFilmOffCanvas"><?php _e('Try a search!', 'nacelle'); ?></a>
 
 		</div>
 

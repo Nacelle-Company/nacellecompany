@@ -1,0 +1,82 @@
+
+.home {
+
+    .site-header {
+        box-shadow: none;
+    }
+
+    header,
+    .site-navigation,
+    .z-5,
+    .site-title-bar {
+        z-index: 5;
+    }
+
+    // top nav
+    .top-bar,
+    .top-bar ul,
+    .site-title-bar {
+        background: transparent;
+
+        .menu-item a {
+            color: $white;
+        }
+    }
+
+    .home-content {
+        height:82vh;
+    }
+
+    .scroll-arrow {
+        @include flex;
+        @include flex-align(center);
+    }
+
+    .site-navigation.top-bar {
+        background: transparent;
+
+    }
+
+    .relative-container {
+        position: relative;
+    }
+
+    .absolute-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .home-overlay {
+        position: absolute;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        width: 100%;
+        bottom: 0;
+    }
+
+    .more {
+
+        height: 86vh;
+        // justify-content: center;
+
+        button {
+            color: $white;
+        }
+    }
+
+    .footer {
+        position: relative;
+        .footer-grid {
+            section {
+                z-index: 5;
+            }
+        }
+    }
+
+    .button::before {
+        font-family: "Font Awesome 5 Brands";
+    }
+
+}

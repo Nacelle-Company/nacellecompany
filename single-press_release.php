@@ -78,7 +78,7 @@ get_header(); ?>
 'next_text' => __('Next <i class="fas fa-long-arrow-alt-right"></i>', 'textdomain'),
                 )); ?>
 
-				<?php edit_post_link(__('(Edit)', 'comedy-dynamics'), '<span class="edit-link">', '</span>');?>
+				<?php edit_post_link(__('(Edit)', 'nacelle'), '<span class="edit-link">', '</span>');?>
 
 			<?php endwhile; ?>
 		</main>

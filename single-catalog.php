@@ -119,7 +119,7 @@ get_header(); ?>
 							<!-- synopsis title -->
 							<div class="cell medium-4 title">
 
-								<p><?php _e('Synopsis', 'comedy-dynamics'); ?></p>
+								<p><?php _e('Synopsis', 'nacelle'); ?></p>
 
 							</div>
 
@@ -141,7 +141,7 @@ get_header(); ?>
 
 							<div class="grid-x">
 
-								<p><?php _e('Credits', 'comedy-dynamics'); ?></p>
+								<p><?php _e('Credits', 'nacelle'); ?></p>
 
 							</div>
 
@@ -158,7 +158,7 @@ get_header(); ?>
 									<!-- talent title -->
 									<div class="cell small-4 title">
 
-										<p><?php _e('Talent', 'comedy-dynamics'); ?></p>
+										<p><?php _e('Talent', 'nacelle'); ?></p>
 
 									</div>
 
@@ -195,7 +195,7 @@ get_header(); ?>
 									<!-- directors title -->
 									<div class="cell small-4 title">
 
-										<p><?php _e('Director(s)', 'comedy-dynamics'); ?></p>
+										<p><?php _e('Director(s)', 'nacelle'); ?></p>
 
 									</div>
 
@@ -228,7 +228,7 @@ get_header(); ?>
 
 								<div class="cell small-4 title">
 
-									<p><?php _e('Producer(s)', 'comedy-dynamics'); ?></p>
+									<p><?php _e('Producer(s)', 'nacelle'); ?></p>
 
 								</div>
 
@@ -295,7 +295,7 @@ get_header(); ?>
 														<div class="grid-x">
 
 															<div class="cell small-4 title">
-						                                          <p><?php _e('Writer(s):', 'comedy-dynamics'); ?></p>
+						                                          <p><?php _e('Writer(s):', 'nacelle'); ?></p>
 						                                      </div>
 
 						                                      <div class="cell small-8">
@@ -320,7 +320,7 @@ get_header(); ?>
 														<div class="grid-x">
 
 															<div class="cell small-4 title">
-																<p><?php _e('Runtime:', 'comedy-dynamics'); ?></p>
+																<p><?php _e('Runtime:', 'nacelle'); ?></p>
 															</div>
 
 															<div class="cell small-8">
@@ -335,7 +335,7 @@ get_header(); ?>
 	                                                <?php $date = new DateTime($date); ?>
 													<div class="grid-x">
 														<div class="cell small-4 title">
-															<p><?php _e('Premiere:', 'comedy-dynamics'); ?></p>
+															<p><?php _e('Premiere:', 'nacelle'); ?></p>
 														</div>
 														<div class="cell small-8">
 															<p><?php echo $date->format('m/d/Y'); ?></p>
@@ -347,7 +347,7 @@ get_header(); ?>
 						                              	<div class="grid-x">
 															<div class="cell small-4 title">
 
-																<p><?php _e('Genre(s):', 'comedy-dynamics'); ?></p>
+																<p><?php _e('Genre(s):', 'nacelle'); ?></p>
 
 															</div>
 															<div class="cell small-8">
@@ -375,7 +375,7 @@ get_header(); ?>
 														<div class="grid-x">
 															<div class="cell small-4 title">
 
-																<p class="title"><?php _e('Rating:', 'comedy-dynamics'); ?></p>
+																<p class="title"><?php _e('Rating:', 'nacelle'); ?></p>
 
 															</div>
 															<div class="cell small-8">
@@ -392,7 +392,7 @@ get_header(); ?>
 														<div class="grid-x">
 															<div class="cell small-4 title">
 
-																<p class="title"><?php _e('Copyright:', 'comedy-dynamics'); ?></p>
+																<p class="title"><?php _e('Copyright:', 'nacelle'); ?></p>
 
 															</div>
 															<div class="cell small-8">
@@ -417,7 +417,7 @@ get_header(); ?>
 			<?php endif; ?>
 
 				<div class="edit-post">
-					<pre><?php edit_post_link(__('(Edit this post)', 'comedy-dynamics'), '<span class="edit-link">', '</span>');?></pre>
+					<pre><?php edit_post_link(__('(Edit this post)', 'nacelle'), '<span class="edit-link">', '</span>');?></pre>
 				</div>
 
 			</article>

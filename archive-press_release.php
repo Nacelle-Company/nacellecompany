@@ -59,7 +59,7 @@ get_header(); ?>
 
 								<!-- microphone -->
 								<div class="cell small-2 medium-1">
-									<img src="<?php bloginfo('template_directory'); ?>/dist/assets/images/comedy-dynamics-mic.png" />
+									<img src="<?php bloginfo('template_directory'); ?>/dist/assets/images/nacelle-mic.png" />
 								</div>
 
 								<!-- title -->
@@ -83,7 +83,7 @@ get_header(); ?>
 								<!-- admin edit link -->
 								<div class="cell small-2 medium-1">
 
-									<?php edit_post_link(__('(Edit)', 'comedy-dynamics'), '<span class="edit-link">', '</span>');?>
+									<?php edit_post_link(__('(Edit)', 'nacelle'), '<span class="edit-link">', '</span>');?>
 									<?php $tag = get_the_tags(); if ($tag) {
                                                 ?>
 										<p><?php the_tags(); ?></p>
@@ -126,7 +126,7 @@ get_header(); ?>
 
 									<!-- microphone -->
 									<div class="cell small-2 medium-1">
-										<img src="<?php bloginfo('template_directory'); ?>/dist/assets/images/comedy-dynamics-mic.png" />
+										<img src="<?php bloginfo('template_directory'); ?>/dist/assets/images/nacelle-mic.png" />
 									</div>
 
 									<!-- article title -->
@@ -147,7 +147,7 @@ get_header(); ?>
 								<!-- admin edit link -->
 								<div class="cell small-2 medium-1">
 
-									<?php edit_post_link(__('(Edit)', 'comedy-dynamics'), '<span class="edit-link">', '</span>');?>
+									<?php edit_post_link(__('(Edit)', 'nacelle'), '<span class="edit-link">', '</span>');?>
 									<?php $tag = get_the_tags(); if ($tag) {
                           ?>
 										<p><?php the_tags(); ?></p>

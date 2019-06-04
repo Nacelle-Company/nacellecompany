@@ -88,7 +88,7 @@ if (!empty('news_header_image')):
 
                   <!-- microphone -->
                   <div class="cell text-right mic">
-                    <img src="<?php bloginfo('template_directory'); ?>/dist/assets/images/comedy-dynamics-mic.png" />
+                    <img src="<?php bloginfo('template_directory'); ?>/dist/assets/images/nacelle-mic.png" />
                   </div>
 
 								</footer>
@@ -130,7 +130,7 @@ if (!empty('news_header_image')):
 
                 <!-- microphone -->
                 <div class="cell text-right mic">
-                  <img src="<?php bloginfo('template_directory'); ?>/dist/assets/images/comedy-dynamics-mic.png" />
+                  <img src="<?php bloginfo('template_directory'); ?>/dist/assets/images/nacelle-mic.png" />
                 </div>
 
               </footer>

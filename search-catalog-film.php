@@ -22,13 +22,13 @@ get_header(); ?>
 
 						<div class="cell small-6">
 
-							<h1 class="entry-title"> <?php _e('Films', 'comedy-dynamics'); ?> </h1>
+							<h1 class="entry-title"> <?php _e('Films', 'nacelle'); ?> </h1>
 
 						</div>
 
 						<div class="cell small-6 text-right sorting">
 
-							<a data-toggle="searchFilmOffCanvas"> <?php _e('Sort & Filter', 'comedy-dynamics'); ?> </a>
+							<a data-toggle="searchFilmOffCanvas"> <?php _e('Sort & Filter', 'nacelle'); ?> </a>
 
 						</div>
 
@@ -90,9 +90,9 @@ get_header(); ?>
 
 							<div class="cell text-center">
 
-								<h3><?php _e('Sorry, no results for that search.', 'comedy-dynamics'); ?></h3>
+								<h3><?php _e('Sorry, no results for that search.', 'nacelle'); ?></h3>
 
-								<a class="button" data-toggle="searchFilmOffCanvas"><?php _e('Try another search!', 'comedy-dynamics'); ?></a>
+								<a class="button" data-toggle="searchFilmOffCanvas"><?php _e('Try another search!', 'nacelle'); ?></a>
 
 							</div>
 
@@ -124,7 +124,7 @@ get_header(); ?>
 
 				<div class="cell align-self-middle filter-sidebar">
 
-					<h4 class="ml-2"><?php _e('Search Films', 'comedy-dynamics'); ?></h4>
+					<h4 class="ml-2"><?php _e('Search Films', 'nacelle'); ?></h4>
 
 					<?php echo do_shortcode('[searchandfilter slug="film-search"]'); ?>
 

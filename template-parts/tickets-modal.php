@@ -17,7 +17,7 @@
 	<div class="cell">
 
 		<header class="text-center">
-			<h3><?php _e('Theatres', 'comedy-dynamics'); ?></h3>
+			<h3><?php _e('Theatres', 'nacelle'); ?></h3>
 		</header>
 
 	</div>
@@ -48,7 +48,7 @@
 
 						<h5>
 							<strong>
-							<?php _e('Info', 'comedy-dynamics'); ?>
+							<?php _e('Info', 'nacelle'); ?>
 							</strong>
 						</h5>
 
@@ -85,7 +85,7 @@
 							<a class="hollow" href="<?php echo $link; ?>" target="_blank">
 						<?php endif; ?>
 
-							<?php _e('View', 'comedy-dynamics'); ?>
+							<?php _e('View', 'nacelle'); ?>
 
 						<?php if( $link ): ?>
 						</a>

@@ -23,8 +23,8 @@ if (! function_exists('Nacelle_pagination')) :
                 'total'     => $wp_query->max_num_pages,
                 'mid_size'  => 5,
                 'prev_next' => true,
-                'prev_text' => __('&laquo;', 'comedy-dynamics'),
-                'next_text' => __('&raquo;', 'comedy-dynamics'),
+                'prev_text' => __('&laquo;', 'nacelle'),
+                'next_text' => __('&raquo;', 'nacelle'),
                 'type'      => 'list',
             )
         );
@@ -49,8 +49,8 @@ if (! function_exists('Nacelle_get_the_comments_pagination')) :
     {
         $navigation = '';
         $args = wp_parse_args($args, array(
-            'prev_text'				=> __('&laquo;', 'comedy-dynamics'),
-            'next_text'				=> __('&raquo;', 'comedy-dynamics'),
+            'prev_text'				=> __('&laquo;', 'nacelle'),
+            'next_text'				=> __('&raquo;', 'nacelle'),
             'size'					=> 'default',
             'show_disabled'			=> true,
         ));
@@ -116,15 +116,15 @@ if (! function_exists('Nacelle_menu_fallback')) :
         echo '<div class="alert-box secondary">';
         /* translators: %1$s: link to menus, %2$s: link to customize. */
         printf(
-            __('Please assign a menu to the primary menu location under %1$s or %2$s the design.', 'comedy-dynamics'),
+            __('Please assign a menu to the primary menu location under %1$s or %2$s the design.', 'nacelle'),
             /* translators: %s: menu url */
             sprintf(
-                __('<a href="%s">Menus</a>', 'comedy-dynamics'),
+                __('<a href="%s">Menus</a>', 'nacelle'),
                 get_admin_url(get_current_blog_id(), 'nav-menus.php')
             ),
             /* translators: %s: customize url */
             sprintf(
-                __('<a href="%s">Customize</a>', 'comedy-dynamics'),
+                __('<a href="%s">Customize</a>', 'nacelle'),
                 get_admin_url(get_current_blog_id(), 'customize.php')
             )
         );

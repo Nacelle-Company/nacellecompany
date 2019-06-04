@@ -17,9 +17,7 @@
         <div class="footer-grid grid-x align-center-middle small-up-1 medium-up-1">
 
             <?php if (is_active_sidebar('l-footer-widgets')) : ?>
-            	<section class="widget">
-                    <?php dynamic_sidebar('l-footer-widgets'); ?>
-                </section>
+                <?php dynamic_sidebar('l-footer-widgets'); ?>
             <?php endif; ?>
 
             <?php if (is_active_sidebar('c-footer-widgets')): ?>
