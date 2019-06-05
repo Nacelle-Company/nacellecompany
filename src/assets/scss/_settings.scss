@@ -815,9 +815,9 @@ $tab-content-padding: 1rem;
 // 52. Thumbnail
 // -------------
 
-$thumbnail-border: solid 4px $white;
+$thumbnail-border: 0;
 $thumbnail-margin-bottom: $global-margin;
-$thumbnail-shadow: 0 2px 4px 0 rgba(0,0,0,0.5);
+$thumbnail-shadow: 0;
 $thumbnail-shadow-overlay: 0 2px 4px 0 rgba(0, 0, 0, 0.5), inset 0 0 0 1000px rgba(0, 0, 0, 0.6);
 $thumbnail-shadow-inner: inset 0 -3px 4px 0 rgba(0,0,0,0.5), inset 0 3px 4px 0 rgba(0,0,0,0.5), 0 2px 4px 0 rgba(0,0,0,0.5);
 $thumbnail-shadow-hover: 0 0 6px 1px rgba($primary-color, 0.5);
@@ -827,7 +827,7 @@ $thumbnail-radius: $global-radius;
 // 53. Title Bar
 // -------------
 
-$titlebar-background: $light-gray;
+$titlebar-background: $primary-color;
 $titlebar-color: $white;
 $titlebar-padding: 0.5rem;
 $titlebar-text-font-weight: bold;
@@ -854,7 +854,7 @@ $tooltip-radius: $global-radius;
 // -----------
 
 $topbar-padding: .5em;
-$topbar-background: $white;
+$topbar-background: $primary-color;
 $topbar-submenu-background: $topbar-background;
 $topbar-title-spacing: .25em 2em;
 $topbar-input-width: 200px;

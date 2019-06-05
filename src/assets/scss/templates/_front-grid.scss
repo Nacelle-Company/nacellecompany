@@ -3,6 +3,12 @@
 
     .site-header {
         box-shadow: none;
+
+        .menu-icon::after {
+            background: #fff;
+            box-shadow: 0 7px 0 #fff, 0 14px 0 #fff;
+        }
+
     }
 
     header,
@@ -77,6 +83,11 @@
 
     .button::before {
         font-family: "Font Awesome 5 Brands";
+    }
+
+    // font awesome icons
+    i.fas {
+      color: $white;
     }
 
 }

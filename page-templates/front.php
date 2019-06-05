@@ -8,34 +8,23 @@ get_header(); ?>
 
 <?php while (have_posts('')) : the_post();?>
 
-<div class="grid-y medium-grid-frame">
+	<div class="main-container">
 
-	<!-- header -->
-	<div class="grid-x tagline">
+		<div class="main-grid">
 
-		<div class="medium-12 cell text-center">
+			<main class="main-content-full-width">
 
-			<h1 class="hide">Nacelle Company</h1>
+				<div class="grid-y medium-grid-frame">
 
-			<h2>
-				<strong><?php the_field('heading'); ?></strong>
-			</h2>
+					<?php get_template_part('template-parts/logo-bg-header'); ?>
+
+				</div>
+
+			</main>
 
 		</div>
 
 	</div>
-
-	<main class="main grid-x grid-padding-x align-center">
-
-		<div class="cell medium-6">
-
-			<?php the_content(); ?>
-
-		</div>
-
-	</main>
-
-</div>
 
 <?php endwhile; ?> <!-- END LOOP -->
 

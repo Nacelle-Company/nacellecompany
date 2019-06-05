@@ -4,7 +4,7 @@ html, body {
 }
 
 .main-container {
-  margin-top: 3rem;
+  margin-top: 1rem;
   @include breakpoint(medium) {
       @include xy-grid-container;
   }
@@ -16,7 +16,6 @@ html, body {
 
   @include breakpoint(medium) {
     // margin-top: 3rem;
-    // margin-bottom: 9rem;
   }
 
   &.sidebar-left {
@@ -68,7 +67,7 @@ html, body {
 .category-series, {
      .in-view {
         // height: 325px !important;
-        @include transform(slideInFromBottom)
+        @include transform(slideInFromBottom);
      }
  }
 
