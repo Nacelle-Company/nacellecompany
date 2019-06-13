@@ -1,14 +1,11 @@
 
 header {
         h1.entry-title {
-        font-weight: 600;
+        font-weight: 800;
+        color: $white;
     }
 }
-header:not(.catalog):not(.archive) {
-        h1.entry-title {
-        border-bottom: $hr-border;
-    }
-}
+
 // mobile title bar
 .title-bar .menu-icon {
     position: absolute !important;

@@ -1,5 +1,47 @@
 .searchandfilter label {
-    color: $secondary-color;
+    // color: $secondary-color;
+}
+
+// sorting products.php file
+.productions {
+    .sorting {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @include breakpoint(medium) {
+            justify-content: flex-end;
+        }
+
+        h4 {
+            text-transform: uppercase;
+            margin-bottom: 0;
+            padding: 0 18px 0 10px;
+            border-right: 1px solid $dark-gray;
+            font-weight: 700;
+
+        }
+
+        form ul {
+            display: flex;
+
+            li {
+                margin-left: 1rem;
+            }
+
+            select {
+                border: 0;
+                font-size: 0.875rem;
+                text-transform: uppercase;
+                font-weight: bold;
+                line-height: 1.4;
+                height: auto;
+                @include breakpoint(medium) {
+                    font-size: 1.25rem;
+                }
+            }
+        }
+    }
 }
 
 // ninja forms hide top required text

@@ -199,7 +199,8 @@
   .searchandfilter {
     input,
     select {
-      width: 200px;
+      width: auto;
+      min-width: auto;
       max-width: 200px;
     }
 
@@ -368,7 +369,7 @@
   overflow: hidden;
   text-indent: 100%;
   white-space: nowrap;
-  background: rgba(255, 188, 0, 0.9) url('../images/chevron-up-solid.svg') no-repeat center 50%;
+  background: rgba(74, 144, 226, 0.85) url('../images/chevron-up-solid.svg') no-repeat center 50%;
   visibility: hidden;
   opacity: 0;
   -webkit-transition: all 0.3s;

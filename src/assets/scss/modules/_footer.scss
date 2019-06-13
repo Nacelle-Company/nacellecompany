@@ -2,6 +2,8 @@
   @include xy-grid-container;
   // margin-top: rem-calc(60);
   background: $white;
+  border: 1px solid #DDDDDD;
+box-shadow: 0 -2px 4px 0 rgba(0,0,0,0.50);
 }
 
 .footer-grid {

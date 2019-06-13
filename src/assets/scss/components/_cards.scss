@@ -22,20 +22,13 @@
 
 // main category cards
 .macro-cat-cards {
-  h2 {
-    	font-family: Montserrat,Helvetica,sans-serif
+
+    .catalog-title {
+        @include nothoverNS;
     }
-    a {
-        .catalog-title {
-            @include nothoverNS;
-        }
-        .img-container {
-            padding: 0.25em;
-            img {
-                border-radius: $callout-radius;
-                @include nothover;
-            }
-        }
+    .img-container {
+        padding: 0.25em;
+
         &:hover {
             img {
                 @include hover;
@@ -44,7 +37,13 @@
                 @include hoverNS;
             }
         }
+
+        img {
+            border-radius: $callout-radius;
+            @include nothover;
+        }
     }
+
 }
 
 

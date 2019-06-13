@@ -1,0 +1,50 @@
+img.thumbnail.team-hover-icon {
+    position: absolute;
+    top: -31%;
+    left: -25%;
+    width: 150%;
+    z-index: -1;
+    max-width: 150%;
+    opacity: 0;
+    transition: .4s ease-in-out;
+}
+
+.cell.text-center.teammember {
+    position: relative;
+
+    .position {
+        opacity: 0;
+        transition: .4s ease-in-out;
+
+    }
+
+    .team-info {
+        // background: rgba(255, 255, 255, 0);
+        transition: .4s ease-in-out;
+
+    }
+
+    &:hover {
+        .position {
+            opacity: 1;
+        }
+
+        .team-info {
+            // background: rgba(255, 255, 255, 1);
+        }
+    }
+
+}
+
+.thumbnail.member{
+    transition: .4s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(1.1);
+
+        & + .team-hover-icon {
+            opacity: 1;
+        }
+    }
+}

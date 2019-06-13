@@ -82,6 +82,7 @@ $light-gray: #f6f6f6;
 $medium-gray: #2C2C2C;
 $dark-gray: #8d8d8d;
 $black: #5e5e5e;
+$true-black: #000;
 $white: #ffffff;
 $body-background: $white;
 $footer-background: $white;
@@ -143,17 +144,17 @@ $header-lineheight: 1.4;
 $header-margin-bottom: 0.5rem;
 $header-styles: (
   small: (
-    'h1': ('font-size': 22),
-    'h2': ('font-size': 19),
+    'h1': ('font-size': 26),
+    'h2': ('font-size': 20),
     'h3': ('font-size': 16),
     'h4': ('font-size': 14),
     'h5': ('font-size': 12),
     'h6': ('font-size': 10),
   ),
   medium: (
-    'h1': ('font-size': 35),
-    'h2': ('font-size': 30),
-    'h3': ('font-size': 31),
+    'h1': ('font-size': 50),
+    'h2': ('font-size': 26),
+    'h3': ('font-size': 22),
     'h4': ('font-size': 20),
     'h5': ('font-size': 13),
     'h6': ('font-size': 16),
@@ -734,14 +735,14 @@ $responsive-embed-ratios: (
 // 47. Reveal
 // ----------
 
-$reveal-background: $dark-gray;
+$reveal-background: $true-black;
 $reveal-width: 60vw;
 $reveal-max-width: $global-width;
 $reveal-padding: $global-padding;
 $reveal-border: 1px solid $medium-gray;
 $reveal-radius: $global-radius;
-$reveal-zindex: 1005;
-$reveal-overlay-background: rgba($black, 0.45);
+$reveal-zindex: 9999999005;
+$reveal-overlay-background: rgba($true-black, 0.85);
 
 // 48. Slider
 // ----------

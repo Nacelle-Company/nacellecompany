@@ -35,6 +35,11 @@ html, body {
   // Full width template
   .main-content-full-width {
     @include xy-cell(12);
+
+    &.products {
+        margin: 0 auto;
+        width: 100vw;
+    }
   }
 
   // Default template
