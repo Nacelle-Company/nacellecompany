@@ -31,9 +31,7 @@ $video_mp4 =  get_field('splash'); // MP4 Field Name
 $attr =  array(
 'mp4'      => $video_mp4,
 'preload'  => 'auto',
-'autoplay' => 'on',
-'width'	   => '100',
-'controls' => '0'
+'autoplay' => 'on'
 );
 
 // Display the Shortcode
