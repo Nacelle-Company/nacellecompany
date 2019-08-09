@@ -60,8 +60,8 @@ video.wp-video-shortcode {
 	bottom: 0;
 	left: 0;
 }
-.mejs-controls {
-	display: none;
+.mejs-container .mejs-controls {
+    display: none !important;
 }
 .mejs-overlay-play {
 	top: 0;
