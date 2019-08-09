@@ -206,8 +206,11 @@
     display: flex;
     align-items: center;
     flex-direction: column;
-    justify-content: center;
     height: 100%;
+
+    @include breakpoint(medium up) {
+      justify-content: center;
+    }
 
     .logo-container {
       z-index: -1;
