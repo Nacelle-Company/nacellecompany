@@ -7,7 +7,7 @@
  */
 
 ?>
-<aside class="sidebar mt-3">
+<aside class="sidebar pt-medium-4 mt-medium-4">
 	<?php if (is_post_type_archive('press_release') || is_singular('press_release')): ?>
 
 		<h3>

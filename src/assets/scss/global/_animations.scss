@@ -30,7 +30,6 @@
 .slideInFromBottom {
   @include transform(slideInFromBottom);
 }
-// @import "compass/css3";
 
 
 @keyframes fadeIn {
@@ -44,6 +43,64 @@
   }
 }
 
+
 .fadeIn {
     @include transform(fadeIn);
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-25vw);
+  }
+    50% {
+    transform: translateX(-50vw);
+  }
+  75% {
+    transform: translateX(-75vw);
+  }
+  100% {
+    transform: translateX(-100vw);
+  }
+}
+
+.slideLeft {
+    @include transform(slideLeft);
+}
+
+.splash {
+    // background-image: url("http://localhost/nacelle/nacelle/wp-content/uploads/2019/07/Webp.net-gifmaker-1.gif");
+    z-index: 9999999999999;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    background: black;
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    align-items: center;
+    img {
+      width: 100%;
+      min-width: 100%;
+      object-fit: cover;
+  }
+}
+
+
+.splash.slideLeft {
+    z-index: 999999999;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    transition-property: left;
+    transition-duration: 1s;
+    transition-delay: 7s;
+    transition-timing-function: ease-in-out;
+
+  &.hidden {
+    display: none;
+  }
+
 }

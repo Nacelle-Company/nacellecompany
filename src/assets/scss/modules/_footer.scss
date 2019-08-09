@@ -1,20 +1,49 @@
+footer.footer {
+    @include breakpoint(medium up) {
+        padding-top: 7rem;
+    }
+}
+
 .footer-container {
-  @include xy-grid-container;
-  // margin-top: rem-calc(60);
-  background: $white;
-  border: 1px solid #DDDDDD;
-box-shadow: 0 -2px 4px 0 rgba(0,0,0,0.50);
+    @include xy-grid-container;
+    @include shadow;
+    width: 100%;
+
+}
+
+.home footer.cell.shrink.footer {
+    bottom: 0;
+    width: 100%;
+    z-index: 9;
+
+    @include breakpoint(medium up) {
+        // position: absolute;
+    }
+}
+
+.footer-container {
+    width: 100%;
+    min-width: 100vw;
+}
+
+.footer-logo {
+    display: flex;
 }
 
 .footer-grid {
   @include xy-grid;
-  padding: rem-calc(30) 0;
+  padding: rem-calc(20) 0;
 
     section {
         @include xy-cell();
+
         @include breakpoint(large) {
           @include xy-cell(auto);
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
         }
+
         &.widget .widget_media_image {
             @include breakpoint(small only) {
                 text-align: center;
@@ -47,4 +76,64 @@ box-shadow: 0 -2px 4px 0 rgba(0,0,0,0.50);
     margin: 0;
     padding: 0;
   }
+
+  .contactModal p {
+      text-transform: uppercase;
+      font-weight: 600;
+      color: $white;
+      margin: 11px 0;
+      text-align: center;
+
+      @include breakpoint(medium up) {
+          margin: 0;
+      }
+  }
+}
+
+
+
+.footer {
+    .footer-grid {
+            p {
+            color: #4591E5;
+        }
+    }
+            svg.footer-logo .color {
+            fill: #4591E5;
+        }
+        .medium-shrink.nav-link {
+            width: 30px;
+            margin-left: 1rem;
+        }
+    @include breakpoint(medium) {
+        .medium-shrink.nav-link {
+            // width: 30px;
+            // margin-left: 1rem;
+        }
+        .social svg.svg-inline--fa {
+            max-width: 2em;
+        }
+        .r-footer-widgets {
+            text-align: right;
+            align-items: center;
+            justify-content: flex-end;
+
+            p {
+                text-align: right;
+            }
+                        & > .grid-x {
+                    justify-content: flex-end;
+            }
+        }
+    }
+    @include breakpoint(small only) {
+        .l-footer-widgets .footer-logo {
+                margin: 0 auto;
+        }
+        .r-footer-widgets {
+            .icon-container {
+                justify-content: center;
+            }
+        }
+    }
 }

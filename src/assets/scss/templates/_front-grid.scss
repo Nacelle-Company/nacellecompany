@@ -1,13 +1,18 @@
 
-.home {
+.page-template-front-grid,
+.page-template-front {
+
+    .front-grid {
+        .top-content {
+            height: calc(100vh - 131px);
+        }
+        .bottom-content {
+            height: 100vh;
+        }
+    }
 
     .site-header {
         box-shadow: none;
-
-        .menu-icon::after {
-            background: #fff;
-            box-shadow: 0 7px 0 #fff, 0 14px 0 #fff;
-        }
 
     }
 
@@ -30,7 +35,9 @@
     }
 
     .home-content {
-        height:82vh;
+        @include breakpoint(medium up) {
+            height: 100vh;
+        }
     }
 
     .scroll-arrow {
@@ -55,11 +62,13 @@
 
     .home-overlay {
         position: absolute;
-        height: 100vh;
         top: 0;
         left: 0;
         width: 100%;
         bottom: 0;
+        @include breakpoint(medium up) {
+            height: 100vh;
+        }
     }
 
     .more {
@@ -73,7 +82,7 @@
     }
 
     .footer {
-        position: relative;
+
         .footer-grid {
             section {
                 z-index: 5;
@@ -91,3 +100,20 @@
     }
 
 }
+
+
+.page-template-front-grid {
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+        .footer-grid {
+            section {
+                z-index: 5;
+            }
+        }
+    }
+}
+    

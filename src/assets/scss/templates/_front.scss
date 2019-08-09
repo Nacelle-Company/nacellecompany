@@ -1,7 +1,21 @@
 
 .home {
-  .medium-grid-frame {
-    // height: calc(100vh - 17vh);
+
+  .more {
+        height: 100vh;
+        position: relative;
+    }
+
+    &.page-template-front .top-bar ul .menu-item a {
+      color: $primary-color;
+    }
+    .title-bar-title path.svg-icon,
+    .top-bar-title path.svg-icon {
+      fill: $primary-color;
+  }
+  .site-title-bar .menu-icon::after {
+    background: $primary-color;
+    box-shadow: 0 7px 0 $primary-color, 0 14px 0 $primary-color;
   }
 }
 

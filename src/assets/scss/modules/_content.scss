@@ -12,7 +12,7 @@ html, body {
 
 .main-grid {
   @include xy-grid();
-  margin-top: 1rem;
+  margin-top: 2rem;
 
   @include breakpoint(medium) {
     // margin-top: 3rem;
@@ -50,10 +50,21 @@ html, body {
 
     @include breakpoint(medium) {
       @include xy-cell(9);
+
+    }
+        @include breakpoint(medium only) {
+          width: calc(100% - 3.75rem);
+
     }
   }
 
   .sidebar {
+
+    height: fit-content;
+    padding: 1em;
+    background: $dark-nav-color;
+    border-radius: 6px;
+
     @include breakpoint(small) {
       @include xy-cell(12);
     }

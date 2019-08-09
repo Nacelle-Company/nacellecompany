@@ -1,0 +1,167 @@
+$clean-hero-slider-accent: $warning-color;
+$hero-full-screen-bg-size: cover;
+$hero-full-screen-text-color: $white;
+
+.clean-hero-slider {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-size: $hero-full-screen-bg-size;
+
+    .orbit-wrapper {
+        width: 100%;
+    }
+
+    .orbit-cover {
+        background: rgba(0,0,0,.6);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+    }
+
+    .orbit-figure,
+    .orbit-image,
+    .orbit-slide {
+        height: 82vh;
+
+        @include breakpoint(medium) {
+            height: 100vh;
+        }
+    }
+
+    .orbit-caption {
+        width: auto;
+        height: auto;
+        background: $black;
+        position: absolute;
+        text-align: center;
+        right: 0;
+        left: 0;
+        padding: 0.2rem 2rem;
+
+        @include breakpoint(medium) {
+            background: transparent;
+            text-align: left;
+            width: 65%;
+            right: 0;
+            padding: 1rem 2rem;
+            bottom: 35px;
+
+        }
+
+        p {
+            font-size: 0.9rem;
+            line-height: 1.25;
+
+            @include breakpoint(medium) {
+                font-size: 1.1rem;
+            }
+        }
+
+        h3 {
+            color: $white;
+            text-transform: uppercase;
+
+            @include breakpoint(medium) {
+                font-size: 3rem;
+            }
+        }
+    }
+
+    .orbit-slide {
+        padding-bottom: 40%;
+        background: $black;
+
+        @include breakpoint(medium) {
+            padding-bottom: 0;
+        }
+    }
+
+    .orbit-controls {
+        button {
+            background: $true-black;
+            padding: 2rem 2rem;
+            @include cardOneShadow;
+
+            &:hover {
+                background: scale-color($true-black, $lightness: 10%);
+            }
+
+            @include breakpoint(small only) {
+                display: none;
+            }
+        }
+
+        .orbit-previous,
+        .orbit-next {
+            cursor: pointer;
+            transform: none;
+            top: auto;
+            bottom: 65px;
+        }
+
+        .orbit-previous {
+            @include breakpoint(medium) {
+                left: auto;
+                right: 6.9rem;
+            }
+        }
+
+        .orbit-next {
+            @include breakpoint(medium) {
+                right: 2rem;
+            }
+        }
+    }
+
+    .orbit-bullets {
+        display: none;
+
+        @include breakpoint(medium) {
+            display: block;
+            margin-bottom: 0;
+            margin-top: -3rem;
+            background: none;
+        }
+
+        button {
+            width: 3rem;
+            height: 0.4rem;
+            border-radius: 0;
+            background-color: $white;
+
+            &.is-active {
+                background-color: $clean-hero-slider-accent;
+            }
+        }
+    }
+
+    .orbit-image {
+        width: 100%;
+        object-fit: cover;
+
+        @include breakpoint(small only) {
+        top: 0;
+        height: auto;
+        }
+    }
+
+    .orbit-sm-image {
+        padding: 15px 30px;
+        @include breakpoint(medium) {
+            padding-right: 35%;
+        }
+    }
+
+    ul.orbit-container {
+        height: 100vh !important;
+    }
+
+    li.orbit-slide {
+        max-height: none !important;
+    }
+}

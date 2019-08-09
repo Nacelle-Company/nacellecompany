@@ -6,40 +6,19 @@ h2 {
     text-transform: uppercase;
 }
 
-// title background logo
-.off-canvas-content {
-    background-image: url("http://localhost/nacelle/nacelle/wp-content/uploads/2019/06/nacelle-company-logo-mark-large.png");
-    background-repeat: no-repeat;
+.entry-title {
 
-    @include breakpoint(small) {
-        background-position: -7vw -1vh;
-        background-size: 85%;
+    &.black {
+        color: $black;
     }
 
-    @include breakpoint(medium) {
-        background-position: -11vw -10vh;
-        background-size: 75%;
-    }
+    &.sm {
+        font-size: 1em;
 
-    @include breakpoint(large) {
-        background-position: -12vw -35vh;
-        background-size: 60%;
+        @include breakpoint(medium up) {
+            font-size: 2em;
+        }
     }
-}
-
-h2.entry-title {
-    // font-size: 2rem;
-    // color: $white;
-    // text-transform: uppercase;
-    // @include transform(slideInFromBottom);
-    //
-    // @include breakpoint(medium) {
-    //     font-size: 3.25rem;
-    // }
-    //
-    // @include breakpoint(large) {
-    //     font-size: 3.5rem;
-    // }
 }
 
 .section-title {
@@ -51,6 +30,15 @@ h2.entry-title {
 
     @include breakpoint(medium) {
         justify-content: flex-start;
+    }
+}
+
+// front.php header
+
+.page-template-front {
+    .top-bar {
+        position: absolute;
+        width: 100%;
     }
 }
 

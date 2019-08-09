@@ -7,6 +7,10 @@
 .mobile-menu,
 .site-title-bar {
   @include hide-for(large);
+
+  path.svg-icon {
+    fill: $white;
+  }
 }
 
 .desktop-menu,
@@ -56,6 +60,10 @@
 // Tablet and desktop menu
 .top-bar {
   justify-content: center;
+
+    path.svg-icon {
+      fill: $white;
+  }
 
   .top-bar-left,
   .top-bar-right {
@@ -113,15 +121,6 @@
   ul#menu-right-top-bar {
     display: inline-flex;
   }
-  // hover nav elements
-  // .menu-item a {
-  //   transition: text-shadow 0.1s ease;
-  //
-  //   &:hover {
-  //     text-shadow: 0.5px 0.5px 0 $primary-color;
-  //     color: $primary-color;
-  //   }
-  // }
 
   .dropdown.menu .is-active > a {
     text-shadow: 0.3px 0.3px 0 $primary-color;
@@ -199,7 +198,7 @@
   .searchandfilter {
     input,
     select {
-      width: auto;
+      // width: auto;
       min-width: auto;
       max-width: 200px;
     }
@@ -380,6 +379,7 @@
   /* the button becomes visible */
   visibility: visible;
   opacity: 1;
+  z-index: 999999;
 }
 .cd-top.cd-fade-out {
   /* if the user keeps scrolling down, the button is out of focus and becomes less visible */
@@ -397,10 +397,10 @@
 }
 @media only screen and (min-width: 1024px) {
   .cd-top {
-    height: 60px;
-    width: 60px;
-    right: 30px;
-    bottom: 30px;
+      height: 40px;
+      width: 40px;
+      right: 30px;
+      bottom: 106px;
   }
 }
 

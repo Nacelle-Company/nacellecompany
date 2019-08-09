@@ -91,13 +91,13 @@ get_header(); ?>
 	<div class="home-overlay" style="background-color: <?php the_field('background_overlay_color') ?>;"></div>
 
 	<!-- main grid -->
-	<main class="grid-x align-center">
+	<main class="grid-x align-center front-grid">
 
-		<div class="cell z-5">
+		<div class="cell z-5 top-content">
 
 			<div class="grid-x grid-padding-x align-center home-content">
 
-				<div class="cell medium-8 align-self-middle">
+				<div class="cell medium-12 large-8 align-self-middle">
 
 					<?php the_content(); ?>
 
@@ -115,11 +115,11 @@ get_header(); ?>
 
 		</div>
 
-		<div class="cell z-5" style="background:<?php the_field('bottom_background_overlay_color') ?>;">
+		<div class="cell bottom-content z-5" style="background:<?php the_field('bottom_background_overlay_color') ?>;">
 
 			<div class="grid-x more align-center align-middle grid-padding-y grid-padding-x" id="more">
 
-				<div class="cell medium-6 text-center">
+				<div class="cell medium-12 large-6 text-center">
 
 					<?php
 

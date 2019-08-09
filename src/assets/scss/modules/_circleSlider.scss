@@ -1,0 +1,270 @@
+.circle-slider {
+	@include breakpoint(large) {
+		padding-top: 4rem;
+	}
+	a:hover {
+		background: transparent;
+	}
+	.orbit-container {
+		display: flex;
+		align-items: center;
+		height: 100vh !important;
+		box-shadow: none;
+
+		.orbit-group:not(.is-active) {
+			@include breakpoint(large) {
+				padding-top: 160px;
+			}
+			@include breakpoint(xlarge) {
+				padding-top: 75px;
+			}
+		}
+	}
+
+	.press-title-background {
+		// position: relative;
+		// left: 15%;
+	}
+
+	// title background
+	.background-slide-container {
+		position: absolute;
+		width: 100%;
+		z-index: -1;
+		left: -6%;
+
+		@include breakpoint(small only) {
+			width: 95%;
+			z-index: -1;
+			left: -12%;
+			bottom: 0;
+			display: none;
+		}
+	}
+
+	.orbit-controls {
+		@include breakpoint(small only) {
+			z-index: 9999999;
+			position: absolute;
+			top: 57%;
+		}
+		.orbit-next {
+			top: 50%;
+			height: 100%;
+			cursor: pointer;
+			background: transparent !important;
+			display: flex;
+			justify-content: flex-end;
+
+			@include breakpoint(small only) {
+				z-index: 9999999;
+				left: 89vw;
+			}
+			@include breakpoint(medium) {
+				width: 34%;
+			}
+
+			@include breakpoint(large) {
+				width: 34%;
+			}
+
+			&:hover {
+				background-color: transparent;
+			}
+
+			&:active {
+				background-color: transparent;
+			}
+		}
+	}
+
+	.orbit-slide {
+		z-index: 1;
+
+		.orbit-image {
+			border-radius: 50%;
+		}
+
+		&:not(.is-active) > .grid-x {
+			@include breakpoint(small only) {
+				align-items: center;
+				// height: 100%;
+			}
+		}
+
+		&.is-active {
+			z-index: 9;
+
+			@include breakpoint(small only) {
+				height: 80vh;
+			}
+
+			// first slider
+			&[data-slide="0"] {
+				// position: absolute;
+				// top: 15%;
+
+				@include breakpoint(small only) {
+					// position: relative;
+				}
+			}
+
+			// all slides
+			& + .orbit-slide {
+				display: block !important;
+				position: absolute !important;
+				height: auto;
+				width: 71%;
+				left: 23%;
+				z-index: -1;
+
+				@include breakpoint(medium) {
+					width: 100%;
+					left: 15%;
+				}
+				@include breakpoint(large) {
+					width: 100%;
+					left: 17%;
+				}
+			} // END all slides
+
+			.press-title-container {
+				display: flex;
+				align-items: center;
+				border-radius: 50%;
+
+				@include breakpoint(small only) {
+					background: $primary-color;
+					position: absolute;
+					bottom: 0;
+					width: 350px;
+					height: 350px;
+					justify-content: space-around;
+					align-items: center;
+					padding-top: 12rem;
+					& > a {
+						padding: 1rem;
+					}
+				}
+				@include breakpoint(medium) {
+					// position: absolute;
+					// width: 9;
+					// left: -39%;
+					// height: 90%;
+					// padding: 4rem;
+
+					& > a {
+					}
+				}
+				@include breakpoint(large) {
+					width: 33.33333%;
+					height: auto;
+					padding: 8rem 0rem;
+					position: relative;
+				}
+
+				.press-title-inner-container {
+					display: flex;
+					flex-direction: column;
+					align-items: flex-start;
+
+					& * {
+						color: white !important;
+					}
+				}
+			} // END press-title-container
+
+			.orbit-image-container {
+				z-index: 4;
+
+				@include breakpoint(small only) {
+					width: 90%;
+				}
+			}
+
+			> .grid-x {
+				// height: 100vh;
+
+				@include breakpoint(small only) {
+					flex-flow: column-reverse nowrap;
+					align-items: center;
+					justify-content: flex-end;
+				}
+
+				@include breakpoint(large) {
+					flex-direction: row;
+					height: 100%;
+					align-items: flex-end;
+					justify-content: flex-start;
+				}
+			}
+		} // end IS ACTIVE
+
+		// begin NOT active
+		&:not(.is-active) {
+			&[data-slide="0"] {
+				display: block !important;
+				position: absolute !important;
+				width: 100%;
+				left: 15%;
+				z-index: -2;
+			}
+
+			.press-title-container {
+				visibility: hidden;
+
+				@include breakpoint(small only) {
+					display: none;
+				}
+			}
+
+			.orbit-image-container {
+				@include breakpoint(small only) {
+					display: none;
+				}
+			}
+			.orbit-image {
+				filter: brightness(0.5);
+			}
+		}
+	}
+
+	.orbit-slide:not(.is-active) .press-title-container {
+		left: 0;
+		right: 0;
+	}
+}
+
+// left title container
+.circle-slider {
+	.press-title-background,
+	.press-title-container {
+		@include breakpoint(medium) {
+			position: relative;
+			left: 15%;
+		}
+		@include breakpoint(large) {
+      left: 20%;
+      .press-title-inner-container {
+        width: 50%;
+      }
+    }
+	}
+}
+
+// orbit controls
+.circle-slider .orbit-container .orbit-controls.orbit-group .orbit-next {
+	z-index: 9;
+}
+// all non active slides
+.circle-slider .orbit-container .orbit-group:not(.is-active):not(.orbit-controls) > .grid-x {
+	z-index: 7;
+}
+// active slide
+.circle-slider .orbit-container .orbit-group.is-active .grid-x {
+	z-index: 0;
+}
+// active slide individual pieces
+.circle-slider .orbit-container .orbit-group.is-active .grid-x * {
+	z-index: 10;
+}

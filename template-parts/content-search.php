@@ -11,38 +11,94 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="grid-x">
 
-		<div class="cell medium-11">
-			<?php
-                if (is_single()) {
-                    the_title('<h1 class="entry-title">', '</h1>');
-                } else {
-                    the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
-                }
-            ?>
-		</div>
+	<?php
+	// variables
+	$link = get_field('link_to_article');
 
-		<div class="cell medium-1 success">
-			<p><?php the_time('m.j.y'); ?></p>
-		</div>
+	?>
 
-	</header>
 	<div class="entry-content">
-		<?php //vars
-        $synopsis = get_field('synopsis');
-        ?>
-		<?php if (!empty(get_the_content())) : ?>
 
-			<?php echo wp_trim_words(get_the_content(), 40, '...');?>
+		<div class="grid-x">
+			<div class="cell small-2 medium-3">
+				<?php if ($link): ?>
+					<a href="<?php echo $link; ?>" target="_blank">
+						<?php the_post_thumbnail('fp-small', array('class' => 'alignleft')); ?>
+					</a>
+				<?php endif; ?>
+			</div>
 
-		<?php elseif ($synopsis): ?>
+			<div class="cell small-10 medium-9 press-title">
+				<div class="press-title-container">
+					<h2>
+						<?php if ($link): ?>
+							<a href="<?php echo $link; ?>" target="_blank">
+						<?php else : ?>
+							<a href="<?php echo get_permalink(); ?>">
+						<?php endif; ?>
+							<?php
+								$theTitle = wp_strip_all_tags(get_field('title'));
+								echo $theTitle; ?>
+						</a>
+					</h2>
+					<h4>
+						<?php if ($link): ?>
+							<a href="<?php echo $link; ?>" target="_blank">
+						<?php else : ?>
+							<a href="<?php echo get_permalink(); ?>">
+						<?php endif; ?>
+						<?php
+							$callout = wp_strip_all_tags(get_field('intro'));
+							echo $callout; ?>
+						</a>
+					</h4>
+				</div>
+			</div>
+		</div>
 
-			<?php the_field('synopsis'); ?>
+		<!-- date and read more -->
+		<footer class="grid-x">
 
-		<?php endif; ?>
+			<!-- admin edit link -->
+			<div class="cell small-2 medium-3">
 
-		<?php // edit_post_link(__('(Edit)', 'nacelle'), '<span class="edit-link">', '</span>');?>
+				<?php edit_post_link(__('(Edit)', 'nacelle'), '<span class="edit-link">', '</span>');?>
+				<?php $tag = get_the_tags(); if ($tag) {
+							?>
+					<p><?php the_tags(); ?></p>
+				<?php
+						} ?>
+
+			</div>
+
+			<!-- date and read more -->
+			<div class="cell small-10 medium-9">
+
+				<div class="grid-x small-up-2">
+
+					<div class="cell">
+						<p><?php the_time('m.j.y'); ?></p>
+					</div>
+					<div class="cell text-right">
+						<?php if ($link): ?>
+							<a href="<?php echo $link; ?>" class="clear button success medium" target="_blank">
+						<?php else : ?>
+							<a class="clear button success medium" href="<?php echo get_permalink(); ?>">
+						<?php endif; ?>
+							<?php _e('Read More. . .', 'Nacelle'); ?>
+
+						<?php echo '</a>'; ?>
+
+						</a>
+					</div>
+
+				</div>
+
+			</div>
+
+		</footer>
+
 	</div>
 	<footer>
 		<?php

@@ -1,12 +1,17 @@
 img.thumbnail.team-hover-icon {
     position: absolute;
-    top: -31%;
-    left: -25%;
-    width: 150%;
+    top: -7%;
+    left: -7%;
+    width: 114%;
     z-index: -1;
     max-width: 150%;
     opacity: 0;
     transition: .4s ease-in-out;
+
+    @include breakpoint(medium up) {
+        top: -5%;
+
+    }
 }
 
 .cell.text-center.teammember {
@@ -19,7 +24,6 @@ img.thumbnail.team-hover-icon {
     }
 
     .team-info {
-        // background: rgba(255, 255, 255, 0);
         transition: .4s ease-in-out;
 
     }
@@ -27,24 +31,70 @@ img.thumbnail.team-hover-icon {
     &:hover {
         .position {
             opacity: 1;
+            color: $true-black;
         }
 
         .team-info {
-            // background: rgba(255, 255, 255, 1);
+            @include shadow;
+
         }
     }
-
 }
 
 .thumbnail.member{
     transition: .4s ease-in-out;
     cursor: pointer;
+    position: relative;
+    margin-bottom: 6.5rem;
+
+    @include breakpoint(medium) {
+        margin-bottom: 4.5rem;
+    }
 
     &:hover {
         transform: scale(1.1);
 
         & + .team-hover-icon {
-            opacity: 1;
+            opacity: .2;
+        }
+    }
+}
+
+
+.teammember {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .team-info {
+        width: auto;
+        padding: 0 2rem;
+        position: absolute;
+        max-width: 75%;
+        border-radius: 4px;
+        top: 60%;
+
+                @include breakpoint(large) {
+            top: 50%;
+        }
+
+        .name {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            margin-top: 7rem;
+            transition: .4s ease-in-out;
+        }
+    }
+    &:hover {
+        .team-info {
+            background-color: #fff;
+            box-shadow: 1px solid black;
+        }
+
+        .name {
+            margin-top: 7.5rem;
+            color: $true-black;
         }
     }
 }

@@ -239,3 +239,17 @@ function cd_custom_css()
     }
   </style>';
 }
+
+
+/**
+ * YouTube oEmbeds w/ query string parameters
+ * https://brettmhoffman.com/code/add-query-string-parameters-to-youtube-oembeds-in-wp/
+ */
+add_filter( 'embed_oembed_html', 'embed_youtube_parameters');
+add_filter( 'video_embed_html', 'embed_youtube_parameters' ); // Jetpack
+function embed_youtube_parameters( $code ) {
+    if( strpos( $code, 'youtu.be' ) !== false || strpos( $code, 'youtube.com' ) !== false ) {
+        $return = preg_replace( '@embed/([^"&]*)@', 'embed/$1&modestbranding=1&autohide=1&rel=0', $code );
+    }
+    return '<div class="embed-container">' . $return . '</div>';
+}

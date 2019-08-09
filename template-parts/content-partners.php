@@ -11,19 +11,18 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header>
-	<?php the_title('<h1 class="entry-title">', '</h1>'); ?>
-		<?php //Nacelle_entry_meta(); ?>
-	</header>
+
 	<div class="entry-content">
-		<div class="grid-x grid-padding-x">
+
+		<!-- domestic -->
+		<section class="grid-x grid-padding-x grid-padding-y">
 
 			<!-- logos -->
-			<div class="cell medium-6">
+			<div class="cell medium-6 large-7 small-order-2 medium-order-1">
 
 				<?php if( have_rows('logo_repeater') ): ?>
 
-					<div class="grid-x small-up-2 medium-up-3 large-up-4 align-center pt-medium-4 grid-padding-x">
+					<div class="grid-x logo-container small-up-2 medium-up-3 large-up-5 align-center align-middle pt-medium-3 pb-medium-1 grid-padding-x">
 
 					<?php while( have_rows('logo_repeater') ): the_row();
 
@@ -38,10 +37,10 @@
 						<div class="cell text-center">
 
 							<?php if( $link ): ?>
-								<a href="<?php echo $link['url']; ?>">
+								<a href="<?php echo $link['url']; ?>" target="_blank">
 							<?php endif; ?>
 
-								<img class="thumbnail" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />
+								<img class="thumbnail fadeIn" src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt'] ?>" />
 
 							<?php if( $link ): ?>
 								</a>
@@ -58,34 +57,35 @@
 			</div>
 
 			<!-- left content -->
-			<div class="cell medium-6">
+			<div class="cell medium-6 large-5 small-order-1 medium-order-2">
 
 				<h2 class="fadeIn"><?php the_field('left_icon'); ?><?php the_field('left_title'); ?></h2>
 				<?php the_field('left_content'); ?>
 
 			</div>
 
-		</div>
+		</section>
 
+		<hr>
 
-		<div class="grid-x grid-padding-x grid-padding-y">
+		<!-- international -->
+		<section class="grid-x grid-padding-x grid-padding-y">
 
-			<div class="cell medium-6">
+			<!-- logos -->
+			<div class="cell medium-6 large-5">
 
 				<h2 class="fadeIn"><?php the_field('right_icon'); ?><?php the_field('right_title'); ?></h2>
 				<?php the_field('right_content'); ?>
 
 				<?php if( have_rows('logo_repeater02') ): ?>
 
-					<div class="grid-x small-up-2 medium-up-3 large-up-4 align-center pt-medium-4 grid-padding-x">
+					<div class="grid-x logo-container small-up-2 medium-up-3 large-up-3 align-center align-middle grid-padding-x pt-medium-3">
 
 					<?php while( have_rows('logo_repeater02') ): the_row();
 
 						// vars
 						$image02 = get_sub_field('logo02');
 						$link02 = get_sub_field('logo_link02');
-
-						// $link_url = $link['url'];
 
 						?>
 
@@ -95,7 +95,7 @@
 								<a href="<?php echo $link02['url']; ?>">
 							<?php endif; ?>
 
-								<img class="thumbnail" src="<?php echo $image02['url']; ?>" alt="<?php echo $image02['alt'] ?>" />
+								<img class="thumbnail fadeIn" src="<?php echo $image02['url']; ?>" alt="<?php echo $image02['alt'] ?>" />
 
 							<?php if( $link02 ): ?>
 								</a>
@@ -112,7 +112,7 @@
 			</div>
 
 			<!-- right image -->
-			<div class="cell medium-6">
+			<div class="cell medium-6 large-7">
 
 				<?php
 
@@ -126,7 +126,7 @@
 
 			</div>
 
-		</div>
+		</section>
 		<?php edit_post_link(__('(Edit)', 'nacelle'), '<span class="edit-link">', '</span>');?>
 	</div>
 	<footer>

@@ -1,19 +1,33 @@
 <?php
-/*
-Template Name: Partners
-*/
+/**
+ * Template name: Partners
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package FoundationPress
+ * @since FoundationPress 1.0.0
+ */
+
 get_header(); ?>
 
-<?php get_template_part( 'template-parts/featured-image' ); ?>
 <div class="main-container">
+
 	<div class="main-grid">
+
 		<main class="main-content-full-width">
+
+			<?php get_template_part('template-parts/logo-bg-header'); ?>
+
 			<?php while ( have_posts() ) : the_post(); ?>
 
 				<?php get_template_part( 'template-parts/content-partners', 'page' ); ?>
-				<?php comments_template(); ?>
+
 			<?php endwhile; ?>
+
 		</main>
+
 	</div>
+
 </div>
+
 <?php get_footer();

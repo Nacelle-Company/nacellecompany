@@ -74,19 +74,20 @@ $global-lineheight: 1.5;
 $foundation-palette: (
   primary: #4591E5,
   secondary: #D39A00,
-  success: #7FD2E6,
+  success: #4591E5,
   warning: #ffae00,
   alert: #cc4b37,
 );
-$light-gray: #f6f6f6;
+$light-gray: #F4F5F6;
 $medium-gray: #2C2C2C;
 $dark-gray: #8d8d8d;
 $black: #5e5e5e;
 $true-black: #000;
 $white: #ffffff;
-$body-background: $white;
+$dark-nav-color: #2a2d2e;
+$body-background: $true-black;
 $footer-background: $white;
-$body-font-color: $dark-gray;
+$body-font-color: $white;
 $body-font-family: 'Raleway', 'Helvetica', sans-serif;
 $body-antialiased: true;
 $global-margin: 1rem;
@@ -94,7 +95,7 @@ $global-padding: 1rem;
 $global-position: 1rem;
 $global-weight-normal: normal;
 $global-weight-bold: bold;
-$global-radius: 4px;
+$global-radius: 6px;
 $global-menu-padding: 0.7rem 1rem;
 $global-menu-nested-margin: 1rem;
 $global-text-direction: ltr;
@@ -162,22 +163,22 @@ $header-styles: (
 );
 $header-text-rendering: optimizeLegibility;
 $small-font-size: 80%;
-$header-small-font-color: $black;
+$header-small-font-color: $white;
 $paragraph-lineheight: 1.6;
 $paragraph-margin-bottom: 1rem;
 $paragraph-text-rendering: optimizeLegibility;
-$code-color: $black;
+$code-color: $white;
 $code-font-family: $font-family-monospace;
 $code-font-weight: $global-weight-normal;
 $code-background: $light-gray;
 $code-border: 1px solid $medium-gray;
 $code-padding: rem-calc(2 5 1);
-$anchor-color: $black;
+$anchor-color: $white;
 $anchor-color-hover: scale-color($anchor-color, $lightness: -14%);
 $anchor-text-decoration: none;
 $anchor-text-decoration-hover: none;
 $hr-width: $global-width;
-$hr-border: 3px solid $medium-gray;
+$hr-border: 3px solid $light-gray;
 $hr-margin: rem-calc(20) auto;
 $list-lineheight: $paragraph-lineheight;
 $list-margin-bottom: $paragraph-margin-bottom;
@@ -188,11 +189,11 @@ $list-nested-side-margin: 1.25rem;
 $defnlist-margin-bottom: 1rem;
 $defnlist-term-weight: $global-weight-bold;
 $defnlist-term-margin-bottom: 0.3rem;
-$blockquote-color: $dark-gray;
+$blockquote-color: $light-gray;
 $blockquote-padding: rem-calc(9 20 0 19);
 $blockquote-border: 1px solid $medium-gray;
 $cite-font-size: rem-calc(13);
-$cite-color: $dark-gray;
+$cite-color: $white;
 $cite-pseudo-content: '\2014 \0020';
 $keystroke-font: $font-family-monospace;
 $keystroke-color: $black;
@@ -207,7 +208,7 @@ $abbr-underline: 1px dotted $black;
 $lead-font-size: $global-font-size * 1.25;
 $lead-lineheight: 1.6;
 $subheader-lineheight: 1.4;
-$subheader-color: $dark-gray;
+$subheader-color: $white;
 $subheader-font-weight: $global-weight-normal;
 $subheader-margin-top: 0.2rem;
 $subheader-margin-bottom: 0.5rem;
@@ -358,8 +359,8 @@ $closebutton-size: (
   medium: 2em,
 );
 $closebutton-lineheight: 1;
-$closebutton-color: $white;
-$closebutton-color-hover: $light-gray;
+$closebutton-color: $medium-gray;
+$closebutton-color-hover: $dark-gray;
 
 // 16. Drilldown
 // -------------
@@ -440,7 +441,7 @@ $input-font-family: inherit;
 $input-font-size: rem-calc(16);
 $input-font-weight: $global-weight-normal;
 $input-line-height: $global-lineheight;
-$input-background: $white;
+$input-background: $black;
 $input-background-focus: $white;
 $input-background-disabled: $light-gray;
 $input-border: 1px solid $medium-gray;
@@ -506,7 +507,7 @@ $offcanvas-sizes: (
 $offcanvas-vertical-sizes: (
   small: 250px,
 );
-$offcanvas-background: rgba($white, 0.9);
+$offcanvas-background: rgba($true-black, 0.9);
 $offcanvas-shadow: 0 0 10px rgba($black, 0.7);
 $offcanvas-inner-shadow-size: 20px;
 $offcanvas-inner-shadow-color: rgba($black, 0.25);
@@ -736,13 +737,13 @@ $responsive-embed-ratios: (
 // ----------
 
 $reveal-background: $true-black;
-$reveal-width: 60vw;
+$reveal-width: 50vw;
 $reveal-max-width: $global-width;
-$reveal-padding: $global-padding;
+$reveal-padding: $global-padding + 1;
 $reveal-border: 1px solid $medium-gray;
 $reveal-radius: $global-radius;
 $reveal-zindex: 9999999005;
-$reveal-overlay-background: rgba($true-black, 0.85);
+$reveal-overlay-background: rgba($true-black, 0.5);
 
 // 48. Slider
 // ----------
@@ -883,16 +884,131 @@ $xy-block-grid-max: 8;
     box-shadow: 3px 2px 2px #0a0a0a6b;
 }
 
+@mixin shadow {
+    box-shadow: 0 6px 11px 0 rgba(0,0,0,0.50);
+}
+
+@mixin shadow01 {
+  box-shadow: 0 8px 10px -5px rgba(0, 0, 0, 0.2), 0 4px 25px 0 rgba(0, 0, 0, 0.12), 0 16px 38px -12px rgba(0, 0, 0, 0.56);
+}
+
+@mixin cardOneShadow {
+    box-shadow: 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2), 0 2px 2px 0 rgba(0,0,0,0.14);
+}
+
 @mixin hover {
     box-shadow: 2px 4px 21px #0a0a0a;
     transform: scale(1.01);
 }
 
+@mixin primary-button {
+	background: #4591E5;
+	color: white;
+	padding: 1em;
+	text-transform: uppercase;
+	cursor: pointer;
+    font-weight: 600;
+}
+
 // hover without Shadow
-@mixin nothoverNS {
+@mixin transition {
     transition: all .2s ease-in-out;
 }
 
+
+
 @mixin hoverNS {
     transform: scale(1.06);
+}
+
+@mixin circle {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 0;
+  padding: 50% 0;
+  border-radius: 50%;
+}
+
+.circle {
+    @include circle;
+}
+
+
+// NEED TO BE PARSED OUT INTO THE SCSS FILES
+//
+//
+//
+//
+
+.accordion,
+.accordion-title:focus,
+.accordion-title:hover,
+.accordion-content {
+    background: white;
+}
+
+.accordion-title {
+	cursor: pointer;
+}
+.accordion-content {
+    box-shadow: inset 0 0px 0px 0 rgba(0,0,0,.5), inset 0 1px 1px 0 rgba(0,0,0,.5), 0 1px 5px 0 rgba(0,0,0,.5);
+}
+
+.searchandfilter select.sf-input-select {
+    min-width: 125px;
+	 margin: 0;
+}
+
+.macro-cat-cards>.cell {
+    padding-bottom: 3rem;
+}
+
+.home footer.footer {
+	padding-top: 0;
+}
+
+.home .more {
+    height: 96vh;
+}
+
+.home footer.cell.shrink.footer {
+	position: relative;
+}
+
+.logo-container>.cell {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+}
+
+@media print, screen and (min-width: 40em) {
+	.reveal {
+    width: 25vw;
+    max-width: 90rem;
+		overflow: hidden;
+}
+}
+
+@media print, screen and (min-width: 40em) {
+	.footer-grid section .icon-container {
+    text-align: center;
+	}
+}
+
+@media print, screen and (min-width: 64em) {
+	.footer-grid section .icon-container {
+    text-align: right;
+	}
+}
+
+
+.reveal#videoModal1,
+.reveal#productsModal{
+    width: 80vw;
+	background: black;
+}
+
+/* hide sorting for now */
+.productions .sorting {
+    display: none;
 }

@@ -5,14 +5,18 @@
 // sorting products.php file
 .productions {
     .sorting {
-        display: flex;
+        display: none;
         align-items: center;
         justify-content: center;
+        font-weight: 600;
 
         @include breakpoint(medium) {
             justify-content: flex-end;
         }
 
+        .section-title {
+    width: 100%;
+}
         h4 {
             text-transform: uppercase;
             margin-bottom: 0;
@@ -48,6 +52,27 @@
 .nf-before-form-content .nf-form-fields-required {
     display: none;
 }
+// ninja button
+input.nf-element[type="button"] {
+    @include primary-button;
+}
+
 #mc_embed_signup label {
     color: $primary-color;
 }
+
+
+.widget_ninja_forms_widget {
+    .nf-form-title {
+        & * {
+            color: $white;
+        }
+    }
+
+}
+
+    .nf-field-label label {
+        & * {
+            color: $white;
+        }
+    }

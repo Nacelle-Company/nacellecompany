@@ -12,6 +12,13 @@
     .main-content-full-width {
         margin: 0;
         width: 100%;
+
+        .page > header {
+
+            text-indent: -900px;
+            position: absolute;
+
+        }
     }
 
     .productions {

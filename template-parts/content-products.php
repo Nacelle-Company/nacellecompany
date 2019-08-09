@@ -25,7 +25,7 @@
 
         <div class="grid-x">
             <div class="cell medium-12 large-8 nacelle-products">
-                <div class="embed-container" data-open="exampleModal1">
+                <div class="embed-container" data-open="productsModal">
                     <?php the_field('featured_video'); ?>
                     <div class="overlay">
                         <h1><?php the_field('featured_video_title'); ?></h1>
@@ -37,7 +37,7 @@
                 <iframe id="comedy-dynamics"
                     title="Comedy Dynamics"
                     frameborder="0"
-                    src="<?php the_field('comedy_dynamics'); ?>">
+                    src="<?php the_field('comedy_dynamics'); ?>?controls=0">
                 </iframe>
             </div>
         </div>
@@ -60,15 +60,3 @@
         } ?>
 	</footer>
 </article>
-
-
-<!-- Reveal -->
-	<!-- Basic modal -->
-<div class="reveal" id="exampleModal1" data-reveal>
-	<div class="embed-container">
-		<?php the_field('featured_video'); ?>
-	</div>
-	<button class="close-button" data-close aria-label="Close reveal" type="button">
-		<span aria-hidden="true">&times;</span>
-	</button>
-</div>
