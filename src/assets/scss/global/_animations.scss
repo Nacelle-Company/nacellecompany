@@ -105,9 +105,8 @@
 
 }
 
-$duration: 16000;
 
-.circle-slider.orbit {
+.clean-hero-slider {
   // A long, long fade
-  @include mui-slide(in, $duration: 10s);
+  @include mui-slide(in, 16000, 90s);
 }

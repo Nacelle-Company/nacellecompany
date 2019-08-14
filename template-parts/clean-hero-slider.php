@@ -1,4 +1,4 @@
-<div class="orbit clean-hero-slider" role="region" aria-label="Favorite Space Pictures" data-orbit data-options="timerDelay: 8000">
+<div class="orbit clean-hero-slider" role="region" aria-label="Favorite Space Pictures" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out; timerDelay: 6000">
 
     <div class="orbit-wrapper">
         <div class="orbit-controls">
