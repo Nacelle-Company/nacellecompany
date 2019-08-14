@@ -18,24 +18,24 @@ get_header();
 
 	if (!empty($image)) : ?>
 
-		<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+	<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
 
 	<?php else : ?>
-		<?php
+	<?php
 
-// https://speckyboy.com/html5-video-wordpress-custom-fields/
-// Get the Video Fields
-$video_mp4 =  get_field('splash'); // MP4 Field Name
+		// https://speckyboy.com/html5-video-wordpress-custom-fields/
+		// Get the Video Fields
+		$video_mp4 =  get_field('splash'); // MP4 Field Name
 
-// Build the  Shortcode
-$attr =  array(
-'mp4'      => $video_mp4,
-'preload'  => 'auto',
-'autoplay' => 'on'
-);
+		// Build the  Shortcode
+		$attr =  array(
+			'mp4'      => $video_mp4,
+			'preload'  => 'auto',
+			'autoplay' => 'on'
+		);
 
-// Display the Shortcode
-echo wp_video_shortcode(  $attr );
+		// Display the Shortcode
+		echo wp_video_shortcode($attr);
 
 
 		?>
@@ -64,24 +64,24 @@ echo wp_video_shortcode(  $attr );
 	<div class="cell">
 
 		<?php while (have_posts('')) : the_post(); ?>
-			<?php get_template_part('template-parts/clean-hero-slider'); ?>
+		<?php get_template_part('template-parts/clean-hero-slider'); ?>
 
-			<div class="circle-slider orbit" role="region" aria-label="Nacelle News Slider" data-orbit data-auto-play="false" data-use-m-u-i="false">
+		<div class="circle-slider orbit" role="region" aria-label="Nacelle News Slider" data-orbit data-auto-play="false" data-use-m-u-i="false">
 
-				<ul class="orbit-container" id="circle-posts">
+			<ul class="orbit-container" id="circle-posts">
 
-					<div class="grid-x background-slide-container orbit-group">
-						<div class="small-12 medium-4 large-4 press-title-background columns">
-							<img src="<?php bloginfo('template_directory'); ?>/dist/assets/images/news-slider-title-bkgnd.png" alt="press title background" />
+				<div class="grid-x background-slide-container orbit-group">
+					<div class="small-12 medium-4 large-4 press-title-background columns">
+						<img src="<?php bloginfo('template_directory'); ?>/dist/assets/images/news-slider-title-bkgnd.png" alt="press title background" />
 
-						</div>
 					</div>
+				</div>
 
-					<?php get_template_part('template-parts/circle-slider'); ?>
+				<?php get_template_part('template-parts/circle-slider'); ?>
 
-				</ul>
+			</ul>
 
-			</div>
+		</div>
 		<?php endwhile; ?>
 		<!-- END LOOP -->
 

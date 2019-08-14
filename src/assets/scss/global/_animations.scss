@@ -104,3 +104,10 @@
   }
 
 }
+
+$duration: 16000;
+
+.circle-slider.orbit {
+  // A long, long fade
+  @include mui-slide(in, $duration: 10s);
+}

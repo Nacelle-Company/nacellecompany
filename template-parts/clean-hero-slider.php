@@ -1,4 +1,4 @@
-<div class="orbit clean-hero-slider" role="region" aria-label="Favorite Space Pictures" data-orbit>
+<div class="orbit clean-hero-slider" role="region" aria-label="Favorite Space Pictures" data-orbit data-options="timerDelay: 8000">
 
     <div class="orbit-wrapper">
         <div class="orbit-controls">
@@ -18,60 +18,62 @@
 
             $post_objects = get_field('home_feat_posts');
 
-            if( $post_objects ): ?>
-            <?php foreach( $post_objects as $post): // variable must be called $post (IMPORTANT) ?>
-                <?php setup_postdata($post); ?>
+            if ($post_objects) : ?>
+            <?php foreach ($post_objects as $post) : // variable must be called $post (IMPORTANT) 
+                    ?>
+            <?php setup_postdata($post); ?>
 
-                <li class="orbit-slide">
-                    <figure class="orbit-figure">
-                        <?php
+            <li class="orbit-slide">
+                <figure class="orbit-figure">
+                    <?php
 
-                        $img_size_lg = 'fp-large';
-                        $img_size_md = 'fp-medium';
-                        $img_size_sm = 'fp-small';
+                            $img_size_lg = 'fp-large';
+                            $img_size_md = 'fp-medium';
+                            $img_size_sm = 'fp-small';
 
-                        $image = get_field('home_image');
-                        $squareImage = get_field('square_image');
+                            $image = get_field('home_image');
+                            $squareImage = get_field('square_image');
 
-                        $hero_image_alt = $image['alt']; /* Get image object alt */
-                        $hero_square_image_alt = $squareImage['alt'];
+                            $hero_image_alt = $image['alt']; /* Get image object alt */
+                            $hero_square_image_alt = $squareImage['alt'];
 
-                        /* Get custom sizes of our image sub_field */
-                        $hero_lg = $image['sizes'][ $img_size_lg ];
-                        $hero_md = $image['sizes'][ $img_size_md ];
-                        $hero_sm = $image['sizes'][ $img_size_sm ];
+                            /* Get custom sizes of our image sub_field */
+                            $hero_lg = $image['sizes'][$img_size_lg];
+                            $hero_md = $image['sizes'][$img_size_md];
+                            $hero_sm = $image['sizes'][$img_size_sm];
 
-                        $hero_square_lg = $squareImage['sizes'][ $img_size_lg ];
-                        $hero_square_md = $squareImage['sizes'][ $img_size_md ];
-                        $hero_square_sm = $squareImage['sizes'][ $img_size_sm ];
+                            $hero_square_lg = $squareImage['sizes'][$img_size_lg];
+                            $hero_square_md = $squareImage['sizes'][$img_size_md];
+                            $hero_square_sm = $squareImage['sizes'][$img_size_sm];
 
-                        ?>
+                            ?>
 
-                        <!-- large background image -->
-                        <img class="orbit-image" data-interchange="[<?php echo $hero_lg; ?>, default], [<?php echo $hero_sm; ?>, small], [<?php echo $hero_md; ?>, medium], [<?php echo $hero_lg; ?>, large]" alt="<?php echo $hero_image_alt; ?>" />
-                        <noscript><img src="<?php echo $hero_lg; ?>" alt="<?php echo $hero_image_alt; ?>" /></noscript>
+                    <!-- large background image -->
+                    <img class="orbit-image" data-interchange="[<?php echo $hero_lg; ?>, default], [<?php echo $hero_sm; ?>, small], [<?php echo $hero_md; ?>, medium], [<?php echo $hero_lg; ?>, large]" alt="<?php echo $hero_image_alt; ?>" />
+                    <noscript><img src="<?php echo $hero_lg; ?>" alt="<?php echo $hero_image_alt; ?>" /></noscript>
 
-                        <div class="orbit-cover">
+                    <div class="orbit-cover">
 
-                        </div>
+                    </div>
 
-                        <figcaption class="orbit-caption">
-                            <!-- small image -->
-                            <a href="<?php the_permalink(); ?>">
-                                <img class="orbit-sm-image" data-interchange="[<?php echo $hero_square_sm; ?>, default], [<?php echo $hero_square_sm; ?>, small], [<?php echo $hero_square_md; ?>, medium], [<?php echo $hero_square_lg; ?>, large]" alt="<?php echo $hero_square_image_alt; ?>" />
-                            </a>
-                            <noscript><img src="<?php echo $hero_square_lg; ?>" alt="<?php echo $hero_image_alt; ?>" /></noscript>
+                    <figcaption class="orbit-caption">
+                        <!-- small image -->
+                        <a href="<?php the_permalink(); ?>">
+                            <img class="orbit-sm-image" data-interchange="[<?php echo $hero_square_sm; ?>, default], [<?php echo $hero_square_sm; ?>, small], [<?php echo $hero_square_md; ?>, medium], [<?php echo $hero_square_lg; ?>, large]" alt="<?php echo $hero_square_image_alt; ?>" />
+                        </a>
+                        <noscript><img src="<?php echo $hero_square_lg; ?>" alt="<?php echo $hero_image_alt; ?>" /></noscript>
 
-                            <a href="<?php the_permalink(); ?>">
-                                <h3><?php echo get_the_title( ); ?></h3>
-                            </a>
-                            <?php the_excerpt(); ?>
-                        </figcaption>
-                    </figure>
-                </li>
+                        <a href="<?php the_permalink(); ?>">
+                            <h3><?php echo get_the_title(); ?></h3>
+                        </a>
+                        <?php the_excerpt(); ?>
+                    </figcaption>
+                </figure>
+            </li>
             <?php endforeach; ?>
-            <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly ?>
-        <?php endif; ?>
+            <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly 
+                ?>
+            <?php endif; ?>
         </ul>
     </div>
 
