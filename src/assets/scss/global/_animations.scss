@@ -35,7 +35,7 @@
 @keyframes fadeIn {
   0% {
     opacity: 0;
-    transform: translateY(16%);
+    transition: translateY(16%);
   }
   100% {
     opacity: 1;
@@ -43,6 +43,14 @@
   }
 }
 
+@keyframes fadeInQuick {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
 .fadeIn {
     @include transform(fadeIn);
@@ -51,6 +59,7 @@
 @keyframes slideLeft {
   0% {
     transform: translateX(0);
+    transition: transform 2s linear 1s
   }
   // 25% {
   //   transform: translateX(-25vw);
@@ -67,22 +76,14 @@
 }
 
 .slideLeft {
-    @include transform(slideLeft);
+    animation-name: slideLeft;
 }
 
 .splash {
-    // background-image: url("http://localhost/nacelle/nacelle/wp-content/uploads/2019/07/Webp.net-gifmaker-1.gif");
-    position: absolute;
     z-index: 9999999999999;
     position: absolute;
-    display: flex;
-    align-items: center;
-    background: black;
-    height: 100vh;
-    width: 100%;
-    top: 0;
-    left: 0;
-    align-items: center;
+    transform: translateX(0);
+    transition: transform 1s ease-in-out;
 
     img {
       width: 100%;
@@ -93,14 +94,9 @@
 
 
 .splash.slideLeft {
-    left: -100vw;
-    transition-property: left;
-    transition-duration: 2s;
-    transition-delay: 7s;
-    transition-timing-function: ease-in;
-
+    transform: translateX(-100%);
   &.hidden {
-    display: none;
+    // display: none;
   }
 
 }
