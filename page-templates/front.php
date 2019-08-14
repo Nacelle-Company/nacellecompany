@@ -8,7 +8,7 @@ get_header();
 
 <?php do_action('Nacelle_before_content'); ?>
 <?php $count = 0; ?>
-<div class="splash">
+<div class="splash fade-in">
 
 	<?php
 
