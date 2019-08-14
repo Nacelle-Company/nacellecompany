@@ -72,6 +72,7 @@
 
 .splash {
     // background-image: url("http://localhost/nacelle/nacelle/wp-content/uploads/2019/07/Webp.net-gifmaker-1.gif");
+    position: absolute;
     z-index: 9999999999999;
     position: absolute;
     display: flex;
@@ -80,7 +81,9 @@
     height: 100vh;
     width: 100%;
     top: 0;
+    left: 0;
     align-items: center;
+
     img {
       width: 100%;
       min-width: 100%;
@@ -90,14 +93,11 @@
 
 
 .splash.slideLeft {
-    z-index: 999999999;
-    left: 0px;
-    top: 0px;
-    position: absolute;
+    left: -100vw;
     transition-property: left;
     transition-duration: 2s;
     transition-delay: 7s;
-    transition-timing-function: ease-in-out;
+    transition-timing-function: ease-in;
 
   &.hidden {
     display: none;
