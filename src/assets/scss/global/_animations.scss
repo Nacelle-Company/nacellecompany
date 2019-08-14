@@ -95,7 +95,7 @@
     top: 0px;
     position: absolute;
     transition-property: left;
-    transition-duration: 1s;
+    transition-duration: 2s;
     transition-delay: 7s;
     transition-timing-function: ease-in-out;
 
@@ -103,10 +103,4 @@
     display: none;
   }
 
-}
-
-
-.clean-hero-slider {
-  // A long, long fade
-  @include mui-slide(in, 16000, 90s);
 }
