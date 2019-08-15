@@ -28,6 +28,7 @@
 	<!-- font awesome kit -->
 	<script src="https://kit.fontawesome.com/5dd607493a.js"></script>
 
+	<meta name="google-site-verification" content="TVz0X0JqzKCcIcb6ksAseGCiw8NK5nRGLlYtxhM0VTQ" />
 
 	<?php wp_head(); ?>
 </head>
@@ -35,7 +36,7 @@
 <body <?php body_class(); ?>>
 
 	<?php if (get_theme_mod('wpt_mobile_menu_layout') === 'offcanvas') : ?>
-		<?php get_template_part('template-parts/mobile-off-canvas'); ?>
+	<?php get_template_part('template-parts/mobile-off-canvas'); ?>
 	<?php endif; ?>
 
 	<?php get_template_part('template-parts/search-off-canvas'); ?>
@@ -94,15 +95,15 @@
 									<path class="svg-icon" d="M5.62463857.0331637H1.49961426c-.8141329 0-1.47656402.69119124-1.47656402 1.54061588V15.2098736c0 .8781847.66232577 1.5406159 1.54061589 1.5406159h4.06097244c.8417342 0 1.47656402-.6624312 1.47656402-1.5406159v-4.5330389H4.61813938v3.9113776H2.50590276V2.19533549h2.11223662V5.2090389h2.48306321V1.57377958c0-.86375203-.64863047-1.54061588-1.47656402-1.54061588" fill="#FFF" mask="url(#b)" />
 								</g>
 								<g transform="translate(30.867098 83.132577)">
-		
+
 									<path class="svg-icon" mask="url(#d)" d="M2.54355429 9.29117585h2.97082659V7.10751297H2.54355429V2.19543031h3.16308753V.03315316H.06080713V16.7504789h5.71009725v-2.1622771H2.54355429z" />
 								</g>
 								<g transform="translate(39.400324 83.132577)">
-					
+
 									<path class="svg-icon" mask="url(#f)" d="M2.55991491.0331637H.07695705v16.7173258h6.11621556v-2.1622772h-3.6332577z" />
 								</g>
 								<g transform="translate(47.933549 83.132577)">
-						
+
 									<path class="svg-icon" mask="url(#h)" d="M2.49057455.0331637H.00793274v16.7173258h6.11611021v-2.1622772h-3.6334684z" />
 								</g>
 								<path class="svg-icon" d="M58.8882087 97.7208v-5.2970259h2.9709319v-2.1836629h-2.9709319v-4.912188h3.1631929v-2.1621718h-5.6458347v16.7172204h5.7100972V97.7208zM50.3440798 30.7511841c0-10.634611-8.6517423-19.2863533-19.2862479-19.2863533-10.6345057 0-19.2863534 8.6517423-19.2863534 19.2863533 0 10.6346111 8.6518477 19.286248 19.2863534 19.286248 10.6345056 0 19.2862479-8.6516369 19.2862479-19.286248" />
@@ -123,7 +124,7 @@
 
 					<?php if (!get_theme_mod('wpt_mobile_menu_layout') || get_theme_mod('wpt_mobile_menu_layout') === 'topbar') : ?>
 
-						<?php get_template_part('template-parts/mobile-top-bar'); ?>
+					<?php get_template_part('template-parts/mobile-top-bar'); ?>
 
 					<?php endif; ?>
 
