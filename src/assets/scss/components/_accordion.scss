@@ -9,19 +9,16 @@
 
 .accordion-content {
     // @include xy-grid-container;
-    background-color: $primary-color;
+    background-color: #4c97e4;
     padding: 0;
     box-shadow: $thumbnail-shadow-inner;
+
     .title {
         color: $medium-gray;
     }
     .extra-metadata {
-
         .title p {
             color: $medium-gray;
-        }
-        p {
-
         }
     }
 }
