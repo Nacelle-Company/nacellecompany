@@ -81,7 +81,7 @@
 
 .splash {
     z-index: 9999999999999;
-    position: absolute;
+    position: relative;
     transform: translateX(0);
     transition: transform 1s ease-in-out;
 

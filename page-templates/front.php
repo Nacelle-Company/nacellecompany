@@ -7,25 +7,28 @@ get_header();
 ?>
 
 <?php do_action('Nacelle_before_content'); ?>
-<?php $count = 0; ?>
+
+<?php
+$image = get_field('gif');
+$seconds = get_field('seconds');
+$secondsHide = $seconds + 1;
+$video_mp4 =  get_field('splash'); 
+$count = 0;
+?>
+
+<?php if ($image) : ?>
+
+	<div class="splash fade-in">
+		<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+	</div>
+
+<?php elseif ($video_mp4) : ?>
+
 <div class="splash fade-in">
-
-	<?php
-
-	$image = get_field('gif');
-	$seconds = get_field('seconds');
-	$secondsHide = $seconds + 1;
-
-	if (!empty($image)) : ?>
-
-	<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-
-	<?php else : ?>
 	<?php
 
 		// https://speckyboy.com/html5-video-wordpress-custom-fields/
 		// Get the Video Fields
-		$video_mp4 =  get_field('splash'); // MP4 Field Name
 
 		// Build the  Shortcode
 		$attr =  array(
@@ -39,25 +42,26 @@ get_header();
 
 
 		?>
+	<?php else : ?>
 	<?php endif; ?>
 
 	<script>
-		let splash = document.querySelector(".splash");
-		window.addEventListener("load", function() {
-			setTimeout(function() {
-				splash.classList.add("slideLeft");
+		// let splash = document.querySelector(".splash");
+		// window.addEventListener("load", function() {
+		// 	setTimeout(function() {
+		// 		splash.classList.add("slideLeft");
 
-			}, <?php echo $seconds; ?>000);
+		// 	}, <?php //echo $seconds; ?>000);
 
-		});
+		// });
 
-		window.addEventListener("load", function() {
-			setTimeout(function() {
-				splash.classList.add("hidden");
+		// window.addEventListener("load", function() {
+		// 	setTimeout(function() {
+		// 		splash.classList.add("hidden");
 
-			}, <?php echo $secondsHide; ?>000);
+		// 	}, <?php //echo $secondsHide; ?>000);
 
-		});
+		// });
 	</script>
 </div>
 <div class="grid-x">
