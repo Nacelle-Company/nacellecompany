@@ -12,15 +12,16 @@ get_header();
 $image = get_field('gif');
 $seconds = get_field('seconds');
 $secondsHide = $seconds + 1;
-$video_mp4 =  get_field('splash'); 
+$video_mp4 =  get_field('splash');
+$iframe =  get_field('embed_video');
 $count = 0;
 ?>
 
 <?php if ($image) : ?>
 
-	<div class="splash fade-in">
-		<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-	</div>
+<div class="splash fade-in">
+	<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+</div>
 
 <?php elseif ($video_mp4) : ?>
 
@@ -42,6 +43,52 @@ $count = 0;
 
 
 		?>
+
+	<?php elseif ($iframe) : ?>
+
+	<div class="splash fade-in">
+
+		<div class="embed-container">
+
+			<?php
+
+				// use preg_match to find iframe src
+				preg_match('/src="(.+?)"/', $iframe, $matches);
+				$src = $matches[1];
+
+
+				// add extra params to iframe src
+				$params = array(
+					'controls'    => 0,
+					'hd'        => 1,
+					'autohide'    => 1,
+					'rel' => 0,
+					'modestbranding' => 1,
+					'autoplay' => 1
+
+				);
+
+				$new_src = add_query_arg($params, $src);
+
+				$iframe = str_replace($src, $new_src, $iframe);
+
+
+				// add extra attributes to iframe html
+				$attributes = 'frameborder="0"';
+
+				$iframe = str_replace('></iframe>', ' ' . $attributes . '></iframe>', $iframe);
+
+
+				// echo $iframe
+				echo $iframe;
+
+				?>
+
+		</div>
+
+
+	</div>
+
 	<?php else : ?>
 	<?php endif; ?>
 
@@ -51,7 +98,8 @@ $count = 0;
 		// 	setTimeout(function() {
 		// 		splash.classList.add("slideLeft");
 
-		// 	}, <?php //echo $seconds; ?>000);
+		// 	}, 
+			<?php //echo $seconds; ?>000);
 
 		// });
 
@@ -59,7 +107,8 @@ $count = 0;
 		// 	setTimeout(function() {
 		// 		splash.classList.add("hidden");
 
-		// 	}, <?php //echo $secondsHide; ?>000);
+		// 	}, 
+			<?php //echo $secondsHide; ?>000);
 
 		// });
 	</script>
