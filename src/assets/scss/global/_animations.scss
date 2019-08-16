@@ -61,15 +61,7 @@
     transform: translateX(0);
     transition: transform 2s linear 1s
   }
-  // 25% {
-  //   transform: translateX(-25vw);
-  // }
-  //   50% {
-  //   transform: translateX(-50vw);
-  // }
-  // 75% {
-  //   transform: translateX(-75vw);
-  // }
+
   100% {
     transform: translateX(-100vw);
   }
@@ -103,8 +95,6 @@
 
 }
 
-.splash.slideLeft,
-.splash.slideLeft * {
+.splash.slideLeft {
     transform: translateX(-100%);
-
 }
