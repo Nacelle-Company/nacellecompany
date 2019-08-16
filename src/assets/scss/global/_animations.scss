@@ -81,9 +81,13 @@
 
 .splash {
     z-index: 9999999999999;
-    position: relative;
+    position: fixed;
     transform: translateX(0);
     transition: transform 1s ease-in-out;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
 
     img {
       width: 100%;
@@ -93,10 +97,14 @@
 }
 
 .splash.slideLeft {
-    transform: translateX(-100%);
-
     &.hidden {
       display: none;
     }
+
+}
+
+.splash.slideLeft,
+.splash.slideLeft * {
+    transform: translateX(-100%);
 
 }

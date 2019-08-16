@@ -93,24 +93,22 @@ $count = 0;
 	<?php endif; ?>
 
 	<script>
-		// let splash = document.querySelector(".splash");
-		// window.addEventListener("load", function() {
-		// 	setTimeout(function() {
-		// 		splash.classList.add("slideLeft");
+		let splash = document.querySelector(".splash");
+		window.addEventListener("load", function() {
+			setTimeout(function() {
+				splash.classList.add("slideLeft");
 
-		// 	}, 
-			<?php //echo $seconds; ?>000);
+			}, <?php echo $seconds; ?>000);
 
-		// });
+		});
 
-		// window.addEventListener("load", function() {
-		// 	setTimeout(function() {
-		// 		splash.classList.add("hidden");
+		window.addEventListener("load", function() {
+			setTimeout(function() {
+				splash.classList.add("hidden");
 
-		// 	}, 
-			<?php //echo $secondsHide; ?>000);
+			}, <?php echo $secondsHide; ?>000);
 
-		// });
+		});
 	</script>
 </div>
 <div class="grid-x">
