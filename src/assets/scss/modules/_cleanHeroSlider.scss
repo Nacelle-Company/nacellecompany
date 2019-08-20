@@ -54,9 +54,7 @@ $hero-full-screen-text-color: $white;
         }
 
         p {
-            font-size: 0.9rem;
             line-height: 1.25;
-
             @include breakpoint(medium) {
                 font-size: 1.1rem;
             }
