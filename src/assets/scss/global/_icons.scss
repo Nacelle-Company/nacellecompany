@@ -1,14 +1,13 @@
 
 // font awesome icons
 i.fas {
-  margin: 0 1rem 0 0;
+  margin: 0 .5rem 0 0;
   color: $primary-color;
 }
 
 .catalog-title {
     text-transform: uppercase;
     .fas {
-        margin: 0 0.3em;
         color: $success-color;
     }
 }

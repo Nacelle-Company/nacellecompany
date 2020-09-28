@@ -23,6 +23,7 @@ body.admin-bar {
 }
 
 // front end "Edit" link
-span.edit-link {
-    font-size: 0.0875em;
+span a.post-edit-link {
+    font-size: 1em;
+    color: $medium-gray;
 }

@@ -46,7 +46,7 @@ h1 {
 
 p, h1, h2, h3, h4, h5, h6 {
   @include breakpoint(small only) {
-    font-size: 165%;
+    font-size: 150%;
   }
 }
 

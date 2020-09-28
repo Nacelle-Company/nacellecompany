@@ -48,7 +48,6 @@ h2 {
     .right {
         .menu-item {
             a {
-                color: $white;
                 text-transform: uppercase;
                 font-weight: 600;
                 letter-spacing: 1.12px;
@@ -57,11 +56,22 @@ h2 {
             &.current-menu-item {
                 border-bottom: 1px dotted white;
                 border-top: 1px dotted white;
-
-                a {
-                    color: $white;
-                }
             }
         }
     }
+}
+
+// from customizer
+
+/* nav dropdown */
+.is-dropdown-submenu {
+	box-shadow: 0px 6px 3px #000000d1;
+	border-top: solid 1px #000000d1 !important;
+	outline: solid 2px #00000026;
+}
+
+/* nav active item:not dropdown */
+.nav-container .right .menu-item:not(.is-submenu-item).current-menu-item {
+	border-bottom: 1px dotted #fff;
+	border-top: 1px dotted #fff;
 }

@@ -38,6 +38,9 @@ header.featured-hero {
     > .grid-x:not(.catalog) {
         background-color: $primary-color;
     }
+    &.catalog.featured-hero {
+        background-color: $medium-gray;
+    }
     .catalog button i {
         margin-right: 0.5rem;
     }

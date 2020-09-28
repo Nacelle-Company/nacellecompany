@@ -38,39 +38,7 @@ get_header(); ?>
 		$imageHorizontalSM = $imageHorizontal['sizes'][$img_size_sm];
 
 		?>
-	<style>
-		.top-bar,
-		.top-bar ul,
-		.title-bar {
-			background-color: transparent;
-		}
 
-		.entry-title,
-		.primary {
-			color: <?php echo $titleColor; ?> !important;
-		}
-
-		.feat {
-			margin-top: 0;
-		}
-
-		.purchase-logos {
-			background-color: #d7d7d7;
-			box-shadow: inset 0 -3px 4px 0 rgba(0, 0, 0, .3), inset 0 5px 6px 0 rgba(0, 0, 0, .3), 0 0 0 0 rgba(0, 0, 0, .3);
-		}
-
-		.thumbnail {
-			max-width: 130px;
-			max-height: 100px;
-		}
-
-		/* @media screen and (min-width: 40em) {
-			.thumbnail {
-				max-width: 200px;
-				max-height: 150px;
-			}
-		} */
-	</style>
 	<header class="grid-container fluid">
 		<div class="grid-x catalog">
 

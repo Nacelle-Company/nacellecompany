@@ -1,4 +1,7 @@
 
+.page-template-front-grid {
+    position: relative;
+}
 .page-template-front-grid,
 .page-template-front {
 
@@ -28,10 +31,6 @@
     .top-bar ul,
     .site-title-bar {
         background: transparent;
-
-        .menu-item a {
-            color: $white;
-        }
     }
 
     .home-content {

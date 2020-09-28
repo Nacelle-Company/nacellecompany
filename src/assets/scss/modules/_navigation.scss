@@ -122,11 +122,6 @@
     display: inline-flex;
   }
 
-  .dropdown.menu .is-active > a {
-    text-shadow: 0.3px 0.3px 0 $primary-color;
-    color: $primary-color;
-  }
-
   .dropdown.menu .submenu {
     border: 0;
   }

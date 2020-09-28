@@ -1,8 +1,7 @@
 
 header {
-        h1.entry-title {
+    h1.entry-title {
         font-weight: 800;
-        color: $white;
     }
 }
 
@@ -11,7 +10,3 @@ header {
     position: absolute !important;
 }
 
-// single-catalog.php titles
-.catalog .entry-title {
-    color: $primary-color;
-}

@@ -73,10 +73,10 @@ $global-width: rem-calc(1440);
 $global-lineheight: 1.5;
 $foundation-palette: (
   primary: #4591E5,
-  secondary: #D39A00,
+  secondary: #2a2d2e,
   success: #4591E5,
-  warning: #ffae00,
-  alert: #cc4b37,
+  warning: #ff1100,
+  alert: #ffffff,
 );
 $light-gray: #F4F5F6;
 $medium-gray: #2C2C2C;
@@ -88,8 +88,10 @@ $dark-nav-color: #2a2d2e;
 $body-background: $true-black;
 $footer-background: $white;
 $body-font-color: $white;
+
 $body-font-family: 'Raleway', 'Helvetica', sans-serif;
 $body-antialiased: true;
+$body-font-size: 16px;
 $global-margin: 1rem;
 $global-padding: 1rem;
 $global-position: 1rem;
@@ -106,6 +108,20 @@ $global-color-pick-contrast-tolerance: 0;
 $print-transparent-backgrounds: true;
 
 @include add-foundation-colors;
+
+// color mixin, https://www.sitepoint.com/dealing-color-schemes-sass/
+@mixin theme($name, $color) {
+  .#{$name} {
+    color: $color;
+  }
+}
+// @include theme(primary-color, $primary-color);
+@include theme(secondary-color, $secondary-color);
+@include theme(white-color, $white);
+@include theme(black-color, $black);
+@include theme(lt-gray-color, $light-gray);
+@include theme(md-gray-color, $medium-gray);
+@include theme(dk-gray-color, $dark-gray);
 
 // 2. Breakpoints
 // --------------
@@ -153,7 +169,7 @@ $header-styles: (
     'h6': ('font-size': 10),
   ),
   medium: (
-    'h1': ('font-size': 50),
+    'h1': ('font-size': 35),
     'h2': ('font-size': 26),
     'h3': ('font-size': 22),
     'h4': ('font-size': 20),
@@ -191,8 +207,8 @@ $defnlist-term-weight: $global-weight-bold;
 $defnlist-term-margin-bottom: 0.3rem;
 $blockquote-color: $light-gray;
 $blockquote-padding: rem-calc(9 20 0 19);
-$blockquote-border: 1px solid $medium-gray;
-$cite-font-size: rem-calc(13);
+$blockquote-border: none;
+$cite-font-size: rem-calc(16);
 $cite-color: $white;
 $cite-pseudo-content: '\2014 \0020';
 $keystroke-font: $font-family-monospace;
@@ -213,6 +229,21 @@ $subheader-font-weight: $global-weight-normal;
 $subheader-margin-top: 0.2rem;
 $subheader-margin-bottom: 0.5rem;
 $stat-font-size: 2.5rem;
+
+// title font mixin
+@mixin theme($name, $size, $transform, $weight) {
+  .#{$name} {
+    font-size: $body-font-size;
+    text-transform: $transform;
+    font-weight: $weight;
+  }
+}
+@include theme(sm-title, $global-font-size, none, 400);
+@include breakpoint(small only) {
+  .sm-title {
+    font-size: 150%;
+  }
+}
 
 // 6. Abide
 // --------
@@ -303,7 +334,7 @@ $button-sizes: (
 $button-palette: $foundation-palette;
 $button-opacity-disabled: 0.25;
 $button-background-hover-lightness: -20%;
-$button-hollow-hover-lightness: -50%;
+$button-hollow-hover-lightness: 25%;
 $button-transition: background-color 0.25s ease-out, color 0.25s ease-out;
 
 // 12. Button Group
@@ -879,6 +910,7 @@ $xy-block-grid-max: 8;
 
 
 // mixins
+
 @mixin nothover {
     transition: all .2s ease-in-out;
     box-shadow: 3px 2px 2px #0a0a0a6b;
@@ -899,6 +931,11 @@ $xy-block-grid-max: 8;
 @mixin hover {
     box-shadow: 2px 4px 21px #0a0a0a;
     transform: scale(1.01);
+}
+
+@mixin caratAnimation {
+  transform: scaleY(-1);
+  transition: transform .4s linear;
 }
 
 @mixin primary-button {
@@ -934,79 +971,3 @@ $xy-block-grid-max: 8;
     @include circle;
 }
 
-
-// NEED TO BE PARSED OUT INTO THE SCSS FILES
-//
-//
-//
-//
-
-// .accordion,
-// .accordion-title:focus,
-// .accordion-title:hover,
-// .accordion-content {
-//     background: white;
-// }
-
-.accordion-title {
-	cursor: pointer;
-}
-
-
-.searchandfilter select.sf-input-select {
-    min-width: 125px;
-	 margin: 0;
-}
-
-.macro-cat-cards>.cell {
-    padding-bottom: 3rem;
-}
-
-.home footer.footer {
-	padding-top: 0;
-}
-
-.home .more {
-    height: 96vh;
-}
-
-.home footer.cell.shrink.footer {
-	position: relative;
-}
-
-.logo-container>.cell {
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
-}
-
-@media print, screen and (min-width: 40em) {
-	.reveal {
-    width: 25vw;
-    max-width: 90rem;
-		overflow: hidden;
-}
-}
-
-@media print, screen and (min-width: 40em) {
-	.footer-grid section .icon-container {
-    text-align: center;
-	}
-}
-
-@media print, screen and (min-width: 64em) {
-	.footer-grid section .icon-container {
-    text-align: right;
-	}
-}
-
-
-.reveal#videoModal1,
-.reveal#productsModal{
-    width: 80vw;
-	background: black;
-}
-
-/* hide sorting for now */
-.productions .sorting {
-    display: none;
-}

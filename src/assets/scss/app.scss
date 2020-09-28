@@ -80,6 +80,7 @@
 @import "modules/headers";
 @import "modules/press-archive";
 @import "modules/cleanHeroSlider";
+@import "modules/hero-video";
 @import "modules/circleSlider";
 
 // Components
@@ -107,3 +108,5 @@
 @import "templates/team";
 @import "templates/partners";
 @import "templates/front-partners";
+// !!!! customizer scss/css needs to go in the proper folders !!!
+@import "templates/customizer";

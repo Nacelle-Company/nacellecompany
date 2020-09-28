@@ -253,3 +253,14 @@ function embed_youtube_parameters( $code ) {
     }
     return '<div class="embed-container">' . $return . '</div>';
 }
+
+
+// echo custom colors from customizer, https://www.cssigniter.com/how-to-create-a-custom-color-scheme-for-your-wordpress-theme-using-the-customizer/
+function nacelle_enqueue_styles()
+{
+    wp_enqueue_style('nacelle-styles', get_stylesheet_uri()); // This is where you enqueue your theme's main stylesheet
+    $custom_css = Nacelle_custom_colors();
+    wp_add_inline_style('nacelle-styles', $custom_css);
+}
+
+add_action('wp_enqueue_scripts', 'nacelle_enqueue_styles');

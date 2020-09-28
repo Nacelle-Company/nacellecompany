@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Foundation PHP template
  *
@@ -7,7 +8,7 @@
  */
 
 // Pagination.
-if (! function_exists('Nacelle_pagination')) :
+if (!function_exists('Nacelle_pagination')) :
     function Nacelle_pagination()
     {
         global $wp_query;
@@ -44,15 +45,15 @@ if (! function_exists('Nacelle_pagination')) :
 endif;
 
 // Custom Comments Pagination.
-if (! function_exists('Nacelle_get_the_comments_pagination')) :
+if (!function_exists('Nacelle_get_the_comments_pagination')) :
     function Nacelle_get_the_comments_pagination($args = array())
     {
         $navigation = '';
         $args = wp_parse_args($args, array(
-            'prev_text'				=> __('&laquo;', 'nacelle'),
-            'next_text'				=> __('&raquo;', 'nacelle'),
-            'size'					=> 'default',
-            'show_disabled'			=> true,
+            'prev_text'                => __('&laquo;', 'nacelle'),
+            'next_text'                => __('&raquo;', 'nacelle'),
+            'size'                    => 'default',
+            'show_disabled'            => true,
         ));
         $args['type'] = 'array';
         $args['echo'] = false;
@@ -79,9 +80,9 @@ if (! function_exists('Nacelle_get_the_comments_pagination')) :
                 } else {
                     $link = preg_replace("/(class|href)='(.*)'/U", '$1="$2"', $link);
                     if (0 === strpos($link, '<span class="page-numbers current')) {
-                        $navigation .= '<li class="page-item active">' . str_replace(array( '<span class="page-numbers current">', '</span>' ), array( '<a class="page-link" href="#">', '</a>' ), $link) . '</li>';
+                        $navigation .= '<li class="page-item active">' . str_replace(array('<span class="page-numbers current">', '</span>'), array('<a class="page-link" href="#">', '</a>'), $link) . '</li>';
                     } elseif (0 === strpos($link, '<span class="page-numbers dots')) {
-                        $navigation .= '<li class="page-item disabled">' . str_replace(array( '<span class="page-numbers dots">', '</span>' ), array( '<a class="page-link" href="#">', '</a>' ), $link) . '</li>';
+                        $navigation .= '<li class="page-item disabled">' . str_replace(array('<span class="page-numbers dots">', '</span>'), array('<a class="page-link" href="#">', '</a>'), $link) . '</li>';
                     } else {
                         $navigation .= '<li class="page-item">' . str_replace('class="page-numbers', 'class="page-link', $link) . '</li>';
                     }
@@ -98,7 +99,7 @@ if (! function_exists('Nacelle_get_the_comments_pagination')) :
 endif;
 
 // Custom Comments Pagination.
-if (! function_exists('Nacelle_the_comments_pagination')) :
+if (!function_exists('Nacelle_the_comments_pagination')) :
     function Nacelle_the_comments_pagination($args = array())
     {
         echo Nacelle_get_the_comments_pagination($args);
@@ -110,7 +111,7 @@ endif;
  * A fallback when no navigation is selected by default.
  */
 
-if (! function_exists('Nacelle_menu_fallback')) :
+if (!function_exists('Nacelle_menu_fallback')) :
     function Nacelle_menu_fallback()
     {
         echo '<div class="alert-box secondary">';
@@ -133,7 +134,7 @@ if (! function_exists('Nacelle_menu_fallback')) :
 endif;
 
 // Add Foundation 'is-active' class for the current menu item.
-if (! function_exists('Nacelle_active_nav_class')) :
+if (!function_exists('Nacelle_active_nav_class')) :
     function Nacelle_active_nav_class($classes, $item)
     {
         if ($item->current == 1 || $item->current_item_ancestor == true) {
@@ -148,7 +149,7 @@ endif;
  * Use the is-active class of ZURB Foundation on wp_list_pages output.
  * From required+ Foundation http://themes.required.ch.
  */
-if (! function_exists('Nacelle_active_list_pages_class')) :
+if (!function_exists('Nacelle_active_list_pages_class')) :
     function Nacelle_active_list_pages_class($input)
     {
         $pattern = '/current_page_item/';
@@ -167,7 +168,7 @@ endif;
  * Get mobile menu ID
  */
 
-if (! function_exists('Nacelle_mobile_menu_id')) :
+if (!function_exists('Nacelle_mobile_menu_id')) :
     function Nacelle_mobile_menu_id()
     {
         if (get_theme_mod('wpt_mobile_menu_layout') === 'offcanvas') {
@@ -178,14 +179,95 @@ if (! function_exists('Nacelle_mobile_menu_id')) :
     }
 endif;
 
+
+/**
+ * Get custom colors
+ */
+
+if (!function_exists('Nacelle_custom_colors')) :
+    function Nacelle_custom_colors()
+    {
+        ob_start();
+        $text_color = get_theme_mod('text_color', '');
+        $background_color = get_theme_mod('background_color', '');
+        $primary_color = get_theme_mod('primary_color', '');
+        $secondary_color = get_theme_mod('secondary_color', '');
+        if (!empty($background_color)) {
+// background color
+?>
+            body {
+                background-color: #<?php echo $background_color; ?>;
+            }
+<?php
+        }
+        if (!empty($text_color)) {
+// text color
+?>
+            body, h1, .h1, a {
+                color:  <?php echo $text_color; ?>;
+            }
+            .top-bar ul .menu-item a {
+                color: <?php echo $text_color; ?>;
+            }
+<?php
+        }
+        if (!empty($primary_color)) {
+// primary color
+?>
+            .primary-color,
+            .accordion-content .title,
+            .button.hollow {
+                color: <?php echo $primary_color; ?>;
+            }
+            .home .top-bar ul .menu-item a {
+                color: <?php echo $primary_color; ?>;
+            }
+            .top-bar, 
+            .top-bar ul, 
+            .accordion-content {
+                background-color: <?php echo $primary_color; ?>;
+            }
+            .cd-top {
+                background-color: <?php echo $primary_color; ?>;
+            }
+            .button.hollow {
+                border-color: <?php echo $primary_color; ?>;
+            }
+            .fas,
+            svg.footer-logo .color {
+                fill: <?php echo $primary_color; ?>;
+            }
+<?php
+        }
+        if (!empty($secondary_color)) {
+// secondary color
+?>
+            .secondary-color,
+            .button.hollow:hover,
+            .home .top-bar ul .menu-item a:hover {
+                color: <?php echo $secondary_color; ?>;
+            }
+            .button.hollow:hover {
+                border-color: <?php echo $secondary_color; ?>;
+            }
+<?php
+        }
+
+        // END cleanup
+        $css = ob_get_clean();
+        return $css;
+    }
+endif;
+
+
 /**
  * Get title bar responsive toggle attribute
  */
 
-if (! function_exists('Nacelle_title_bar_responsive_toggle')) :
+if (!function_exists('Nacelle_title_bar_responsive_toggle')) :
     function Nacelle_title_bar_responsive_toggle()
     {
-        if (! get_theme_mod('wpt_mobile_menu_layout') || get_theme_mod('wpt_mobile_menu_layout') === 'topbar') {
+        if (!get_theme_mod('wpt_mobile_menu_layout') || get_theme_mod('wpt_mobile_menu_layout') === 'topbar') {
             echo 'data-responsive-toggle="mobile-menu"';
         }
     }
@@ -194,14 +276,14 @@ endif;
 /**
  * Custom markup for Wordpress gallery
  */
-if (! function_exists('Nacelle_gallery')) :
+if (!function_exists('Nacelle_gallery')) :
     function Nacelle_gallery($attr)
     {
         $post = get_post();
         static $instance = 0;
         $instance++;
 
-        if (! empty($attr['ids'])) {
+        if (!empty($attr['ids'])) {
             // 'ids' is explicitly ordered, unless you specify otherwise.
             if (empty($attr['orderby'])) {
                 $attr['orderby'] = 'post__in';
@@ -231,7 +313,7 @@ if (! function_exists('Nacelle_gallery')) :
             'icontag'       => 'div',
             'captiontag'    => 'figcaption',
             'columns-small' => 2, // set default columns for small screen
-            'columns-medium'=> 4, // set default columns for medium screen
+            'columns-medium' => 4, // set default columns for medium screen
             'columns'       => 3, // set default columns for large screen (3 = wordpress default)
             'size'          => 'thumbnail',
             'include'       => '',
@@ -270,13 +352,13 @@ if (! function_exists('Nacelle_gallery')) :
         $icon_tag = tag_escape($atts['icontag']);
         $valid_tags = wp_kses_allowed_html('post');
 
-        if (! isset($valid_tags[ $item_tag ])) {
+        if (!isset($valid_tags[$item_tag])) {
             $item_tag = 'figure';
         }
-        if (! isset($valid_tags[ $caption_tag ])) {
+        if (!isset($valid_tags[$caption_tag])) {
             $caption_tag = 'figcaption';
         }
-        if (! isset($valid_tags[ $icon_tag ])) {
+        if (!isset($valid_tags[$icon_tag])) {
             $icon_tag = 'div';
         }
 
@@ -296,12 +378,12 @@ if (! function_exists('Nacelle_gallery')) :
                 $link = wp_get_attachment_link($id, $size_class, false, false, false, array('class' => '', 'id' => "imageid-$id"));
 
                 // Edit this line to implement your html params in <a> tag with use a custom lightbox plugin.
-                $link = str_replace('<a href', '<a class="thumbnail fp-gallery-lightbox" data-gall="fp-gallery-'. $post->ID .'" data-title="'. wptexturize($attachment->post_excerpt) .'" title="'. wptexturize($attachment->post_excerpt) .'" href', $link);
+                $link = str_replace('<a href', '<a class="thumbnail fp-gallery-lightbox" data-gall="fp-gallery-' . $post->ID . '" data-title="' . wptexturize($attachment->post_excerpt) . '" title="' . wptexturize($attachment->post_excerpt) . '" href', $link);
             } elseif (isset($attr['link']) && $attr['link'] == 'none') {
                 $link = wp_get_attachment_image($id, $size_class, false, array('class' => "thumbnail attachment-$size_class size-$size_class", 'id' => "imageid-$id"));
             } else {
                 $link = wp_get_attachment_link($id, $size_class, true, false, false, array('class' => '', 'id' => "imageid-$id"));
-                $link = str_replace('<a href', '<a class="thumbnail" title="'. wptexturize($attachment->post_excerpt) .'" href', $link);
+                $link = str_replace('<a href', '<a class="thumbnail" title="' . wptexturize($attachment->post_excerpt) . '" href', $link);
             }
 
             $image_meta  = wp_get_attachment_metadata($id);
