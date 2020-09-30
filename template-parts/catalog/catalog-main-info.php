@@ -1,142 +1,136 @@
-<div class="entry-content grid-container px-0 px-medium-3">
 
-    <div class="grid-x grid-padding-y synopsis">
+<?php
+$talents = get_field('talent');
+$talent = get_field('talent');
+$directors = get_field('directors');
+$producers = get_field('producers');
+$writers = get_field('writers');
+?>
+<div class="entry-content grid-container px-0 px-medium-3 mt-2">
 
-        <!-- synopsis title -->
-        <div class="cell medium-4 title">
+    <!-- START credits -->
+    <div class="grid-x grid-padding-y">
 
-            <h2 class="sm-title white-color"><?php _e('Synopsis', 'nacelle'); ?></h2>
+        <div class="cell medium-2 title">
 
-        </div>
+            <div class="grid-x">
 
-    </div>
-
-    <?php if (get_field('show_crew')) : ?>
-
-        <!-- START credits -->
-        <div class="grid-x grid-padding-y">
-
-            <div class="cell medium-4 title">
-
-                <div class="grid-x">
-
-                    <p><?php _e('Credits', 'nacelle'); ?></p>
-
-                </div>
+                <p><?php _e('Credits', 'nacelle'); ?></p>
 
             </div>
 
-            <!-- START the crew -->
-            <div class="cell medium-8">
+        </div>
 
-                <!-- TALENT -->
-                <?php if ($talents) : ?>
+        <!-- START the crew -->
+        <div class="cell medium-8">
 
-                    <div class="grid-x">
+            <!-- TALENT -->
+            <?php if ($talents) : ?>
 
-                        <!-- talent title -->
-                        <div class="cell small-4 title">
+                <div class="grid-x">
 
-                            <p><?php _e('Talent', 'nacelle'); ?></p>
+                    <!-- talent title -->
+                    <div class="cell small-4 title">
 
-                        </div>
-
-                        <!-- talent list -->
-                        <div class="cell small-8">
-
-                            <p>
-                                <?php
-
-                                $talentstr = array();
-
-                                foreach ($talents as $talent) {
-                                    $talentstr[] = $talent->name;
-                                }
-
-                                echo implode(", ", $talentstr);
-
-                                ?>
-                            </p>
-
-                        </div>
+                        <p><?php _e('Talent', 'nacelle'); ?></p>
 
                     </div>
 
-                <?php endif; ?>
+                    <!-- talent list -->
+                    <div class="cell small-8">
 
-                <!-- end TALENT -->
-                <!-- DIRECTORS -->
+                        <p>
+                            <?php
 
-                <?php if ($directors) : ?>
+                            $talentstr = array();
 
-                    <div class="grid-x">
+                            foreach ($talents as $talent) {
+                                $talentstr[] = $talent->name;
+                            }
 
-                        <!-- directors title -->
-                        <div class="cell small-4 title">
+                            echo implode(", ", $talentstr);
 
-                            <p><?php _e('Director(s)', 'nacelle'); ?></p>
-
-                        </div>
-
-                        <div class="cell small-8">
-
-                            <p>
-                                <?php
-
-                                $directorsstr = array();
-
-                                foreach ($directors as $director) {
-                                    $directorsstr[] = $director->name;
-                                }
-                                echo implode(", ", $directorsstr);
-
-                                ?>
-                            </p>
-
-                        </div>
+                            ?>
+                        </p>
 
                     </div>
 
-                <?php endif; ?>
-                <!-- end DIRECTORS -->
+                </div>
 
-                <!-- PRODUCERS -->
-                <?php if ($producers) : ?>
+            <?php endif; ?>
 
-                    <div class="grid-x">
+            <!-- end TALENT -->
+            <!-- DIRECTORS -->
 
-                        <div class="cell small-4 title">
+            <?php if ($directors) : ?>
 
-                            <p><?php _e('Producer(s)', 'nacelle'); ?></p>
+                <div class="grid-x">
 
-                        </div>
+                    <!-- directors title -->
+                    <div class="cell small-4 title">
 
-                        <div class="cell small-8">
-
-                            <p>
-                                <?php
-
-                                $producerstr = array();
-
-                                foreach ($producers as $producer) {
-                                    $producerstr[] = $producer->name;
-                                }
-                                echo implode(", ", $producerstr);
-
-                                ?>
-
-                            </p>
-
-                        </div>
+                        <p><?php _e('Director(s)', 'nacelle'); ?></p>
 
                     </div>
-                <?php endif; ?>
-                <!-- end PRODUCERS -->
 
-            </div> <!-- end CREW -->
+                    <div class="cell small-8">
 
-        </div> <!-- end CREDITS -->
+                        <p>
+                            <?php
 
-    <?php endif; ?>
+                            $directorsstr = array();
+
+                            foreach ($directors as $director) {
+                                $directorsstr[] = $director->name;
+                            }
+                            echo implode(", ", $directorsstr);
+
+                            ?>
+                        </p>
+
+                    </div>
+
+                </div>
+
+            <?php endif; ?>
+            <!-- end DIRECTORS -->
+
+            <!-- PRODUCERS -->
+            <?php if ($producers) : ?>
+
+                <div class="grid-x">
+
+                    <div class="cell small-4 title">
+
+                        <p><?php _e('Producer(s)', 'nacelle'); ?></p>
+
+                    </div>
+
+                    <div class="cell small-8">
+
+                        <p>
+                            <?php
+
+                            $producerstr = array();
+
+                            foreach ($producers as $producer) {
+                                $producerstr[] = $producer->name;
+                            }
+                            echo implode(", ", $producerstr);
+
+                            ?>
+
+                        </p>
+
+                    </div>
+
+                </div>
+            <?php endif; ?>
+            <!-- end PRODUCERS -->
+
+        </div> <!-- end CREW -->
+
+    </div> <!-- end CREDITS -->
+
 
 </div>

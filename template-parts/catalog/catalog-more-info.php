@@ -1,10 +1,10 @@
-<div class="meta-accordion catalog-bottom-meta grid-container-full pl-medium-3">
+<div id="meta_accordion" class=" meta-accordion catalog-bottom-meta grid-container-full pl-medium-3 mt-2">
     <div class="grid-x">
 
         <article class="accordion cell" data-accordion data-allow-all-closed="true">
             <section class="accordion-item" data-accordion-item>
-                <a href="#" class="accordian-open">
-                    <div class="grid-x align-middle mx-0">
+                <a class="accordian-open" href="#meta_accordion" data-smooth-scroll data-animation-duration="700" data-offset="245">
+                    <div class="grid-x align-middle mx-0 pb-2">
                         <div class="cell medium-7">
                             <div class="grid-x accordion-line"></div>
                         </div>

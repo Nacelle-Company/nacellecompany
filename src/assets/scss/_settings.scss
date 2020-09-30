@@ -115,6 +115,7 @@ $print-transparent-backgrounds: true;
     color: $color;
   }
 }
+
 // @include theme(primary-color, $primary-color);
 @include theme(secondary-color, $secondary-color);
 @include theme(white-color, $white);
@@ -122,6 +123,19 @@ $print-transparent-backgrounds: true;
 @include theme(lt-gray-color, $light-gray);
 @include theme(md-gray-color, $medium-gray);
 @include theme(dk-gray-color, $dark-gray);
+
+// icon colors
+@mixin iconColor($nameIcon, $colorIcon) {
+  .#{$nameIcon} {
+    fill: $colorIcon;
+  }
+}
+@include iconColor(secondary-icon, $secondary-color);
+@include iconColor(white-icon, $white);
+@include iconColor(black-icon, $black);
+@include iconColor(lt-gray-icon, $light-gray);
+@include iconColor(md-gray-icon, $medium-gray);
+@include iconColor(dk-gray-icon, $dark-gray);
 
 // 2. Breakpoints
 // --------------
@@ -345,6 +359,10 @@ $buttongroup-spacing: 1px;
 $buttongroup-child-selector: '.button';
 $buttongroup-expand-max: 6;
 $buttongroup-radius-on-each: true;
+// toggle buttons
+$mobile-app-toggle-radius: rem-calc(10);
+$mobile-app-toggle-color: $primary-color;
+$mobile-app-toggle-margin-bottom: $global-margin;
 
 // 13. Callout
 // -----------

@@ -91,6 +91,66 @@ if (!function_exists('wpt_register_theme_customizer')) :
 			)
 		);
 
+		// Create nav bg color color
+		$wp_customize->add_setting(
+			'nav_bg_color',
+			array(
+				'default'   => '#4591e5',
+				'transport' => 'refresh',
+			)
+		);
+
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				'nav_bg_color',
+				array(
+					'section' => 'colors',
+					'label'   => esc_html__('Nav bar background color', 'nacelle'),
+				)
+			)
+		);
+
+		// Create home nav bg color color
+		$wp_customize->add_setting(
+			'home_nav_bg_color',
+			array(
+				'default'   => '',
+				'transport' => 'refresh',
+			)
+		);
+
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				'home_nav_bg_color',
+				array(
+					'section' => 'colors',
+					'label'   => esc_html__('Home nav background color', 'nacelle'),
+				)
+			)
+		);
+
+		// Create transparent nav text color color
+		$wp_customize->add_setting(
+			'nav_alt_color',
+			array(
+				'default'   => '#4591e5',
+				'transport' => 'refresh',
+			)
+		);
+
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				'nav_alt_color',
+				array(
+					'section' => 'colors',
+					'label'   => esc_html__('Transparent nav text color', 'nacelle'),
+				)
+			)
+		);
+
 		// Create custom panels
 		$wp_customize->add_panel(
 			'mobile_menu_settings',

@@ -45,17 +45,23 @@ h2 {
 // top nav bar
 
 .nav-container {
-    .right {
+    .menu-item {
+        a {
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 1.12px;
+        }
+
+        &.current-menu-item {
+            border-bottom: 1px dotted white;
+            border-top: 1px dotted white;
+        }
+    }
+    &.left-too {
         .menu-item {
             a {
-                text-transform: uppercase;
-                font-weight: 600;
-                letter-spacing: 1.12px;
-            }
-
-            &.current-menu-item {
-                border-bottom: 1px dotted white;
-                border-top: 1px dotted white;
+                text-transform: none;
+                font-weight: 400;
             }
         }
     }

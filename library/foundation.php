@@ -192,6 +192,9 @@ if (!function_exists('Nacelle_custom_colors')) :
         $background_color = get_theme_mod('background_color', '');
         $primary_color = get_theme_mod('primary_color', '');
         $secondary_color = get_theme_mod('secondary_color', '');
+        $nav_bg_color = get_theme_mod('nav_bg_color', '');
+        $nav_alt_color = get_theme_mod('nav_alt_color', '');
+        $home_nav_bg_color = get_theme_mod('home_nav_bg_color', '');
         if (!empty($background_color)) {
 // background color
 ?>
@@ -206,9 +209,7 @@ if (!function_exists('Nacelle_custom_colors')) :
             body, h1, .h1, a {
                 color:  <?php echo $text_color; ?>;
             }
-            .top-bar ul .menu-item a {
-                color: <?php echo $text_color; ?>;
-            }
+
 <?php
         }
         if (!empty($primary_color)) {
@@ -222,12 +223,10 @@ if (!function_exists('Nacelle_custom_colors')) :
             .home .top-bar ul .menu-item a {
                 color: <?php echo $primary_color; ?>;
             }
-            .top-bar, 
-            .top-bar ul, 
             .accordion-content {
                 background-color: <?php echo $primary_color; ?>;
             }
-            .cd-top {
+            .to-top {
                 background-color: <?php echo $primary_color; ?>;
             }
             .button.hollow {
@@ -236,6 +235,9 @@ if (!function_exists('Nacelle_custom_colors')) :
             .fas,
             svg.footer-logo .color {
                 fill: <?php echo $primary_color; ?>;
+            }
+            h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+                color: <?php echo $primary_color; ?>;
             }
 <?php
         }
@@ -251,8 +253,39 @@ if (!function_exists('Nacelle_custom_colors')) :
                 border-color: <?php echo $secondary_color; ?>;
             }
 <?php
-        }
+        } ?>
 
+<?php   if (!empty($nav_bg_color)) {
+        // nav background color
+?>
+        .site-navigation.top-bar,
+        .site-title-bar,
+        .top-bar, 
+        .top-bar ul  {
+            background: <?php echo $nav_bg_color; ?>;
+        }
+<?php
+    }
+?>
+<?php   if (!empty($home_nav_bg_color)) {
+        // home nav background color
+?>
+        body.home .site-navigation.top-bar {
+            background: <?php echo $home_nav_bg_color; ?>;
+        }
+<?php
+    }
+?>
+<?php   if (!empty($nav_alt_color)) {
+        // home nav text color
+?>
+        .home .top-bar ul .menu-item a {
+            color: <?php echo $nav_alt_color; ?>;
+        }
+<?php
+    }
+?>
+<?php
         // END cleanup
         $css = ob_get_clean();
         return $css;

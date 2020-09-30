@@ -5,3 +5,41 @@
   border-radius: 3px;
   border: none;
 }
+
+// toggle buttons
+.mobile-app-toggle {
+  display: flex;
+  z-index: 5;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: $mobile-app-toggle-margin-bottom;
+
+  .button {
+    z-index: 3;
+    background: transparent;
+    color: $mobile-app-toggle-color;
+    margin-bottom: 0;
+    flex: 0 1 auto;
+    text-transform: uppercase;
+    fill: transparent;
+    stroke: $primary-color;
+    &:hover {
+      color: $white;
+      .icon {
+        fill: $white
+      }
+    }
+    &.is-active {
+      border: 1px solid $mobile-app-toggle-color;
+      color: $white;
+      &:hover {
+        background: $mobile-app-toggle-color;
+      }
+      .icon {
+        fill: $white;
+      }
+    }
+  }
+}
+
+

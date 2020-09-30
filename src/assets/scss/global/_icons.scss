@@ -1,4 +1,13 @@
 
+// button icons
+.button.icon {
+  display: flex;
+  align-items: center;
+  svg {
+    margin-right: 10px;
+  }
+}
+
 // font awesome icons
 i.fas {
   margin: 0 .5rem 0 0;
@@ -41,8 +50,3 @@ i.fas {
   }
 }
 
-// social icons footer
-footer .social {
-
-
-}

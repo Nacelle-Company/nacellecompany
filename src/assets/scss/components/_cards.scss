@@ -72,9 +72,9 @@ $image-hover-wrapper-icon-size: 60px;
       }
 
     }
-    .fas {
+    .icon {
       font-size: $image-hover-wrapper-icon-size;
-      transform: rotate(-90deg);
+      fill: $primary-color;
     }
   }
 

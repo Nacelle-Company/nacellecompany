@@ -11,7 +11,7 @@
 ?>
 <!-- back to top -->
 <!-- https://codepen.io/adventuresinmissions/pen/suzKB -->
-<a href="#0" class="cd-top">Top</a>
+<a href="#0" class="to-top">Top</a>
 
 <footer class="shrink footer">
   <div class="footer-container">

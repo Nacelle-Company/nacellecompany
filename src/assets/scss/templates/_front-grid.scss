@@ -26,13 +26,6 @@
         z-index: 5;
     }
 
-    // top nav
-    .top-bar,
-    .top-bar ul,
-    .site-title-bar {
-        background: transparent;
-    }
-
     .home-content {
         @include breakpoint(medium up) {
             height: 100vh;
@@ -42,11 +35,6 @@
     .scroll-arrow {
         @include flex;
         @include flex-align(center);
-    }
-
-    .site-navigation.top-bar {
-        background: transparent;
-
     }
 
     .relative-container {

@@ -16,21 +16,16 @@ get_header(); ?>
 	<?php
 
 	// vars
+
 	$synopsis = get_field('synopsis');
-	$talents = get_field('talent');
-	$talent = get_field('talent');
-	$directors = get_field('directors');
-	$producers = get_field('producers');
-	$writers = get_field('writers');
+
 	$runtime = get_field('runtime');
 	$date = get_field('release_date', false, false);
 	$genres = get_the_terms($post->ID, 'genre');
-	// $videoEmbeddPlease = get_field('video_embedd');
-	$videoEmbedd = get_field('video_embedd');
+	// $videoEmbedd = get_field('video_embedd');
 	$ticketsButtonTitle = get_field('tickets_button_title');
 	$titleColor = get_field('title_color');
 	$squareImage = get_field('square_image');
-
 
 	?>
 
@@ -65,28 +60,23 @@ get_header(); ?>
 							<div class="play grid-x align-start">
 
 								<!-- synopsis -->
-								<div class="cell medium-8">
+								<div class="cell medium-8 syopsis">
+									<?php
+									$excerpt = get_the_content();
 
-									<?php the_content(); ?>
+									$excerpt = substr($excerpt, 0, 300);
+									$result = substr($excerpt, 0, strrpos($excerpt, ' '));
+									echo $result . ' . . <a class="primary-color" data-toggle="exampleModal5" aria-controls="exampleModal5">Read full article</a>';
+									?>
 
-								</div>
-
-
-								<!-- modal button -->
-								<?php if (!empty($videoEmbedd)) : ?>
-
-									<div class="cell medium-4">
-
-										<button class="bounce hollow button success" data-open="videoModal1">
-
-											<i class="far fa-play-circle"></i>Watch Trailer
-
+									<div class="small synopsis reveal" style="display: block;text-align: left;background: #F4F5F6;color: #2C2C2C" id="exampleModal5" data-reveal>
+										<?php the_content(); ?>
+										<button class="close-button" data-close aria-label="Close reveal" type="button">
+											<span aria-hidden="true">&times;</span>
 										</button>
-
 									</div>
 
-								<?php endif; ?>
-								<!-- END modal button -->
+								</div>
 
 								<?php if (!empty($ticketsButtonTitle)) : ?>
 
@@ -111,38 +101,51 @@ get_header(); ?>
 
 	<main class="top-meta grid-x">
 
-		<article id="post-<?php the_ID(); ?>" <?php post_class('cell medium-7 small-order-2');
-												?>>
-			<?php get_template_part('template-parts/catalog/catalog-hero', ''); ?>
+		<article id="post-<?php the_ID(); ?>" <?php post_class('cell medium-7 small-order-2'); ?>>
 
-			<?php if (get_field('show_metadata')) : ?>
+			<?php
+			if (get_field('hero_video')) {
+				get_template_part('template-parts/catalog/catalog-hero', '');
+			}; ?>
 
-				<?php get_template_part('template-parts/catalog/catalog-more-info', ''); ?>
-
-			<?php endif; ?>
+			<?php
+			if (get_field('show_metadata')) {
+				get_template_part('template-parts/catalog/catalog-more-info', '');
+			}; ?>
 
 		</article>
 
-		<?php get_template_part('template-parts/catalog/catalog-aside', ''); ?>
+		<?php
+		if (has_post_thumbnail()) {
+			get_template_part('template-parts/catalog/catalog-aside', '');
+		}; ?>
 
 	</main>
 
-	<div class="grid-container">
+	<!-- catalog content sections -->
+	<div class="grid-x">
 
-		<main class="top-meta grid-x grid-padding-y">
+		<div class="cell medium-8">
 
-			<article id="post-<?php the_ID(); ?>" <?php //post_class('cell medium-7 small-order-2'); 
-													?>>
+			<main class="top-meta grid-x grid-padding-y">
 
-				<!-- catalog content sections -->
+				<article id="post-<?php the_ID(); ?>">
 
-				<?php get_template_part('template-parts/catalog/catalog-main-info', ''); ?>
+					<?php
+					if (get_field('show_crew')) {
+						get_template_part('template-parts/catalog/catalog-main-info', '');
+					}; ?>
 
-				<?php get_template_part('template-parts/catalog/catalog-link-image-LG', ''); ?>
+					<?php
+					if (get_field('show_large_links')) {
+						get_template_part('template-parts/catalog/catalog-large-links', '');
+					}; ?>
 
-			</article>
+				</article>
 
-		</main>
+			</main>
+
+		</div>
 
 	</div> <!-- closing div for featured-image.php topmost "grid-container" -->
 
@@ -219,62 +222,6 @@ get_header(); ?>
 
 	<?php endif; ?>
 
-	<!-- EMBEDD modal -->
-	<?php if (!empty($videoEmbedd)) : ?>
-
-		<div class="reveal single-cat" id="videoModal1" data-reveal data-reset-on-close="true">
-
-			<div class='embed-container'>
-
-				<?php
-
-				// get iframe HTML
-				$iframe = get_field('video_embedd');
-
-
-				// use preg_match to find iframe src
-				preg_match('/src="(.+?)"/', $iframe, $matches);
-				$src = $matches[1];
-
-
-				// add extra params to iframe src
-				$params = array(
-					'controls'    => 0,
-					'hd'        => 1,
-					'autoplay'	=> 1,
-					'autohide'    => 1
-				);
-
-				$new_src = add_query_arg($params, $src);
-
-				$iframe = str_replace($src, $new_src, $iframe);
-
-
-				$attributes = 'frameborder="0"';
-
-				$iframe = str_replace('></iframe>', ' ' . $attributes . '></iframe>', $iframe);
-
-
-				echo $iframe;
-
-				?>
-
-			</div>
-
-			<!-- close modal X -->
-			<button class="close-button" data-close aria-label="Close reveal" type="button">
-
-				<span aria-hidden="true">&times;</span>
-
-			</button>
-
-		</div>
-
-	<?php endif ?>
-	<!-- Watch Trailer MODAL END-->
-
-
-
 	<!-- mobile post navigation -->
 	<div class="cell small-12 no-desktop">
 		<div class="grid-x small-up-2 pagination">
@@ -288,6 +235,7 @@ get_header(); ?>
 		jQuery(function() {
 			jQuery("#video-header-hero").YTPlayer();
 			jQuery("#modal-hero-video").YTPlayer();
+			jQuery("#modal-video").YTPlayer();
 		});
 	</script>
 

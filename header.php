@@ -56,24 +56,26 @@
 	<?php get_template_part('template-parts/search-off-canvas'); ?>
 
 	<header class="site-header cell shrink medium-cell-block-container" role="banner">
-		
-	<div class="site-title-bar title-bar mobile-nav" <?php Nacelle_title_bar_responsive_toggle(); ?>>
-			
-		<div class="title-bar-left grid-x align-middle">
-				
-			<button aria-label="<?php _e('Main Menu', 'nacelle'); ?>" class="menu-icon" type="button" data-toggle="<?php Nacelle_mobile_menu_id(); ?>"></button>
-				
+
+		<div class="site-title-bar title-bar mobile-nav" <?php Nacelle_title_bar_responsive_toggle(); ?>>
+
+			<div class="title-bar-left grid-x align-middle">
+
+				<button aria-label="<?php _e('Main Menu', 'nacelle'); ?>" class="menu-icon" type="button" data-toggle="<?php Nacelle_mobile_menu_id(); ?>"></button>
+
 				<span class="site-mobile-title title-bar-title">
-					
+
 					<?php if (function_exists('the_custom_logo')) {
 						the_custom_logo();
 					} ?>
 
-					<a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
+					<!-- <a href="<?php //echo esc_url(home_url('/')); 
+									?>" rel="home">
 
-						<?php get_template_part('template-parts/svg/icon-cd-logo', ''); ?>
+						<?php // get_template_part('template-parts/svg/icon-cd-logo', ''); 
+						?>
 
-					</a>
+					</a> -->
 
 				</span>
 
@@ -84,14 +86,25 @@
 
 		<nav class="site-navigation top-bar desktop-menu" role="navigation">
 
-			<div class="nav-container">
+			<div class="nav-container <?php if (has_nav_menu('top-bar-l')) { echo 'left-too'; } ?>">
+
+				<?php
+				if (has_nav_menu('top-bar-l')) { ?>
+					<div class="left">
+						<?php Nacelle_top_bar_l(); ?>
+					</div>
+				<?php }
+				?>
 
 				<!-- custom logo -->
 				<div class="site-desktop-title top-bar-title">
 
-					<?php if (function_exists('the_custom_logo')) { the_custom_logo(); } ?>
+					<?php if (function_exists('the_custom_logo')) {
+						the_custom_logo();
+					} ?>
 
-					<a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
+					<!-- <a href="<?php //echo esc_url(home_url('/')); 
+									?>" rel="home">
 						<svg width="65" height="100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 							<defs>
 								<path class="svg-icon" id="a" d="M.02305024.0331637H7.1012026v16.7172415H.02305024z" />
@@ -125,7 +138,7 @@
 								</g>
 							</g>
 						</svg>
-					</a>
+					</a> -->
 				</div>
 
 				<!-- top bar right -->
@@ -140,18 +153,18 @@
 					<?php endif; ?>
 
 					<!-- search icon -->
-					<!-- <div class='header-search-container' tabindex='1'>
+					<div class='header-search-container' tabindex='1'>
 
 						<div class='search-container' tabindex='1'>
 
 							<i class="fas fa-search"></i>
 
-							<?php //echo do_shortcode('[searchandfilter id="4711" fields="search" search_placeholder="Search. . ."]'); 
+							<?php echo do_shortcode('[searchandfilter id="4711" fields="search" search_placeholder="Search. . ."]');
 							?>
 
 						</div>
 
-					</div> -->
+					</div>
 
 				</div>
 

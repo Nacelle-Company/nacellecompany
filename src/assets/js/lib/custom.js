@@ -20,15 +20,16 @@ $(function() {
     		//duration of the top scrolling animation (in ms)
     		scroll_top_duration = 700,
     		//grab the "back to top" link
-    		$back_to_top = $('.cd-top');
+    		$back_to_top = $('.to-top');
 
     	//hide or show the "back to top" link
     	$(window).scroll(function(){
-    		( $(this).scrollTop() > offset ) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
+    		( $(this).scrollTop() > offset ) ? $back_to_top.addClass('to-top-visible') : $back_to_top.removeClass('to-top-visible to-top-fade-out');
     		if( $(this).scrollTop() > offset_opacity ) {
-    			$back_to_top.addClass('cd-fade-out');
+    			$back_to_top.addClass('to-top-fade-out');
     		}
-    	});
+		});
+		
 
     	//smooth scroll to top
     	$back_to_top.on('click', function(event){
@@ -37,36 +38,9 @@ $(function() {
     			scrollTop: 0 ,
     		 	}, scroll_top_duration
     		);
-    	});
-
+		});
 
 });
-
-
-// var target = document.getElementById("partners-tabs");
-// var options = {}; //Define options e.g. "option1" : "value1", etc.									
-
-// var elem = new Foundation.Tabs($(target), options);
-// var elem = $('[data-tabs]');
-
-// // $('[data-tabs]').on('change.zf.tabs', function () {
-
-
-// $('.tabs-title').on("mouseover", function () {
-// 	//Find the associated panel id.
-// 	var panelId = $(this).find("a").attr("href").substring(1);
-// 	var tabContents = document.getElementById(panelId);
-// 	//Use the "tabs" object to select the associated panel.
-// 	elem.selectTab($(tabContents));
-// 	//Show the tab contents.
-// 	$(tabContents).show();
-// }).on("mouseout", function () {
-// 	var panelId = $(this).find("a").attr("href").substring(1);
-// 	$(this).find("a").attr("aria-selected", "false");
-// 	var tabContents = document.getElementById(panelId);
-// 	//Hide the tab contents.
-// 	$(tabContents).hide();
-// });
 
 
 $('.tabs-title').on("mouseover", function () {
@@ -102,3 +76,16 @@ $(function () {
 		$('div.video, div.video .mejs-container').css('height', Math.ceil(vidHeight * (targetWidth / vidWidth)));
 	}).resize();
 });
+
+// toggle button
+$('[data-mobile-app-toggle] .button').click(function () {
+	$(this).siblings().removeClass('is-active');
+	$(this).addClass('is-active');
+});
+
+// toggle catalog buttons
+$('[data-mobile-app-toggle] .watch').click(function () {
+	$(this).parent().toggleClass('is-displayed');
+	// $(this).addClass('is-active');
+});
+
