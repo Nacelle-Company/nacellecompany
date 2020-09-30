@@ -13,7 +13,8 @@ get_header();
 	<div class="cell">
 
 		<?php while (have_posts('')) : the_post(); ?>
-			<?php get_template_part('template-parts/clean-hero-slider'); ?>
+		<!-- clean hero slider -->
+		<?php get_template_part('template-parts/blocks/clean-hero-slider'); ?>
 
 			<div class="circle-slider orbit mb-4" role="region" aria-label="Nacelle News Slider" data-orbit data-auto-play="false" data-use-m-u-i="false">
 
@@ -27,7 +28,7 @@ get_header();
 						</div>
 					</div>
 
-					<?php get_template_part('template-parts/circle-slider'); ?>
+					<?php get_template_part('template-parts/blocks/circle-slider'); ?>
 
 				</ul>
 

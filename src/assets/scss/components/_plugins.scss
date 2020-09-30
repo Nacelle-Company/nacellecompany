@@ -1,0 +1,55 @@
+// instagram feed
+.instagram-tab {
+	position: absolute;
+	top: 15vh;
+	right: 0;
+	height: 60vh;
+	max-height: 70vh;
+	overflow: scroll;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+	border: 4px solid;
+	padding: 6px 0px;
+	border-bottom: 11px solid;
+}
+
+.instagram-title .fa-instagram.fa-w-14 {
+	width: 25px;
+}
+
+.instagram-title {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.instagram-title h3 {
+	display: flex;
+	padding-left: 10px;
+	font-size: 16px;
+	line-height: 1.3;
+	margin: 0;
+}
+#sb_instagram {
+	margin: 0;
+}
+
+@media (max-width: 480px) {
+	.instagram-tab {
+		position: static;
+		top: auto;
+		right: auto;
+		height: 67vh;
+	}
+	#sb_instagram.sbi_col_1 #sbi_images .sbi_item {
+		width: 50%;
+	}
+	#sb_instagram #sbi_images {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	#sb_instagram.sbi_col_4 #sbi_images .sbi_item {
+		height: auto;
+		flex: 1 0 50%;
+	}
+}
+// instagram feed END

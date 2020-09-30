@@ -1,81 +1,80 @@
+.page-template-front {
+	.top-bar {
+		position: absolute;
+		width: 100%;
+	}
+	.more {
+		height: 100vh;
+		position: relative;
+	}
+	.title-bar-title path.svg-icon,
+	.top-bar-title path.svg-icon {
+		fill: $primary-color;
+	}
+	.site-title-bar .menu-icon::after {
+		background: $primary-color;
+		box-shadow: 0 7px 0 $primary-color, 0 14px 0 $primary-color;
+	}
+	.first-home-images,
+	.orbit,
+	.last-home-images {
+		@include breakpoint(medium) {
+			flex: 0 1 33.33%;
+		}
+	}
+	.tagline {
+		margin: 2.5rem 0 2rem 0;
+		h2 {
+			font-size: 2.5rem;
+		}
+	}
 
-.home {
+	// carousel
+	.orbit-container,
+	.home-image {
+		box-shadow: $thumbnail-shadow;
+		animation-name: slideintop;
+		animation-duration: 3s;
+		img {
+			border-radius: 4px;
+		}
+	}
+	.home-image {
+		&:first-child {
+			margin-bottom: 0.5em;
+		}
+		&:last-child {
+			margin-top: 0.5em;
+		}
+	}
+	.orbit-slide img,
+	.home-image img {
+		transform: scale(1);
+		transition: 0.4s;
+	}
+	.orbit-slide a:hover img,
+	.home-image a:hover img {
+		transform: scale(1.03);
+		border-radius: 4px;
+	}
 
-  .more {
-        height: 100vh;
-        position: relative;
-    }
-    .title-bar-title path.svg-icon,
-    .top-bar-title path.svg-icon {
-      fill: $primary-color;
-  }
-  .site-title-bar .menu-icon::after {
-    background: $primary-color;
-    box-shadow: 0 7px 0 $primary-color, 0 14px 0 $primary-color;
-  }
-}
+	@keyframes slideintop {
+		0% {
+			transform: translateY(-44px);
+			opacity: 0;
+		}
+		100% {
+			transform: translateY(0);
+			opacity: 1;
+		}
+	}
 
-.tagline {
-  margin: 2.5rem 0 2rem 0;
-  h2 {
-    font-size: 2.5rem;
-  }
-}
+	main.main {
+		display: flex;
+		align-items: center;
+	}
 
-// carousel
-.orbit-container,
-.home-image {
-  box-shadow: $thumbnail-shadow;
-  animation-name: slideintop;
-  animation-duration: 3s;
-  img {
-    border-radius: 4px;
-  }
-}
-.home-image {
-  &:first-child {
-    margin-bottom: 0.5em;
-  }
-    &:last-child {
-    margin-top: 0.5em;
-  }
-}
-.orbit-slide img,
-.home-image img {
-    transform: scale(1);
-    transition: 0.4s;
-}
-.orbit-slide a:hover img,
-.home-image a:hover img {
-    transform: scale(1.03);
-    border-radius: 4px;
-}
-
-@keyframes slideintop {
-  0% {
-    transform: translateY(-44px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-
-main.main {
-    display: flex;
-    align-items: center;
-}
-
-.first-home-images,
-.orbit,
-.last-home-images {
-    @include breakpoint(medium) {
-      flex: 0 1 33.33%;
-    }
-}
-
-.orbit-container {
-    height: auto;
+	.orbit-container {
+		height: auto;
+	}
 }

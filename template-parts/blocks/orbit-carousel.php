@@ -28,16 +28,10 @@
             $hero_sm = $image['sizes'][$img_size_sm];
 
             ?>
-            <!-- data-interchange background image -->
-            <div class="featured-hero" role="banner" data-interchange="[<?php echo $hero_sm; ?>, small], [<?php echo $hero_md; ?>, medium], [<?php echo $hero_lg; ?>, large]">
-              <div class="grid-x">
-                <div class="cell">
-                  <h2 class="text-right"><?php echo get_the_title($post_object->ID); ?></h2>
-                </div>
-              </div>
-              </header>
 
-
+            <!-- Hook up Interchange as an img src -->
+            <img class="my-hero superman" data-interchange="[<?php echo $hero_md; ?>, default], [<?php echo $hero_sm; ?>, small], [<?php echo $hero_md; ?>, medium], [<?php echo $hero_md; ?>, large]" alt="<?php echo $hero_image_alt; ?>" />
+            <noscript><img src="<?php echo $hero_lg; ?>" alt="<?php echo $hero_image_alt; ?>" /></noscript>
 
           </a>
 

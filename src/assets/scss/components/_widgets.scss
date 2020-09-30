@@ -1,33 +1,35 @@
 .sidebar {
-  & *:not(.sf-input-text) {
-    color: $white;
-  }
-  [type='text'] {
-    background: $white;
-  }
-  h3 {
-    font-weight: 900;
-  }
-  i.fas + a,
-  i.fas + p {
-  	font-size: .85rem;
-  	display: inline-flex;
-  	padding-left: 0.5rem;
-  }
+	& *:not(.sf-input-text) {
+		color: $white;
+	}
+	[type="text"] {
+		background: $white;
+	}
+	h3 {
+		font-weight: 900;
+	}
+	i.fas + a,
+	i.fas + p {
+		font-size: 0.85rem;
+		display: inline-flex;
+		padding-left: 0.5rem;
+	}
 }
 
-.sya_container ul { list-style: none; }
+.sya_container ul {
+	list-style: none;
+}
 
 .sya_container h4 a:last-child {
-  font-size: 0.875rem;
+	font-size: 0.875rem;
 }
-
 
 .archive aside.sidebar > section:first-of-type h3::before {
-    content: url("https://nacellecompany.com/wp-content/themes/nacellecompany_2019-07-29_12-04/dist/assets/images/folder-icon.svg");
-    position: relative;
+	content: url("https://nacellecompany.com/wp-content/themes/nacellecompany_2019-07-29_12-04/dist/assets/images/folder-icon.svg");
+	position: relative;
 }
 .archive aside.sidebar > section:last-of-type h3::before {
-    content: url("https://nacellecompany.com/wp-content/themes/nacellecompany_2019-07-29_12-04/dist/assets/images/contact-icon.svg");
-    position: relative;
+	content: url("https://nacellecompany.com/wp-content/themes/nacellecompany_2019-07-29_12-04/dist/assets/images/contact-icon.svg");
+	position: relative;
 }
+

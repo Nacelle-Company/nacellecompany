@@ -95,6 +95,10 @@
 @import "components/media";
 @import "components/modals";
 @import "components/accordion";
+@import "components/plugins";
+
+// Blocks
+@import "blocks/news-gallery";
 
 // Templates
 @import "templates/front";
@@ -108,5 +112,6 @@
 @import "templates/team";
 @import "templates/partners";
 @import "templates/front-partners";
+@import "templates/front-carousel";
 // !!!! customizer scss/css needs to go in the proper folders !!!
 @import "templates/customizer";

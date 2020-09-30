@@ -8,7 +8,7 @@ get_header(); ?>
 
 <?php while (have_posts('')) : the_post(); ?>
 
-    <main class="main grid-x">
+    <main class="main grid-x front-carousel">
 
         <!-- header -->
         <div class="cell tagline">
@@ -29,12 +29,12 @@ get_header(); ?>
 
         <!-- orbit carousel -->
         <div class="cell">
-            <?php get_template_part('template-parts/orbit-carousel'); ?>
+            <?php get_template_part('template-parts/blocks/clean-hero-slider'); ?>
         </div>
 
-        <!-- front circle posts -->
+        <!-- post strip -->
         <div class="cell">
-            <?php get_template_part('template-parts/front/front-circle-posts'); ?>
+            <?php get_template_part('template-parts/blocks/news-gallery'); ?>
         </div>
 
     </main>

@@ -201,12 +201,15 @@ if (!function_exists('Nacelle_custom_colors')) :
             body {
                 background-color: #<?php echo $background_color; ?>;
             }
+            .news-gallery {
+                color: #<?php echo $background_color; ?>;
+            }
 <?php
         }
         if (!empty($text_color)) {
 // text color
 ?>
-            body, h1, .h1, a {
+            body, h1, .h1, a, .instagram-title h3 {
                 color:  <?php echo $text_color; ?>;
             }
 
@@ -223,13 +226,16 @@ if (!function_exists('Nacelle_custom_colors')) :
             .home .top-bar ul .menu-item a {
                 color: <?php echo $primary_color; ?>;
             }
-            .accordion-content {
+            .accordion-content,
+            .news-gallery {
                 background-color: <?php echo $primary_color; ?>;
             }
-            .to-top {
+            .to-top,
+            .instagram-tab {
                 background-color: <?php echo $primary_color; ?>;
             }
-            .button.hollow {
+            .button.hollow,
+            .instagram-tab {
                 border-color: <?php echo $primary_color; ?>;
             }
             .fas,
@@ -270,7 +276,8 @@ if (!function_exists('Nacelle_custom_colors')) :
 <?php   if (!empty($home_nav_bg_color)) {
         // home nav background color
 ?>
-        body.home .site-navigation.top-bar {
+        body.page-template-front .site-navigation.top-bar,
+        body.page-template-front-carousel .site-navigation.top-bar {
             background: <?php echo $home_nav_bg_color; ?>;
         }
 <?php
@@ -279,13 +286,20 @@ if (!function_exists('Nacelle_custom_colors')) :
 <?php   if (!empty($nav_alt_color)) {
         // home nav text color
 ?>
-        .home .top-bar ul .menu-item a {
+        .page-template-front .top-bar ul .menu-item a,
+        .page-template-front-carousel .top-bar ul .menu-item a {
             color: <?php echo $nav_alt_color; ?>;
         }
 <?php
     }
+    if (!empty($background_color)) {
 ?>
+        .news-gallery h3,
+        .news-gallery p {
+            color: #<?php echo $background_color; ?>
+        }
 <?php
+    }
         // END cleanup
         $css = ob_get_clean();
         return $css;
