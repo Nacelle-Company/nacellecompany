@@ -91,6 +91,26 @@ if (!function_exists('wpt_register_theme_customizer')) :
 			)
 		);
 
+		// Create secondary background color
+		$wp_customize->add_setting(
+			'secondary_background_color',
+			array(
+				'default'   => '#000000',
+				'transport' => 'refresh',
+			)
+		);
+
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				'secondary_background_color',
+				array(
+					'section' => 'colors',
+					'label'   => esc_html__('Secondary background color', 'nacelle'),
+				)
+			)
+		);
+
 		// Create nav bg color color
 		$wp_customize->add_setting(
 			'nav_bg_color',

@@ -195,21 +195,27 @@ if (!function_exists('Nacelle_custom_colors')) :
         $nav_bg_color = get_theme_mod('nav_bg_color', '');
         $nav_alt_color = get_theme_mod('nav_alt_color', '');
         $home_nav_bg_color = get_theme_mod('home_nav_bg_color', '');
+        $secondary_background_color = get_theme_mod('secondary_background_color', '');
         if (!empty($background_color)) {
 // background color
 ?>
             body {
                 background-color: #<?php echo $background_color; ?>;
             }
-            .news-gallery {
+            .slider-post .entry-title {
                 color: #<?php echo $background_color; ?>;
             }
+
 <?php
         }
         if (!empty($text_color)) {
 // text color
 ?>
-            body, h1, .h1, a, .instagram-title h3 {
+            body, h1, .h1, 
+            .instagram-title h3,
+            .catalog .entry-title,
+            .contactModal p,
+            .mobile-app-toggle .button:hover {
                 color:  <?php echo $text_color; ?>;
             }
 
@@ -218,29 +224,46 @@ if (!function_exists('Nacelle_custom_colors')) :
         if (!empty($primary_color)) {
 // primary color
 ?>
-            .primary-color,
+            a, .primary-color,
             .accordion-content .title,
-            .button.hollow {
+            .button.hollow,
+            .footer-grid p,
+            .mobile-app-toggle .button,
+            .entry-content .social a.nav-link {
                 color: <?php echo $primary_color; ?>;
             }
-            .home .top-bar ul .menu-item a {
+            .home .top-bar ul .menu-item a,
+            .top-meta .title,
+            .button.clear.success {
                 color: <?php echo $primary_color; ?>;
             }
+            .primary,
             .accordion-content,
-            .news-gallery {
+            input[type=submit],
+            .slider-post .title {
                 background-color: <?php echo $primary_color; ?>;
             }
             .to-top,
-            .instagram-tab {
+            .instagram-tab,
+            .callout-footer,
+            .mobile-app-toggle .button.is-active:hover {
                 background-color: <?php echo $primary_color; ?>;
             }
             .button.hollow,
-            .instagram-tab {
+            .instagram-tab,
+            .off-canvas-content,
+            .mobile-app-toggle .button.is-active,
+            .press_release .intro,
+            .press_release .press {
                 border-color: <?php echo $primary_color; ?>;
             }
             .fas,
-            svg.footer-logo .color {
+            svg.footer-logo .color,
+            svg.icon {
                 fill: <?php echo $primary_color; ?>;
+            }
+            .mobile-app-toggle .button .icon {
+                stroke: <?php echo $primary_color; ?>;
             }
             h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
                 color: <?php echo $primary_color; ?>;
@@ -252,16 +275,33 @@ if (!function_exists('Nacelle_custom_colors')) :
 ?>
             .secondary-color,
             .button.hollow:hover,
-            .home .top-bar ul .menu-item a:hover {
+            .home .top-bar ul .menu-item a:hover,
+            .dropdown.menu .is-active > a,
+            .button.clear.success,
+            .press_release .intro h4 {
                 color: <?php echo $secondary_color; ?>;
             }
             .button.hollow:hover {
                 border-color: <?php echo $secondary_color; ?>;
             }
+            .accordion-line {
+                background-color: <?php echo $secondary_color; ?>;
+            }
+            .orbit-controls .orbit-previous:hover .icon, 
+            .orbit-controls .orbit-next:hover .icon {
+                fill: <?php echo $secondary_color; ?>;
+            }
 <?php
-        } ?>
-
-<?php   if (!empty($nav_bg_color)) {
+        }
+        if (!empty($secondary_background_color)) {
+        
+?>
+            .gallery {
+                background-color: <?php echo $secondary_background_color; ?>;
+            }
+<?php   
+    }
+if (!empty($nav_bg_color)) {
         // nav background color
 ?>
         .site-navigation.top-bar,
@@ -295,7 +335,8 @@ if (!function_exists('Nacelle_custom_colors')) :
     if (!empty($background_color)) {
 ?>
         .news-gallery h3,
-        .news-gallery p {
+        .news-gallery p,
+        .callout-footer * {
             color: #<?php echo $background_color; ?>
         }
 <?php

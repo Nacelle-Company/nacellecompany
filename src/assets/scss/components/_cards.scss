@@ -165,14 +165,9 @@ $image-hover-wrapper-icon-size: 60px;
 }
 .callout-footer {
     position: absolute;
-    background-color: $primary-color;
     padding: $callout-footer-padding;
     font-size: .75rem;
     position: relative;
-
-    & * {
-        color: $white;
-    }
 
     p {
         margin-bottom: 0;

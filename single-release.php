@@ -106,7 +106,7 @@ get_header(); ?>
 
 					</article>
 
-					<?php get_template_part('template-parts/content-catalog-aside', ''); ?>
+					<?php get_template_part('template-parts/content/content-catalog-aside', ''); ?>
 				</div>
 
 			</div>

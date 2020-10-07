@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Author: Ole Fredrik Lie
  * URL: http://olefredrik.com
@@ -61,7 +62,7 @@ require_once('library/gutenberg.php');
 /**
  * Create Custom Image Sizes for Responsive
  * Based on Foundations breakpoints for SM, MD, LG
-**/
+ **/
 function Nacelle_add_image_sizes()
 {
     /* Soft proportional crops */
@@ -113,13 +114,13 @@ if (function_exists('acf_add_options_page')) {
  *
  * @since 1.0.0
  */
- if (function_exists('acf_add_options_page')) {
-     acf_add_options_sub_page(array(
-         'page_title'     => 'News',
-         'menu_title'    => 'News Options',
-         'parent_slug'    => 'edit.php?post_type=news',
-     ));
- }
+if (function_exists('acf_add_options_page')) {
+    acf_add_options_sub_page(array(
+        'page_title'     => 'News',
+        'menu_title'    => 'News Options',
+        'parent_slug'    => 'edit.php?post_type=news',
+    ));
+}
 
 
 /**
@@ -131,7 +132,7 @@ add_action('pre_get_posts', 'Nacelle_show_all_work');
 
 function Nacelle_show_all_work($query)
 {
-    if (! is_admin() && $query->is_main_query()) {
+    if (!is_admin() && $query->is_main_query()) {
         if (is_post_type_archive('press_archive')) {
             $query->set('posts_per_page', -1);
         }
@@ -143,7 +144,7 @@ function Nacelle_add_custom_types($query)
 {
     if (is_category() || is_tag() && empty($query->query_vars['suppress_filters'])) {
         $query->set('post_type', array(
-     'post', 'nav_menu_item', 'catalog'
+            'post', 'nav_menu_item', 'catalog'
         ));
         return $query;
     }
@@ -245,11 +246,12 @@ function cd_custom_css()
  * YouTube oEmbeds w/ query string parameters
  * https://brettmhoffman.com/code/add-query-string-parameters-to-youtube-oembeds-in-wp/
  */
-add_filter( 'embed_oembed_html', 'embed_youtube_parameters');
-add_filter( 'video_embed_html', 'embed_youtube_parameters' ); // Jetpack
-function embed_youtube_parameters( $code ) {
-    if( strpos( $code, 'youtu.be' ) !== false || strpos( $code, 'youtube.com' ) !== false ) {
-        $return = preg_replace( '@embed/([^"&]*)@', 'embed/$1&modestbranding=1&autohide=1&rel=0', $code );
+add_filter('embed_oembed_html', 'embed_youtube_parameters');
+add_filter('video_embed_html', 'embed_youtube_parameters'); // Jetpack
+function embed_youtube_parameters($code)
+{
+    if (strpos($code, 'youtu.be') !== false || strpos($code, 'youtube.com') !== false) {
+        $return = preg_replace('@embed/([^"&]*)@', 'embed/$1&modestbranding=1&autohide=1&rel=0', $code);
     }
     return '<div class="embed-container">' . $return . '</div>';
 }
@@ -264,3 +266,5 @@ function nacelle_enqueue_styles()
 }
 
 add_action('wp_enqueue_scripts', 'nacelle_enqueue_styles');
+
+

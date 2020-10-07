@@ -1,0 +1,187 @@
+$full-hero-slider-accent: $warning-color;
+$hero-full-screen-bg-color: rgba(0, 0, 0, 0.6);
+$hero-full-screen-bg-size: cover;
+$hero-full-screen-text-color: $white;
+$slider-post-bg-color: rgba(0, 0, 0, 0.7);
+
+.orbit-slider {
+	.orbit-wrapper {
+		width: 100%;
+	}
+
+	.orbit-cover {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+	}
+
+	.orbit-caption {
+		width: auto;
+		height: auto;
+		background: transparent;
+		position: relative;
+		text-align: center;
+		right: 0;
+		left: 0;
+		padding: 0.2rem 2rem;
+
+		@include breakpoint(medium) {
+			position: absolute;
+			background: transparent;
+			text-align: left;
+			padding: 1rem 2rem;
+			bottom: 35px;
+		}
+
+		p {
+			line-height: 1.25;
+			@include breakpoint(medium) {
+				font-size: 1.1rem;
+			}
+		}
+
+		h3 {
+			color: $white;
+			text-transform: uppercase;
+
+			@include breakpoint(medium) {
+				font-size: 2rem;
+			}
+		}
+	}
+
+	.orbit-slide {
+		padding-bottom: 40%;
+		background: transparent;
+
+		@include breakpoint(medium) {
+			// padding-bottom: 0;
+			// position: relative;
+		}
+	}
+
+	.orbit-controls {
+		.orbit-previous,
+		.orbit-next {
+			cursor: pointer;
+			&:hover,
+			&:active,
+			&:focus {
+				background-color: transparent;
+			}
+		}
+	}
+
+	.orbit-bullets {
+		display: none;
+
+		@include breakpoint(medium) {
+			display: block;
+			margin-bottom: 0;
+			margin-top: -3rem;
+			background: none;
+		}
+
+		button {
+			width: 3rem;
+			height: 0.4rem;
+			border-radius: 0;
+			background-color: $white;
+
+			&.is-active {
+				background-color: $full-hero-slider-accent;
+			}
+		}
+	}
+
+	.orbit-image {
+		object-fit: cover;
+		@include breakpoint(small only) {
+			top: 0;
+			height: auto;
+		}
+	}
+
+	.orbit-sm-image {
+		padding: 15px 30px;
+		@include breakpoint(medium) {
+			padding-right: 35%;
+			padding: 15px 35% 15px 0;
+		}
+	}
+}
+
+.orbit-slider {
+	&.full {
+		height: 85vh;
+		background-size: $hero-full-screen-bg-size;
+		@include breakpoint(medium) {
+			height: 100vh;
+		}
+		.orbit-figure,
+		.orbit-image,
+		.orbit-slide {
+			height: 82vh;
+
+			@include breakpoint(medium) {
+				height: 100vh;
+			}
+		}
+		ul.orbit-container {
+			height: auto;
+			@include breakpoint(medium) {
+				height: 100vh;
+			}
+		}
+	} // END .full slider
+
+	&.slider-post {
+		.orbit-slide {
+			padding-bottom: 0;
+		}
+	} // END .slider-post slider
+}
+
+.orbit-slider {
+	.orbit-image {
+		width: 100%;
+		height: 70vh;
+	}
+	.orbit-caption {
+		position: absolute;
+		background-color: $slider-post-bg-color;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		color: #fff;
+	}
+	.orbit-previous {
+		left: auto;
+		right: 3rem;
+	}
+	.orbit-previous,
+	.orbit-next {
+		top: 3rem;
+	}
+	&.news {
+		.orbit-caption {
+			text-align: right;
+		}
+	}
+	&.full {
+		.orbit-cover {
+			background-color: $hero-full-screen-bg-color;
+		}
+		.orbit-previous,
+		.orbit-next {
+			top: 92%;
+		}
+		.orbit-previous {
+			left: auto;
+			right: 3rem;
+		}
+	}
+}

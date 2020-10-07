@@ -19,135 +19,80 @@ get_header(); ?>
 
 	$synopsis = get_field('synopsis');
 
-	$runtime = get_field('runtime');
-	$date = get_field('release_date', false, false);
-	$genres = get_the_terms($post->ID, 'genre');
 	// $videoEmbedd = get_field('video_embedd');
 	$ticketsButtonTitle = get_field('tickets_button_title');
 	$titleColor = get_field('title_color');
 	$squareImage = get_field('square_image');
-
 	?>
 
-	<header class="catalog featured-hero grid-container fluid">
+	<?php get_template_part('template-parts/catalog/catalog-header', ''); ?>
 
-		<div class="grid-x catalog grid-padding-y">
-
-			<div class="cell">
-
-				<div class="grid-container px-0 px-medium-3">
-
-					<div class="grid-x align-middle">
-
-						<div class="cell medium-12 grid-offset-5">
-
-							<?php
-							if (is_single()) {
-								the_title('<h1 class="entry-title">', '</h1>');
-							} else {
-								the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
-							}
-							?>
-
-						</div>
-
-					</div>
-
-					<div class="grid-x align-middle">
-
-						<div class="cell medium-8 grid-offset-5">
-
-							<div class="play grid-x align-start">
-
-								<!-- synopsis -->
-								<div class="cell medium-8 syopsis">
-									<?php
-									$excerpt = get_the_content();
-
-									$excerpt = substr($excerpt, 0, 300);
-									$result = substr($excerpt, 0, strrpos($excerpt, ' '));
-									echo $result . ' . . <a class="primary-color" data-toggle="exampleModal5" aria-controls="exampleModal5">Read full article</a>';
-									?>
-
-									<div class="small synopsis reveal" style="display: block;text-align: left;background: #F4F5F6;color: #2C2C2C" id="exampleModal5" data-reveal>
-										<?php the_content(); ?>
-										<button class="close-button" data-close aria-label="Close reveal" type="button">
-											<span aria-hidden="true">&times;</span>
-										</button>
-									</div>
-
-								</div>
-
-								<?php if (!empty($ticketsButtonTitle)) : ?>
-
-									<!-- include tickets modal -->
-									<?php get_template_part('template-parts/tickets-modal', 'none'); ?>
-
-								<?php endif; ?>
-
-							</div>
-
-						</div>
-
-					</div>
-
-				</div> <!-- END grid-container -->
-
-			</div> <!-- END cell -->
-
-		</div> <!-- END catalog -->
-
-	</header>
-
-	<main class="top-meta grid-x">
-
-		<article id="post-<?php the_ID(); ?>" <?php post_class('cell medium-7 small-order-2'); ?>>
+	<main <?php post_class('main-content grid-x ' . $gridContainer); ?> id="post-<?php the_ID(); ?>">
 
 			<?php
+			// HERO VIDEO present
 			if (get_field('hero_video')) {
+
+				echo '<div class="yes-hero-video cell medium-7">';
+
+				// show hero video
 				get_template_part('template-parts/catalog/catalog-hero', '');
-			}; ?>
 
-			<?php
-			if (get_field('show_metadata')) {
-				get_template_part('template-parts/catalog/catalog-more-info', '');
-			}; ?>
+				// show more info dropdown
+				if (get_field('show_more_info')) {
+					get_template_part('template-parts/catalog/catalog-more-info', '');
+				};
 
-		</article>
+				// show crew info
+				if (get_field('show_crew')) {
+					get_template_part('template-parts/catalog/catalog-crew', '');
+				};
 
-		<?php
-		if (has_post_thumbnail()) {
-			get_template_part('template-parts/catalog/catalog-aside', '');
+				// close the div with hero and more info
+				echo '</div><div class="cell medium-5">';
+
+				// show catalog aside
+				get_template_part('template-parts/catalog/catalog-aside', '');
+
+				echo '</div><div class="cell">';
+
+				// show large links FULL WIDTH
+				if (get_field('show_large_links')) {
+				get_template_part('template-parts/catalog/catalog-large-links', '');
+				};
+
+				echo '</div>';
+
+			} else {
+				// no HERO VIDEO present
+
+				echo '<div class="no-hero-video cell medium-7">';
+
+				// show more info dropdown
+				if (get_field('show_more_info')) {
+					get_template_part('template-parts/catalog/catalog-more-info', '');
+				};
+
+				// show crew info
+				if (get_field('show_crew')) {
+					get_template_part('template-parts/catalog/catalog-crew', '');
+				};
+
+				// show large links
+				if (get_field('show_large_links')) {
+					get_template_part('template-parts/catalog/catalog-large-links', '');
+				};
+				// close the div with hero and more info
+				echo '</div><div class="cell medium-5">';
+
+				// show catalog aside
+				get_template_part('template-parts/catalog/catalog-aside', '');
+
+				echo '</div>';
+
 		}; ?>
 
 	</main>
-
-	<!-- catalog content sections -->
-	<div class="grid-x">
-
-		<div class="cell medium-8">
-
-			<main class="top-meta grid-x grid-padding-y">
-
-				<article id="post-<?php the_ID(); ?>">
-
-					<?php
-					if (get_field('show_crew')) {
-						get_template_part('template-parts/catalog/catalog-main-info', '');
-					}; ?>
-
-					<?php
-					if (get_field('show_large_links')) {
-						get_template_part('template-parts/catalog/catalog-large-links', '');
-					}; ?>
-
-				</article>
-
-			</main>
-
-		</div>
-
-	</div> <!-- closing div for featured-image.php topmost "grid-container" -->
 
 	<?php if (have_rows('embedded_content')) : ?>
 

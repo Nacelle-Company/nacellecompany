@@ -15,11 +15,13 @@ get_header(); ?>
 
             <div class="medium-12 cell text-center">
 
-                <h1 class="hide">Comedy Dynamics</h1>
+                <h1 class="hide"><?php $blog_title = get_bloginfo();
+                                    echo $blog_title; ?></h1>
 
                 <h2>
                     <strong>
-                        <?php the_field('heading'); ?>
+                        <?php if (get_field('heading')) : the_field('heading');
+                        endif; ?>
                     </strong>
                 </h2>
 
@@ -29,33 +31,22 @@ get_header(); ?>
 
         <!-- orbit carousel -->
         <div class="cell">
-            <?php get_template_part('template-parts/blocks/clean-hero-slider'); ?>
+            <?php get_template_part('template-parts/blocks/full-orbit-slider'); ?>
         </div>
-
-        <!-- post strip -->
+        <!-- wysiwyg content -->
         <div class="cell">
-            <?php get_template_part('template-parts/blocks/news-gallery'); ?>
+            <?php get_template_part('template-parts/blocks/wysiwyg'); ?>
+        </div>
+        <!-- news carousel -->
+        <div class="cell">
+            <?php get_template_part('template-parts/blocks/slider-news'); ?>
+            <br>
+            <?php get_template_part('template-parts/blocks/slider-press'); ?>
         </div>
 
     </main>
 
 <?php endwhile; ?>
 <!-- END LOOP -->
-
-<div class="grid-x mb-3 mt-4 align-center">
-
-    <div class="large-6">
-
-        <h4 style="text-align:center !important;font-family: MontserratRegular,sans-serif !important;">
-
-            <?php the_field('additional_bottom_content'); ?>
-
-        </h4>
-
-    </div>
-
-</div>
-
-
 
 <?php get_footer(); ?>

@@ -11,14 +11,10 @@
 // font awesome icons
 i.fas {
   margin: 0 .5rem 0 0;
-  color: $primary-color;
 }
 
 .catalog-title {
-    text-transform: uppercase;
-    .fas {
-        color: $success-color;
-    }
+  text-transform: uppercase;
 }
 
 // catalog pagination
@@ -41,7 +37,6 @@ i.fas {
     margin-bottom: 1rem;
   }
   .social a.nav-link {
-      color: $success-color;
       font-size: 23px;
       padding: 1rem .25rem;
     @include breakpoint(medium) {

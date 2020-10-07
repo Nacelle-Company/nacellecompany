@@ -98,17 +98,11 @@ html, body {
         .press {
             padding-bottom: 1rem;
         }
-        .press,
-        .intro {
-            margin-bottom: 1rem;
-            border-bottom: 3px solid $primary-color;
-        }
         .press h1 {
             font-weight: 600;
             text-transform: uppercase;
         }
         .intro h4 {
-            color: $success-color;
             margin-bottom: 0;
         }
         .nav-links {
@@ -126,7 +120,13 @@ html, body {
         }
     }
 }
-
+.press_release {
+  .press,
+  .intro {
+      margin-bottom: 1rem;
+      border-bottom: 3px solid;
+  }
+}
 header.press {
     footer {
         p {

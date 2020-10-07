@@ -32,15 +32,13 @@ footer.footer {
 
 .footer-grid {
   @include xy-grid;
+  justify-content: space-between;
   padding: rem-calc(20) 0;
 
     section {
-        @include xy-cell();
-
         @include breakpoint(large) {
-          @include xy-cell(auto);
+            justify-content: initial;
             display: flex;
-            justify-content: flex-end;
             align-items: center;
         }
 
@@ -80,7 +78,6 @@ footer.footer {
   .contactModal p {
       text-transform: uppercase;
       font-weight: 600;
-      color: $white;
       margin: 11px 0;
       text-align: center;
 
@@ -93,35 +90,14 @@ footer.footer {
 
 
 .footer {
-    .footer-grid {
-            p {
-            color: #4591E5;
-        }
-    }
 
-        .medium-shrink.nav-link {
-            width: 30px;
-            margin-left: 1rem;
-        }
+    .medium-shrink.nav-link {
+        width: 30px;
+        margin-left: 1rem;
+    }
     @include breakpoint(medium) {
-        .medium-shrink.nav-link {
-            // width: 30px;
-            // margin-left: 1rem;
-        }
         .social svg.svg-inline--fa {
             max-width: 2em;
-        }
-        .r-footer-widgets {
-            text-align: right;
-            align-items: center;
-            justify-content: flex-end;
-
-            p {
-                text-align: right;
-            }
-                        & > .grid-x {
-                    justify-content: flex-end;
-            }
         }
     }
     @include breakpoint(small only) {

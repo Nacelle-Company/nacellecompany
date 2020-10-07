@@ -21,7 +21,8 @@ get_header(); ?>
 <?php
 
 // START variables
-$genres = get_the_terms($post->ID, 'genre');
+// $genres = get_the_terms($post->ID, 'genre');
+$term = get_queried_object();
 
 $bio = get_field('bio', $term);
 $profile_image = get_field('profile_pic', $term);
@@ -42,7 +43,7 @@ $img_size_lg = 'fp-large';
 $img_size_md = 'fp-medium';
 $img_size_sm = 'fp-small';
 
-$hero_image = the_post_thumbnail($term);
+// $hero_image = the_post_thumbnail($term);
 
 /* Get custom sizes of our image sub_field */
 $hero_lg = $hero_image['sizes'][$img_size_lg];
@@ -51,29 +52,13 @@ $hero_sm = $hero_image['sizes'][$img_size_sm];
 
 ?>
 
-<main class="main-talent-archive">
+<main class="main-talent">
 
-    <?php get_template_part('template-parts/catalog-hero'); ?>
+    <?php get_template_part('template-parts/catalog/catalog-hero'); ?>
 
-    <?php get_template_part('template-parts/catalog-latest-stand-up'); ?>
+    <?php get_template_part('template-parts/catalog/catalog-latest-video'); ?>
 
-    <?php get_template_part('template-parts/catalog-list'); ?>
-
-    <!-- DEBUGGING STRING -->
-    <pre style="max-height: 300px;">
-            <?php
-            // var_dump($terms);
-            // the_meta();
-            //print_r($query);
-            ?>
-            </pre>
-
-    <?php foreach ((get_the_category()) as $category) {
-        echo $category->cat_name . ' ';
-    } ?>
-    <!-- end DEBUGGING STRING -->
-
-
+    <?php get_template_part('template-parts/catalog/catalog-list'); ?>
 
     <!-- BIO SECTION -->
     <div class="grid-x grid-container grid-padding-x">
@@ -86,7 +71,7 @@ $hero_sm = $hero_image['sizes'][$img_size_sm];
                 if (!empty($profile_image)) :
                 ?>
 
-                    <div class="cell small-6">
+                    <div class="cell small-6 profile-image">
 
                         <img rel="preconnect" class="my-hero superman" data-interchange="[<?php echo $profile_hero_md; ?>, default], [<?php echo $profile_hero_sm; ?>, small], [<?php echo $profile_hero_md; ?>, medium]" alt="<?php echo $profile_hero_image_alt; ?>" />
 
@@ -98,7 +83,7 @@ $hero_sm = $hero_image['sizes'][$img_size_sm];
 
                 <div class="cell small-6">
 
-                    <?php $description = term_description();
+                    <?php $description = get_field('bio', $term);
                     echo $description; ?>
 
                 </div>

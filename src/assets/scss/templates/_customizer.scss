@@ -124,9 +124,7 @@
 		top: 1rem;
 		position: relative;
 	}
-	.clean-hero-slider ul.orbit-container {
-    height: auto !important;
-}
+
 	.press-category {
 		position: relative;
 	}
@@ -135,21 +133,7 @@
 		shape-outside: none;
 		height: 0;
 	}
-	/* clean orbit slider */
-	.clean-hero-slider {
-		height: 85vh;
-	}
-	.clean-hero-slider .orbit-caption {
-		background: transparent;
-		position: relative;
-	}
-	.clean-hero-slider .orbit-slide {
-		background: transparent;
-	}
-	.clean-hero-slider .orbit-caption p,
-	.clean-hero-slider .orbit-caption h3 {
-		text-align: left;
-	}
+
 	/* 	circle slider */
 
 	.circle-slider .orbit-slide.is-active > .circle-orbit-slider-container {
@@ -262,9 +246,6 @@ height: unset;
 		left: 27%;
 	}
 
-	.clean-hero-slider .orbit-sm-image {
-		padding: 15px 35% 15px 0;
-	}
 	/* 	brands: hover cards */
 	/* 	https://alligator.io/css/cropping-images-object-fit/ */
 	.macro-cat-cards .img-container img {

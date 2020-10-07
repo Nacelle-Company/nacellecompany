@@ -14,7 +14,7 @@ get_header();
 
 		<?php while (have_posts('')) : the_post(); ?>
 		<!-- clean hero slider -->
-		<?php get_template_part('template-parts/blocks/clean-hero-slider'); ?>
+		<?php get_template_part('template-parts/blocks/full-hero-slider'); ?>
 
 			<div class="circle-slider orbit mb-4" role="region" aria-label="Nacelle News Slider" data-orbit data-auto-play="false" data-use-m-u-i="false">
 

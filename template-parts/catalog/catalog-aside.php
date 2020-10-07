@@ -50,7 +50,7 @@ $customA = get_field('custom_audio');
 $customAtitle = get_field('custom_audio_title');
 
 ?>
-<aside class="cell medium-5 feat medium-order-2">
+<aside class="catalog-aside feat">
 
 	<div class="grid-x">
 
@@ -353,7 +353,6 @@ $customAtitle = get_field('custom_audio_title');
 							</section>
 
 							<!-- audio dropdown -->
-
 							<!-- <article class="accordion cell link-icons-toggle" data-accordion data-allow-all-closed="true"> -->
 							<section class="accordion-item" data-accordion-item>
 
@@ -510,7 +509,7 @@ $customAtitle = get_field('custom_audio_title');
 
 				<div class="cell pagination grid-padding-y">
 
-					<?php get_template_part('template-parts/catalog-pagination'); ?>
+					<?php get_template_part('template-parts/catalog/catalog-pagination'); ?>
 
 				</div>
 

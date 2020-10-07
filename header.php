@@ -157,7 +157,7 @@
 
 						<div class='search-container' tabindex='1'>
 
-							<i class="fas fa-search"></i>
+							<?php get_template_part( 'template-parts/svg/icon-search' ); ?>
 
 							<?php echo do_shortcode('[searchandfilter id="4711" fields="search" search_placeholder="Search. . ."]');
 							?>

@@ -39,6 +39,13 @@
 .site-desktop-title a {
   font-weight: bold;
 }
+.custom-logo {
+  @include breakpoint(medium) {
+    max-height: 200px;
+    max-width: 200px;
+    width: auto;
+  }
+}
 // Mobile menu
 .mobile-menu {
   display: none; // prevents repaint caused by JS hiding menu onload
