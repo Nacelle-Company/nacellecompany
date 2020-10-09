@@ -1,67 +1,66 @@
 	<header class="catalog featured-hero grid-container fluid">
 
-	    <div class="grid-x catalog grid-padding-y">
+		<div class="grid-x catalog grid-padding-y">
 
-	        <div class="cell">
+			<div class="cell">
 
-	            <div class="grid-container px-0 px-medium-3">
+				<div class="grid-container px-0 px-medium-3">
 
-	                <div class="grid-x align-middle">
+					<div class="grid-x align-justify">
 
-
-						<?php
-						if (is_single()) {
-							the_title('<h1 class="entry-title">', '</h1>');
-						} else {
-							the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
-						}
+						<?php // title 
 						?>
+						<div class="cell medium-6">
+							<?php
+							if (is_single()) {
+								the_title('<h1 class="entry-title">', '</h1>');
+							} else {
+								the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
+							}
+							?>
+						</div>
 
+						<?php // theatre popup button 
+						?>
+						<div class="cell medium-3 medium-offset-3">
+							<!-- include tickets modal -->
+							<?php if (get_field('theatres_popup')) : ?>
 
-	                </div>
+								<?php get_template_part('template-parts/blocks/tickets-modal', 'none'); ?>
 
-	                <div class="grid-x align-middle">
+							<?php endif; ?>
 
-	                    <div class="cell medium-8 grid-offset-5">
+						</div>
 
-	                        <div class="play grid-x align-start">
+					</div>
 
-	                            <!-- synopsis -->
-	                            <div class="cell medium-8 syopsis">
-	                                <?php
-                                    $excerpt = get_field('synopsis');
+					<div class="grid-x align-justify align-top">
 
-                                    $excerpt = substr($excerpt, 0, 300);
-                                    $result = substr($excerpt, 0, strrpos($excerpt, ' '));
-                                    echo $result . ' . . <a class="primary-color" data-toggle="exampleModal5" aria-controls="exampleModal5">Read full article</a>';
-                                    ?>
+						<!-- synopsis -->
+						<div class="cell medium-6 syopsis">
+							<?php
+							$excerpt = get_field('synopsis');
 
-	                                <div class="small synopsis reveal" style="display: block;text-align: left;background: #F4F5F6;color: #2C2C2C" id="exampleModal5" data-reveal>
-	                                    <?php the_field('synopsis'); ?>
-	                                    <button class="close-button" data-close aria-label="Close reveal" type="button">
-	                                        <span aria-hidden="true">&times;</span>
-	                                    </button>
-	                                </div>
+							$excerpt = substr($excerpt, 0, 300);
+							$result = substr($excerpt, 0, strrpos($excerpt, ' '));
+							echo $result . ' . . <a class="primary-color" data-toggle="exampleModal5" aria-controls="exampleModal5">Read full article</a>';
+							?>
 
-	                            </div>
+							<div class="small synopsis reveal" style="display: block;text-align: left;background: #F4F5F6;color: #2C2C2C" id="exampleModal5" data-reveal>
+								<?php the_field('synopsis'); ?>
+								<button class="close-button" data-close aria-label="Close reveal" type="button">
+									<span aria-hidden="true">&times;</span>
+								</button>
+							</div>
 
-	                            <?php if (!empty($ticketsButtonTitle)) : ?>
+						</div>
 
-	                                <!-- include tickets modal -->
-	                                <?php get_template_part('template-parts/tickets-modal', 'none'); ?>
+					</div>
 
-	                            <?php endif; ?>
+				</div> <!-- END grid-container -->
 
-	                        </div>
+			</div> <!-- END cell -->
 
-	                    </div>
-
-	                </div>
-
-	            </div> <!-- END grid-container -->
-
-	        </div> <!-- END cell -->
-
-	    </div> <!-- END catalog -->
+		</div> <!-- END catalog -->
 
 	</header>

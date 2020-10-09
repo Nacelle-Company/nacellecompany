@@ -54,7 +54,7 @@ if ($query->have_posts()) :
         if (get_field('latest_video', $term)) {
             $videoLatest = get_field('latest_video', $term);
         } else {
-            $videoLatest = get_field('hero_video');
+            $videoLatest = get_field('video_embedd');
         }
 
 ?>

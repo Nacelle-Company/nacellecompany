@@ -44,6 +44,11 @@ get_header(); ?>
             <?php get_template_part('template-parts/blocks/slider-press'); ?>
         </div>
 
+        <div class="cell">
+            <?php get_template_part('template-parts/blocks/full-hero-video'); ?>
+
+        </div>
+
     </main>
 
 <?php endwhile; ?>

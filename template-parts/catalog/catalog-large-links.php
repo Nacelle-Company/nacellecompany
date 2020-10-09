@@ -11,12 +11,12 @@
     <div class="cell link-lg">
         <div class="grid-x grid-padding-x">
 
-            <!-- custom VIDEO link -->
+            <!-- large links -->
             <?php
             // Check rows exists.
-            if (have_rows('new_link')) :
+            if (have_rows('new_large_link')) :
 
-                while (have_rows('new_link')) : the_row();
+                while (have_rows('new_large_link')) : the_row();
 
                     $videoLinkTitle = get_sub_field('link_title');
                     $videoLinkURL = get_sub_field('link_url');

@@ -1,7 +1,7 @@
 <div class="orbit-slider slider-post press">
     <div class="cell orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-auto-play="true" data-timer-delay="7000" data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
         <div class="fullscreen-image-slider">
-            <div class="cell grid-container title mt-1">
+            <div class="cell grid-container primary-title mt-1">
                 <h2 class="entry-title mb-0">Latest Press</h2>
             </div>
             <ul class="orbit-container">
@@ -48,13 +48,16 @@
 
                                 <div class="cell medium-6">
 
-                                    <time datetime="<?php $post_date_init = get_the_date('Y-m-d', $mypost->ID);
-                                                    echo $post_date_init; ?>"><?php $post_date = get_the_date('M j, Y', $mypost->ID);
-                                                                                echo $post_date; ?></time>
 
-                                    <p>
-                                        <a href="<?php the_field('link_to_article', $mypost->ID); ?>" class="read-more" target="_blank">Read More</a>
-                                    </p>
+                                    <?php
+                                    // $post_date_init = get_the_date('Y-m-d', $mypost->ID);
+                                    // echo $post_date_init; 
+                                    // $post_date = get_the_date('M j, Y', $mypost->ID);
+                                    // echo $post_date; 
+                                    ?>
+
+                                    <?php // the_field('link_to_article', $mypost->ID); 
+                                    ?>
 
                                     <?php echo '<a href="' . get_permalink($mypost->ID) . '">'; ?>
                                     <h3 class="subheader"><?php echo $theTitle; ?></h3>

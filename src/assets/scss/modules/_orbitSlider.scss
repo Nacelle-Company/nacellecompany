@@ -17,41 +17,6 @@ $slider-post-bg-color: rgba(0, 0, 0, 0.7);
 		left: 0;
 	}
 
-	.orbit-caption {
-		width: auto;
-		height: auto;
-		background: transparent;
-		position: relative;
-		text-align: center;
-		right: 0;
-		left: 0;
-		padding: 0.2rem 2rem;
-
-		@include breakpoint(medium) {
-			position: absolute;
-			background: transparent;
-			text-align: left;
-			padding: 1rem 2rem;
-			bottom: 35px;
-		}
-
-		p {
-			line-height: 1.25;
-			@include breakpoint(medium) {
-				font-size: 1.1rem;
-			}
-		}
-
-		h3 {
-			color: $white;
-			text-transform: uppercase;
-
-			@include breakpoint(medium) {
-				font-size: 2rem;
-			}
-		}
-	}
-
 	.orbit-slide {
 		padding-bottom: 40%;
 		background: transparent;
@@ -109,6 +74,41 @@ $slider-post-bg-color: rgba(0, 0, 0, 0.7);
 		@include breakpoint(medium) {
 			padding-right: 35%;
 			padding: 15px 35% 15px 0;
+		}
+	}
+}
+
+.orbit-caption {
+	width: auto;
+	height: auto;
+	background: transparent;
+	position: relative;
+	text-align: center;
+	right: 0;
+	left: 0;
+	padding: 0.2rem 2rem;
+
+	@include breakpoint(medium) {
+		position: absolute;
+		background: transparent;
+		text-align: left;
+		padding: 1rem 2rem;
+		bottom: 35px;
+	}
+
+	p {
+		line-height: 1.25;
+		@include breakpoint(medium) {
+			font-size: 1.1rem;
+		}
+	}
+
+	h3 {
+		color: $white;
+		text-transform: uppercase;
+
+		@include breakpoint(medium) {
+			font-size: 2rem;
 		}
 	}
 }

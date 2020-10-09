@@ -7,8 +7,16 @@ $endHeroVidAt = get_field('end_hero_video');
 $mainTalent = is_tax('main_talent', $term);
 $term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
 $videoHero = get_field('hero_video');
-$talentVideo = '';
+$talentVideo = get_field('main_talent_hero_video');
 
+
+if ($mainTalent == 'main_talent') {
+    $videoAbundance = '0';
+} else {
+    $videoAbundance = '0.3';
+}
+// $selectedHeroVideoCategory = get_field('selected_hero_video_category', $term);
+// echo $selectedHeroVideoCategory;
 ?>
 <?php
 $genre = 'stand-up';
@@ -16,7 +24,7 @@ $artistName = $term->slug;
 
 $recent_args = array(
     'post_type'         => 'catalog',
-    'category_name'     => 'distribution, production',
+    // 'category_name'     => $selectedHeroVideoCategory,
     'posts_per_page'    => 1,
     'order'             => 'DSC',
     'tax_query' => array(
@@ -42,9 +50,9 @@ if ($query->have_posts()) :
          * in the main talent taxonomy page for the artist
          * if so, set the $videoHero variable to that video.
          */
-        if (get_field('video', $term)) {
-            $videoHero = get_field('video', $term);
-        } 
+        if (get_field('main_talent_hero_video', $term)) {
+            $videoHero = get_field('main_talent_hero_video', $term);
+        }
 
     endwhile;
 
@@ -66,8 +74,7 @@ endif;
             opacity:1, 
             showControls:false, 
             optimizeDisplay:true,
-            showYTLogo:false,
-            abundance: 0.3,
+            abundance: <?php echo $videoAbundance; ?>,
             loop:true, 
             showYTLogo:false, 
             stopMovieOnBlur:true,
@@ -80,7 +87,7 @@ endif;
         <div class="cell medium-4">
 
             <?php if ($mainTalent == 'main_talent') { ?>
-            
+
                 <!-- play button group -->
                 <div class="mobile-app-toggle play" data-mobile-app-toggle>
 
@@ -117,7 +124,7 @@ endif;
 
                 </div>
 
-            <?php } elseif('catalog' == get_post_type()) { ?>
+            <?php } elseif ('catalog' == get_post_type()) { ?>
 
                 <!-- play button group -->
                 <div class="mobile-app-toggle play" data-mobile-app-toggle>
@@ -156,8 +163,7 @@ endif;
 
                 </div>
 
-            <?php } else{
-
+            <?php } else {
             }; ?>
 
 
@@ -184,7 +190,7 @@ endif;
                 optimizeDisplay:true,
                 abundance: 0,
                 loop:true, 
-                showYTLogo:false, 
+                showYTLogo:true, 
                 stopMovieOnBlur:true }"></div>
 
             <?php endif; ?>

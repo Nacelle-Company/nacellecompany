@@ -19,7 +19,7 @@ get_header(); ?>
 
 	$synopsis = get_field('synopsis');
 
-	// $videoEmbedd = get_field('video_embedd');
+	$videoEmbedd = get_field('video_embedd');
 	$ticketsButtonTitle = get_field('tickets_button_title');
 	$titleColor = get_field('title_color');
 	$squareImage = get_field('square_image');
@@ -31,7 +31,7 @@ get_header(); ?>
 
 			<?php
 			// HERO VIDEO present
-			if (get_field('hero_video')) {
+			if (get_field('video_embedd')) {
 
 				echo '<div class="yes-hero-video cell medium-7">';
 

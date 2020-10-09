@@ -199,10 +199,17 @@ if (!function_exists('Nacelle_custom_colors')) :
         if (!empty($background_color)) {
 // background color
 ?>
-            body {
+            body,
+            .featured-page .feat-content,
+            .reveal {
                 background-color: #<?php echo $background_color; ?>;
             }
-            .slider-post .entry-title {
+            .primary-title .entry-title,
+            .details-container details .on-sale,
+            .details-container details[open] .info p,
+            .wp-block-button .success.wp-block-button__link,
+            .button.hollow.success,
+            .button.success:hover {
                 color: #<?php echo $background_color; ?>;
             }
 
@@ -234,19 +241,24 @@ if (!function_exists('Nacelle_custom_colors')) :
             }
             .home .top-bar ul .menu-item a,
             .top-meta .title,
-            .button.clear.success {
+            .button.clear.success,
+            .primary-title .entry-title {
                 color: <?php echo $primary_color; ?>;
             }
             .primary,
             .accordion-content,
             input[type=submit],
-            .slider-post .title {
+            body.page-template-featured-page,
+            .button.success:hover,
+            .archive .featured-hero {
                 background-color: <?php echo $primary_color; ?>;
             }
             .to-top,
             .instagram-tab,
             .callout-footer,
-            .mobile-app-toggle .button.is-active:hover {
+            .mobile-app-toggle .button.is-active:hover,
+            .details-container .info,
+            .details-container details[open] .info {
                 background-color: <?php echo $primary_color; ?>;
             }
             .button.hollow,
@@ -254,7 +266,12 @@ if (!function_exists('Nacelle_custom_colors')) :
             .off-canvas-content,
             .mobile-app-toggle .button.is-active,
             .press_release .intro,
-            .press_release .press {
+            .press_release .press,
+            .page-template-featured-page .off-canvas-content {
+                border-color: <?php echo $primary_color; ?>;
+            }
+            .details-container p,
+            .primary-title {
                 border-color: <?php echo $primary_color; ?>;
             }
             .fas,
@@ -278,13 +295,22 @@ if (!function_exists('Nacelle_custom_colors')) :
             .home .top-bar ul .menu-item a:hover,
             .dropdown.menu .is-active > a,
             .button.clear.success,
-            .press_release .intro h4 {
+            .press_release .intro h4,
+            .details-container summary,
+            .details-container .info a,
+            .close-button {
                 color: <?php echo $secondary_color; ?>;
             }
-            .button.hollow:hover {
+            .button.hollow:hover,
+            .reveal header,
+            .details-container details[open] .info,
+            .featured-page .feat-content .dk-border,
+            .button.hollow.success {
                 border-color: <?php echo $secondary_color; ?>;
             }
-            .accordion-line {
+            .accordion-line,
+            .button.success, 
+            .wp-block-button .success.wp-block-button__link {
                 background-color: <?php echo $secondary_color; ?>;
             }
             .orbit-controls .orbit-previous:hover .icon, 
@@ -304,7 +330,7 @@ if (!function_exists('Nacelle_custom_colors')) :
 if (!empty($nav_bg_color)) {
         // nav background color
 ?>
-        .site-navigation.top-bar,
+        body:not(.page-template-front-carousel) .site-navigation.top-bar,
         .site-title-bar,
         .top-bar, 
         .top-bar ul  {
@@ -313,11 +339,12 @@ if (!empty($nav_bg_color)) {
 <?php
     }
 ?>
-<?php   if (!empty($home_nav_bg_color)) {
+<?php   if ($home_nav_bg_color) {
         // home nav background color
 ?>
         body.page-template-front .site-navigation.top-bar,
-        body.page-template-front-carousel .site-navigation.top-bar {
+        body.page-template-front-carousel .site-navigation.top-bar,
+        .home nav.site-navigation.top-bar.desktop-menu {
             background: <?php echo $home_nav_bg_color; ?>;
         }
 <?php

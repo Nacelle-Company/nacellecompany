@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Front Carousel and Circle
+Template Name: Front
 */
 get_header(); ?>
 
@@ -8,14 +8,14 @@ get_header(); ?>
 
 <?php while (have_posts('')) : the_post(); ?>
 
-    <div class="grid-y front-carousel-circle">
+    <div class="grid-y">
 
         <!-- header -->
         <div class="grid-x tagline">
 
             <div class="medium-12 cell text-center">
 
-                <h1 class="hide">Comedy Dynamics</h1>
+                <h1 class="hide"><?php bloginfo('name'); ?></h1>
 
                 <h2>
                     <strong>
@@ -122,23 +122,25 @@ get_header(); ?>
 
         </main>
 
-        <div class="grid-x mb-3 mt-4 align-center">
-
-            <div class="large-6">
-
-                <h4 style="text-align:center !important;font-family: MontserratRegular,sans-serif !important;">
-
-                    <?php the_field('additional_bottom_content'); ?>
-
-                </h4>
-
-            </div>
-
-        </div>
-
     </div>
 
 <?php endwhile; ?>
 <!-- END LOOP -->
+
+<div class="grid-x mb-3 mt-4 align-center">
+
+    <div class="large-6">
+
+        <h4 style="text-align:center !important;font-family: MontserratRegular,sans-serif !important;">
+
+            <?php the_field('additional_bottom_content'); ?>
+
+        </h4>
+
+    </div>
+
+</div>
+
+
 
 <?php get_footer(); ?>

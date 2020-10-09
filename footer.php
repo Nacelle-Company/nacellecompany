@@ -32,7 +32,7 @@
 
       <div class="cell medium-4 r-footer-widgets">
         <?php if (is_active_sidebar('r-footer-widgets')) : ?>
-          <?php get_template_part('template-parts/blocks/widget-custom'); 
+          <?php get_template_part('template-parts/blocks/widget-custom');
           ?>
           <?php dynamic_sidebar('r-footer-widgets'); ?>
         <?php endif; ?>
@@ -42,7 +42,15 @@
   </div>
 
 
-
+  <script>
+    jQuery(function() {
+      jQuery("#video-header-hero").YTPlayer();
+      jQuery("#bigVideoHero").YTPlayer();
+      jQuery("#modal-video").YTPlayer();
+      jQuery("#modal-video-container").YTPlayer();
+      jQuery("#fullHeroVideo").YTPlayer();
+    });
+  </script>
 
   <script>
     function onPlayerReady(event) {
