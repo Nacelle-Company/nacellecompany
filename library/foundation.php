@@ -201,7 +201,8 @@ if (!function_exists('Nacelle_custom_colors')) :
 ?>
             body,
             .featured-page .feat-content,
-            .reveal {
+            .reveal,
+            .page-template-front-grid .home-overlay.bottom {
                 background-color: #<?php echo $background_color; ?>;
             }
             .primary-title .entry-title,
@@ -209,7 +210,8 @@ if (!function_exists('Nacelle_custom_colors')) :
             .details-container details[open] .info p,
             .wp-block-button .success.wp-block-button__link,
             .button.hollow.success,
-            .button.success:hover {
+            .button.success:hover,
+            .synopsis.reveal blockquote p {
                 color: #<?php echo $background_color; ?>;
             }
 
@@ -222,7 +224,9 @@ if (!function_exists('Nacelle_custom_colors')) :
             .instagram-title h3,
             .catalog .entry-title,
             .contactModal p,
-            .mobile-app-toggle .button:hover {
+            .mobile-app-toggle .button:hover,
+            .page-template-front-grid .top-bar ul .menu-item a,
+            .page-template-front-circles .top-bar ul .menu-item a {
                 color:  <?php echo $text_color; ?>;
             }
 
@@ -236,21 +240,24 @@ if (!function_exists('Nacelle_custom_colors')) :
             .button.hollow,
             .footer-grid p,
             .mobile-app-toggle .button,
-            .entry-content .social a.nav-link {
+            .entry-content .social a.nav-link,
+            .top-bar .menu-item>a {
                 color: <?php echo $primary_color; ?>;
             }
-            .home .top-bar ul .menu-item a,
             .top-meta .title,
             .button.clear.success,
-            .primary-title .entry-title {
+            .primary-title .entry-title,
+            .catalog-crew .title,
+            .search-results .entry-title.subheader {
                 color: <?php echo $primary_color; ?>;
             }
             .primary,
             .accordion-content,
             input[type=submit],
             body.page-template-featured-page,
-            .button.success:hover,
-            .archive .featured-hero {
+            .button.success:not(.clear):hover,
+            .archive .featured-hero,
+            .searchandfilter input[type=submit] {
                 background-color: <?php echo $primary_color; ?>;
             }
             .to-top,
@@ -258,7 +265,12 @@ if (!function_exists('Nacelle_custom_colors')) :
             .callout-footer,
             .mobile-app-toggle .button.is-active:hover,
             .details-container .info,
-            .details-container details[open] .info {
+            .details-container details[open] .info,
+            .page-template-front-grid .home-overlay.top {
+                background-color: <?php echo $primary_color; ?>;
+            }
+            .button.primary, 
+            .wp-block-button .primary.wp-block-button__link {
                 background-color: <?php echo $primary_color; ?>;
             }
             .button.hollow,
@@ -271,7 +283,8 @@ if (!function_exists('Nacelle_custom_colors')) :
                 border-color: <?php echo $primary_color; ?>;
             }
             .details-container p,
-            .primary-title {
+            .primary-title,
+            .search-results .entry-title.subheader {
                 border-color: <?php echo $primary_color; ?>;
             }
             .fas,
@@ -305,11 +318,12 @@ if (!function_exists('Nacelle_custom_colors')) :
             .reveal header,
             .details-container details[open] .info,
             .featured-page .feat-content .dk-border,
-            .button.hollow.success {
+            .button.hollow.success,
+            .feed-container {
                 border-color: <?php echo $secondary_color; ?>;
             }
             .accordion-line,
-            .button.success, 
+            .button.success:not(.clear), 
             .wp-block-button .success.wp-block-button__link {
                 background-color: <?php echo $secondary_color; ?>;
             }
@@ -330,9 +344,8 @@ if (!function_exists('Nacelle_custom_colors')) :
 if (!empty($nav_bg_color)) {
         // nav background color
 ?>
-        body:not(.page-template-front-carousel) .site-navigation.top-bar,
+        body:not(.page-template-front-carousel):not(.page-template-front-circles):not(.page-template-front-grid) .site-navigation.top-bar,
         .site-title-bar,
-        .top-bar, 
         .top-bar ul  {
             background: <?php echo $nav_bg_color; ?>;
         }

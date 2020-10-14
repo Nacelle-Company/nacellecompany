@@ -295,6 +295,7 @@
   .search-container {
     display: inline-flex;
     position: absolute;
+    align-items: center;
     left: 0;
     -moz-transition: all 0.35s;
     -webkit-transition: all 0.35s;
@@ -472,4 +473,16 @@
   position: fixed;
   left: 48%;
   bottom: 120px;
+}
+
+
+// absolute positioned top nav
+.page-template-front-circles .site-navigation.top-bar.desktop-menu {
+    position: absolute;
+    width: 100%;
+}
+
+.page-template-front-grid .top-bar .nav-container .right .desktop-menu a,
+.page-template-front-grid .top-bar ul .menu-item a {
+    color: #fff;
 }

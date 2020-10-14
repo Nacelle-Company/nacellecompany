@@ -18,7 +18,8 @@
 ?>
 
 <div class="cell medium-12">
-	<!-- cell for the content -->
+	<?php //cell for the content 
+	?>
 
 	<header class="grid-container archive">
 
@@ -44,8 +45,9 @@
 
 	</header>
 
-	<!-- start the cards -->
-	<div class="grid-x small-up-2 medium-up-4 large-up-6 align-center-middle">
+	<?php //start the cards 
+	?>
+	<div class="catalog-cards grid-x small-up-2 medium-up-4 large-up-6 align-top">
 
 		<?php
 		// sort posts by title
@@ -56,20 +58,25 @@
 
 		if (have_posts($args)) : ?>
 
-			<!-- Start the Loop -->
+			<?php //Start the Loop 
+			?>
 			<?php while (have_posts()) : the_post(); ?>
 
-				<!-- if the catalog item has a square image uploaded. . . -->
+				<?php //if the catalog item has a square image uploaded. . . 
+				?>
 				<?php
 				$image = get_field('square_image');
 
 				if ($image) :
 				?>
 
-					<!-- img container -->
-					<div class="media-container animation-element cell medium-2 mb-4 mb-medium-5 mb-medium-4 mb-large-5 mb-xlarge-3 mb-medium-4">
+					<?php //img container 
+					// mb-4 mb-medium-5 mb-medium-4 mb-large-5 mb-xlarge-3
+					?>
+					<div class="media-container animation-element cell medium-2 ">
 
-						<!-- if catalog item has a "Custom Page Redirect" link. . . -->
+						<?php //if catalog item has a "Custom Page Redirect" link. . . 
+						?>
 						<?php
 						$link = get_field('custom_page_redirect');
 
@@ -78,12 +85,14 @@
 							$link_url = $link['url'];
 						?>
 
-							<!-- link to the "Custom Page Redirect" page -->
+							<?php //link to the "Custom Page Redirect" page 
+							?>
 							<a href="<?php echo esc_url($link_url); ?>">
 
 							<?php else : ?>
 
-								<!-- if no "Custom Page Redirect" get the original post link -->
+								<?php //if no "Custom Page Redirect" get the original post link 
+								?>
 								<a href="<?php the_permalink(); ?>">
 
 								<?php endif; ?>
@@ -102,26 +111,34 @@
 
 									</div>
 
-									<!-- img hover footer -->
+									<?php //img hover footer 
+									?>
 									<div class="callout-footer">
 
-										<!-- display the synopsis -->
+										<?php //display the synopsis 
+										?>
 										<p><?php $synopsis = get_field('synopsis');
 											echo $synopsis; ?></p>
 
-									</div> <!-- END the footer -->
+									</div> <?php //END the footer 
+											?>
 
-								</div> <!-- END the callout -->
+								</div> <?php //END the callout 
+										?>
 
-								</a> <!-- END the link, whether its a "Custom Page Redirect" or the post link -->
+								</a> <?php //END the link, whether its a "Custom Page Redirect" or the post link 
+										?>
 
-					</div> <!-- END img container -->
+					</div> <?php //END img container 
+							?>
 
 				<?php endif; ?>
-				<!-- END if catalog item has a "Custom Page Redirect" link. . . -->
+				<?php //END if catalog item has a "Custom Page Redirect" link. . . 
+				?>
 
 			<?php endwhile; ?>
-			<!-- END the loop -->
+			<?php //END the loop 
+			?>
 
 		<?php else : ?>
 
@@ -130,6 +147,8 @@
 		<?php endif; // End have_posts() check.
 		?>
 
-	</div> <!-- END the cards -->
+	</div> <?php //END the cards 
+			?>
 
-</div> <!-- END of cell for the content -->
+</div> <?php //END of cell for the content 
+		?>

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying distribution catalog pages
  *
@@ -34,63 +35,65 @@ get_header(); ?>
 
 				<!-- film category -->
 				<?php
-                $posts = get_posts(array(
-                    'meta_query' => array(
-                        array(
-                            'key' => 'dist_film_featured',
-                            'compare' => '=',
-                            'value' => '1'
-                        )
-                    )
-                )); ?>
+				$posts = get_posts(array(
+					'meta_query' => array(
+						array(
+							'key' => 'dist_film_featured',
+							'compare' => '=',
+							'value' => '1'
+						)
+					)
+				)); ?>
 
-				<?php foreach ($posts as $post): setup_postdata($post); $count ++; ?>
+				<?php foreach ($posts as $post) : setup_postdata($post);
+					$count++; ?>
 
-				<a class="cell cat-container" href="<?php echo get_home_url() ?>/category/distribution/film/">
+					<a class="cell cat-container" href="<?php echo get_home_url() ?>/category/distribution/film/">
 
-					<h2 class="text-center catalog-title film">
-						<i class="fas fa-film"></i>
-						<?php _e('Films', 'nacelle'); ?>
-					</h2>
+						<h2 class="text-center catalog-title film">
+							<?php get_template_part('template-parts/svg/icon-film'); ?>
+							<?php _e('Films', 'nacelle'); ?>
+						</h2>
 
-					<div class="img-container">
+						<div class="img-container">
 
-						<?php
+							<?php
 
-                        $image = get_field('square_image');
-                        $size = 'large'; // (thumbnail, medium, large, full or custom size)
+							$image = get_field('square_image');
+							$size = 'large'; // (thumbnail, medium, large, full or custom size)
 
-                        if ($image) {
-                            echo wp_get_attachment_image($image, $size);
-                        }
+							if ($image) {
+								echo wp_get_attachment_image($image, $size);
+							}
 
-                        ?>
-					</div>
-				</a>
-				<?php if ($count === 1) {
-                            break;
-                        } ?>
+							?>
+						</div>
+					</a>
+					<?php if ($count === 1) {
+						break;
+					} ?>
 				<?php endforeach; ?>
 				<?php wp_reset_postdata(); ?>
 
-<!-- album category -->
+				<!-- album category -->
 				<?php
-                $posts = get_posts(array(
-                    'meta_query' => array(
-                        array(
-                            'key' => 'dist_album_featured',
-                            'compare' => '=',
-                            'value' => '1'
-                        )
-                    )
-                )); ?>
+				$posts = get_posts(array(
+					'meta_query' => array(
+						array(
+							'key' => 'dist_album_featured',
+							'compare' => '=',
+							'value' => '1'
+						)
+					)
+				)); ?>
 
-				<?php foreach ($posts as $post): setup_postdata($post); $count ++; ?>
+				<?php foreach ($posts as $post) : setup_postdata($post);
+					$count++; ?>
 
 					<a class="cell cat-container" href="<?php echo get_home_url() ?>/category/distribution/album/">
 
 						<h2 class="text-center catalog-title album">
-							<i class="fas fa-compact-disc"></i>
+							<?php get_template_part('template-parts/svg/icon-disk'); ?>
 							<?php _e('Albums', 'nacelle'); ?>
 						</h2>
 
@@ -98,99 +101,101 @@ get_header(); ?>
 
 							<?php
 
-                            $image = get_field('square_image');
-                            $size = 'large'; // (thumbnail, medium, large, full or custom size)
+							$image = get_field('square_image');
+							$size = 'large'; // (thumbnail, medium, large, full or custom size)
 
-                            if ($image) {
-                                echo wp_get_attachment_image($image, $size);
-                            }
+							if ($image) {
+								echo wp_get_attachment_image($image, $size);
+							}
 
-                            ?>
+							?>
 						</div>
 					</a>
 					<?php if ($count === 1) {
-                                break;
-                            } ?>
+						break;
+					} ?>
 				<?php endforeach; ?>
 				<?php wp_reset_postdata(); ?>
 
-<!-- special category -->
+				<!-- special category -->
 
 				<?php
-                $posts = get_posts(array(
-                    'meta_query' => array(
-                        array(
-                            'key' => 'dist_special_featured',
-                            'compare' => '=',
-                            'value' => '1'
-                        )
-                    )
-                )); ?>
-				<?php foreach ($posts as $post): setup_postdata($post); $count ++; ?>
+				$posts = get_posts(array(
+					'meta_query' => array(
+						array(
+							'key' => 'dist_special_featured',
+							'compare' => '=',
+							'value' => '1'
+						)
+					)
+				)); ?>
+				<?php foreach ($posts as $post) : setup_postdata($post);
+					$count++; ?>
 
 					<a class="cell cat-container" href="<?php echo get_home_url() ?>/category/distribution/special/">
 
 						<h2 class="text-center catalog-title special">
-							<i class="fas fa-microphone-alt"></i>
+							<?php get_template_part('template-parts/svg/icon-mic'); ?>
 							<?php _e('Specials', 'nacelle'); ?>
 						</h2>
 
 						<div class="img-container">
 							<?php
 
-                            $image = get_field('square_image');
-                            $size = 'large'; // (thumbnail, medium, large, full or custom size)
+							$image = get_field('square_image');
+							$size = 'large'; // (thumbnail, medium, large, full or custom size)
 
-                            if ($image) {
-                                echo wp_get_attachment_image($image, $size);
-                            }
+							if ($image) {
+								echo wp_get_attachment_image($image, $size);
+							}
 
-                            ?>
+							?>
 						</div>
 					</a>
 					<?php if ($count === 1) {
-                                break;
-                            } ?>
+						break;
+					} ?>
 				<?php endforeach; ?>
 				<?php wp_reset_postdata(); ?>
 
-<!-- series category -->
+				<!-- series category -->
 
 				<?php
-                $posts = get_posts(array(
-                    'meta_query' => array(
-                        array(
-                            'key' => 'dist_series_featured',
-                            'compare' => '=',
-                            'value' => '1'
-                        )
-                    )
-                )); ?>
-				<?php foreach ($posts as $post): setup_postdata($post); $count ++; ?>
+				$posts = get_posts(array(
+					'meta_query' => array(
+						array(
+							'key' => 'dist_series_featured',
+							'compare' => '=',
+							'value' => '1'
+						)
+					)
+				)); ?>
+				<?php foreach ($posts as $post) : setup_postdata($post);
+					$count++; ?>
 
 					<a class="cell cat-container" href="<?php echo get_home_url() ?>/category/distribution/series/">
 
 						<h2 class="text-center catalog-title series">
-							<i class="fas fa-video"></i>
+							<?php get_template_part( 'template-parts/svg/icon-mic'); ?>
 							<?php _e('Series', 'nacelle'); ?>
 						</h2>
 
 						<div class="img-container">
 							<?php
 
-                            $image = get_field('square_image');
-                            $size = 'large'; // (thumbnail, medium, large, full or custom size)
+							$image = get_field('square_image');
+							$size = 'large'; // (thumbnail, medium, large, full or custom size)
 
-                            if ($image) {
-                                echo wp_get_attachment_image($image, $size);
-                            }
+							if ($image) {
+								echo wp_get_attachment_image($image, $size);
+							}
 
-                            ?>
+							?>
 						</div>
 					</a>
 					<?php if ($count === 1) {
-                                break;
-                            } ?>
+						break;
+					} ?>
 
 				<?php endforeach; ?>
 
@@ -202,75 +207,76 @@ get_header(); ?>
 
 	<?php else : ?>
 		<h4>NO posts on this page</h4>
-	<?php endif; // End have_posts() check.?>
+	<?php endif; // End have_posts() check.
+	?>
 
-			<div class="cell">
+	<div class="cell">
 
-				<!-- left embed -->
-				<?php $distributionEmbed = get_field('left_dist_content', 'option');
-                        if (get_field('left_dist_content', 'option')):
-                ?>
+		<!-- left embed -->
+		<?php $distributionEmbed = get_field('left_dist_content', 'option');
+		if (get_field('left_dist_content', 'option')) :
+		?>
 
-				<div class="grid-x grid-margin-x grid-padding-x grid-padding-y align-center-middle">
+			<div class="grid-x grid-margin-x grid-padding-x grid-padding-y align-center-middle">
 
-					<div class="cell medium-8 left-embed">
+				<div class="cell medium-8 left-embed">
 
-						<div class="embed-container">
+					<div class="embed-container">
 
-							<iframe src="<?php echo $distributionEmbed ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-						</div>
+						<iframe src="<?php echo $distributionEmbed ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 					</div>
 
-				<?php endif; ?>
+				</div>
 
-					<!-- right_dist_content -->
-					<?php if (get_field('right_dist_content', 'option')): ?>
+			<?php endif; ?>
 
-						<div class="cell medium-4 left-embed">
+			<!-- right_dist_content -->
+			<?php if (get_field('right_dist_content', 'option')) : ?>
 
-							<?php the_field('right_dist_content', 'option'); ?>
+				<div class="cell medium-4 left-embed">
 
-						</div>
-
-					<?php endif; ?>
+					<?php the_field('right_dist_content', 'option'); ?>
 
 				</div>
 
+			<?php endif; ?>
+
 			</div>
 
-			<div class="cell">
+	</div>
 
-				<?php if (have_rows('bottom_repeater', 'option')): ?>
+	<div class="cell">
 
-					<?php while (have_rows('bottom_repeater', 'option')): the_row();
+		<?php if (have_rows('bottom_repeater', 'option')) : ?>
 
-                        // vars
-                        // $leftContent = get_sub_field('l_editor', 'option');
-                        $rightContent = get_sub_field('right_editor', 'option');
-                        // var_dump($leftContent);
-                        ?>
-												<?php the_sub_field($rightContent, 'option'); ?>
+			<?php while (have_rows('bottom_repeater', 'option')) : the_row();
 
-							<?php if ($leftContent): ?>
-								<p>
-								</p>
-							<?php endif; ?>
+				// vars
+				// $leftContent = get_sub_field('l_editor', 'option');
+				$rightContent = get_sub_field('right_editor', 'option');
+				// var_dump($leftContent);
+			?>
+				<?php the_sub_field($rightContent, 'option'); ?>
 
-							<?php if ($rightContent): ?>
-								<p>
-									<?php echo $rightContent; ?>
-								</p>
-							<?php endif; ?>
-
-					<?php endwhile; ?>
-
+				<?php if ($leftContent) : ?>
+					<p>
+					</p>
 				<?php endif; ?>
-			</div>
 
-			<h1><?php the_field('simple_text', 'option'); ?>
-			</h1>
+				<?php if ($rightContent) : ?>
+					<p>
+						<?php echo $rightContent; ?>
+					</p>
+				<?php endif; ?>
+
+			<?php endwhile; ?>
+
+		<?php endif; ?>
+	</div>
+
+	<h1><?php the_field('simple_text', 'option'); ?>
+	</h1>
 
 </main>
 

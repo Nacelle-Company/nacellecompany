@@ -6,7 +6,7 @@ $startHeroVidAt = get_field('start_hero_video');
 $endHeroVidAt = get_field('end_hero_video');
 $mainTalent = is_tax('main_talent', $term);
 $term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
-$videoHero = get_field('hero_video');
+$videoHero = get_field('video_embedd');
 $talentVideo = get_field('main_talent_hero_video');
 
 

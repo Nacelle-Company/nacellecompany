@@ -5,7 +5,7 @@ if ($post_objects) : ?>
 
     <?php foreach ($post_objects as $post_object) : ?>
 
-        <li class="orbit-slide orbit-group">
+        <li class="orbit-slide orbit-group circle-slider">
             <div class="grid-x circle-orbit-slider-container">
 
                 <div class="small-11 medium-4 large-4 press-title-container columns">

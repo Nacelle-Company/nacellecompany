@@ -268,3 +268,24 @@ function nacelle_enqueue_styles()
 add_action('wp_enqueue_scripts', 'nacelle_enqueue_styles');
 
 
+
+
+
+// custom logo https://since1979.dev/wordpress-add-custom-logo-support-to-your-theme/
+// function theme_get_custom_logo()
+// {
+
+//     if (has_custom_logo()) {
+
+//         $logo = wp_get_attachment_image_src(get_theme_mod('custom_logo'), 'full');
+
+//         echo '<a class="custom-logo-link" href="' . get_site_url() . '" >';
+//         echo '<img class="custom-logos" src="' . esc_url($logo[0]) . '" width="' . $logo[1] . '" height="' . $logo[2] . '" alt="' . get_bloginfo('name') . '">';
+//         echo "</a>";
+//     } else {
+
+//         echo '<h1>';
+//         echo '<a href="' . get_site_url() . '">' . get_bloginfo('name') . '</a>';
+//         echo '</h1>';
+//     }
+// }

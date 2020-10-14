@@ -1,24 +1,26 @@
 <?php
+
 /**
-* The template for displaying the media taxonomy archive pages
-*
-* Used to display archive-type pages if nothing more specific matches a query.
-* For example, puts together date-based pages if no date.php file exists.
-*
-* If you'd like to further customize these archive views, you may create a
-* new template file for each one. For example, tag.php (Tag archives),
-* category.php (Category archives), author.php (Author archives), etc.
-*
-* @link https://codex.wordpress.org/Template_Hierarchy
-*
-* @package FoundationPress
-* @since FoundationPress 1.0.0
-*/
+ * The template for displaying the media taxonomy archive pages
+ *
+ * Used to display archive-type pages if nothing more specific matches a query.
+ * For example, puts together date-based pages if no date.php file exists.
+ *
+ * If you'd like to further customize these archive views, you may create a
+ * new template file for each one. For example, tag.php (Tag archives),
+ * category.php (Category archives), author.php (Author archives), etc.
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package FoundationPress
+ * @since FoundationPress 1.0.0
+ */
 ?>
 
 <div class="grid-x align-center">
 
-	<div class="cell"> <!-- cell for the content -->
+	<div class="cell">
+		<!-- cell for the content -->
 
 		<header class="grid-container archive">
 
@@ -28,7 +30,7 @@
 
 					<h1 class="entry-title">
 
-						<?php single_cat_title();?>
+						<?php single_cat_title(); ?>
 
 					</h1>
 
@@ -48,40 +50,40 @@
 		<div class="grid-x medium-up-4 large-up-5">
 
 			<?php
-	        // sort posts by title
-	        // https://www.shilling.id.au/2011/11/30/how-to-change-the-order-of-posts-in-the-wordpress-loop/
-	        $args = array_merge($wp_query->query, array( 'orderby' => 'title','order' => 'ASC' ));
+			// sort posts by title
+			// https://www.shilling.id.au/2011/11/30/how-to-change-the-order-of-posts-in-the-wordpress-loop/
+			$args = array_merge($wp_query->query, array('orderby' => 'title', 'order' => 'ASC'));
 
-	        query_posts($args);
+			query_posts($args);
 
-	        if (have_posts($args)) : ?>
+			if (have_posts($args)) : ?>
 
-			<!-- Start the Loop -->
-			<?php while (have_posts()) : the_post();?>
+				<!-- Start the Loop -->
+				<?php while (have_posts()) : the_post(); ?>
 
-				<!-- if the catalog item has a square image uploaded. . . -->
-				<?php
-	            $image = get_field('square_image');
+					<!-- if the catalog item has a square image uploaded. . . -->
+					<?php
+					$image = get_field('square_image');
 
-	            // if ($image) :
-	                ?>
+					// if ($image) :
+					?>
 
 					<!-- img container -->
 					<div class="media-container cell animation-element mb-2 mb-medium-2 mb-large-4">
 
 						<!-- if catalog item has a "Custom Page Redirect" link. . . -->
 						<?php
-	                    $link = get_field('custom_page_redirect');
+						$link = get_field('custom_page_redirect');
 
-	                    if ($link):
+						if ($link) :
 
-	                        $link_url = $link['url'];
-	                        ?>
+							$link_url = $link['url'];
+						?>
 
 							<!-- link to the "Custom Page Redirect" page -->
 							<a href="<?php echo esc_url($link_url); ?>">
 
-							<?php else: ?>
+							<?php else : ?>
 
 								<!-- if no "Custom Page Redirect" get the original post link -->
 								<a href="<?php the_permalink(); ?>">
@@ -93,40 +95,49 @@
 									<div class="callout-body">
 
 										<?php
-	                                    $size = 'medium'; // (thumbnail, medium, large, full or custom size)
+										$size = 'medium'; // (thumbnail, medium, large, full or custom size)
 
-	                                    // display the img
-	                                    if ($image) {
-	                                        echo wp_get_attachment_image($image, $size);
-	                                    } ?>
+										// display the img
+										if ($image) {
+											echo wp_get_attachment_image($image, $size);
+										} ?>
 
 									</div>
 
 									<!-- img hover footer -->
 									<div class="callout-footer">
+										<?php
+										$excerpt = get_field('synopsis');
 
+										$excerpt = substr($excerpt, 0, 130);
+										$result = substr($excerpt, 0, strrpos($excerpt, ' '));
+										echo '<p>' . $result . '. . .</p>';
+										?>
 										<!-- display the synopsis -->
-										<p><?php $synopsis = get_field('synopsis'); echo $synopsis; ?></p>
 
 									</div> <!-- END the footer -->
 
 								</div> <!-- END the callout -->
 
-							</a> <!-- END the link, whether its a "Custom Page Redirect" or the post link -->
+								</a> <!-- END the link, whether its a "Custom Page Redirect" or the post link -->
 
-						</div> <!-- END img container -->
+					</div> <!-- END img container -->
 
-					<?php //endif;?> <!-- END if catalog item has a "Custom Page Redirect" link. . . -->
+					<?php //endif;
+					?>
+					<!-- END if catalog item has a "Custom Page Redirect" link. . . -->
 
-				<?php endwhile;?> <!-- END the loop -->
+				<?php endwhile; ?>
+				<!-- END the loop -->
 
 			<?php else : ?>
 
 				<?php get_template_part('template-parts/content', 'none'); ?>
 
-			<?php endif; // End have_posts() check.?>
+			<?php endif; // End have_posts() check.
+			?>
 
-		</div> 	<!-- END the cards -->
+		</div> <!-- END the cards -->
 
 	</div> <!-- END of cell for the content -->
 

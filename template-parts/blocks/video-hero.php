@@ -56,6 +56,8 @@ if ($query->have_posts()) :
          * in the main talent taxonomy page for the artist
          * if so, set the $videoHero variable to that video.
          */
+        $profile_hero_lg = get_field('profile_pic', $term);
+
         if (get_field('latest_video', $term)) {
             $videoLatest = get_field('latest_video', $term);
         } else {
@@ -74,8 +76,8 @@ if ($query->have_posts()) :
                     <div id="bigVideoHero" class="player" data-property="{
                         videoURL:'<?php echo $videoLatest; ?>', 
                         containment:'#videoHeroContainment', 
-                        coverImage:'<?php echo $profile_hero_lg; ?>', 
-                        mobileFallbackImage:'<?php echo $profile_hero_lg; ?>', 
+                        coverImage:'<?php echo esc_url($profile_hero_lg['url']); ?>', 
+                        mobileFallbackImage:'<?php echo esc_url($profile_hero_lg['url']); ?>', 
                         autoPlay:true, 
                         mute:true, 
                         opacity:1, 

@@ -1,116 +1,98 @@
 <?php
-/**
- * The default template for displaying content
- *
- * Used for both single and index/archive/search.
- *
- * @package Nacelle
- * @since Nacelle 1.0.0
- */
+
+$news_icon = get_field('news_icon', 'option');
+
+// other link
+if (get_field('link_to_article')) {
+    $link = get_field('link_to_article');
+    echo '<pre>' . $link . '</pre>';
+}
+
+// trunkate the synopsis or content
+$excerpt = get_field('synopsis');
+$content = get_the_content();
+
+$excerpt = wp_strip_all_tags($excerpt);
+$content = wp_strip_all_tags($content);
+
+$excerpt = substr($excerpt, 0, 200);
+$content = substr($content, 0, 200);
+
+$result = substr($excerpt, 0, strrpos($excerpt, ' '));
+$contentResult = substr($content, 0, strrpos($content, ' '));
+
+// callout text
+// $callout = wp_strip_all_tags(get_field('intro'));
+// echo $callout;
 
 ?>
+<article class="cell">
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    <div class="media-object feed-container stack-for-small py-2">
 
-	<?php
-	// variables
-	$link = get_field('link_to_article');
+        <!-- image -->
+        <?php if (get_the_post_thumbnail()) : ?>
+            <div class="media-object-section">
+                <a href="<?php echo get_permalink(); ?>">
+                    <?php the_post_thumbnail('thumbnail', array('class' => 'align-left')); ?>
+                </a>
+            </div>
+            <?php else :?>
+                <?php $zeroLeftPadding = '0'; ?>
+        <?php endif; ?>
 
-	?>
+        <!-- title -->
+        <div class="archive-title media-object-section" style="padding-left:<?php echo $zeroLeftPadding; ?>">
 
-	<div class="entry-content">
+            <div class="grid-y">
 
-		<div class="grid-x">
-			<div class="cell small-2 medium-3">
-				<?php if ($link): ?>
-					<a href="<?php echo $link; ?>" target="_blank">
-						<?php the_post_thumbnail('fp-small', array('class' => 'alignleft')); ?>
-					</a>
-				<?php endif; ?>
-			</div>
+                <div class="cell">
 
-			<div class="cell small-10 medium-9 press-title">
-				<div class="press-title-container">
-					<h2>
-						<?php if ($link): ?>
-							<a href="<?php echo $link; ?>" target="_blank">
-						<?php else : ?>
-							<a href="<?php echo get_permalink(); ?>">
-						<?php endif; ?>
-							<?php
-								$theTitle = wp_strip_all_tags(get_field('title'));
-								echo $theTitle; ?>
-						</a>
-					</h2>
-					<h4>
-						<?php if ($link): ?>
-							<a href="<?php echo $link; ?>" target="_blank">
-						<?php else : ?>
-							<a href="<?php echo get_permalink(); ?>">
-						<?php endif; ?>
-						<?php
-							$callout = wp_strip_all_tags(get_field('intro'));
-							echo $callout; ?>
-						</a>
-					</h4>
-				</div>
-			</div>
-		</div>
+                    <a href="<?php echo get_permalink(); ?>">
+                        <?php
+                        // title
+                        $theTitle = wp_strip_all_tags(get_field('title'));
+                        if (get_the_title()) {
+                            the_title('<h3>', '</h3>');
+                        } else {
+                            echo '<h2>' . $theTitle . '</h2>';
+                        }
+                        ?>
 
-		<!-- date and read more -->
-		<footer class="grid-x">
+                    </a>
 
-			<!-- admin edit link -->
-			<div class="cell small-2 medium-3">
+                </div>
 
-				<?php edit_post_link(__('(Edit)', 'nacelle'), '<span class="edit-link">', '</span>');?>
-				<?php $tag = get_the_tags(); if ($tag) {
-							?>
-					<p><?php the_tags(); ?></p>
-				<?php
-						} ?>
+                <div class="cell">
 
-			</div>
+                    <?php
+                    if (get_the_content()) {
+                        echo '<p>' . $contentResult . '. . .</p>';
+                    } else {
+                        echo '<p>' . $result . '. . .</p>';
+                    }
 
-			<!-- date and read more -->
-			<div class="cell small-10 medium-9">
+                    ?>
 
-				<div class="grid-x small-up-2">
+                </div>
 
-					<div class="cell">
-						<p><?php the_time('m.j.y'); ?></p>
-					</div>
-					<div class="cell text-right">
-						<?php if ($link): ?>
-							<a href="<?php echo $link; ?>" class="clear button success medium" target="_blank">
-						<?php else : ?>
-							<a class="clear button success medium" href="<?php echo get_permalink(); ?>">
-						<?php endif; ?>
-							<?php _e('Read More. . .', 'Nacelle'); ?>
+            </div>
 
-						<?php echo '</a>'; ?>
+            <footer class="grid-x">
 
-						</a>
-					</div>
+                <!-- date -->
+                <div class="cell medium-6 date">
+                    <p><?php the_time('m.j.y'); ?></p>
+                </div>
 
-				</div>
+                <!-- microphone -->
+                <div class="cell medium-6 text-right mic">
+                    <img src="<?php echo $news_icon; ?>" />
+                </div>
 
-			</div>
+            </footer>
 
-		</footer>
+        </div>
 
-	</div>
-	<footer>
-		<?php
-            wp_link_pages(
-                array(
-                    'before' => '<nav id="page-nav"><p>' . __('Pages:', 'nacelle'),
-                    'after'  => '</p></nav>',
-                )
-            );
-        ?>
-		<?php $tag = get_the_tags(); if ($tag) {
-            ?><p><?php the_tags(); ?></p><?php
-        } ?>
-	</footer>
+    </div>
 </article>

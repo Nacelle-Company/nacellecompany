@@ -16,7 +16,7 @@ $image-hover-wrapper-icon-size: 60px;
 }
 
 .image-hover-wrapper {
-
+  line-height: 0;
   a {
     display: inline-block;
     letter-spacing: normal;
@@ -126,13 +126,17 @@ $image-hover-wrapper-icon-size: 60px;
 
 // main category cards
 .macro-cat-cards {
-
-    .catalog-title {
-        @include transition;
-    }
-    .img-container {
-        padding: 0.25em;
-
+    a {
+        .catalog-title {
+            @include nothoverNS;
+        }
+        .img-container {
+            padding: 0.25em;
+            img {
+                border-radius: $callout-radius;
+                @include nothover;
+            }
+        }
         &:hover {
             img {
                 @include hover;
@@ -141,17 +145,21 @@ $image-hover-wrapper-icon-size: 60px;
                 @include hoverNS;
             }
         }
-
-        img {
-            border-radius: $callout-radius;
-            @include nothover;
-            width: 100%;
-        }
     }
-
 }
 
+.catalog-cards .media-container {
 
+  @include breakpoint(large) {
+      height: 20rem;
+    }
+        @include breakpoint(medium) {
+      height: 20rem;
+    }
+            @include breakpoint(small) {
+      height: 20rem;
+    }
+}
 
 
 .callout,
@@ -164,10 +172,10 @@ $image-hover-wrapper-icon-size: 60px;
     display: none;
 }
 .callout-footer {
-    position: absolute;
+    position: relative;
     padding: $callout-footer-padding;
     font-size: .75rem;
-    position: relative;
+    width: 100%;
 
     p {
         margin-bottom: 0;
@@ -265,3 +273,5 @@ $image-hover-wrapper-icon-size: 60px;
 	margin-top: 0.2em;
 	background: white;
 }
+
+

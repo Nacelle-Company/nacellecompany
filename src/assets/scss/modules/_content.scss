@@ -61,7 +61,6 @@ html, body {
   .sidebar {
 
     height: fit-content;
-    padding: 1em;
     background: $dark-nav-color;
     border-radius: 6px;
 
@@ -127,6 +126,19 @@ html, body {
       border-bottom: 3px solid;
   }
 }
+header.press {
+    footer {
+        p {
+            margin-bottom: 0;
+        }
+    }
+}
+
+
+.sya_date {
+    font-weight: 600;
+}
+
 header.press {
     footer {
         p {

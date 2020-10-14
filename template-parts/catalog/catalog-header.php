@@ -2,15 +2,13 @@
 
 		<div class="grid-x catalog grid-padding-y">
 
-			<div class="cell">
-
-				<div class="grid-container px-0 px-medium-3">
+			<div class="cell px-3">
 
 					<div class="grid-x align-justify">
 
 						<?php // title 
 						?>
-						<div class="cell medium-6">
+						<div class="cell medium-10">
 							<?php
 							if (is_single()) {
 								the_title('<h1 class="entry-title">', '</h1>');
@@ -22,7 +20,7 @@
 
 						<?php // theatre popup button 
 						?>
-						<div class="cell medium-3 medium-offset-3">
+						<div class="cell medium-auto">
 							<!-- include tickets modal -->
 							<?php if (get_field('theatres_popup')) : ?>
 
@@ -56,8 +54,6 @@
 						</div>
 
 					</div>
-
-				</div> <!-- END grid-container -->
 
 			</div> <!-- END cell -->
 

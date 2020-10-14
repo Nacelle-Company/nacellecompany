@@ -9,7 +9,7 @@ get_header();
 <?php do_action('Nacelle_before_content'); ?>
 <?php $count = 0; ?>
 
-<div class="grid-x">
+<div class="grid-x front-circles">
     <div class="cell">
 
         <?php while (have_posts('')) : the_post(); ?>

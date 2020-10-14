@@ -22,18 +22,18 @@ get_header(); ?>
 
 // START variables
 // $genres = get_the_terms($post->ID, 'genre');
-$term = get_queried_object();
+// $term = get_queried_object();
 
-$img_size_lg = 'fp-large';
-$img_size_md = 'fp-medium';
-$img_size_sm = 'fp-small';
+// $img_size_lg = 'fp-large';
+// $img_size_md = 'fp-medium';
+// $img_size_sm = 'fp-small';
 
-// $hero_image = the_post_thumbnail($term);
+// $hero_image = get_the_post_thumbnail($term);
 
 /* Get custom sizes of our image sub_field */
-$hero_lg = $hero_image['sizes'][$img_size_lg];
-$hero_md = $hero_image['sizes'][$img_size_md];
-$hero_sm = $hero_image['sizes'][$img_size_sm];
+// $hero_lg = $hero_image['sizes'][$img_size_lg];
+// $hero_md = $hero_image['sizes'][$img_size_md];
+// $hero_sm = $hero_image['sizes'][$img_size_sm];
 
 ?>
 
@@ -41,7 +41,7 @@ $hero_sm = $hero_image['sizes'][$img_size_sm];
 
     <?php get_template_part('template-parts/catalog/catalog-hero'); ?>
 
-    <?php get_template_part('template-parts/catalog/catalog-list'); 
+    <?php get_template_part('template-parts/catalog/catalog-masonry'); 
     ?>
 
     <?php get_template_part('template-parts/catalog/talent-bio'); 

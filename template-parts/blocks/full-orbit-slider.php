@@ -1,4 +1,9 @@
-<?php $sliderSpeed = get_field('slider_speed'); ?>
+<?php
+
+$sliderSpeed = get_field('slider_speed');
+
+
+?>
 <?php //get_template_part('template-parts/content/content-instagram'); 
 ?>
 
@@ -40,17 +45,30 @@
                             $homeLinkChange = get_field('home_link_change');
                             $featWidth = get_field('feat_width');
 
+
+                            // trunkate the synopsis or content
+                            $synopsis = get_field('synopsis');
+                            $content = get_the_content();
+
+                            $synopsis = wp_strip_all_tags($synopsis);
+                            $content = wp_strip_all_tags($content);
+
+                            $synopsis = substr($synopsis, 0, 200);
+                            $content = substr($content, 0, 200);
+
+                            $synopsisResult = substr($synopsis, 0, strrpos($synopsis, ' '));
+                            $contentResult = substr($content, 0, strrpos($content, ' '));
+
                             $img_size_lg = 'fp-large';
                             $img_size_md = 'fp-medium';
                             $img_size_sm = 'fp-small';
 
                             $image = get_field('home_image');
-
                             $imageSquare = get_field('square_image');
                             $imageHorizontal = get_field('horizontal_image');
 
                             $hero_image_alt = $image['alt']; /* Get image object alt */
-                            $hero_square_alt = $imageSquare['alt'];
+                            // $hero_square_alt = $imageSquare['alt'];
                             $hero_horizontal_alt = $imageHorizontal['alt'];
 
                             /* Get custom sizes of our image sub_field */
@@ -58,9 +76,9 @@
                             $hero_md = $image['sizes'][$img_size_md];
                             $hero_sm = $image['sizes'][$img_size_sm];
 
-                            $hero_square_lg = $imageSquare['sizes'][$img_size_lg];
-                            $hero_square_md = $imageSquare['sizes'][$img_size_md];
-                            $hero_square_sm = $imageSquare['sizes'][$img_size_sm];
+                            // $hero_square_lg = $imageSquare['sizes'][$img_size_lg];
+                            // $hero_square_md = $imageSquare['sizes'][$img_size_md];
+                            // $hero_square_sm = $imageSquare['sizes'][$img_size_sm];
 
                             $hero_horizontal_lg = $imageHorizontal['sizes'][$img_size_lg];
                             $hero_horizontal_md = $imageHorizontal['sizes'][$img_size_md];
@@ -109,7 +127,13 @@
                                         <h3><?php echo get_the_title(); ?></h3>
                                     </a>
 
-                                    <?php the_excerpt(); ?>
+                                    <?php if (!empty($synopsis)) : ?>
+                                        <?php echo '<p>' . $synopsisResult . '. . .</p>'; ?>
+                                    <?php elseif (get_the_excerpt()) : ?>
+                                        <?php the_excerpt(); ?>
+                                    <?php else : ?>
+                                        <?php the_content(); ?>
+                                    <?php endif; ?>
 
                                 </div>
 

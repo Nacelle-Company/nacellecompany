@@ -22,7 +22,7 @@
 }
 .post-type-archive-news {
 	.archive-title {
-		padding-left: 3rem;
+		padding-left: 2rem;
 	}
 }
 .article-row-section {
@@ -175,5 +175,16 @@
 			border-top-right-radius: 50%;
 			border-bottom-right-radius: 50%;
 		}
+	}
+}
+.feed-container {
+    border-bottom: 1px solid;
+    .archive-title {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+	footer {
+		align-items: flex-end;
 	}
 }

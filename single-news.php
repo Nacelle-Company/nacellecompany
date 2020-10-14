@@ -40,7 +40,7 @@ get_header(); ?>
                                 echo '<strong><p class="text-right">';
                                 $location = the_field('location');
                                 echo "</strong>";
-                                echo  $location . the_time(' ' . 'm.j.y');
+                                // echo  $location . the_time(' ' . 'm.j.y');
                                 echo '</p></div>';
                                 ?>
                             </footer>

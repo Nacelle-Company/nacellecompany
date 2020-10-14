@@ -92,7 +92,7 @@ $('[data-mobile-app-toggle] .watch').click(function () {
 
 // https://css-tricks.com/a-lightweight-masonry-solution/
 // https://codepen.io/thebabydino/pen/BajGQgQ
-// main talent catalog-list.php grid
+// main talent catalog-masonry.php grid
 let grids = [...document.querySelectorAll('.grid--masonry')];
 
 if (grids.length && getComputedStyle(grids[0]).gridTemplateRows !== 'masonry') {

@@ -1,106 +1,105 @@
-
 .page-template-front-grid {
-    position: relative;
+	position: relative;
 }
 .page-template-front-grid,
 .page-template-front {
+	.front-grid {
+		.top-content {
+			height: calc(100vh - 131px);
+		}
+		.bottom-content {
+			height: 100vh;
+		}
+	}
 
-    .front-grid {
-        .top-content {
-            height: calc(100vh - 131px);
+	.site-header {
+		box-shadow: none;
+	}
+
+	header,
+	.site-navigation,
+	.z-5,
+	.site-title-bar {
+		z-index: 5;
+	}
+
+	.home-content {
+		@include breakpoint(medium up) {
+			height: 100vh;
+		}
+	}
+
+	.scroll-arrow {
+		@include flex;
+		@include flex-align(center);
+	}
+
+	.relative-container {
+		position: relative;
+	}
+
+	.absolute-container {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	.home-overlay {
+		position: absolute;
+		left: 0;
+		width: 100%;
+		bottom: 0;
+		@include breakpoint(medium up) {
+			height: 100vh;
+		}
+		&.top {
+			top: 0;
         }
-        .bottom-content {
-            height: 100vh;
-        }
-    }
-
-    .site-header {
-        box-shadow: none;
-
-    }
-
-    header,
-    .site-navigation,
-    .z-5,
-    .site-title-bar {
-        z-index: 5;
-    }
-
-    .home-content {
-        @include breakpoint(medium up) {
-            height: 100vh;
-        }
-    }
-
-    .scroll-arrow {
-        @include flex;
-        @include flex-align(center);
-    }
-
-    .relative-container {
-        position: relative;
-    }
-
-    .absolute-container {
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-
-    .home-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        bottom: 0;
-        @include breakpoint(medium up) {
-            height: 100vh;
-        }
-    }
-
-    .more {
-
-        height: 86vh;
-        // justify-content: center;
-
-        button {
-            color: $white;
-        }
-    }
-
-    .footer {
-
-        .footer-grid {
-            section {
-                z-index: 5;
+        &.bottom {
+            @include breakpoint(medium up) {
+                top: 100vh;
             }
         }
-    }
+	}
 
-    .button::before {
-        font-family: "Font Awesome 5 Brands";
-    }
+	.more {
+		height: 86vh;
+		// justify-content: center;
 
-    // font awesome icons
-    i.fas {
-      color: $white;
-    }
+		button {
+			color: $white;
+		}
+	}
 
+	.footer {
+		.footer-grid {
+			section {
+				z-index: 5;
+			}
+		}
+	}
+
+	.button::before {
+		font-family: "Font Awesome 5 Brands";
+	}
+
+	// font awesome icons
+	i.fas {
+		color: $white;
+	}
 }
-
 
 .page-template-front-grid {
-.footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    z-index: 999;
-        .footer-grid {
-            section {
-                z-index: 5;
-            }
-        }
-    }
+	.footer {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		z-index: 999;
+		.footer-grid {
+			section {
+				z-index: 5;
+			}
+		}
+	}
 }
-    
