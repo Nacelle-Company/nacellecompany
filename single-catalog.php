@@ -36,7 +36,7 @@ get_header(); ?>
 				echo '<div class="yes-hero-video cell medium-7">';
 
 				// show hero video
-				get_template_part('template-parts/catalog/catalog-hero', '');
+				get_template_part('template-parts/catalog/catalog-hero');
 
 				// show more info dropdown
 				if (get_field('show_more_info')) {

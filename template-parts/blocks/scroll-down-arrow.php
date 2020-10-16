@@ -1,5 +1,4 @@
-<div class="cell medium-8 scroll-arrow" data-smooth-scroll>
-
+<div class="scroll-arrow" style="position: absolute;bottom: 5vh;right: 47.5%;" data-smooth-scroll>
     <a href="#more" class="align-center">
         <svg width="82" height="32" xmlns="http://www.w3.org/2000/svg">
             <g stroke="#FFF" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="bevel">
@@ -7,5 +6,5 @@
             </g>
         </svg>
     </a>
-
 </div>
+

@@ -235,7 +235,7 @@ if (!function_exists('Nacelle_custom_colors')) :
         if (!empty($primary_color)) {
 // primary color
 ?>
-            a, .primary-color,
+            a:not(.alt), .primary-color,
             .accordion-content .title,
             .button.hollow,
             .footer-grid p,

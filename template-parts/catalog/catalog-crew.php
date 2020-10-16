@@ -4,6 +4,7 @@ $talent = get_field('talent');
 $directors = get_field('directors');
 $producers = get_field('producers');
 $writers = get_field('writers');
+$siteURL = get_site_url();
 ?>
 <div class="catalog-crew grid-container grid-x grid-padding-x grid-padding-y">
 
@@ -16,7 +17,15 @@ $writers = get_field('writers');
         </div>
 
     </div>
-
+    <?php
+    // $taxonomy = 'event-categories';
+    // $terms = get_terms($taxonomy);
+    // if ($terms) {
+    //     foreach ($terms as $term) {
+    //         echo '<li><a href="http:/mysite.com/events/categories/project-events/' . $term->slug . '">' . $term->name . '</a></li>';
+    //     }
+    // };
+    ?>
     <!-- START the crew -->
     <div class="cell medium-8">
 
@@ -39,12 +48,11 @@ $writers = get_field('writers');
                         <?php
 
                         $talentstr = array();
-
                         foreach ($talents as $talent) {
                             $talentstr[] = $talent->name;
+                            $talentSlug[] = '<a class="alt" href="' . $siteURL . '/main-talent/' . $talent->slug . '">' . $talent->name . '</a>';
                         }
-
-                        echo implode(", ", $talentstr);
+                        echo implode(", ", $talentSlug);
 
                         ?>
                     </p>
@@ -78,8 +86,9 @@ $writers = get_field('writers');
 
                         foreach ($directors as $director) {
                             $directorsstr[] = $director->name;
+                            $directorSlug[] = '<a class="alt" href="' . $siteURL . '/directors/' . $director->slug . '">' . $director->name . '</a>';
                         }
-                        echo implode(", ", $directorsstr);
+                        echo implode(", ", $directorSlug);
 
                         ?>
                     </p>
@@ -111,8 +120,9 @@ $writers = get_field('writers');
 
                         foreach ($producers as $producer) {
                             $producerstr[] = $producer->name;
+                            $producerSlug[] = '<a class="alt" href="' . $siteURL . '/producers/' . $producer->slug . '">' . $producer->name . '</a>';
                         }
-                        echo implode(", ", $producerstr);
+                        echo implode(", ", $producerSlug);
 
                         ?>
 
@@ -123,6 +133,35 @@ $writers = get_field('writers');
             </div>
         <?php endif; ?>
         <!-- end PRODUCERS -->
+
+        <?php if ($writers) : ?>
+
+            <div class="grid-x">
+
+                <div class="cell small-4 title">
+
+                    <p><?php _e('Writer(s):', 'nacelle'); ?></p>
+
+                </div>
+
+                <div class="cell small-8">
+
+                    <p>
+                        <?php $writerstr = array();
+                        foreach ($writers as $writer) {
+                            $writerstr[] = $writer->name;
+                            $writerSlug[] = '<a class="alt" href="' . $siteURL . '/writers/' . $writer->slug . '">' . $writer->name . '</a>';
+                        }
+                        echo implode(", ", $writerSlug);
+                        ?>
+                    </p>
+
+                </div>
+
+            </div>
+
+        <?php endif; ?>
+
 
     </div> <!-- end CREW -->
 

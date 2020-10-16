@@ -64,13 +64,13 @@ if (have_rows('featured_posts')) :
                                             ?>
                                         </div>
                                     </div>
-                                    <?php get_template_part('template-parts/blocks/scroll-down-arrow'); ?>
 
                                 </a>
 
                             </div>
 
                         </div>
+                        <?php get_template_part('template-parts/blocks/scroll-down-arrow'); ?>
 
                     </div>
 

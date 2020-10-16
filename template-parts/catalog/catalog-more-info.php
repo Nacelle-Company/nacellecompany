@@ -27,33 +27,6 @@
                         <div class="grid-x grid-padding-x">
                             <div class="cell medium-12 extra-metadata">
 
-                                <!-- Writers -->
-
-                                <?php if ($writers) : ?>
-
-                                    <div class="grid-x">
-
-                                        <div class="cell small-4 title">
-                                            <h3 class="md-gray-color sm-title"><?php _e('Writer(s):', 'nacelle'); ?></h3>
-                                        </div>
-
-                                        <div class="cell small-8">
-
-                                            <p>
-                                                <?php $writerstr = array();
-                                                foreach ($writers as $writer) {
-                                                    $writerstr[] = $writer->name;
-                                                }
-                                                echo implode(", ", $writerstr);
-                                                ?>
-                                            </p>
-
-                                        </div>
-
-                                    </div>
-
-                                <?php endif; ?>
-
                                 <!-- Runtime -->
                                 <?php if ($runtime) : ?>
                                     <div class="grid-x">

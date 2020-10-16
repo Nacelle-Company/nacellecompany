@@ -2,61 +2,139 @@
 // get term
 $term = get_queried_object();
 
-$startHeroVidAt = get_field('start_hero_video');
-$endHeroVidAt = get_field('end_hero_video');
-$mainTalent = is_tax('main_talent', $term);
-$term = get_term_by('slug', get_query_var('term'), get_query_var('taxonomy'));
-$videoHero = get_field('video_embedd');
-$talentVideo = get_field('main_talent_hero_video');
+$tax_page = is_tax(array('main_talent', 'producers', 'directors', 'writers'), $term);
 
-
-if ($mainTalent == 'main_talent') {
+if ($tax_page) {
     $videoAbundance = '0';
+    $profile_hero_lg = get_field('profile_pic', $term);
 } else {
     $videoAbundance = '0.3';
+    $profile_hero_lg = get_field('profile_pic', $term->taxonomy . '_' . $term->term_id);
 }
-// $selectedHeroVideoCategory = get_field('selected_hero_video_category', $term);
-// echo $selectedHeroVideoCategory;
-?>
-<?php
-$genre = 'stand-up';
-$artistName = $term->slug;
 
-$recent_args = array(
-    'post_type'         => 'catalog',
-    // 'category_name'     => $selectedHeroVideoCategory,
-    'posts_per_page'    => 1,
-    'order'             => 'DSC',
-    'tax_query' => array(
-        'relation' => 'AND',
-        array(
-            'taxonomy' => 'main_talent',
-            'field'    => 'slug',
-            'terms'    => $artistName,
+// get taxonomy name
+$tax = $wp_query->get_queried_object();
+$tax = get_taxonomy($tax->taxonomy);
+$taxonomy =  $tax->label;
+if ($taxonomy == 'Main Talent') {
+    $taxonomy = 'Talent';
+} elseif ($taxonomy == 'Producers') {
+    $taxonomy = substr($taxonomy, 0, -1);
+} elseif ($taxonomy == 'Directors') {
+    $taxonomy = substr($taxonomy, 0, -1);
+} elseif ($taxonomy == 'Writers') {
+    $taxonomy = substr($taxonomy, 0, -1);
+}
+    // $term = get_queried_object();
+
+    // for the catalog pages
+    // simply get the video_embedd field
+    // no need to worry about the talent pages
+    $video_embedd_exist = get_field('video_embedd');
+    if ($video_embedd_exist) {
+        $videoHero = get_field('video_embedd');
+    }
+
+    $artistSlug = $term->slug;
+    // args
+    $embedd_args = array(
+        'post_type'         => 'catalog',
+        'orderby'           => 'DSC',
+        'posts_per_page'    => 1,
+        'meta_key' => 'video_embedd',
+        'meta_value' => array(''),
+        'meta_compare' => 'NOT IN',
+        'tax_query' => array(
+            'relation' => 'OR',
+            array(
+                'taxonomy' => 'main_talent',
+                'field'    => 'slug',
+                'terms'    => $artistSlug,
+            ),
+            array(
+                'taxonomy' => 'producers',
+                'field'    => 'slug',
+                'terms'    => $artistSlug,
+            ),
+            array(
+                'taxonomy' => 'directors',
+                'field'    => 'slug',
+                'terms'    => $artistSlug,
+            ),
+            array(
+                'taxonomy' => 'writers',
+                'field'    => 'slug',
+                'terms'    => $artistSlug,
+            ),
         ),
-    ),
-);
-// END the main qurey args
-$query = new WP_Query($recent_args);
+    );
+    /*
+    $talent_args = array(
+        'post_type'         => 'catalog',
+        'orderby'           => 'DSC',
+        'posts_per_page'    => 1,
+        'meta_key' => 'main_talent_hero_video',
+        'meta_value' => array(''),
+        'meta_compare' => 'NOT IN',
+        'tax_query' => array(
+            'relation' => 'OR',
+            array(
+                'taxonomy' => 'main_talent',
+                'field'    => 'slug',
+                'terms'    => $artistSlug,
+            ),
+            array(
+                'taxonomy' => 'producers',
+                'field'    => 'slug',
+                'terms'    => $artistSlug,
+            ),
+            array(
+                'taxonomy' => 'directors',
+                'field'    => 'slug',
+                'terms'    => $artistSlug,
+            ),
+            array(
+                'taxonomy' => 'writers',
+                'field'    => 'slug',
+                'terms'    => $artistSlug,
+            ),
+        ),
+    );
+    */
+    // var_dump($talent_args);
+    // The EMBEDD Query
+    $query_embedd = new WP_Query($embedd_args);
 
-if ($query->have_posts()) :
-
-    while ($query->have_posts()) :
-
-        $query->the_post();
-
-        /*
-         * check if a specific video has been set 
-         * in the main talent taxonomy page for the artist
-         * if so, set the $videoHero variable to that video.
-         */
-        if (get_field('main_talent_hero_video', $term)) {
-            $videoHero = get_field('main_talent_hero_video', $term);
+    // The EMBEDD Loop
+    while ($query_embedd->have_posts()) {
+        $query_embedd->the_post();
+        // talent page shows this
+        $videoEmbedd = get_field('video_embedd', $post->ID);
+        $videoTalent = get_field('main_talent_hero_video', $term);
+        if (!empty($videoTalent)) {
+            $videoHero = $videoTalent;
+        } elseif ($videoEmbedd) {
+            $videoHero = $videoEmbedd;
         }
+    }
+    wp_reset_postdata();
 
-    endwhile;
 
-endif;
+
+    // /* The TALENT Query (without global var) */
+    // $query_talent = new WP_Query($talent_args);
+
+    // // The TALENT Loop
+    // while ($query_talent->have_posts()) {
+    //     $query_talent->the_post();
+    //     // $videoTalent = get_field('main_talent_hero_video', $term);
+    //     // echo $videoTalent;
+    // }
+
+    // // Restore original Post Data
+    // wp_reset_postdata();
+
+
 ?>
 
 <div class="catalog-hero hero-section">
@@ -67,8 +145,8 @@ endif;
         <div id="video-header-hero" class="player" data-property="{
             videoURL:'<?php echo $videoHero; ?>',
             containment:'self', 
-            coverImage:'<?php echo $profile_hero_lg; ?>', 
-            mobileFallbackImage:'<?php echo $profile_hero_lg; ?>', 
+            coverImage:'<?php echo esc_url($profile_hero_lg['url']); ?>', 
+            mobileFallbackImage:'<?php echo esc_url($profile_hero_lg['url']); ?>', 
             autoPlay:true, 
             mute:true, 
             opacity:1, 
@@ -86,13 +164,14 @@ endif;
 
         <div class="cell medium-4">
 
-            <?php if ($mainTalent == 'main_talent') { ?>
+            <?php if ($tax_page) { ?>
 
                 <!-- play button group -->
                 <div class="mobile-app-toggle play" data-mobile-app-toggle>
 
                     <div class="hero-text">
-                        <h1><span class="subheader">The</span> <?php echo $term->name; ?> <span class="subheader">Archive</span></h1>
+                        <span class="subheader"><?php echo $taxonomy; ?></span>
+                        <h1><?php echo $term->name; ?></h1>
 
                         <button data-toggle="coverOn" class="button is-active icon" onclick="jQuery('#video-header-hero').YTPUnmute()">
                             <?php get_template_part('template-parts/svg/icon-play', ''); ?>

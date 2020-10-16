@@ -94,7 +94,7 @@ get_header(); ?>
 
 	<!-- main grid -->
 	<main class="grid-x align-center front-grid">
-
+		
 		<div class="home-overlay bottom" style="opacity: .<?php the_field('bottom_background_overlay_color') ?>;"></div>
 
 		<div class="cell z-5 top-content">
@@ -107,7 +107,17 @@ get_header(); ?>
 
 				</div>
 
-				<?php get_template_part( 'template-parts/blocks/scroll-down-arrow' ); ?>
+				<div class="cell medium-8 scroll-arrow" data-smooth-scroll>
+
+					<a href="#more" class="align-center">
+						<svg width="82" height="32" xmlns="http://www.w3.org/2000/svg">
+							<g stroke="#FFF" stroke-width="2" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="bevel">
+								<path d="M1.167 1.79l39.666 28.42M80.833 1.79L41.167 30.21" />
+							</g>
+						</svg>
+					</a>
+
+				</div>
 
 			</div>
 

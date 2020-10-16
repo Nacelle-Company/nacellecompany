@@ -6,7 +6,7 @@
  */
 ?>
 
-<div class="cell medium-6 productions">
+<div class="cell medium-6 productions pt-3" id="more">
 
     <header>
 
@@ -18,41 +18,33 @@
 
             </div>
 
-            <!-- <div class="cell auto sorting">
-
-                <h4><?php // _e('Sort by', 'nacelle'); 
-                    ?></h4>
-
-                <?php // echo do_shortcode('[searchandfilter slug="production-filters"]'); 
-                ?>
-
-            </div> -->
-
         </div>
 
-    </header><!-- .entry-header -->
+    </header>
 
-    <div class="entry-content" id="entry-content">
+    <div class="entry-content" id="entry-content" style="border-right: 1px solid white;">
 
         <div class="grid-x grid-padding-x grid-padding-y medium-up-1 macro-cat-cards">
 
             <?php
-            $podcast_query = new WP_Query(array(
+            $production_query = new WP_Query(array(
                 'post_type' => 'catalog',
-                'posts_per_page' => 10,
+                'posts_per_page' => 30,
                 'tax_query' => array(
                     array(
                         'taxonomy' => 'category',
-                        'field'    => 'slug',
-                        'terms'    => 'production',
+                        'field' => 'slugs',
+                        'terms' => array('podcast'),
+                        'include_children' => true,
+                        // 'operator' => 'NOT IN'
                     ),
                 ),
             ));
 
-            if ($podcast_query->have_posts()) {
+            if ($production_query->have_posts()) {
 
-                while ($podcast_query->have_posts()) {
-                    $podcast_query->the_post();
+                while ($production_query->have_posts()) {
+                    $production_query->the_post();
 
                     $date = get_field('release_date', false, false);
                     $synopsis = get_field('synopsis');
@@ -193,11 +185,11 @@
 
         </div>
 
-    </div><!-- .entry-content -->
+    </div>
 
-</div><!-- #post-## -->
+</div>
 
-<div class="cell medium-6 productions">
+<div class="cell medium-6 podcasts pt-3">
 
     <header>
 
@@ -208,16 +200,6 @@
                 <h2><?php the_field("right_title"); ?></h2>
 
             </div>
-
-            <!-- <div class="cell auto sorting">
-
-                <h4><?php // _e('Sort by', 'nacelle'); 
-                    ?></h4>
-
-                <?php // echo do_shortcode('[searchandfilter slug="production-filters"]'); 
-                ?>
-
-            </div> -->
 
         </div>
 
