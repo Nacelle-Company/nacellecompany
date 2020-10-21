@@ -5,7 +5,7 @@ $term = get_queried_object();
 $tax_page = is_tax(array('main_talent', 'producers', 'directors', 'writers'), $term);
 
 if ($tax_page) {
-    $videoAbundance = '0';
+    $videoAbundance = '0.3';
     $profile_hero_lg = get_field('profile_pic', $term);
 } else {
     $videoAbundance = '0.3';

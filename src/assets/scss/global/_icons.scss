@@ -1,47 +1,48 @@
-
 // button icons
 .button.icon {
-  display: flex;
-  align-items: center;
-  svg {
-    margin-right: 10px;
-  }
+	display: flex;
+	align-items: center;
+	svg {
+		margin-right: 10px;
+	}
 }
 
+// scroll arrow
+.scroll-arrow {
+	@include hide-for-only(small);
+}
 // font awesome icons
 i.fas {
-  margin: 0 .5rem 0 0;
+	margin: 0 0.5rem 0 0;
 }
 
 .catalog-title {
-  text-transform: uppercase;
+	text-transform: uppercase;
 }
 
 // catalog pagination
 .cell.pagination .fas,
 .cell.pagination .fas {
-    font-size: 2.5em;
-    line-height: 0.4;
+	font-size: 2.5em;
+	line-height: 0.4;
 }
 
 // desktop pagination
 .no-mobile .pagination {
-    display: flex;
-    flex-direction: column-reverse;
+	display: flex;
+	flex-direction: column-reverse;
 }
-
 
 // social icons main part of page
 .entry-content {
-  .grid-x.social {
-    margin-bottom: 1rem;
-  }
-  .social a.nav-link {
-      font-size: 23px;
-      padding: 1rem .25rem;
-    @include breakpoint(medium) {
-        font-size: 30px;
-      }
-  }
+	.grid-x.social {
+		margin-bottom: 1rem;
+	}
+	.social a.nav-link {
+		font-size: 23px;
+		padding: 1rem 0.25rem;
+		@include breakpoint(medium) {
+			font-size: 30px;
+		}
+	}
 }
-

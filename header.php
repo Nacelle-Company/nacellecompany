@@ -131,7 +131,7 @@
 
 							<?php get_template_part('template-parts/svg/icon-search'); ?>
 
-						<?php echo do_shortcode('[searchandfilter id="4711" fields="search" search_placeholder="Search. . ."]');
+						<?php echo do_shortcode('[searchandfilter slug="search-form-only" fields="search" search_placeholder="Search. . ."]');
 							?>
 
 						</div>
