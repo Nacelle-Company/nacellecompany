@@ -1,0 +1,80 @@
+{
+    "key": "group_5d9f3dda0940e",
+    "title": "Image: Square",
+    "fields": [
+        {
+            "key": "field_5d9f3dda18981",
+            "label": "",
+            "name": "square_image",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_5f74fb56a5a0d",
+            "label": "Carousel Image",
+            "name": "home_image",
+            "type": "image",
+            "instructions": "Upload your square carousel image here. Then edit the <a href=\"https:\/\/comedydynamics.com\/wp-admin\/post.php?post=2&action=edit\">Homepage<\/a>, add this post to the \"Carousel Posts\" section and drag to organize them as you'd like!",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5f74fb20a5a0c",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "thumbnail",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "catalog"
+            }
+        ]
+    ],
+    "menu_order": 1,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1603474954
+}

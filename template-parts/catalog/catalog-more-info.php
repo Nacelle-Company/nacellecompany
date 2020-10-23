@@ -1,8 +1,8 @@
 <?php
 
-    $runtime = get_field('runtime');
-    $date = get_field('release_date', false, false);
-    $genres = get_the_terms($post->ID, 'genre');
+$runtime = get_field('runtime');
+$date = get_field('release_date', false, false);
+$genres = get_the_terms($post->ID, 'genre');
 
 ?>
 <div class="grid-x catalog-more-info meta-accordion catalog-bottom-meta mt-2" id="meta_accordion">
@@ -10,13 +10,12 @@
         <section class="accordion-item" data-accordion-item>
             <a class="accordian-open" href="#meta_accordion" data-smooth-scroll data-animation-duration="700" data-offset="245">
                 <div class="grid-container grid-x pb-2">
-                    <div class="cell medium-6 pl-1">
+                    <div class="cell medium-6 pl-medium-1">
                         <div class="grid-x accordion-line"></div>
                     </div>
-                    <div class="cell medium-5 ml-2 pl-2">
-                        <button class="accordion-title clear primary-color" title="More info on <?php the_title(); ?>">More info
-                            <?php get_template_part('template-parts/svg/icon-down-angle', ''); ?>
-
+                    <div class="cell medium-5 ml-medium-2 pl-medium-2">
+                        <button class="accordion-title clear primary-color mt-2 mt-medium-0" title="More info on <?php the_title(); ?>">More info
+                            <?php get_template_part('template-parts/svg/icon-down-angle'); ?>
                         </button>
                     </div>
                 </div>
@@ -24,7 +23,7 @@
             <div class="grid-x accordion-content" data-tab-content>
                 <div class="grid-container grid-x">
                     <div class="cell medium-8 medium-offset-4 tbp-1">
-                        <div class="grid-x grid-padding-x">
+                        <div class="grid-x grid-padding-x small-padding-collapse px-medium-2">
                             <div class="cell medium-12 extra-metadata">
 
                                 <!-- Runtime -->

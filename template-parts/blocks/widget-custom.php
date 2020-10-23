@@ -27,9 +27,9 @@ function my_dynamic_sidebar_params($params)
 
         <?php if (!empty($showContactModal)) : ?>
             <div class="cell medium-shrink ml-2">
-                <a class="contactModal" data-open="contactModal">
+                <button class="contactModal" data-open="contactModal">
                     <p><?php _e('Contact', 'nacelle'); ?></p>
-                </a>
+        </button>
             </div>
         <?php endif; ?>
         <div class="cell medium-shrink">
@@ -37,7 +37,7 @@ function my_dynamic_sidebar_params($params)
 
                 <?php if (!empty($facebook)) : ?>
                     <div class="cell shrink ml-2">
-                        <a href="<?php echo $facebook; ?>">
+                        <a href="<?php echo $facebook; ?>" rel="nofollow">
                             <?php get_template_part('template-parts/svg/icon-facebook'); ?>
                         </a>
                     </div>
@@ -45,7 +45,7 @@ function my_dynamic_sidebar_params($params)
 
                 <?php if (!empty($twitter)) : ?>
                     <div class="cell shrink ml-2">
-                        <a href="<?php echo $twitter; ?>">
+                        <a href="<?php echo $twitter; ?>" rel="nofollow">
                             <?php get_template_part('template-parts/svg/icon-twitter'); ?>
                         </a>
                     </div>
@@ -53,7 +53,7 @@ function my_dynamic_sidebar_params($params)
 
                 <?php if (!empty($instagram)) : ?>
                     <div class="cell shrink ml-2">
-                        <a href="<?php echo $instagram; ?>">
+                        <a href="<?php echo $instagram; ?>" rel="nofollow">
                             <?php get_template_part('template-parts/svg/icon-instagram'); ?>
                         </a>
                     </div>
@@ -61,7 +61,7 @@ function my_dynamic_sidebar_params($params)
 
                 <?php if (!empty($youtube)) : ?>
                     <div class="cell shrink ml-2">
-                        <a href="<?php echo $youtube; ?>">
+                        <a href="<?php echo $youtube; ?>" rel="nofollow">
                             <?php get_template_part('template-parts/svg/icon-youtube'); ?>
                         </a>
                     </div>
@@ -69,7 +69,7 @@ function my_dynamic_sidebar_params($params)
 
                 <?php if (!empty($soundcloud)) : ?>
                     <div class="cell shrink ml-2">
-                        <a href="<?php echo $soundcloud; ?>">
+                        <a href="<?php echo $soundcloud; ?>" rel="nofollow">
                             <?php get_template_part('template-parts/svg/icon-soundcloud'); ?>
                         </a>
                     </div>
@@ -77,7 +77,7 @@ function my_dynamic_sidebar_params($params)
 
                 <?php if (!empty($spotify)) : ?>
                     <div class="cell shrink ml-2">
-                        <a href="<?php echo $spotify; ?>">
+                        <a href="<?php echo $spotify; ?>" rel="nofollow">
                             <?php get_template_part('template-parts/svg/icon-spotify'); ?>
                         </a>
                     </div>

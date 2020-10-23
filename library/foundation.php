@@ -211,7 +211,9 @@ if (!function_exists('Nacelle_custom_colors')) :
             .wp-block-button .success.wp-block-button__link,
             .button.hollow.success,
             .button.success:hover,
-            .synopsis.reveal blockquote p {
+            .synopsis.reveal blockquote p,
+            .off-canvas-content .searchandfilter input[type=submit]:hover,
+            .field-wrap input[type=button]:hover {
                 color: #<?php echo $background_color; ?>;
             }
 
@@ -255,7 +257,6 @@ if (!function_exists('Nacelle_custom_colors')) :
             .accordion-content,
             input[type=submit],
             body.page-template-featured-page,
-            .button.success:not(.clear):hover,
             .archive .featured-hero,
             .searchandfilter input[type=submit] {
                 background-color: <?php echo $primary_color; ?>;
@@ -319,17 +320,40 @@ if (!function_exists('Nacelle_custom_colors')) :
             .details-container details[open] .info,
             .featured-page .feat-content .dk-border,
             .button.hollow.success,
-            .feed-container {
+            .feed-container,
+            hr,
+            .post-navigation {
                 border-color: <?php echo $secondary_color; ?>;
             }
+
+            .secondary-bkgnd,
             .accordion-line,
             .button.success:not(.clear), 
-            .wp-block-button .success.wp-block-button__link {
+            .wp-block-button .success.wp-block-button__link,
+            .off-canvas-content .searchandfilter input[type=submit],
+            .field-wrap input[type=button] {
                 background-color: <?php echo $secondary_color; ?>;
             }
+            .off-canvas-content .searchandfilter input[type=submit]:hover,
+            .field-wrap input[type=button]:hover {
+                background-color: <?php echo $secondary_color; ?>;
+                filter: saturate(1.5);
+            }
             .orbit-controls .orbit-previous:hover .icon, 
-            .orbit-controls .orbit-next:hover .icon {
+            .orbit-controls .orbit-next:hover .icon,
+            .icon.down-angle {
                 fill: <?php echo $secondary_color; ?>;
+            }
+            .pag-img-wrapper:hover {
+                background: transparent;
+                outline: 1px solid <?php echo $secondary_color; ?>;
+            }
+            .menu-icon::after {
+                background-color: <?php echo $secondary_color; ?>;
+                box-shadow: 0 7px 0 <?php echo $secondary_color; ?>, 0 14px 0 <?php echo $secondary_color; ?>;
+            }
+            .accordion-title {
+                color: <?php echo $secondary_color; ?>;
             }
 <?php
         }
@@ -346,7 +370,11 @@ if (!empty($nav_bg_color)) {
 ?>
         body:not(.page-template-front-carousel):not(.page-template-front-circles):not(.page-template-front-grid) .site-navigation.top-bar,
         .site-title-bar,
-        .top-bar ul  {
+        .top-bar ul,
+        .pag-img-wrapper  {
+            background: <?php echo $nav_bg_color; ?>;
+        }
+        footer.footer {
             background: <?php echo $nav_bg_color; ?>;
         }
 <?php
@@ -543,3 +571,98 @@ if (!function_exists('Nacelle_gallery')) :
     }
     add_shortcode('gallery', 'Nacelle_gallery');
 endif;
+
+/*
+ * include taxonomy links in wysiwyg
+ * https://christinacreativedesign.com/blog/add-custom-post-types-and-taxonomy-terms-to-wordpress-link-selection/
+ * https://gist.githubusercontent.com/carasmo/133d33a98ee66171df9132ec0f2168c7/raw/ceae38ed031c5031ef2b720b74109f3de9c8ac0e/for-include-or-functions.php
+ */
+add_filter('wp_link_query', 'Nacelle_add_custom_post_type_archive_link', 10, 2);
+/**
+ * Add Custom Post Type archive to WordPress search link query
+ * Author: https://github.com/mthchz/editor-archive-post-link/blob/master/editor-archive-post-link.php
+ */
+function Nacelle_add_custom_post_type_archive_link($results, $query)
+{
+
+    if ($query['offset'] > 0) : // Add only on the first result page
+        return $results;
+    endif;
+
+    $match = '/' . str_remove_accents($query['s']) . '/i';
+    foreach ($query['post_type'] as $post_type) :
+        $pt_archive_link = get_post_type_archive_link($post_type);
+        $pt_obj = get_post_type_object($post_type);
+        if ($pt_archive_link !== false && $pt_obj->has_archive !== false) : // Add only post type with 'has_archive'
+            if (preg_match($match, str_remove_accents($pt_obj->labels->name)) > 0) :
+                array_unshift($results, array(
+                    'ID' => $pt_obj->has_archive,
+                    'title' => trim(esc_html(strip_tags($pt_obj->labels->name))),
+                    'permalink' => $pt_archive_link,
+                    'info' => 'Archive',
+                ));
+            endif;
+        endif; //end post type archive links in link_query
+    endforeach;
+
+    return $results;
+}
+
+
+//* Remove accents
+function str_remove_accents($str, $charset = 'utf-8')
+{
+    $str = htmlentities($str, ENT_NOQUOTES, $charset);
+    $str = preg_replace('#&([A-za-z])(?:acute|cedil|caron|circ|grave|orn|ring|slash|th|tilde|uml);#', '\1', $str);
+    $str = preg_replace('#&([A-za-z]{2})(?:lig);#', '\1', $str);
+    $str = preg_replace('#&[^;]+;#', '', $str);
+    return $str;
+}
+
+
+add_filter('wp_link_query', 'cab_wp_link_query_term_linking', 99, 2);
+/**
+ * Add Term links to WordPress search link query
+ * Modified from: https://gist.github.com/emzo/6f86f50199c09d2f4ce6863401a307fb
+ * Ref: https://codex.wordpress.org/Function_Reference/get_taxonomies
+ *      https://developer.wordpress.org/reference/classes/wp_term_query/__construct/
+ *      https://developer.wordpress.org/reference/functions/get_terms/
+ *      http://php.net/manual/en/function.array-diff.php
+ */
+function cab_wp_link_query_term_linking($results, $query)
+{
+
+    //* Query taxonomy terms.
+    $taxonomies = get_taxonomies(array(
+        'show_in_nav_menus' => true
+    ), 'names');
+
+    //* Add to the array any taxonomies you do not want 
+    $exclude = array(
+        'media_category',
+        'tag',
+    );
+
+    $taxonomies = array_diff($taxonomies, $exclude);
+
+    //* Get the terms of the taxonomies
+    $terms = get_terms($taxonomies, array(
+        'name__like' => $query['s'],
+        'number'     => 20,
+        'hide_empty' => true,
+    ));
+
+    //* Terms
+    if (!empty($terms) && !is_wp_error($terms)) :
+        foreach ($terms as $term) :
+            $results[] = array(
+                'ID'        => 'term-' . $term->term_id,
+                'title'     => html_entity_decode($term->name, ENT_QUOTES, get_bloginfo('charset')),
+                'permalink' => get_term_link(intval($term->term_id), $term->taxonomy),
+                'info'      => get_taxonomy($term->taxonomy)->labels->singular_name,
+            );
+        endforeach;
+    endif;
+
+    return $results;
+}

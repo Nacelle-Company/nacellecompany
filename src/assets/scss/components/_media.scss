@@ -2,7 +2,6 @@
     position: relative;
     img {
         margin: 0 0 1rem 0;
-        max-width: 50vw;
         @include breakpoint(medium) {
             margin-right: 1rem;
         }

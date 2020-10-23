@@ -59,11 +59,11 @@ if (!empty('news_header_image')) :
                 <!-- image -->
                 <div class="cell medium-4">
 
-                  <?php if ($link) : ?>
-                    <a href="<?php echo $link; ?>" target="_blank">
+                  <?php //if ($link) : ?>
+                    <a href="<?php the_permalink(); ?>">
                       <img class="slideInFromBottom" data-interchange="[<?php the_post_thumbnail_url('fp-small'); ?>, small], [<?php the_post_thumbnail_url('fp-medium'); ?>, medium], [<?php the_post_thumbnail_url('fp-large'); ?>, large], [<?php the_post_thumbnail_url('fp-xlarge'); ?>, xlarge]">
                       <?php echo '</a>'; ?>
-                    <?php endif; ?>
+                    <?php // endif; ?>
 
                 </div>
 

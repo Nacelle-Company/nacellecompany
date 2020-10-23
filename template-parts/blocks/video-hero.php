@@ -83,7 +83,6 @@ if ($query->have_posts()) :
 
                 <!-- big video -->
 
-
                 <div id="big-video">
 
                     <!-- plugin docs: https://github.com/pupunzi/jquery.mb.YTPlayer/wiki#external-methods -->

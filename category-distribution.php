@@ -31,7 +31,7 @@ get_header(); ?>
 
 		<div class="cell macro-cat-cards">
 
-			<div class="grid-x small-up-2 medium-up-2 large-up-4 grid-margin-y">
+			<div class="grid-x small-up-2 medium-up-2 large-up-4 grid-margin-y macro-cat-cards-wrapper">
 
 				<!-- film category -->
 				<?php
@@ -176,7 +176,7 @@ get_header(); ?>
 					<a class="cell cat-container" href="<?php echo get_home_url() ?>/category/distribution/series/">
 
 						<h2 class="text-center catalog-title series">
-							<?php get_template_part( 'template-parts/svg/icon-mic'); ?>
+							<?php get_template_part('template-parts/svg/icon-mic'); ?>
 							<?php _e('Series', 'nacelle'); ?>
 						</h2>
 

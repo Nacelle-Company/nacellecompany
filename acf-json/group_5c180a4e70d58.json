@@ -1,0 +1,39 @@
+{
+    "key": "group_5c180a4e70d58",
+    "title": "Press Link to Article",
+    "fields": [
+        {
+            "key": "field_5c180a52c970b",
+            "label": "Link to article",
+            "name": "link_to_article",
+            "type": "link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "press"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "link_to_article",
+    "modified": 1603474709
+}

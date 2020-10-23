@@ -211,6 +211,10 @@
 // WP post navigation
 .post-navigation {
 	@include clearfix;
+	@include breakpoint(small only) {
+		padding-bottom: 1rem;
+		border-bottom: 2px solid;
+	}
 }
 
 .mobile-nav {

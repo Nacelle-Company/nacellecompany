@@ -4,11 +4,11 @@ Template Name: Contact
 */
 get_header(); ?>
 
-<header class="featured-hero contact">
-			<div class="grid-x">
-			<div class="cell">
-				<h1 class="text-center"><?php the_field('header_title'); ?></h1>
-			</div>
+<header class="featured-hero contact primary">
+	<div class="grid-x">
+		<div class="cell">
+			<h1 class="text-center"><?php the_field('header_title'); ?></h1>
+		</div>
 	</div>
 </header>
 

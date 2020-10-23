@@ -73,10 +73,6 @@ function Nacelle_add_image_sizes()
 add_action('init', 'Nacelle_add_image_sizes');
 
 
-
-
-
-
 // acf options page
 if (function_exists('acf_add_options_page')) {
     acf_add_options_page();

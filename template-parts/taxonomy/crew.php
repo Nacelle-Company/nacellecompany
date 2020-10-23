@@ -1,6 +1,6 @@
  <div class="main-talent">
 
-        <?php
+         <?php
 
         get_template_part('template-parts/catalog/catalog-hero');
 
@@ -10,6 +10,7 @@
 
         get_template_part('template-parts/blocks/video-hero');
 
-        ?>
+        get_template_part('template-parts/blocks/wysiwyg');
 
-</div>
+        ?>
+ </div>

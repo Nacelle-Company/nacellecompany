@@ -28,6 +28,8 @@ get_header(); ?>
 										<?php the_post_thumbnail('medium', array('align' => 'left')); ?>
 
 									<?php endif; ?>
+								</div>
+								<div class="media-object-section">
 									<h1>
 										<?php the_field('title'); ?>
 									</h1>

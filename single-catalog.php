@@ -33,7 +33,7 @@ get_header(); ?>
 			// HERO VIDEO present
 			if (get_field('video_embedd')) {
 
-				echo '<div class="yes-hero-video cell medium-7">';
+				echo '<div class="cell medium-7">';
 
 				// show hero video
 				get_template_part('template-parts/catalog/catalog-hero');
@@ -44,9 +44,9 @@ get_header(); ?>
 				};
 
 				// show crew info
-				if (get_field('show_crew')) {
+				// if (get_field('show_crew')) {
 					get_template_part('template-parts/catalog/catalog-crew', '');
-				};
+				// };
 
 				// close the div with hero and more info
 				echo '</div><div class="cell medium-5">';
@@ -74,9 +74,9 @@ get_header(); ?>
 				};
 
 				// show crew info
-				if (get_field('show_crew')) {
+				// if (get_field('show_crew')) {
 					get_template_part('template-parts/catalog/catalog-crew', '');
-				};
+				// };
 
 				// show large links
 				if (get_field('show_large_links')) {

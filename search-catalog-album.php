@@ -117,7 +117,7 @@ get_header(); ?>
 
 			</button>
 
-			<div class="grid-x grid-margin-y align-center-middle oc-container">
+			<div class="grid-x grid-margin-y align-center-middle oc-container pt-4">
 
 				<div class="cell align-self-middle filter-sidebar">
 

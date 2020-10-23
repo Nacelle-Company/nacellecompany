@@ -25,50 +25,51 @@ if ($taxonomy == 'Main Talent') {
 } elseif ($taxonomy == 'Writers') {
     $taxonomy = substr($taxonomy, 0, -1);
 }
-    // $term = get_queried_object();
+// $term = get_queried_object();
 
-    // for the catalog pages
-    // simply get the video_embedd field
-    // no need to worry about the talent pages
-    $video_embedd_exist = get_field('video_embedd');
-    if ($video_embedd_exist) {
-        $videoHero = get_field('video_embedd');
-    }
+// for the catalog pages
+// simply get the video_embedd field
+// no need to worry about the talent pages
+$video_embedd_exist = get_field('video_embedd');
+if ($video_embedd_exist) {
+    $videoHero = get_field('video_embedd');
+}
 
-    $artistSlug = $term->slug;
-    // args
-    $embedd_args = array(
-        'post_type'         => 'catalog',
-        'orderby'           => 'DSC',
-        'posts_per_page'    => 1,
-        'meta_key' => 'video_embedd',
-        'meta_value' => array(''),
-        'meta_compare' => 'NOT IN',
-        'tax_query' => array(
-            'relation' => 'OR',
-            array(
-                'taxonomy' => 'main_talent',
-                'field'    => 'slug',
-                'terms'    => $artistSlug,
-            ),
-            array(
-                'taxonomy' => 'producers',
-                'field'    => 'slug',
-                'terms'    => $artistSlug,
-            ),
-            array(
-                'taxonomy' => 'directors',
-                'field'    => 'slug',
-                'terms'    => $artistSlug,
-            ),
-            array(
-                'taxonomy' => 'writers',
-                'field'    => 'slug',
-                'terms'    => $artistSlug,
-            ),
+$artistSlug = $term->slug;
+$catalogPermalink;
+// args
+$embedd_args = array(
+    'post_type'         => 'catalog',
+    'orderby'           => 'DSC',
+    'posts_per_page'    => 1,
+    'meta_key' => 'video_embedd',
+    'meta_value' => array(''),
+    'meta_compare' => 'NOT IN',
+    'tax_query' => array(
+        'relation' => 'OR',
+        array(
+            'taxonomy' => 'main_talent',
+            'field'    => 'slug',
+            'terms'    => $artistSlug,
         ),
-    );
-    /*
+        array(
+            'taxonomy' => 'producers',
+            'field'    => 'slug',
+            'terms'    => $artistSlug,
+        ),
+        array(
+            'taxonomy' => 'directors',
+            'field'    => 'slug',
+            'terms'    => $artistSlug,
+        ),
+        array(
+            'taxonomy' => 'writers',
+            'field'    => 'slug',
+            'terms'    => $artistSlug,
+        ),
+    ),
+);
+/*
     $talent_args = array(
         'post_type'         => 'catalog',
         'orderby'           => 'DSC',
@@ -101,38 +102,39 @@ if ($taxonomy == 'Main Talent') {
         ),
     );
     */
-    // var_dump($talent_args);
-    // The EMBEDD Query
-    $query_embedd = new WP_Query($embedd_args);
+// var_dump($talent_args);
+// The EMBEDD Query
+$query_embedd = new WP_Query($embedd_args);
 
-    // The EMBEDD Loop
-    while ($query_embedd->have_posts()) {
-        $query_embedd->the_post();
-        // talent page shows this
-        $videoEmbedd = get_field('video_embedd', $post->ID);
-        $videoTalent = get_field('main_talent_hero_video', $term);
-        if (!empty($videoTalent)) {
-            $videoHero = $videoTalent;
-        } elseif ($videoEmbedd) {
-            $videoHero = $videoEmbedd;
-        }
+// The EMBEDD Loop
+while ($query_embedd->have_posts()) {
+    $query_embedd->the_post();
+    // talent page shows this
+    $videoEmbedd = get_field('video_embedd', $post->ID);
+    $videoTalent = get_field('main_talent_hero_video', $term);
+    $catalogPermalink = get_permalink();
+    if (!empty($videoTalent)) {
+        $videoHero = $videoTalent;
+    } elseif ($videoEmbedd) {
+        $videoHero = $videoEmbedd;
     }
-    wp_reset_postdata();
+}
+wp_reset_postdata();
 
 
 
-    // /* The TALENT Query (without global var) */
-    // $query_talent = new WP_Query($talent_args);
+// /* The TALENT Query (without global var) */
+// $query_talent = new WP_Query($talent_args);
 
-    // // The TALENT Loop
-    // while ($query_talent->have_posts()) {
-    //     $query_talent->the_post();
-    //     // $videoTalent = get_field('main_talent_hero_video', $term);
-    //     // echo $videoTalent;
-    // }
+// // The TALENT Loop
+// while ($query_talent->have_posts()) {
+//     $query_talent->the_post();
+//     // $videoTalent = get_field('main_talent_hero_video', $term);
+//     // echo $videoTalent;
+// }
 
-    // // Restore original Post Data
-    // wp_reset_postdata();
+// // Restore original Post Data
+// wp_reset_postdata();
 
 
 ?>
@@ -191,9 +193,8 @@ if ($taxonomy == 'Main Talent') {
                         <strong>Pause</strong>
                     </button>
 
-                    <a class="button icon catalog-links-btn" href="#catalog_links" data-smooth-scroll data-animation-duration="700" data-offset="45">
-                        <?php get_template_part('template-parts/svg/icon-cart', ''); ?>
-                        <strong>Purchase</strong>
+                    <a class="button icon catalog-links-btn dashicons-before dashicons-album" href="<?php echo $catalogPermalink; ?>">
+                        <strong>View Page</strong>
                     </a>
 
                     <button class="button icon" data-open="catalog_modal" onclick="jQuery('#modal-video').YTPPlay(); jQuery('#video-header-hero').YTPPause();">
@@ -215,10 +216,14 @@ if ($taxonomy == 'Main Talent') {
                         <strong>Watch</strong>
                     </button>
 
+                    <?php 
+                    /* 
                     <a class="button icon catalog-links-btn" href="#catalog_links" data-smooth-scroll data-animation-duration="700" data-offset="45">
                         <?php get_template_part('template-parts/svg/icon-cart', ''); ?>
                         <strong>Purchase</strong>
                     </a>
+                    */
+                    ?>
 
                 </div>
 
@@ -230,10 +235,14 @@ if ($taxonomy == 'Main Talent') {
                         <strong>Pause</strong>
                     </button>
 
+                    <?php
+                    /*
                     <a class="button icon catalog-links-btn" href="#catalog_links" data-smooth-scroll data-animation-duration="700" data-offset="45">
                         <?php get_template_part('template-parts/svg/icon-cart', ''); ?>
                         <strong>Purchase</strong>
                     </a>
+                    */
+                    ?>
 
                     <button class="button icon" data-open="catalog_modal" onclick="jQuery('#modal-video').YTPPlay(); jQuery('#video-header-hero').YTPPause();">
                         <?php get_template_part('template-parts/svg/icon-expand', ''); ?>

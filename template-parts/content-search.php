@@ -5,7 +5,6 @@ $news_icon = get_field('news_icon', 'option');
 // other link
 if (get_field('link_to_article')) {
     $link = get_field('link_to_article');
-    echo '<pre>' . $link . '</pre>';
 }
 
 // trunkate the synopsis or content

@@ -1,7 +1,7 @@
 .hero-section,
 .catalog-modal,
 .video-latest {
-	height: 60vh;
+	height: 24vh;
 	width: 100%;
 	position: relative;
 	left: 0;
@@ -9,6 +9,9 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	@include breakpoint(medium up) {
+		height: 60vh;
+	}
 	&.video {
 		height: 100vh;
 	}
@@ -54,10 +57,13 @@
 	.pause {
 		opacity: 1;
 		position: absolute;
-		left: 0;
+		left: 7px;
 		bottom: 0;
 		margin-bottom: 0;
 		width: auto;
+		@include breakpoint(medium up) {
+			left: 0;
+		}
 		.buttton {
 			padding: 0 1em;
 			border: none;
@@ -119,7 +125,8 @@
 // video backgrounds : for mobile layout
 .inline-YTPlayer,
 .big-video {
-	@include breakpoint(small only) {
+	zoom: 1.09;
+	@include breakpoint(medium up) {
 		padding-top: 1rem;
 		height: 80vh !important;
 		overflow: visible !important;

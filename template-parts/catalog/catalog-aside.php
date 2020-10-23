@@ -40,6 +40,7 @@ $customVtitle = get_field('custom_video_title');
 // audio links
 $itunesA = get_field('itunes_audio');
 $googlePlayA = get_field('google_play_audio');
+$youTubeA = get_field('you_tube_audio');
 $amazonA = get_field('amazon_audio');
 $spotifyA = get_field('spotify_audio');
 $pandoraA = get_field('pandora_audio');
@@ -58,11 +59,11 @@ $customAtitle = get_field('custom_audio_title');
 
 			<?php if ($itunesV) : ?>
 				<a href="<?php echo $itunesV; ?>" target="_blank">
-					
+
 					<?php the_post_thumbnail('large', $attr); ?>
 
 				</a>
-			<?php else: ?>
+			<?php else : ?>
 
 				<?php if (has_post_thumbnail()) {
 					the_post_thumbnail('large', $attr);
@@ -391,6 +392,17 @@ $customAtitle = get_field('custom_audio_title');
 													<!-- <img src="<?php //  bloginfo('template_directory'); 
 																	?>/dist/assets/images/google_play.svg" /> -->
 													<strong><?php _e("Google Play", 'Nacelle'); ?></strong>
+												</a></li>
+
+										<?php endif; ?>
+
+										<?php if ($youTubeA) : ?>
+											<!-- google play audio -->
+											<li><a href="<?php echo $youTubeA; ?>" target="_blank">
+
+													<!-- <img src="<?php //  bloginfo('template_directory'); 
+																	?>/dist/assets/images/google_play.svg" /> -->
+													<strong><?php _e("YouTube Music", 'Nacelle'); ?></strong>
 												</a></li>
 
 										<?php endif; ?>

@@ -11,6 +11,9 @@
 		display: inline-flex;
 		padding-left: 0.5rem;
 	}
+	@include breakpoint(small only) {
+		padding-top: 4rem;
+	}
 }
 
 .sya_container ul {

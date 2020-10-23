@@ -2,7 +2,7 @@
 
 		<div class="grid-x catalog grid-padding-y">
 
-			<div class="cell px-3">
+			<div class="cell px-medium-3">
 
 					<div class="grid-x align-justify">
 
@@ -41,7 +41,7 @@
 
 							$excerpt = substr($excerpt, 0, 300);
 							$result = substr($excerpt, 0, strrpos($excerpt, ' '));
-							echo $result . ' . . <a class="primary-color" data-toggle="exampleModal5" aria-controls="exampleModal5">Read full article</a>';
+							echo $result . ' . . <button class="primary-color" data-toggle="exampleModal5" aria-controls="exampleModal5">more.</button>';
 							?>
 
 							<div class="small synopsis reveal" style="display: block;text-align: left;background: #F4F5F6;color: #2C2C2C" id="exampleModal5" data-reveal>

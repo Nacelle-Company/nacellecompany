@@ -6,7 +6,7 @@ $producers = get_field('producers');
 $writers = get_field('writers');
 $siteURL = get_site_url();
 ?>
-<div class="catalog-crew grid-container grid-x grid-padding-x grid-padding-y">
+<div class="catalog-crew grid-container grid-x grid-padding-x grid-padding-y small-padding-collapse px-medium-3 px-large-4 mx-medium-2 mx-large-0">
 
     <div class="cell medium-4 title">
 

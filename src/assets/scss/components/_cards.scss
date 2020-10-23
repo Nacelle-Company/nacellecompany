@@ -126,6 +126,9 @@ $image-hover-wrapper-icon-size: 60px;
 
 // main category cards
 .macro-cat-cards {
+  .macro-cat-cards-wrapper {
+    align-items: baseline;
+  }
     a {
         .catalog-title {
             @include nothoverNS;

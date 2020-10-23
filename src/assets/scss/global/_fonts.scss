@@ -44,9 +44,15 @@ h1 {
     text-transform: uppercase;
 }
 
-p, h1, h2, h3, h4, h5, h6 {
+h1 {
   @include breakpoint(small only) {
-    font-size: 150%;
+    font-size: 160%;
+  }
+}
+
+p, h2, h3, h4, h5, h6 {
+  @include breakpoint(small only) {
+    font-size: 130%;
   }
 }
 
