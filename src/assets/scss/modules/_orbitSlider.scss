@@ -171,6 +171,17 @@ $slider-post-bg-color: rgba(0, 0, 0, 0.7);
 			text-align: right;
 		}
 	}
+	&.news,
+	&.press {
+		.orbit-image {
+			width: auto;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+	&.press .orbit-image {
+		object-position: right;
+	}
 	&.full {
 		.orbit-cover {
 			background-color: $hero-full-screen-bg-color;

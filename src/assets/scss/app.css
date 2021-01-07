@@ -10612,6 +10612,14 @@ h2 {
 .orbit-slider.news .orbit-caption {
   text-align: right;
 }
+.orbit-slider.news .orbit-image, .orbit-slider.press .orbit-image {
+  width: auto;
+  height: 100%;
+  object-fit: contain;
+}
+.orbit-slider.press .orbit-image {
+  object-position: right;
+}
 .orbit-slider.full .orbit-cover {
   background-color: rgba(0, 0, 0, 0.6);
 }

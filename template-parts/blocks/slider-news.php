@@ -1,5 +1,5 @@
 <div class="orbit-slider slider-post news">
-    <div class="cell orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-auto-play="true" data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
+    <div class="cell orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-auto-play="false" data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
         <div class="fullscreen-image-slider">
             <div class="cell grid-container primary-title mt-1">
                 <h2 class="entry-title mb-0">Latest News</h2>
@@ -39,7 +39,8 @@
                     // Loop the posts
                     foreach ($myposts as $mypost) :
                         $theTitle = get_the_title($mypost->ID);
-                        $image = get_the_post_thumbnail($mypost->ID, 'large', array('title' => $theTitle, 'class' => 'orbit-image', 'alt' => $theTitle));
+                        // var_dump(get_intermediate_image_sizes());
+                        $image = get_the_post_thumbnail($mypost->ID, 'full', array('title' => $theTitle, 'class' => 'orbit-image', 'alt' => $theTitle));
                 ?>
 
                         <li class="is-active orbit-slide">
