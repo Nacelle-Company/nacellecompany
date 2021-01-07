@@ -1,0 +1,62 @@
+{
+    "key": "group_5f7fdb3d7aba1",
+    "title": "Options",
+    "fields": [
+        {
+            "key": "field_5f7fdb4d1a781",
+            "label": "Site wide css",
+            "name": "site_wide_css",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_5fc9286515ae4",
+            "label": "Boilerplate",
+            "name": "boilerplate",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "<strong>About Comedy Dynamics<\/strong>\r\n\r\nFounded by Brian Volk-Weiss, Comedy Dynamics, a Nacelle company, is the largest independent comedy production and distribution company. The company has produced Netflix’s Down to Earth with Zac Efron, The Movies That Made Us, Netflix’s The Toys That Made Us, Behind The Attraction for Disney +, Sony’s Mad About You reboot, Netflix’s Kevin Hart’s Guide to Black History, Jim Gaffigan: Noble Ape, The CW’s Discontinued, All The Way Black for BET+, Animal Planet’s Animal Nation with Anthony Anderson, the scripted comedy on Hulu There’s… Johnny!, History’s Join Or Die with Craig Ferguson, MTV2’s Wild ’N On Tour, Hulu’s Coming To The Stage, and more.\r\n\r\nComedy Dynamics began releasing original films in theaters and released the acclaimed independent film Slut in a Good Way in Spring of 2019. In 2017 the Comedy Dynamics Network (CDN) launched and currently distributes specials, television shows and films to all major transactional platforms such as iTunes, Amazon, Google, PlayStation, Xbox and most major telco & satellite providers, including AT&T, Comcast, Charter, Dish, and Verizon. The company has worked with a wide range of established and emerging comedic talent including Ali Wong, Tiffany Haddish, Kevin Hart, Aziz Ansari, Jim Gaffigan, Pete Davidson, David Cross, and many more. The company was nominated for an NAACP Spirit Award in 2019 for Kevin Hart’s Guide to Black History. 17 Comedy Dynamics releases have been Grammy-nominated (with four wins), including all 5 in the Comedy Album category for the 61st Annual Grammy Awards in 2019.",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "modified": 1607019938
+}

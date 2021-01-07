@@ -1,67 +1,43 @@
 // titles
-h4, .h4 {
-    font-weight: 400;
+h4,
+.h4 {
+	font-weight: 400;
 }
 h2 {
-    text-transform: uppercase;
+	text-transform: uppercase;
 }
 
 .entry-title {
+	&.sm {
+		font-size: 1em;
 
-    &.black {
-        color: $black;
-    }
-
-    &.sm {
-        font-size: 1em;
-
-        @include breakpoint(medium up) {
-            font-size: 2em;
-        }
-    }
+		@include breakpoint(medium up) {
+			font-size: 2em;
+		}
+	}
 }
 
 .section-title {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    padding: 10px 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	padding: 10px 0;
 
-    @include breakpoint(medium) {
-        justify-content: flex-start;
-    }
+	@include breakpoint(medium) {
+		justify-content: flex-start;
+	}
 }
 
-// front.php header
-
-.page-template-front {
-    .top-bar {
-        position: absolute;
-        width: 100%;
-    }
-}
-
-// top nav bar
-
-.nav-container {
-    .right {
-        .menu-item {
-            a {
-                color: $white;
-                text-transform: uppercase;
-                font-weight: 600;
-                letter-spacing: 1.12px;
-            }
-
-            &.current-menu-item {
-                border-bottom: 1px dotted white;
-                border-top: 1px dotted white;
-
-                a {
-                    color: $white;
-                }
-            }
-        }
-    }
+@include breakpoint(small only) {
+	.sorting a {
+		padding: 15px 0.5rem;
+		border: none;
+		box-shadow: none;
+		&:hover {
+			border: none;
+			box-shadow: none;
+			color: #7fd2e6;
+		}
+	}
 }

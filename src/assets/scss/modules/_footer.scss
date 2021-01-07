@@ -1,139 +1,126 @@
 footer.footer {
-    @include breakpoint(medium up) {
-        padding-top: 7rem;
-    }
+	@include breakpoint(medium up) {
+		padding-top: 0;
+	}
 }
 
 .footer-container {
-    @include xy-grid-container;
-    @include shadow;
-    width: 100%;
-
+	@include xy-grid-container;
+	@include shadow;
+	width: 100%;
 }
 
 .home footer.cell.shrink.footer {
-    bottom: 0;
-    width: 100%;
-    z-index: 9;
+	bottom: 0;
+	width: 100%;
+	z-index: 9;
 
-    @include breakpoint(medium up) {
-        // position: absolute;
-    }
+	@include breakpoint(medium up) {
+		// position: absolute;
+	}
 }
 
 .footer-container {
-    width: 100%;
-    min-width: 100vw;
+	width: 100%;
+	min-width: 100vw;
+	margin-top: 10em;
 }
 
 .footer-logo {
-    display: flex;
+	display: flex;
 }
 
 .footer-grid {
-  @include xy-grid;
-  padding: rem-calc(20) 0;
+	@include xy-grid;
+	justify-content: space-between;
+	padding: rem-calc(20) 0;
 
-    section {
-        @include xy-cell();
+	section {
+		@include breakpoint(large) {
+			justify-content: initial;
+			display: flex;
+			align-items: center;
+		}
 
-        @include breakpoint(large) {
-          @include xy-cell(auto);
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-        }
+		&.widget .widget_media_image {
+			@include breakpoint(small only) {
+				text-align: center;
+			}
+		}
 
-        &.widget .widget_media_image {
-            @include breakpoint(small only) {
-                text-align: center;
-            }
-        }
+		.icon-container {
+			text-align: center;
 
-        .icon-container {
-            text-align: center;
+			@include breakpoint(medium) {
+				text-align: right;
+			}
+			a.nav-link {
+				padding-left: 1rem;
+			}
+			svg {
+				width: 2rem;
+			}
+		}
+	}
 
-            @include breakpoint(medium) {
-                text-align: right;
-            }
-            a.nav-link {
-                padding-left: 1rem;
-            }
-            svg {
-                width: 2rem;
-            }
-        }
-    }
+	.widget.logo {
+		@include breakpoint(small only) {
+			text-align: center;
+		}
+	}
 
-    .widget.logo {
-        @include breakpoint(small only) {
-            text-align: center;
-        }
-    }
+	ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
 
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-  }
+	.contactModal p {
+		text-transform: uppercase;
+		font-weight: 600;
+		margin: 11px 0;
+		text-align: center;
 
-  .contactModal p {
-      text-transform: uppercase;
-      font-weight: 600;
-      color: $white;
-      margin: 11px 0;
-      text-align: center;
-
-      @include breakpoint(medium up) {
-          margin: 0;
-      }
-  }
+		@include breakpoint(medium up) {
+			margin: 0;
+		}
+	}
 }
 
-
-
 .footer {
-    .footer-grid {
-            p {
-            color: #4591E5;
-        }
-    }
-            svg.footer-logo .color {
-            fill: #4591E5;
-        }
-        .medium-shrink.nav-link {
-            width: 30px;
-            margin-left: 1rem;
-        }
-    @include breakpoint(medium) {
-        .medium-shrink.nav-link {
-            // width: 30px;
-            // margin-left: 1rem;
-        }
-        .social svg.svg-inline--fa {
-            max-width: 2em;
-        }
-        .r-footer-widgets {
-            text-align: right;
-            align-items: center;
-            justify-content: flex-end;
-
-            p {
-                text-align: right;
-            }
-                        & > .grid-x {
-                    justify-content: flex-end;
-            }
-        }
-    }
-    @include breakpoint(small only) {
-        .l-footer-widgets .footer-logo {
-                margin: 0 auto;
-        }
-        .r-footer-widgets {
-            .icon-container {
-                justify-content: center;
-            }
-        }
-    }
+	.medium-shrink.nav-link {
+		width: 30px;
+		margin-left: 1rem;
+	}
+	.c-footer-widgets {
+		text-align: center;
+		.widget {
+			justify-content: center;
+		}
+	}
+	.r-footer-widgets {
+		text-align: center;
+	}
+	@include breakpoint(medium up) {
+		.social svg.svg-inline--fa {
+			max-width: 2em;
+		}
+	}
+	@include breakpoint(small only) {
+		.l-footer-widgets .footer-logo {
+			margin: 0 auto;
+		}
+		.c-footer-widgets .widget * {
+			font-size: 100%;
+			margin-top: 2rem;
+		}
+		.r-footer-widgets {
+			.icon-container {
+				justify-content: center;
+			}
+			.icon {
+				zoom: 1.4;
+			}
+		}
+	} // END small only
 }

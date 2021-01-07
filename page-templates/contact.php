@@ -4,11 +4,11 @@ Template Name: Contact
 */
 get_header(); ?>
 
-<header class="featured-hero contact">
-			<div class="grid-x">
-			<div class="cell">
-				<h1 class="text-center"><?php the_field('header_title'); ?></h1>
-			</div>
+<header class="featured-hero contact primary">
+	<div class="grid-x">
+		<div class="cell">
+			<h1 class="text-center"><?php the_field('header_title'); ?></h1>
+		</div>
 	</div>
 </header>
 
@@ -22,7 +22,7 @@ get_header(); ?>
 		</div>
 		<?php while (have_posts()) : the_post(); ?>
 
-			<!-- https://gist.github.com/morgyface/d8c1c4246843bf0f0c76959b68faa95f -->
+			<?php // https://gist.github.com/morgyface/d8c1c4246843bf0f0c76959b68faa95f ?>
 					<?php if (have_rows('social_media', 'option')): ?>
 						<div class="grid-x social">
 							<div class="cell text-center">

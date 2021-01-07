@@ -9,6 +9,7 @@
 
 register_nav_menus(
     array(
+        'top-bar-l'  => esc_html__('Left Top Bar', 'nacelle'),
         'top-bar-r'  => esc_html__('Right Top Bar', 'nacelle'),
         'mobile-nav' => esc_html__('Mobile', 'nacelle'),
         'footer'  => esc_html__('Footer', 'nacelle'),
@@ -63,15 +64,15 @@ if (! function_exists('Nacelle_top_bar_r')) {
  *
  * @link http://codex.wordpress.org/Function_Reference/wp_nav_menu
  */
-if (! function_exists('Nacelle_footer')) {
+if (!function_exists('Nacelle_top_bar_l')) {
     function Nacelle_top_bar_l()
     {
         wp_nav_menu(
             array(
                 'container'      => false,
-                'menu_class'     => 'footer',
+                'menu_class'     => 'dropdown menu',
                 'items_wrap'     => '<ul id="%1$s" class="%2$s desktop-menu" data-dropdown-menu>%3$s</ul>',
-                'theme_location' => 'footer',
+                'theme_location' => 'top-bar-l',
                 'depth'          => 3,
                 'fallback_cb'    => false,
                 'walker'         => new Nacelle_Top_Bar_Walker(),

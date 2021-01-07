@@ -61,8 +61,8 @@
 // Global
 @import "global/accessibility";
 @import "global/colors";
-@import "global/wp-admin";
-@import "global/wp-overrides";
+@import "global/wpAdmin";
+@import "global/wpOverrides";
 @import "global/gutenberg";
 @import "global/fonts";
 @import "global/icons";
@@ -73,19 +73,21 @@
 
 // Modules
 @import "modules/navigation";
+@import "modules/search";
 @import "modules/content";
 @import "modules/footer";
-@import "modules/editor-style";
+@import "modules/editorStyle";
 @import "modules/newsArchive";
 @import "modules/headers";
-@import "modules/press-archive";
-@import "modules/cleanHeroSlider";
+@import "modules/pressArchive";
+@import "modules/orbitSlider";
+@import "modules/heroVideo";
 @import "modules/circleSlider";
 
 // Components
 @import "components/buttons";
 @import "components/cards";
-@import "components/featured-image";
+@import "components/featuredImage";
 @import "components/dividers";
 @import "components/links";
 @import "components/forms";
@@ -94,16 +96,25 @@
 @import "components/media";
 @import "components/modals";
 @import "components/accordion";
+@import "components/plugins";
+@import "components/sliderPost";
 
 // Templates
 @import "templates/front";
-@import "templates/kitchen-sink";
-@import "templates/featured-page";
+@import "templates/kitchenSink";
+@import "templates/featuredPage";
 @import "templates/search";
 @import "templates/about";
-@import "templates/front-grid";
-@import "templates/left-right";
+@import "templates/frontGrid";
+@import "templates/leftRight";
 @import "templates/products";
 @import "templates/team";
 @import "templates/partners";
-@import "templates/front-partners";
+@import "templates/frontPartners";
+@import "templates/frontCarousel";
+
+// pages
+@import "pages/mainTalent";
+
+// !!!! customizer scss/css needs to go in the proper folders !!!
+@import "templates/customizer";

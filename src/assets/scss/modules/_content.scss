@@ -7,12 +7,16 @@ html, body {
   margin-top: 1rem;
   @include breakpoint(medium) {
       @include xy-grid-container;
+      &.thin {
+        max-width: 1000px;
+      }
   }
 }
 
 .main-grid {
   @include xy-grid();
   margin-top: 2rem;
+  justify-content: center;
 
   @include breakpoint(medium) {
     // margin-top: 3rem;
@@ -50,7 +54,9 @@ html, body {
 
     @include breakpoint(medium) {
       @include xy-cell(9);
-
+      &.thin {
+        width: calc(58% - 3.75rem);
+      }
     }
         @include breakpoint(medium only) {
           width: calc(100% - 3.75rem);
@@ -61,7 +67,6 @@ html, body {
   .sidebar {
 
     height: fit-content;
-    padding: 1em;
     background: $dark-nav-color;
     border-radius: 6px;
 
@@ -92,30 +97,19 @@ html, body {
         article.catalog {
             position: relative;
         }
-        .entry-content {
-            padding-bottom: 4rem;
-            .title {
-                color: $primary-color;
-            }
-        }
     }
 // press releases
     &.single-press_release {
         .press {
             padding-bottom: 1rem;
         }
-        .press,
-        .intro {
-            margin-bottom: 1rem;
-            border-bottom: 3px solid $primary-color;
-        }
         .press h1 {
             font-weight: 600;
             text-transform: uppercase;
         }
-        .intro h4 {
-            color: $success-color;
+        .intro * {
             margin-bottom: 0;
+            font-size: 110%;
         }
         .nav-links {
             @include xy-grid;
@@ -131,6 +125,25 @@ html, body {
             }
         }
     }
+}
+.press_release {
+  .press,
+  .intro {
+      margin-bottom: 1rem;
+      border-bottom: 3px solid;
+  }
+}
+header.press {
+    footer {
+        p {
+            margin-bottom: 0;
+        }
+    }
+}
+
+
+.sya_date {
+    font-weight: 600;
 }
 
 header.press {

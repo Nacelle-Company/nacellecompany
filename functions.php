@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Author: Ole Fredrik Lie
  * URL: http://olefredrik.com
@@ -61,7 +62,7 @@ require_once('library/gutenberg.php');
 /**
  * Create Custom Image Sizes for Responsive
  * Based on Foundations breakpoints for SM, MD, LG
-**/
+ **/
 function Nacelle_add_image_sizes()
 {
     /* Soft proportional crops */
@@ -72,9 +73,19 @@ function Nacelle_add_image_sizes()
 add_action('init', 'Nacelle_add_image_sizes');
 
 
+// Define path and URL to the ACF plugin.
+define('NACELLE_ACF_PATH', get_stylesheet_directory() . '/includes/acf/');
+define('NACELLE_ACF_URL', get_stylesheet_directory_uri() . '/includes/acf/');
 
+// Include the ACF plugin.
+include_once(NACELLE_ACF_PATH . 'acf.php');
 
-
+// Customize the url setting to fix incorrect asset URLs.
+add_filter('acf/settings/url', 'nacelle_acf_settings_url');
+function nacelle_acf_settings_url($url)
+{
+    return NACELLE_ACF_URL;
+}
 
 // acf options page
 if (function_exists('acf_add_options_page')) {
@@ -113,13 +124,13 @@ if (function_exists('acf_add_options_page')) {
  *
  * @since 1.0.0
  */
- if (function_exists('acf_add_options_page')) {
-     acf_add_options_sub_page(array(
-         'page_title'     => 'News',
-         'menu_title'    => 'News Options',
-         'parent_slug'    => 'edit.php?post_type=news',
-     ));
- }
+if (function_exists('acf_add_options_page')) {
+    acf_add_options_sub_page(array(
+        'page_title'     => 'News',
+        'menu_title'    => 'News Options',
+        'parent_slug'    => 'edit.php?post_type=news',
+    ));
+}
 
 
 /**
@@ -131,7 +142,7 @@ add_action('pre_get_posts', 'Nacelle_show_all_work');
 
 function Nacelle_show_all_work($query)
 {
-    if (! is_admin() && $query->is_main_query()) {
+    if (!is_admin() && $query->is_main_query()) {
         if (is_post_type_archive('press_archive')) {
             $query->set('posts_per_page', -1);
         }
@@ -143,7 +154,7 @@ function Nacelle_add_custom_types($query)
 {
     if (is_category() || is_tag() && empty($query->query_vars['suppress_filters'])) {
         $query->set('post_type', array(
-     'post', 'nav_menu_item', 'catalog'
+            'post', 'nav_menu_item', 'catalog'
         ));
         return $query;
     }
@@ -245,11 +256,86 @@ function cd_custom_css()
  * YouTube oEmbeds w/ query string parameters
  * https://brettmhoffman.com/code/add-query-string-parameters-to-youtube-oembeds-in-wp/
  */
-add_filter( 'embed_oembed_html', 'embed_youtube_parameters');
-add_filter( 'video_embed_html', 'embed_youtube_parameters' ); // Jetpack
-function embed_youtube_parameters( $code ) {
-    if( strpos( $code, 'youtu.be' ) !== false || strpos( $code, 'youtube.com' ) !== false ) {
-        $return = preg_replace( '@embed/([^"&]*)@', 'embed/$1&modestbranding=1&autohide=1&rel=0', $code );
+add_filter('embed_oembed_html', 'embed_youtube_parameters');
+add_filter('video_embed_html', 'embed_youtube_parameters'); // Jetpack
+function embed_youtube_parameters($code)
+{
+    if (strpos($code, 'youtu.be') !== false || strpos($code, 'youtube.com') !== false) {
+        $return = preg_replace('@embed/([^"&]*)@', 'embed/$1&modestbranding=1&autohide=1&rel=0', $code);
     }
     return '<div class="embed-container">' . $return . '</div>';
 }
+
+
+// echo custom colors from customizer, https://www.cssigniter.com/how-to-create-a-custom-color-scheme-for-your-wordpress-theme-using-the-customizer/
+function nacelle_enqueue_styles()
+{
+    wp_enqueue_style('nacelle-styles', get_stylesheet_uri()); // This is where you enqueue your theme's main stylesheet
+    $custom_css = Nacelle_custom_colors();
+    wp_add_inline_style('nacelle-styles', $custom_css);
+}
+
+add_action('wp_enqueue_scripts', 'nacelle_enqueue_styles');
+
+// fix the custom post type pagination error
+// https://toolset.com/forums/topic/custom-post-type-pagination-404-error/
+function nacelle_fix_custom_posts_per_page($query_string)
+{
+    if (is_admin() || !is_array($query_string))
+        return $query_string;
+
+    $post_types_to_fix = array(
+        array(
+            'post_type' => 'catalog',
+            'posts_per_page' => 24
+        ),
+    );
+
+    foreach ($post_types_to_fix as $fix) {
+        if (
+            array_key_exists('post_type', $query_string)
+            && $query_string['post_type'] == $fix['post_type']
+        ) {
+            $query_string['posts_per_page'] = $fix['posts_per_page'];
+            return $query_string;
+        }
+    }
+
+    return $query_string;
+}
+
+add_filter('request', 'nacelle_fix_custom_posts_per_page');
+// END fix the custom post type pagination error
+
+
+
+// custom logo https://since1979.dev/wordpress-add-custom-logo-support-to-your-theme/
+// function theme_get_custom_logo()
+// {
+
+//     if (has_custom_logo()) {
+
+//         $logo = wp_get_attachment_image_src(get_theme_mod('custom_logo'), 'full');
+
+//         echo '<a class="custom-logo-link" href="' . get_site_url() . '" >';
+//         echo '<img class="custom-logos" src="' . esc_url($logo[0]) . '" width="' . $logo[1] . '" height="' . $logo[2] . '" alt="' . get_bloginfo('name') . '">';
+//         echo "</a>";
+//     } else {
+
+//         echo '<h1>';
+//         echo '<a href="' . get_site_url() . '">' . get_bloginfo('name') . '</a>';
+//         echo '</h1>';
+//     }
+// }
+
+// Add Navigation Descriptions
+// https://www.webascender.com/blog/add-navigation-descriptions-wordpress-custom-menu-widget/
+// function nacelle_nav_description($item_output, $item, $depth, $args)
+// {
+//     if (!empty($item->description)) {
+//         $item_output = str_replace($args->link_after . '</a>', '<p class="menu-item-description">' . $item->description . '</p>' . $args->link_after . '</a>', $item_output);
+//     }
+
+//     return $item_output;
+// }
+// add_filter('walker_nav_menu_start_el', 'nacelle_nav_description', 10, 4);

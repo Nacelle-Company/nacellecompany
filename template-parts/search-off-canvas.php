@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template part for off canvas menu
  *
@@ -15,64 +16,74 @@
 
 			<button class="close-button" aria-label="Close menu" type="button" data-close>
 
-			  <span aria-hidden="true">&times;</span>
+				<span aria-hidden="true">&times;</span>
 
 			</button>
 
-			<div class="grid-x grid-margin-y align-center-middle oc-container">
+			<div class="grid-x grid-margin-y align-center-middle oc-container pt-4">
 
 				<div class="cell align-self-middle filter-sidebar">
 
-				<?php
-                $categories = array( 1973, 1974, 1975, 1976, 1979, 1980 );
+					<?php
+					$categories = array(1973, 1974, 1975, 1976, 1979, 1980);
 
-                if (is_category($categories)) :?>
+					if (is_category($categories)) : ?>
 
-					<!-- film -->
-					<?php if (is_category(1973)) : ?>
+						<?php // film 
+						?>
+						<?php if (is_category(1973)) : ?>
 
-	                    <h4 class="ml-2"><?php _e('Search Films', 'nacelle'); ?></h4>
+							<h4 class="ml-2"><?php _e('Search Films', 'nacelle'); ?></h4>
 
-	                    <?php echo do_shortcode('[searchandfilter slug="film-search"]'); ?>
+							<?php echo do_shortcode('[searchandfilter slug="film-search"]'); ?>
 
-					<!-- series -->
-	            	<?php elseif (is_category(1976)) : ?>
+							<?php // series 
+							?>
+						<?php elseif (is_category(1976)) : ?>
 
-						<h4 class="ml-2"><?php _e('Search Series', 'nacelle'); ?></h4>
+							<h4 class="ml-2"><?php _e('Search Series', 'nacelle'); ?></h4>
 
-						<?php echo do_shortcode('[searchandfilter slug="series-search"]'); ?>
+							<?php echo do_shortcode('[searchandfilter slug="series-search"]'); ?>
 
-					<!-- specials -->
-	                <?php elseif (is_category(1975)) : ?>
+							<?php // specials 
+							?>
+						<?php elseif (is_category(1975)) : ?>
 
-						<h4 class="ml-2"><?php _e('Search Specials', 'nacelle'); ?></h4>
+							<h4 class="ml-2"><?php _e('Search Specials', 'nacelle'); ?></h4>
 
-	                    <?php echo do_shortcode('[searchandfilter slug="special-search"]'); ?>
+							<?php echo do_shortcode('[searchandfilter slug="special-search"]'); ?>
 
-					<!-- albums -->
-	                <?php elseif (is_category(1974)) : ?>
+							<?php // albums 
+							?>
+						<?php elseif (is_category(1974)) : ?>
 
-	                    <h4 class="ml-2"><?php _e('Search Albums', 'nacelle'); ?></h4>
+							<h4 class="ml-2"><?php _e('Search Albums', 'nacelle'); ?></h4>
 
-	                    <?php echo do_shortcode('[searchandfilter slug="album-search"]'); ?>
+							<?php echo do_shortcode('[searchandfilter slug="album-search"]'); ?>
 
-					<!-- production series -->
-	                <?php elseif (is_category(1979)) : ?>
+							<?php // production series 
+							?>
+						<?php elseif (is_category(1979)) : ?>
 
-	                    <h4 class="ml-2"><?php _e('Search Series', 'nacelle'); ?></h4>
+							<h4 class="ml-2"><?php _e('Search Series', 'nacelle'); ?></h4>
 
-	                    <?php echo do_shortcode('[searchandfilter slug="production-series-search"]'); ?>
+							<?php echo do_shortcode('[searchandfilter slug="production-series-search"]'); ?>
 
-					<!-- production special -->
-	                <?php elseif (is_category(1980)) : ?>
+							<?php // production special 
+							?>
+						<?php elseif (is_category(1980)) : ?>
 
-	                    <h4 class="ml-2"><?php _e('Search Specials', 'nacelle'); ?></h4>
+							<h4 class="ml-2"><?php _e('Search Specials', 'nacelle'); ?></h4>
 
-	                    <?php echo do_shortcode('[searchandfilter slug="production-special-search"]'); ?>
+							<?php echo do_shortcode('[searchandfilter slug="production-special-search"]'); ?>
+						<?php else : ?>
 
-	                <?php endif; ?>
+							<h4 class="ml-2"><?php _e('Search Catalog', 'nacelle'); ?></h4>
 
-				<?php endif; ?>
+							<?php echo do_shortcode('[searchandfilter slug="album-search-2"]'); ?>
+						<?php endif; ?>
+
+					<?php endif; ?>
 
 				</div>
 

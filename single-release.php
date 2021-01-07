@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-<!-- START featured header -->
+<?php // START featured header ?>
 <?php //if (has_post_thumbnail($post->ID)) :
 ?>
 <?php while (have_posts()) : the_post(); ?>
@@ -38,39 +38,7 @@ get_header(); ?>
 		$imageHorizontalSM = $imageHorizontal['sizes'][$img_size_sm];
 
 		?>
-	<style>
-		.top-bar,
-		.top-bar ul,
-		.title-bar {
-			background-color: transparent;
-		}
 
-		.entry-title,
-		.primary {
-			color: <?php echo $titleColor; ?> !important;
-		}
-
-		.feat {
-			margin-top: 0;
-		}
-
-		.purchase-logos {
-			background-color: #d7d7d7;
-			box-shadow: inset 0 -3px 4px 0 rgba(0, 0, 0, .3), inset 0 5px 6px 0 rgba(0, 0, 0, .3), 0 0 0 0 rgba(0, 0, 0, .3);
-		}
-
-		.thumbnail {
-			max-width: 130px;
-			max-height: 100px;
-		}
-
-		/* @media screen and (min-width: 40em) {
-			.thumbnail {
-				max-width: 200px;
-				max-height: 150px;
-			}
-		} */
-	</style>
 	<header class="grid-container fluid">
 		<div class="grid-x catalog">
 
@@ -94,11 +62,11 @@ get_header(); ?>
 
 					</div>
 
-				</div> <!-- END grid-container -->
+				</div> <?php // END grid-container ?>
 
-			</div> <!-- END cell -->
+			</div> <?php // END cell ?>
 
-		</div> <!-- END catalog -->
+		</div> <?php // END catalog ?>
 
 	</header>
 
@@ -138,14 +106,14 @@ get_header(); ?>
 
 					</article>
 
-					<?php get_template_part('template-parts/content-catalog-aside', ''); ?>
+					<?php get_template_part('template-parts/content/content-catalog-aside', ''); ?>
 				</div>
 
 			</div>
 
 			<footer class="cell medium-12 small-order-3 purchase-logos" id="purchase-logos">
 
-				<!-- LOGOS -->
+				<?php // LOGOS ?>
 				<div class="grid-y grid-padding-y">
 
 					<div class="cell large-12 logo-outer-container">
@@ -204,7 +172,7 @@ get_header(); ?>
 
 					</div>
 
-				</div> <!-- END logos -->
+				</div> <?php // END logos ?>
 
 			</footer>
 
@@ -213,14 +181,14 @@ get_header(); ?>
 			</div>
 
 		<?php endwhile; ?>
-		<!-- end while (have_posts) -->
+		<?php // end while (have_posts) ?>
 
 		</main>
-	</div> <!-- closing div for featured-image.php topmost "grid-container" -->
+	</div> <?php // closing div for featured-image.php topmost "grid-container" ?>
 
 
 
-	<!-- mobile post navigation -->
+	<?php // mobile post navigation ?>
 	<div class="cell small-12 no-desktop">
 		<div class="grid-x small-up-2 pagination">
 
@@ -228,6 +196,6 @@ get_header(); ?>
 
 		</div>
 	</div>
-	<!-- end mobile post navigation -->
+	<?php // end mobile post navigation ?>
 
 	<?php get_footer();

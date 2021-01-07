@@ -1,0 +1,64 @@
+.main-talent {
+    .catalog-hero {
+        .hero-text {
+            z-index: 9;
+        }
+        .button {
+            margin: 0 auto;
+        }
+    }
+}
+
+
+// grid layout!!! https://codepen.io/balazs_sziklai/pen/mOwoLg
+// .grid-layout {
+//     display: grid;
+//     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+//     grid-gap: 10px;
+//     grid-auto-rows: minmax(180px, auto);
+//     grid-auto-flow: dense;
+//     padding: 10px;
+// }
+
+// .span-2 {
+//     grid-column-end: span 2;
+//     grid-row-end: span 1;
+// }
+
+// .span-3 {
+//     grid-column-end: span 3;
+//     grid-row-end: span 4;
+// }
+
+// https://css-tricks.com/a-lightweight-masonry-solution/
+// https://codepen.io/thebabydino/pen/BajGQgQ
+$w: Min(20em, 100%);
+$s: .5em;
+
+/* masonry grid styles */
+.grid--masonry {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, $w);
+	grid-template-rows: masonry;
+	justify-content: center;
+	grid-gap: $s;
+	padding: $s;
+	
+    > * { 
+        align-self: start 
+    }
+    .grid--masonry__image {
+        display: block;
+        width: 100%;
+        border-radius: 4px;
+        box-shadow: 2px 2px 5px rgba(#000, .7);
+        transition-duration: .5s;
+        &:hover {
+            transform: scale(1.1);
+            transition-property: transform, box-shadow;
+            z-index: 1;
+            box-shadow: 5px 8px 11px rgba(#000, .7);
+        }
+    }
+}
+// hover effect: https://codepen.io/Julka85/pen/JydPmN

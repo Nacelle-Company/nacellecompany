@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying search results pages.
  *
@@ -16,7 +17,7 @@ get_header(); ?>
 
 			<div class="cell medium-12">
 
-				<header class="grid-container archive">
+				<header class="grid-container archive pb-2 pb-medium-0">
 
 					<div class="grid-x align-center-middle">
 
@@ -39,14 +40,14 @@ get_header(); ?>
 				<div class="grid-x small-2 medium-4 large-6 align-center-middle" id="results">
 
 					<?php
-                    if (have_posts()) : ?>
+					if (have_posts()) : ?>
 
 						<?php while (have_posts()) : the_post(); ?>
 
-							<?php if (get_field('square_image', $post->ID)): ?>
+							<?php if (get_field('square_image', $post->ID)) : ?>
 
 
-							<div class="media-container cell medium-2 mb-4 mb-medium-5 mb-medium-4 mb-large-5 mb-xlarge-3">
+								<div class="media-container cell medium-2 mb-4 mb-medium-5 mb-medium-4 mb-large-5 mb-xlarge-3">
 
 									<a href="<?php the_permalink(); ?>">
 
@@ -56,9 +57,9 @@ get_header(); ?>
 
 												<?php
 
-                                                $image = get_field('square_image');
+												$image = get_field('square_image');
 
-                                                if (!empty($image)): ?>
+												if (!empty($image)) : ?>
 
 													<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
 
@@ -70,7 +71,8 @@ get_header(); ?>
 
 												<p>
 
-													<?php $summary = get_field('synopsis', $post->ID); echo $summary; ?>
+													<?php $summary = get_field('synopsis', $post->ID);
+													echo $summary; ?>
 
 												</p>
 
@@ -86,15 +88,15 @@ get_header(); ?>
 
 						<?php endwhile; ?>
 
-						<?php else : ?>
+					<?php else : ?>
 
-							<div class="cell text-center">
+						<div class="cell text-center">
 
-								<h3><?php _e('Sorry, no results for that search.', 'nacelle'); ?></h3>
+							<h3><?php _e('Sorry, no results for that search.', 'nacelle'); ?></h3>
 
-								<a class="button" data-toggle="searchFilmOffCanvas"><?php _e('Try another search!', 'nacelle'); ?></a>
+							<a class="button" data-toggle="searchFilmOffCanvas"><?php _e('Try another search!', 'nacelle'); ?></a>
 
-							</div>
+						</div>
 
 					<?php endif; ?>
 
@@ -116,11 +118,11 @@ get_header(); ?>
 
 			<button class="close-button" aria-label="Close menu" type="button" data-close>
 
-			  <span aria-hidden="true">&times;</span>
+				<span aria-hidden="true">&times;</span>
 
 			</button>
 
-			<div class="grid-x grid-margin-y align-center-middle oc-container">
+			<div class="grid-x grid-margin-y align-center-middle oc-container pt-4">
 
 				<div class="cell align-self-middle filter-sidebar">
 

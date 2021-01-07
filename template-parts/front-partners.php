@@ -37,11 +37,11 @@
 
             <div class="grid-x tabs-content" data-tabs-content="partners-tabs">
 
-                <!-- domestic -->
+                <?php // domestic ?>
                 <div class="grid-y tabs-panel is-active " id="panel1v">
 
                     <div class="cell large-12 logo-outer-container">
-                        <!-- domestic -->
+                        <?php // domestic ?>
 
                         <?php if (have_rows('logo_repeater')) : ?>
 
@@ -89,7 +89,7 @@
 
                 </div>
 
-                <!-- international -->
+                <?php // international ?>
                 <div class="grid-y tabs-panel" id="panel2v">
 
                     <div class="cell large-12 logo-outer-container">

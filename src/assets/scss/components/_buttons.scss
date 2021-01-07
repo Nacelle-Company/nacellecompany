@@ -1,8 +1,43 @@
 .sites-button {
-  background: $primary-color;
   font-size: 1.25rem;
   font-weight: bold;
   box-shadow: 0 -2px 0 rgba(0,0,0,0.2) inset;
   border-radius: 3px;
   border: none;
 }
+
+// toggle buttons
+.mobile-app-toggle {
+  display: flex;
+  z-index: 5;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: $mobile-app-toggle-margin-bottom;
+
+  .button {
+    z-index: 3;
+    background: transparent;
+    margin-bottom: 0;
+    flex: 0 1 auto;
+    text-transform: uppercase;
+    .icon {
+      fill: transparent;
+    }
+    &:hover {
+      color: $white;
+      .icon {
+        fill: $white
+      }
+    }
+    &.is-active {
+      color: $white;
+      &:hover {
+      }
+      .icon {
+        fill: $white;
+      }
+    }
+  }
+}
+
+

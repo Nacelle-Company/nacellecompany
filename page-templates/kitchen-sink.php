@@ -14,10 +14,10 @@ get_header(); ?>
                 <p class="lead">This page includes every single Foundation element so that we can make sure things work together smoothly.</p><hr>
             </header>
 
-            <!-- Main wrapper for the components in the kitchen-sink -->
+            <?php // Main wrapper for the components in the kitchen-sink ?>
             <div id="components" class="kitchen-sink-components">
                 <article <?php post_class() ?> id="post-<?php the_ID(); ?>">
-                    <!-- Abide -->
+                    <?php // Abide ?>
                     <h2 id="abide" class="docs-heading" data-magellan-target="abide"><a href="abide"></a>Abide</h2>
 
                     <form data-abide novalidate>
@@ -114,29 +114,29 @@ get_header(); ?>
 
                     <hr>
 
-                    <!-- Accordion -->
+                    <?php // Accordion ?>
                     <h2 id="accordion" class="docs-heading" data-magellan-target="accordion"><a href="#accordion"></a>Accordion</h2>
                     <ul class="accordion" data-accordion role="tablist">
                         <li class="accordion-item" data-accordion-item>
-                            <!-- The tab title needs role="tab", an href, a unique ID, and aria-controls. -->
+                            <?php // The tab title needs role="tab", an href, a unique ID, and aria-controls. ?>
                             <a href="#panel1d" role="tab" class="accordion-title" id="panel1d-heading" aria-controls="panel1d">Accordion 1</a>
-                            <!-- The content pane needs an ID that matches the above href, role="tabpanel", data-tab-content, and aria-labelledby. -->
+                            <?php // The content pane needs an ID that matches the above href, role="tabpanel", data-tab-content, and aria-labelledby. ?>
                             <div id="panel1d" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="panel1d-heading">
                                 Panel 1. Lorem ipsum dolor
                             </div>
                         </li>
                         <li class="accordion-item" data-accordion-item>
-                            <!-- The tab title needs role="tab", an href, a unique ID, and aria-controls. -->
+                            <?php // The tab title needs role="tab", an href, a unique ID, and aria-controls. ?>
                             <a href="#panel1d" role="tab" class="accordion-title" id="panel1d-heading" aria-controls="panel1d">Accordion 2</a>
-                            <!-- The content pane needs an ID that matches the above href, role="tabpanel", data-tab-content, and aria-labelledby. -->
+                            <?php // The content pane needs an ID that matches the above href, role="tabpanel", data-tab-content, and aria-labelledby. ?>
                             <div id="panel1d" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="panel1d-heading">
                                 Panel 2. Lorem ipsum dolor
                             </div>
                         </li>
                         <li class="accordion-item" data-accordion-item>
-                            <!-- The tab title needs role="tab", an href, a unique ID, and aria-controls. -->
+                            <?php // The tab title needs role="tab", an href, a unique ID, and aria-controls. ?>
                             <a href="#panel1d" role="tab" class="accordion-title" id="panel1d-heading" aria-controls="panel1d">Accordion 3</a>
-                            <!-- The content pane needs an ID that matches the above href, role="tabpanel", data-tab-content, and aria-labelledby. -->
+                            <?php // The content pane needs an ID that matches the above href, role="tabpanel", data-tab-content, and aria-labelledby. ?>
                             <div id="panel1d" class="accordion-content" role="tabpanel" data-tab-content aria-labelledby="panel1d-heading">
                                 Panel 3. Lorem ipsum dolor
                             </div>
@@ -144,7 +144,7 @@ get_header(); ?>
                     </ul>
                     <hr>
 
-                    <!-- Accordion Menu -->
+                    <?php // Accordion Menu ?>
                     <h2 id="accordion-menu" class="docs-heading" data-magellan-target="accordion-menu"><a href="#accordion-menu"></a>Accordion Menu</h2>
                     <ul class="vertical menu" data-accordion-menu>
                         <li>
@@ -173,7 +173,7 @@ get_header(); ?>
                     </ul>
                     <hr>
 
-                    <!-- Badge -->
+                    <?php // Badge ?>
                     <h2 id="badge" class="docs-heading" data-magellan-target="badge"><a href="#badge"></a>Badge</h2>
                     <span class="secondary badge">2</span>
                     <span class="success badge">3</span>
@@ -181,7 +181,7 @@ get_header(); ?>
                     <span class="warning badge">B</span>
                     <hr>
 
-                    <!-- Breadcrumbs -->
+                    <?php // Breadcrumbs ?>
                     <h2 id="breadcrumbs" class="docs-heading" data-magellan-target="breadcrumbs"><a href="#breadcrumbs"></a>Breadcrumbs</h2>
                     <nav aria-label="You are here:" role="navigation">
                         <ul class="breadcrumbs">
@@ -193,7 +193,7 @@ get_header(); ?>
                     </nav>
                     <hr>
 
-                    <!-- Button -->
+                    <?php // Button ?>
                     <h2 id="button" class="docs-heading" data-magellan-target="button"><a href="#button"></a>Button</h2>
                         <a class="button primary" href="#">Primary</a>
                         <a class="button secondary" href="#">Secondary</a>
@@ -202,7 +202,7 @@ get_header(); ?>
                         <a class="button warning" href="#">Warning</a>
 
                         <br />
-                        <!-- Buttons (actions) -->
+                        <?php // Buttons (actions) ?>
                         <button type="button" class="success button">Save</button>
                         <button type="button" class="alert button">Delete</button>
 
@@ -220,7 +220,7 @@ get_header(); ?>
                         </div>
                     <hr>
 
-                    <!-- Callout -->
+                    <?php // Callout ?>
                     <h2 id="callout" class="docs-heading" data-magellan-target="callout"><a href="#callout"></a>Callout</h2>
                         <div class="callout">
                             <h5>This is a default callout.</h5>
@@ -259,7 +259,7 @@ get_header(); ?>
                         </div>
                     <hr>
 
-                    <!-- Cards -->
+                    <?php // Cards ?>
                     <h2 id="cards" class="docs-heading" data-magellan-target="cards"><a href="#cards"></a>Cards</h2>
 
                     <div class="cards-container">
@@ -331,7 +331,7 @@ get_header(); ?>
                     </div>
                     <hr>
 
-                    <!-- Close Button -->
+                    <?php // Close Button ?>
                     <h2 id="close-button" class="docs-heading" data-magellan-target="close-button"><a href="#close-button"></a>Close Button</h2>
                         <div class="callout">
                             <button class="close-button" aria-label="Close alert" type="button">
@@ -341,7 +341,7 @@ get_header(); ?>
                         </div>
                     <hr>
 
-                    <!-- Drilldown Menu -->
+                    <?php // Drilldown Menu ?>
                     <h2 id="drilldown-menu" class="docs-heading" data-magellan-target="drilldown-menu"><a href="#drilldown-menu"></a>Drilldown Menu</h2>
                         <ul class="vertical menu" data-drilldown style="width: 200px" id="m1">
                             <li>
@@ -387,7 +387,7 @@ get_header(); ?>
                         </ul>
                     <hr>
 
-                    <!-- Dropdown Menu -->
+                    <?php // Dropdown Menu ?>
                     <h2 id="dropdown-menu" class="docs-heading" data-magellan-target="dropdown-menu"><a href="#dropdown-menu"></a>Dropdown Menu</h2>
                         <ul class="dropdown menu" data-dropdown-menu>
                             <li>
@@ -429,7 +429,7 @@ get_header(); ?>
                         </ul>
                     <hr>
 
-                    <!-- Dropdown Pane -->
+                    <?php // Dropdown Pane ?>
                     <h2 id="dropdown-pane" class="docs-heading" data-magellan-target="dropdown-pane"><a href="#dropdown-pane"></a>Dropdown Pane</h2>
                     <button class="button" type="button" data-toggle="example-dropdown">Toggle Dropdown</button>
                     <div class="dropdown-pane" id="example-dropdown" data-dropdown>
@@ -459,14 +459,14 @@ get_header(); ?>
                     </div>
                     <hr>
 
-                    <!-- Flex Video -->
+                    <?php // Flex Video ?>
                     <h2 id="flex-video" class="docs-heading" data-magellan-target="flex-video"><a href="#flex-video"></a>Flex Video</h2>
                     <div class="flex-video">
                         <iframe width="420" height="315" src="https://www.youtube.com/embed/V9gkYw35Vws" frameborder="0" allowfullscreen></iframe>
                     </div>
                     <hr>
 
-                    <!-- Forms -->
+                    <?php // Forms ?>
                     <h2 id="forms" class="docs-heading" data-magellan-target="forms"><a  href="#forms"></a>Forms</h2>
                     <form>
                         <label>Input Label
@@ -524,7 +524,7 @@ get_header(); ?>
                     </form>
                     <hr>
 
-                    <!-- Grid -->
+                    <?php // Grid ?>
                     <h2 id="grid" class="docs-heading" data-magellan-target="grid"><a href="#grid"></a>Grid (XY)</h2>
                     <div class="kitchen-sink-grid">
                         <div class="grid-x">
@@ -542,7 +542,7 @@ get_header(); ?>
                     </div>
                     <hr>
 
-                    <!-- Label -->
+                    <?php // Label ?>
                     <h2 id="label" class="docs-heading" data-magellan-target="label"><a href="#label"></a>Label</h2>
                     <span class="secondary label">Secondary Label</span>
                     <span class="success label">Success Label</span>
@@ -550,7 +550,7 @@ get_header(); ?>
                     <span class="warning label">Warning Label</span>
                     <hr>
 
-                    <!-- Media Object -->
+                    <?php // Media Object ?>
                     <h2 id="media-object" class="docs-heading" data-magellan-target="media-object"><a href="#media-object"></a>Media Object</h2>
                     <div class="media-object">
                         <div class="media-object-section">
@@ -563,7 +563,7 @@ get_header(); ?>
                     </div>
                     <hr>
 
-                    <!-- Menu -->
+                    <?php // Menu ?>
                     <h2 id="menu" class="docs-heading" data-magellan-target="menu"><a href="#menu"></a>Menu</h2>
                     <ul class="menu">
                         <li><a href="#">One</a></li>
@@ -580,7 +580,7 @@ get_header(); ?>
                     </ul>
                     <hr>
 
-                    <!-- Motion UI -->
+                    <?php // Motion UI ?>
                     <h2 id="motion-ui" class="docs-heading" data-magellan-target="motion-ui"><a href="#motion-ui"></a>Motion UI</h2>
                     <div id="motion-example-1" data-toggler data-animate="fade-in fade-out" data-toggle="motion-example-1" class="callout secondary">
                         <p>This panel fades.</p>
@@ -594,7 +594,7 @@ get_header(); ?>
                     <button type="button" class="button" data-toggle="motion-example-2">Slide</button>
                     <hr>
 
-                    <!-- Orbit -->
+                    <?php // Orbit ?>
                     <h2 id="orbit" class="docs-heading" data-magellan-target="orbit"><a href="#orbit"></a>Orbit</h2>
                     <div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
                         <ul class="orbit-container">
@@ -638,7 +638,7 @@ get_header(); ?>
                     </div>
                     <hr>
 
-                    <!-- Pagination -->
+                    <?php // Pagination ?>
                     <h2 id="pagination" class="docs-heading" data-magellan-target="pagination"><a href="#pagination"></a>Pagination</h2>
                     <ul class="pagination" role="navigation" aria-label="Pagination">
                         <li class="disabled">Previous <span class="show-for-sr">page</span></li>
@@ -653,7 +653,7 @@ get_header(); ?>
                     </ul>
                     <hr>
 
-                    <!-- Progress Bar -->
+                    <?php // Progress Bar ?>
                     <h2 id="progress-bar" class="docs-heading" data-magellan-target="progress-bar"><a href="#progress-bar"></a>Progress Bar</h2>
                     <div class="success progress" role="progressbar" tabindex="0" aria-valuenow="25" aria-valuemin="0" aria-valuetext="25 percent" aria-valuemax="100">
                         <div class="progress-meter" style="width: 25%">
@@ -684,12 +684,12 @@ get_header(); ?>
                     <meter value="100" min="0" low="33" high="66" optimum="100" max="100"></meter>
                     <hr>
 
-                    <!-- Reveal -->
+                    <?php // Reveal ?>
                     <h2 id="reveal" class="docs-heading" data-magellan-target="reveal"><a href="#reveal"></a>Reveal</h2>
                     <p><a data-open="exampleModal1">Click me for a basic modal</a></p>
                     <p><a data-toggle="exampleModal8">Click me for a full-screen modal</a></p>
 
-                        <!-- Basic modal -->
+                        <?php // Basic modal ?>
                     <div class="reveal" id="exampleModal1" data-reveal>
                         <h2>This is a basic modal</h2>
                         <p class="lead">Using hipster ipsum for dummy text</p>
@@ -699,7 +699,7 @@ get_header(); ?>
                         </button>
                     </div>
 
-                    <!-- Full screen modal -->
+                    <?php // Full screen modal ?>
                     <div class="full reveal" id="exampleModal8" data-reveal>
                         <h2>Full screen modal</h2>
                         <img src="https://placeimg.com/800/600/arch" alt="Intropsective Cage">
@@ -709,7 +709,7 @@ get_header(); ?>
                     </div>
                     <hr>
 
-                    <!-- Slider -->
+                    <?php // Slider ?>
                     <h2 id="slider" class="docs-heading" data-magellan-target="slider"><a href="#slider"></a>Slider</h2>
                     <div class="slider" data-slider data-initial-start='50' data-end='200'>
                         <span class="slider-handle"  data-slider-handle role="slider" tabindex="1"></span>
@@ -727,7 +727,7 @@ get_header(); ?>
                     <input type="range" min="1" max="100" step="1">
                     <hr>
 
-                    <!-- Switch -->
+                    <?php // Switch ?>
                     <h2 id="switch" class="docs-heading" data-magellan-target="switch"><a href="#switch"></a>Switch</h2>
                     <div class="switch tiny">
                         <input class="switch-input" id="tinySwitch" type="checkbox" name="exampleSwitch">
@@ -751,7 +751,7 @@ get_header(); ?>
                     </div>
                     <hr>
 
-                    <!-- Table -->
+                    <?php // Table ?>
                     <h2 id="table" class="docs-heading" data-magellan-target="table"><a href="#table"></a>Table</h2>
                     <table>
                         <thead>
@@ -785,7 +785,7 @@ get_header(); ?>
                     </table>
                     <hr>
 
-                    <!-- Tabs -->
+                    <?php // Tabs ?>
                     <h2 id="tabs" class="docs-heading" data-magellan-target="tabs"><a href="#tabs"></a>Tabs</h2>
 
                     <ul class="tabs" data-responsive-accordion-tabs="accordion medium-tabs" id="example-tabs">
@@ -825,7 +825,7 @@ get_header(); ?>
                     </div>
                     <hr>
 
-                    <!-- Thumbnail -->
+                    <?php // Thumbnail ?>
                     <h2 id="thumbnail" class="docs-heading" data-magellan-target="thumbnail"><a href="#thumbnail"></a>Thumbnail</h2>
                         <div class="row">
                             <div class="small-4 columns">
@@ -840,7 +840,7 @@ get_header(); ?>
                         </div>
                     <hr>
 
-                    <!-- Title Bar -->
+                    <?php // Title Bar ?>
                     <h2 id="title-bar" class="docs-heading" data-magellan-target="title-bar"><a href="#title-bar"></a>Title Bar</h2>
                     <div class="title-bar">
                         <div class="title-bar-left">
@@ -853,7 +853,7 @@ get_header(); ?>
                     </div>
                     <hr>
 
-                    <!-- Toggler -->
+                    <?php // Toggler ?>
                     <h2 id="toggler" class="docs-heading" data-magellan-target="toggler"><a href="#toggler"></a>Toggler</h2>
                     <p><button class="button small primary" type="button" data-toggle="menuBar">Toggle width</button></p>
 
@@ -865,12 +865,12 @@ get_header(); ?>
                     </ul>
                     <hr>
 
-                    <!-- Tooltip -->
+                    <?php // Tooltip ?>
                     <h2 id="tooltip" class="docs-heading" data-magellan-target="tooltip"><a href="#tooltip"></a>Tooltip</h2>
                     <p>The <span data-tooltip aria-haspopup="true" class="has-tip" data-disable-hover='false' tabindex=1 title="Fancy word for a beetle.">scarabaeus</span> hung quite clear of any branches, and, if allowed to fall, would have fallen at our feet. Legrand immediately took the scythe, and cleared with it a circular space, three or four yards in diameter, just beneath the insect, and, having accomplished this, ordered Jupiter to let go the string and come down from the tree.</p>
                     <hr>
 
-                    <!-- Top bar -->
+                    <?php // Top bar ?>
                     <h2 id="top-bar" class="docs-heading" data-magellan-target="top-bar"><a href="#top-bar"></a>Top Bar</h2>
                     <div class="top-bar">
                         <div class="top-bar-left">
@@ -898,7 +898,7 @@ get_header(); ?>
                     </div>
                     <hr>
 
-                    <!-- Visibility Classes -->
+                    <?php // Visibility Classes ?>
                     <h2 id="visibility-classes" class="docs-heading" data-magellan-target="visibility-classes"><a href="#visibility-classes"></a>Visibility classes</h2>
                     <div class="visibility-classes">
 
@@ -931,7 +931,7 @@ get_header(); ?>
                 </article>
             </div>
 
-            <!-- On this page - sidebar nav container -->
+            <?php // On this page - sidebar nav container ?>
             <nav id="kitchen-sink-nav" class="kitchen-sink-nav" data-sticky-container>
                 <div class="docs-toc" data-sticky="sidebar" data-anchor="components">
                     <ul class="vertical menu docs-sub-menu" data-magellan>
@@ -976,7 +976,7 @@ get_header(); ?>
             <div class="entry-content">
                 <?php the_content(); ?>
             </div>
-        </div><!-- Close main-grid -->
-    </div><!-- Close main-container -->
+        </div><?php // Close main-grid ?>
+    </div><?php // Close main-container ?>
 <?php endwhile; ?>
 <?php get_footer();

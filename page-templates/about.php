@@ -25,7 +25,7 @@ get_header(); ?>
 						<?php the_content(); ?>
 					</div>
 				</div>
-				<!-- https://gist.github.com/morgyface/d8c1c4246843bf0f0c76959b68faa95f -->
+				<?php // https://gist.github.com/morgyface/d8c1c4246843bf0f0c76959b68faa95f ?>
 				<?php if (have_rows('social_media', 'option')): ?>
 					<div class="grid-x social align-center">
 						<?php while (have_rows('social_media', 'option')) : the_row(); ?>
@@ -56,7 +56,7 @@ get_header(); ?>
                             } ?>
 					</div>
 
-					<!-- Embedd content -->
+					<?php // Embedd content ?>
 					<div class="cell medium-6 extra-content">
 							<?php if (the_field('right_content')) {
                                 the_field('right_content');

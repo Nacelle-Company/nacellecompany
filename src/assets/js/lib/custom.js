@@ -20,15 +20,16 @@ $(function() {
     		//duration of the top scrolling animation (in ms)
     		scroll_top_duration = 700,
     		//grab the "back to top" link
-    		$back_to_top = $('.cd-top');
+    		$back_to_top = $('.to-top');
 
     	//hide or show the "back to top" link
     	$(window).scroll(function(){
-    		( $(this).scrollTop() > offset ) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
+    		( $(this).scrollTop() > offset ) ? $back_to_top.addClass('to-top-visible') : $back_to_top.removeClass('to-top-visible to-top-fade-out');
     		if( $(this).scrollTop() > offset_opacity ) {
-    			$back_to_top.addClass('cd-fade-out');
+    			$back_to_top.addClass('to-top-fade-out');
     		}
-    	});
+		});
+		
 
     	//smooth scroll to top
     	$back_to_top.on('click', function(event){
@@ -37,36 +38,9 @@ $(function() {
     			scrollTop: 0 ,
     		 	}, scroll_top_duration
     		);
-    	});
-
+		});
 
 });
-
-
-// var target = document.getElementById("partners-tabs");
-// var options = {}; //Define options e.g. "option1" : "value1", etc.									
-
-// var elem = new Foundation.Tabs($(target), options);
-// var elem = $('[data-tabs]');
-
-// // $('[data-tabs]').on('change.zf.tabs', function () {
-
-
-// $('.tabs-title').on("mouseover", function () {
-// 	//Find the associated panel id.
-// 	var panelId = $(this).find("a").attr("href").substring(1);
-// 	var tabContents = document.getElementById(panelId);
-// 	//Use the "tabs" object to select the associated panel.
-// 	elem.selectTab($(tabContents));
-// 	//Show the tab contents.
-// 	$(tabContents).show();
-// }).on("mouseout", function () {
-// 	var panelId = $(this).find("a").attr("href").substring(1);
-// 	$(this).find("a").attr("aria-selected", "false");
-// 	var tabContents = document.getElementById(panelId);
-// 	//Hide the tab contents.
-// 	$(tabContents).hide();
-// });
 
 
 $('.tabs-title').on("mouseover", function () {
@@ -102,3 +76,61 @@ $(function () {
 		$('div.video, div.video .mejs-container').css('height', Math.ceil(vidHeight * (targetWidth / vidWidth)));
 	}).resize();
 });
+
+// toggle button
+$('[data-mobile-app-toggle] .button').click(function () {
+	$(this).siblings().removeClass('is-active');
+	$(this).addClass('is-active');
+});
+
+// toggle catalog buttons
+$('[data-mobile-app-toggle] .watch').click(function () {
+	$(this).parent().toggleClass('is-displayed');
+	// $(this).addClass('is-active');
+});
+
+
+// https://css-tricks.com/a-lightweight-masonry-solution/
+// https://codepen.io/thebabydino/pen/BajGQgQ
+// main talent catalog-masonry.php grid
+let grids = [...document.querySelectorAll('.grid--masonry')];
+
+if (grids.length && getComputedStyle(grids[0]).gridTemplateRows !== 'masonry') {
+	grids = grids.map(grid => ({
+		_el: grid,
+		gap: parseFloat(getComputedStyle(grid).gridRowGap),
+		items: [...grid.childNodes].filter(c => c.nodeType === 1),
+		ncol: 0
+	}));
+
+	function layout() {
+		grids.forEach(grid => {
+			/* get the post relayout number of columns */
+			let ncol = getComputedStyle(grid._el).gridTemplateColumns.split(' ').length;
+
+			/* if the number of columns has changed */
+			if (grid.ncol !== ncol) {
+				/* update number of columns */
+				grid.ncol = ncol;
+
+				/* revert to initial positioning, no margin */
+				grid.items.forEach(c => c.style.removeProperty('margin-top'));
+
+				/* if we have more than one column */
+				if (grid.ncol > 1) {
+					grid.items.slice(ncol).forEach((c, i) => {
+						let prev_fin = grid.items[i].getBoundingClientRect().bottom /* bottom edge of item above */,
+							curr_ini = c.getBoundingClientRect().top /* top edge of current item */;
+
+						c.style.marginTop = `${prev_fin + grid.gap - curr_ini}px`
+					})
+				}
+			}
+		})
+	}
+
+	addEventListener('load', e => {
+		layout(); /* initial load */
+		addEventListener('resize', layout, false) /* on resize */
+	}, false);
+}

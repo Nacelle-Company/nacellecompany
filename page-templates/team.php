@@ -20,7 +20,7 @@ get_header(); ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'template-parts/content-team', 'page' ); ?>
+				<?php get_template_part( 'template-parts/content', 'team'); ?>
 
 			<?php endwhile; ?>
 

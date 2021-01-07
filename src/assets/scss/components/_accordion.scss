@@ -1,15 +1,10 @@
 
-.accordion-content .extra-metadata .title p {
-    color: #4591e5;
-}
 
 .accordian-open > .mx-0 {
     box-shadow: 0 2px 4px -3px rgba(0, 0, 0, 0.49);
 }
 
 .accordion-content {
-    // @include xy-grid-container;
-    background-color: #4c97e4;
     padding: 0;
     box-shadow: $thumbnail-shadow-inner;
 
@@ -23,14 +18,10 @@
     }
 }
 .accordian-open {
+    
     button {
         display: flex;
         align-items: center;
-    }
-    .fas {
-        color: $success-color;
-        font-size: 40px;
-        padding-left: 1rem;
     }
     > .grid-x {
         // @include xy-gutters($gutter-position: left right bottom);
@@ -39,19 +30,85 @@
 }
 .accordion-line {
     height: 1px;
-    background: $white;
-    padding-right: 1em;
-    margin-right: 1rem;
 }
 .accordion-title {
+    display: flex;
     padding: 0;
-    font-size: 1rem;
-
+    font-size: $body-font-size;
+    cursor: pointer;
     &:hover,
     & :visited {
         background: transparent;
     }
 }
-.accordion-item:last-child > :last-child {
-    border-radius: 0;
+.accordion-item {
+    .fas {
+        transition: transform .4s linear;
+        margin-left: 10px;;
+    }
+    &.is-active {
+        .fas {
+            @include caratAnimation;
+        }
+        .accordian-open {
+            background-color: $true-black;
+        }
+    }
+}
+
+.meta-accordion {
+    .accordion {
+        background-color: transparent;
+    }
+}
+
+
+.link-icons {
+    position: relative;
+    ul {
+		list-style: none;
+		flex-flow: column;
+		text-align: left;
+		margin-left: 20px;
+        padding: 20px 0;
+        a {
+            color: black;
+            text-decoration: underline;
+        }
+	}
+    .accordion-open {
+        width: 50%;
+        display: flex;
+        padding: 10px;
+    }
+    
+    button {
+        cursor: pointer;
+    }
+    .accordion-item {
+        &:last-of-type .accordion-open {
+            position: absolute;
+            width: 46.5%;
+            left: 50%;
+            top: 16px;
+            @include breakpoint(small) {
+                top: 14px;
+            }
+        }
+        &.is-active {
+            .accordion-title .fas {
+                @include caratAnimation;
+            }
+        }
+    }
+    .accordion-title {
+        &:focus,
+        &:hover {
+    		background: transparent;
+        }
+    }
+}
+.link-icons .accordion-item.is-active .accordion-open {
+    background: $true-black;
+    border-radius: 6px 6px 0 0;
 }
