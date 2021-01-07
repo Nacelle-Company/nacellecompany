@@ -47,7 +47,7 @@
                     ),
                 ),
             );
-// var_dump($production_query);
+
             if ($production_query->have_posts()) {
 
                 while ($production_query->have_posts()) {
@@ -114,7 +114,7 @@
 
                             <div class="callout-body">
 
-                                <!-- IMAGE -->
+                                <?php // IMAGE ?>
 
 
                                 <div class="img-container">
@@ -152,7 +152,7 @@
 
                                 <div class="grid-x">
                                     <div class="cell medium-6">
-                                        <!-- DATE -->
+                                        <?php // DATE ?>
                                         <h4><?php echo $date->format('Y'); ?></h4>
 
                                     </div>
@@ -164,7 +164,7 @@
                                     </div>
                                 </div>
 
-                                <!-- TITLE -->
+                                <?php // TITLE ?>
                                 <a href="<?php the_permalink() ?>" class="catalog-title" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>">
                                     <h4><?php the_title(); ?></h4>
                                 </a>
@@ -210,7 +210,7 @@
 
         </div>
 
-    </header><!-- .entry-header -->
+    </header><?php // .entry-header ?>
 
     <div class="entry-content" id="entry-content">
 
@@ -295,7 +295,7 @@
 
                             <div class="callout-body">
 
-                                <!-- IMAGE -->
+                                <?php // IMAGE ?>
 
 
                                 <div class="img-container">
@@ -333,7 +333,7 @@
 
                                 <div class="grid-x">
                                     <div class="cell medium-6">
-                                        <!-- DATE -->
+                                        <?php // DATE ?>
                                         <h4><?php echo $date->format('Y'); ?></h4>
 
                                     </div>
@@ -345,7 +345,7 @@
                                     </div>
                                 </div>
 
-                                <!-- TITLE -->
+                                <?php // TITLE ?>
                                 <a href="<?php the_permalink() ?>" class="catalog-title" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>">
                                     <h4><?php the_title(); ?></h4>
                                 </a>
@@ -373,6 +373,6 @@
 
         </div>
 
-    </div><!-- .entry-content -->
+    </div><?php // .entry-content ?>
 
-</div><!-- #post-## -->
+</div><?php // #post-## ?>

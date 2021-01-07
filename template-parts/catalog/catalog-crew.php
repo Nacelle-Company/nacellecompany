@@ -10,38 +10,52 @@ $siteURL = get_site_url();
 
     <div class="cell medium-4 title">
 
-        <div class="grid-x">
+        <div class="grid-y medium-grid-frame align-justify">
 
             <p><?php _e('Credits', 'nacelle'); ?></p>
+
+            <?php
+            $imdbV = get_field('imdb_video');
+            if ($imdbV) : ?>
+                <div class="cell pr-medium-3">
+
+                    <div class="solo-link">
+
+                        <a href="<?php echo $imdbV; ?>" class="catalog-title button expanded" rel="bookmark" title="Watch <?php the_title_attribute(); ?> on <?php echo $imdbV; ?>" target="_blank" rel="noreferrer">
+
+                            <strong><?php _e("View on IMDB", 'Nacelle'); ?></strong>
+
+                        </a>
+
+                    </div>
+
+                </div>
+            <?php endif; ?>
 
         </div>
 
     </div>
-    <?php
-    // $taxonomy = 'event-categories';
-    // $terms = get_terms($taxonomy);
-    // if ($terms) {
-    //     foreach ($terms as $term) {
-    //         echo '<li><a href="http:/mysite.com/events/categories/project-events/' . $term->slug . '">' . $term->name . '</a></li>';
-    //     }
-    // };
+
+    <?php // START the crew 
     ?>
-    <!-- START the crew -->
     <div class="cell medium-8">
 
-        <!-- TALENT -->
+        <?php // TALENT 
+        ?>
         <?php if ($talents) : ?>
 
             <div class="grid-x">
 
-                <!-- talent title -->
+                <?php // talent title 
+                ?>
                 <div class="cell small-4 title">
 
                     <p><?php _e('Talent', 'nacelle'); ?></p>
 
                 </div>
 
-                <!-- talent list -->
+                <?php // talent list 
+                ?>
                 <div class="cell small-8">
 
                     <p>
@@ -63,14 +77,17 @@ $siteURL = get_site_url();
 
         <?php endif; ?>
 
-        <!-- end TALENT -->
-        <!-- DIRECTORS -->
+        <?php // end TALENT 
+        ?>
+        <?php // DIRECTORS 
+        ?>
 
         <?php if ($directors) : ?>
 
             <div class="grid-x">
 
-                <!-- directors title -->
+                <?php // directors title 
+                ?>
                 <div class="cell small-4 title">
 
                     <p><?php _e('Director(s)', 'nacelle'); ?></p>
@@ -98,9 +115,11 @@ $siteURL = get_site_url();
             </div>
 
         <?php endif; ?>
-        <!-- end DIRECTORS -->
+        <?php // end DIRECTORS 
+        ?>
 
-        <!-- PRODUCERS -->
+        <?php // PRODUCERS 
+        ?>
         <?php if ($producers) : ?>
 
             <div class="grid-x">
@@ -132,7 +151,8 @@ $siteURL = get_site_url();
 
             </div>
         <?php endif; ?>
-        <!-- end PRODUCERS -->
+        <?php // end PRODUCERS 
+        ?>
 
         <?php if ($writers) : ?>
 
@@ -163,6 +183,7 @@ $siteURL = get_site_url();
         <?php endif; ?>
 
 
-    </div> <!-- end CREW -->
+    </div> <?php // end CREW 
+            ?>
 
 </div>

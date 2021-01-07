@@ -21,7 +21,7 @@
 	<?php //cell for the content 
 	?>
 
-	<header class="grid-container archive">
+	<header class="grid-container archive pb-2 pb-medium-0">
 
 		<div class="grid-x align-center-middle">
 
@@ -58,97 +58,60 @@
 
 		if (have_posts($args)) : ?>
 
-			<?php //Start the Loop 
-			?>
 			<?php while (have_posts()) : the_post(); ?>
 
-				<?php //if the catalog item has a square image uploaded. . . 
-				?>
 				<?php
 				$image = get_field('square_image');
-
+				$alt = $image['alt'];
 				if ($image) :
 				?>
 
-					<?php //img container 
-					// mb-4 mb-medium-5 mb-medium-4 mb-large-5 mb-xlarge-3
-					?>
 					<div class="media-container animation-element cell medium-2 ">
 
-						<?php //if catalog item has a "Custom Page Redirect" link. . . 
-						?>
-						<?php
-						$link = get_field('custom_page_redirect');
+						<a href="<?php the_permalink(); ?>" aria-label="Visit <?php echo $alt; ?>">
 
-						if ($link) :
+							<div class="callout callout-hover-reveal" data-callout-hover-reveal>
 
-							$link_url = $link['url'];
-						?>
+								<div class="callout-body">
 
-							<?php //link to the "Custom Page Redirect" page 
-							?>
-							<a href="<?php echo esc_url($link_url); ?>">
-
-							<?php else : ?>
-
-								<?php //if no "Custom Page Redirect" get the original post link 
-								?>
-								<a href="<?php the_permalink(); ?>">
-
-								<?php endif; ?>
-
-								<div class="callout callout-hover-reveal" data-callout-hover-reveal>
-
-									<div class="callout-body">
-
-										<?php
-										$size = 'medium'; // (thumbnail, medium, large, full or custom size)
-
-										// display the img
-										if ($image) {
-											echo wp_get_attachment_image($image, $size);
-										} ?>
-
-									</div>
-
-									<?php //img hover footer 
+									<?php
+									$img_size_sm = 'fp-small';
+									$alt = $image['alt'];
+									$hero_sm = $image['sizes'][$img_size_sm];
 									?>
-									<div class="callout-footer">
+									<img class="my-hero superman" data-interchange="[<?php echo $hero_sm; ?>, default], [<?php echo $hero_sm; ?>, small]" alt="<?php echo $alt; ?>" alt="<?php echo $alt; ?>" />
+								</div>
 
-										<?php //display the synopsis 
-										?>
-										<p><?php $synopsis = get_field('synopsis');
-											echo $synopsis; ?></p>
+								<div class="callout-footer">
 
-									</div> <?php //END the footer 
-											?>
+									<p><?php
+										$trim_length = 20;  //desired length of text to display
+										$value_more = ' . . .'; // what to add at the end of the trimmed text
+										$custom_field = 'synopsis';
+										$value = get_post_meta($post->ID, $custom_field, true);
+										if ($value) {
+											echo wp_trim_words($value, $trim_length, $value_more);
+										}
+										?></p>
 
-								</div> <?php //END the callout 
-										?>
+								</div>
 
-								</a> <?php //END the link, whether its a "Custom Page Redirect" or the post link 
-										?>
+							</div>
 
-					</div> <?php //END img container 
-							?>
+						</a>
+
+					</div>
 
 				<?php endif; ?>
-				<?php //END if catalog item has a "Custom Page Redirect" link. . . 
-				?>
 
 			<?php endwhile; ?>
-			<?php //END the loop 
-			?>
 
 		<?php else : ?>
 
 			<?php get_template_part('template-parts/content', 'none'); ?>
 
-		<?php endif; // End have_posts() check.
-		?>
+		<?php endif; ?>
 
-	</div> <?php //END the cards 
-			?>
+	</div>
 
-</div> <?php //END of cell for the content 
-		?>
+</div>

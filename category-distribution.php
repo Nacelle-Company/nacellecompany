@@ -26,14 +26,16 @@ get_header(); ?>
 
 	<?php $count = 0; ?>
 
-	<!-- is category distribution -->
+	<?php // is category distribution 
+	?>
 	<?php if (have_posts('distribution')) : the_post(); ?>
 
 		<div class="cell macro-cat-cards">
 
 			<div class="grid-x small-up-2 medium-up-2 large-up-4 grid-margin-y macro-cat-cards-wrapper">
 
-				<!-- film category -->
+				<?php // film category 
+				?>
 				<?php
 				$posts = get_posts(array(
 					'meta_query' => array(
@@ -60,13 +62,13 @@ get_header(); ?>
 							<?php
 
 							$image = get_field('square_image');
-							$size = 'large'; // (thumbnail, medium, large, full or custom size)
-
-							if ($image) {
-								echo wp_get_attachment_image($image, $size);
-							}
+							$alt = $image['alt'];
 
 							?>
+
+							<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo $alt; ?>" />
+
+
 						</div>
 					</a>
 					<?php if ($count === 1) {
@@ -75,7 +77,8 @@ get_header(); ?>
 				<?php endforeach; ?>
 				<?php wp_reset_postdata(); ?>
 
-				<!-- album category -->
+				<?php // album category 
+				?>
 				<?php
 				$posts = get_posts(array(
 					'meta_query' => array(
@@ -102,13 +105,14 @@ get_header(); ?>
 							<?php
 
 							$image = get_field('square_image');
-							$size = 'large'; // (thumbnail, medium, large, full or custom size)
-
-							if ($image) {
-								echo wp_get_attachment_image($image, $size);
-							}
+							$alt = $image['alt'];
 
 							?>
+
+							<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo $alt; ?>" />
+
+
+
 						</div>
 					</a>
 					<?php if ($count === 1) {
@@ -117,7 +121,8 @@ get_header(); ?>
 				<?php endforeach; ?>
 				<?php wp_reset_postdata(); ?>
 
-				<!-- special category -->
+				<?php // special category 
+				?>
 
 				<?php
 				$posts = get_posts(array(
@@ -143,13 +148,14 @@ get_header(); ?>
 							<?php
 
 							$image = get_field('square_image');
-							$size = 'large'; // (thumbnail, medium, large, full or custom size)
-
-							if ($image) {
-								echo wp_get_attachment_image($image, $size);
-							}
+							$alt = $image['alt'];
 
 							?>
+
+							<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo $alt; ?>" />
+
+
+
 						</div>
 					</a>
 					<?php if ($count === 1) {
@@ -158,7 +164,8 @@ get_header(); ?>
 				<?php endforeach; ?>
 				<?php wp_reset_postdata(); ?>
 
-				<!-- series category -->
+				<?php // series category 
+				?>
 
 				<?php
 				$posts = get_posts(array(
@@ -176,7 +183,7 @@ get_header(); ?>
 					<a class="cell cat-container" href="<?php echo get_home_url() ?>/category/distribution/series/">
 
 						<h2 class="text-center catalog-title series">
-							<?php get_template_part('template-parts/svg/icon-mic'); ?>
+							<?php get_template_part('template-parts/svg/icon-video'); ?>
 							<?php _e('Series', 'nacelle'); ?>
 						</h2>
 
@@ -184,13 +191,13 @@ get_header(); ?>
 							<?php
 
 							$image = get_field('square_image');
-							$size = 'large'; // (thumbnail, medium, large, full or custom size)
-
-							if ($image) {
-								echo wp_get_attachment_image($image, $size);
-							}
+							$alt = $image['alt'];
 
 							?>
+
+							<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo $alt; ?>" />
+
+
 						</div>
 					</a>
 					<?php if ($count === 1) {
@@ -212,7 +219,8 @@ get_header(); ?>
 
 	<div class="cell">
 
-		<!-- left embed -->
+		<?php // left embed 
+		?>
 		<?php $distributionEmbed = get_field('left_dist_content', 'option');
 		if (get_field('left_dist_content', 'option')) :
 		?>
@@ -231,7 +239,8 @@ get_header(); ?>
 
 			<?php endif; ?>
 
-			<!-- right_dist_content -->
+			<?php // right_dist_content 
+			?>
 			<?php if (get_field('right_dist_content', 'option')) : ?>
 
 				<div class="cell medium-4 left-embed">

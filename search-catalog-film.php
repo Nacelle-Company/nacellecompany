@@ -17,7 +17,7 @@ get_header(); ?>
 
 			<div class="cell medium-12">
 
-				<header class="grid-container archive">
+				<header class="grid-container archive pb-2 pb-medium-0">
 
 					<div class="grid-x align-center-middle">
 

@@ -27,6 +27,7 @@ if (!function_exists('wpt_register_theme_customizer')) :
 				array(
 					'section' => 'colors',
 					'label'   => esc_html__('Background color', 'nacelle'),
+					'description'		=> 'CD color: #2c2c2c',
 				)
 			)
 		);
@@ -47,6 +48,7 @@ if (!function_exists('wpt_register_theme_customizer')) :
 				array(
 					'section' => 'colors',
 					'label'   => esc_html__('Text color', 'nacelle'),
+					'description'		=> 'CD color: #fff',
 				)
 			)
 		);
@@ -67,6 +69,7 @@ if (!function_exists('wpt_register_theme_customizer')) :
 				array(
 					'section' => 'colors',
 					'label'   => esc_html__('Primary color', 'nacelle'),
+					'description'		=> 'CD color: #ffbc00',
 				)
 			)
 		);
@@ -76,7 +79,7 @@ if (!function_exists('wpt_register_theme_customizer')) :
 			'secondary_color',
 			array(
 				'default'   => '#74adec',
-				'transport' => 'refresh',
+				'transport' => 'refresh'
 			)
 		);
 
@@ -87,6 +90,7 @@ if (!function_exists('wpt_register_theme_customizer')) :
 				array(
 					'section' => 'colors',
 					'label'   => esc_html__('Secondary color', 'nacelle'),
+					'description'		=> 'CD color: #7fd2e6',
 				)
 			)
 		);
@@ -107,6 +111,7 @@ if (!function_exists('wpt_register_theme_customizer')) :
 				array(
 					'section' => 'colors',
 					'label'   => esc_html__('Secondary background color', 'nacelle'),
+					'description'		=> 'CD color: #000',
 				)
 			)
 		);
@@ -127,6 +132,7 @@ if (!function_exists('wpt_register_theme_customizer')) :
 				array(
 					'section' => 'colors',
 					'label'   => esc_html__('Nav bar background color', 'nacelle'),
+					'description'		=> 'CD color: #202020',
 				)
 			)
 		);
@@ -136,7 +142,7 @@ if (!function_exists('wpt_register_theme_customizer')) :
 			'home_nav_bg_color',
 			array(
 				'default'   => '',
-				'transport' => 'refresh',
+				'transport' => 'refresh'
 			)
 		);
 
@@ -147,6 +153,7 @@ if (!function_exists('wpt_register_theme_customizer')) :
 				array(
 					'section' => 'colors',
 					'label'   => esc_html__('Home nav background color', 'nacelle'),
+					'description'		=> 'CD color: none',
 				)
 			)
 		);
@@ -167,6 +174,7 @@ if (!function_exists('wpt_register_theme_customizer')) :
 				array(
 					'section' => 'colors',
 					'label'   => esc_html__('Transparent nav text color', 'nacelle'),
+					'description'		=> 'CD color: #ffbc00'
 				)
 			)
 		);
@@ -196,7 +204,7 @@ if (!function_exists('wpt_register_theme_customizer')) :
 		$wp_customize->add_setting(
 			'wpt_mobile_menu_layout',
 			array(
-				'default' => __('topbar', 'nacelle'),
+				'default' => __('offcanvas', 'nacelle'),
 			)
 		);
 

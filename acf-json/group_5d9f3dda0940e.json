@@ -1,10 +1,10 @@
 {
     "key": "group_5d9f3dda0940e",
-    "title": "Image: Square",
+    "title": "Images",
     "fields": [
         {
             "key": "field_5d9f3dda18981",
-            "label": "",
+            "label": "Square Image",
             "name": "square_image",
             "type": "image",
             "instructions": "",
@@ -57,6 +57,30 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
+        },
+        {
+            "key": "field_5fc5363b9477c",
+            "label": "Horizontal Image",
+            "name": "horizontal_image",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "featured-small",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
         }
     ],
     "location": [
@@ -69,12 +93,12 @@
         ]
     ],
     "menu_order": 1,
-    "position": "side",
+    "position": "normal",
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1603474954
+    "modified": 1606762025
 }

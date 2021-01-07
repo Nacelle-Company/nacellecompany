@@ -1,4 +1,4 @@
-<!-- <div class="media-container cell medium-2 mb-4 mb-medium-5 mb-medium-4 mb-large-5 mb-xlarge-3"> -->
+<?php // <div class="media-container cell medium-2 mb-4 mb-medium-5 mb-medium-4 mb-large-5 mb-xlarge-3"> ?>
 
 <div class="grid-item grid-item-<?php echo $count; ?>">
 

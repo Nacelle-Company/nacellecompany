@@ -39,11 +39,11 @@ if (!empty('news_header_image')) :
   <div class="main-grid">
     <main class="main-content">
 
-      <!-- https://developer.wordpress.org/reference/functions/query_posts/ -->
+      <?php //https://developer.wordpress.org/reference/functions/query_posts/ ?>
       <?php $posts = query_posts($query_string . "&posts_per_page=60&order=DESC");
       if (have_posts()) : ?>
 
-        <!-- Start the Loop  -->
+        <?php //Start the Loop  ?>
         <?php while (have_posts()) : the_post(); ?>
 
           <?php $link = get_field('link_to_article'); ?>
@@ -52,11 +52,11 @@ if (!empty('news_header_image')) :
 
             <div class="grid-x grid-padding-y feed-container">
 
-              <!-- If a featured image is set, insert into layout and use Interchange
-              to select the optimal image size per named media query. -->
+              <?php //If a featured image is set, insert into layout and use Interchange
+              // to select the optimal image size per named media query. ?>
               <?php if (has_post_thumbnail($post->ID)) : ?>
 
-                <!-- image -->
+                <?php //image ?>
                 <div class="cell medium-4">
 
                   <?php //if ($link) : ?>
@@ -69,7 +69,7 @@ if (!empty('news_header_image')) :
 
                 <div class="cell medium-8 archive-title">
 
-                  <!-- title -->
+                  <?php //title ?>
                   <div class="grid-x">
                     <?php // oldschool title
                     if (is_single()) {
@@ -83,12 +83,12 @@ if (!empty('news_header_image')) :
 
                   <footer class="grid-x small-up-2">
 
-                    <!-- date -->
+                    <?php //date ?>
                     <div class="cell date">
                       <p><?php the_time('m.j.y'); ?></p>
                     </div>
 
-                    <!-- microphone -->
+                    <?php //microphone ?>
                     <div class="cell text-right mic">
                       <img src="<?php echo $news_icon; ?>" />
                     </div>
@@ -100,17 +100,17 @@ if (!empty('news_header_image')) :
 
               <?php elseif (empty(has_post_thumbnail($post->ID))) : ?>
 
-                <!--  -->
-                <!--  -->
-                <!--  -->
-                <!-- without image -->
-                <!--  -->
-                <!--  -->
-                <!--  -->
+                <?php // ?>
+                <?php // ?>
+                <?php // ?>
+                <?php //without image ?>
+                <?php // ?>
+                <?php // ?>
+                <?php // ?>
 
                 <div class="cell medium-12 archive-title">
 
-                  <!-- title -->
+                  <?php //title ?>
                   <div class="grid-x">
                     <?php
                     if (is_single()) {
@@ -122,15 +122,15 @@ if (!empty('news_header_image')) :
                     ?>
                   </div>
 
-                  <!-- meta info -->
+                  <?php //meta info ?>
                   <footer class="grid-x small-up-2">
 
-                    <!-- date -->
+                    <?php //date ?>
                     <div class="cell date">
                       <p><?php the_time('m.j.y'); ?></p>
                     </div>
 
-                    <!-- microphone -->
+                    <?php //microphone ?>
                     <div class="cell text-right mic">
                       <img src="<?php echo $news_icon; ?>" />
                     </div>

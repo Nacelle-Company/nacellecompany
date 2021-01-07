@@ -39,7 +39,7 @@ get_header(); ?>
 
 			if (have_posts()) : ?>
 
-				<!--Start the Loop -->
+				<?php //Start the Loop ?>
 				<?php while (have_posts()) : the_post();
 
 					$link = get_field('link_to_article');
@@ -152,7 +152,7 @@ get_header(); ?>
 				<?php endwhile; ?>
 
 			<?php endif; ?>
-			<!-- End have_posts() check. -->
+			<?php // End have_posts() check. ?>
 
 		</main>
 		<?php wp_reset_query(); ?>

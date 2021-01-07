@@ -40,7 +40,7 @@ if ( ! class_exists( 'Nacelle_Comments' ) ) :
 		function end_lvl( &$output, $depth = 0, $args = array() ) {
 			$GLOBALS['comment_depth'] = $depth + 1; ?>
 
-			</ul><!-- /.children -->
+			</ul><?php // /.children ?>
 
 		<?php }
 
@@ -71,7 +71,7 @@ if ( ! class_exists( 'Nacelle_Comments' ) ) :
 				?>
 				<time datetime="<?php echo comment_date( 'c' ); ?>"><a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><?php printf( get_comment_date(), get_comment_time() ); ?></a></time>
 
-			</div><!-- /.comment-author -->
+			</div><?php // /.comment-author ?>
 
 			</header>
 
@@ -82,11 +82,11 @@ if ( ! class_exists( 'Nacelle_Comments' ) ) :
 				</div>
 					<?php else : comment_text(); ?>
 					<?php endif; ?>
-				</section><!-- /.comment-content -->
+				</section><?php // /.comment-content ?>
 
 				<div class="comment-meta comment-meta-data hide">
 					<a href="<?php echo htmlspecialchars( get_comment_link( get_comment_ID() ) ); ?>"><?php comment_date(); ?> at <?php comment_time(); ?></a> <?php edit_comment_link( '(Edit)' ); ?>
-				</div><!-- /.comment-meta -->
+				</div><?php // /.comment-meta ?>
 
 				<div class="reply">
 					<?php
@@ -96,21 +96,21 @@ if ( ! class_exists( 'Nacelle_Comments' ) ) :
 					);
 
 						comment_reply_link( array_merge( $args, $reply_args ) ); ?>
-					</div><!-- /.reply -->
-				</article><!-- /.comment-body -->
+					</div><?php // /.reply ?>
+				</article><?php // /.comment-body ?>
 
 		<?php }
 
 		function end_el( & $output, $comment, $depth = 0, $args = array() ) { ?>
 
-			</li><!-- /#comment-' . get_comment_ID() . ' -->
+			</li><?php // /#comment-' . get_comment_ID() . ' ?>
 
 		<?php }
 
 		/** DESTRUCTOR */
 		function __destruct() { ?>
 
-		</ol><!-- /#comment-list -->
+		</ol><?php // /#comment-list ?>
 
 		<?php
 		}

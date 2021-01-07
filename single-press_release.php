@@ -13,7 +13,7 @@ get_header(); ?>
 ?>
 <div class="main-container">
 	<div class="main-grid">
-		<main class="main-content">
+		<main class="main-content thin">
 			<?php while (have_posts()) : the_post(); ?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<section class="grid-container full">
@@ -49,16 +49,24 @@ get_header(); ?>
 						</header>
 						<div class="grid-x intro pb-2">
 							<div class="cell">
-								<h4>
-									<?php the_field('intro'); ?>
-								</h4>
+									<?php if (get_field('intro')) {
+											the_field('intro');
+										} ?>
 							</div>
 						</div>
 						<div class="grid-x content">
 							<div class="cell">
 								<?php the_content(); ?>
+								<?php 
+								if (get_field('show_boilerplate')) {
+									$boilerplate = get_field('boilerplate', 'option');
+									if (get_field('boilerplate', 'option')) {
+										echo $boilerplate;
+									}
+								}
+								?>
 								<?php echo '<p class="text-center">###</p>'; ?>
-								<!-- PDF download -->
+								<?php // PDF download ?>
 								<footer>
 									<h4 class="text-center">
 										<?php if (get_field('stills_download')) : ?>
@@ -69,7 +77,7 @@ get_header(); ?>
 										<?php endif; ?>
 									</h4>
 								</footer>
-								<!-- PDF download -->
+								<?php // PDF download ?>
 							</div>
 						</div>
 					</section>

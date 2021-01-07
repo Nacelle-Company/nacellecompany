@@ -21,7 +21,7 @@ if (get_field('bio', $term)) :
     <div class="cell grid-container primary-title my-3">
         <h2 class="entry-title mb-0"><?php echo $artistName . ' Bio'; ?></h2>
     </div>
-    <!-- BIO SECTION -->
+    <?php // BIO SECTION ?>
     <div class="grid-x grid-container grid-padding-x">
 
         <div class="cell">

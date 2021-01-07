@@ -1,0 +1,60 @@
+.searchandfilter ul li {
+	padding: 0;
+}
+
+.search-container {
+	padding-left: 1rem;
+	.icon {
+		overflow: visible;
+	}
+	&.desktop {
+		display: inline-flex;
+		position: absolute;
+		align-items: center;
+		left: 0;
+		-moz-transition: all 0.35s;
+		-webkit-transition: all 0.35s;
+		input {
+			opacity: 0;
+			-moz-transition: all 0.35s;
+			-webkit-transition: all 0.35s;
+		}
+		&:hover {
+			left: -170px;
+			@include breakpoint(medium) {
+				left: -150px;
+			}
+		}
+		&:hover,
+		&:focus {
+			width: 218px;
+			outline: none;
+			input {
+				display: inline-block;
+				padding: 10px;
+			}
+		}
+		&:hover input {
+			opacity: 1;
+		}
+	}
+	input[type="text"],
+	form {
+		max-width: 200px;
+		width: 200px;
+	}
+	input[type="text"] {
+		margin: 0;
+		@include breakpoint(medium) {
+			padding: 0 1em;
+		}
+	}
+	form.searchandfilter {
+		line-height: 1;
+	}
+
+	ul {
+		margin-left: 0.5rem;
+		line-height: 1;
+	}
+}

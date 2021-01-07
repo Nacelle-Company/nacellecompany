@@ -73,6 +73,20 @@ function Nacelle_add_image_sizes()
 add_action('init', 'Nacelle_add_image_sizes');
 
 
+// Define path and URL to the ACF plugin.
+define('NACELLE_ACF_PATH', get_stylesheet_directory() . '/includes/acf/');
+define('NACELLE_ACF_URL', get_stylesheet_directory_uri() . '/includes/acf/');
+
+// Include the ACF plugin.
+include_once(NACELLE_ACF_PATH . 'acf.php');
+
+// Customize the url setting to fix incorrect asset URLs.
+add_filter('acf/settings/url', 'nacelle_acf_settings_url');
+function nacelle_acf_settings_url($url)
+{
+    return NACELLE_ACF_URL;
+}
+
 // acf options page
 if (function_exists('acf_add_options_page')) {
     acf_add_options_page();
@@ -263,7 +277,35 @@ function nacelle_enqueue_styles()
 
 add_action('wp_enqueue_scripts', 'nacelle_enqueue_styles');
 
+// fix the custom post type pagination error
+// https://toolset.com/forums/topic/custom-post-type-pagination-404-error/
+function nacelle_fix_custom_posts_per_page($query_string)
+{
+    if (is_admin() || !is_array($query_string))
+        return $query_string;
 
+    $post_types_to_fix = array(
+        array(
+            'post_type' => 'catalog',
+            'posts_per_page' => 24
+        ),
+    );
+
+    foreach ($post_types_to_fix as $fix) {
+        if (
+            array_key_exists('post_type', $query_string)
+            && $query_string['post_type'] == $fix['post_type']
+        ) {
+            $query_string['posts_per_page'] = $fix['posts_per_page'];
+            return $query_string;
+        }
+    }
+
+    return $query_string;
+}
+
+add_filter('request', 'nacelle_fix_custom_posts_per_page');
+// END fix the custom post type pagination error
 
 
 
@@ -285,3 +327,15 @@ add_action('wp_enqueue_scripts', 'nacelle_enqueue_styles');
 //         echo '</h1>';
 //     }
 // }
+
+// Add Navigation Descriptions
+// https://www.webascender.com/blog/add-navigation-descriptions-wordpress-custom-menu-widget/
+// function nacelle_nav_description($item_output, $item, $depth, $args)
+// {
+//     if (!empty($item->description)) {
+//         $item_output = str_replace($args->link_after . '</a>', '<p class="menu-item-description">' . $item->description . '</p>' . $args->link_after . '</a>', $item_output);
+//     }
+
+//     return $item_output;
+// }
+// add_filter('walker_nav_menu_start_el', 'nacelle_nav_description', 10, 4);

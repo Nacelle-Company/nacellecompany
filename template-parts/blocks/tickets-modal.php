@@ -4,7 +4,7 @@
 
 </button>
 
-<!-- tickets modal -->
+<?php // tickets modal ?>
 <?php if (have_rows('repeater')) : ?>
 
     <div class="grid-x reveal" id="ticketsModal" data-reveal>
@@ -51,7 +51,7 @@
 
                         <div class="info">
 
-                            <!-- 			on sale -->
+                            <?php // 			on sale ?>
                             <?php if ($showOnSale) : ?>
 
                                 <?php if ($onSale) : ?>
@@ -65,7 +65,7 @@
                                 <?php endif; ?>
 
                             <?php endif; ?>
-                            <!-- 			on sale END -->
+                            <?php // 			on sale END ?>
 
                             <p>
                                 <?php echo $date; ?>
@@ -75,7 +75,7 @@
                                 <strong><?php echo $info; ?></strong>
                             </p>
 
-                            <!-- 				link -->
+                            <?php // 				link ?>
                             <?php if ($link) : ?>
                                 <a class="button hollow success" href="<?php echo $link; ?>" target="_blank">
                                 <?php endif; ?>
@@ -85,7 +85,7 @@
                                 <?php if ($link) : ?>
                                 </a>
                             <?php endif; ?>
-                            <!-- 				link END-->
+                            <?php // 				link END?>
 
                         </div>
 
@@ -105,4 +105,4 @@
 
 <?php endif; ?>
 
-<!-- end tickets modal -->
+<?php // end tickets modal ?>

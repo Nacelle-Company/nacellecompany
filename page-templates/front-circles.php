@@ -21,7 +21,7 @@ get_header();
 
                     <div class="grid-x background-slide-container">
                         <div class="small-12 medium-4 large-4 press-title-background columns">
-                            <!-- <img class="press-title-background" src="http://localhost/nacelle/nacelle/wp-content/uploads/2019/07/news-slider-title-bkgnd.png" alt="press title background"> -->
+                            <?php // <img class="press-title-background" src="http://localhost/nacelle/nacelle/wp-content/uploads/2019/07/news-slider-title-bkgnd.png" alt="press title background"> ?>
                         </div>
                     </div>
 
@@ -31,7 +31,7 @@ get_header();
 
             </div>
         <?php endwhile; ?>
-        <!-- END LOOP -->
+        <?php // END LOOP ?>
 
         <?php get_template_part('template-parts/front-partners'); ?>
 

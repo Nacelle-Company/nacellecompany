@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template part for mobile top bar menu
  *

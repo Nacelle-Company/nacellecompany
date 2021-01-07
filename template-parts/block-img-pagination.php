@@ -8,17 +8,17 @@
    <div class="grid-x medium-up-2 align-stretch">
 
        <div class="cell pr-medium-1 mb-2">
-           <h4 class="pl-3"> 
+           <h4 class="pl-3">
                <a href="<?php echo get_permalink($prev->ID); ?>">
                    <?php get_template_part('template-parts/svg/icon', 'left'); ?> Prev </a>
            </h4>
            <div class="grid-x medium-up-2 px-2 grid-padding-y pag-img-wrapper">
-               <div class="cell small-12 auto text-right">
+               <div class="cell">
                    <a href="<?php echo get_permalink($prev->ID); ?>">
                        <?php echo apply_filters('the_title', $prev->post_title); ?>
                    </a>
                </div>
-               <div class="cell small-12 auto ml-2 text-center">
+               <div class="cell auto mr-2 text-center">
                    <a href="<?php echo get_permalink($prev->ID); ?>">
                        <?php echo get_the_post_thumbnail($prev->ID, 'thumbnail'); ?>
                    </a>
@@ -29,7 +29,7 @@
        <div class="cell pl-medium-1">
            <h4 class="text-right pr-3">
                <a href="<?php echo get_permalink($next->ID); ?>">Next <?php get_template_part('template-parts/svg/icon', 'right'); ?></a>
-            </h4>
+           </h4>
            <div class="grid-x medium-up-2 px-2 grid-padding-y pag-img-wrapper">
                <div class="cell auto mr-2 text-center">
                    <a href="<?php echo get_permalink($next->ID); ?>">

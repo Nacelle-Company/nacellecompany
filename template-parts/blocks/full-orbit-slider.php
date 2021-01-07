@@ -63,30 +63,27 @@ $sliderSpeed = get_field('slider_speed');
                             $img_size_md = 'fp-medium';
                             $img_size_sm = 'fp-small';
 
-                            $image = get_field('home_image');
-                            $imageSquare = get_field('square_image');
+                            // $image = get_field('home_image');
                             $imageHorizontal = get_field('horizontal_image');
-
-                            $hero_image_alt = $image['alt']; /* Get image object alt */
-                            // $hero_square_alt = $imageSquare['alt'];
-                            $hero_horizontal_alt = $imageHorizontal['alt'];
+                            $imageSquare = get_field('square_image');
+                            
+                            if ($imageHorizontal) {
+                                $image = get_field('horizontal_image');
+                                $hero_image_alt = $imageHorizontal['alt']; /* Get image object alt */
+                            } elseif ($imageSquare) {
+                                $image = get_field('square_image');
+                                $hero_image_alt = $imageSquare['alt']; /* Get image object alt */
+                            } else {
+                            }
 
                             /* Get custom sizes of our image sub_field */
                             $hero_lg = $image['sizes'][$img_size_lg];
                             $hero_md = $image['sizes'][$img_size_md];
                             $hero_sm = $image['sizes'][$img_size_sm];
-
-                            // $hero_square_lg = $imageSquare['sizes'][$img_size_lg];
-                            // $hero_square_md = $imageSquare['sizes'][$img_size_md];
-                            // $hero_square_sm = $imageSquare['sizes'][$img_size_sm];
-
-                            $hero_horizontal_lg = $imageHorizontal['sizes'][$img_size_lg];
-                            $hero_horizontal_md = $imageHorizontal['sizes'][$img_size_md];
-                            $hero_horizontal_sm = $imageHorizontal['sizes'][$img_size_sm];
-
                             ?>
 
-                            <!-- large background image -->
+                            <?php // large background image 
+                            ?>
                             <img class="orbit-image" data-interchange="[<?php echo $hero_lg; ?>, default], [<?php echo $hero_sm; ?>, small], [<?php echo $hero_md; ?>, medium], [<?php echo $hero_lg; ?>, large]" alt="<?php echo $hero_image_alt; ?>" />
                             <noscript><img src="<?php echo $hero_lg; ?>" alt="<?php echo $hero_image_alt; ?>" /></noscript>
 
@@ -94,34 +91,16 @@ $sliderSpeed = get_field('slider_speed');
 
                             <figcaption class="orbit-caption grid-x align-bottom">
 
-
                                 <div class="cell medium-6">
 
-                                    <!-- small image -->
-                                    <a href="<?php if ($homeLinkChange) {
-                                                    echo $homeLinkChange;
-                                                } else the_permalink(); ?>">
+                                    <a href="<?php if ($homeLinkChange) { echo $homeLinkChange; } else the_permalink(); ?>">
 
-
-                                        <?php if ($imageHorizontal) : ?>
-
-                                            <img class="orbit-sm-image" style="max-width:<?php echo $featWidth; ?>%;" data-interchange="[<?php echo $hero_horizontal_sm; ?>, default], [<?php echo $hero_horizontal_sm; ?>, small], [<?php echo $hero_horizontal_md; ?>, medium], [<?php echo $hero_horizontal_lg; ?>, large]" alt="<?php echo $hero_horizontal_alt; ?>" />
-                                            <noscript>
-                                                <img src="<?php echo $hero_horizontal_sm; ?>" alt="<?php echo $hero_horizontal_alt; ?>" />
-                                            </noscript>
-
-                                        <?php else : ?>
-
-                                            <img class="orbit-sm-image" style="max-width:<?php echo $featWidth; ?>%;" data-interchange="[<?php echo $hero_square_sm; ?>, default], [<?php echo $hero_square_sm; ?>, small], [<?php echo $hero_square_md; ?>, medium], [<?php echo $hero_square_lg; ?>, large]" alt="<?php echo $hero_square_alt; ?>" />
-                                            <noscript>
-                                                <img src="<?php echo $hero_square_sm; ?>" alt="<?php echo $hero_image_alt; ?>" />
-                                            </noscript>
-
-                                        <?php endif; ?>
-
+                                        <img class="orbit-sm-image" style="max-width:<?php echo $featWidth; ?>%;" data-interchange="[<?php echo $hero_sm; ?>, default], [<?php echo $hero_sm; ?>, small], [<?php echo $hero_md; ?>, medium], [<?php echo $hero_lg; ?>, large]" alt="<?php echo $hero_image_alt; ?>" />
+                                        <noscript>
+                                            <img src="<?php echo $hero_sm; ?>" alt="<?php echo $hero_image_alt; ?>" />
+                                        </noscript>
 
                                     </a>
-
 
                                     <a href="<?php the_permalink(); ?>">
                                         <h3><?php echo get_the_title(); ?></h3>

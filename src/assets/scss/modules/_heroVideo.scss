@@ -9,8 +9,11 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	@include breakpoint(medium up) {
-		height: 60vh;
+	@include breakpoint(medium) {
+		height: 35vh;
+	}
+	@include breakpoint(large up) {
+		height: 70vh;
 	}
 	&.video {
 		height: 100vh;

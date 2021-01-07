@@ -81,11 +81,11 @@ if ($query->have_posts()) :
 ?>
             <div class="catalog-hero hero-section medium-height" id="videoHeroContainment">
 
-                <!-- big video -->
+                <?php // big video ?>
 
                 <div id="big-video">
 
-                    <!-- plugin docs: https://github.com/pupunzi/jquery.mb.YTPlayer/wiki#external-methods -->
+                    <?php // plugin docs: https://github.com/pupunzi/jquery.mb.YTPlayer/wiki#external-methods ?>
                     <div id="bigVideoHero" class="player" data-property="{
                         videoURL:'<?php echo $videoLatest; ?>', 
                         containment:'#videoHeroContainment', 
@@ -110,7 +110,7 @@ if ($query->have_posts()) :
 
                         <?php if ($mainTalent == 'main_talent') { ?>
 
-                            <!-- play button group -->
+                            <?php // play button group ?>
                             <div class="mobile-app-toggle play" data-mobile-app-toggle>
 
                                 <div class="hero-text">
@@ -126,7 +126,7 @@ if ($query->have_posts()) :
 
                             </div>
 
-                            <!-- pause button group -->
+                            <?php // pause button group ?>
                             <div class="mobile-app-toggle pause" data-mobile-app-toggle>
 
                                 <button class="clear button is-active icon" data-toggle="videoCoverOn" onclick="jQuery('#bigVideoHero').YTPMute()">
@@ -148,7 +148,7 @@ if ($query->have_posts()) :
 
                         <?php } elseif ('catalog' == get_post_type()) { ?>
 
-                            <!-- play button group -->
+                            <?php // play button group ?>
                             <div class="mobile-app-toggle play" data-mobile-app-toggle>
 
                                 <div class="big-video-cover"></div>
@@ -165,7 +165,7 @@ if ($query->have_posts()) :
 
                             </div>
 
-                            <!-- pause button group -->
+                            <?php // pause button group ?>
                             <div class="mobile-app-toggle pause" data-mobile-app-toggle>
 
                                 <button class="clear button is-active icon" data-toggle="videoCoverOn" onclick="jQuery('#bigVideoHero').YTPMute()">
@@ -201,7 +201,7 @@ if ($query->have_posts()) :
                         <?php
                         if ($videoLatest) : ?>
 
-                            <!-- plugin docs: https://github.com/pupunzi/jquery.mb.YTPlayer/wiki#external-methods -->
+                            <?php // plugin docs: https://github.com/pupunzi/jquery.mb.YTPlayer/wiki#external-methods ?>
                             <div id="modal-video-container" class="player" data-property="{
                         videoURL:'<?php echo $videoLatest; ?>',
                         containment:'#modalVideoContainer', 

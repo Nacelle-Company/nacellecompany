@@ -1,4 +1,5 @@
-<svg class="icon" width="150" height="49" xmlns="http://www.w3.org/2000/svg">
+<svg class="icon" width="150" height="49" xmlns="http://www.w3.org/2000/svg" aria-labelledby="iconNacelle">
+    <title id="iconNacelle">nacelle company</title>
     <defs>
         <path id="a" d="M99.64 11.79h8.57v24.64h-8.57z" />
         <path id="b" d="M112.5 11.79h9.64v24.64h-9.64z" />

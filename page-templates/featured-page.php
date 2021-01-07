@@ -80,7 +80,7 @@ get_header(); ?>
 
 								</div>
 
-								<!-- include tickets modal -->
+								<?php // include tickets modal ?>
 								<?php get_template_part('template-parts/blocks/tickets-modal', 'none'); ?>
 
 							</div>
@@ -116,7 +116,7 @@ get_header(); ?>
 
 </div>
 
-<!-- VIDEO MODAL -->
+<?php // VIDEO MODAL ?>
 <?php
 
 $featTrailerEmbed = get_field('feat_trailer_embed');
@@ -125,11 +125,11 @@ if (!empty($featTrailerEmbed)) : ?>
 
 	<div class="reveal" id="videoModal1" data-reveal>
 
-		<!-- <div class="embed-container"> -->
+		<?php // <div class="embed-container"> ?>
 
-		<!-- <iframe width="560" height="315" src="<?php echo $featTrailerEmbed ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+		<?php // <iframe width="560" height="315" src="<?php echo $featTrailerEmbed ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> ?>
 
-		<!-- </div> -->
+		<?php // </div> ?>
 
 		<button class="close-button" data-close aria-label="Close reveal" type="button">
 
@@ -140,7 +140,7 @@ if (!empty($featTrailerEmbed)) : ?>
 	</div>
 
 <?php endif ?>
-<!-- end video modal -->
+<?php // end video modal ?>
 
 
 

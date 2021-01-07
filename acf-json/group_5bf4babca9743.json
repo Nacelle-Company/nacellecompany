@@ -38,49 +38,11 @@
             "placeholder": ""
         },
         {
-            "key": "field_5ce31f8ea27c1",
-            "label": "",
-            "name": "show_crew",
-            "type": "true_false",
-            "instructions": "Show crew",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "20",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 1,
-            "ui": 1,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
-            "key": "field_5f77743504cb5",
-            "label": "",
-            "name": "show_more_info",
-            "type": "true_false",
-            "instructions": "Show More Info",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "20",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 1,
-            "ui": 1,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
             "key": "field_5ce324549f5bd",
-            "label": "",
-            "name": "show_icons",
+            "label": "video",
+            "name": "show_video_links",
             "type": "true_false",
-            "instructions": "Video & Audio link list",
+            "instructions": "Show video links",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -88,18 +50,18 @@
                 "class": "",
                 "id": ""
             },
-            "message": "link lists under the main artwork",
+            "message": "",
             "default_value": 1,
             "ui": 1,
             "ui_on_text": "",
             "ui_off_text": ""
         },
         {
-            "key": "field_5f7395fe6500b",
-            "label": "",
-            "name": "show_large_links",
+            "key": "field_5f9757f9b13c2",
+            "label": "audio",
+            "name": "show_audio_links",
             "type": "true_false",
-            "instructions": "Large links",
+            "instructions": "Show audio links",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -107,8 +69,8 @@
                 "class": "",
                 "id": ""
             },
-            "message": "large links in the main content",
-            "default_value": 0,
+            "message": "",
+            "default_value": 1,
             "ui": 1,
             "ui_on_text": "",
             "ui_off_text": ""
@@ -131,156 +93,6 @@
             "ui": 1,
             "ui_on_text": "",
             "ui_off_text": ""
-        },
-        {
-            "key": "field_5f6e76184f5c8",
-            "label": "Large Links",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "top",
-            "endpoint": 1
-        },
-        {
-            "key": "field_5f3a9e3d4af18",
-            "label": "Large Links",
-            "name": "new_large_link",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_5f7395fe6500b",
-                        "operator": "==",
-                        "value": "1"
-                    }
-                ]
-            ],
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "collapsed": "",
-            "min": 0,
-            "max": 0,
-            "layout": "table",
-            "button_label": "",
-            "sub_fields": [
-                {
-                    "key": "field_5f3a9e4f4af19",
-                    "label": "Link Title",
-                    "name": "link_title",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_5f6e6e733bd2f",
-                    "label": "Hover title",
-                    "name": "hover_title",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "Watch Now",
-                    "placeholder": "Watch Now",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                },
-                {
-                    "key": "field_5f3a9e5e4af1a",
-                    "label": "Link URL",
-                    "name": "link_url",
-                    "type": "url",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": ""
-                },
-                {
-                    "key": "field_5f6cea2e293b6",
-                    "label": "Show Large",
-                    "name": "show_large",
-                    "type": "true_false",
-                    "instructions": "By default the horizontal image will show, unless you upload an image.",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "message": "",
-                    "default_value": 0,
-                    "ui": 0,
-                    "ui_on_text": "",
-                    "ui_off_text": ""
-                },
-                {
-                    "key": "field_5f6cec990ea34",
-                    "label": "Link Image",
-                    "name": "link_image",
-                    "type": "image",
-                    "instructions": "(optional)",
-                    "required": 0,
-                    "conditional_logic": [
-                        [
-                            {
-                                "field": "field_5f6cea2e293b6",
-                                "operator": "==",
-                                "value": "1"
-                            }
-                        ]
-                    ],
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "return_format": "array",
-                    "preview_size": "medium",
-                    "library": "all",
-                    "min_width": "",
-                    "min_height": "",
-                    "min_size": "",
-                    "max_width": "",
-                    "max_height": "",
-                    "max_size": "",
-                    "mime_types": ""
-                }
-            ]
         },
         {
             "key": "field_5f7774580d8df",
@@ -312,7 +124,7 @@
             "name": "genre",
             "type": "taxonomy",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "50",
@@ -334,7 +146,7 @@
             "name": "release_date",
             "type": "date_picker",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "50",
@@ -344,6 +156,25 @@
             "display_format": "m\/d\/Y",
             "return_format": "Ymd",
             "first_day": 1
+        },
+        {
+            "key": "field_5fca8385689c0",
+            "label": "Show Release Date",
+            "name": "show_release_date",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
         },
         {
             "key": "field_5f777553572fc",
@@ -432,7 +263,7 @@
             "name": "talent",
             "type": "taxonomy",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "50",
@@ -699,6 +530,54 @@
             "placeholder": ""
         },
         {
+            "key": "field_5f9725069083d",
+            "label": "Hoopla Video",
+            "name": "hoopla_video",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5f9725289083e",
+            "label": "Tubi Video",
+            "name": "tubi_video",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5f9725419083f",
+            "label": "Breaker Video",
+            "name": "breaker_video",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
             "key": "field_5c118d8069231",
             "label": "Animal Nation",
             "name": "animal_nation_video",
@@ -779,6 +658,140 @@
             "placeholder": ""
         },
         {
+            "key": "field_5f3a9e3d4af18",
+            "label": "Large Video Links",
+            "name": "new_large_link",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5f7395fe6500b",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_5f3a9e4f4af19",
+                    "label": "Link Title",
+                    "name": "link_title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5f6e6e733bd2f",
+                    "label": "Hover title",
+                    "name": "hover_title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "Watch Now",
+                    "placeholder": "Watch Now",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5f3a9e5e4af1a",
+                    "label": "Link URL",
+                    "name": "link_url",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_5f6cea2e293b6",
+                    "label": "Show Large",
+                    "name": "show_large",
+                    "type": "true_false",
+                    "instructions": "By default the horizontal image will show, unless you upload an image.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
+                    "key": "field_5f6cec990ea34",
+                    "label": "Link Image",
+                    "name": "link_image",
+                    "type": "image",
+                    "instructions": "(optional)",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5f6cea2e293b6",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                }
+            ]
+        },
+        {
             "key": "field_5f7f3d1666ecf",
             "label": "New Video Link",
             "name": "new_link",
@@ -844,7 +857,7 @@
             "conditional_logic": [
                 [
                     {
-                        "field": "field_5ce324549f5bd",
+                        "field": "field_5f9757f9b13c2",
                         "operator": "==",
                         "value": "1"
                     }
@@ -876,8 +889,24 @@
         },
         {
             "key": "field_5c0031c47d7ae",
-            "label": "Google Play Audio",
+            "label": "Google Play",
             "name": "google_play_audio",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5f930ce20f08b",
+            "label": "YouTube Music",
+            "name": "you_tube_audio",
             "type": "url",
             "instructions": "",
             "required": 0,
@@ -937,6 +966,140 @@
             },
             "default_value": "",
             "placeholder": ""
+        },
+        {
+            "key": "field_5f9723a490837",
+            "label": "Large Audio Links",
+            "name": "audio_new_large_link",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5f7395fe6500b",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_5f9723a490838",
+                    "label": "Link Title",
+                    "name": "audio_link_title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5f9723a490839",
+                    "label": "Hover title",
+                    "name": "audio_hover_title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "Watch Now",
+                    "placeholder": "Watch Now",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5f9723a49083a",
+                    "label": "Link URL",
+                    "name": "audio_link_url",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_5f9723a49083b",
+                    "label": "Show Large",
+                    "name": "audio_show_large",
+                    "type": "true_false",
+                    "instructions": "By default the horizontal image will show, unless you upload an image.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 0,
+                    "ui_on_text": "",
+                    "ui_off_text": ""
+                },
+                {
+                    "key": "field_5f9723a49083c",
+                    "label": "Link Image",
+                    "name": "audio_link_image",
+                    "type": "image",
+                    "instructions": "(optional)",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5f9723a49083b",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                }
+            ]
         },
         {
             "key": "field_5f3aa21f2febe",
@@ -1124,7 +1287,7 @@
         "tags",
         "send-trackbacks"
     ],
-    "active": 1,
+    "active": true,
     "description": "Catalog Items hero video & large link lists",
-    "modified": 1603474933
+    "modified": 1607107487
 }

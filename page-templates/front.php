@@ -13,7 +13,7 @@ get_header();
 	<div class="cell">
 
 		<?php while (have_posts('')) : the_post(); ?>
-		<!-- clean hero slider -->
+		<?php // clean hero slider ?>
 		<?php get_template_part('template-parts/blocks/full-hero-slider'); ?>
 
 			<div class="circle-slider orbit mb-4" role="region" aria-label="Nacelle News Slider" data-orbit data-auto-play="false" data-use-m-u-i="false">
@@ -22,8 +22,8 @@ get_header();
 
 					<div class="grid-x background-slide-container orbit-group">
 						<div class="small-12 medium-4 large-4 press-title-background columns">
-							<!-- <img src="<?php //bloginfo('template_directory'); 
-											?>/dist/assets/images/news-slider-title-bkgnd.png" alt="press title background" /> -->
+							<?php // <img src="<?php //bloginfo('template_directory'); 
+											?>/dist/assets/images/news-slider-title-bkgnd.png" alt="press title background" /> ?>
 
 						</div>
 					</div>
@@ -34,7 +34,7 @@ get_header();
 
 			</div>
 		<?php endwhile; ?>
-		<!-- END LOOP -->
+		<?php // END LOOP ?>
 
 		<?php get_template_part('template-parts/front-partners'); ?>
 

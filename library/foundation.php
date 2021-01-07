@@ -237,7 +237,8 @@ if (!function_exists('Nacelle_custom_colors')) :
         if (!empty($primary_color)) {
 // primary color
 ?>
-            a:not(.alt), .primary-color,
+            a:not(.alt):not(.button), 
+            .primary-color,
             .accordion-content .title,
             .button.hollow,
             .footer-grid p,
@@ -258,7 +259,8 @@ if (!function_exists('Nacelle_custom_colors')) :
             input[type=submit],
             body.page-template-featured-page,
             .archive .featured-hero,
-            .searchandfilter input[type=submit] {
+            .searchandfilter input[type=submit],
+            .button {
                 background-color: <?php echo $primary_color; ?>;
             }
             .to-top,
@@ -309,7 +311,7 @@ if (!function_exists('Nacelle_custom_colors')) :
             .home .top-bar ul .menu-item a:hover,
             .dropdown.menu .is-active > a,
             .button.clear.success,
-            .press_release .intro h4,
+            .press_release .intro,
             .details-container summary,
             .details-container .info a,
             .close-button {
@@ -331,7 +333,8 @@ if (!function_exists('Nacelle_custom_colors')) :
             .button.success:not(.clear), 
             .wp-block-button .success.wp-block-button__link,
             .off-canvas-content .searchandfilter input[type=submit],
-            .field-wrap input[type=button] {
+            .field-wrap input[type=button],
+            .button:hover {
                 background-color: <?php echo $secondary_color; ?>;
             }
             .off-canvas-content .searchandfilter input[type=submit]:hover,
@@ -371,7 +374,9 @@ if (!empty($nav_bg_color)) {
         body:not(.page-template-front-carousel):not(.page-template-front-circles):not(.page-template-front-grid) .site-navigation.top-bar,
         .site-title-bar,
         .top-bar ul,
-        .pag-img-wrapper  {
+        .pag-img-wrapper,
+        body:not(.page-template-front-carousel) .search-container,
+        .off-canvas  {
             background: <?php echo $nav_bg_color; ?>;
         }
         footer.footer {
@@ -385,7 +390,8 @@ if (!empty($nav_bg_color)) {
 ?>
         body.page-template-front .site-navigation.top-bar,
         body.page-template-front-carousel .site-navigation.top-bar,
-        .home nav.site-navigation.top-bar.desktop-menu {
+        .home nav.site-navigation.top-bar.desktop-menu,
+        body.page-template-front-carousel .search-container.desktop {
             background: <?php echo $home_nav_bg_color; ?>;
         }
 <?php
@@ -404,7 +410,10 @@ if (!empty($nav_bg_color)) {
 ?>
         .news-gallery h3,
         .news-gallery p,
-        .callout-footer * {
+        .callout-footer a,
+        .callout-footer *,
+        .button,
+        .button:hover {
             color: #<?php echo $background_color; ?>
         }
 <?php

@@ -22,7 +22,7 @@ get_header(); ?>
 		</div>
 		<?php while (have_posts()) : the_post(); ?>
 
-			<!-- https://gist.github.com/morgyface/d8c1c4246843bf0f0c76959b68faa95f -->
+			<?php // https://gist.github.com/morgyface/d8c1c4246843bf0f0c76959b68faa95f ?>
 					<?php if (have_rows('social_media', 'option')): ?>
 						<div class="grid-x social">
 							<div class="cell text-center">

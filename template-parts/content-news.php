@@ -20,7 +20,11 @@ $link = get_field('link_to_article');
 
                 <?php if (has_post_thumbnail()) : ?>
 
-                    <?php the_post_thumbnail('medium', array('align' => 'left')); ?>
+                    <a href="<?php echo $link; ?>" target="_blank">
+
+                        <?php the_post_thumbnail('medium', array('align' => 'left')); ?>
+
+                    </a>
 
                 <?php endif; ?>
                 <h1>
@@ -28,26 +32,27 @@ $link = get_field('link_to_article');
                 </h1>
             </div>
             <div class="media-object-section">
-                <?php
-                if (is_single()) {
-                    the_title('<h1 class="sm entry-title">', '</h1>');
-                } else {
-                    the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
-                }
-                ?>
+                <a href="<?php echo $link; ?>" target="_blank">
+                    <?php
+                    if (is_single()) {
+                        the_title('<h1 class="sm entry-title">', '</h1>');
+                    } else {
+                        the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
+                    }
+                    ?>
+                </a>
             </div>
         </div>
-        <br>
-        <a href="<?php echo $link; ?>" target="_blank">
-
-            <h6 class="text-center"><  Read more  ></h6>
-        </a>
         <?php //Nacelle_entry_meta(); 
         ?>
     </header>
     <div class="entry-content">
-        <?php the_content(); ?>
+        <a href="<?php echo $link; ?>" target="_blank">
+            <?php the_content(); ?>
+            <br>
 
+            <h3 class="text-center">...read more</h3>
+        </a>
         <?php edit_post_link(__('(Edit)', 'nacelle'), '<span class="edit-link">', '</span>'); ?>
         <hr>
     </div>

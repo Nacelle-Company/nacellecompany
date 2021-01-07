@@ -14,10 +14,10 @@
 
 	<div class="entry-content">
 
-		<!-- domestic -->
+		<?php // domestic ?>
 		<section class="grid-x grid-padding-x grid-padding-y">
 
-			<!-- logos -->
+			<?php // logos ?>
 			<div class="cell medium-6 large-7 small-order-2 medium-order-1">
 
 				<?php if( have_rows('logo_repeater') ): ?>
@@ -56,7 +56,7 @@
 
 			</div>
 
-			<!-- left content -->
+			<?php // left content ?>
 			<div class="cell medium-6 large-5 small-order-1 medium-order-2">
 
 				<h2 class="fadeIn"><?php the_field('left_icon'); ?><?php the_field('left_title'); ?></h2>
@@ -68,10 +68,10 @@
 
 		<hr>
 
-		<!-- international -->
+		<?php // international ?>
 		<section class="grid-x grid-padding-x grid-padding-y">
 
-			<!-- logos -->
+			<?php // logos ?>
 			<div class="cell medium-6 large-5">
 
 				<h2 class="fadeIn"><?php the_field('right_icon'); ?><?php the_field('right_title'); ?></h2>
@@ -111,7 +111,7 @@
 
 			</div>
 
-			<!-- right image -->
+			<?php // right image ?>
 			<div class="cell medium-6 large-7">
 
 				<?php

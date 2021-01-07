@@ -63,7 +63,7 @@ if ($query->have_posts()) :
 
             <?php if ($videoLatest) : ?>
 
-                <!-- plugin docs: https://github.com/pupunzi/jquery.mb.YTPlayer/wiki#external-methods -->
+                <?php // plugin docs: https://github.com/pupunzi/jquery.mb.YTPlayer/wiki#external-methods ?>
 
                 <div id="video-latest-call" class="player" data-property="{videoURL:'<?php echo $videoLatest; ?>', containment:'#video-latest', coverImage:'<?php echo $profile_hero_lg; ?>', mobileFallbackImage:'<?php echo $profile_hero_lg; ?>', startAt:<?php echo $startLatestVidAt; ?>, stopAt:<?php echo $endLatestVidAt; ?>, autoPlay:true, mute:true, opacity:1, showControls:false, optimize_display:true, loop:true, showYTLogo:false, stopMovieOnBlur:false }"></div>
 

@@ -10,7 +10,7 @@ get_header(); ?>
 
     <div class="grid-y">
 
-        <!-- header -->
+        <?php // header ?>
         <div class="grid-x tagline">
 
             <div class="medium-12 cell text-center">
@@ -49,18 +49,18 @@ get_header(); ?>
                     $hero_sm = $image['sizes'][$img_size_sm];
                     ?>
 
-                    <!-- if is the first home image add a class -->
+                    <?php // if is the first home image add a class ?>
                     <?php if ($count == 1) : ?>
 
-                        <!-- first home images class -->
+                        <?php // first home images class ?>
                         <div class="first-home-images no-mobile cell">
 
-                            <!-- . . . and print the home-image -->
+                            <?php // . . . and print the home-image ?>
                             <div class="home-image">
 
                                 <a href="<?php echo get_permalink($post_object->ID); ?>">
 
-                                    <!-- Hook up Interchange as an img src -->
+                                    <?php // Hook up Interchange as an img src ?>
                                     <img rel="preconnect" class="my-hero superman" data-interchange="[<?php echo $hero_md; ?>, default], [<?php echo $hero_sm; ?>, small], [<?php echo $hero_md; ?>, medium], [<?php echo $hero_md; ?>, large]" alt="<?php echo $hero_image_alt; ?>" />
 
                                     <noscript><img src="<?php echo $hero_lg; ?>" alt="<?php echo $hero_image_alt; ?>" /></noscript>
@@ -69,23 +69,23 @@ get_header(); ?>
 
                             </div>
 
-                            <!-- if is the third image add the orbit carousel and a new class -->
+                            <?php // if is the third image add the orbit carousel and a new class ?>
                         <?php elseif ($count == 3) : ?>
 
-                            <!-- orbit carousel -->
+                            <?php // orbit carousel ?>
                             <?php //get_template_part('template-parts/orbit-carousel-invisible'); 
                             ?>
                             <?php get_template_part('template-parts/blocks/orbit-carousel'); ?>
 
-                            <!-- . . . new class -->
+                            <?php // . . . new class ?>
                             <div class="last-home-images no-mobile cell">
 
-                                <!-- continue showing the home_image posts -->
+                                <?php // continue showing the home_image posts ?>
                                 <div class="home-image">
 
                                     <a href="<?php echo get_permalink($post_object->ID); ?>">
 
-                                        <!-- Hook up Interchange as an img src -->
+                                        <?php // Hook up Interchange as an img src ?>
                                         <img rel="preconnect" class="my-hero superman" data-interchange="[<?php echo $hero_md; ?>, default], [<?php echo $hero_sm; ?>, small], [<?php echo $hero_md; ?>, medium], [<?php echo $hero_md; ?>, large]" alt="<?php echo $hero_image_alt; ?>" />
                                         <noscript><img rel="preconnect" src="<?php echo $hero_lg; ?>" alt="<?php echo $hero_image_alt; ?>" /></noscript>
 
@@ -93,15 +93,15 @@ get_header(); ?>
 
                                 </div>
 
-                                <!-- otherwise print the home-image -->
+                                <?php // otherwise print the home-image ?>
                             <?php else : ?>
 
-                                <!-- continue showing the home_image posts -->
+                                <?php // continue showing the home_image posts ?>
                                 <div class="home-image">
 
                                     <a href="<?php echo get_permalink($post_object->ID); ?>">
 
-                                        <!-- Hook up Interchange as an img src -->
+                                        <?php // Hook up Interchange as an img src ?>
                                         <img class="my-hero superman" data-interchange="[<?php echo $hero_md; ?>, default], [<?php echo $hero_sm; ?>, small], [<?php echo $hero_md; ?>, medium], [<?php echo $hero_md; ?>, large]" alt="<?php echo $hero_image_alt; ?>" />
 
                                         <noscript><img src="<?php echo $hero_lg; ?>" alt="<?php echo $hero_image_alt; ?>" /></noscript>
@@ -116,7 +116,7 @@ get_header(); ?>
 
                     <?php endforeach; ?>
 
-                        </div> <!-- closing last-home-images -->
+                        </div> <?php // closing last-home-images ?>
 
                     <?php endif; ?>
 
@@ -125,7 +125,7 @@ get_header(); ?>
     </div>
 
 <?php endwhile; ?>
-<!-- END LOOP -->
+<?php // END LOOP ?>
 
 <div class="grid-x mb-3 mt-4 align-center">
 

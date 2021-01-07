@@ -30,7 +30,7 @@ $prod_args = array(
  */
 ?>
 
-<!-- production and distribution category posts(and their children), excluding the podcast category -->
+<?php // production and distribution category posts(and their children), excluding the podcast category ?>
 <div class="cell small-order-2 medium-order-1 medium-6 productions pt-3" id="more">
 
     <header>
@@ -121,7 +121,7 @@ $prod_args = array(
 
                             <div class="callout-body">
 
-                                <!-- IMAGE -->
+                                <?php // IMAGE ?>
 
 
                                 <div class="img-container">
@@ -159,7 +159,7 @@ $prod_args = array(
 
                                 <div class="grid-x">
                                     <div class="cell medium-6">
-                                        <!-- DATE -->
+                                        <?php // DATE ?>
                                         <h4><?php echo $date->format('Y'); ?></h4>
 
                                     </div>
@@ -171,7 +171,7 @@ $prod_args = array(
                                     </div>
                                 </div>
 
-                                <!-- TITLE -->
+                                <?php // TITLE ?>
                                 <a href="<?php the_permalink() ?>" class="catalog-title" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>">
                                     <h4><?php the_title(); ?></h4>
                                 </a>
@@ -205,7 +205,7 @@ $prod_args = array(
 
 </div>
 
-<!-- podcast posts -->
+<?php // podcast posts ?>
 <div class="cell small-order-1 medium-order-2 medium-6 podcasts pt-3">
 
     <header>
@@ -220,7 +220,7 @@ $prod_args = array(
 
         </div>
 
-    </header><!-- .entry-header -->
+    </header><?php // .entry-header ?>
 
     <div class="entry-content" id="entry-content">
 
@@ -305,7 +305,7 @@ $prod_args = array(
 
                             <div class="callout-body">
 
-                                <!-- IMAGE -->
+                                <?php // IMAGE ?>
 
 
                                 <div class="img-container">
@@ -343,7 +343,7 @@ $prod_args = array(
 
                                 <div class="grid-x">
                                     <div class="cell medium-6">
-                                        <!-- DATE -->
+                                        <?php // DATE ?>
                                         <h4><?php echo $date->format('Y'); ?></h4>
 
                                     </div>
@@ -355,7 +355,7 @@ $prod_args = array(
                                     </div>
                                 </div>
 
-                                <!-- TITLE -->
+                                <?php // TITLE ?>
                                 <a href="<?php the_permalink() ?>" class="catalog-title" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>">
                                     <h4><?php the_title(); ?></h4>
                                 </a>
@@ -383,6 +383,6 @@ $prod_args = array(
 
         </div>
 
-    </div><!-- .entry-content -->
+    </div><?php // .entry-content ?>
 
-</div><!-- #post-## -->
+</div><?php // #post-## ?>

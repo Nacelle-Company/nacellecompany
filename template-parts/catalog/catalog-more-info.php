@@ -2,6 +2,7 @@
 
 $runtime = get_field('runtime');
 $date = get_field('release_date', false, false);
+$show_date = get_field('show_release_date');
 $genres = get_the_terms($post->ID, 'genre');
 
 ?>
@@ -23,10 +24,10 @@ $genres = get_the_terms($post->ID, 'genre');
             <div class="grid-x accordion-content" data-tab-content>
                 <div class="grid-container grid-x">
                     <div class="cell medium-8 medium-offset-4 tbp-1">
-                        <div class="grid-x grid-padding-x small-padding-collapse px-medium-2">
+                        <div class="grid-x small-padding-collapse px-medium-2">
                             <div class="cell medium-12 extra-metadata">
 
-                                <!-- Runtime -->
+                                <?php // Runtime ?>
                                 <?php if ($runtime) : ?>
                                     <div class="grid-x">
 
@@ -41,19 +42,20 @@ $genres = get_the_terms($post->ID, 'genre');
                                     </div>
                                 <?php endif ?>
 
-                                <!-- Premiere -->
-                                <!-- make date object -->
-                                <?php $date = new DateTime($date); ?>
-                                <div class="grid-x">
-                                    <div class="cell small-4 title">
-                                        <h3 class="md-gray-color sm-title"><?php _e('Premiere:', 'nacelle'); ?></h3>
+                                <?php // Premiere ?>
+                                <?php if ($show_date) : ?>
+                                    <?php $date = new DateTime($date); ?>
+                                    <div class="grid-x">
+                                        <div class="cell small-4 title">
+                                            <h3 class="md-gray-color sm-title"><?php _e('Premiere:', 'nacelle'); ?></h3>
+                                        </div>
+                                        <div class="cell small-8">
+                                            <p><?php echo $date->format('m/d/Y'); ?></p>
+                                        </div>
                                     </div>
-                                    <div class="cell small-8">
-                                        <p><?php echo $date->format('m/d/Y'); ?></p>
-                                    </div>
-                                </div>
+                                <?php endif; ?>
 
-                                <!-- Genre -->
+                                <?php // Genre ?>
                                 <?php if ($genres) : ?>
                                     <div class="grid-x">
                                         <div class="cell small-4 title">
@@ -80,9 +82,9 @@ $genres = get_the_terms($post->ID, 'genre');
                                         </div>
                                     </div>
                                 <?php endif; ?>
-                                <!-- end genres -->
+                                <?php // end genres ?>
 
-                                <!-- rating -->
+                                <?php // rating ?>
                                 <?php if (get_field('rating')) : ?>
                                     <div class="grid-x">
                                         <div class="cell small-4 title">
@@ -98,7 +100,7 @@ $genres = get_the_terms($post->ID, 'genre');
                                     </div>
                                 <?php endif ?>
 
-                                <!-- copyright -->
+                                <?php // copyright ?>
                                 <?php if (get_field('copyright')) : ?>
 
                                     <div class="grid-x">
@@ -115,13 +117,13 @@ $genres = get_the_terms($post->ID, 'genre');
                                     </div>
 
                                 <?php endif ?>
-                                <!-- end copyright -->
+                                <?php // end copyright ?>
 
-                            </div> <!-- end of 8cells -->
+                            </div> <?php // end of 8cells ?>
                         </div>
-                    </div><!-- end of 7cells container -->
+                    </div><?php // end of 7cells container ?>
                 </div>
-            </div> <!-- end accordian content -->
-        </section> <!-- end accordian section -->
+            </div> <?php // end accordian content ?>
+        </section> <?php // end accordian section ?>
     </article>
-</div> <!-- end catalog-bottom-meta -->
+</div> <?php // end catalog-bottom-meta ?>

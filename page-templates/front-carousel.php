@@ -1,7 +1,5 @@
 <?php
-/*
-Template Name: Front Carousel
-*/
+/*Template Name: Front Carousel*/
 get_header(); ?>
 
 <?php do_action('Nacelle_before_content'); ?>
@@ -10,7 +8,7 @@ get_header(); ?>
 
     <main class="main grid-x front-carousel">
 
-        <!-- header -->
+        <?php // header ?>
         <div class="cell tagline">
 
             <div class="medium-12 cell text-center">
@@ -29,15 +27,15 @@ get_header(); ?>
 
         </div>
 
-        <!-- orbit carousel -->
+        <?php // orbit carousel ?>
         <div class="cell">
             <?php get_template_part('template-parts/blocks/full-orbit-slider'); ?>
         </div>
-        <!-- wysiwyg content -->
+        <?php // wysiwyg content ?>
         <div class="cell">
             <?php get_template_part('template-parts/blocks/wysiwyg'); ?>
         </div>
-        <!-- news carousel -->
+        <?php // news carousel ?>
         <div class="cell">
             <?php get_template_part('template-parts/blocks/slider-news'); ?>
             <br>
@@ -52,6 +50,6 @@ get_header(); ?>
     </main>
 
 <?php endwhile; ?>
-<!-- END LOOP -->
+<?php // END LOOP ?>
 
 <?php get_footer(); ?>

@@ -1,4 +1,4 @@
-<!-- orbit carousel code -->
+<?php // orbit carousel code ?>
 <div class="orbit animation-element cell" data-timer-delay="2000" role="region" aria-label="Comedy Dynamics featured works" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
 
   <ul class="orbit-container" height="auto">
@@ -29,7 +29,7 @@
 
             ?>
 
-            <!-- Hook up Interchange as an img src -->
+            <?php // Hook up Interchange as an img src ?>
             <img class="my-hero superman" data-interchange="[<?php echo $hero_md; ?>, default], [<?php echo $hero_sm; ?>, small], [<?php echo $hero_md; ?>, medium], [<?php echo $hero_md; ?>, large]" alt="<?php echo $hero_image_alt; ?>" />
             <noscript><img src="<?php echo $hero_lg; ?>" alt="<?php echo $hero_image_alt; ?>" /></noscript>
 
@@ -38,12 +38,12 @@
         </li>
 
       <?php endforeach; ?>
-      <!-- $post_objects as $post_object -->
+      <?php // $post_objects as $post_object ?>
 
     <?php endif; ?>
-    <!-- $post_objects -->
+    <?php // $post_objects ?>
 
-    <!-- for mobile -->
+    <?php // for mobile ?>
     <?php if (wp_is_mobile()) : ?>
 
       <?php $post_objects = get_field('home_circle_post');
@@ -72,7 +72,7 @@
 
               ?>
 
-              <!-- Hook up Interchange as an img src -->
+              <?php // Hook up Interchange as an img src ?>
               <img class="my-hero superman" data-interchange="[<?php echo $hero_md; ?>, default], [<?php echo $hero_sm; ?>, small], [<?php echo $hero_md; ?>, medium], [<?php echo $hero_md; ?>, large]" alt="<?php echo $hero_image_alt; ?>" />
               <noscript><img src="<?php echo $hero_lg; ?>" alt="<?php echo $hero_image_alt; ?>" /></noscript>
 
@@ -81,13 +81,13 @@
           </li>
 
         <?php endforeach; ?>
-        <!-- END $post_objects as $post_object -->
+        <?php // END $post_objects as $post_object ?>
 
       <?php endif; ?>
-      <!-- END $post_objects -->
+      <?php // END $post_objects ?>
 
     <?php endif; ?>
-    <!-- END wp_is_mobile if  -->
+    <?php // END wp_is_mobile if  ?>
   </ul>
 
 </div>

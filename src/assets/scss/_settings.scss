@@ -253,10 +253,8 @@ $stat-font-size: 2.5rem;
   }
 }
 @include theme(sm-title, $global-font-size, none, 400);
-@include breakpoint(small only) {
   .sm-title {
-    font-size: 150%;
-  }
+    font-family: $body-font-family;
 }
 
 // 6. Abide

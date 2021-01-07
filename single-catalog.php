@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-<!-- START featured header -->
+<?php // START featured header ?>
 
 <?php while (have_posts()) : the_post(); ?>
 
@@ -27,7 +27,7 @@ get_header(); ?>
 
 	<?php get_template_part('template-parts/catalog/catalog-header', ''); ?>
 
-	<main <?php post_class('main-content grid-x ' . $gridContainer); ?> id="post-<?php the_ID(); ?>">
+	<main <?php post_class('main-content grid-x '); ?> id="post-<?php the_ID(); ?>">
 
 			<?php
 			// HERO VIDEO present
@@ -52,41 +52,36 @@ get_header(); ?>
 				echo '</div><div class="cell medium-5">';
 
 				// show catalog aside
-				get_template_part('template-parts/catalog/catalog-aside', '');
+				get_template_part('template-parts/catalog/catalog-aside');
 
 				echo '</div><div class="cell">';
 
 				// show large links FULL WIDTH
-				if (get_field('show_large_links')) {
-				get_template_part('template-parts/catalog/catalog-large-links', '');
-				};
+				get_template_part('template-parts/catalog/catalog-large-links');
 
 				echo '</div>';
 
 			} else {
 				// no HERO VIDEO present
-
 				echo '<div class="no-hero-video cell medium-7">';
 
 				// show more info dropdown
-				if (get_field('show_more_info')) {
-					get_template_part('template-parts/catalog/catalog-more-info', '');
-				};
+				// if (get_field('show_more_info')) {
+					get_template_part('template-parts/catalog/catalog-more-info');
+				// };
 
 				// show crew info
 				// if (get_field('show_crew')) {
-					get_template_part('template-parts/catalog/catalog-crew', '');
+					get_template_part('template-parts/catalog/catalog-crew');
 				// };
 
-				// show large links
-				if (get_field('show_large_links')) {
-					get_template_part('template-parts/catalog/catalog-large-links', '');
-				};
+				// large links
+					get_template_part('template-parts/catalog/catalog-large-links');
 				// close the div with hero and more info
 				echo '</div><div class="cell medium-5">';
 
 				// show catalog aside
-				get_template_part('template-parts/catalog/catalog-aside', '');
+				get_template_part('template-parts/catalog/catalog-aside');
 
 				echo '</div>';
 
@@ -167,7 +162,7 @@ get_header(); ?>
 
 	<?php endif; ?>
 
-	<!-- mobile post navigation -->
+	<?php // mobile post navigation ?>
 	<div class="cell small-12 no-desktop">
 		<div class="grid-x small-up-2 pagination">
 
@@ -175,17 +170,19 @@ get_header(); ?>
 
 		</div>
 	</div>
-	<!-- end mobile post navigation -->
-	<script>
-		jQuery(function() {
-			jQuery("#video-header-hero").YTPlayer();
-			jQuery("#modal-hero-video").YTPlayer();
-			jQuery("#modal-video").YTPlayer();
-		});
-	</script>
+	<?php // end mobile post navigation ?>
+	<?php
+	//  <script>
+	// 	jQuery(function() {
+	// 		jQuery("#video-header-hero").YTPlayer();
+	// 		jQuery("#modal-hero-video").YTPlayer();
+	// 		jQuery("#modal-video").YTPlayer();
+	// 	});
+	// </script> 
+	?>
 
 <?php endwhile; ?>
-<!-- end while (have_posts) -->
+<?php // end while (have_posts) ?>
 
 <div class="edit-post">
 	<pre><?php edit_post_link(__('(Edit this post)', 'nacelle'), '<span class="edit-link">', '</span>'); ?></pre>

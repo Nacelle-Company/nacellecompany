@@ -38,7 +38,7 @@ get_header(); ?>
 
         if (have_posts()) : ?>
 
-			<!--Start the Loop -->
+			<?php //Start the Loop ?>
 			<?php while (have_posts()) : the_post(); ?>
 
 				<?php
@@ -52,15 +52,15 @@ get_header(); ?>
 
 					<div class="grid-x feed-container">
 
-					<!-- If a featured image is set, insert into layout and use Interchange
-					to select the optimal image size per named media query. -->
+					<?php // If a featured image is set, insert into layout and use Interchange
+					to select the optimal image size per named media query. ?>
 					<?php if (has_post_thumbnail($post->ID)) : ?>
 
 						<div class="cell medium-12 archive-title">
 
 							<div class="grid-x">
 
-								<!-- microphone -->
+								<?php // microphone ?>
 								<div class="cell small-2 medium-3">
 
 									<?php if ($link): ?>
@@ -71,7 +71,7 @@ get_header(); ?>
 
 								</div>
 
-								<!-- title -->
+								<?php // title ?>
 								<div class="cell small-10 medium-9 press-title">
 									<div class="press-title-container">
 										<h2>
@@ -101,10 +101,10 @@ get_header(); ?>
 
 							</div>
 
-							<!-- date and read more -->
+							<?php // date and read more ?>
 							<footer class="grid-x">
 
-								<!-- admin edit link -->
+								<?php // admin edit link ?>
 								<div class="cell small-2 medium-3">
 
 									<?php edit_post_link(__('(Edit)', 'nacelle'), '<span class="edit-link">', '</span>');?>
@@ -116,7 +116,7 @@ get_header(); ?>
 
 								</div>
 
-								<!-- date and read more -->
+								<?php // date and read more ?>
 								<div class="cell small-10 medium-9">
 
 									<div class="grid-x small-up-2">
@@ -147,22 +147,22 @@ get_header(); ?>
 
 						<?php else : ?>
 
-						<!--  -->
-						<!--  -->
-						<!-- old title -->
-						<!--  -->
-						<!--  -->
+						<?php //  ?>
+						<?php //  ?>
+						<?php // old title ?>
+						<?php //  ?>
+						<?php //  ?>
 
 						<div class="cell medium-12 archive-title">
 
 							<div class="grid-x">
 
-									<!-- microphone -->
+									<?php // microphone ?>
 									<div class="cell small-2 medium-1">
 										<img src="<?php bloginfo('template_directory'); ?>/dist/assets/images/nacelle-mic.png" />
 									</div>
 
-									<!-- article title -->
+									<?php // article title ?>
 									<div class="cell small-10 medium-11">
 										<?php // oldschool title
                           if (is_single()) {
@@ -177,7 +177,7 @@ get_header(); ?>
 
 							<footer class="grid-x">
 
-								<!-- admin edit link -->
+								<?php // admin edit link ?>
 								<div class="cell small-2 medium-1">
 
 									<?php edit_post_link(__('(Edit)', 'nacelle'), '<span class="edit-link">', '</span>');?>
@@ -189,7 +189,7 @@ get_header(); ?>
 
 								</div>
 
-								<!-- date and read more -->
+								<?php // date and read more ?>
 								<div class="cell small-10 medium-11">
 
 									<div class="grid-x small-up-2">

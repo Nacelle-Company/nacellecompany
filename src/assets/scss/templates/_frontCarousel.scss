@@ -1,11 +1,18 @@
 .page-template-front-carousel {
-    .top-bar {
-        position: absolute;
-        width: 100%;
-    }
+	.top-bar {
+		position: absolute;
+		width: 100%;
+	}
 	.tagline {
 		position: absolute;
-		top: 10vh;
 		z-index: 1;
+		top: 15vh;
+		font-size: 20px;
+		@include breakpoint(medium) {
+			top: 20vh;
+		}
+		@include breakpoint(large up) {
+			top: 10vh;
+		}
 	}
 }

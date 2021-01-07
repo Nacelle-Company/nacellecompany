@@ -25,6 +25,9 @@
 		@include breakpoint(medium up) {
 			padding-left: 2rem;
 		}
+		@include breakpoint(small only) {
+			padding-left: 0;
+		}
 	}
 }
 .article-row-section {

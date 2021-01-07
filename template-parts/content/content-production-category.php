@@ -20,9 +20,10 @@
 <div class="grid-x align-center">
 
 	<div class="cell">
-		<!-- cell for the content -->
+		<?php // cell for the content 
+		?>
 
-		<header class="grid-container archive">
+		<header class="grid-container archive pb-2 pb-medium-0">
 
 			<div class="grid-x align-center-middle">
 
@@ -30,7 +31,7 @@
 
 					<h1 class="entry-title">
 
-						<?php single_cat_title(); ?>
+						<?php single_cat_title(); ?> <span class="hide">Production</span>
 
 					</h1>
 
@@ -46,7 +47,8 @@
 
 		</header>
 
-		<!-- start the cards -->
+		<?php // start the cards 
+		?>
 		<div class="grid-x medium-up-4 large-up-5">
 
 			<?php
@@ -58,77 +60,83 @@
 
 			if (have_posts($args)) : ?>
 
-				<!-- Start the Loop -->
+				<?php // Start the Loop 
+				?>
 				<?php while (have_posts()) : the_post(); ?>
 
-					<!-- if the catalog item has a square image uploaded. . . -->
 					<?php
 					$image = get_field('square_image');
-
-					// if ($image) :
+					$alt = $image['alt'];
+					if (!empty($image)) :
 					?>
 
-					<!-- img container -->
-					<div class="media-container cell animation-element mb-2 mb-medium-2 mb-large-4">
+						<?php // img container 
+						?>
+						<div class="media-container cell animation-element mb-2 mb-medium-2 mb-large-4">
 
-						<!-- if catalog item has a "Custom Page Redirect" link. . . -->
-						<?php
-						$link = get_field('custom_page_redirect');
+							<?php // if catalog item has a "Custom Page Redirect" link. . . 
+							?>
+							<?php $link = get_field('custom_page_redirect');
 
-						if ($link) :
+							if ($link) :
+								$link_url = $link['url'];
+							?>
 
-							$link_url = $link['url'];
+								<?php // link to the "Custom Page Redirect" page 
+								?>
+								<a href="<?php echo esc_url($link_url); ?>">
+
+								<?php else : ?>
+
+									<?php // if no "Custom Page Redirect" get the original post link 
+									?>
+									<a href="<?php the_permalink(); ?>">
+
+									<?php endif; ?>
+
+									<div class="callout callout-hover-reveal" data-callout-hover-reveal>
+
+										<div class="callout-body">
+
+											<?php
+											$img_size_sm = 'fp-small';
+											$alt = $image['alt'];
+											$hero_sm = $image['sizes'][$img_size_sm];
+											?>
+											<img class="my-hero superman" data-interchange="[<?php echo $hero_sm; ?>, default], [<?php echo $hero_sm; ?>, small]" alt="<?php echo $alt; ?>" alt="<?php echo $alt; ?>" />
+										</div>
+
+										<div class="callout-footer">
+											<?php
+											$excerpt = get_field('synopsis');
+
+											$excerpt = substr($excerpt, 0, 130);
+											$result = substr($excerpt, 0, strrpos($excerpt, ' '));
+											echo '<p>' . $result . '. . .</p>';
+											?>
+											<?php // display the synopsis 
+											?>
+
+										</div> <?php // END the footer 
+												?>
+
+									</div> <?php // END the callout 
+											?>
+
+									</a> <?php // END the link, whether its a "Custom Page Redirect" or the post link 
+											?>
+
+						</div>
+						<?php // END img container 
 						?>
 
-							<!-- link to the "Custom Page Redirect" page -->
-							<a href="<?php echo esc_url($link_url); ?>">
-
-							<?php else : ?>
-
-								<!-- if no "Custom Page Redirect" get the original post link -->
-								<a href="<?php the_permalink(); ?>">
-
-								<?php endif; ?>
-
-								<div class="callout callout-hover-reveal" data-callout-hover-reveal>
-
-									<div class="callout-body">
-
-										<?php
-										$size = 'medium'; // (thumbnail, medium, large, full or custom size)
-
-										// display the img
-										if ($image) {
-											echo wp_get_attachment_image($image, $size);
-										} ?>
-
-									</div>
-
-									<!-- img hover footer -->
-									<div class="callout-footer">
-										<?php
-										$excerpt = get_field('synopsis');
-
-										$excerpt = substr($excerpt, 0, 130);
-										$result = substr($excerpt, 0, strrpos($excerpt, ' '));
-										echo '<p>' . $result . '. . .</p>';
-										?>
-										<!-- display the synopsis -->
-
-									</div> <!-- END the footer -->
-
-								</div> <!-- END the callout -->
-
-								</a> <!-- END the link, whether its a "Custom Page Redirect" or the post link -->
-
-					</div> <!-- END img container -->
-
-					<?php //endif;
+					<?php endif; ?>
+					<?php // END if catalog item has a "Custom Page Redirect" link. . . 
 					?>
-					<!-- END if catalog item has a "Custom Page Redirect" link. . . -->
 
 				<?php endwhile; ?>
-				<!-- END the loop -->
+				<?php // END the loop 
+				?>
 
 			<?php else : ?>
 
@@ -137,8 +145,10 @@
 			<?php endif; // End have_posts() check.
 			?>
 
-		</div> <!-- END the cards -->
+		</div> <?php // END the cards 
+				?>
 
-	</div> <!-- END of cell for the content -->
+	</div> <?php // END of cell for the content 
+			?>
 
 </div>

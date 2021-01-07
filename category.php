@@ -21,16 +21,16 @@ get_header(); ?>
 
 	<div class="grid-container full align-center pt-3">
 
-	<!-- check if is any of the secondary categories (album, film, production series ext.) -->
+	<?php // check if is any of the secondary categories (album, film, production series ext.) ?>
 	<?php if (is_category(array( 'album', 'film', 'series', 'special', 'podcast' ))) :?>
 
-		<!-- get the content from the template-parts folder -->
+		<?php // get the content from the template-parts folder ?>
 		<?php get_template_part('/template-parts/content/content-categories'); ?>
 
-		<!-- production categories -->
+		<?php // production categories ?>
 	<?php elseif (is_category(array('special-production', 'series-production' ))) :?>
 
-	<!-- get the content from the template-parts folder -->
+	<?php // get the content from the template-parts folder ?>
 		<?php get_template_part('/template-parts/content/content-production-category'); ?>
 
 	<?php else : ?>

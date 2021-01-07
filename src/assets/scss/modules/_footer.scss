@@ -1,6 +1,6 @@
 footer.footer {
 	@include breakpoint(medium up) {
-		padding-top: 7rem;
+		padding-top: 0;
 	}
 }
 
@@ -23,6 +23,7 @@ footer.footer {
 .footer-container {
 	width: 100%;
 	min-width: 100vw;
+	margin-top: 10em;
 }
 
 .footer-logo {
@@ -93,11 +94,14 @@ footer.footer {
 	}
 	.c-footer-widgets {
 		text-align: center;
+		.widget {
+			justify-content: center;
+		}
 	}
 	.r-footer-widgets {
 		text-align: center;
 	}
-	@include breakpoint(medium) {
+	@include breakpoint(medium up) {
 		.social svg.svg-inline--fa {
 			max-width: 2em;
 		}

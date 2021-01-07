@@ -15,13 +15,17 @@
 		padding-top: 4rem;
 	}
 }
-
-.sya_container ul {
-	list-style: none;
-}
-
-.sya_container h4 a:last-child {
-	font-size: 0.875rem;
+.sya_container {
+	ul {
+		list-style: none;
+	}
+	h4 a:last-child {
+		font-size: 1rem;
+		padding: .5rem;
+	}
+	[style="text-align:right;font-size:90%;"] {
+		display: none;
+	}
 }
 
 .archive aside.sidebar > section:first-of-type h3::before {
@@ -32,4 +36,3 @@
 	content: url("https://nacellecompany.com/wp-content/themes/nacellecompany_2019-07-29_12-04/dist/assets/images/contact-icon.svg");
 	position: relative;
 }
-

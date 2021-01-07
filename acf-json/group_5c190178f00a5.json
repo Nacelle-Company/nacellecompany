@@ -3,24 +3,8 @@
     "title": "Press Release",
     "fields": [
         {
-            "key": "field_5c549f083ccfb",
-            "label": "Title & Location",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "left",
-            "endpoint": 0
-        },
-        {
             "key": "field_5c19017900cab",
-            "label": "",
+            "label": "Title",
             "name": "title",
             "type": "wysiwyg",
             "instructions": "Same as the 1st title. This is how the title shows on the actual Press Release page. So you can add italics if needed.",
@@ -57,24 +41,8 @@
             "maxlength": ""
         },
         {
-            "key": "field_5c549f2f3ccfc",
-            "label": "Callout",
-            "name": "",
-            "type": "tab",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "placement": "left",
-            "endpoint": 0
-        },
-        {
             "key": "field_5c19017900cdb",
-            "label": "",
+            "label": "Intro",
             "name": "intro",
             "type": "wysiwyg",
             "instructions": "Blue callout text with yellow lines above and below.",
@@ -90,6 +58,25 @@
             "toolbar": "basic",
             "media_upload": 0,
             "delay": 0
+        },
+        {
+            "key": "field_5fc92c3a975b3",
+            "label": "Show boilerplate",
+            "name": "show_boilerplate",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
         }
     ],
     "location": [
@@ -113,8 +100,15 @@
     "style": "default",
     "label_placement": "top",
     "instruction_placement": "field",
-    "hide_on_screen": "",
-    "active": 1,
+    "hide_on_screen": [
+        "discussion",
+        "comments",
+        "revisions",
+        "page_attributes",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": true,
     "description": "",
-    "modified": 1603474822
+    "modified": 1607019656
 }

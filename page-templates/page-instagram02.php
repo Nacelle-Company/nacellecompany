@@ -104,8 +104,8 @@ get_header(); ?>
                                                 <?php if ($IGpostTrue) : ?>
                                                     <div style="max-width: 845px;">
                                                         <div style="left: 0; width: 100%; height: 0; position: relative; padding-bottom: 100%; overflow: hidden;">
-                                                            <!-- <iframe src="//cdn.iframe.ly/api/iframe?url=<?php // echo $IGpostLink; 
-                                                                                                                ?>&amp;key=5499a91ca3097ad0da51546ce4fba7ff&amp;media=1" style="border: 0; top: 0; left: 0; width: 100%; height: 100%; position: absolute;" allowfullscreen></iframe> -->
+                                                            <?php // <iframe src="//cdn.iframe.ly/api/iframe?url=<?php // echo $IGpostLink; 
+                                                                                                                ?>&amp;key=5499a91ca3097ad0da51546ce4fba7ff&amp;media=1" style="border: 0; top: 0; left: 0; width: 100%; height: 100%; position: absolute;" allowfullscreen></iframe> ?>
 
                                                             <blockquote class="instagram-media" data-instgrm-permalink="<?php echo $IGpostLink; ?>&utm_campaign=loading" data-instgrm-version="12" style=" background:transparent; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5),0 1px 10px 0 rgba(0,0,0,0.15); margin: 1px; max-width:540px; min-width:100px; padding:0; width:99.375%; width:-webkit-calc(100% - 2px); width:calc(100% - 2px);">
                                                                 <div style="padding:16px;"> <a href="<?php echo $IGpostLink; ?>&utm_campaign=loading" style=" background:#FFFFFF; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;" target="_blank">

@@ -4,59 +4,64 @@
 
 			<div class="cell px-medium-3">
 
-					<div class="grid-x align-justify">
+				<div class="grid-x align-justify">
 
-						<?php // title 
+					<?php // title 
+					?>
+					<div class="cell medium-10">
+						<?php
+						if (is_single()) {
+							the_title('<h1 class="entry-title">', '</h1>');
+						} else {
+							the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
+						}
 						?>
-						<div class="cell medium-10">
-							<?php
-							if (is_single()) {
-								the_title('<h1 class="entry-title">', '</h1>');
-							} else {
-								the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
-							}
-							?>
-						</div>
+					</div>
 
-						<?php // theatre popup button 
+					<?php // theatre popup button 
+					?>
+					<div class="cell medium-auto">
+						<?php // include tickets modal 
 						?>
-						<div class="cell medium-auto">
-							<!-- include tickets modal -->
-							<?php if (get_field('theatres_popup')) : ?>
+						<?php if (get_field('theatres_popup')) : ?>
 
-								<?php get_template_part('template-parts/blocks/tickets-modal', 'none'); ?>
+							<?php get_template_part('template-parts/blocks/tickets-modal', 'none'); ?>
 
-							<?php endif; ?>
-
-						</div>
+						<?php endif; ?>
 
 					</div>
 
-					<div class="grid-x align-justify align-top">
+				</div>
 
-						<!-- synopsis -->
-						<div class="cell medium-6 syopsis">
-							<?php
-							$excerpt = get_field('synopsis');
+				<div class="grid-x align-justify align-top">
 
-							$excerpt = substr($excerpt, 0, 300);
-							$result = substr($excerpt, 0, strrpos($excerpt, ' '));
-							echo $result . ' . . <button class="primary-color" data-toggle="exampleModal5" aria-controls="exampleModal5">more.</button>';
-							?>
+					<?php // synopsis 
+					?>
+					<div class="cell medium-6 synopsis">
+						<span class="invisible">
+							<h2><?php the_title(); ?></h2>
+						</span>
+						<?php
 
-							<div class="small synopsis reveal" style="display: block;text-align: left;background: #F4F5F6;color: #2C2C2C" id="exampleModal5" data-reveal>
-								<?php the_field('synopsis'); ?>
-								<button class="close-button" data-close aria-label="Close reveal" type="button">
-									<span aria-hidden="true">&times;</span>
-								</button>
-							</div>
+						$trim_length = 35;  //desired length of text to display
+						$value_more = ' . . <button class="primary-color" data-toggle="exampleModal5" aria-controls="exampleModal5">more.</button>'; // what to add at the end of the trimmed text
+						$custom_field = 'synopsis';
+						$value = get_post_meta($post->ID, $custom_field, true);
+						if ($value) {
+							echo wp_trim_words($value, $trim_length, $value_more);
+						}
+						?>
 
-						</div>
+
 
 					</div>
 
-			</div> <!-- END cell -->
+				</div>
 
-		</div> <!-- END catalog -->
+			</div> <?php // END cell 
+					?>
+
+		</div> <?php // END catalog 
+				?>
 
 	</header>

@@ -29,18 +29,20 @@ $contentResult = substr($content, 0, strrpos($content, ' '));
 
     <div class="media-object feed-container stack-for-small py-2">
 
-        <!-- image -->
+        <?php // image 
+        ?>
         <?php if (get_the_post_thumbnail()) : ?>
             <div class="media-object-section">
                 <a href="<?php echo get_permalink(); ?>">
                     <?php the_post_thumbnail('thumbnail', array('class' => 'align-left')); ?>
                 </a>
             </div>
-            <?php else :?>
-                <?php $zeroLeftPadding = '0'; ?>
+        <?php else : ?>
+            <?php $zeroLeftPadding = '0'; ?>
         <?php endif; ?>
 
-        <!-- title -->
+        <?php // title 
+        ?>
         <div class="archive-title media-object-section" style="padding-left:<?php echo $zeroLeftPadding; ?>">
 
             <div class="grid-y">
@@ -79,12 +81,14 @@ $contentResult = substr($content, 0, strrpos($content, ' '));
 
             <footer class="grid-x">
 
-                <!-- date -->
+                <?php // date 
+                ?>
                 <div class="cell medium-6 date">
                     <p><?php the_time('m.j.y'); ?></p>
                 </div>
 
-                <!-- microphone -->
+                <?php // microphone 
+                ?>
                 <div class="cell medium-6 text-right mic">
                     <img src="<?php echo $news_icon; ?>" />
                 </div>
@@ -95,3 +99,19 @@ $contentResult = substr($content, 0, strrpos($content, ' '));
 
     </div>
 </article>
+<div class="pagination-container">
+    <div class="grid-x">
+        <div id="catalog-pagination" class=" cell text-center">
+            <?php
+            $big = 999999999; // need an unlikely intege
+
+            echo paginate_links(array(
+                'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
+                'format' => '?paged=%#%',
+                'current' => max(1, get_query_var('paged')),
+                'total' => $catalog_items->max_num_pages
+            ));
+            ?>
+        </div>
+    </div>
+</div>

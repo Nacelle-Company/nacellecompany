@@ -10,8 +10,10 @@
  */
 ?>
 
-<!-- back to top -->
-<!-- https://codepen.io/adventuresinmissions/pen/suzKB -->
+<?php // back to top 
+?>
+<?php // https://codepen.io/adventuresinmissions/pen/suzKB 
+?>
 <a href="#0" class="to-top">Top</a>
 
 <footer class="shrink footer">
@@ -45,21 +47,42 @@
   <script>
     jQuery(function() {
       jQuery("#video-header-hero").YTPlayer();
+      // jQuery("#bigVideoHero").YTPlayer();
+      // jQuery("#modal-video").YTPlayer();
+      // jQuery("#modal-video-container").YTPlayer();
+      // jQuery("#fullHeroVideo").YTPlayer();
+      // jQuery("#modal-hero-video").YTPlayer();
+      // jQuery("#modal-video").YTPlayer();
+    });
+    jQuery(function() {
+      // jQuery("#video-header-hero").YTPlayer();
       jQuery("#bigVideoHero").YTPlayer();
-      jQuery("#modal-video").YTPlayer();
-      jQuery("#modal-video-container").YTPlayer();
-      jQuery("#fullHeroVideo").YTPlayer();
+      // jQuery("#modal-video").YTPlayer();
+      // jQuery("#modal-video-container").YTPlayer();
+      // jQuery("#fullHeroVideo").YTPlayer();
+      // jQuery("#modal-hero-video").YTPlayer();
+      // jQuery("#modal-video").YTPlayer();
     });
   </script>
+  <script src="https://www.youtube.com/iframe_api"></script>
 
   <script>
-    function onPlayerReady(event) {
-      $('.bounce').click(function() {
-        ytPlayer.playVideo();
-      });
-    }
+    // function onPlayerReady(event) {
+    //   $('.bounce').click(function() {
+    //     ytPlayer.playVideo();
+    //   });
+    // }
   </script>
-  <!-- products modal -->
+  <?php // catalog item synopsis modal 
+  ?>
+  <div class="small synopsis reveal" id="exampleModal5" data-reveal>
+    <?php the_field('synopsis'); ?>
+    <button class="close-button" data-close aria-label="Close reveal" type="button">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <?php // products modal 
+  ?>
   <div class="reveal productsModal" id="productsModal" data-reveal>
     <div class="embed-container">
       <?php the_field('featured_video'); ?>
@@ -71,7 +94,8 @@
 
 </footer>
 <?php if (get_theme_mod('wpt_mobile_menu_layout') === 'offcanvas') : ?>
-  </div><!-- Close off-canvas content -->
+  </div><?php // Close off-canvas content 
+        ?>
 <?php endif; ?>
 
 <?php wp_footer(); ?>
