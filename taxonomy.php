@@ -21,6 +21,7 @@ get_header(); ?>
 <?php if (have_posts()) : ?>
 
     <main class="grid-container full">
+        <?php echo get_the_term_list($post->ID, 'producers', '<p><strong>Spoken languages: </strong>', ', ', '</p>'); ?>
 
         <?php
 

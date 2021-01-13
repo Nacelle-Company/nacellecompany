@@ -85,10 +85,11 @@ if ($taxonomy == 'Producers') {
                     $image = acf_get_attachment($image);
                 }
                 $url = $image['url'];
+                $alt = $image['alt'];
 
                 if (!empty($image)) : ?>
 
-                    <img class="grid--masonry__image" src="<?php echo $url; ?>" />
+                    <img class="grid--masonry__image" src="<?php echo $url; ?>" alt="<?php echo $alt; ?>" />
 
                 <?php endif; ?>
 
@@ -124,10 +125,11 @@ if ($taxonomy == 'Producers') {
                     $image = acf_get_attachment($image);
                 }
                 $url = $image['url'];
+                $alt = $image['alt'];
 
                 if (!empty($image)) : ?>
 
-                    <img class="grid--masonry__image" src="<?php echo $url; ?>" />
+                    <img class="grid--masonry__image" src="<?php echo $url; ?>" alt="<?php echo $alt; ?>" />
 
                 <?php endif; ?>
 
@@ -164,10 +166,11 @@ if ($taxonomy == 'Producers') {
                     $image = acf_get_attachment($image);
                 }
                 $url = $image['url'];
+                $alt = $image['alt'];
 
                 if (!empty($image)) : ?>
 
-                    <img class="grid--masonry__image" src="<?php echo $url; ?>" />
+                    <img class="grid--masonry__image" src="<?php echo $url; ?>" alt="<?php echo $alt; ?>" />
 
                 <?php endif; ?>
 
@@ -204,10 +207,11 @@ if ($taxonomy == 'Producers') {
                     $image = acf_get_attachment($image);
                 }
                 $url = $image['url'];
+                $alt = $image['alt'];
 
                 if (!empty($image)) : ?>
 
-                    <img class="grid--masonry__image" src="<?php echo $url; ?>" />
+                    <img class="grid--masonry__image" src="<?php echo $url; ?>" alt="<?php echo $alt; ?>" />
 
                 <?php endif; ?>
 
