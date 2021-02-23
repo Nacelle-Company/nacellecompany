@@ -81,6 +81,25 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
+        },
+        {
+            "key": "field_6002325001bec",
+            "label": "Use Alternate Home Slider Image?",
+            "name": "use_home_image_for_background",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 0,
+            "ui_on_text": "",
+            "ui_off_text": ""
         }
     ],
     "location": [
@@ -100,5 +119,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1606762025
+    "modified": 1611760409
 }

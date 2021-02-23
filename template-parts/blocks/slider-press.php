@@ -1,5 +1,9 @@
 <div class="orbit-slider slider-post press">
-    <div class="cell orbit" role="region" aria-label="Favorite Space Pictures" data-orbit data-auto-play="true" data-timer-delay="7000" data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
+    <div class="cell orbit" role="region" aria-label="Latest Comedy Dynamics press releases" data-orbit data-auto-play="true" data-timer-delay="7000" data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
+        <?php
+        // to stop the slider 
+        // data-options="data-auto-play:false"
+        ?>
         <div class="fullscreen-image-slider">
             <div class="cell grid-container primary-title mt-1">
                 <h2 class="entry-title mb-0">Latest Press</h2>
@@ -17,7 +21,6 @@
                     </button>
 
                 </div>
-
                 <?php
                 // Set the arguments for the query, https://blog.netgloo.com/2014/08/27/showing-a-list-of-custom-post-type-using-get_posts-loop-in-wordpress/
                 $args = array(
@@ -39,14 +42,22 @@
                     // Loop the posts
                     foreach ($myposts as $mypost) :
                         $theTitle = get_the_title($mypost->ID);
-                        $image = get_the_post_thumbnail($mypost->ID, 'large', array('title' => $theTitle, 'class' => 'orbit-image', 'alt' => $theTitle));
+                        $image = '';
+                        $wideImage = get_field('wide_image', $mypost->ID);
+                        $alt = $wideImage['alt'];
+                        if ($wideImage) {
+                            $image = '<img src="' . $wideImage['url'] . '"' . ' ' . 'alt="' . $alt . '">';
+                        } else {
+                            $image = get_the_post_thumbnail($mypost->ID, 'large', array('title' => $theTitle, 'class' => 'orbit-image', 'alt' => $theTitle));
+                        }
+
                 ?>
 
                         <li class="is-active orbit-slide">
                             <?php echo $image; ?>
                             <figcaption class="orbit-caption grid-x align-bottom">
 
-                                <div class="cell medium-6">
+                                <div class="cell medium-12">
 
 
                                     <?php

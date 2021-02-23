@@ -17,10 +17,7 @@ get_header(); ?>
                                     echo $blog_title; ?></h1>
 
                 <h2>
-                    <strong>
-                        <?php if (get_field('heading')) : the_field('heading');
-                        endif; ?>
-                    </strong>
+                    <?php if (get_field('heading')) : the_field('heading'); endif; ?>
                 </h2>
 
             </div>

@@ -43,7 +43,7 @@ $(function() {
 });
 
 
-$('.tabs-title').on("mouseover", function () {
+$('.vertical .tabs-title').on("mouseover", function () {
 
 	var $this = this;
 

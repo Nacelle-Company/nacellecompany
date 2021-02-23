@@ -33,13 +33,6 @@ get_header(); ?>
         <main class="main-content">
 
             <?php
-            // https://developer.wordpress.org/reference/functions/query_posts/
-
-            $current_year = date('Y');
-
-            $current_month = date('M');
-
-            $posts = query_posts($query_string . "&post_status=future,publish&posts_per_page=60&order=DESC");
 
             if (have_posts()) : ?>
 

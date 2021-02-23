@@ -99,19 +99,13 @@ $contentResult = substr($content, 0, strrpos($content, ' '));
 
     </div>
 </article>
-<div class="pagination-container">
-    <div class="grid-x">
-        <div id="catalog-pagination" class=" cell text-center">
-            <?php
-            $big = 999999999; // need an unlikely intege
-
-            echo paginate_links(array(
-                'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
-                'format' => '?paged=%#%',
-                'current' => max(1, get_query_var('paged')),
-                'total' => $catalog_items->max_num_pages
-            ));
-            ?>
-        </div>
-    </div>
-</div>
+<?php
+if (function_exists('Nacelle_pagination')) :
+    Nacelle_pagination();
+elseif (is_paged()) :
+?>
+    <nav id="post-nav">
+        <div class="post-previous"><?php next_posts_link(__('&larr; Older posts', 'nacelle')); ?></div>
+        <div class="post-next"><?php previous_posts_link(__('Newer posts &rarr;', 'nacelle')); ?></div>
+    </nav>
+<?php endif; ?>

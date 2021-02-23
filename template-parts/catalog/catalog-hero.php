@@ -74,41 +74,6 @@ $embedd_args = array(
         ),
     ),
 );
-/*
-    $talent_args = array(
-        'post_type'         => 'catalog',
-        'orderby'           => 'DSC',
-        'posts_per_page'    => 1,
-        'meta_key' => 'main_talent_hero_video',
-        'meta_value' => array(''),
-        'meta_compare' => 'NOT IN',
-        'tax_query' => array(
-            'relation' => 'OR',
-            array(
-                'taxonomy' => 'main_talent',
-                'field'    => 'slug',
-                'terms'    => $artistSlug,
-            ),
-            array(
-                'taxonomy' => 'producers',
-                'field'    => 'slug',
-                'terms'    => $artistSlug,
-            ),
-            array(
-                'taxonomy' => 'directors',
-                'field'    => 'slug',
-                'terms'    => $artistSlug,
-            ),
-            array(
-                'taxonomy' => 'writers',
-                'field'    => 'slug',
-                'terms'    => $artistSlug,
-            ),
-        ),
-    );
-    */
-// var_dump($talent_args);
-// The EMBEDD Query
 $query_embedd = new WP_Query($embedd_args);
 
 // The EMBEDD Loop
@@ -155,7 +120,8 @@ wp_reset_postdata(); ?>
                 loop:true, 
                 showYTLogo:false, 
                 stopMovieOnBlur:true,
-                playOnlyIfVisible:true }"></div>
+                playOnlyIfVisible:true,
+                startAt:<?php the_field('start_video_at'); ?> }"></div>
 
         </div>
 

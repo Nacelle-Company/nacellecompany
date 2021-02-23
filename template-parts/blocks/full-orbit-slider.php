@@ -63,10 +63,10 @@ $sliderSpeed = get_field('slider_speed');
                             $img_size_md = 'fp-medium';
                             $img_size_sm = 'fp-small';
 
-                            // $image = get_field('home_image');
                             $imageHorizontal = get_field('horizontal_image');
                             $imageSquare = get_field('square_image');
-                            
+                            $imageHome = get_field('home_image');
+
                             if ($imageHorizontal) {
                                 $image = get_field('horizontal_image');
                                 $hero_image_alt = $imageHorizontal['alt']; /* Get image object alt */
@@ -75,17 +75,35 @@ $sliderSpeed = get_field('slider_speed');
                                 $hero_image_alt = $imageSquare['alt']; /* Get image object alt */
                             } else {
                             }
-
                             /* Get custom sizes of our image sub_field */
                             $hero_lg = $image['sizes'][$img_size_lg];
                             $hero_md = $image['sizes'][$img_size_md];
                             $hero_sm = $image['sizes'][$img_size_sm];
+
+                            // large background image
+                            if ($imageHome && get_field('use_home_image_for_background')) {
+                                $imageBackground = get_field('home_image');
+                                $hero_bg_image_alt = $imageBackground['alt'];
+                            } elseif ($imageHorizontal) {
+                                $imageBackground = get_field('horizontal_image');
+                                $hero_bg_image_alt = $imageBackground['alt']; /* Get image object alt */
+                            } elseif ($imageSquare) {
+                                $imageBackground = get_field('square_image');
+                                $hero_bg_image_alt = $imageBackground['alt']; /* Get image object alt */
+                            } else {
+                            }
+                            $hero_lg_background = $imageBackground['sizes'][$img_size_lg];
+                            $hero_md_background = $imageBackground['sizes'][$img_size_md];
+                            $hero_sm_background = $imageBackground['sizes'][$img_size_sm];
                             ?>
 
                             <?php // large background image 
                             ?>
-                            <img class="orbit-image" data-interchange="[<?php echo $hero_lg; ?>, default], [<?php echo $hero_sm; ?>, small], [<?php echo $hero_md; ?>, medium], [<?php echo $hero_lg; ?>, large]" alt="<?php echo $hero_image_alt; ?>" />
-                            <noscript><img src="<?php echo $hero_lg; ?>" alt="<?php echo $hero_image_alt; ?>" /></noscript>
+                            <img 
+                            class="orbit-image"  
+                            data-interchange="[<?php echo $hero_sm_background; ?>, default], [<?php echo $hero_sm_background; ?>, small], [<?php echo $hero_md_background; ?>, medium], [<?php echo $hero_lg_background; ?>, large]" alt="<?php echo $hero_bg_image_alt; ?>"
+                             />
+                            <noscript><img src="<?php echo $hero_lg_background; ?>" alt="<?php echo $hero_bg_image_alt; ?>" /></noscript>
 
                             <div class="orbit-cover"></div>
 
@@ -93,7 +111,9 @@ $sliderSpeed = get_field('slider_speed');
 
                                 <div class="cell medium-6">
 
-                                    <a href="<?php if ($homeLinkChange) { echo $homeLinkChange; } else the_permalink(); ?>">
+                                    <a href="<?php if ($homeLinkChange) {
+                                                    echo $homeLinkChange;
+                                                } else the_permalink(); ?>">
 
                                         <img class="orbit-sm-image" style="max-width:<?php echo $featWidth; ?>%;" data-interchange="[<?php echo $hero_sm; ?>, default], [<?php echo $hero_sm; ?>, small], [<?php echo $hero_md; ?>, medium], [<?php echo $hero_lg; ?>, large]" alt="<?php echo $hero_image_alt; ?>" />
                                         <noscript>

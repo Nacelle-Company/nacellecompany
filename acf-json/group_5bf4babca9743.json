@@ -30,12 +30,32 @@
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
-                "width": "25",
+                "width": "50",
                 "class": "",
                 "id": ""
             },
             "default_value": "",
             "placeholder": ""
+        },
+        {
+            "key": "field_60145636db039",
+            "label": "Start Video At",
+            "name": "start_video_at",
+            "type": "range",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "default_value": 20,
+            "min": "",
+            "max": "",
+            "step": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_5ce324549f5bd",
@@ -1289,5 +1309,5 @@
     ],
     "active": true,
     "description": "Catalog Items hero video & large link lists",
-    "modified": 1607107487
+    "modified": 1611945565
 }

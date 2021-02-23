@@ -339,3 +339,26 @@ add_filter('request', 'nacelle_fix_custom_posts_per_page');
 //     return $item_output;
 // }
 // add_filter('walker_nav_menu_start_el', 'nacelle_nav_description', 10, 4);
+
+// news pre_get_posts call
+// function nacelle_news_query($query)
+// {
+
+add_action('pre_get_posts', 'prefix_change_category_order');
+/**
+ * Customize category Query using pre_get_posts.
+ * 
+ * @link     FAT Media https://gist.github.com/robneu/6402258
+ * @copyright  Copyright (c) 2013, FAT Media, LLC
+ * @license    GPL-2.0+
+ * @todo       Change prefix to theme or plugin prefix.
+ *
+ */
+function prefix_change_category_order($query)
+{
+
+    if ($query->is_main_query() && !$query->is_feed() && !is_admin() && is_category()) {
+        $query->set('orderby', 'title');
+        $query->set('order', 'ASC');
+    }
+}

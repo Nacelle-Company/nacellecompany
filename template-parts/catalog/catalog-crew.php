@@ -1,10 +1,11 @@
 <?php
 $talents = get_field('talent');
-$talent = get_field('talent');
 $directors = get_field('directors');
 $producers = get_field('producers');
 $writers = get_field('writers');
 $siteURL = get_site_url();
+if (!empty($talents) || !empty($directors) || !empty($producers) || !empty($writers)) :
+
 ?>
 <div class="catalog-crew grid-container grid-x grid-padding-x grid-padding-y small-padding-collapse px-medium-3 px-large-4 mx-medium-2 mx-large-0">
 
@@ -21,7 +22,7 @@ $siteURL = get_site_url();
 
                     <div class="solo-link">
 
-                        <a href="<?php echo $imdbV; ?>" class="catalog-title button expanded" rel="bookmark" title="Watch <?php the_title_attribute(); ?> on <?php echo $imdbV; ?>" target="_blank" rel="noreferrer">
+                        <a href="<?php echo $imdbV; ?>" class="catalog-title button expanded" rel="noreferrer" title="Watch <?php the_title_attribute(); ?> on <?php echo $imdbV; ?>" target="_blank" rel="noreferrer">
 
                             <strong><?php _e("View on IMDB", 'Nacelle'); ?></strong>
 
@@ -187,3 +188,4 @@ $siteURL = get_site_url();
             ?>
 
 </div>
+<?php endif; ?>

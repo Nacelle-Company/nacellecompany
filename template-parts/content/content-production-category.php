@@ -51,14 +51,7 @@
 		?>
 		<div class="grid-x medium-up-4 large-up-5">
 
-			<?php
-			// sort posts by title
-			// https://www.shilling.id.au/2011/11/30/how-to-change-the-order-of-posts-in-the-wordpress-loop/
-			$args = array_merge($wp_query->query, array('orderby' => 'title', 'order' => 'ASC'));
-
-			query_posts($args);
-
-			if (have_posts($args)) : ?>
+			<?php if (have_posts($args)) : ?>
 
 				<?php // Start the Loop 
 				?>

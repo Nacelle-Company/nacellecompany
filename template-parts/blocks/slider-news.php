@@ -40,33 +40,40 @@
                     foreach ($myposts as $mypost) :
                         $theTitle = get_the_title($mypost->ID);
                         // var_dump(get_intermediate_image_sizes());
-                        $image = get_the_post_thumbnail($mypost->ID, 'full', array('title' => $theTitle, 'class' => 'orbit-image', 'alt' => $theTitle));
+                        $image = get_the_post_thumbnail($mypost->ID, 'full', array('title' => $theTitle, 'class' => 'orbit-image cell medium-6', 'alt' => $theTitle));
                 ?>
 
-                        <li class="is-active orbit-slide">
-                            <?php echo $image; ?>
-                            <figcaption class="orbit-caption grid-x align-bottom">
-
-                                <div class="cell medium-6 medium-offset-6">
-
-                                    <?php 
-                                    // $post_date_init = get_the_date('Y-m-d', $mypost->ID);
-                                    // echo $post_date_init; 
-                                    // $post_date = get_the_date('M j, Y', $mypost->ID);
-                                    // echo $post_date; 
+                        <li class="is-active orbit-slide grid-x">
+                            <figcaption class="orbit-caption cell medium-6 align-bottom">
+                                <div class="orbit-caption-container">
+                                    <?php // the_field('link_to_article', $mypost->ID); 
                                     ?>
-
-                                    <?php // the_field('link_to_article', $mypost->ID); ?>
-
                                     <?php echo '<a href="' . get_permalink($mypost->ID) . '">'; ?>
 
                                     <h3 class="subheader"><?php echo $theTitle; ?></h3>
                                     <?php echo '</a>'; ?>
-
                                 </div>
                             </figcaption>
-                        </li>
 
+                            <?php echo $image; ?>
+
+                        </li>
+                        <style>
+                            .orbit-slider.news .orbit-image {
+                                width: 50%;
+                            }
+
+                            .orbit-slider.news .orbit-caption {
+                                position: relative !important;
+                                background: #ffbc00;
+                                width: 50%;
+                                height: auto;
+                            }
+
+                            .orbit-slider.news .orbit-caption h3 {
+                                color: #2c2c2c;
+                            }
+                        </style>
                 <?php
                     endforeach;
                     wp_reset_postdata();

@@ -197,13 +197,13 @@ if (!function_exists('Nacelle_custom_colors')) :
         $home_nav_bg_color = get_theme_mod('home_nav_bg_color', '');
         $secondary_background_color = get_theme_mod('secondary_background_color', '');
         if (!empty($background_color)) {
-// background color
+            // background color
 ?>
             body,
             .featured-page .feat-content,
             .reveal,
             .page-template-front-grid .home-overlay.bottom {
-                background-color: #<?php echo $background_color; ?>;
+            background-color: #<?php echo $background_color; ?>;
             }
             .primary-title .entry-title,
             .details-container details .on-sale,
@@ -213,31 +213,32 @@ if (!function_exists('Nacelle_custom_colors')) :
             .button.success:hover,
             .synopsis.reveal blockquote p,
             .off-canvas-content .searchandfilter input[type=submit]:hover,
-            .field-wrap input[type=button]:hover {
-                color: #<?php echo $background_color; ?>;
+            .field-wrap input[type=button]:hover,
+            .tabs-products .tabs-title.is-active a {
+            color: #<?php echo $background_color; ?>;
             }
 
-<?php
+        <?php
         }
         if (!empty($text_color)) {
-// text color
-?>
-            body, h1, .h1, 
+            // text color
+        ?>
+            body, h1, .h1,
             .instagram-title h3,
             .catalog .entry-title,
             .contactModal p,
             .mobile-app-toggle .button:hover,
             .page-template-front-grid .top-bar ul .menu-item a,
             .page-template-front-circles .top-bar ul .menu-item a {
-                color:  <?php echo $text_color; ?>;
+            color: <?php echo $text_color; ?>;
             }
 
-<?php
+        <?php
         }
         if (!empty($primary_color)) {
-// primary color
-?>
-            a:not(.alt):not(.button), 
+            // primary color
+        ?>
+            a:not(.alt):not(.button),
             .primary-color,
             .accordion-content .title,
             .button.hollow,
@@ -245,14 +246,14 @@ if (!function_exists('Nacelle_custom_colors')) :
             .mobile-app-toggle .button,
             .entry-content .social a.nav-link,
             .top-bar .menu-item>a {
-                color: <?php echo $primary_color; ?>;
+            color: <?php echo $primary_color; ?>;
             }
             .top-meta .title,
             .button.clear.success,
             .primary-title .entry-title,
             .catalog-crew .title,
             .search-results .entry-title.subheader {
-                color: <?php echo $primary_color; ?>;
+            color: <?php echo $primary_color; ?>;
             }
             .primary,
             .accordion-content,
@@ -260,8 +261,9 @@ if (!function_exists('Nacelle_custom_colors')) :
             body.page-template-featured-page,
             .archive .featured-hero,
             .searchandfilter input[type=submit],
-            .button {
-                background-color: <?php echo $primary_color; ?>;
+            .button,
+            .tabs-products .tabs-title.is-active {
+            background-color: <?php echo $primary_color; ?>;
             }
             .to-top,
             .instagram-tab,
@@ -270,11 +272,11 @@ if (!function_exists('Nacelle_custom_colors')) :
             .details-container .info,
             .details-container details[open] .info,
             .page-template-front-grid .home-overlay.top {
-                background-color: <?php echo $primary_color; ?>;
+            background-color: <?php echo $primary_color; ?>;
             }
-            .button.primary, 
+            .button.primary,
             .wp-block-button .primary.wp-block-button__link {
-                background-color: <?php echo $primary_color; ?>;
+            background-color: <?php echo $primary_color; ?>;
             }
             .button.hollow,
             .instagram-tab,
@@ -283,29 +285,32 @@ if (!function_exists('Nacelle_custom_colors')) :
             .press_release .intro,
             .press_release .press,
             .page-template-featured-page .off-canvas-content {
-                border-color: <?php echo $primary_color; ?>;
+            border-color: <?php echo $primary_color; ?>;
             }
             .details-container p,
             .primary-title,
             .search-results .entry-title.subheader {
-                border-color: <?php echo $primary_color; ?>;
+            border-color: <?php echo $primary_color; ?>;
             }
             .fas,
             svg.footer-logo .color,
             svg.icon {
-                fill: <?php echo $primary_color; ?>;
+            fill: <?php echo $primary_color; ?>;
             }
             .mobile-app-toggle .button .icon {
-                stroke: <?php echo $primary_color; ?>;
+            stroke: <?php echo $primary_color; ?>;
             }
             h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
-                color: <?php echo $primary_color; ?>;
+            color: <?php echo $primary_color; ?>;
             }
-<?php
+            .tabs-products {
+            border-bottom-color: <?php echo $primary_color; ?>;
+            }
+        <?php
         }
         if (!empty($secondary_color)) {
-// secondary color
-?>
+            // secondary color
+        ?>
             .secondary-color,
             .button.hollow:hover,
             .home .top-bar ul .menu-item a:hover,
@@ -315,7 +320,7 @@ if (!function_exists('Nacelle_custom_colors')) :
             .details-container summary,
             .details-container .info a,
             .close-button {
-                color: <?php echo $secondary_color; ?>;
+            color: <?php echo $secondary_color; ?>;
             }
             .button.hollow:hover,
             .reveal header,
@@ -325,99 +330,99 @@ if (!function_exists('Nacelle_custom_colors')) :
             .feed-container,
             hr,
             .post-navigation {
-                border-color: <?php echo $secondary_color; ?>;
+            border-color: <?php echo $secondary_color; ?>;
             }
 
             .secondary-bkgnd,
             .accordion-line,
-            .button.success:not(.clear), 
+            .button.success:not(.clear),
             .wp-block-button .success.wp-block-button__link,
             .off-canvas-content .searchandfilter input[type=submit],
             .field-wrap input[type=button],
             .button:hover {
-                background-color: <?php echo $secondary_color; ?>;
+            background-color: <?php echo $secondary_color; ?>;
             }
             .off-canvas-content .searchandfilter input[type=submit]:hover,
             .field-wrap input[type=button]:hover {
-                background-color: <?php echo $secondary_color; ?>;
-                filter: saturate(1.5);
+            background-color: <?php echo $secondary_color; ?>;
+            filter: saturate(1.5);
             }
-            .orbit-controls .orbit-previous:hover .icon, 
+            .orbit-controls .orbit-previous:hover .icon,
             .orbit-controls .orbit-next:hover .icon,
             .icon.down-angle {
-                fill: <?php echo $secondary_color; ?>;
+            fill: <?php echo $secondary_color; ?>;
             }
             .pag-img-wrapper:hover {
-                background: transparent;
-                outline: 1px solid <?php echo $secondary_color; ?>;
+            background: transparent;
+            outline: 1px solid <?php echo $secondary_color; ?>;
             }
             .menu-icon::after {
-                background-color: <?php echo $secondary_color; ?>;
-                box-shadow: 0 7px 0 <?php echo $secondary_color; ?>, 0 14px 0 <?php echo $secondary_color; ?>;
+            background-color: <?php echo $secondary_color; ?>;
+            box-shadow: 0 7px 0 <?php echo $secondary_color; ?>, 0 14px 0 <?php echo $secondary_color; ?>;
             }
             .accordion-title {
-                color: <?php echo $secondary_color; ?>;
+            color: <?php echo $secondary_color; ?>;
             }
-<?php
+        <?php
         }
         if (!empty($secondary_background_color)) {
-        
-?>
+
+        ?>
             .gallery {
-                background-color: <?php echo $secondary_background_color; ?>;
+            background-color: <?php echo $secondary_background_color; ?>;
             }
-<?php   
-    }
-if (!empty($nav_bg_color)) {
-        // nav background color
-?>
-        body:not(.page-template-front-carousel):not(.page-template-front-circles):not(.page-template-front-grid) .site-navigation.top-bar,
-        .site-title-bar,
-        .top-bar ul,
-        .pag-img-wrapper,
-        body:not(.page-template-front-carousel) .search-container,
-        .off-canvas  {
-            background: <?php echo $nav_bg_color; ?>;
+        <?php
         }
-        footer.footer {
+        if (!empty($nav_bg_color)) {
+            // nav background color
+        ?>
+            body:not(.page-template-front-carousel):not(.page-template-front-circles):not(.page-template-front-grid) .site-navigation.top-bar,
+            .site-title-bar,
+            .top-bar ul,
+            .pag-img-wrapper,
+            body:not(.page-template-front-carousel) .search-container,
+            .off-canvas {
             background: <?php echo $nav_bg_color; ?>;
+            }
+            footer.footer {
+            background: <?php echo $nav_bg_color; ?>;
+            }
+        <?php
         }
-<?php
-    }
-?>
-<?php   if ($home_nav_bg_color) {
-        // home nav background color
-?>
-        body.page-template-front .site-navigation.top-bar,
-        body.page-template-front-carousel .site-navigation.top-bar,
-        .home nav.site-navigation.top-bar.desktop-menu,
-        body.page-template-front-carousel .search-container.desktop {
+        ?>
+        <?php if ($home_nav_bg_color) {
+            // home nav background color
+        ?>
+            body.page-template-front .site-navigation.top-bar,
+            body.page-template-front-carousel .site-navigation.top-bar,
+            .home nav.site-navigation.top-bar.desktop-menu,
+            body.page-template-front-carousel .search-container.desktop {
             background: <?php echo $home_nav_bg_color; ?>;
+            }
+        <?php
         }
-<?php
-    }
-?>
-<?php   if (!empty($nav_alt_color)) {
-        // home nav text color
-?>
-        .page-template-front .top-bar ul .menu-item a,
-        .page-template-front-carousel .top-bar ul .menu-item a {
+        ?>
+        <?php if (!empty($nav_alt_color)) {
+            // home nav text color
+        ?>
+            .page-template-front .top-bar ul .menu-item a,
+            .page-template-front-carousel .top-bar ul .menu-item a {
             color: <?php echo $nav_alt_color; ?>;
+            }
+        <?php
         }
-<?php
-    }
-    if (!empty($background_color)) {
-?>
-        .news-gallery h3,
-        .news-gallery p,
-        .callout-footer a,
-        .callout-footer *,
-        .button,
-        .button:hover {
+        if (!empty($background_color)) {
+        ?>
+            .news-gallery h3,
+            .news-gallery p,
+            .callout-footer a,
+            .callout-footer *,
+            .button,
+            .button:hover {
             color: #<?php echo $background_color; ?>
-        }
+            }
 <?php
-    }
+        }
         // END cleanup
         $css = ob_get_clean();
         return $css;
