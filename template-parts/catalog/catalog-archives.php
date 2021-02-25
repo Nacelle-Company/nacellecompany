@@ -18,7 +18,7 @@
 
             <div class="cell small-6 text-right sorting">
 
-                <a data-toggle="searchCatalogOffCanvas">Sort & Filter</a>
+                <a data-toggle="searchOffCanvas">Sort & Filter</a>
 
             </div>
 
@@ -86,7 +86,7 @@
             <?php endwhile; ?>
     </div>
     <div class="grid-x">
-        <div id="catalog-pagination" class=" cell text-center">
+        <div id="catalog-pagination" class="cell text-center">
             <?php
             $big = 999999999; // need an unlikely intege
 

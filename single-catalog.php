@@ -9,7 +9,8 @@
 
 get_header(); ?>
 
-<?php // START featured header ?>
+<?php // START featured header 
+?>
 
 <?php while (have_posts()) : the_post(); ?>
 
@@ -29,63 +30,96 @@ get_header(); ?>
 
 	<main <?php post_class('main-content grid-x '); ?> id="post-<?php the_ID(); ?>">
 
-			<?php
-			// HERO VIDEO present
-			if (get_field('video_embedd')) {
+		<?php
+		// HERO VIDEO present
+		if (get_field('video_embedd')) {
 
-				echo '<div class="cell medium-7">';
+			echo '<div class="cell medium-7">';
 
-				// show hero video
-				get_template_part('template-parts/catalog/catalog-hero');
+			// show hero video
+			get_template_part('template-parts/catalog/catalog-hero');
 
-				// show more info dropdown
-				if (get_field('show_more_info')) {
-					get_template_part('template-parts/catalog/catalog-more-info', '');
-				};
+			// show more info dropdown
+			// if (get_field('show_more_info')) {
+			get_template_part('template-parts/catalog/catalog-more-info', '');
+			// };
 
-				// show crew info
-				// if (get_field('show_crew')) {
-					get_template_part('template-parts/catalog/catalog-crew', '');
-				// };
+			// show crew info
+			// if (get_field('show_crew')) {
+			get_template_part('template-parts/catalog/catalog-crew', '');
+			// };
 
-				// close the div with hero and more info
-				echo '</div><div class="cell medium-5">';
+			// close the div with hero and more info
+			echo '</div><div class="cell medium-5">';
 
-				// show catalog aside
-				get_template_part('template-parts/catalog/catalog-aside');
+			// show catalog aside
+			get_template_part('template-parts/catalog/catalog-aside');
 
-				echo '</div><div class="cell">';
+			echo '</div><div class="cell">';
 
-				// show large links FULL WIDTH
-				get_template_part('template-parts/catalog/catalog-large-links');
+			// show large links FULL WIDTH
+			get_template_part('template-parts/catalog/catalog-large-links');
 
-				echo '</div>';
+			echo '</div>';
+		} else {
+			// no HERO VIDEO present
+			echo '<div class="no-hero-video cell medium-7">';
 
-			} else {
-				// no HERO VIDEO present
-				echo '<div class="no-hero-video cell medium-7">';
+			// show more info dropdown
+			// if (get_field('show_more_info')) {
+			get_template_part('template-parts/catalog/catalog-more-info');
+			// };
 
-				// show more info dropdown
-				// if (get_field('show_more_info')) {
-					get_template_part('template-parts/catalog/catalog-more-info');
-				// };
+			// show crew info
+			// if (get_field('show_crew')) {
+			get_template_part('template-parts/catalog/catalog-crew');
+			// };
 
-				// show crew info
-				// if (get_field('show_crew')) {
-					get_template_part('template-parts/catalog/catalog-crew');
-				// };
+			// large links
+			get_template_part('template-parts/catalog/catalog-large-links');
+			// close the div with hero and more info
+			echo '</div><div class="cell medium-5">';
 
-				// large links
-					get_template_part('template-parts/catalog/catalog-large-links');
-				// close the div with hero and more info
-				echo '</div><div class="cell medium-5">';
+			// show catalog aside
+			get_template_part('template-parts/catalog/catalog-aside');
 
-				// show catalog aside
-				get_template_part('template-parts/catalog/catalog-aside');
-
-				echo '</div>';
-
+			echo '</div>';
 		}; ?>
+
+		<?php
+		$featured_posts = get_field('related_news_or_press');
+		if ($featured_posts) : ?>
+			<div class="grid-x px-large-4">
+				<div class="cell medium-12">
+				<h4>Related News & Press</h4>
+
+				<?php foreach ($featured_posts as $post) :
+
+					// Setup this post for WP functions (variable must be named $post).
+					setup_postdata($post); ?>
+					<p>
+						<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+					</p>
+					<?php
+					$talents = get_field('talent');
+					if ($talents) {
+						echo '<h4>Featured Talent</h4>';
+
+						$talentstr = array();
+						foreach ($talents as $talent) {
+							$talentstr[] = $talent->name;
+							$talentSlug[] = '<a class="alt" href="' . $siteURL . '/main-talent/' . $talent->slug . '">' . $talent->name . '</a>';
+						}
+						echo implode(", ", $talentSlug);
+					}
+					?>
+				<?php endforeach; ?>
+				<?php
+				// Reset the global post object so that the rest of the page works correctly.
+				wp_reset_postdata(); ?>
+			</div>
+			</div>
+		<?php endif; ?>
 
 	</main>
 
@@ -162,7 +196,8 @@ get_header(); ?>
 
 	<?php endif; ?>
 
-	<?php // mobile post navigation ?>
+	<?php // mobile post navigation 
+	?>
 	<div class="cell small-12 no-desktop">
 		<div class="grid-x small-up-2 pagination">
 
@@ -170,19 +205,19 @@ get_header(); ?>
 
 		</div>
 	</div>
-	<?php // end mobile post navigation ?>
-	<?php
-	//  <script>
-	// 	jQuery(function() {
-	// 		jQuery("#video-header-hero").YTPlayer();
-	// 		jQuery("#modal-hero-video").YTPlayer();
-	// 		jQuery("#modal-video").YTPlayer();
-	// 	});
-	// </script> 
+	<?php // end mobile post navigation 
 	?>
+	<!-- <script>
+		jQuery(function() {
+			jQuery("#video-header-hero").YTPlayer();
+			jQuery("#modal-hero-video").YTPlayer();
+			jQuery("#modal-video").YTPlayer();
+		});
+	</script> -->
 
 <?php endwhile; ?>
-<?php // end while (have_posts) ?>
+<?php // end while (have_posts) 
+?>
 
 <div class="edit-post">
 	<pre><?php edit_post_link(__('(Edit this post)', 'nacelle'), '<span class="edit-link">', '</span>'); ?></pre>

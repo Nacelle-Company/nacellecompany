@@ -47,32 +47,24 @@
   <script>
     jQuery(function() {
       jQuery("#video-header-hero").YTPlayer();
-      // jQuery("#bigVideoHero").YTPlayer();
-      // jQuery("#modal-video").YTPlayer();
-      // jQuery("#modal-video-container").YTPlayer();
-      // jQuery("#fullHeroVideo").YTPlayer();
-      // jQuery("#modal-hero-video").YTPlayer();
-      // jQuery("#modal-video").YTPlayer();
-    });
-    jQuery(function() {
-      // jQuery("#video-header-hero").YTPlayer();
       jQuery("#bigVideoHero").YTPlayer();
-      // jQuery("#modal-video").YTPlayer();
-      // jQuery("#modal-video-container").YTPlayer();
-      // jQuery("#fullHeroVideo").YTPlayer();
-      // jQuery("#modal-hero-video").YTPlayer();
-      // jQuery("#modal-video").YTPlayer();
+      jQuery("#modal-video").YTPlayer();
+      jQuery("#modal-video-container").YTPlayer();
+      jQuery("#fullHeroVideo").YTPlayer();
+      jQuery("#modal-hero-video").YTPlayer();
+      jQuery("#modal-video").YTPlayer();
     });
+  </script>
+
+  <script>
+    function onPlayerReady(event) {
+      $('.bounce').click(function() {
+        ytPlayer.playVideo();
+      });
+    }
   </script>
   <script src="https://www.youtube.com/iframe_api"></script>
 
-  <script>
-    // function onPlayerReady(event) {
-    //   $('.bounce').click(function() {
-    //     ytPlayer.playVideo();
-    //   });
-    // }
-  </script>
   <?php // catalog item synopsis modal 
   ?>
   <div class="small synopsis reveal" id="exampleModal5" data-reveal>

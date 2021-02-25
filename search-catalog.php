@@ -1,21 +1,29 @@
 <?php
 
 /**
- * The template for displaying search results pages.
+ * The template for displaying archive pages
  *
- * @package FoundationPress
- * @since FoundationPress 1.0.0
+ * Used to display archive-type pages if nothing more specific matches a query.
+ * For example, puts together date-based pages if no date.php file exists.
+ *
+ * If you'd like to further customize these archive views, you may create a
+ * new template file for each one. For example, tag.php (Tag archives),
+ * category.php (Category archives), author.php (Author archives), etc.
+ *
+ * @link https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package Nacelle
+ * @since Nacelle 1.0.0
  */
 
 get_header(); ?>
 
-<main class="mt-3">
-
-    <div class="grid-container full">
-
-        <div class="grid-x">
-
-            <div class="cell medium-12">
+<div class="main-container">
+    <div class="main-grid">
+        <main>
+            <div class="grid-container full align-center pt-3">
+                <?php //cell for the content 
+                ?>
 
                 <header class="grid-container archive pb-2 pb-medium-0">
 
@@ -23,13 +31,17 @@ get_header(); ?>
 
                         <div class="cell small-6">
 
-                            <h1 class="entry-title"> <?php _e('Full Catalog', 'nacelle'); ?> </h1>
+                            <h1 class="entry-title">
+
+                                <?php _e('Full Catalog', 'Nacelle') ?>
+
+                            </h1>
 
                         </div>
 
                         <div class="cell small-6 text-right sorting">
 
-                            <a data-toggle="searchOffCanvas"> <?php _e('Sort & Filter', 'nacelle'); ?> </a>
+                            <a data-toggle="searchOffCanvas">Sort & Filter</a>
 
                         </div>
 
@@ -37,106 +49,90 @@ get_header(); ?>
 
                 </header>
 
-                <div class="grid-x small-2 medium-4 large-6 align-center-middle" id="results">
 
-                    <?php
-                    if (have_posts()) : ?>
+                <?php
+                $current_page = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                $per_page = '24';
+                $catalog_items_args = array(
+                    'post_type' => 'catalog',
+                    'posts_per_page' => $per_page,
+                    'paged' => $current_page,
+                );
+                $catalog_items = new WP_Query($catalog_items_args);
+                ?>
+                <div class="catalog-cards grid-x small-up-2 medium-up-4 large-up-6 align-top">
 
-                        <?php while (have_posts()) : the_post(); ?>
+                    <?php if ($catalog_items->have_posts()) : $i = 1; ?>
 
-                            <?php if (get_field('square_image', $post->ID)) : ?>
+                        <?php while ($catalog_items->have_posts()) : $catalog_items->the_post(); ?>
 
+                            <div class="media-container animation-element cell medium-2 ">
 
-                                <div class="media-container cell medium-2 mb-4 mb-medium-5 mb-medium-4 mb-large-5 mb-xlarge-3">
+                                <a href="<?php the_permalink(); ?>">
 
-                                    <a href="<?php the_permalink(); ?>">
+                                    <div class="callout callout-hover-reveal" data-callout-hover-reveal>
 
-                                        <div class="callout callout-hover-reveal" data-callout-hover-reveal>
+                                        <div class="callout-body">
 
-                                            <div class="callout-body">
+                                            <?php
+                                            $image = get_field('square_image');
+                                            if (!empty($image)) : ?>
+                                                <img src="<?php echo esc_url($image['url']); ?>" alt="<?php //echo esc_attr($image['alt']); 
+                                                                                                        ?>" />
+                                            <?php endif; ?>
+                                        </div>
 
-                                                <?php
+                                        <div class="callout-footer">
 
-                                                $image = get_field('square_image');
-
-                                                if (!empty($image)) : ?>
-
-                                                    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
-
-                                                <?php endif; ?>
-
-                                            </div>
-
-                                            <div class="callout-footer">
-
-                                                <p>
-
-                                                    <?php $summary = get_field('synopsis', $post->ID);
-                                                    echo $summary; ?>
-
-                                                </p>
-
-                                            </div>
+                                            <p><?php
+                                                $trim_length = 20;  //desired length of text to display
+                                                $value_more = ' . . .'; // what to add at the end of the trimmed text
+                                                $custom_field = 'synopsis';
+                                                $value = get_post_meta($post->ID, $custom_field, true);
+                                                if ($value) {
+                                                    echo wp_trim_words($value, $trim_length, $value_more);
+                                                }
+                                                ?></p>
 
                                         </div>
 
-                                    </a>
+                                    </div>
 
-                                </div>
+                                </a>
 
-                            <?php endif; ?>
+                            </div>
 
+                            <?php $i += 1; ?>
                         <?php endwhile; ?>
-
-                    <?php else : ?>
-
-                        <div class="cell text-center">
-
-                            <h3><?php _e('Sorry, no results for that search.', 'nacelle'); ?></h3>
-
-                            <a class="button" data-toggle="searchOffCanvas"><?php _e('Try another search!', 'nacelle'); ?></a>
-
-                        </div>
-
-                    <?php endif; ?>
-
                 </div>
+                <div class="grid-x">
+                    <div id="catalog-pagination" class=" cell text-center">
+                        <?php
+                        $big = 999999999; // need an unlikely intege
+
+                        echo paginate_links(array(
+                            'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
+                            'format' => '?paged=%#%',
+                            'current' => max(1, get_query_var('paged')),
+                            'total' => $catalog_items->max_num_pages
+                        ));
+                        ?>
+                    </div>
+                </div>
+            <?php else : ?>
+
+                <?php get_template_part('template-parts/content', 'none'); ?>
+
+            <?php endif; ?>
+
+
+
+
 
             </div>
-
-        </div>
-
+            <?php wp_reset_postdata(); ?>
+        </main>
     </div>
-
-</main>
-
-<div class="off-canvas-wrapper">
-
-    <div class="off-canvas position-right" id="searchCatalogOffCanvas" data-off-canvas>
-
-        <div class="off-canvas-content" data-off-canvas-content>
-
-            <button class="close-button" aria-label="Close menu" type="button" data-close>
-
-                <span aria-hidden="true">&times;</span>
-
-            </button>
-
-            <div class="grid-x grid-margin-y align-center-middle oc-container pt-4">
-
-                <div class="cell align-self-middle filter-sidebar">
-
-                    <h4 class="ml-2"><?php _e('Search Catalog', 'nacelle'); ?></h4>
-
-                    <?php echo do_shortcode('[searchandfilter slug="album-search-2"]'); ?>
-
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-
 </div>
 
 <?php get_footer();

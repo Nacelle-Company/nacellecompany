@@ -1,3 +1,4 @@
+
 <?php
 
 $news_icon = get_field('news_icon', 'option');
@@ -99,13 +100,3 @@ $contentResult = substr($content, 0, strrpos($content, ' '));
 
     </div>
 </article>
-<?php
-if (function_exists('Nacelle_pagination')) :
-    Nacelle_pagination();
-elseif (is_paged()) :
-?>
-    <nav id="post-nav">
-        <div class="post-previous"><?php next_posts_link(__('&larr; Older posts', 'nacelle')); ?></div>
-        <div class="post-next"><?php previous_posts_link(__('Newer posts &rarr;', 'nacelle')); ?></div>
-    </nav>
-<?php endif; ?>

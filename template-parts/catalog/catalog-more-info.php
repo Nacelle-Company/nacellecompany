@@ -27,7 +27,8 @@ $genres = get_the_terms($post->ID, 'genre');
                         <div class="grid-x small-padding-collapse px-medium-2">
                             <div class="cell medium-12 extra-metadata">
 
-                                <?php // Runtime ?>
+                                <?php // Runtime 
+                                ?>
                                 <?php if ($runtime) : ?>
                                     <div class="grid-x">
 
@@ -42,7 +43,8 @@ $genres = get_the_terms($post->ID, 'genre');
                                     </div>
                                 <?php endif ?>
 
-                                <?php // Premiere ?>
+                                <?php // Premiere 
+                                ?>
                                 <?php if ($show_date) : ?>
                                     <?php $date = new DateTime($date); ?>
                                     <div class="grid-x">
@@ -55,7 +57,8 @@ $genres = get_the_terms($post->ID, 'genre');
                                     </div>
                                 <?php endif; ?>
 
-                                <?php // Genre ?>
+                                <?php // Genre 
+                                ?>
                                 <?php if ($genres) : ?>
                                     <div class="grid-x">
                                         <div class="cell small-4 title">
@@ -82,9 +85,11 @@ $genres = get_the_terms($post->ID, 'genre');
                                         </div>
                                     </div>
                                 <?php endif; ?>
-                                <?php // end genres ?>
+                                <?php // end genres 
+                                ?>
 
-                                <?php // rating ?>
+                                <?php // rating 
+                                ?>
                                 <?php if (get_field('rating')) : ?>
                                     <div class="grid-x">
                                         <div class="cell small-4 title">
@@ -100,7 +105,8 @@ $genres = get_the_terms($post->ID, 'genre');
                                     </div>
                                 <?php endif ?>
 
-                                <?php // copyright ?>
+                                <?php // copyright 
+                                ?>
                                 <?php if (get_field('copyright')) : ?>
 
                                     <div class="grid-x">
@@ -117,13 +123,19 @@ $genres = get_the_terms($post->ID, 'genre');
                                     </div>
 
                                 <?php endif ?>
-                                <?php // end copyright ?>
+                                <?php // end copyright 
+                                ?>
 
-                            </div> <?php // end of 8cells ?>
+                            </div> <?php // end of 8cells 
+                                    ?>
                         </div>
-                    </div><?php // end of 7cells container ?>
+                    </div><?php // end of 7cells container 
+                            ?>
                 </div>
-            </div> <?php // end accordian content ?>
-        </section> <?php // end accordian section ?>
+            </div> <?php // end accordian content 
+                    ?>
+        </section> <?php // end accordian section 
+                    ?>
     </article>
-</div> <?php // end catalog-bottom-meta ?>
+</div> <?php // end catalog-bottom-meta 
+        ?>

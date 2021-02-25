@@ -74,6 +74,8 @@ $embedd_args = array(
         ),
     ),
 );
+
+// The EMBEDD Query
 $query_embedd = new WP_Query($embedd_args);
 
 // The EMBEDD Loop
@@ -118,7 +120,7 @@ wp_reset_postdata(); ?>
                 optimizeDisplay:true,
                 abundance: <?php echo $videoAbundance; ?>,
                 loop:true, 
-                showYTLogo:false, 
+                showYTLogo:false,
                 stopMovieOnBlur:true,
                 playOnlyIfVisible:true,
                 startAt:<?php the_field('start_video_at'); ?> }"></div>

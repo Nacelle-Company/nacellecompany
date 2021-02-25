@@ -63,14 +63,14 @@ require_once('library/gutenberg.php');
  * Create Custom Image Sizes for Responsive
  * Based on Foundations breakpoints for SM, MD, LG
  **/
-function Nacelle_add_image_sizes()
-{
-    /* Soft proportional crops */
-    add_image_size('large-hero', 1400);
-    add_image_size('medium-hero', 1024);
-    add_image_size('mobile-hero', 640);
-}
-add_action('init', 'Nacelle_add_image_sizes');
+// function Nacelle_add_image_sizes()
+// {
+//     /* Soft proportional crops */
+//     add_image_size('large-hero', 1400);
+//     add_image_size('medium-hero', 1024);
+//     add_image_size('mobile-hero', 640);
+// }
+// add_action('init', 'Nacelle_add_image_sizes');
 
 
 // Define path and URL to the ACF plugin.
@@ -328,23 +328,8 @@ add_filter('request', 'nacelle_fix_custom_posts_per_page');
 //     }
 // }
 
-// Add Navigation Descriptions
-// https://www.webascender.com/blog/add-navigation-descriptions-wordpress-custom-menu-widget/
-// function nacelle_nav_description($item_output, $item, $depth, $args)
-// {
-//     if (!empty($item->description)) {
-//         $item_output = str_replace($args->link_after . '</a>', '<p class="menu-item-description">' . $item->description . '</p>' . $args->link_after . '</a>', $item_output);
-//     }
 
-//     return $item_output;
-// }
-// add_filter('walker_nav_menu_start_el', 'nacelle_nav_description', 10, 4);
-
-// news pre_get_posts call
-// function nacelle_news_query($query)
-// {
-
-add_action('pre_get_posts', 'prefix_change_category_order');
+add_action('pre_get_posts', 'nacelle_change_category_order');
 /**
  * Customize category Query using pre_get_posts.
  * 
@@ -354,7 +339,7 @@ add_action('pre_get_posts', 'prefix_change_category_order');
  * @todo       Change prefix to theme or plugin prefix.
  *
  */
-function prefix_change_category_order($query)
+function nacelle_change_category_order($query)
 {
 
     if ($query->is_main_query() && !$query->is_feed() && !is_admin() && is_category()) {
@@ -362,3 +347,6 @@ function prefix_change_category_order($query)
         $query->set('order', 'ASC');
     }
 }
+
+// Display all image sizes other than the default, thumbnail, medium and large
+// https://wpbeaches.com/remove-unused-image-media-sizes-wordpress-theme/

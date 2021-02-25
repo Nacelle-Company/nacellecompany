@@ -20,7 +20,7 @@ get_header(); ?>
 
 
 <main>
-	<?php get_template_part('template-parts/catalog/catalog', 'archives', get_post_format()); 
+	<?php get_template_part('template-parts/catalog/catalog', 'archives', get_post_format());
 	?>
 </main>
 

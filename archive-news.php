@@ -39,6 +39,7 @@ if (!empty('news_header_image')) :
   <div class="main-grid">
     <main class="main-content">
 
+      <?php //https://developer.wordpress.org/reference/functions/query_posts/ ?>
       <?php if (have_posts()) : ?>
 
         <?php //Start the Loop  ?>

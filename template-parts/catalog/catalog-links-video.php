@@ -31,7 +31,7 @@ $mtv2V = get_field('mtv2_video');
 
         <div class="solo-link">
 
-            <a href="<?php echo $youTubeV; ?>" class="catalog-title button hollow expanded" rel="bookmark" title="Watch <?php the_title_attribute(); ?> on <?php echo $youTubeV; ?>" target="_blank" rel="noreferrer">
+            <a href="<?php echo $youTubeV; ?>" class="catalog-title button hollow expanded" title="Watch <?php the_title_attribute(); ?> on <?php echo $youTubeV; ?>" target="_blank" rel="noreferrer">
                 <p>
                     <strong>
                         <?php _e("YouTube", 'Nacelle'); ?>
@@ -49,7 +49,7 @@ $mtv2V = get_field('mtv2_video');
 
         <div class="solo-link">
 
-            <a href="<?php echo $itunesV; ?>" class="catalog-title button hollow expanded" rel="bookmark" title="Watch <?php the_title_attribute(); ?> on <?php echo $itunesV; ?>" target="_blank" rel="noreferrer">
+            <a href="<?php echo $itunesV; ?>" class="catalog-title button hollow expanded" title="Watch <?php the_title_attribute(); ?> on <?php echo $itunesV; ?>" target="_blank" rel="noreferrer">
                 <p>
                     <strong>
                         <?php _e("Apple TV", 'Nacelle'); ?>
@@ -68,7 +68,7 @@ $mtv2V = get_field('mtv2_video');
 
         <div class="solo-link">
 
-            <a href="<?php echo $googlePlayV; ?>" class="catalog-title button hollow expanded" rel="bookmark" title="Watch <?php the_title_attribute(); ?> on <?php echo $googlePlayV; ?>" target="_blank" rel="noreferrer">
+            <a href="<?php echo $googlePlayV; ?>" class="catalog-title button hollow expanded" title="Watch <?php the_title_attribute(); ?> on <?php echo $googlePlayV; ?>" target="_blank" rel="noreferrer">
                 <p>
                     <strong>
                         <?php _e("Google Play", 'Nacelle'); ?>
@@ -88,7 +88,7 @@ $mtv2V = get_field('mtv2_video');
 
         <div class="solo-link">
 
-            <a href="<?php echo $amazonV; ?>" class="catalog-title button hollow expanded" rel="bookmark" title="Watch <?php the_title_attribute(); ?> on <?php echo $amazonV; ?>" target="_blank" rel="noreferrer">
+            <a href="<?php echo $amazonV; ?>" class="catalog-title button hollow expanded" title="Watch <?php the_title_attribute(); ?> on <?php echo $amazonV; ?>" target="_blank" rel="noreferrer">
                 <p>
                     <strong>
                         <?php _e("Amazon", 'Nacelle'); ?>
@@ -107,7 +107,7 @@ $mtv2V = get_field('mtv2_video');
 
         <div class="solo-link">
 
-            <a href="<?php echo $steamV; ?>" class="catalog-title button hollow expanded" rel="bookmark" title="Watch <?php the_title_attribute(); ?> on <?php echo $steamV; ?>" target="_blank" rel="noreferrer">
+            <a href="<?php echo $steamV; ?>" class="catalog-title button hollow expanded" title="Watch <?php the_title_attribute(); ?> on <?php echo $steamV; ?>" target="_blank" rel="noreferrer">
                 <p>
                     <strong>
                         <?php _e("Steam", 'Nacelle'); ?>
@@ -126,7 +126,7 @@ $mtv2V = get_field('mtv2_video');
 
         <div class="solo-link">
 
-            <a href="<?php echo $microsoftV; ?>" class="catalog-title button hollow expanded" rel="bookmark" title="Watch <?php the_title_attribute(); ?> on <?php echo $microsoftV; ?>" target="_blank" rel="noreferrer">
+            <a href="<?php echo $microsoftV; ?>" class="catalog-title button hollow expanded" title="Watch <?php the_title_attribute(); ?> on <?php echo $microsoftV; ?>" target="_blank" rel="noreferrer">
                 <p>
                     <strong>
                         <?php _e("Microsoft", 'Nacelle'); ?>
@@ -145,7 +145,7 @@ $mtv2V = get_field('mtv2_video');
 
         <div class="solo-link">
 
-            <a href="<?php echo $vuduV; ?>" class="catalog-title button hollow expanded" rel="bookmark" title="Watch <?php the_title_attribute(); ?> on <?php echo $vuduV; ?>" target="_blank" rel="noreferrer">
+            <a href="<?php echo $vuduV; ?>" class="catalog-title button hollow expanded" title="Watch <?php the_title_attribute(); ?> on <?php echo $vuduV; ?>" target="_blank" rel="noreferrer">
                 <p>
                     <strong>
                         <?php _e("Vudu", 'Nacelle'); ?>
@@ -163,7 +163,7 @@ $mtv2V = get_field('mtv2_video');
 
         <div class="solo-link">
 
-            <a href="<?php echo $vimeoV; ?>" class="catalog-title button hollow expanded" rel="bookmark" title="Watch <?php the_title_attribute(); ?> on <?php echo $vimeoV; ?>" target="_blank" rel="noreferrer">
+            <a href="<?php echo $vimeoV; ?>" class="catalog-title button hollow expanded" title="Watch <?php the_title_attribute(); ?> on <?php echo $vimeoV; ?>" target="_blank" rel="noreferrer">
                 <p>
                     <strong>
                         <?php _e("Vimeo", 'Nacelle'); ?>
@@ -181,7 +181,7 @@ $mtv2V = get_field('mtv2_video');
 
         <div class="solo-link">
 
-            <a href="<?php echo $netflixV; ?>" class="catalog-title button hollow expanded" rel="bookmark" title="Watch <?php the_title_attribute(); ?> on <?php echo $netflixV; ?>" target="_blank" rel="noreferrer">
+            <a href="<?php echo $netflixV; ?>" class="catalog-title button hollow expanded" title="Watch <?php the_title_attribute(); ?> on <?php echo $netflixV; ?>" target="_blank" rel="noreferrer">
                 <p>
                     <strong>
                         <?php _e("Netflix", 'Nacelle'); ?>
@@ -199,7 +199,7 @@ $mtv2V = get_field('mtv2_video');
 
         <div class="solo-link">
 
-            <a href="<?php echo $animalNationV; ?>" class="catalog-title button hollow expanded" rel="bookmark" title="Watch <?php the_title_attribute(); ?> on <?php echo $animalNationV; ?>" target="_blank" rel="noreferrer">
+            <a href="<?php echo $animalNationV; ?>" class="catalog-title button hollow expanded" title="Watch <?php the_title_attribute(); ?> on <?php echo $animalNationV; ?>" target="_blank" rel="noreferrer">
                 <p>
                     <strong>
                         <?php _e("Animal Nation", 'Nacelle'); ?>
@@ -217,7 +217,7 @@ $mtv2V = get_field('mtv2_video');
 
         <div class="solo-link">
 
-            <a href="<?php echo $breakerV; ?>" class="catalog-title button hollow expanded" rel="bookmark" title="Watch <?php the_title_attribute(); ?> on <?php echo $breakerV; ?>" target="_blank" rel="noreferrer">
+            <a href="<?php echo $breakerV; ?>" class="catalog-title button hollow expanded" title="Watch <?php the_title_attribute(); ?> on <?php echo $breakerV; ?>" target="_blank" rel="noreferrer">
                 <p>
                     <strong>
                         <?php _e("Breaker", 'Nacelle'); ?>
@@ -235,7 +235,7 @@ $mtv2V = get_field('mtv2_video');
 
         <div class="solo-link">
 
-            <a href="<?php echo $huluV; ?>" class="catalog-title button hollow expanded" rel="bookmark" title="Watch <?php the_title_attribute(); ?> on <?php echo $huluV; ?>" target="_blank" rel="noreferrer">
+            <a href="<?php echo $huluV; ?>" class="catalog-title button hollow expanded" title="Watch <?php the_title_attribute(); ?> on <?php echo $huluV; ?>" target="_blank" rel="noreferrer">
                 <p>
                     <strong>
                         <?php _e("HULU", 'Nacelle'); ?>
@@ -253,7 +253,7 @@ $mtv2V = get_field('mtv2_video');
 
         <div class="solo-link">
 
-            <a href="<?php echo $epixV; ?>" class="catalog-title button hollow expanded" rel="bookmark" title="Watch <?php the_title_attribute(); ?> on <?php echo $epixV; ?>" target="_blank" rel="noreferrer">
+            <a href="<?php echo $epixV; ?>" class="catalog-title button hollow expanded" title="Watch <?php the_title_attribute(); ?> on <?php echo $epixV; ?>" target="_blank" rel="noreferrer">
                 <p>
                     <strong>
                         <?php _e("EPIX", 'Nacelle'); ?>
@@ -271,7 +271,7 @@ $mtv2V = get_field('mtv2_video');
 
         <div class="solo-link">
 
-            <a href="<?php echo $comcastV; ?>" class="catalog-title button hollow expanded" rel="bookmark" title="Watch <?php the_title_attribute(); ?> on <?php echo $comcastV; ?>" target="_blank" rel="noreferrer">
+            <a href="<?php echo $comcastV; ?>" class="catalog-title button hollow expanded" title="Watch <?php the_title_attribute(); ?> on <?php echo $comcastV; ?>" target="_blank" rel="noreferrer">
                 <p>
                     <strong>
                         <?php _e("Comcast", 'Nacelle'); ?>
@@ -289,7 +289,7 @@ $mtv2V = get_field('mtv2_video');
 
         <div class="solo-link">
 
-            <a href="<?php echo $redboxV; ?>" class="catalog-title button hollow expanded" rel="bookmark" title="Watch <?php the_title_attribute(); ?> on <?php echo $redboxV; ?>" target="_blank" rel="noreferrer">
+            <a href="<?php echo $redboxV; ?>" class="catalog-title button hollow expanded" title="Watch <?php the_title_attribute(); ?> on <?php echo $redboxV; ?>" target="_blank" rel="noreferrer">
                 <p>
                     <strong>
                         <?php _e("Redbox", 'Nacelle'); ?>
@@ -307,7 +307,7 @@ $mtv2V = get_field('mtv2_video');
 
         <div class="solo-link">
 
-            <a href="<?php echo $walmartV; ?>" class="catalog-title button hollow expanded" rel="bookmark" title="Watch <?php the_title_attribute(); ?> on <?php echo $walmartV; ?>" target="_blank" rel="noreferrer">
+            <a href="<?php echo $walmartV; ?>" class="catalog-title button hollow expanded" title="Watch <?php the_title_attribute(); ?> on <?php echo $walmartV; ?>" target="_blank" rel="noreferrer">
                 <p>
                     <strong>
                         <?php _e("Walmart", 'Nacelle'); ?>
@@ -325,7 +325,7 @@ $mtv2V = get_field('mtv2_video');
 
         <div class="solo-link">
 
-            <a href="<?php echo $targetV; ?>" class="catalog-title button hollow expanded" rel="bookmark" title="Watch <?php the_title_attribute(); ?> on <?php echo $targetV; ?>" target="_blank" rel="noreferrer">
+            <a href="<?php echo $targetV; ?>" class="catalog-title button hollow expanded" title="Watch <?php the_title_attribute(); ?> on <?php echo $targetV; ?>" target="_blank" rel="noreferrer">
                 <p>
                     <strong>
                         <?php _e("Target", 'Nacelle'); ?>
@@ -343,7 +343,7 @@ $mtv2V = get_field('mtv2_video');
 
         <div class="solo-link">
 
-            <a href="<?php echo $fandangoV; ?>" class="catalog-title button hollow expanded" rel="bookmark" title="Watch <?php the_title_attribute(); ?> on <?php echo $fandangoV; ?>" target="_blank" rel="noreferrer">
+            <a href="<?php echo $fandangoV; ?>" class="catalog-title button hollow expanded" title="Watch <?php the_title_attribute(); ?> on <?php echo $fandangoV; ?>" target="_blank" rel="noreferrer">
                 <p>
                     <strong>
                         <?php _e("Fandango", 'Nacelle'); ?>
@@ -361,7 +361,7 @@ $mtv2V = get_field('mtv2_video');
 
         <div class="solo-link">
 
-            <a href="<?php echo $hooplaV; ?>" class="catalog-title button hollow expanded" rel="bookmark" title="Watch <?php the_title_attribute(); ?> on <?php echo $hooplaV; ?>" target="_blank" rel="noreferrer">
+            <a href="<?php echo $hooplaV; ?>" class="catalog-title button hollow expanded" title="Watch <?php the_title_attribute(); ?> on <?php echo $hooplaV; ?>" target="_blank" rel="noreferrer">
                 <p>
                     <strong>
                         <?php _e("Hoopla", 'Nacelle'); ?>
@@ -379,7 +379,7 @@ $mtv2V = get_field('mtv2_video');
 
         <div class="solo-link">
 
-            <a href="<?php echo $mtv2V; ?>" class="catalog-title button hollow expanded" rel="bookmark" title="Watch <?php the_title_attribute(); ?> on <?php echo $mtv2V; ?>" target="_blank" rel="noreferrer">
+            <a href="<?php echo $mtv2V; ?>" class="catalog-title button hollow expanded" title="Watch <?php the_title_attribute(); ?> on <?php echo $mtv2V; ?>" target="_blank" rel="noreferrer">
                 <p>
                     <strong>
                         <?php _e("MTV2", 'Nacelle'); ?>
@@ -397,7 +397,7 @@ $mtv2V = get_field('mtv2_video');
 
         <div class="solo-link">
 
-            <a href="<?php echo $tubiV; ?>" class="catalog-title button hollow expanded" rel="bookmark" title="Watch <?php the_title_attribute(); ?> on <?php echo $tubiV; ?>" target="_blank" rel="noreferrer">
+            <a href="<?php echo $tubiV; ?>" class="catalog-title button hollow expanded" title="Watch <?php the_title_attribute(); ?> on <?php echo $tubiV; ?>" target="_blank" rel="noreferrer">
                 <p>
                     <strong>
                         <?php _e("Tubi", 'Nacelle'); ?>
@@ -430,7 +430,7 @@ if (have_rows('new_link')) :
 
                 <div class="solo-link">
 
-                    <a href="<?php echo $linkURL; ?>" class="catalog-title button hollow expanded" rel="bookmark" title="Watch <?php the_title_attribute(); ?> on <?php echo $linkTitle; ?>" target="_blank" rel="noreferrer">
+                    <a href="<?php echo $linkURL; ?>" class="catalog-title button hollow expanded" title="Watch <?php the_title_attribute(); ?> on <?php echo $linkTitle; ?>" target="_blank" rel="noreferrer">
                         <p>
                             <strong>
                                 <?php echo $linkTitle; ?>

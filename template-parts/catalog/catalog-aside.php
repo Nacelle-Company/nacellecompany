@@ -58,7 +58,7 @@ $customAtitle = get_field('custom_audio_title');
 		<div class="cell medium-10 artwork-container">
 
 			<?php if ($itunesV) : ?>
-				<a href="<?php echo $itunesV; ?>" target="_blank">
+				<a href="<?php echo $itunesV; ?>" target="_blank" rel="noreferrer">
 
 					<?php the_post_thumbnail('large', $attr); ?>
 
@@ -75,7 +75,8 @@ $customAtitle = get_field('custom_audio_title');
 
 			<?php endif; ?>
 
-		</div> <?php // END artwork-container ?>
+		</div> <?php // END artwork-container 
+				?>
 
 		<div class="cell medium-2 no-mobile">
 
@@ -89,8 +90,10 @@ $customAtitle = get_field('custom_audio_title');
 
 			</div>
 
-		</div> <?php // END  no-mobile ?>
+		</div> <?php // END  no-mobile 
+				?>
 
-	</div> <?php // END grid-x ?>
+	</div> <?php // END grid-x 
+			?>
 
 </aside>

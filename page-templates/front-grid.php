@@ -8,8 +8,7 @@ get_header(); ?>
 
 <?php while (have_posts('')) : the_post(); ?>
 
-	<?php // get_template_part('template-parts/blocks/background-grid'); 
-	?>
+	<?php // get_template_part('template-parts/blocks/background-grid'); ?>
 
 	<?php // overlay 
 	?>

@@ -25,7 +25,7 @@ get_header(); ?>
 
 									<?php if (has_post_thumbnail()) : ?>
 
-										<?php the_post_thumbnail('medium', array('align' => 'left')); ?>
+										<?php the_post_thumbnail('large', array('align' => 'left')); ?>
 
 									<?php endif; ?>
 								</div>
@@ -49,15 +49,13 @@ get_header(); ?>
 						</header>
 						<div class="grid-x intro pb-2">
 							<div class="cell">
-									<?php if (get_field('intro')) {
-											the_field('intro');
-										} ?>
+								<?php the_field('intro'); ?>
 							</div>
 						</div>
 						<div class="grid-x content">
 							<div class="cell">
 								<?php the_content(); ?>
-								<?php 
+								<?php
 								if (get_field('show_boilerplate')) {
 									$boilerplate = get_field('boilerplate', 'option');
 									if (get_field('boilerplate', 'option')) {
@@ -66,7 +64,8 @@ get_header(); ?>
 								}
 								?>
 								<?php echo '<p class="text-center">###</p>'; ?>
-								<?php // PDF download ?>
+								<?php // PDF download 
+								?>
 								<footer>
 									<h4 class="text-center">
 										<?php if (get_field('stills_download')) : ?>
@@ -77,8 +76,42 @@ get_header(); ?>
 										<?php endif; ?>
 									</h4>
 								</footer>
-								<?php // PDF download ?>
+								<?php // PDF download 
+								?>
 							</div>
+						</div>
+						<div>
+
+							<?php
+							$featured_posts = get_field('talent_name');
+							if ($featured_posts) : ?>
+								<h4>Featured Comedy</h4>
+
+								<?php foreach ($featured_posts as $post) :
+
+									// Setup this post for WP functions (variable must be named $post).
+									setup_postdata($post); ?>
+									<p>
+										<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+									</p>
+									<?php
+									$talents = get_field('talent');
+									if ($talents) {
+										echo '<h4>Featured Talent</h4>';
+
+										$talentstr = array();
+										foreach ($talents as $talent) {
+											$talentstr[] = $talent->name;
+											$talentSlug[] = '<a class="alt" href="' . $siteURL . '/main-talent/' . $talent->slug . '">' . $talent->name . '</a>';
+										}
+										echo implode(", ", $talentSlug);
+									}
+									?>
+								<?php endforeach; ?>
+								<?php
+								// Reset the global post object so that the rest of the page works correctly.
+								wp_reset_postdata(); ?>
+							<?php endif; ?>
 						</div>
 					</section>
 

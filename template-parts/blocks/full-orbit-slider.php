@@ -1,14 +1,16 @@
 <?php
 
 $sliderSpeed = get_field('slider_speed');
-
+$coverOpacity = get_field('cover_opacity');
 
 ?>
-<?php //get_template_part('template-parts/content/content-instagram'); 
-?>
-
-<div class="orbit orbit-slider full" role="region" aria-label="Favorite Space Pictures" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out; timerDelay: <?php echo $sliderSpeed; ?>000">
-
+<style>
+    .orbit-slider.full .orbit-cover {
+        background-color: rgba(0, 0, 0, .<?php echo $coverOpacity; ?>);
+    }
+</style>
+<div class="preloader"></div>
+<div class="orbit orbit-slider full" role="region" aria-label="Favorite Space Pictures" data-orbit data-options="data-auto-play:false; animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out; timerDelay: <?php echo $sliderSpeed; ?>000" data-pause-on-hover="true">
     <div class="orbit-wrapper">
         <div class="orbit-controls">
             <button class="orbit-previous">
@@ -20,132 +22,121 @@ $sliderSpeed = get_field('slider_speed');
                 <?php get_template_part('template-parts/svg/icon-chevronRight'); ?>
             </button>
         </div>
-
+        
         <ul class="orbit-container">
-
             <?php
-
             /*
-            *  Loop through post objects (assuming this is a multi-select field) ( setup postdata )
-            *  Using this method, you can use all the normal WP functions as the $post object is temporarily initialized within the loop
-            *  Read more: http://codex.wordpress.org/Template_Tags/get_posts#Reset_after_Postlists_with_offset
-            */
-
+                    *  http://codex.wordpress.org/Template_Tags/get_posts#Reset_after_Postlists_with_offset
+                    */
+            $count = 0;
             $post_objects = get_field('home_feat_posts');
+            if ($post_objects) :
+                foreach ($post_objects as $post) :
+                    setup_postdata($post);
+                    $homeLinkChange = get_field('home_link_change');
+                    $featWidth = get_field('feat_width');
 
-            if ($post_objects) : ?>
-                <?php foreach ($post_objects as $post) : // variable must be called $post (IMPORTANT) 
-                ?>
-                    <?php setup_postdata($post); ?>
+                    $synopsisOG = get_field('synopsis');
+                    $content = get_the_content();
 
+                    $synopsis = wp_strip_all_tags($synopsisOG);
+                    $content = wp_strip_all_tags($content);
+
+                    $synopsis = substr($synopsis, 0, 200);
+                    $content = substr($content, 0, 200);
+
+                    $synopsisResult = substr($synopsis, 0, strrpos($synopsis, ' '));
+                    $contentResult = substr($content, 0, strrpos($content, ' '));
+
+                    $img_size_lg = 'fp-large';
+                    $img_size_md = 'fp-medium';
+                    $img_size_sm = 'fp-small';
+
+                    $imageHorizontal = get_field('horizontal_image');
+                    $imageSquare = get_field('square_image');
+                    $imageHome = get_field('home_image');
+
+                    if ($imageHorizontal) {
+                        $image = get_field('horizontal_image');
+                        $hero_image_alt = $imageHorizontal['alt']; /* Get image object alt */
+                    } elseif ($imageSquare) {
+                        $image = get_field('square_image');
+                        $hero_image_alt = $imageSquare['alt']; /* Get image object alt */
+                    } else {
+                    }
+
+                    /* Get custom sizes of our image sub_field */
+                    $hero_lg = $image['sizes'][$img_size_lg];
+                    $hero_md = $image['sizes'][$img_size_md];
+                    $hero_sm = $image['sizes'][$img_size_sm];
+
+                    // large background image
+                    if ($imageHome && get_field('use_home_image_for_background')) {
+                        $imageBackground = get_field('home_image');
+                        $hero_bg_image_alt = $imageBackground['alt'];
+                    } elseif ($imageHorizontal) {
+                        $imageBackground = get_field('horizontal_image');
+                        $hero_bg_image_alt = $imageBackground['alt']; /* Get image object alt */
+                    } elseif ($imageSquare) {
+                        $imageBackground = get_field('square_image');
+                        $hero_bg_image_alt = $imageBackground['alt']; /* Get image object alt */
+                    } else {
+                    }
+                    $hero_lg_background = $imageBackground['sizes'][$img_size_lg];
+                    $hero_md_background = $imageBackground['sizes'][$img_size_md];
+                    $hero_sm_background = $imageBackground['sizes'][$img_size_sm];
+
+                    if ($count < 1) {
+                        $async = "async=of";
+                    } else {
+                        $async = 'async=on';
+                    }
+
+            ?>
                     <li class="orbit-slide">
                         <figure class="orbit-figure">
-                            <?php
-
-                            $homeLinkChange = get_field('home_link_change');
-                            $featWidth = get_field('feat_width');
-
-
-                            // trunkate the synopsis or content
-                            $synopsis = get_field('synopsis');
-                            $content = get_the_content();
-
-                            $synopsis = wp_strip_all_tags($synopsis);
-                            $content = wp_strip_all_tags($content);
-
-                            $synopsis = substr($synopsis, 0, 200);
-                            $content = substr($content, 0, 200);
-
-                            $synopsisResult = substr($synopsis, 0, strrpos($synopsis, ' '));
-                            $contentResult = substr($content, 0, strrpos($content, ' '));
-
-                            $img_size_lg = 'fp-large';
-                            $img_size_md = 'fp-medium';
-                            $img_size_sm = 'fp-small';
-
-                            $imageHorizontal = get_field('horizontal_image');
-                            $imageSquare = get_field('square_image');
-                            $imageHome = get_field('home_image');
-
-                            if ($imageHorizontal) {
-                                $image = get_field('horizontal_image');
-                                $hero_image_alt = $imageHorizontal['alt']; /* Get image object alt */
-                            } elseif ($imageSquare) {
-                                $image = get_field('square_image');
-                                $hero_image_alt = $imageSquare['alt']; /* Get image object alt */
-                            } else {
-                            }
-                            /* Get custom sizes of our image sub_field */
-                            $hero_lg = $image['sizes'][$img_size_lg];
-                            $hero_md = $image['sizes'][$img_size_md];
-                            $hero_sm = $image['sizes'][$img_size_sm];
-
-                            // large background image
-                            if ($imageHome && get_field('use_home_image_for_background')) {
-                                $imageBackground = get_field('home_image');
-                                $hero_bg_image_alt = $imageBackground['alt'];
-                            } elseif ($imageHorizontal) {
-                                $imageBackground = get_field('horizontal_image');
-                                $hero_bg_image_alt = $imageBackground['alt']; /* Get image object alt */
-                            } elseif ($imageSquare) {
-                                $imageBackground = get_field('square_image');
-                                $hero_bg_image_alt = $imageBackground['alt']; /* Get image object alt */
-                            } else {
-                            }
-                            $hero_lg_background = $imageBackground['sizes'][$img_size_lg];
-                            $hero_md_background = $imageBackground['sizes'][$img_size_md];
-                            $hero_sm_background = $imageBackground['sizes'][$img_size_sm];
-                            ?>
-
-                            <?php // large background image 
-                            ?>
-                            <img 
-                            class="orbit-image"  
-                            data-interchange="[<?php echo $hero_sm_background; ?>, default], [<?php echo $hero_sm_background; ?>, small], [<?php echo $hero_md_background; ?>, medium], [<?php echo $hero_lg_background; ?>, large]" alt="<?php echo $hero_bg_image_alt; ?>"
-                             />
+                            <img <?php echo $async; ?> class="orbit-image" data-interchange="[<?php echo $hero_sm_background; ?>, default], [<?php echo $hero_sm_background; ?>, small], [<?php echo $hero_md_background; ?>, medium], [<?php echo $hero_lg_background; ?>, large]" alt="<?php echo $hero_bg_image_alt; ?>" />
                             <noscript><img src="<?php echo $hero_lg_background; ?>" alt="<?php echo $hero_bg_image_alt; ?>" /></noscript>
-
                             <div class="orbit-cover"></div>
-
                             <figcaption class="orbit-caption grid-x align-bottom">
+                                <div class="cell medium-6 orbit-content-container">
+                                    <div class="orbit-content image">
+                                        <a href="<?php if ($homeLinkChange) {
+                                                        echo $homeLinkChange;
+                                                    } else the_permalink(); ?>">
+                                            <img class="orbit-sm-image" style="max-width:<?php echo $featWidth; ?>%;" data-interchange="[<?php echo $hero_lg; ?>, default], [<?php echo $hero_sm; ?>, small], [<?php echo $hero_md; ?>, medium], [<?php echo $hero_lg; ?>, large]" alt="<?php echo $hero_image_alt; ?>" />
+                                            <noscript>
+                                                <img src="<?php echo $hero_sm; ?>" alt="<?php echo $hero_image_alt; ?>" />
+                                            </noscript>
+                                        </a>
+                                    </div>
+                                    <div class="orbit-content synopsis">
+                                        <a href="<?php the_permalink(); ?>">
+                                            <h3><?php echo get_the_title(); ?></h3>
 
-                                <div class="cell medium-6">
-
-                                    <a href="<?php if ($homeLinkChange) {
-                                                    echo $homeLinkChange;
-                                                } else the_permalink(); ?>">
-
-                                        <img class="orbit-sm-image" style="max-width:<?php echo $featWidth; ?>%;" data-interchange="[<?php echo $hero_sm; ?>, default], [<?php echo $hero_sm; ?>, small], [<?php echo $hero_md; ?>, medium], [<?php echo $hero_lg; ?>, large]" alt="<?php echo $hero_image_alt; ?>" />
-                                        <noscript>
-                                            <img src="<?php echo $hero_sm; ?>" alt="<?php echo $hero_image_alt; ?>" />
-                                        </noscript>
-
-                                    </a>
-
-                                    <a href="<?php the_permalink(); ?>">
-                                        <h3><?php echo get_the_title(); ?></h3>
-                                    </a>
-
-                                    <?php if (!empty($synopsis)) : ?>
-                                        <?php echo '<p>' . $synopsisResult . '. . .</p>'; ?>
-                                    <?php elseif (get_the_excerpt()) : ?>
-                                        <?php the_excerpt(); ?>
-                                    <?php else : ?>
-                                        <?php the_content(); ?>
-                                    <?php endif; ?>
-
+                                            <?php if (!empty($synopsis)) : ?>
+                                                <?php echo '<div class="synopsis-container">' . $synopsisResult . '</div>'; ?>
+                                                <?php // echo '<div class="mobile-only">' . $synopsisOG . '</div>'; 
+                                                ?>
+                                            <?php elseif (get_the_excerpt()) : ?>
+                                                <?php the_excerpt(); ?>
+                                            <?php else : ?>
+                                                <?php the_content(); ?>
+                                            <?php endif; ?>
+                                        </a>
+                                    </div>
                                 </div>
-
                             </figcaption>
                         </figure>
                     </li>
-                <?php endforeach; ?>
+                <?php $count++;
+                endforeach; ?>
                 <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly 
                 ?>
             <?php endif; ?>
         </ul>
-    </div>
 
+    </div>
 </div>
 
 <?php if (get_field('show_instagram_sidebar')) : ?>

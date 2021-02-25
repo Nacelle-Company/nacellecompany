@@ -1,4 +1,4 @@
-<?php if (!get_field('show_video_links')) { ?>
+<?php if (get_field('show_video_links')) { ?>
 
     <div class="grid-x catalog-large-links grid-container grid-padding-x" id="catalog_links">
 
@@ -8,8 +8,7 @@
             </h2>
             <div class="grid-x grid-padding-x">
 
-                <?php // large links 
-                ?>
+                <?php // large links ?>
                 <?php
                 // Check rows exists.
                 if (have_rows('new_large_link')) :
@@ -54,7 +53,7 @@
 
                                             <div class="image-hover-wrapper">
 
-                                                <a href="<?php echo $videoLinkURL; ?>" class="catalog-title" rel="bookmark" title="Watch <?php the_title_attribute(); ?> on <?php echo $videoLinkTitle; ?>" target="_blank">
+                                                <a href="<?php echo $videoLinkURL; ?>" class="catalog-title" title="Watch <?php the_title_attribute(); ?> on <?php echo $videoLinkTitle; ?>" target="_blank" rel="noreferrer">
 
                                                     <span class="image-hover-wrapper-banner"><strong><?php echo $videoLinkTitle; ?></strong></span>
 
@@ -91,11 +90,10 @@
 
                                         <div class="callout-body">
 
-                                            <?php // no image uploaded 
-                                            ?>
+                                            <?php // no image uploaded ?>
                                             <div class="image-hover-wrapper">
 
-                                                <a href="<?php echo $videoLinkURL; ?>" class="catalog-title solo" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>" target="_blank">
+                                                <a href="<?php echo $videoLinkURL; ?>" class="catalog-title solo" title="Permanent Link to <?php the_title_attribute(); ?>" target="_blank" rel="noreferrer">
 
                                                     <span class="image-hover-wrapper-banner"><strong><?php echo $videoLinkTitle; ?></strong></span>
 
@@ -136,7 +134,7 @@
 
                                         <span class="image-hover-wrapper-reveal">
 
-                                            <a href="<?php echo $videoLinkURL; ?>" class="catalog-title button hollow expanded" rel="bookmark" title="Watch <?php the_title_attribute(); ?> on <?php echo $videoLinkTitle; ?>" target="_blank" rel="noreferrer">
+                                            <a href="<?php echo $videoLinkURL; ?>" class="catalog-title button hollow expanded" title="Watch <?php the_title_attribute(); ?> on <?php echo $videoLinkTitle; ?>" target="_blank" rel="noreferrer">
 
                                                 <p><strong><?php echo $videoLinkTitle; ?></strong></p>
 
@@ -163,8 +161,7 @@
 
                 endif;
                 ?>
-                <?php // END custom VIDEO link 
-                ?>
+                <?php // END custom VIDEO link ?>
                 <?php get_template_part('template-parts/catalog/catalog-links-video'); ?>
 
             </div>
@@ -175,7 +172,7 @@
 
 <?php }; ?>
 
-<?php if (!get_field('show_audio_links')) { ?>
+<?php if (get_field('show_audio_links')) { ?>
 
     <div class="grid-x catalog-large-links grid-container grid-padding-x mt-medium-3" id="catalog_links">
 
@@ -185,8 +182,7 @@
             </h2>
             <div class="grid-x grid-padding-x">
 
-                <?php // large links 
-                ?>
+                <?php // large links ?>
                 <?php
                 // Check rows exists.
                 if (have_rows('audio_new_large_link')) :
@@ -231,7 +227,7 @@
 
                                             <div class="image-hover-wrapper">
 
-                                                <a href="<?php echo $videoLinkURL; ?>" class="catalog-title" rel="bookmark" title="Watch <?php the_title_attribute(); ?> on <?php echo $videoLinkTitle; ?>" target="_blank">
+                                                <a href="<?php echo $videoLinkURL; ?>" class="catalog-title" rel="bookmark" title="Watch <?php the_title_attribute(); ?> on <?php echo $videoLinkTitle; ?>" target="_blank" rel="noreferrer">
 
                                                     <span class="image-hover-wrapper-banner"><strong><?php echo $videoLinkTitle; ?></strong></span>
 
@@ -268,11 +264,10 @@
 
                                         <div class="callout-body">
 
-                                            <?php // no image uploaded 
-                                            ?>
+                                            <?php // no image uploaded ?>
                                             <div class="image-hover-wrapper">
 
-                                                <a href="<?php echo $videoLinkURL; ?>" class="catalog-title solo" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>" target="_blank">
+                                                <a href="<?php echo $videoLinkURL; ?>" class="catalog-title solo" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>" target="_blank" rel="noreferrer">
 
                                                     <span class="image-hover-wrapper-banner"><strong><?php echo $videoLinkTitle; ?></strong></span>
 
@@ -340,8 +335,7 @@
 
                 endif;
                 ?>
-                <?php // END custom VIDEO link 
-                ?>
+                <?php // END custom VIDEO link ?>
                 <?php get_template_part('template-parts/catalog/catalog-links-audio'); ?>
 
             </div>

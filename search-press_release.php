@@ -27,7 +27,16 @@ get_header(); ?>
 
 		<main class="main-content">
 
-			<?php if (have_posts()) : ?>
+			<?php
+        // https://developer.wordpress.org/reference/functions/query_posts/
+
+        $current_year = date('Y');
+
+        $current_month = date('M');
+
+        $posts = query_posts($query_string . "&post_status=future,publish&posts_per_page=60&order=DESC");
+
+        if (have_posts()) : ?>
 
 			<?php //Start the Loop ?>
 			<?php while (have_posts()) : the_post(); ?>

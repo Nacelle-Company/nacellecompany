@@ -76,12 +76,13 @@
 							<h4 class="ml-2"><?php _e('Search Specials', 'nacelle'); ?></h4>
 
 							<?php echo do_shortcode('[searchandfilter slug="production-special-search"]'); ?>
-						<?php else : ?>
 
-							<h4 class="ml-2"><?php _e('Search Catalog', 'nacelle'); ?></h4>
-
-							<?php echo do_shortcode('[searchandfilter slug="album-search-2"]'); ?>
 						<?php endif; ?>
+					<?php else : ?>
+
+						<h4 class="ml-2"><?php _e('Search Catalog', 'nacelle'); ?></h4>
+
+						<?php echo do_shortcode('[searchandfilter slug="album-search-2"]'); ?>
 
 					<?php endif; ?>
 

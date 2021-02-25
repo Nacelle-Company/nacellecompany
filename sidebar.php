@@ -32,10 +32,9 @@
 
 				<section class="menu simple pb-2">
 					<?php get_template_part('template-parts/svg/icon-phone'); ?>
-					<div class="pl-1" itemscope itemtype="http://schema.org/LocalBusiness">
-						<h1 class="invisible" itemprop="name"><?php bloginfo('name'); ?></h1>
+					<div class="pl-1">
 						<p class="invisible">Phone:</p>
-						<span itemprop="telephone">
+						<span>
 							<a href="tel:<?php the_field('phone'); ?>">
 								<?php the_field('phone'); ?>
 							</a>

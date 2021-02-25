@@ -1,11 +1,11 @@
 <div class="orbit-slider slider-post press">
-    <div class="cell orbit" role="region" aria-label="Latest Comedy Dynamics press releases" data-orbit data-auto-play="true" data-timer-delay="7000" data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
+    <div class="cell orbit" role="region" aria-label="Latest Comedy Dynamics press releases" data-orbit data-auto-play="false" data-timer-delay="7000" data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
         <?php
         // to stop the slider 
-        // data-options="data-auto-play:false"
+        // data - options = "data-auto-play:false"
         ?>
         <div class="fullscreen-image-slider">
-            <div class="cell grid-container primary-title mt-1">
+            <div class="cell primary-title mt-1">
                 <h2 class="entry-title mb-0">Latest Press</h2>
             </div>
             <ul class="orbit-container">
@@ -21,6 +21,7 @@
                     </button>
 
                 </div>
+
                 <?php
                 // Set the arguments for the query, https://blog.netgloo.com/2014/08/27/showing-a-list-of-custom-post-type-using-get_posts-loop-in-wordpress/
                 $args = array(
@@ -50,34 +51,18 @@
                         } else {
                             $image = get_the_post_thumbnail($mypost->ID, 'large', array('title' => $theTitle, 'class' => 'orbit-image', 'alt' => $theTitle));
                         }
-
                 ?>
 
                         <li class="is-active orbit-slide">
-                            <?php echo $image; ?>
+                            <?php echo '<a href="' . get_permalink($mypost->ID) . '">'; ?>
+                                <?php echo $image; ?>
                             <figcaption class="orbit-caption grid-x align-bottom">
-
                                 <div class="cell medium-12">
-
-
-                                    <?php
-                                    // $post_date_init = get_the_date('Y-m-d', $mypost->ID);
-                                    // echo $post_date_init; 
-                                    // $post_date = get_the_date('M j, Y', $mypost->ID);
-                                    // echo $post_date; 
-                                    ?>
-
-                                    <?php // the_field('link_to_article', $mypost->ID); 
-                                    ?>
-
-                                    <?php echo '<a href="' . get_permalink($mypost->ID) . '">'; ?>
                                     <h3 class="subheader"><?php echo $theTitle; ?></h3>
-                                    <?php echo '</a>'; ?>
-
                                 </div>
                             </figcaption>
+                            <?php echo '</a>'; ?>
                         </li>
-
                 <?php
                     endforeach;
                     wp_reset_postdata();

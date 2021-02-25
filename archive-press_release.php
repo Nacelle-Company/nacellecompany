@@ -32,9 +32,7 @@ get_header(); ?>
 
         <main class="main-content">
 
-            <?php
-
-            if (have_posts()) : ?>
+            <?php if (have_posts()) : ?>
 
                 <?php //Start the Loop ?>
                 <?php while (have_posts()) : the_post(); ?>

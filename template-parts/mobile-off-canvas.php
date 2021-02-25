@@ -13,7 +13,7 @@
 	<?php Nacelle_mobile_nav(); ?>
 	<div class='search-container' tabindex='1'>
 
-		<?php echo do_shortcode('[searchandfilter slug="search-form-only" fields="search" search_placeholder="Search. . ."]');
+		<?php echo do_shortcode('[searchandfilter id="4711" fields="search" search_placeholder="Search. . ."]');
 		?>
 
 	</div>

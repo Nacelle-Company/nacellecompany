@@ -89,7 +89,7 @@ if ($taxonomy == 'Producers') {
 
                 if (!empty($image)) : ?>
 
-                    <img class="grid--masonry__image" src="<?php echo $url; ?>" alt="<?php echo $alt; ?>" />
+                    <img class="grid--masonry__image test" src="<?php echo $url; ?>" alt="<?php echo $alt; ?>" />
 
                 <?php endif; ?>
 

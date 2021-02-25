@@ -18,7 +18,7 @@ $customAtitle = get_field('custom_audio_title');
 
         <div class="solo-link">
 
-            <a href="<?php echo $itunesA; ?>" class="catalog-title button hollow expanded" rel="bookmark" title="Watch <?php the_title_attribute(); ?> on <?php echo $itunesA; ?>" target="_blank" rel="noreferrer">
+            <a href="<?php echo $itunesA; ?>" class="catalog-title button hollow expanded" title="Watch <?php the_title_attribute(); ?> on <?php echo $itunesA; ?>" target="_blank" rel="noreferrer">
                 <p>
                     <strong>
                         <?php _e("iTunes", 'Nacelle'); ?>
@@ -36,7 +36,7 @@ $customAtitle = get_field('custom_audio_title');
 
         <div class="solo-link">
 
-            <a href="<?php echo $googlePlayA; ?>" class="catalog-title button hollow expanded" rel="bookmark" title="Watch <?php the_title_attribute(); ?> on <?php echo $googlePlayA; ?>" target="_blank" rel="noreferrer">
+            <a href="<?php echo $googlePlayA; ?>" class="catalog-title button hollow expanded" title="Watch <?php the_title_attribute(); ?> on <?php echo $googlePlayA; ?>" target="_blank" rel="noreferrer">
                 <p>
                     <strong>
                         <?php _e("Google Play", 'Nacelle'); ?>
@@ -55,7 +55,7 @@ $customAtitle = get_field('custom_audio_title');
 
         <div class="solo-link">
 
-            <a href="<?php echo $youTubeA; ?>" class="catalog-title button hollow expanded" rel="bookmark" title="Watch <?php the_title_attribute(); ?> on <?php echo $youTubeA; ?>" target="_blank" rel="noreferrer">
+            <a href="<?php echo $youTubeA; ?>" class="catalog-title button hollow expanded" title="Watch <?php the_title_attribute(); ?> on <?php echo $youTubeA; ?>" target="_blank" rel="noreferrer">
                 <p>
                     <strong>
                         <?php _e("YouTube Music", 'Nacelle'); ?>
@@ -75,7 +75,7 @@ $customAtitle = get_field('custom_audio_title');
 
         <div class="solo-link">
 
-            <a href="<?php echo $amazonA; ?>" class="catalog-title button hollow expanded" rel="bookmark" title="Watch <?php the_title_attribute(); ?> on <?php echo $amazonA; ?>" target="_blank" rel="noreferrer">
+            <a href="<?php echo $amazonA; ?>" class="catalog-title button hollow expanded" title="Watch <?php the_title_attribute(); ?> on <?php echo $amazonA; ?>" target="_blank" rel="noreferrer">
                 <p>
                     <strong>
                         <?php _e("Amazon", 'Nacelle'); ?>
@@ -94,7 +94,7 @@ $customAtitle = get_field('custom_audio_title');
 
         <div class="solo-link">
 
-            <a href="<?php echo $spotifyA; ?>" class="catalog-title button hollow expanded" rel="bookmark" title="Watch <?php the_title_attribute(); ?> on <?php echo $spotifyA; ?>" target="_blank" rel="noreferrer">
+            <a href="<?php echo $spotifyA; ?>" class="catalog-title button hollow expanded" title="Watch <?php the_title_attribute(); ?> on <?php echo $spotifyA; ?>" target="_blank" rel="noreferrer">
                 <p>
                     <strong>
                         <?php _e("Spotify", 'Nacelle'); ?>
@@ -113,7 +113,7 @@ $customAtitle = get_field('custom_audio_title');
 
         <div class="solo-link">
 
-            <a href="<?php echo $pandoraA; ?>" class="catalog-title button hollow expanded" rel="bookmark" title="Watch <?php the_title_attribute(); ?> on <?php echo $pandoraA; ?>" target="_blank" rel="noreferrer">
+            <a href="<?php echo $pandoraA; ?>" class="catalog-title button hollow expanded" title="Watch <?php the_title_attribute(); ?> on <?php echo $pandoraA; ?>" target="_blank" rel="noreferrer">
                 <p>
                     <strong>
                         <?php _e("Pandora", 'Nacelle'); ?>
@@ -132,7 +132,7 @@ $customAtitle = get_field('custom_audio_title');
 
         <div class="solo-link">
 
-            <a href="<?php echo $walmartA; ?>" class="catalog-title button hollow expanded" rel="bookmark" title="Watch <?php the_title_attribute(); ?> on <?php echo $walmartA; ?>" target="_blank" rel="noreferrer">
+            <a href="<?php echo $walmartA; ?>" class="catalog-title button hollow expanded" title="Watch <?php the_title_attribute(); ?> on <?php echo $walmartA; ?>" target="_blank" rel="noreferrer">
                 <p>
                     <strong>
                         <?php _e("Walmart", 'Nacelle'); ?>
@@ -150,7 +150,7 @@ $customAtitle = get_field('custom_audio_title');
 
         <div class="solo-link">
 
-            <a href="<?php echo $targetA; ?>" class="catalog-title button hollow expanded" rel="bookmark" title="Watch <?php the_title_attribute(); ?> on <?php echo $targetA; ?>" target="_blank" rel="noreferrer">
+            <a href="<?php echo $targetA; ?>" class="catalog-title button hollow expanded" title="Watch <?php the_title_attribute(); ?> on <?php echo $targetA; ?>" target="_blank" rel="noreferrer">
                 <p>
                     <strong>
                         <?php _e("Target", 'Nacelle'); ?>
@@ -168,7 +168,7 @@ $customAtitle = get_field('custom_audio_title');
 
         <div class="solo-link">
 
-            <a href="<?php echo $fandangoA; ?>" class="catalog-title button hollow expanded" rel="bookmark" title="Watch <?php the_title_attribute(); ?> on <?php echo $fandangoA; ?>" target="_blank" rel="noreferrer">
+            <a href="<?php echo $fandangoA; ?>" class="catalog-title button hollow expanded" title="Watch <?php the_title_attribute(); ?> on <?php echo $fandangoA; ?>" target="_blank" rel="noreferrer">
                 <p>
                     <strong>
                         <?php _e("Fandango", 'Nacelle'); ?>
@@ -201,7 +201,7 @@ if (have_rows('new_audio_link')) :
 
                 <div class="solo-link">
 
-                    <a href="<?php echo $audioLinkURL; ?>" class="catalog-title button hollow expanded" rel="bookmark" title="Watch <?php the_title_attribute(); ?> on <?php echo $audioLinkTitle; ?>" target="_blank" rel="noreferrer">
+                    <a href="<?php echo $audioLinkURL; ?>" class="catalog-title button hollow expanded" title="Watch <?php the_title_attribute(); ?> on <?php echo $audioLinkTitle; ?>" target="_blank" rel="noreferrer">
                         <p>
                             <strong>
                                 <?php echo $audioLinkTitle; ?>
