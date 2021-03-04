@@ -350,3 +350,12 @@ function nacelle_change_category_order($query)
 
 // Display all image sizes other than the default, thumbnail, medium and large
 // https://wpbeaches.com/remove-unused-image-media-sizes-wordpress-theme/
+
+// remove sidebar debug on wp top bar
+// https://wordpress.org/support/topic/remove-sidebar-debug/
+function remove_admin_links($wp_admin_bar)
+{
+    // remove Sidebar Debug link (Custom Sidebars plugin)
+    $wp_admin_bar->remove_node('cs-explain');
+}
+add_action('admin_bar_menu', 'remove_admin_links', 9999);

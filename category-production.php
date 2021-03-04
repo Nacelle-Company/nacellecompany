@@ -72,6 +72,9 @@ get_header(); ?>
 									<?php
 
 									$image = get_field('square_image');
+									if (!is_array($image)) {
+										$image = acf_get_attachment($image);
+									}
 									$alt = $image['alt'];
 
 									?>
@@ -130,6 +133,9 @@ get_header(); ?>
 									<?php
 
 									$image = get_field('square_image');
+									if (!is_array($image)) {
+										$image = acf_get_attachment($image);
+									}
 									$alt = $image['alt'];
 
 									?>

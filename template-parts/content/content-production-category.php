@@ -74,6 +74,9 @@
 									} elseif ($image_square) {
 										$image = get_field('square_image');
 									}
+									if (!is_array($image)) {
+										$image = acf_get_attachment($image);
+									}
 									$img_size_sm = 'fp-small';
 									$alt = $image['alt'];
 									$hero_sm = $image['sizes'][$img_size_sm];

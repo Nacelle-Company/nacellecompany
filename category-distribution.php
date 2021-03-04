@@ -58,10 +58,11 @@ get_header(); ?>
 						</h2>
 
 						<div class="img-container">
-
 							<?php
-
 							$image = get_field('square_image');
+							if (!is_array($image)) {
+								$image = acf_get_attachment($image);
+							}
 							$alt = $image['alt'];
 
 							?>

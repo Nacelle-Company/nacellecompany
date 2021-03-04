@@ -60,7 +60,7 @@ $customAtitle = get_field('custom_audio_title');
 			<?php if ($itunesV) : ?>
 				<a href="<?php echo $itunesV; ?>" target="_blank" rel="noreferrer">
 
-					<?php the_post_thumbnail('large', $attr); ?>
+					<?php the_post_thumbnail('large'); ?>
 
 				</a>
 			<?php else : ?>
