@@ -27,6 +27,7 @@ PATHS:
   # Paths to JavaScript entry points for webpack to bundle modules
   entries:
     - "src/assets/js/lib/custom.js"
+    - "src/assets/js/lib/flickity.min.js"
     - "src/assets/js/app.js"
   # Paths for the package task to include/exclude in .zip archive
   package:

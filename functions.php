@@ -359,3 +359,4 @@ function remove_admin_links($wp_admin_bar)
     $wp_admin_bar->remove_node('cs-explain');
 }
 add_action('admin_bar_menu', 'remove_admin_links', 9999);
+

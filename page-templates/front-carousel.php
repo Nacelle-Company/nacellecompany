@@ -15,7 +15,7 @@
       </div>
     </div>
     <div class="cell">
-      <?php get_template_part('template-parts/blocks/full-orbit-slider'); ?>
+      <?php get_template_part('template-parts/blocks/flickity-slider'); ?>
     </div>
     <div class="cell">
       <?php get_template_part('template-parts/blocks/wysiwyg'); ?>

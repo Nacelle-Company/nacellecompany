@@ -262,7 +262,8 @@ if (!function_exists('Nacelle_custom_colors')) :
             .archive .featured-hero,
             .searchandfilter input[type=submit],
             .button,
-            .tabs-products .tabs-title.is-active {
+            .tabs-products .tabs-title.is-active,
+            .orbit-slider .orbit-caption {
             background-color: <?php echo $primary_color; ?>;
             }
             .to-top,

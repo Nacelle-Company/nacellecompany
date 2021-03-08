@@ -3,7 +3,6 @@ import $ from 'jquery';
 // category hover
 $(function() {
 
-
     $('[data-callout-hover-reveal]').hover(function() {
         $(this).find('.callout-footer').slideDown(250);
     }, function() {
@@ -134,3 +133,19 @@ if (grids.length && getComputedStyle(grids[0]).gridTemplateRows !== 'masonry') {
 		addEventListener('resize', layout, false) /* on resize */
 	}, false);
 }
+
+var Flickity = require('flickity');
+require('flickity-imagesloaded');
+require('flickity-fullscreen');
+
+// now use imagesLoaded and fullscreen
+var flkty = new Flickity('.carousel', {
+	imagesLoaded: true,
+	fullscreen: true,
+	contain: true,
+	wrapAround: true,
+	// autoPlay: 17000,
+	fade: true,
+	pageDots: false
+});
+
