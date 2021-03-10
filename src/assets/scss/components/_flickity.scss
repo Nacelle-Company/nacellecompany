@@ -1,4 +1,3 @@
-
 /*
  * Flickity v2.2.2
  * https://flickity.metafizzy.co
@@ -71,16 +70,18 @@
 /* ---- previous/next buttons ---- */
 
 .flickity-prev-next-button {
-	top: 15%;
+	top: 100%;
 	width: 44px;
 	height: 44px;
 	/* vertically center */
 	transform: translateY(-50%);
-		top: 50%;
+	@include breakpoint(medium) {
+		top: 90%;
+	}
 }
 
 .flickity-prev-next-button.previous {
-		left: 10px;
+	left: 10px;
 }
 .flickity-prev-next-button.next {
 	right: 0;
@@ -119,14 +120,16 @@
 }
 
 .carousel.is-fullscreen .carousel-cell {
-  height: 100%;
+	height: 100%;
 }
 
 .flickity-page-dots .dot.is-selected {
 	opacity: 1;
 }
 .carousel-main {
-  height: 90vh;
+	@include breakpoint(medium) {
+		height: 90vh;
+	}
 }
 
 .carousel-cell {
@@ -135,11 +138,90 @@
 	flex-direction: column;
 }
 
-.carousel-cell img {
-	display: block;
-}
-
 .flickity-bg-image {
-  width: 100%;
+	width: 100%;
+	display: none;
+	@include breakpoint(medium) {
+		display: block;
+	}
 }
 
+// // custom styles per slider
+
+// full homepage slider
+.full-flickity {
+	.flickity-image {
+		img {
+			width: 100%;
+			@include breakpoint(medium) {
+				width: auto;
+			}
+		}
+	}
+	.flickity-synopsis {
+		padding: 1em;
+		@include breakpoint(medium) {
+			padding: 0;
+		}
+	}
+
+	.flickity-prev-next-button.previous {
+		left: 79%;
+		@include breakpoint(medium) {
+			left: 93%;
+		}
+	}
+	figcaption {
+		@include breakpoint(medium) {
+			position: absolute;
+			background: transparent;
+			text-align: left;
+			padding: 0 2rem;
+			bottom: 35px;
+		}
+	}
+	h3,
+	p {
+		color: $white;
+	}
+	h3 {
+		text-transform: uppercase;
+	}
+}
+.carousel-news,
+.carousel-press {
+	.flickity-page-dots {
+		display: none;
+		@include breakpoint(medium) {
+			display: block;
+		}
+	}
+	.flickity-prev-next-button {
+		display: none;
+		@include breakpoint(medium) {
+			display: inline-block;
+		}
+	}
+}
+
+.carousel-news {
+	.flickity-prev-next-button.next {
+		@include breakpoint(medium) {
+			left: 4vw;
+		}
+	}
+	/* white circles */
+	.flickity-page-dots .dot {
+		width: 12px;
+		height: 12px;
+		opacity: 1;
+		background: transparent;
+		border: 2px solid white;
+	}
+}
+
+.carousel-press {
+	figcaption {
+		padding: 1em;
+	}
+}

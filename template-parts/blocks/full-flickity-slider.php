@@ -4,7 +4,7 @@ $sliderSpeed = get_field('slider_speed');
 $coverOpacity = get_field('cover_opacity');
 
 ?>
-<div class="carousel carousel-main" data-flickity='{ "cellAlign": "left", "contain": true }'>
+<div class="carousel carousel-main full-flickity" data-flickity='{ "cellAlign": "left", "contain": true }'>
 
   <?php
   /*
@@ -79,10 +79,9 @@ $coverOpacity = get_field('cover_opacity');
         <figure>
           <img class="flickity-bg-image" data-interchange="[<?php echo $hero_sm_background; ?>, default], [<?php echo $hero_sm_background; ?>, small], [<?php echo $hero_md_background; ?>, medium], [<?php echo $hero_lg_background; ?>, large]" alt="<?php echo $hero_bg_image_alt; ?>" />
           <noscript><img src="<?php echo $hero_lg_background; ?>" alt="<?php echo $hero_bg_image_alt; ?>" /></noscript>
-          <div class="orbit-cover"></div>
-          <figcaption class="orbit-caption grid-x align-bottom">
-            <div class="cell medium-6 orbit-content-container">
-              <div class="orbit-content image">
+          <figcaption class="grid-x align-bottom">
+            <div class="cell medium-6">
+              <div class="flickity-image">
                 <a href="<?php if ($homeLinkChange) {
                             echo $homeLinkChange;
                           } else the_permalink(); ?>">
@@ -92,14 +91,13 @@ $coverOpacity = get_field('cover_opacity');
                   </noscript>
                 </a>
               </div>
-              <div class="orbit-content synopsis">
+              <div class="flickity-synopsis">
                 <a href="<?php the_permalink(); ?>">
                   <h3><?php echo get_the_title(); ?></h3>
-
+                </a>
+                <a href="<?php the_permalink(); ?>">
                   <?php if (!empty($synopsis)) : ?>
-                    <?php echo '<div class="synopsis-container">' . $synopsisResult . '</div>'; ?>
-                    <?php // echo '<div class="mobile-only">' . $synopsisOG . '</div>'; 
-                    ?>
+                    <?php echo '<div class="synopsis-container"><p>' . $synopsisResult . '</p></div>'; ?>
                   <?php elseif (get_the_excerpt()) : ?>
                     <?php the_excerpt(); ?>
                   <?php else : ?>

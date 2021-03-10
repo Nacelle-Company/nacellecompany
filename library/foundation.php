@@ -214,7 +214,8 @@ if (!function_exists('Nacelle_custom_colors')) :
             .synopsis.reveal blockquote p,
             .off-canvas-content .searchandfilter input[type=submit]:hover,
             .field-wrap input[type=button]:hover,
-            .tabs-products .tabs-title.is-active a {
+            .tabs-products .tabs-title.is-active a,
+            .carousel-press figcaption h3 {
             color: #<?php echo $background_color; ?>;
             }
 
@@ -263,7 +264,8 @@ if (!function_exists('Nacelle_custom_colors')) :
             .searchandfilter input[type=submit],
             .button,
             .tabs-products .tabs-title.is-active,
-            .orbit-slider .orbit-caption {
+            .orbit-slider .orbit-caption,
+            .carousel-press figcaption {
             background-color: <?php echo $primary_color; ?>;
             }
             .to-top,
@@ -295,7 +297,8 @@ if (!function_exists('Nacelle_custom_colors')) :
             }
             .fas,
             svg.footer-logo .color,
-            svg.icon {
+            svg.icon,
+            .flickity-button-icon {
             fill: <?php echo $primary_color; ?>;
             }
             .mobile-app-toggle .button .icon {
@@ -330,7 +333,8 @@ if (!function_exists('Nacelle_custom_colors')) :
             .button.hollow.success,
             .feed-container,
             hr,
-            .post-navigation {
+            .post-navigation,
+            .news .flickity-page-dots .dot {
             border-color: <?php echo $secondary_color; ?>;
             }
 
@@ -340,7 +344,8 @@ if (!function_exists('Nacelle_custom_colors')) :
             .wp-block-button .success.wp-block-button__link,
             .off-canvas-content .searchandfilter input[type=submit],
             .field-wrap input[type=button],
-            .button:hover {
+            .button:hover,
+            .flickity-page-dots .dot.is-selected {
             background-color: <?php echo $secondary_color; ?>;
             }
             .off-canvas-content .searchandfilter input[type=submit]:hover,
