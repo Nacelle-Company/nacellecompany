@@ -21,18 +21,18 @@
     <div class="footer-grid grid-x align-middle">
 
       <?php if (is_active_sidebar('l-footer-widgets')) : ?>
-        <div class="cell medium-4 l-footer-widgets">
+        <div class="cell medium-auto l-footer-widgets">
           <?php dynamic_sidebar('l-footer-widgets'); ?>
         </div>
       <?php endif; ?>
 
-      <div class="cell medium-4 c-footer-widgets">
+      <div class="cell medium-auto c-footer-widgets">
         <?php if (is_active_sidebar('c-footer-widgets')) : ?>
           <?php dynamic_sidebar('c-footer-widgets'); ?>
         <?php endif; ?>
       </div>
 
-      <div class="cell medium-4 r-footer-widgets">
+      <div class="cell medium-auto r-footer-widgets">
         <?php if (is_active_sidebar('r-footer-widgets')) : ?>
           <?php get_template_part('template-parts/blocks/widget-custom');
           ?>

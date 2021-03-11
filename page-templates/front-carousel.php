@@ -2,17 +2,15 @@
 <?php do_action('Nacelle_before_content'); ?>
 <?php while (have_posts('')) : the_post(); ?>
   <main class="front-carousel grid-x main">
-    <div class="cell tagline">
-      <div class="cell medium-12 text-center">
-        <h1 class="hide">
-          <?php $blog_title = get_bloginfo();
-          echo $blog_title; ?>
-        </h1>
-        <h2>
-          <?php if (get_field('heading')) : the_field('heading');
-          endif; ?>
-        </h2>
-      </div>
+    <div class="cell tagline text-center">
+      <h1 class="hide">
+        <?php $blog_title = get_bloginfo();
+        echo $blog_title; ?>
+      </h1>
+      <h2>
+        <?php if (get_field('heading')) : the_field('heading');
+        endif; ?>
+      </h2>
     </div>
     <div class="cell">
       <?php get_template_part('template-parts/blocks/full-flickity-slider'); ?>

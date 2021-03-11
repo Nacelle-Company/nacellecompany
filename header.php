@@ -96,7 +96,7 @@
 
 		<div class="site-title-bar title-bar mobile-nav" <?php Nacelle_title_bar_responsive_toggle(); ?>>
 
-			<div class="title-bar-left grid-x align-middle">
+			<div class="title-bar-left grid-x align-center-middle">
 
 				<button aria-label="<?php _e('Main Menu', 'nacelle'); ?>" class="menu-icon" type="button" data-toggle="<?php Nacelle_mobile_menu_id(); ?>"></button>
 

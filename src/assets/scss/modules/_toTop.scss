@@ -1,0 +1,50 @@
+// back to top btn
+// https://codepen.io/adventuresinmissions/pen/suzKB
+.to-top {
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	position: fixed;
+	bottom: 40px;
+	right: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+	/* image replacement properties */
+	overflow: hidden;
+	text-indent: 100%;
+	white-space: nowrap;
+	background: rgba(74, 144, 226, 0.85) url("../images/chevron-up-solid.svg")
+		no-repeat center 50%;
+	visibility: hidden;
+	opacity: 0;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.to-top.to-top-visible {
+	/* the button becomes visible */
+	visibility: visible;
+	opacity: 1;
+	z-index: 999999;
+}
+.to-top.to-top-fade-out {
+	/* if the user keeps scrolling down, the button is out of focus and becomes less visible */
+	opacity: 0.5;
+}
+.no-touch .to-top:hover {
+	background-color: #e86256;
+	opacity: 1;
+}
+@media only screen and (min-width: 768px) {
+	.to-top {
+		right: 20px;
+		bottom: 20px;
+	}
+}
+@media only screen and (min-width: 1024px) {
+	.to-top {
+		height: 40px;
+		width: 40px;
+		right: 30px;
+		bottom: 106px;
+	}
+}

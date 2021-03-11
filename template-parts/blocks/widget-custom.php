@@ -23,7 +23,7 @@ function my_dynamic_sidebar_params($params)
 
 ?>
 
-    <div class="grid-x social align-right align-middle">
+    <div class="grid-x social align-right">
 
         <?php if (!empty($showContactModal)) : ?>
             <div class="cell medium-shrink">

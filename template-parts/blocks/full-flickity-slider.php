@@ -4,7 +4,7 @@ $sliderSpeed = get_field('slider_speed');
 $coverOpacity = get_field('cover_opacity');
 
 ?>
-<div class="carousel carousel-main full-flickity" data-flickity='{ "cellAlign": "left", "contain": true }'>
+<div class="carousel carousel-main full-flickity" data-flickity='{ "cellAlign": "left", "contain": true, "adaptiveHeight": false, }'>
 
   <?php
   /*
@@ -80,7 +80,7 @@ $coverOpacity = get_field('cover_opacity');
           <img class="flickity-bg-image" data-interchange="[<?php echo $hero_sm_background; ?>, default], [<?php echo $hero_sm_background; ?>, small], [<?php echo $hero_md_background; ?>, medium], [<?php echo $hero_lg_background; ?>, large]" alt="<?php echo $hero_bg_image_alt; ?>" />
           <noscript><img src="<?php echo $hero_lg_background; ?>" alt="<?php echo $hero_bg_image_alt; ?>" /></noscript>
           <figcaption class="grid-x align-bottom">
-            <div class="cell medium-6">
+            <div class="cell large-6">
               <div class="flickity-image">
                 <a href="<?php if ($homeLinkChange) {
                             echo $homeLinkChange;

@@ -1,5 +1,6 @@
 @font-face {
     font-family: 'MontserratRegular';
+    font-display: swap;
     src: url('../../../fonts/MontserratRegular.eot');
     src: url('../../../fonts/MontserratRegular.eot') format('embedded-opentype'),
          url('../../../fonts/MontserratRegular.woff2') format('woff2'),
@@ -11,6 +12,7 @@
 
 @font-face {
     font-family: 'MontserratItalic';
+    font-display: swap;
     src: url('../../../fonts/MontserratItalic.eot');
     src: url('../../../fonts/MontserratItalic.eot') format('embedded-opentype'),
          url('../../../fonts/MontserratItalic.woff2') format('woff2'),
@@ -22,6 +24,7 @@
 
 @font-face {
     font-family: 'MontserratBold';
+    font-display: swap;
     src: url('../../../fonts/MontserratBold.eot');
     src: url('../../../fonts/MontserratBold.eot') format('embedded-opentype'),
          url('../../../fonts/MontserratBold.woff2') format('woff2'),
@@ -32,6 +35,7 @@
 
 @font-face {
     font-family: 'MontserratBoldItalic';
+    font-display: swap;
     src: url('../../../fonts/MontserratBoldItalic.eot');
     src: url('../../../fonts/MontserratBoldItalic.eot') format('embedded-opentype'),
          url('../../../fonts/MontserratBoldItalic.woff2') format('woff2'),

@@ -334,7 +334,7 @@ if (!function_exists('Nacelle_custom_colors')) :
             .feed-container,
             hr,
             .post-navigation,
-            .news .flickity-page-dots .dot {
+            .carousel .flickity-page-dots .dot {
             border-color: <?php echo $secondary_color; ?>;
             }
 
@@ -384,6 +384,7 @@ if (!function_exists('Nacelle_custom_colors')) :
         ?>
             body:not(.page-template-front-carousel):not(.page-template-front-circles):not(.page-template-front-grid) .site-navigation.top-bar,
             .site-title-bar,
+            .top-bar,
             .top-bar ul,
             .pag-img-wrapper,
             body:not(.page-template-front-carousel) .search-container,
