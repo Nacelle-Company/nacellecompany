@@ -1,7 +1,6 @@
-/*
- * Flickity v2.2.2
- * https://flickity.metafizzy.co
- */
+/* Flickity v2.2.2
+https://flickity.metafizzy.co
+---------------------------------------------- */
 
 .flickity-enabled {
 	position: relative;
@@ -48,55 +47,100 @@
 
 .flickity-button {
 	position: absolute;
-	background: transparent;
 	border: none;
 	color: #333;
 }
 
 .flickity-button:hover {
-	background: transparent;
+	background: white;
 	cursor: pointer;
+}
+
+.flickity-button:focus {
+	outline: none;
+	box-shadow: 0 0 0 5px #19f;
 }
 
 .flickity-button:active {
 	opacity: 0.6;
 }
 
+.flickity-button:disabled {
+	opacity: 0.3;
+	cursor: auto;
+	/* prevent disabled button from capturing pointer up event. #716 */
+	pointer-events: none;
+}
+
 .flickity-button-icon {
-	fill: #fff;
-	filter: drop-shadow(1px 1px 3px rgba(0, 0, 0, 0.35));
+	fill: currentColor;
 }
 
 /* ---- previous/next buttons ---- */
 
 .flickity-prev-next-button {
-	// top: 100%;
+	top: 50%;
 	width: 44px;
 	height: 44px;
+	border-radius: 50%;
 	/* vertically center */
-	@include breakpoint(large) {
-		transform: translateY(-50%);
-	}
+	transform: translateY(-50%);
 }
 
 .flickity-prev-next-button.previous {
 	left: 10px;
 }
 .flickity-prev-next-button.next {
-	right: 0;
+	right: 10px;
+}
+/* right to left */
+.flickity-rtl .flickity-prev-next-button.previous {
+	left: auto;
+	right: 10px;
+}
+.flickity-rtl .flickity-prev-next-button.next {
+	right: auto;
+	left: 10px;
 }
 
 .flickity-prev-next-button .flickity-button-icon {
 	position: absolute;
-	left: 30%;
-	top: 30%;
-	width: 40%;
-	height: 40%;
+	left: 20%;
+	top: 20%;
+	width: 60%;
+	height: 60%;
 }
 
-/* hide disabled button */
-.flickity-button:disabled {
-	display: none;
+/* ---- page dots ---- */
+
+.flickity-page-dots {
+	position: absolute;
+	width: 100%;
+	bottom: -25px;
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	text-align: center;
+	line-height: 1;
+}
+
+.flickity-rtl .flickity-page-dots {
+	direction: rtl;
+}
+
+.flickity-page-dots .dot {
+	display: inline-block;
+	width: 10px;
+	height: 10px;
+	margin: 0 8px;
+	background: #333;
+	border-radius: 50%;
+	opacity: 0.25;
+	cursor: pointer;
+}
+
+.flickity-page-dots .dot.is-selected {
+	opacity: 1;
 }
 
 /* ---- page dots ---- */
@@ -104,12 +148,6 @@
 
 .carousel.is-fullscreen .carousel-cell {
 	height: 100%;
-}
-
-.carousel-cell {
-	width: 100%; /* full width */
-	display: flex;
-	flex-direction: column;
 }
 
 .flickity-bg-image {
@@ -122,8 +160,11 @@
 
 // // custom styles per slider
 
-// full homepage slider
-.full-flickity {
+// full slider
+.carousel-full {
+	.carousel-cell {
+		width: 100%; /* full width */
+	}
 	.flickity-image {
 		img {
 			width: 100%;
@@ -141,20 +182,22 @@
 	.flickity-prev-next-button {
 		top: 94%;
 		&.previous {
-			left: 80%;
+			left: 78%;
 			@include breakpoint(medium) {
 				left: 93%;
 			}
 		}
 	}
 
-	figcaption {
-		@include breakpoint(medium) {
-			position: absolute;
-			background: transparent;
-			text-align: left;
-			padding: 0 2rem;
-			bottom: 35px;
+	&.carousel-full--overlay {
+		figcaption {
+			@include breakpoint(medium) {
+				position: absolute;
+				background: transparent;
+				text-align: left;
+				padding: 0 2rem;
+				bottom: 35px;
+			}
 		}
 	}
 	h3,
@@ -165,15 +208,15 @@
 		text-transform: uppercase;
 	}
 }
-.carousel-news,
-.carousel-press {
+.carousel-full--news,
+.carousel-full--press {
 	.flickity-prev-next-button {
 		top: 0;
 		@include breakpoint(medium) {
 			top: 2em;
 		}
 		&.previous {
-			left: 80vw;
+			left: 74vw;
 			@include breakpoint(medium) {
 				left: 90vw;
 			}
@@ -186,7 +229,7 @@
 	}
 }
 
-.carousel-press {
+.carousel-full--press {
 	figcaption {
 		padding: 1em;
 	}
@@ -197,5 +240,121 @@
 		@include breakpoint(medium) {
 			top: 2em;
 		}
+	}
+}
+
+// circle slider
+.carousel-circle {
+	.flickity-slider {
+		margin-left: -15%;
+		display: flex;
+		align-items: center;
+	}
+}
+.carousel-circle {
+	.carousel-cell {
+		align-items: center;
+		width: calc(70% - 15vw);
+		height: 33.333%;
+		/* flex-box, center image in cell */
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: flex;
+		-webkit-box-pack: center;
+		-webkit-justify-content: center;
+		justify-content: center;
+		@include breakpoint(large) {
+			height: 400px;
+		}
+		img {
+			display: block;
+			max-width: 100%;
+			max-height: 100%;
+			/* dim unselected */
+			opacity: 0.7;
+			-webkit-transform: scale(0.85);
+			transform: scale(0.85);
+			-webkit-filter: blur(5px);
+			filter: blur(5px);
+			-webkit-transition: opacity 0.3s, -webkit-transform 0.3s,
+				transform 0.3s, -webkit-filter 0.3s, filter 0.3s;
+			transition: opacity 0.3s, transform 0.3s, filter 0.3s;
+		}
+		&.carousel-cell--circle {
+			.carousel-cell--title {
+				flex: 0 1 auto;
+				border-radius: 50%;
+				height: 100%;
+			}
+			.circle-img {
+				border-radius: 50%;
+				width: auto;
+				object-fit: cover;
+				height: 100%;
+			}
+			.carousel-cell--img {
+				flex: 1 0 50%;
+				height: 100%;
+			}
+			// active slide
+			&.is-selected {
+				.carousel-cell--title {
+					background-color: #305d93;
+					border: 10px solid #2a2e2e;
+					transform: scale(1);
+					transition: opacity transform 0.5s linear;
+					display: flex;
+					align-items: center;
+					margin: 0 -60px 0 60px;
+					padding: 3em 4em 3em 3em;
+					h1 {
+						color: white;
+						font-size: 1em;
+					}
+				}
+				img {
+					opacity: 1;
+					-webkit-transform: scale(1);
+					transform: scale(1);
+					-webkit-filter: none;
+					filter: none;
+					z-index: 2;
+				}
+			}
+			// non-active slides
+			&:not(.is-selected) {
+				pointer-events: none;
+				// justify-content: flex-start;
+				img {
+					margin: 0 60px 0 -60px;
+					z-index: 0;
+					height: 100%;
+				}
+				.carousel-cell--title {
+					opacity: 0;
+					transform: scale(0);
+					display: none;
+				}
+			}
+		}
+	}
+	.flickity-prev-next-button.next {
+		width: 36.333%;
+		height: 100%;
+		&:hover {
+			background: transparent;
+		}
+		.flickity-button-icon {
+			left: 85%;
+			top: 50%;
+			width: 10%; 
+			height: 10%;
+		}
+	}
+}
+
+@media screen and (min-width: 960px) {
+	.carousel-cell {
+		// width: 60%;
 	}
 }

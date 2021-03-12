@@ -4,7 +4,7 @@ $sliderSpeed = get_field('slider_speed');
 $coverOpacity = get_field('cover_opacity');
 
 ?>
-<div class="carousel carousel-main full-flickity" data-flickity='{ "cellAlign": "left", "contain": true, "adaptiveHeight": false, }'>
+<div class="carousel carousel-full carousel-full--overlay" data-flickity='{ "cellAlign": "left", "contain": true, "adaptiveHeight": false, "autoPlay": 17000 }'>
 
   <?php
   /*
@@ -115,4 +115,3 @@ $coverOpacity = get_field('cover_opacity');
     ?>
   <?php endif; ?>
 </div>
-

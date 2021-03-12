@@ -11,27 +11,13 @@ get_header();
 
 <div class="grid-x front-circles">
     <div class="cell">
-
         <?php while (have_posts('')) : the_post(); ?>
-            <?php get_template_part('template-parts/blocks/full-orbit-slider'); ?>
+            
+            <?php get_template_part('template-parts/blocks/full-flickity-slider'); ?>
 
-            <div class="circle-slider orbit" role="region" aria-label="Nacelle News Slider" data-orbit data-auto-play="true" data-use-m-u-i="false">
+            <?php get_template_part('template-parts/blocks/circle-flickity-slider'); ?>
 
-                <ul class="orbit-container" id="circle-posts">
-
-                    <div class="grid-x background-slide-container">
-                        <div class="small-12 medium-4 large-4 press-title-background columns">
-                            <?php // <img class="press-title-background" src="http://localhost/nacelle/nacelle/wp-content/uploads/2019/07/news-slider-title-bkgnd.png" alt="press title background"> ?>
-                        </div>
-                    </div>
-
-                    <?php get_template_part('template-parts/blocks/circle-slider'); ?>
-
-                </ul>
-
-            </div>
         <?php endwhile; ?>
-        <?php // END LOOP ?>
 
         <?php get_template_part('template-parts/front-partners'); ?>
 

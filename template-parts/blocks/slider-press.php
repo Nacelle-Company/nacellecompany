@@ -1,5 +1,5 @@
 
-<div class="carousel carousel-main carousel-press" data-flickity='{ "wrapAround": true, "adaptiveHeight": true, "pageDots": false, "cellSelector": ".carousel-cell" }'>
+<div class="carousel carousel-full carousel-full--press" data-flickity='{ "wrapAround": true, "adaptiveHeight": true, "pageDots": false, "cellSelector": ".carousel-cell" }'>
    <div class="cell primary-title p-1">
         <h2 class="entry-title mb-0">Latest Press</h2>
     </div>

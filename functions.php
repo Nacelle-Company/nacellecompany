@@ -55,42 +55,11 @@ require_once('library/responsive-images.php');
 /** Gutenberg editor support */
 require_once('library/gutenberg.php');
 
+require_once('library/custom-post-types.php');
+
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
 // require_once( 'library/class-foundationpress-protocol-relative-theme-assets.php' );
 
-
-/**
- * Create Custom Image Sizes for Responsive
- * Based on Foundations breakpoints for SM, MD, LG
- **/
-// function Nacelle_add_image_sizes()
-// {
-//     /* Soft proportional crops */
-//     add_image_size('large-hero', 1400);
-//     add_image_size('medium-hero', 1024);
-//     add_image_size('mobile-hero', 640);
-// }
-// add_action('init', 'Nacelle_add_image_sizes');
-
-
-// Define path and URL to the ACF plugin.
-define('NACELLE_ACF_PATH', get_stylesheet_directory() . '/includes/acf/');
-define('NACELLE_ACF_URL', get_stylesheet_directory_uri() . '/includes/acf/');
-
-// Include the ACF plugin.
-include_once(NACELLE_ACF_PATH . 'acf.php');
-
-// Customize the url setting to fix incorrect asset URLs.
-add_filter('acf/settings/url', 'nacelle_acf_settings_url');
-function nacelle_acf_settings_url($url)
-{
-    return NACELLE_ACF_URL;
-}
-
-// acf options page
-if (function_exists('acf_add_options_page')) {
-    acf_add_options_page();
-}
 
 /**
  * Create ACF setting page under Catalog CPT

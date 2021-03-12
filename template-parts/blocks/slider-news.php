@@ -1,9 +1,8 @@
-
-<div class="carousel carousel-main carousel-news mb-4" data-flickity='{ "wrapAround": true, "adaptiveHeight": true, "pageDots": false, "cellSelector": ".carousel-cell" }'>
-   <div class="cell primary-title p-1">
+<div class="carousel carousel-full carousel-full--news mb-4" data-flickity='{ "wrapAround": true, "adaptiveHeight": true, "pageDots": false, "cellSelector": ".carousel-cell" }'>
+    <div class="cell primary-title p-1">
         <h2 class="entry-title mb-0">Latest News</h2>
     </div>
-   <?php 
+    <?php
     $args = array(
         'numberposts'        => 3, // -1 is for all
         'post_type'        => 'news', // or 'post', 'page'
@@ -22,14 +21,14 @@
                     <figcaption class="cell medium-6 px-1">
                         <div class="orbit-caption-container">
                             <?php echo '<a href="' . get_permalink($mypost->ID) . '">'; ?>
-                                <h3 class="subheader">
-                                    <?php echo $theTitle; ?>
-                                </h3>
+                            <h3 class="subheader">
+                                <?php echo $theTitle; ?>
+                            </h3>
                             <?php echo '</a>'; ?>
                         </div>
                     </figcaption>
                     <?php echo '<a class="cell medium-6" href="' . get_permalink($mypost->ID) . '">'; ?>
-                        <?php echo $image; ?>
+                    <?php echo $image; ?>
                     <?php echo '</a>'; ?>
                 </div>
             </div>

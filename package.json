@@ -25,6 +25,7 @@
   ],
   "dependencies": {
     "flickity": "^2.2.2",
+    "flickity-fade": "^1.0.0",
     "flickity-fullscreen": "^1.1.1",
     "flickity-imagesloaded": "^2.0.0",
     "foundation-sites": "6.4.3",

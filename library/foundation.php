@@ -278,7 +278,8 @@ if (!function_exists('Nacelle_custom_colors')) :
             background-color: <?php echo $primary_color; ?>;
             }
             .button.primary,
-            .wp-block-button .primary.wp-block-button__link {
+            .wp-block-button .primary.wp-block-button__link,
+            .carousel-full--press figcaption {
             background-color: <?php echo $primary_color; ?>;
             }
             .button.hollow,
@@ -386,6 +387,7 @@ if (!function_exists('Nacelle_custom_colors')) :
             .site-title-bar,
             .top-bar,
             .top-bar ul,
+            .menu .is-active > a,
             .pag-img-wrapper,
             body:not(.page-template-front-carousel) .search-container,
             .off-canvas {
