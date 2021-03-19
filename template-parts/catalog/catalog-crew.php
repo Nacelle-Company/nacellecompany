@@ -12,8 +12,7 @@ if (!empty($talents) || !empty($directors) || !empty($producers) || !empty($writ
         <div class="cell medium-4 title">
 
             <div class="grid-y medium-grid-frame align-justify">
-
-                <p><?php _e('Credits', 'nacelle'); ?></p>
+                <h2 class="h5"><?php the_title(); ?><br><?php _e('Credits', 'nacelle'); ?></h2>
 
                 <?php
                 $imdbV = get_field('imdb_video');
@@ -184,7 +183,8 @@ if (!empty($talents) || !empty($directors) || !empty($producers) || !empty($writ
             <?php endif; ?>
 
 
-        </div> <?php // end CREW ?>
+        </div> <?php // end CREW 
+                ?>
 
     </div>
 <?php endif; ?>

@@ -190,6 +190,9 @@ https://flickity.metafizzy.co
 	}
 
 	&.carousel-full--overlay {
+		.carousel-cell {
+			height: 90vh;
+		}
 		figcaption {
 			@include breakpoint(medium) {
 				position: absolute;
@@ -244,102 +247,102 @@ https://flickity.metafizzy.co
 }
 
 // circle slider
+// circle code: https://codepen.io/nordstromdesign/pen/sJlth
 .carousel-circle {
-	.flickity-slider {
-		margin-left: -15%;
-		display: flex;
-		align-items: center;
-	}
-}
-.carousel-circle {
-	.carousel-cell {
-		align-items: center;
-		width: calc(70% - 15vw);
-		height: 33.333%;
-		/* flex-box, center image in cell */
-		display: -webkit-box;
-		display: -webkit-flex;
-		display: flex;
-		-webkit-box-pack: center;
-		-webkit-justify-content: center;
-		justify-content: center;
+	.flickity-viewport {
 		@include breakpoint(large) {
-			height: 400px;
+			margin: 0 1.875rem;
 		}
-		img {
-			display: block;
-			max-width: 100%;
-			max-height: 100%;
-			/* dim unselected */
-			opacity: 0.7;
-			-webkit-transform: scale(0.85);
-			transform: scale(0.85);
-			-webkit-filter: blur(5px);
-			filter: blur(5px);
-			-webkit-transition: opacity 0.3s, -webkit-transform 0.3s,
-				transform 0.3s, -webkit-filter 0.3s, filter 0.3s;
-			transition: opacity 0.3s, transform 0.3s, filter 0.3s;
+	}
+	.carousel-cell {
+		height: auto;
+		display: flex;
+		align-items: center;
+		width: 68%;
+		overflow: visible;
+		@include breakpoint(medium) {
+			width: 80%;
 		}
-		&.carousel-cell--circle {
-			.carousel-cell--title {
-				flex: 0 1 auto;
+		@include breakpoint(large) {
+			width: 68%;
+		}
+		@include breakpoint(xlarge) {
+			width: 65%;
+		}
+		.carousel-cell--title {
+			opacity: 0;
+			width: 0;
+			transition: opacity 0.2s linear, width 0.2s linear;
+			display: none;
+		}
+		.carousel-cell--img {
+			width: 41vh;
+			height: 41vh;
+			a {
+				width: 100%;
+			}
+			img {
 				border-radius: 50%;
 				height: 100%;
-			}
-			.circle-img {
-				border-radius: 50%;
-				width: auto;
+				width: 100%;
 				object-fit: cover;
+				opacity: 0.7;
+				filter: blur(5px);
+				transition: opacity 0.3s linear, filter 0.3s linear;
+			}
+		}
+		&.is-selected {
+			justify-content: flex-end;
+			z-index: 1;
+			@include breakpoint(xlarge) {
 				height: 100%;
 			}
 			.carousel-cell--img {
-				flex: 1 0 50%;
-				height: 100%;
-			}
-			// active slide
-			&.is-selected {
-				.carousel-cell--title {
-					background-color: #305d93;
-					border: 10px solid #2a2e2e;
-					transform: scale(1);
-					transition: opacity transform 0.5s linear;
-					display: flex;
-					align-items: center;
-					margin: 0 -60px 0 60px;
-					padding: 3em 4em 3em 3em;
-					h1 {
-						color: white;
-						font-size: 1em;
-					}
-				}
-				img {
-					opacity: 1;
-					-webkit-transform: scale(1);
-					transform: scale(1);
-					-webkit-filter: none;
-					filter: none;
-					z-index: 2;
-				}
-			}
-			// non-active slides
-			&:not(.is-selected) {
-				pointer-events: none;
-				// justify-content: flex-start;
-				img {
-					margin: 0 60px 0 -60px;
-					z-index: 0;
+				display: flex;
+				width: 41vh;
+				@include breakpoint(xlarge) {
 					height: 100%;
 				}
-				.carousel-cell--title {
-					opacity: 0;
-					transform: scale(0);
-					display: none;
+			}
+			.carousel-cell--title {
+				display: flex;
+				opacity: 1;
+				width: 41vh;
+				height: 41vh;
+				margin-right: -50px;
+				@include breakpoint(xlarge) {
+					height: inherit;
+				}
+				.carousel-press-title {
+					padding: 3em 4em;
+				}
+				h3 {
+					font-size: 20px;
+				}
+			}
+			.carousel-cell--title-wrap {
+				border-radius: 50%;
+				width: 100%;
+				padding-bottom: 50%;
+				background: #305d93;
+				border: 6px solid #2a2e2e;
+				.carousel-press-title {
+					// padding: 6.5em 5em;
+					* {
+						color: white;
+					}
+				}
+			}
+			.carousel-cell--img {
+				img {
+					opacity: 1;
+					filter: none;
 				}
 			}
 		}
 	}
 	.flickity-prev-next-button.next {
-		width: 36.333%;
+		width: 34.333%;
 		height: 100%;
 		&:hover {
 			background: transparent;
@@ -347,14 +350,11 @@ https://flickity.metafizzy.co
 		.flickity-button-icon {
 			left: 85%;
 			top: 50%;
-			width: 10%; 
+			width: 10%;
 			height: 10%;
 		}
 	}
-}
-
-@media screen and (min-width: 960px) {
-	.carousel-cell {
-		// width: 60%;
+	.flickity-page-dots .dot {
+		border: 1px solid #305d93;
 	}
 }

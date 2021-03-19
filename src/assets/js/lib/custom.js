@@ -1,3 +1,4 @@
+// import { Slider } from 'Foundation';
 import $ from 'jquery';
 
 // category hover
@@ -134,15 +135,27 @@ if (grids.length && getComputedStyle(grids[0]).gridTemplateRows !== 'masonry') {
 	}, false);
 }
 
+// FLICKITY SLIDER/CAROUSEL!
+// https://flickity.metafizzy.co/
+
 var Flickity = require('flickity');
 require('flickity-imagesloaded');
 require('flickity-fullscreen');
 require('flickity-fade');
 
-// now use imagesLoaded and fullscreen
-var flkty = new Flickity('.carousel', {
+// FULL FLICKITY SLIDER: full-flickity-slider.php
+var flkty = new Flickity('.carousel-full--overlay', {
 	imagesLoaded: true,
 	wrapAround: true,
-	pageDots: false
+	autoPlay: 17000
 }); 
 
+// CIRCLE FLICKITY SLIDER: circle-flickity-slider.php
+var flktyCircle = new Flickity('.carousel-circle', {
+	imagesLoaded: true,
+	wrapAround: true,
+	// autoPlay: 17000,
+  selectedAttraction: 1, 
+  friction: 1,
+  cellAlign: "left"
+}); 

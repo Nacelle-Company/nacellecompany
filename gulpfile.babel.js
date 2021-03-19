@@ -77,7 +77,7 @@ function copy() {
 // Compile Sass into CSS
 // In production, the CSS is compressed
 function sass() {
-  return gulp.src(['src/assets/scss/app.scss','src/assets/scss/editor.scss'])
+  return gulp.src(['src/assets/scss/app.scss','src/assets/scss/editor.scss', 'src/assets/scss/aboveFold.scss'])
     .pipe($.sourcemaps.init())
     .pipe($.sass({
       includePaths: PATHS.sass
@@ -237,7 +237,7 @@ function reload(done) {
 // Watch for changes to static assets, pages, Sass, and JavaScript
 function watch() {
   gulp.watch(PATHS.assets, copy);
-  gulp.watch('src/assets/scss/**/*.scss', sass)
+  gulp.watch('src/assets/scss/**/*.scss', sass, { interval: 500 })
     .on('change', path => log('File ' + colors.bold(colors.magenta(path)) + ' changed.'))
     .on('unlink', path => log('File ' + colors.bold(colors.magenta(path)) + ' was removed.'));
   gulp.watch('**/*.php', reload)

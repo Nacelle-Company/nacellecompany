@@ -129,45 +129,51 @@
 
 				<?php // custom logo 
 				?>
-				<div class="site-desktop-title top-bar-title">
+				<a href="/" title="<?php echo get_bloginfo('name'); ?> homepage">
+					<div class="site-desktop-title top-bar-title">
 
-					<?php
-					if (function_exists('the_custom_logo')) {
-						the_custom_logo();
-					}
+						<?php
+						$custom_logo_id = get_theme_mod('custom_logo');
+						$logo = wp_get_attachment_image_src($custom_logo_id, 'full');
 
+						if (has_custom_logo()) {
+							echo '<img src="' . esc_url($logo[0]) . '" alt="' . get_bloginfo('name') . '" title="' . get_bloginfo('name') . ' logo' . '" class="custom-logo">';
+						} else {
+							echo '<h1>' . get_bloginfo('name') . '</h1>';
+						}
+						?>
+
+					</div>
+					</a>
+
+					<?php // top bar right 
 					?>
+					<div class="right">
 
-				</div>
+						<?php Nacelle_top_bar_r(); ?>
 
-				<?php // top bar right 
-				?>
-				<div class="right">
+						<?php if (!get_theme_mod('wpt_mobile_menu_layout') || get_theme_mod('wpt_mobile_menu_layout') === 'topbar') : ?>
 
-					<?php Nacelle_top_bar_r(); ?>
+							<?php get_template_part('template-parts/mobile-top-bar'); ?>
 
-					<?php if (!get_theme_mod('wpt_mobile_menu_layout') || get_theme_mod('wpt_mobile_menu_layout') === 'topbar') : ?>
+						<?php endif; ?>
 
-						<?php get_template_part('template-parts/mobile-top-bar'); ?>
+						<?php // search icon 
+						?>
+						<div class='header-search-container' tabindex='1'>
 
-					<?php endif; ?>
+							<div class='search-container desktop' tabindex='1'>
 
-					<?php // search icon 
-					?>
-					<div class='header-search-container' tabindex='1'>
+								<?php get_template_part('template-parts/svg/icon-search'); ?>
 
-						<div class='search-container desktop' tabindex='1'>
+								<?php echo do_shortcode('[searchandfilter id="4711" fields="search" search_placeholder="Search. . ."]');
+								?>
 
-							<?php get_template_part('template-parts/svg/icon-search'); ?>
-
-							<?php echo do_shortcode('[searchandfilter id="4711" fields="search" search_placeholder="Search. . ."]');
-							?>
+							</div>
 
 						</div>
 
 					</div>
-
-				</div>
 
 			</div>
 
