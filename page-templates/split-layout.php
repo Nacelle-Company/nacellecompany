@@ -13,8 +13,6 @@ get_header(); ?>
 
 	<main class="main-content-full-width split-layout">
 
-		<?php //get_template_part('template-parts/full-flickity-slider'); ?>
-
 		<?php while (have_posts()) : the_post(); ?>
 
 			<?php get_template_part('template-parts/content/content-split', 'page'); ?>

@@ -1,14 +1,43 @@
-.split-layout {
-    section {
-        position: relative;
-        .bk-img {
-            position: absolute;
-            overflow: hidden;
-            width: 100%;
-            height: 100%;
-            background-repeat: no-repeat;
-            background-size: cover;
-            z-index: -1;
-        }
-    }
+.sect-wrap {
+    @include xy-grid-container(1120px, $grid-container-padding);
+}
+.sect {
+	&-img_txt {
+		figcaption {
+			padding: 1em 0 0 0;
+			font-weight: 600;
+		}
+	}
+	&-txt_quote {
+		background-size: 155%;
+		background-repeat: no-repeat;
+		@include breakpoint(medium) {
+			background-size: 60%;
+		}
+		blockquote {
+			border-left-width: 5px;
+			font-size: x-large;
+		}
+	} 
+	&-banner {
+		position: relative;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		.cell *:not(.overlay) {
+			z-index: 1;
+		}
+		.overlay {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			z-index: 0;
+			background-color: black;
+		}
+		.cell {
+			@include flex;
+			@include flex-align(center, middle);
+			@include flex-direction(column);
+		}
+	}
 }
