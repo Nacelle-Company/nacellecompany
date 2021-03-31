@@ -78,6 +78,15 @@
 		@include breakpoint(medium) {
 			display: none;
 		}
+		button.submenu-toggle {
+			width: 100%;
+		}
+
+		button.submenu-toggle:after {
+			left: 100%;
+			float: right;
+			margin: 1em;
+		}
 	}
 	// menus
 	.left,
@@ -97,11 +106,11 @@
 	// left menu
 	.left {
 		@include breakpoint(medium) {
-			display: block;
+			justify-content: flex-end;
 		}
 		.menu {
 			@include breakpoint(medium) {
-				// justify-content: flex-end;
+				//
 			}
 		}
 	}
@@ -124,10 +133,10 @@
 			width: 100%;
 			z-index: 9;
 			justify-content: center;
-      background-color: transparent;
+			background-color: transparent;
 		}
-    .menu.desktop-menu {
-      background-color: transparent;
-    }
+		.menu.desktop-menu {
+			background-color: transparent;
+		}
 	}
 }

@@ -1,3 +1,130 @@
+// flickity slider
+
+// circle slider
+// circle code: https://codepen.io/nordstromdesign/pen/sJlth
+.carousel-circle {
+	margin: 8em 0;
+	.flickity-viewport {
+		@include breakpoint(large) {
+			margin: 0 1.875rem;
+		}
+	}
+	.carousel-cell {
+		height: auto;
+		display: flex;
+		align-items: center;
+		width: 100%;
+		overflow: visible;
+		flex-direction: column;
+		@include breakpoint(medium) {
+			width: 80%;
+			flex-direction: row;
+		}
+		@include breakpoint(large) {
+			width: 68%;
+		}
+		@include breakpoint(xlarge) {
+			width: 62%;
+		}
+		.carousel-cell--title {
+			opacity: 0;
+			width: 0;
+			transition: opacity 0.2s linear, width 0.2s linear;
+			display: none;
+		}
+		.carousel-cell--img {
+			width: 41vh;
+			height: 41vh;
+			a {
+				width: 100%;
+			}
+			img {
+				border-radius: 50%;
+				height: 100%;
+				width: 100%;
+				object-fit: cover;
+				opacity: 0.7;
+				filter: blur(5px);
+				transition: opacity 0.3s linear, filter 0.3s linear;
+			}
+		}
+		&.is-selected {
+			justify-content: flex-end;
+			z-index: 1;
+			@include breakpoint(xlarge) {
+				height: 100%;
+			}
+			.carousel-cell--img {
+				display: flex;
+				width: 41vh;
+				@include breakpoint(xlarge) {
+					height: 100%;
+				}
+			}
+			.carousel-cell--title {
+				display: flex;
+				opacity: 1;
+				width: 41vh;
+				height: 41vh;
+				margin-bottom: -50px;
+				@include breakpoint(xlarge) {
+					height: inherit;
+					margin-right: -50px;
+					margin-bottom: unset;
+				}
+				.carousel-press-title {
+					padding: 3em 4em;
+				}
+				h3 {
+					font-size: 20px;
+				}
+			}
+			.carousel-cell--title-wrap {
+				border-radius: 50%;
+				width: 100%;
+				padding-bottom: 50%;
+				background: #305d93;
+				border: 6px solid #2a2e2e;
+				.carousel-press-title {
+					// padding: 6.5em 5em;
+					* {
+						color: white;
+					}
+				}
+			}
+			.carousel-cell--img {
+				img {
+					opacity: 1;
+					filter: none;
+				}
+			}
+		}
+	}
+	.flickity-prev-next-button {
+		&:hover {
+			background: transparent;
+		}
+	}
+	.flickity-prev-next-button.next {
+		@include breakpoint(medium) {
+			width: 34.333%;
+			height: 100%;
+		}
+		.flickity-button-icon {
+			@include breakpoint(medium) {
+				left: 85%;
+				top: 50%;
+				width: 10%;
+				height: 10%;
+			}
+		}
+	}
+	.flickity-page-dots .dot {
+		border: 1px solid #305d93;
+	}
+}
+
+// END flickity slider
 .circle-slider {
 	@include breakpoint(large) {
 		padding-top: 4rem;

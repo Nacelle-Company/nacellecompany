@@ -10,17 +10,17 @@ import { Nest } from 'foundation-sites/js/foundation.util.nest';
 import { Timer } from 'foundation-sites/js/foundation.util.timer';
 import { Touch } from 'foundation-sites/js/foundation.util.touch';
 import { Triggers } from 'foundation-sites/js/foundation.util.triggers';
-import { Abide } from 'foundation-sites/js/foundation.abide';
+// import { Abide } from 'foundation-sites/js/foundation.abide';
 import { Accordion } from 'foundation-sites/js/foundation.accordion';
 import { AccordionMenu } from 'foundation-sites/js/foundation.accordionMenu';
-import { Drilldown } from 'foundation-sites/js/foundation.drilldown';
-import { Dropdown } from 'foundation-sites/js/foundation.dropdown';
+// import { Drilldown } from 'foundation-sites/js/foundation.drilldown';
+// import { Dropdown } from 'foundation-sites/js/foundation.dropdown';
 import { DropdownMenu } from 'foundation-sites/js/foundation.dropdownMenu';
 // import { Equalizer } from 'foundation-sites/js/foundation.equalizer';
 import { Interchange } from 'foundation-sites/js/foundation.interchange';
 // import { Magellan } from 'foundation-sites/js/foundation.magellan';
 import { OffCanvas } from 'foundation-sites/js/foundation.offcanvas';
-import { Orbit } from 'foundation-sites/js/foundation.orbit';
+// import { Orbit } from 'foundation-sites/js/foundation.orbit';
 import { ResponsiveMenu } from 'foundation-sites/js/foundation.responsiveMenu';
 import { ResponsiveToggle } from 'foundation-sites/js/foundation.responsiveToggle';
 import { Reveal } from 'foundation-sites/js/foundation.reveal';
@@ -29,7 +29,7 @@ import { SmoothScroll } from 'foundation-sites/js/foundation.smoothScroll';
 // import { Sticky } from 'foundation-sites/js/foundation.sticky';
 import { Tabs } from 'foundation-sites/js/foundation.tabs';
 import { Toggler } from 'foundation-sites/js/foundation.toggler';
-import { Tooltip } from 'foundation-sites/js/foundation.tooltip';
+// import { Tooltip } from 'foundation-sites/js/foundation.tooltip';
 import { ResponsiveAccordionTabs } from 'foundation-sites/js/foundation.responsiveAccordionTabs';
 
 
@@ -58,15 +58,15 @@ Touch.init($);
 
 Triggers.init($, Foundation);
 
-Foundation.plugin(Abide, 'Abide');
+// Foundation.plugin(Abide, 'Abide');
 
 Foundation.plugin(Accordion, 'Accordion');
 
 Foundation.plugin(AccordionMenu, 'AccordionMenu');
 
-Foundation.plugin(Drilldown, 'Drilldown');
+// Foundation.plugin(Drilldown, 'Drilldown');
 
-Foundation.plugin(Dropdown, 'Dropdown');
+// Foundation.plugin(Dropdown, 'Dropdown');
 
 Foundation.plugin(DropdownMenu, 'DropdownMenu');
 
@@ -78,7 +78,7 @@ Foundation.plugin(Interchange, 'Interchange');
 
 Foundation.plugin(OffCanvas, 'OffCanvas');
 
-Foundation.plugin(Orbit, 'Orbit');
+// Foundation.plugin(Orbit, 'Orbit');
 
 Foundation.plugin(ResponsiveMenu, 'ResponsiveMenu');
 
@@ -96,7 +96,7 @@ Foundation.plugin(Tabs, 'Tabs');
 
 Foundation.plugin(Toggler, 'Toggler');
 
-Foundation.plugin(Tooltip, 'Tooltip');
+// Foundation.plugin(Tooltip, 'Tooltip');
 
 Foundation.plugin(ResponsiveAccordionTabs, 'ResponsiveAccordionTabs');
 

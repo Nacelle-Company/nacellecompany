@@ -86,7 +86,7 @@ body {
 }
 // https://css-tricks.com/snippets/css/simple-and-nice-blockquote-styling/
 blockquote {
-  border-left: 10px solid #ccc;
+  border-left: 5px solid $primary-color;
   margin: 1.5em 10px;
   padding: 0.5em 10px;
   quotes: "\201C""\201D""\2018""\2019";

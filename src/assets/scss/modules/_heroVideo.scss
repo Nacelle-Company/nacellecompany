@@ -131,12 +131,41 @@
 	zoom: 1.09;
 	@include breakpoint(medium up) {
 		padding-top: 1rem;
-		height: 80vh !important;
+		height: 75vh !important;
 		overflow: visible !important;
 	}
 }
 .player {
 	@include breakpoint(small only) {
 		overflow: visible !important;
+	}
+}
+.full-hero-video {
+	@include breakpoint(small only) {
+		height: 100vh;
+	}
+	@include breakpoint(medium) {
+		width: auto;
+		overflow: hidden;
+		position: relative;
+		flex-wrap: nowrap;
+		align-items: stretch;
+	}
+	.mb_YTPlayer {
+		@include breakpoint(small only) {
+			background-image: none !important;
+		}
+	}
+	.mbYTP_wrapper {
+		@include breakpoint(small only) {
+			display: none;
+		}
+	}
+}
+.full-hero-video--content {
+	@include breakpoint(large) {
+		display: flex;
+		height: 65vh;
+		justify-content: flex-end;
 	}
 }

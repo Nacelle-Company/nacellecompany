@@ -264,7 +264,6 @@ if (!function_exists('Nacelle_custom_colors')) :
             .searchandfilter input[type=submit],
             .button,
             .tabs-products .tabs-title.is-active,
-            .orbit-slider .orbit-caption,
             .carousel-press figcaption {
             background-color: <?php echo $primary_color; ?>;
             }
@@ -290,6 +289,9 @@ if (!function_exists('Nacelle_custom_colors')) :
             .press_release .press,
             .page-template-featured-page .off-canvas-content {
             border-color: <?php echo $primary_color; ?>;
+            }
+            .cell blockquote {
+            border-left-color: <?php echo $primary_color; ?>;
             }
             .details-container p,
             .primary-title,
@@ -354,8 +356,6 @@ if (!function_exists('Nacelle_custom_colors')) :
             background-color: <?php echo $secondary_color; ?>;
             filter: saturate(1.5);
             }
-            .orbit-controls .orbit-previous:hover .icon,
-            .orbit-controls .orbit-next:hover .icon,
             .icon.down-angle {
             fill: <?php echo $secondary_color; ?>;
             }

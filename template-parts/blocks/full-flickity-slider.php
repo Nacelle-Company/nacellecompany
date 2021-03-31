@@ -7,7 +7,6 @@ $coverOpacity = get_field('cover_opacity');
   /*
     *  http://codex.wordpress.org/Template_Tags/get_posts#Reset_after_Postlists_with_offset
     */
-  // $count = 0;
   $post_objects = get_field('home_feat_posts');
   if ($post_objects) :
     foreach ($post_objects as $post) :
@@ -65,12 +64,6 @@ $coverOpacity = get_field('cover_opacity');
       $hero_md_background = $imageBackground['sizes'][$img_size_md];
       $hero_sm_background = $imageBackground['sizes'][$img_size_sm];
 
-      // if ($count < 1) {
-      //   $async = "async=of";
-      // } else {
-      //   $async = 'async=on';
-      // }
-
   ?>
       <div class="carousel-cell">
         <figure>
@@ -106,7 +99,7 @@ $coverOpacity = get_field('cover_opacity');
           </figcaption>
         </figure>
       </div>
-    <?php //$count++;
+    <?php
     endforeach; ?>
     <?php wp_reset_postdata(); // IMPORTANT - reset the $post object so the rest of the page works correctly 
     ?>

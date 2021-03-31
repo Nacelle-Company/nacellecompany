@@ -1,30 +1,53 @@
-@charset 'utf-8';
+// @charset 'utf-8';
 
 @import 'settings';
 @import 'foundation';
 @import 'motion-ui';
 
+// // YES NEED
 @include foundation-global-styles;
 @include foundation-xy-grid-classes;
 @include foundation-typography;
 @include foundation-menu;
 @include foundation-dropdown-menu; 
+@include foundation-media-object;
+@include foundation-off-canvas;
+@include foundation-title-bar;
+@include foundation-title-bar;
 @include foundation-top-bar;
+@include foundation-visibility-classes;
+@include foundation-float-classes;
+@include foundation-flex-classes;
 
+// Modules
+@import "modules/circleSlider";
 @include motion-ui-transitions;
 @include motion-ui-animations;
 
-@import "global/accessibility";
-@import "global/colors";
-@import "global/wpAdmin";
-@import "global/wpOverrides";
-// @import "global/gutenberg";
-@import "global/fonts";
-@import "global/icons";
-@import "global/bem";
-@import "global/animations";
-@import "global/mobile";
+// // // NOT YET
 
-@import "modules/search";
-@import "modules/navigation";
-@import "components/flickity";
+
+
+
+// @import "global/accessibility";
+// @import "global/colors";
+// @import "global/wpAdmin";
+// @import "global/wpOverrides";
+// // @import "global/gutenberg";
+// @import "global/fonts";
+// @import "global/icons";
+// @import "global/bem";
+// @import "global/animations";
+// @import "global/mobile";
+
+// @import "modules/search";
+// @import "modules/navigation";
+// @import "components/flickity";
+
+// CD above the fold CSS
+// all pages
+// - navigation
+// - search
+
+// home
+// - carousel full

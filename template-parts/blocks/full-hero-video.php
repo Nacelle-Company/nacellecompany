@@ -27,7 +27,7 @@ if (have_rows('featured_posts')) :
 ?>
             <div class="cell">
 
-                <div class="grid-y grid-frame full-hero-video">
+                <div class="grid-y full-hero-video">
 
                     <div id="videoHeroContainment-<?php echo $count; ?>" class="cell">
 
@@ -35,12 +35,11 @@ if (have_rows('featured_posts')) :
 
                             <?php // plugin docs: https://github.com/pupunzi/jquery.mb.YTPlayer/wiki#external-methods 
                             ?>
-                            <div id="fullHeroVideo-<?php echo $count; ?>" class="player grid-x align-bottom grid-padding-x grid-padding-y" onclick="jQuery('#fullHeroVideo-<?php echo $count; ?>').YTPUnmute()" data-property="{videoURL:'<?php echo $video; ?>', containment:'self', coverImage:'<?php echo $featured_img_url; ?>', useOnMobile:false, autoPlay:true, mute:true, mask: '<?php echo $mask_url; ?>',showControls:false, optimize_display:true, loop:true, showYTLogo:false, stopMovieOnBlur:true,playOnlyIfVisible:true, startAt:<?php the_field('start_video_at'); ?> }">
+                            <div id="fullHeroVideo-<?php echo $count; ?>" class="player align-bottom grid-padding-x grid-padding-y" onclick="jQuery('#fullHeroVideo-<?php echo $count; ?>').YTPUnmute()" data-property="{videoURL:'<?php echo $video; ?>', containment:'self', coverImage:'<?php echo $featured_img_url; ?>', useOnMobile:false, autoPlay:true, mute:true, mask: '<?php echo $mask_url; ?>',showControls:false, optimize_display:true, loop:true, showYTLogo:false, stopMovieOnBlur:true,playOnlyIfVisible:true, startAt:<?php the_field('start_video_at'); ?> }">
 
 
                                 <div class="cell">
-                                    <div class="orbit-cover"></div>
-                                    <div class="grid-y grid-frame pl-medium-3 pb-medium-4 end">
+                                    <div class="grid-y full-hero-video--content pl-medium-2 pb-medium-2">
 
                                         <div class="cell">
                                             <div class="media-object align-bottom stack-for-small">
