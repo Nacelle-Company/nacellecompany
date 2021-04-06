@@ -45,14 +45,35 @@
 	.site-desktop-title {
 		display: none;
 	}
-	.header-search-container {
-		position: absolute;
-		z-index: 99;
-		right: 50px;
-		top: 10px;
-	}
+
 	.nav-container {
 		width: 100%;
+		// default (nacelle) desktop navigation layout (logo left, nav right)
+		@include breakpoint(medium) {
+			justify-content: space-between;
+			.right {
+				justify-content: flex-end;
+				align-items: center;
+			}
+		}
+		.header-search-container {
+			display: none;
+		}
+		// alternate centered desktop navigation layout
+		&.left-too {
+			@include breakpoint(medium) {
+				.right {
+					justify-content: flex-start;
+				}
+			}
+			.header-search-container {
+				display: block;
+				position: absolute;
+				z-index: 99;
+				right: 50px;
+				top: 10px;
+			}
+		}
 	}
 	.site-header .desktop-menu {
 		display: none;
@@ -137,6 +158,23 @@
 		}
 		.menu.desktop-menu {
 			background-color: transparent;
+		}
+	}
+}
+
+// absolute positioned top nav
+.page-template-front-circles,
+.page-template-front-grid,
+.page-template-products {
+	.top-bar {
+		@include breakpoint(medium up) {
+			position: absolute;
+			z-index: 9;
+			width: 100%;
+			background-color: transparent !important;
+		}
+		.desktop.menu {
+			align-items: center;
 		}
 	}
 }

@@ -112,8 +112,6 @@ get_header(); ?>
 
 							<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo $alt; ?>" />
 
-
-
 						</div>
 					</a>
 					<?php if ($count === 1) {

@@ -8,8 +8,7 @@ if ($image) :
 ?>
   <div class="media-container animation-element cell medium-2 ">
 
-    <a href="<?php the_permalink(); ?>" aria-label="Visit <?php //echo $alt_text; 
-                                                          ?>">
+    <a href="<?php the_permalink(); ?>" aria-label="Visit">
 
       <div class="callout callout-hover-reveal" data-callout-hover-reveal>
 

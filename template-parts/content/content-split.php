@@ -20,7 +20,7 @@
 			<?php if (get_row_layout() == 'img_txt') : ?>
 
 				<section class="sect sect-img_txt" style="<?php if (get_sub_field('bk_color')) : ?>background-color:<?php the_sub_field('bk_color'); ?>;<?php endif; ?><?php if (get_sub_field('border')) : ?>border-bottom:10px solid <?php the_sub_field('border'); ?>;<?php endif; ?>">
-					<div class="grid-x sect-wrap <?php if (get_sub_field('fill_img')) : ?><?php else : ?> grid-margin-y grid-padding-y<?php endif; ?> align-middle align-spaced">
+					<div class="grid-x sect-wrap <?php if (get_sub_field('fill_img')) : ?> fill-img<?php else : ?> grid-margin-y grid-padding-y<?php endif; ?> align-middle align-spaced">
 						<?php // THE content 
 						?>
 						<div class="cell<?php if (get_sub_field('fill_img')) : ?> medium-4 py-4 py-medium-0<?php else : ?> medium-5<?php endif; ?><?php if (get_sub_field('flip')) : ?> medium-order-2<?php endif; ?>">

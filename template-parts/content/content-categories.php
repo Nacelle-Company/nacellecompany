@@ -18,62 +18,62 @@
 
 get_header(); ?>
 
-<div class="cell medium-12">
-	<header class="grid-container archive pb-2 pb-medium-0">
+<?php if (have_posts()) : ?>
 
-		<div class="grid-x align-center-middle">
-
-			<div class="cell small-6">
-
-				<h1 class="entry-title">
-
-					<?php single_cat_title(); ?>
-
-				</h1>
-
+	<div class="cell medium-12">
+		<header class="grid-container archive pb-2 pb-medium-0">
+			<div class="grid-x align-center-middle grid-padding-y category-intro">
+				<div class="cell small-2">
+					<h1 class="entry-title">
+						<?php single_cat_title(); ?>
+					</h1>
+				</div>
+				<div class="cell medium-8">
+					<?php
+					if (is_category('album')) {
+						echo the_field('album_content', 'option');
+					} elseif (is_category('film')) {
+						echo the_field('film_content', 'option');
+					} elseif (is_category('series')) {
+						echo the_field('series_content', 'option');
+					} elseif (is_category('special')) {
+						echo the_field('special_content', 'option');
+					} elseif (is_category('special-production')) {
+						echo the_field('production_special_content', 'option');
+					} elseif (is_category('series-production')) {
+						echo the_field('production_series_content', 'option');
+					}
+					?>
+				</div>
+				<div class="cell medium-2 text-right sorting">
+					<a data-toggle="searchOffCanvas">Sort & Filter</a>
+				</div>
 			</div>
-
-			<div class="cell small-6 text-right sorting">
-
-				<a data-toggle="searchOffCanvas">Sort & Filter</a>
-
-			</div>
-
-		</div>
-
-	</header>
-
-	<div class="catalog-cards grid-x small-up-2 medium-up-4 large-up-6 align-top">
-
-		<?php if (have_posts()) : ?>
-
+		</header>
+		<div class="catalog-cards grid-x small-up-2 medium-up-4 large-up-6 align-top mt-medium-3">
 			<?php /* Start the Loop */ ?>
 			<?php while (have_posts()) : the_post(); ?>
-
 				<?php get_template_part('template-parts/content/content-categories-img'); ?>
-
 			<?php endwhile; ?>
-
 		<?php else : ?>
 			<?php get_template_part('template-parts/content', 'none'); ?>
-
 		<?php endif; // End have_posts() check. 
 		?>
 
 		<?php wp_reset_postdata(); ?>
 
+		</div>
 	</div>
-</div>
-<?php /* Display navigation to next/previous pages when applicable */ ?>
+	<?php /* Display navigation to next/previous pages when applicable */ ?>
 
-<?php
-if (function_exists('Nacelle_pagination')) :
-	Nacelle_pagination();
-elseif (is_paged()) :
-?>
-	<nav id="post-nav">
-		<div class="post-previous"><?php next_posts_link(__('&larr; Older posts', 'nacelle')); ?></div>
-		<div class="post-next"><?php previous_posts_link(__('Newer posts &rarr;', 'nacelle')); ?></div>
-	</nav>
-<?php endif; ?>
-<?php get_footer();
+	<?php
+	if (function_exists('Nacelle_pagination')) :
+		Nacelle_pagination();
+	elseif (is_paged()) :
+	?>
+		<nav id="post-nav">
+			<div class="post-previous"><?php next_posts_link(__('&larr; Older posts', 'nacelle')); ?></div>
+			<div class="post-next"><?php previous_posts_link(__('Newer posts &rarr;', 'nacelle')); ?></div>
+		</nav>
+	<?php endif; ?>
+	<?php get_footer();

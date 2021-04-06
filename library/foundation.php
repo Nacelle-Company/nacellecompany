@@ -399,14 +399,15 @@ if (!function_exists('Nacelle_custom_colors')) :
         <?php
         }
         ?>
-        <?php if ($home_nav_bg_color) {
+        <?php if (empty($home_nav_bg_color)) {
             // home nav background color
         ?>
             body.page-template-front .site-navigation.top-bar,
             body.page-template-front-carousel .site-navigation.top-bar,
             .home nav.site-navigation.top-bar.desktop-menu,
+            .top-bar ul,
             body.page-template-front-carousel .search-container.desktop {
-            background: <?php echo $home_nav_bg_color; ?>;
+            background: transparent;
             }
         <?php
         }

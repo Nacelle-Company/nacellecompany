@@ -19,7 +19,7 @@ get_header(); ?>
 
 <main>
 
-	<div class="grid-container full align-center pt-3">
+	<div class="grid-container full align-center">
 
 	<?php // check if is any of the secondary categories (album, film, production series ext.) ?>
 	<?php if (is_category(array( 'album', 'film', 'series', 'special', 'podcast' ))) :?>

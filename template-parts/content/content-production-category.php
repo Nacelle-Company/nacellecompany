@@ -20,32 +20,29 @@
 <div class="grid-x align-center">
 
 	<div class="cell">
-
 		<header class="grid-container archive pb-2 pb-medium-0">
-
-			<div class="grid-x align-center-middle">
-
-				<div class="cell small-6">
-
+			<div class="grid-x align-center-middle grid-padding-y category-intro">
+				<div class="cell small-2">
 					<h1 class="entry-title">
-
-						<?php single_cat_title(); ?> <span class="hide">Production</span>
-
+						<?php single_cat_title(); ?>
 					</h1>
-
 				</div>
-
-				<div class="cell small-6 text-right sorting">
-
+				<div class="cell medium-8">
+					<?php
+					if (is_category('special-production')) {
+						echo the_field('production_special_content', 'option');
+					} elseif (is_category('series-production')) {
+						echo the_field('production_series_content', 'option');
+					}
+					?>
+				</div>
+				<div class="cell medium-2 text-right sorting">
 					<a data-toggle="searchOffCanvas">Sort & Filter</a>
-
 				</div>
-
 			</div>
-
 		</header>
 
-		<div class="grid-x medium-up-4 large-up-5">
+		<div class="grid-x medium-up-4 large-up-5 mt-medium-3">
 
 			<?php
 			// sort posts by title
