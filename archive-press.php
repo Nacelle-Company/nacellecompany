@@ -18,11 +18,11 @@
 
 get_header(); ?>
 
-<div class="main-container">
+<main class="main-container">
 
 	<div class="main-grid grid-x">
 
-		<main class="main-content">
+		<div class="main-content">
 
 			<header>
 				<h1 class="entry-title"><?php _e('Press', 'nacelle'); ?></h1>
@@ -145,11 +145,11 @@ get_header(); ?>
 			<?php endif; ?>
 			<?php // End have_posts() check. ?>
 
-		</main>
+								</div>
 		<?php wp_reset_query(); ?>
 		<?php get_sidebar(); ?>
 
 	</div>
-</div>
+</main>
 
 <?php get_footer();

@@ -22,9 +22,9 @@ $hero_sm = $hero_image['sizes'][ $img_size_sm ];
 
     ?>
 
-<div class="main-container">
+<main class="main-container">
 	<div class="main-grid">
-		<main id="search-results" class="main-content news-search">
+		<div id="search-results" class="main-content news-search">
 
 		<header>
 			<div class="grid-x bookmark">
@@ -138,9 +138,9 @@ $hero_sm = $hero_image['sizes'][ $img_size_sm ];
 			</nav>
 		<?php endif; ?>
 
-		</main>
+		</div>
 	<?php get_sidebar(); ?>
 
 	</div>
-</div>
+</main>
 <?php get_footer();

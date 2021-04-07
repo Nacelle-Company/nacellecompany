@@ -53,6 +53,27 @@ if (!function_exists('wpt_register_theme_customizer')) :
 			)
 		);
 
+		// Create secondary text color
+		$wp_customize->add_setting(
+			'secondary_text_color',
+			array(
+				'default'   => '#fff',
+				'transport' => 'refresh',
+			)
+		);
+
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				'secondary_text_color',
+				array(
+					'section' => 'colors',
+					'label'   => esc_html__('Secondary text color', 'nacelle'),
+					'description'		=> 'CD color: #fff',
+				)
+			)
+		);
+
 		// Create primary color
 		$wp_customize->add_setting(
 			'primary_color',

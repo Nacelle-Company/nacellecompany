@@ -8,9 +8,9 @@
 
 get_header(); ?>
 
-<div class="main-container">
+<main class="main-container">
 	<div class="main-grid">
-		<main class="main-content-full-width">
+		<div class="main-content-full-width">
 			<article class="text-center">
 				<header>
 					<h1 class="entry-title"><?php _e('Oops we dont have anything here!', 'nacelle'); ?></h1>
@@ -36,9 +36,9 @@ get_header(); ?>
 
 			</article>
 
-		</main>
+		</div>
 
 	</div>
 
-</div>
+</main>
 <?php get_footer();

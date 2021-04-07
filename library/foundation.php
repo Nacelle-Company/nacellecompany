@@ -189,6 +189,7 @@ if (!function_exists('Nacelle_custom_colors')) :
     {
         ob_start();
         $text_color = get_theme_mod('text_color', '');
+        $secondary_text_color = get_theme_mod('secondary_text_color', '');
         $background_color = get_theme_mod('background_color', '');
         $primary_color = get_theme_mod('primary_color', '');
         $secondary_color = get_theme_mod('secondary_color', '');
@@ -196,57 +197,35 @@ if (!function_exists('Nacelle_custom_colors')) :
         $nav_alt_color = get_theme_mod('nav_alt_color', '');
         $home_nav_bg_color = get_theme_mod('home_nav_bg_color', '');
         $secondary_background_color = get_theme_mod('secondary_background_color', '');
-        if (!empty($background_color)) {
-            // background color
-?>
-            body,
-            .featured-page .feat-content,
-            .reveal,
-            .page-template-front-grid .home-overlay.bottom {
-            background-color: #<?php echo $background_color; ?>;
-            }
-            .primary-title .entry-title,
-            .details-container details .on-sale,
-            .details-container details[open] .info p,
-            .wp-block-button .success.wp-block-button__link,
-            .button.hollow.success,
-            .button.success:hover,
-            .synopsis.reveal blockquote p,
-            .off-canvas-content .searchandfilter input[type=submit]:hover,
-            .field-wrap input[type=button]:hover,
-            .tabs-products .tabs-title.is-active a,
-            .carousel-press figcaption h3 {
-            color: #<?php echo $background_color; ?>;
-            }
-
-        <?php
-        }
-        if (!empty($text_color)) {
-            // text color
-        ?>
+        if (!empty($background_color)) { ?>
+body,.featured-page .feat-content,.reveal,.page-template-front-grid .home-overlay.bottom {
+            background-color: #<?php echo $background_color; ?>;}
+        .primary-title .entry-title,.details-container details .on-sale,.details-container details[open] .info p,.wp-block-button .success.wp-block-button__link,.button.hollow.success,.button.success:hover,.synopsis.reveal blockquote p,.off-canvas-content .searchandfilter input[type=submit]:hover,.field-wrap input[type=button]:hover,.tabs-products .tabs-title.is-active a,.carousel-press figcaption h3 {
+            color: #<?php echo $background_color; ?>;}
+        <?php } if (!empty($text_color)) { ?>
             body, h1, .h1,
             .instagram-title h3,
             .catalog .entry-title,
             .contactModal p,
             .mobile-app-toggle .button:hover,
-            .page-template-front-grid .top-bar ul .menu-item a,
-            .page-template-front-circles .top-bar ul .menu-item a {
+            .carousel-full h3,
+            .carousel-full p {
             color: <?php echo $text_color; ?>;
             }
-
-        <?php
-        }
-        if (!empty($primary_color)) {
-            // primary color
-        ?>
-            a:not(.alt):not(.button),
+        <?php } if (!empty($secondary_text_color)) { ?>
+            .page-template-front-grid .top-bar ul .menu-item a,
+            .page-template-front-circles .top-bar ul .menu-item a {
+                color: <?php echo $secondary_text_color; ?>;
+            }
+        <?php } if (!empty($primary_color)) { ?>
+            main a:not(.alt):not(.button),
             .primary-color,
             .accordion-content .title,
             .button.hollow,
             .footer-grid p,
             .mobile-app-toggle .button,
             .entry-content .social a.nav-link,
-            .top-bar .menu-item>a {
+            .flickity-button {
             color: <?php echo $primary_color; ?>;
             }
             .top-meta .title,
@@ -278,7 +257,8 @@ if (!function_exists('Nacelle_custom_colors')) :
             }
             .button.primary,
             .wp-block-button .primary.wp-block-button__link,
-            .carousel-full--press figcaption {
+            .carousel-full--press figcaption,
+            .flickity-page-dots .dot {
             background-color: <?php echo $primary_color; ?>;
             }
             .button.hollow,
@@ -375,7 +355,8 @@ if (!function_exists('Nacelle_custom_colors')) :
         if (!empty($secondary_background_color)) {
 
         ?>
-            .gallery {
+            .gallery,
+            .cell.tagline {
             background-color: <?php echo $secondary_background_color; ?>;
             }
         <?php

@@ -18,9 +18,9 @@
 
 get_header(); ?>
 
-<div class="main-container">
+<main class="main-container">
     <div class="main-grid">
-        <main>
+        <div>
             <div class="grid-container full align-center pt-3">
                 <?php //cell for the content 
                 ?>
@@ -131,8 +131,8 @@ get_header(); ?>
 
             </div>
             <?php wp_reset_postdata(); ?>
-        </main>
+        </div>
     </div>
-</div>
+</main>
 
 <?php get_footer();

@@ -48,11 +48,9 @@ https://flickity.metafizzy.co
 .flickity-button {
 	position: absolute;
 	border: none;
-	color: #333;
 }
 
 .flickity-button:hover {
-	background: white;
 	cursor: pointer;
 }
 
@@ -70,10 +68,6 @@ https://flickity.metafizzy.co
 	cursor: auto;
 	/* prevent disabled button from capturing pointer up event. #716 */
 	pointer-events: none;
-}
-
-.flickity-button-icon {
-	fill: currentColor;
 }
 
 /* ---- previous/next buttons ---- */
@@ -133,7 +127,6 @@ https://flickity.metafizzy.co
 	width: 10px;
 	height: 10px;
 	margin: 0 8px;
-	background: #333;
 	border-radius: 50%;
 	opacity: 0.25;
 	cursor: pointer;
@@ -202,10 +195,6 @@ https://flickity.metafizzy.co
 				bottom: 35px;
 			}
 		}
-	}
-	h3,
-	p {
-		color: $white;
 	}
 	h3 {
 		text-transform: uppercase;

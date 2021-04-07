@@ -17,9 +17,9 @@
 
 get_header(); ?>
 
-<div class="main-container">
+<main class="main-container">
 	<div class="main-grid">
-		<main class="main-content">
+		<div class="main-content">
 		<?php if ( have_posts() ) : ?>
 
 			<?php /* Start the Loop */ ?>
@@ -44,10 +44,10 @@ get_header(); ?>
 				</nav>
 			<?php endif; ?>
 
-		</main>
+		</div>
 		<?php get_sidebar(); ?>
 
 	</div>
-</div>
+</main>
 
 <?php get_footer();

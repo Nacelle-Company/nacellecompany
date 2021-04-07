@@ -10,11 +10,11 @@
 
 get_header(); ?>
 
-<div class="main-container">
+<main class="main-container">
 
 	<div class="main-grid">
 
-		<main class="main-content-full-width">
+		<div class="main-content-full-width">
 
 			<?php get_template_part('template-parts/logo-bg-header'); ?>
 
@@ -24,10 +24,10 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-		</main>
+		</div>
 
 	</div>
 
-</div>
+</main>
 
 <?php get_footer();

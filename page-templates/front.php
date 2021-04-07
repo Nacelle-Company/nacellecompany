@@ -9,7 +9,7 @@ get_header();
 <?php do_action('Nacelle_before_content'); ?>
 
 
-<div class="grid-x front-page-template">
+<main class="grid-x front-page-template">
 	<div class="cell">
 
 		<?php while (have_posts('')) : the_post(); ?>
@@ -39,6 +39,6 @@ get_header();
 		<?php get_template_part('template-parts/front-partners'); ?>
 
 	</div>
-</div>
+</main>
 
 <?php get_footer(); ?>

@@ -4,9 +4,9 @@ Template Name: Featured Page
 */
 get_header(); ?>
 
-<div class="main-container grid-container full featured-page">
+<main class="main-container grid-container full featured-page">
 	<div class="main-grid">
-		<main class=" grid-x">
+		<div class=" grid-x">
 			<?php while (have_posts()) : the_post(); ?>
 
 				<div class="cell large-6 feat-img">
@@ -110,11 +110,11 @@ get_header(); ?>
 
 			<?php endwhile; ?>
 
-		</main>
+		</div>
 
 	</div>
 
-</div>
+</main>
 
 <?php // VIDEO MODAL ?>
 <?php

@@ -9,48 +9,50 @@
 
 get_header(); ?>
 
-<?php // START featured header ?>
+<?php // START featured header 
+?>
 <?php //if (has_post_thumbnail($post->ID)) :
 ?>
 <?php while (have_posts()) : the_post(); ?>
 
 	<?php
 
-		// vars
+	// vars
 
-		$videoEmbedd = get_field('video_embedd');
-		$ticketsButtonTitle = get_field('tickets_button_title');
-		$titleColor = get_field('title_color');
-		$callout = get_field('callout');
+	$videoEmbedd = get_field('video_embedd');
+	$ticketsButtonTitle = get_field('tickets_button_title');
+	$titleColor = get_field('title_color');
+	$callout = get_field('callout');
 
-		// image 
-		$imageHorizontal = get_field('image_horizontal');
-		$imageHorizontalAlt = $imageHorizontal['alt'];
+	// image 
+	$imageHorizontal = get_field('image_horizontal');
+	$imageHorizontalAlt = $imageHorizontal['alt'];
 
-		// image setup
-		$img_size_lg = 'fp-large';
-		$img_size_md = 'fp-medium';
-		$img_size_sm = 'fp-small';
+	// image setup
+	$img_size_lg = 'fp-large';
+	$img_size_md = 'fp-medium';
+	$img_size_sm = 'fp-small';
 
-		/* Get custom sizes of our image sub_field */
-		$imageHorizontalLG = $imageHorizontal['sizes'][$img_size_lg];
-		$imageHorizontalMD = $imageHorizontal['sizes'][$img_size_md];
-		$imageHorizontalSM = $imageHorizontal['sizes'][$img_size_sm];
+	/* Get custom sizes of our image sub_field */
+	$imageHorizontalLG = $imageHorizontal['sizes'][$img_size_lg];
+	$imageHorizontalMD = $imageHorizontal['sizes'][$img_size_md];
+	$imageHorizontalSM = $imageHorizontal['sizes'][$img_size_sm];
 
-		?>
+	?>
 
-	<header class="grid-container fluid">
-		<div class="grid-x catalog">
+	<main class="grid-container">
+		<header class="grid-container fluid">
+			<div class="grid-x catalog">
 
-			<div class="cell">
+				<div class="cell">
 
-				<div class="grid-container px-0 px-medium-3">
+					<div class="grid-container px-0 px-medium-3">
 
-					<div class="grid-x align-middle">
+						<div class="grid-x align-middle">
 
-						<div class="cell medium-12 grid-offset-5 text-center">
+							<div class="cell medium-12 grid-offset-5 text-center">
 
-							<?php
+								<?php
 								if (is_single()) {
 									the_title('<h1 class="entry-title">', '</h1>');
 								} else {
@@ -58,21 +60,21 @@ get_header(); ?>
 								}
 								?>
 
+							</div>
+
 						</div>
 
-					</div>
+					</div> <?php // END grid-container 
+									?>
 
-				</div> <?php // END grid-container ?>
+				</div> <?php // END cell 
+								?>
 
-			</div> <?php // END cell ?>
+			</div> <?php // END catalog 
+							?>
 
-		</div> <?php // END catalog ?>
-
-	</header>
-
-	<div class="grid-container">
-
-		<main class="top-meta grid-x align-center">
+		</header>
+		<div class="top-meta grid-x align-center">
 
 			<div class="cell large-12">
 
@@ -113,7 +115,8 @@ get_header(); ?>
 
 			<footer class="cell medium-12 small-order-3 purchase-logos" id="purchase-logos">
 
-				<?php // LOGOS ?>
+				<?php // LOGOS 
+				?>
 				<div class="grid-y grid-padding-y">
 
 					<div class="cell large-12 logo-outer-container">
@@ -128,15 +131,15 @@ get_header(); ?>
 
 										<?php while (have_rows('logo_repeater_releases')) : the_row();
 
-													// vars
-													$logoOrTitle = get_sub_field('logo_or_title');
-													$title = get_sub_field('title');
-													$image = get_sub_field('logo');
-													$link = get_sub_field('logo_link');
+											// vars
+											$logoOrTitle = get_sub_field('logo_or_title');
+											$title = get_sub_field('title');
+											$image = get_sub_field('logo');
+											$link = get_sub_field('logo_link');
 
-													// $link_url = $link['url'];
+											// $link_url = $link['url'];
 
-													?>
+										?>
 
 											<div class="cell text-center">
 
@@ -172,7 +175,8 @@ get_header(); ?>
 
 					</div>
 
-				</div> <?php // END logos ?>
+				</div> <?php // END logos 
+								?>
 
 			</footer>
 
@@ -181,21 +185,17 @@ get_header(); ?>
 			</div>
 
 		<?php endwhile; ?>
-		<?php // end while (have_posts) ?>
-
-		</main>
-	</div> <?php // closing div for featured-image.php topmost "grid-container" ?>
-
-
-
-	<?php // mobile post navigation ?>
-	<div class="cell small-12 no-desktop">
-		<div class="grid-x small-up-2 pagination">
-
-			<?php get_template_part('template-parts/catalog-pagination'); ?>
-
 		</div>
-	</div>
-	<?php // end mobile post navigation ?>
+		<?php // mobile post navigation 
+		?>
+		<div class="cell small-12 no-desktop">
+			<div class="grid-x small-up-2 pagination">
 
+				<?php get_template_part('template-parts/catalog-pagination'); ?>
+
+			</div>
+		</div>
+		<?php // end mobile post navigation 
+		?>
+	</main>
 	<?php get_footer();

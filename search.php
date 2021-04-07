@@ -9,9 +9,9 @@
 
 get_header(); ?>
 
-<div class="main-container">
+<main class="main-container">
 	<div class="main-grid">
-		<main id="search-results" class="main-content search-results">
+		<div id="search-results" class="main-content search-results">
 
 			<header>
 				<h1 class="entry-title subheader"><?php _e('Search Results for', 'nacelle'); ?> "<?php echo get_search_query(); ?>"</h1>
@@ -41,10 +41,10 @@ get_header(); ?>
 				</nav>
 			<?php endif; ?>
 
-		</main>
+		</div>
 		
 		<?php get_sidebar(); ?>
 
 	</div>
-</div>
+</main>
 <?php get_footer();

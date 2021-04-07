@@ -455,7 +455,6 @@
 	// }
 }
 
-
 // Mobile menu
 .top-bar {
 	display: flex;
@@ -511,6 +510,11 @@ nav-container.left-too,
 /* 	 END top nav search */
 .cell.tagline {
 	top: 11vh;
+	padding: 1em;
+	h2 {
+		margin-bottom: 0;
+		font-size: 1.5em;
+	}
 }
 .custom-logo {
 	max-width: 150px;

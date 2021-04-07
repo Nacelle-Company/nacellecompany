@@ -11,9 +11,9 @@ get_header(); ?>
 
 <?php //get_template_part('template-parts/featured-image');
 ?>
-<div class="main-container">
+<main class="main-container">
 	<div class="main-grid">
-		<main class="main-content thin">
+		<div class="main-content thin">
 			<?php while (have_posts()) : the_post(); ?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<section class="grid-container full">
@@ -126,8 +126,8 @@ get_header(); ?>
 				<?php edit_post_link(__('(Edit)', 'nacelle'), '<span class="edit-link">', '</span>'); ?>
 
 			<?php endwhile; ?>
-		</main>
+		</div>
 		<?php get_sidebar(); ?>
 	</div>
-</div>
+</main>
 <?php get_footer();

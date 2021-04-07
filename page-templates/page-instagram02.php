@@ -4,9 +4,9 @@ Template Name: Instagram02
 */
 get_header(); ?>
 
-<div class="main-container">
+<main class="main-container">
     <div class="main-grid">
-        <main class="main-content-full-width">
+        <div class="main-content-full-width">
             <?php while (have_posts()) : the_post(); ?>
                 <?php //get_template_part( 'template-parts/content', 'page' );
                 ?>
@@ -186,9 +186,9 @@ get_header(); ?>
                 <?php //comments_template(); 
                 ?>
             <?php endwhile; ?>
-        </main>
+        </div>
     </div>
-</div>
+</main>
 <style>
     iframe.instagram-media {
         min-width: 100px !important;

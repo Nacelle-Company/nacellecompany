@@ -34,10 +34,10 @@ if (!empty('news_header_image')) :
 <?php //get_template_part('template-parts/featured-image-lg-title');
 ?>
 
-<div class="main-container">
+<main class="main-container">
 
   <div class="main-grid">
-    <main class="main-content">
+    <div class="main-content">
 
       <?php //https://developer.wordpress.org/reference/functions/query_posts/ ?>
       <?php if (have_posts()) : ?>
@@ -149,11 +149,11 @@ if (!empty('news_header_image')) :
       <?php endif; // End have_posts() check.
       ?>
 
-    </main>
+    </div>
     <?php wp_reset_query(); ?>
     <?php get_sidebar(); ?>
 
   </div>
-</div>
+</main>
 
 <?php get_footer();
