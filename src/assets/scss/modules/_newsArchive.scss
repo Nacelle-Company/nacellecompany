@@ -60,9 +60,6 @@
 		flex-direction: row;
 
 		&:hover {
-			.article-row-img {
-				background: $light-gray;
-			}
 			.article-row-content {
 				background: $light-gray;
 				& * {
