@@ -38,8 +38,6 @@
 			f.parentNode.insertBefore(j, f);
 		})(window, document, 'script', 'dataLayer', 'GTM-TH8K84L');
 	</script>
-	<!-- End Google Tag Manager -->
-	<!-- Facebook Pixel Code -->
 	<script>
 		! function(f, b, e, v, n, t, s) {
 			if (f.fbq) return;
@@ -79,9 +77,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-	<!-- Google Tag Manager (noscript) -->
 	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TH8K84L" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-	<!-- End Google Tag Manager (noscript) -->
 	<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=427279594883969&ev=PageView&noscript=1" /></noscript>
 
 	<?php if (get_theme_mod('wpt_mobile_menu_layout') === 'offcanvas') : ?>
@@ -112,12 +108,9 @@
 
 		</div>
 
-
 		<nav class="site-navigation top-bar desktop-menu" role="navigation">
 
-			<div class="nav-container <?php if (has_nav_menu('top-bar-l')) {
-																	echo 'left-too';
-																} ?>">
+			<div class="nav-container <?php if (has_nav_menu('top-bar-l')) { echo 'left-too'; } ?>">
 
 				<?php
 				if (has_nav_menu('top-bar-l')) { ?>
@@ -125,9 +118,6 @@
 						<?php Nacelle_top_bar_l(); ?>
 					</div>
 				<?php }
-				?>
-
-				<?php // custom logo 
 				?>
 				<a href="/" title="<?php echo get_bloginfo('name'); ?> homepage">
 					<div class="site-desktop-title top-bar-title">
@@ -145,9 +135,6 @@
 
 					</div>
 					</a>
-
-					<?php // top bar right 
-					?>
 					<div class="right">
 
 						<?php Nacelle_top_bar_r(); ?>
@@ -157,9 +144,6 @@
 							<?php get_template_part('template-parts/mobile-top-bar'); ?>
 
 						<?php endif; ?>
-
-						<?php // search icon 
-						?>
 						<div class='header-search-container' tabindex='1'>
 
 							<div class='search-container desktop' tabindex='1'>

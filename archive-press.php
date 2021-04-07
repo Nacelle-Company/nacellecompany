@@ -30,7 +30,8 @@ get_header(); ?>
 
 			<?php if (have_posts()) : ?>
 
-				<?php //Start the Loop ?>
+				<?php //Start the Loop 
+				?>
 				<?php while (have_posts()) : the_post();
 
 					$link = get_field('link_to_article');
@@ -39,7 +40,7 @@ get_header(); ?>
 					$link_target = $link['target'] ? $link['target'] : '_self';
 					$even_odd_class = $wp_query->current_post % 2 == 0 ? '' : 'article-row-reversed';
 
-					?>
+				?>
 
 					<article class="article-row <?php echo $even_odd_class; ?>" id="post-<?php the_ID(); ?>">
 
@@ -50,54 +51,9 @@ get_header(); ?>
 							</a>
 
 						</div>
-						<svg class="news-image-hover-background" width="387" height="387" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-							<defs>
-								<path d="M201.066667 0v47.2949357C273.241544 53.178696 330.187773 114.258997 330.187773 188.5s-56.946229 135.320656-129.121106 141.205712V377C299.076051 371.023577 377 288.768867 377 188.5 377 88.2317816 299.076051 5.97707108 201.066667 0" id="b" />
-								<filter x="-4.5%" y="-1.9%" width="109.1%" height="104.2%" filterUnits="objectBoundingBox" id="a">
-									<feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1" />
-									<feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1" />
-									<feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.14 0" in="shadowBlurOuter1" result="shadowMatrixOuter1" />
-									<feMorphology radius="1" in="SourceAlpha" result="shadowSpreadOuter2" />
-									<feOffset dy="3" in="shadowSpreadOuter2" result="shadowOffsetOuter2" />
-									<feGaussianBlur stdDeviation=".5" in="shadowOffsetOuter2" result="shadowBlurOuter2" />
-									<feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0" in="shadowBlurOuter2" result="shadowMatrixOuter2" />
-									<feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter3" />
-									<feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter3" result="shadowBlurOuter3" />
-									<feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.12 0" in="shadowBlurOuter3" result="shadowMatrixOuter3" />
-									<feMerge>
-										<feMergeNode in="shadowMatrixOuter1" />
-										<feMergeNode in="shadowMatrixOuter2" />
-										<feMergeNode in="shadowMatrixOuter3" />
-									</feMerge>
-								</filter>
-								<path d="M175.933333 377v-47.294288c-72.17514-5.884408-129.1215779-66.964709-129.1215779-141.205064 0-74.241651 56.9464379-135.321304 129.1215779-141.2057123V0C77.9242344 5.97707108 0 88.2317816 0 188.500648 0 288.768867 77.9242344 371.023577 175.933333 377" id="d" />
-								<filter x="-4.5%" y="-1.9%" width="109.1%" height="104.2%" filterUnits="objectBoundingBox" id="c">
-									<feOffset dy="2" in="SourceAlpha" result="shadowOffsetOuter1" />
-									<feGaussianBlur stdDeviation="1" in="shadowOffsetOuter1" result="shadowBlurOuter1" />
-									<feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.14 0" in="shadowBlurOuter1" result="shadowMatrixOuter1" />
-									<feMorphology radius="1" in="SourceAlpha" result="shadowSpreadOuter2" />
-									<feOffset dy="3" in="shadowSpreadOuter2" result="shadowOffsetOuter2" />
-									<feGaussianBlur stdDeviation=".5" in="shadowOffsetOuter2" result="shadowBlurOuter2" />
-									<feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0" in="shadowBlurOuter2" result="shadowMatrixOuter2" />
-									<feOffset dy="1" in="SourceAlpha" result="shadowOffsetOuter3" />
-									<feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter3" result="shadowBlurOuter3" />
-									<feColorMatrix values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.12 0" in="shadowBlurOuter3" result="shadowMatrixOuter3" />
-									<feMerge>
-										<feMergeNode in="shadowMatrixOuter1" />
-										<feMergeNode in="shadowMatrixOuter2" />
-										<feMergeNode in="shadowMatrixOuter3" />
-									</feMerge>
-								</filter>
-							</defs>
-							<g fill="none" fill-rule="evenodd">
-								<g transform="translate(5 4)">
-									<use fill="#000" filter="url(#a)" xlink:href="#b" />
-									<use fill="#2A2D2E" xlink:href="#b" />
-								</g>
-								<g transform="translate(5 4)">
-									<use fill="#000" filter="url(#c)" xlink:href="#d" />
-									<use fill="#2A2D2E" xlink:href="#d" />
-								</g>
+						<svg class="news-image-hover-background" width="377" height="377" xmlns="http://www.w3.org/2000/svg">
+							<g fill="#1D1D1D" fill-rule="nonzero" opacity=".3">
+								<path d="M201.067 0v47.295c72.175 5.884 129.12 66.964 129.12 141.205 0 74.241-56.945 135.32-129.12 141.206V377C299.077 371.024 377 288.769 377 188.5 377 88.232 299.076 5.977 201.067 0M175.933 377v-47.294C103.758 323.82 46.812 262.74 46.812 188.5c0-74.242 56.946-135.322 129.121-141.206V0C77.924 5.977 0 88.232 0 188.5 0 288.77 77.924 371.025 175.933 377" />
 							</g>
 						</svg>
 						<div class="article-row-content">
@@ -118,7 +74,7 @@ get_header(); ?>
 									<?php
 									$callout = wp_strip_all_tags(get_field('intro'));
 									// echo $callout;
-		echo substr($callout, 0, 150) ?>
+									echo substr($callout, 0, 150) ?>
 								</a>
 							</p>
 
@@ -126,16 +82,16 @@ get_header(); ?>
 								<?php
 								$tag = get_the_tags();
 								if ($tag) {
-									?>
-									<p><?php the_tags(); ?></p>
-								<?php }
 								?>
-							</p>
-							<time class="article-row-content-time" datetime="2008-02-14 20:00">
-								<?php the_time('F j, Y'); ?>
-							</time>
+							<p><?php the_tags(); ?></p>
+						<?php }
+						?>
+						</p>
+						<time class="article-row-content-time" datetime="2008-02-14 20:00">
+							<?php the_time('F j, Y'); ?>
+						</time>
 
-							<?php edit_post_link(__('(Edit)', 'nacelle'), '<span class="edit-link">', '</span>'); ?>
+						<?php edit_post_link(__('(Edit)', 'nacelle'), '<span class="edit-link">', '</span>'); ?>
 
 						</div>
 					</article>
@@ -143,9 +99,10 @@ get_header(); ?>
 				<?php endwhile; ?>
 
 			<?php endif; ?>
-			<?php // End have_posts() check. ?>
+			<?php // End have_posts() check. 
+			?>
 
-								</div>
+		</div>
 		<?php wp_reset_query(); ?>
 		<?php get_sidebar(); ?>
 

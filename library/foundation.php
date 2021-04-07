@@ -213,8 +213,7 @@ body,.featured-page .feat-content,.reveal,.page-template-front-grid .home-overla
             color: <?php echo $text_color; ?>;
             }
         <?php } if (!empty($secondary_text_color)) { ?>
-            .page-template-front-grid .top-bar ul .menu-item a,
-            .page-template-front-circles .top-bar ul .menu-item a {
+            .this {
                 color: <?php echo $secondary_text_color; ?>;
             }
         <?php } if (!empty($primary_color)) { ?>
@@ -251,8 +250,7 @@ body,.featured-page .feat-content,.reveal,.page-template-front-grid .home-overla
             .callout-footer,
             .mobile-app-toggle .button.is-active:hover,
             .details-container .info,
-            .details-container details[open] .info,
-            .page-template-front-grid .home-overlay.top {
+            .details-container details[open] .info {
             background-color: <?php echo $primary_color; ?>;
             }
             .button.primary,
@@ -355,8 +353,7 @@ body,.featured-page .feat-content,.reveal,.page-template-front-grid .home-overla
         if (!empty($secondary_background_color)) {
 
         ?>
-            .gallery,
-            .cell.tagline {
+            .gallery {
             background-color: <?php echo $secondary_background_color; ?>;
             }
         <?php
@@ -397,7 +394,9 @@ body,.featured-page .feat-content,.reveal,.page-template-front-grid .home-overla
             // home nav text color
         ?>
             .page-template-front .top-bar ul .menu-item a,
-            .page-template-front-carousel .top-bar ul .menu-item a {
+            .page-template-front-carousel .top-bar ul .menu-item a,
+            .page-template-front-grid .top-bar ul .menu-item a,
+            .page-template-front-circles .top-bar ul .menu-item a {
             color: <?php echo $nav_alt_color; ?>;
             }
         <?php

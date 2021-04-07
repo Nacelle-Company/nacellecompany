@@ -34,6 +34,7 @@
 // mobile navigation
 .site-header {
 	position: relative;
+	z-index: 6;
 	.top-bar {
 		padding: 0;
 		@include breakpoint(medium) {
@@ -166,7 +167,7 @@
 .page-template-front-circles,
 .page-template-front-grid,
 .page-template-products {
-	.top-bar {
+	.site-navigation {
 		@include breakpoint(medium up) {
 			position: absolute;
 			z-index: 9;

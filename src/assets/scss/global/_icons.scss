@@ -12,6 +12,10 @@
 }
 // scroll arrow
 .scroll-arrow {
+	@include flex;
+	@include flex-align(center);
+}
+.scroll-arrow {
 	@include hide-for-only(small);
 }
 // font awesome icons
