@@ -60,6 +60,14 @@ require_once('library/custom-post-types.php');
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
 // require_once( 'library/class-foundationpress-protocol-relative-theme-assets.php' );
 
+/**
+ * Create ACF options page
+ *
+ * @since 1.0.0
+ */
+if (function_exists('acf_add_options_page')) {
+    acf_add_options_page();
+}
 
 /**
  * Create ACF setting page under Catalog CPT

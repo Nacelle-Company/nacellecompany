@@ -52,13 +52,13 @@
 		// default (nacelle) desktop navigation layout (logo left, nav right)
 		@include breakpoint(medium) {
 			justify-content: space-between;
-			.right {
-				justify-content: flex-end;
-				align-items: center;
-			}
+			align-items: center;
 		}
+
 		.header-search-container {
-			display: none;
+			@include breakpoint(small) {
+				display: none;
+			}
 		}
 		// alternate centered desktop navigation layout
 		&.left-too {
@@ -66,18 +66,27 @@
 				.right {
 					justify-content: flex-start;
 				}
+				.header-search-container {
+					display: block;
+					position: absolute;
+					z-index: 9;
+					right: -60%;
+					top: 10px;
+				}
 			}
-			.header-search-container {
-				display: block;
-				position: absolute;
-				z-index: 99;
-				right: 50px;
-				top: 10px;
+			@include breakpoint(large) {
+				.header-search-container {
+					display: block;
+					position: relative;
+					z-index: 9;
+					right: 0;
+					top: 5px;
+				}
 			}
 		}
 	}
 	.site-header .desktop-menu {
-		display: none;
+		display: none; 
 	}
 }
 .mobile-nav {
@@ -129,11 +138,6 @@
 	.left {
 		@include breakpoint(medium) {
 			justify-content: flex-end;
-		}
-		.menu {
-			@include breakpoint(medium) {
-				//
-			}
 		}
 	}
 	// right menu

@@ -25,40 +25,46 @@ get_header(); ?>
 
 									<?php if (has_post_thumbnail()) : ?>
 
-										<?php the_post_thumbnail('large', array('align' => 'left')); ?>
+										<?php the_post_thumbnail('medium', array('align' => 'left')); ?>
 
 									<?php endif; ?>
 								</div>
 								<div class="media-object-section">
 									<h1>
-										<?php the_field('title'); ?>
+										<?php the_title(); ?>
 									</h1>
 								</div>
 
 							</div>
 							<footer class="cell">
 								<?php
-								echo '<div class="cell">';
-								echo '<strong><p class="text-right">';
-								$location = the_field('location');
+								$location = get_post_meta(get_the_ID(), 'location', true);
+								$time = get_the_time('m.j.y');
+								echo '<p class="text-right"><strong>';
+								echo $location . ' ';
 								echo "</strong>";
-								echo  $location . the_time(' ' . 'm.j.y');
-								echo '</p></div>';
+								echo $time;
+								echo '</p>';
 								?>
 							</footer>
 						</header>
 						<div class="grid-x intro pb-2">
 							<div class="cell">
-								<?php the_field('intro'); ?>
+								<?php
+								$intro = get_post_meta(get_the_ID(), 'intro', true);
+								if (!empty($intro)) {
+									echo $intro;
+								}
+								?>
 							</div>
 						</div>
 						<div class="grid-x content">
 							<div class="cell">
 								<?php the_content(); ?>
 								<?php
-								if (get_field('show_boilerplate')) {
-									$boilerplate = get_field('boilerplate', 'option');
-									if (get_field('boilerplate', 'option')) {
+								if (get_post_meta(get_the_ID(), 'show_boilerplate', true)) {
+									$boilerplate = get_option('options_boilerplate');;
+									if (!empty($boilerplate)) {
 										echo $boilerplate;
 									}
 								}
@@ -68,12 +74,20 @@ get_header(); ?>
 								?>
 								<footer>
 									<h4 class="text-center">
-										<?php if (get_field('stills_download')) : ?>
-											<a href="<?php the_field('stills_download'); ?>" download>Stills, </a>
-										<?php endif; ?>
-										<?php if (get_field('pdf_download')) : ?>
-											<a href="<?php the_field('pdf_download'); ?>" download>Press Release</a>
-										<?php endif; ?>
+										<?php
+										$stills_download = get_post_meta(get_the_ID(), 'stills_download', true);
+										$stills_url = wp_get_attachment_url($stills_download);
+										if (!empty($stills_download)) {
+											echo '<a href="' . $stills_url . '" download>Stills, </a>';
+										}
+										?>
+										<?php
+										$pdf_download = get_post_meta(get_the_ID(), 'stills_download', true);
+										$pdf_url = wp_get_attachment_url($pdf_download);
+										if (!empty($pdf_download)) {
+											echo '<a href="' . $pdf_url . '" download>Press Release</a>';
+										}
+										?>
 									</h4>
 								</footer>
 								<?php // PDF download 
@@ -83,10 +97,9 @@ get_header(); ?>
 						<div>
 
 							<?php
-							$featured_posts = get_field('talent_name');
+							$featured_posts = get_post_meta(get_the_ID(), 'talent_name', true);
 							if ($featured_posts) : ?>
 								<h4>Featured Comedy</h4>
-
 								<?php foreach ($featured_posts as $post) :
 
 									// Setup this post for WP functions (variable must be named $post).
@@ -94,24 +107,37 @@ get_header(); ?>
 									<p>
 										<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
 									</p>
-									<?php
-									$talents = get_field('talent');
-									if ($talents) {
-										echo '<h4>Featured Talent</h4>';
-
-										$talentstr = array();
-										foreach ($talents as $talent) {
-											$talentstr[] = $talent->name;
-											$talentSlug[] = '<a class="alt" href="' . $siteURL . '/main-talent/' . $talent->slug . '">' . $talent->name . '</a>';
-										}
-										echo implode(", ", $talentSlug);
-									}
-									?>
 								<?php endforeach; ?>
 								<?php
 								// Reset the global post object so that the rest of the page works correctly.
 								wp_reset_postdata(); ?>
 							<?php endif; ?>
+
+							<?php
+							$featured_posts = get_post_meta(get_the_ID(), 'talent_name', true);
+							if ($featured_posts) : ?>
+								<h4>Featured Talent</h4>
+								<?php foreach ($featured_posts as $post) :
+									// Setup this post for WP functions (variable must be named $post).
+									setup_postdata($post); ?>
+									<?php
+									$terms = get_field('talent');
+									if ($terms) : ?>
+										<?php foreach ($terms as $term) : ?>
+											<?php
+											$talentSlug = esc_html($term->slug);
+											$blogURL = get_bloginfo('url');
+											$talentURL = $blogURL . '/main-talent/' . $talentSlug;
+											?>
+											<a href="<?php echo $talentURL; ?>"><?php echo esc_html($term->name) . ','; ?></a>
+										<?php endforeach; ?>
+									<?php endif; ?>
+								<?php endforeach; ?>
+								<?php
+								// Reset the global post object so that the rest of the page works correctly.
+								wp_reset_postdata(); ?>
+							<?php endif; ?>
+
 						</div>
 					</section>
 

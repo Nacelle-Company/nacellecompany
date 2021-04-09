@@ -9,20 +9,17 @@
 	}
 	&.desktop {
 		display: inline-flex;
-		position: absolute;
 		align-items: center;
 		left: 0;
-		-moz-transition: all 0.35s;
-		-webkit-transition: all 0.35s;
+		transition: all 0.35s;
 		input {
 			opacity: 0;
-			-moz-transition: all 0.35s;
-			-webkit-transition: all 0.35s;
+			transition: all 0.35s;
 		}
 		&:hover {
 			left: -170px;
 			@include breakpoint(medium) {
-				left: -150px;
+				left: -200px;
 			}
 		}
 		&:hover,

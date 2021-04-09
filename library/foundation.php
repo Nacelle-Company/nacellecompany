@@ -205,7 +205,6 @@ body,.featured-page .feat-content,.reveal,.page-template-front-grid .home-overla
         <?php } if (!empty($text_color)) { ?>
             body, h1, .h1,
             .instagram-title h3,
-            .catalog .entry-title,
             .contactModal p,
             .mobile-app-toggle .button:hover,
             .carousel-full h3,
@@ -223,6 +222,7 @@ body,.featured-page .feat-content,.reveal,.page-template-front-grid .home-overla
             .button.hollow,
             .footer-grid p,
             .mobile-app-toggle .button,
+            .catalog .entry-title,
             .entry-content .social a.nav-link,
             .flickity-button {
             color: <?php echo $primary_color; ?>;
@@ -368,7 +368,8 @@ body,.featured-page .feat-content,.reveal,.page-template-front-grid .home-overla
             .menu .is-active > a,
             .pag-img-wrapper,
             body:not(.page-template-front-carousel) .search-container,
-            .off-canvas {
+            .off-canvas,
+            .is-dropdown-submenu>li {
             background: <?php echo $nav_bg_color; ?>;
             }
             footer.footer {

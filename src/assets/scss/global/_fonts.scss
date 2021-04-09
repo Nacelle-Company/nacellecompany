@@ -64,6 +64,14 @@ p, h2, h3, h4, h5, h6 {
   font-size: 130%;
 }
 
+blockquote:before {
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+}
+
 @function strip-unit($value) {
   @return $value / ($value * 0 + 1);
 }
