@@ -3,15 +3,15 @@
 .site-title-bar {
 	@include hide-for(medium);
 }
-//
-.desktop-menu .desktop-menu,
-.site-navigation .top-bar-left {
-	@include show-for(medium);
-}
 
-// Site title
-.site-desktop-title a {
-	font-weight: bold;
+//
+.site-navigation {
+	.top-bar-left,
+	.left,
+	.top-bar-title,
+	.desktop-menu {
+		@include show-for(medium);
+	}
 }
 
 // WP post navigation
@@ -26,68 +26,10 @@
 .nav-next {
 	float: right;
 }
-
-// logo
-.top-bar-title {
-	margin: 0.25em 1em;
-}
 // mobile navigation
 .site-header {
 	position: relative;
 	z-index: 6;
-	.top-bar {
-		padding: 0;
-		@include breakpoint(medium) {
-			padding: 0.5em;
-		}
-	}
-	.left,
-	.right .desktop-menu,
-	.site-desktop-title {
-		display: none;
-	}
-
-	.nav-container {
-		width: 100%;
-		// default (nacelle) desktop navigation layout (logo left, nav right)
-		@include breakpoint(medium) {
-			justify-content: space-between;
-			align-items: center;
-		}
-
-		.header-search-container {
-			@include breakpoint(small) {
-				display: none;
-			}
-		}
-		// alternate centered desktop navigation layout
-		&.left-too {
-			@include breakpoint(medium) {
-				.right {
-					justify-content: flex-start;
-				}
-				.header-search-container {
-					display: block;
-					position: absolute;
-					z-index: 9;
-					right: -60%;
-					top: 10px;
-				}
-			}
-			@include breakpoint(large) {
-				.header-search-container {
-					display: block;
-					position: relative;
-					z-index: 9;
-					right: 0;
-					top: 5px;
-				}
-			}
-		}
-	}
-	.site-header .desktop-menu {
-		display: none; 
-	}
 }
 .mobile-nav {
 	.title-bar-left {
@@ -98,55 +40,61 @@
 		left: 0;
 	}
 }
-
-// desktop navigation
-.nav-container {
-	@include breakpoint(medium) {
-		display: flex;
+// DESKTOP NAVIGATION
+.site-navigation {
+	// default (nacelle) desktop navigation layout (logo left, nav right)
+	.nav-container,
+	.right {
 		width: 100%;
 	}
-	.mobile-menu {
-		@include breakpoint(medium) {
-			display: none;
-		}
-		button.submenu-toggle {
-			width: 100%;
-		}
-
-		button.submenu-toggle:after {
-			left: 100%;
-			float: right;
-			margin: 1em;
-		}
-	}
-	// menus
-	.left,
+	// column for mobile
 	.right {
-		@include breakpoint(medium) {
-			flex: 1 0 33.333%;
-			display: flex;
+		flex-direction: column;
+	}
+	// row for medium up
+	@include breakpoint(medium) {
+		.right {
+			flex-direction: row;
 		}
 	}
-	// logo
+	// left logo
 	.top-bar-title {
-		@include breakpoint(medium) {
-			width: auto;
-			display: block;
-		}
-	}
-	// left menu
-	.left {
-		@include breakpoint(medium) {
-			justify-content: flex-end;
-		}
+		margin: 0;
 	}
 	// right menu
 	.right {
 		@include breakpoint(medium) {
-			position: relative;
+			justify-content: flex-end;
 		}
-		.desktop-menu {
-			display: flex;
+	}
+
+	// alternate (Comedy Dynamics) centered desktop navigation layout
+	&.left-too {
+		// right menu
+		.left {
+			.menu {
+				justify-content: flex-end;
+			}
+		}
+		// left logo
+		.top-bar-title {
+			margin: 0;
+			text-align: center;
+		}
+		// right menu
+		.right {
+			@include breakpoint(medium) {
+				justify-content: flex-start;
+			}
+		}
+		@include breakpoint(medium) {
+			.header-search-container {
+				display: flex;
+				// 	position: absolute;
+				// 	z-index: 9;
+				// 	right: -60%;
+				// 	top: 10px;
+			}
 		}
 	}
 }
@@ -161,7 +109,7 @@
 			justify-content: center;
 			background-color: transparent;
 		}
-		.menu.desktop-menu {
+		.menu {
 			background-color: transparent;
 		}
 	}

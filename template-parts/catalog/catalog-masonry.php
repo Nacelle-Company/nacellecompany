@@ -184,7 +184,7 @@ if ($taxonomy == 'Producers') {
 // WRITERS
 // WRITERS
 } elseif ($taxonomy == 'Writers') {
-    $taxonomyAlt = '<span class="subheader">Wrote on</span>'; ?>
+    $taxonomyAlt = '<span class="subheader">was a writer on</span>'; ?>
 
     <div class="cell grid-container primary-title my-3">
         <h2 class="entry-title mb-0"><?php echo $artistName . ' ' . $taxonomyAlt; ?></h2>

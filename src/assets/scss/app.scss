@@ -52,7 +52,6 @@
 @import "global/gutenberg";
 @import "global/fonts";
 @import "global/icons";
-@import "global/bem";
 @import "global/animations";
 @import "global/spacing";
 @import "global/mobile";
@@ -100,6 +99,11 @@
 @import "templates/frontPartners";
 @import "templates/frontCarousel";
 @import "templates/mainTalent";
+// @import "templates/customizer";
+
+// Overwrites
+@import "global/bem";
+
 
 // PRODUCTION
 // @import "global/production";

@@ -63,7 +63,7 @@
 						echo '</div>';
 						echo '<div class="cell medium-6">';
 							echo '<a data-open="imgModal-' . $count . '">';
-								echo '<figure>' . wp_get_attachment_image( $img, 'large' ) . '</figure>';
+								echo '<figure class="align-center">' . wp_get_attachment_image( $img, 'large' ) . '</figure>';
 							echo '</a>';
 							echo $img_link;
 						echo '</div>';

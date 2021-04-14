@@ -92,7 +92,12 @@ get_header(); ?>
 				)); ?>
 
 				<?php foreach ($posts as $post) : setup_postdata($post);
-					$count++; ?>
+					$count++;
+					$bk_color = get_post_meta(get_the_ID(), true);
+
+					var_dump($bk_color);
+					?>
+
 
 					<a class="cell cat-container" href="<?php echo get_home_url() ?>/category/distribution/album/">
 
@@ -106,8 +111,8 @@ get_header(); ?>
 							<?php
 
 							$image = get_field('square_image');
+							var_dump($image);
 							$alt = $image['alt'];
-
 							?>
 
 							<img src="<?php echo esc_url($image['url']); ?>" alt="<?php echo $alt; ?>" />

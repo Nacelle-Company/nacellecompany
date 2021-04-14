@@ -208,7 +208,9 @@ body,.featured-page .feat-content,.reveal,.page-template-front-grid .home-overla
             .contactModal p,
             .mobile-app-toggle .button:hover,
             .carousel-full h3,
-            .carousel-full p {
+            .carousel-full p,
+            blockquote, 
+            blockquote p {
             color: <?php echo $text_color; ?>;
             }
         <?php } if (!empty($secondary_text_color)) { ?>
@@ -268,9 +270,6 @@ body,.featured-page .feat-content,.reveal,.page-template-front-grid .home-overla
             .page-template-featured-page .off-canvas-content {
             border-color: <?php echo $primary_color; ?>;
             }
-            .cell blockquote {
-            border-left-color: <?php echo $primary_color; ?>;
-            }
             .details-container p,
             .primary-title,
             .search-results .entry-title.subheader {
@@ -304,7 +303,8 @@ body,.featured-page .feat-content,.reveal,.page-template-front-grid .home-overla
             .press_release .intro,
             .details-container summary,
             .details-container .info a,
-            .close-button {
+            .close-button,
+            .is-dropdown-submenu>li:hover > a {
             color: <?php echo $secondary_color; ?>;
             }
             .button.hollow:hover,
@@ -315,7 +315,8 @@ body,.featured-page .feat-content,.reveal,.page-template-front-grid .home-overla
             .feed-container,
             hr,
             .post-navigation,
-            .carousel .flickity-page-dots .dot {
+            .carousel .flickity-page-dots .dot,
+            blockquote {
             border-color: <?php echo $secondary_color; ?>;
             }
 
@@ -369,7 +370,8 @@ body,.featured-page .feat-content,.reveal,.page-template-front-grid .home-overla
             .pag-img-wrapper,
             body:not(.page-template-front-carousel) .search-container,
             .off-canvas,
-            .is-dropdown-submenu>li {
+            .is-dropdown-submenu>li,
+            .header-search-container:hover svg.icon {
             background: <?php echo $nav_bg_color; ?>;
             }
             footer.footer {
@@ -384,7 +386,6 @@ body,.featured-page .feat-content,.reveal,.page-template-front-grid .home-overla
             body.page-template-front .site-navigation.top-bar,
             body.page-template-front-carousel .site-navigation.top-bar,
             .home nav.site-navigation.top-bar.desktop-menu,
-            .top-bar ul,
             body.page-template-front-carousel .search-container.desktop {
             background: transparent;
             }

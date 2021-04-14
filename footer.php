@@ -16,32 +16,31 @@
 ?>
 <a href="#0" class="to-top">Top</a>
 
-<footer class="shrink footer">
-  <div class="footer-container">
-    <div class="footer-grid grid-x align-middle">
+<footer class="grid-x grid-padding-x">
+  <!-- <div class="footer-container"> -->
+  <div class="footer-container cell small-12 flex-container flex-dir-column large-flex-dir-row">
 
-      <?php if (is_active_sidebar('l-footer-widgets')) : ?>
-        <div class="cell medium-auto l-footer-widgets">
-          <?php dynamic_sidebar('l-footer-widgets'); ?>
-        </div>
+    <?php if (is_active_sidebar('l-footer-widgets')) : ?>
+      <div class="flex-container large-flex-child-shrink l-footer-widgets align-center">
+        <?php dynamic_sidebar('l-footer-widgets'); ?>
+      </div>
+    <?php endif; ?>
+
+    <div class="flex-container large-flex-child-auto c-footer-widgets align-center-middle">
+      <?php if (is_active_sidebar('c-footer-widgets')) : ?>
+        <?php dynamic_sidebar('c-footer-widgets'); ?>
       <?php endif; ?>
-
-      <div class="cell medium-auto c-footer-widgets">
-        <?php if (is_active_sidebar('c-footer-widgets')) : ?>
-          <?php dynamic_sidebar('c-footer-widgets'); ?>
-        <?php endif; ?>
-      </div>
-
-      <div class="cell medium-auto r-footer-widgets">
-        <?php if (is_active_sidebar('r-footer-widgets')) : ?>
-          <?php get_template_part('template-parts/blocks/widget-custom');
-          ?>
-          <?php dynamic_sidebar('r-footer-widgets'); ?>
-        <?php endif; ?>
-      </div>
-
     </div>
+
+    <div class="flex-container flex-child-shrink r-footer-widgets align-center-middle">
+      <?php if (is_active_sidebar('r-footer-widgets')) : ?>
+        <?php get_template_part('template-parts/blocks/widget-custom'); ?>
+        <?php dynamic_sidebar('r-footer-widgets'); ?>
+      <?php endif; ?>
+    </div>
+
   </div>
+  <!-- </div> -->
 
 
   <script>

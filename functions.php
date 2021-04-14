@@ -287,23 +287,6 @@ add_filter('request', 'nacelle_fix_custom_posts_per_page');
 
 
 // custom logo https://since1979.dev/wordpress-add-custom-logo-support-to-your-theme/
-// function theme_get_custom_logo()
-// {
-
-//     if (has_custom_logo()) {
-
-//         $logo = wp_get_attachment_image_src(get_theme_mod('custom_logo'), 'full');
-
-//         echo '<a class="custom-logo-link" href="' . get_site_url() . '" >';
-//         echo '<img class="custom-logos" src="' . esc_url($logo[0]) . '" width="' . $logo[1] . '" height="' . $logo[2] . '" alt="' . get_bloginfo('name') . '">';
-//         echo "</a>";
-//     } else {
-
-//         echo '<h1>';
-//         echo '<a href="' . get_site_url() . '">' . get_bloginfo('name') . '</a>';
-//         echo '</h1>';
-//     }
-// }
 
 
 add_action('pre_get_posts', 'nacelle_change_category_order');

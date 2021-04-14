@@ -1,39 +1,52 @@
+// responsive search input
+.mobile-menu {
+	flex-direction: column;
+	&[style="display: none;"] + {
+		.header-search-container {
+			display: none;
+		}
+	}
+}
+
 .searchandfilter ul li {
 	padding: 0;
 }
-
-.search-container {
-	padding-left: 1rem;
-	.icon {
-		overflow: visible;
-	}
-	&.desktop {
-		display: inline-flex;
-		align-items: center;
-		left: 0;
-		transition: all 0.35s;
-		input {
+.header-search-container {
+	@include breakpoint(medium) {
+		width: 44px;
+		.search-container {
+			transform: translate(0, 0);
+			transition: 0.3s linear;
+		}
+		.searchandfilter {
 			opacity: 0;
-			transition: all 0.35s;
+		}
+		svg.icon {
+			background: transparent;
 		}
 		&:hover {
-			left: -170px;
-			@include breakpoint(medium) {
-				left: -200px;
+			width: auto;
+			.search-container {
+				transform: translate(-75px, 0);
+			}
+			.searchandfilter {
+				opacity: 1;
 			}
 		}
-		&:hover,
-		&:focus {
-			width: 218px;
-			outline: none;
-			input {
-				display: inline-block;
-				padding: 10px;
-			}
-		}
-		&:hover input {
-			opacity: 1;
-		}
+	}
+}
+.search-container {
+			display: flex;
+	@include breakpoint(medium) {
+		position: absolute;
+		align-items: center;
+		background: transparent;
+	}
+	svg.icon {
+		height: 44px;
+		width: 44px;
+		padding: 11px;
+		border-radius: 6px;
 	}
 	input[type="text"],
 	form {
@@ -51,7 +64,7 @@
 	}
 
 	ul {
-		margin-left: 0.5rem;
+		margin-left: 0;
 		line-height: 1;
 	}
 }

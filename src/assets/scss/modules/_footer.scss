@@ -5,9 +5,9 @@ footer.footer {
 }
 
 .footer-container {
-	@include xy-grid-container;
-	@include shadow;
-	width: 100%;
+	// @include xy-grid-container;
+	// @include shadow;
+	// width: 100%;
 }
 
 .home footer.cell.shrink.footer {
@@ -30,18 +30,8 @@ footer.footer {
 	display: flex;
 }
 
-.footer-grid {
-	@include xy-grid;
-	justify-content: space-between;
-	padding: rem-calc(20) 0;
-
+.footer-container {
 	section {
-		@include breakpoint(large) {
-			justify-content: initial;
-			display: flex;
-			align-items: center;
-		}
-
 		&.widget .widget_media_image {
 			@include breakpoint(small only) {
 				text-align: center;
@@ -85,83 +75,4 @@ footer.footer {
 			margin: 0;
 		}
 	}
-}
-
-.footer {
-	// footer logo
-	.logo {
-		figure {
-			margin: 0 auto;
-			@include breakpoint(medium) {
-				margin: unset;
-			}
-		}
-		figcaption {
-			text-indent: -900vw;
-			height: 0;
-		}
-		img {
-			width: 150px;
-		}
-	}
-	.l-footer-widgets,
-	.c-footer-widgets,
-	.r-footer-widgets {
-		flex: 1 0 auto;
-	}
-	.r-footer-widgets {
-		text-align: center;
-		width: 100%;
-		@include breakpoint(small) {
-			width: 33.333%;
-		}
-		.cell a {
-			padding-right: 10px;
-		}
-		.social {
-			@include breakpoint(large) {
-				flex-direction: row;
-			}
-		}
-	}
-		@include breakpoint(medium up) {
-		.social {
-			svg.svg-inline--fa {
-				max-width: 2em;
-			}
-			.cell.shrink,
-			.contactModal {
-				@include breakpoint(large) {
-					padding-right: 12px;
-				}
-			}
-		}
-	}
-	.medium-shrink.nav-link {
-		width: 30px;
-		margin-left: 1rem;
-	}
-	.c-footer-widgets {
-		text-align: center;
-		.widget {
-			justify-content: center;
-		}
-	}
-	@include breakpoint(small only) {
-		.l-footer-widgets .footer-logo {
-			margin: 0 auto;
-		}
-		.c-footer-widgets .widget * {
-			font-size: 100%;
-			margin-top: 2rem;
-		}
-		.r-footer-widgets {
-			.icon-container {
-				justify-content: center;
-			}
-			.icon {
-				zoom: 1.4;
-			}
-		}
-	} // END small only
 }

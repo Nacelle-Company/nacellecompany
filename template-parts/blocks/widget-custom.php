@@ -23,10 +23,10 @@ function my_dynamic_sidebar_params($params)
 
 ?>
 
-    <div class="grid-x social align-right">
+    <div class="grid-x social">
 
         <?php if (!empty($showContactModal)) : ?>
-            <div class="cell medium-shrink">
+            <div class="cell medium-shrink text-center">
                 <button class="contactModal" data-open="contactModal">
                     <p><?php _e('Contact', 'nacelle'); ?></p>
                 </button>
