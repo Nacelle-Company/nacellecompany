@@ -1,5 +1,6 @@
 <?php
 // get term
+
 $term = get_queried_object();
 $tax_page = is_tax(array('main_talent', 'producers', 'directors', 'writers'), $term);
 $videoEmbedd = '';
@@ -10,24 +11,9 @@ if ($tax_page) {
     $videoAbundance = '0.3';
     $profile_hero_lg = get_field('profile_pic', $term);
 } else {
-    $videoAbundance = '0.3';
+    $videoAbundance = '0.0';
     $profile_hero_lg = get_field('profile_pic', $term->taxonomy . '_' . $term->term_id);
 }
-
-// get taxonomy name
-$tax = $wp_query->get_queried_object();
-$tax = get_taxonomy($tax->taxonomy);
-$taxonomy =  $tax->label;
-if ($taxonomy == 'Main Talent') {
-    $taxonomy = 'Talent';
-} elseif ($taxonomy == 'Producers') {
-    $taxonomy = substr($taxonomy, 0, -1);
-} elseif ($taxonomy == 'Directors') {
-    $taxonomy = substr($taxonomy, 0, -1);
-} elseif ($taxonomy == 'Writers') {
-    $taxonomy = substr($taxonomy, 0, -1);
-}
-// $term = get_queried_object();
 
 // for the catalog pages
 // simply get the video_embedd field
@@ -131,7 +117,22 @@ wp_reset_postdata(); ?>
 
             <div class="cell medium-4">
 
-                <?php if ($tax_page) { ?>
+                <?php if ($tax_page) {
+                    // get taxonomy name
+                    $tax = $wp_query->get_queried_object();
+                    $tax = get_taxonomy($tax->taxonomy);
+                    $taxonomy =  $tax->label;
+
+                    if ($taxonomy == 'Main Talent') {
+                        $taxonomy = 'Talent';
+                    } elseif ($taxonomy == 'Producers') {
+                        $taxonomy = substr($taxonomy, 0, -1);
+                    } elseif ($taxonomy == 'Directors') {
+                        $taxonomy = substr($taxonomy, 0, -1);
+                    } elseif ($taxonomy == 'Writers') {
+                        $taxonomy = substr($taxonomy, 0, -1);
+                    }
+                    ?>
 
                     <?php // play button group 
                     ?>
@@ -179,7 +180,7 @@ wp_reset_postdata(); ?>
 
                         <div class="big-video-cover"></div>
 
-                        <button data-toggle="coverOn" class="button is-active icon" onclick="jQuery('#video-header-hero').YTPUnmute()">
+                        <button data-toggle="coverOn" class="button hollow is-active icon" onclick="jQuery('#video-header-hero').YTPUnmute()">
                             <?php get_template_part('template-parts/svg/icon-play', ''); ?>
                             <strong>Watch</strong>
                         </button>
@@ -245,7 +246,7 @@ wp_reset_postdata(); ?>
                     autoPlay: false,
                     showControls:true, 
                     optimizeDisplay:true,
-                    abundance: 0,
+                    abundance: .0,
                     loop:true, 
                     showYTLogo:true, 
                     stopMovieOnBlur:true }"></div>

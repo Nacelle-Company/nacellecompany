@@ -13,7 +13,11 @@
 		@include show-for(medium);
 	}
 }
-
+// navigation hover 
+.current-menu-parent a {
+	// color: black;
+}
+// navigation hover END
 // WP post navigation
 .post-navigation {
 	@include clearfix;
@@ -31,7 +35,7 @@
 	position: relative;
 	z-index: 6;
 }
-.mobile-nav {
+.title-bar {
 	.title-bar-left {
 		position: relative;
 	}
@@ -57,10 +61,6 @@
 			flex-direction: row;
 		}
 	}
-	// left logo
-	.top-bar-title {
-		margin: 0;
-	}
 	// right menu
 	.right {
 		@include breakpoint(medium) {
@@ -76,11 +76,6 @@
 				justify-content: flex-end;
 			}
 		}
-		// left logo
-		.top-bar-title {
-			margin: 0;
-			text-align: center;
-		}
 		// right menu
 		.right {
 			@include breakpoint(medium) {
@@ -90,10 +85,6 @@
 		@include breakpoint(medium) {
 			.header-search-container {
 				display: flex;
-				// 	position: absolute;
-				// 	z-index: 9;
-				// 	right: -60%;
-				// 	top: 10px;
 			}
 		}
 	}
@@ -107,9 +98,6 @@
 			width: 100%;
 			z-index: 9;
 			justify-content: center;
-			background-color: transparent;
-		}
-		.menu {
 			background-color: transparent;
 		}
 	}

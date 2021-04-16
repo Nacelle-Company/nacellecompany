@@ -1,0 +1,29 @@
+
+.news {
+	.pag-img-wrapper {
+		img {
+			transform: scale(1);
+			transition: all 0.3s linear;
+		}
+		&:hover img {
+			transform: scale(1.1);
+			transition: all 0.3s linear;
+		}
+		.post-thumbnail {
+			flex: 1 0 25%;
+		}
+		&.prev {
+			.post-link {
+				padding-left: 1.875rem;
+			}
+		}
+		&.next {
+			.post-thumbnail {
+				@include flex-order(1);
+			}
+			.post-link {
+				padding-right: 1.875rem;
+			}
+		}
+	}
+}

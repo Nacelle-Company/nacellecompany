@@ -20,23 +20,23 @@
     margin-bottom: 0;
     flex: 0 1 auto;
     text-transform: uppercase;
-    .icon {
-      fill: transparent;
-    }
+    // .icon {
+    //   fill: transparent;
+    // }
     &:hover {
       color: $white;
       .icon {
         fill: $white
       }
     }
-    &.is-active {
-      color: $white;
-      &:hover {
-      }
-      .icon {
-        fill: $white;
-      }
-    }
+    // &.is-active {
+    //   // color: $white;
+    //   &:hover {
+    //   }
+    //   .icon {
+    //     fill: $white;
+    //   }
+    // }
   }
 }
 

@@ -5,110 +5,79 @@
 }
 
 .accordion-content {
-    padding: 0;
     box-shadow: $thumbnail-shadow-inner;
-
-    .title {
-        color: $medium-gray;
-    }
-    .extra-metadata {
-        .title p {
-            color: $medium-gray;
-        }
-    }
-}
-.accordian-open {
-    
-    button {
-        display: flex;
-        align-items: center;
-    }
-    > .grid-x {
-        // @include xy-gutters($gutter-position: left right bottom);
-        @include flex-align($x: center, $y: middle);
-    }
 }
 .accordion-line {
     height: 1px;
 }
 .accordion-title {
-    display: flex;
-    padding: 0;
     font-size: $body-font-size;
     cursor: pointer;
-    &:hover,
-    & :visited {
-        background: transparent;
-    }
 }
 .accordion-item {
     .fas {
         transition: transform .4s linear;
-        margin-left: 10px;;
     }
     &.is-active {
         .fas {
             @include caratAnimation;
         }
-        .accordian-open {
-            background-color: $true-black;
-        }
     }
 }
 
-.meta-accordion {
-    .accordion {
-        background-color: transparent;
-    }
-}
+// .meta-accordion {
+//     .accordion {
+//         background-color: transparent;
+//     }
+// }
 
 
-.link-icons {
-    position: relative;
-    ul {
-		list-style: none;
-		flex-flow: column;
-		text-align: left;
-		margin-left: 20px;
-        padding: 20px 0;
-        a {
-            color: black;
-            text-decoration: underline;
-        }
-	}
-    .accordion-open {
-        width: 50%;
-        display: flex;
-        padding: 10px;
-    }
+// .link-icons {
+//     position: relative;
+//     ul {
+// 		list-style: none;
+// 		flex-flow: column;
+// 		text-align: left;
+// 		margin-left: 20px;
+//         padding: 20px 0;
+//         a {
+//             color: black;
+//             text-decoration: underline;
+//         }
+// 	}
+//     .accordion-open {
+//         width: 50%;
+//         display: flex;
+//         padding: 10px;
+//     }
     
-    button {
-        cursor: pointer;
-    }
-    .accordion-item {
-        &:last-of-type .accordion-open {
-            position: absolute;
-            width: 46.5%;
-            left: 50%;
-            top: 16px;
-            @include breakpoint(small) {
-                top: 14px;
-            }
-        }
-        &.is-active {
-            .accordion-title .fas {
-                @include caratAnimation;
-            }
-        }
-    }
-    .accordion-title {
-        &:focus,
-        &:hover {
-    		background: transparent;
-        }
-    }
-}
-.link-icons .accordion-item.is-active .accordion-open {
-    background: $true-black;
-    border-radius: 6px 6px 0 0;
-}
+//     button {
+//         cursor: pointer;
+//     }
+//     .accordion-item {
+//         &:last-of-type .accordion-open {
+//             position: absolute;
+//             width: 46.5%;
+//             left: 50%;
+//             top: 16px;
+//             @include breakpoint(small) {
+//                 top: 14px;
+//             }
+//         }
+//         &.is-active {
+//             .accordion-title .fas {
+//                 @include caratAnimation;
+//             }
+//         }
+//     }
+//     .accordion-title {
+//         &:focus,
+//         &:hover {
+//     		background: transparent;
+//         }
+//     }
+// }
+// .link-icons .accordion-item.is-active .accordion-open {
+//     background: $true-black;
+//     border-radius: 6px 6px 0 0;
+// }

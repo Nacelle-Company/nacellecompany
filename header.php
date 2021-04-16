@@ -60,18 +60,13 @@
 		fbq('init', '427279594883969');
 		fbq('track', 'PageView');
 	</script>
-	<style>
-		table.xdebug-error {
-			color: black !important;
-			font-size: 14px !important;
-		}
-
-		<?php
-		if (get_field('site_wide_css', 'option')) {
-			the_field('site_wide_css', 'option');
-		}
-		?>
-	</style>
+	<?php
+	// if (get_field('site_wide_css', 'option')) {
+	// echo '<style>';
+	// 	the_field('site_wide_css', 'option');
+	// echo '</style>';
+	// }
+	?>
 
 	<?php wp_head(); ?>
 </head>
@@ -86,39 +81,37 @@ else :
 	$align = 'align-right';
 endif;
 ?>
+
 <body <?php body_class(); ?>>
 	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TH8K84L" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=427279594883969&ev=PageView&noscript=1" /></noscript>
 
-	<?php if (get_theme_mod('wpt_mobile_menu_layout') === 'offcanvas') : ?>
+	<?php // if (get_theme_mod('wpt_mobile_menu_layout') === 'offcanvas') : 
+	?>
 
-		<?php get_template_part('template-parts/mobile-off-canvas'); ?>
+	<?php // get_template_part('template-parts/mobile-off-canvas'); 
+	?>
 
-	<?php endif; ?>
+	<?php // endif; 
+	?>
 
-	<?php get_template_part('template-parts/search-off-canvas'); ?>
-
-	<header class="site-header cell shrink medium-cell-block-container" role="banner">
-
-		<div class="site-title-bar title-bar mobile-nav" <?php Nacelle_title_bar_responsive_toggle(); ?>>
-
+	<header class="site-header cell shrink medium-cell-block-container <?php if (is_page_template(array('page-templates/front-circles.php', 'page-templates/front-carousel.php', 'page-templates/front-grid.php'))) {
+																																				echo 'transparent-header';
+																																			} else {
+																																				echo '';
+																																			} ?>" role="banner">
+		<div class="site-title-bar title-bar" <?php Nacelle_title_bar_responsive_toggle(); ?>>
 			<div class="title-bar-left grid-x align-center-middle">
-
 				<button aria-label="<?php _e('Main Menu', 'nacelle'); ?>" class="menu-icon" type="button" data-toggle="<?php Nacelle_mobile_menu_id(); ?>"></button>
-
 				<span class="site-mobile-title title-bar-title cell text-center">
-
 					<?php if (function_exists('the_custom_logo')) {
 						the_custom_logo();
 					} ?>
-
 				</span>
-
 			</div>
-
 		</div>
 
-		<nav class="site-navigation top-bar <?php echo $leftToo; ?>" role="navigation">
+		<nav class="site-navigation top-bar <?php echo $leftToo; ?>" role="navigation" id="<?php Nacelle_mobile_menu_id(); ?>">
 			<div class="nav-container grid-container grid-x align-middle">
 				<?php
 				if (has_nav_menu('top-bar-l')) { ?>
@@ -127,45 +120,25 @@ endif;
 					</div>
 				<?php }
 				?>
-				<div class="top-bar-title cell auto <?php echo $textAlign; ?>">
-
-					<?php
-					$custom_logo_id = get_theme_mod('custom_logo');
-					$logo = wp_get_attachment_image_src($custom_logo_id, 'full');
-					$blogInfo = get_bloginfo('name');
-
-					if (has_custom_logo()) {
-						echo '<a href="/" title="' . $blogInfo  . 'homepage">';
-						echo '<img src="' . esc_url($logo[0]) . '" alt="' . get_bloginfo('name') . '" title="' . get_bloginfo('name') . ' logo' . '" class="custom-logo">';
-						echo '</a>';
-					} else {
-						echo '<h1>' . get_bloginfo('name') . '</h1>';
-					}
-					?>
-
+				<div class="top-bar-title cell shrink <?php echo $textAlign; ?>">
+					<?php if (function_exists('the_custom_logo')) {
+						the_custom_logo();
+					} ?>
 				</div>
 				<div class="right flex-container cell auto">
-
 					<?php Nacelle_top_bar_r(); ?>
-
 					<?php if (!get_theme_mod('wpt_mobile_menu_layout') || get_theme_mod('wpt_mobile_menu_layout') === 'topbar') : ?>
-
 						<?php get_template_part('template-parts/mobile-top-bar'); ?>
-
 					<?php endif; ?>
-					<div class='header-search-container' tabindex='1'>
-
-						<div class='search-container' tabindex='1'>
-
-							<?php get_template_part('template-parts/svg/icon-search'); ?>
-
-							<?php echo do_shortcode('[searchandfilter slug="search-form-only" fields="search" search_placeholder="Search. . ."]');
-							?>
-
+					<?php $showSearch = get_option('options_show_nav_search');
+					if ($showSearch) : ?>
+						<div class='header-search-container' tabindex='1'>
+							<div class='search-container' tabindex='1'>
+								<?php get_template_part('template-parts/svg/icon-search'); ?>
+								<?php echo do_shortcode('[searchandfilter slug="search-form-only" fields="search" search_placeholder="Search. . ."]'); ?>
+							</div>
 						</div>
-
-					</div>
-
+					<?php endif; ?>
 				</div>
 			</div>
 		</nav>

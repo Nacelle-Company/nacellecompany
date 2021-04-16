@@ -5,9 +5,19 @@ footer.footer {
 }
 
 .footer-container {
-	// @include xy-grid-container;
-	// @include shadow;
-	// width: 100%;
+		.l-footer-widgets {
+		@include breakpoint(medium) {
+			justify-content: flex-start;
+		}
+	}
+	.r-footer-widgets {
+		@include breakpoint(medium) {
+			justify-content: flex-end;
+		}
+	}
+	.icon {
+		line-height: 1;
+	}
 }
 
 .home footer.cell.shrink.footer {

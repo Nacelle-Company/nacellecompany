@@ -22,13 +22,16 @@ get_header(); ?>
 
 	<div class="cell medium-12">
 		<header class="grid-container archive pb-2 pb-medium-0">
-			<div class="grid-x align-center-middle grid-padding-y category-intro">
-				<div class="cell small-2">
+			<div class="grid-x align-center-middle pt-2 category-intro">
+				<div class="cell small-6 medium-2">
 					<h1 class="entry-title">
 						<?php single_cat_title(); ?>
 					</h1>
 				</div>
-				<div class="cell medium-8">
+				<div class="cell small-6 medium-2 medium-order-3 text-right sorting">
+					<a data-toggle="searchOffCanvas">Sort & Filter</a>
+				</div>
+				<div class="cell medium-8 pb-2">
 					<?php
 					if (is_category('album')) {
 						echo the_field('album_content', 'option');
@@ -44,9 +47,6 @@ get_header(); ?>
 						echo the_field('production_series_content', 'option');
 					}
 					?>
-				</div>
-				<div class="cell medium-2 text-right sorting">
-					<a data-toggle="searchOffCanvas">Sort & Filter</a>
 				</div>
 			</div>
 		</header>

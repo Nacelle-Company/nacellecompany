@@ -23,7 +23,7 @@ function my_dynamic_sidebar_params($params)
 
 ?>
 
-    <div class="grid-x social">
+    <div class="grid-x align-justify align-middle social">
 
         <?php if (!empty($showContactModal)) : ?>
             <div class="cell medium-shrink text-center">
@@ -32,52 +32,49 @@ function my_dynamic_sidebar_params($params)
                 </button>
             </div>
         <?php endif; ?>
-        <div class="cell medium-shrink">
-            <div class="grid-x align-center">
-
+        <div class="cell medium-auto">
+            <div class="grid-x align-center-middle">
                 <?php if (!empty($facebook)) : ?>
-                    <div class="cell shrink">
-                        <a href="<?php echo $facebook; ?>" target="_blank" aria-label="visit <?php echo get_bloginfo(); ?> facebook">
+                    <div class="icon cell auto text-center">
+                        <a href="<?php echo $facebook; ?>" class="p-2" target="_blank" aria-label="visit <?php echo get_bloginfo(); ?> facebook">
                             <?php get_template_part('template-parts/svg/icon-facebook'); ?>
                         </a>
                     </div>
                 <?php endif; ?>
-
                 <?php if (!empty($twitter)) : ?>
-                    <div class="cell shrink">
-                        <a href="<?php echo $twitter; ?>" target="_blank" aria-label="visit <?php echo get_bloginfo(); ?> twitter">
+                    <div class="icon cell auto text-center">
+                        <a href="<?php echo $twitter; ?>" class="p-2" target="_blank" aria-label="visit <?php echo get_bloginfo(); ?> twitter">
                             <?php get_template_part('template-parts/svg/icon-twitter'); ?>
                         </a>
                     </div>
                 <?php endif; ?>
-
                 <?php if (!empty($instagram)) : ?>
-                    <div class="cell shrink">
-                        <a href="<?php echo $instagram; ?>" target="_blank" aria-label="visit <?php echo get_bloginfo(); ?> instagram">
+                    <div class="icon cell auto text-center">
+                        <a href="<?php echo $instagram; ?>" class="p-2" target="_blank" aria-label="visit <?php echo get_bloginfo(); ?> instagram">
                             <?php get_template_part('template-parts/svg/icon-instagram'); ?>
                         </a>
                     </div>
                 <?php endif; ?>
 
                 <?php if (!empty($youtube)) : ?>
-                    <div class="cell shrink">
-                        <a href="<?php echo $youtube; ?>" target="_blank" aria-label="visit <?php echo get_bloginfo(); ?> youtube">
+                    <div class="icon cell auto text-center">
+                        <a href="<?php echo $youtube; ?>" class="p-2" target="_blank" aria-label="visit <?php echo get_bloginfo(); ?> youtube">
                             <?php get_template_part('template-parts/svg/icon-youtube'); ?>
                         </a>
                     </div>
                 <?php endif; ?>
 
                 <?php if (!empty($soundcloud)) : ?>
-                    <div class="cell shrink">
-                        <a href="<?php echo $soundcloud; ?>" target="_blank" aria-label="visit <?php echo get_bloginfo(); ?> soundcloud">
+                    <div class="icon cell auto text-center">
+                        <a href="<?php echo $soundcloud; ?>" class="p-2" target="_blank" aria-label="visit <?php echo get_bloginfo(); ?> soundcloud">
                             <?php get_template_part('template-parts/svg/icon-soundcloud'); ?>
                         </a>
                     </div>
                 <?php endif; ?>
 
                 <?php if (!empty($spotify)) : ?>
-                    <div class="cell shrink">
-                        <a href="<?php echo $spotify; ?>" target="_blank" aria-label="visit <?php echo get_bloginfo(); ?> spotify">
+                    <div class="icon cell auto text-center">
+                        <a href="<?php echo $spotify; ?>" class="p-2 pr-medium-0" target="_blank" aria-label="visit <?php echo get_bloginfo(); ?> spotify">
                             <?php get_template_part('template-parts/svg/icon-spotify'); ?>
                         </a>
                     </div>

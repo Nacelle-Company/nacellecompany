@@ -7,37 +7,16 @@ $siteURL = get_site_url();
 
 if (!empty($talents) || !empty($directors) || !empty($producers) || !empty($writers)) :
 ?>
-    <div class="catalog-crew grid-container grid-x grid-padding-x grid-padding-y small-padding-collapse px-medium-3 px-large-4 mx-medium-2 mx-large-0">
+    <div class="catalog-crew grid-x px-medium-4 pt-2">
 
         <div class="cell medium-4 title">
 
-            <div class="grid-y medium-grid-frame align-justify">
-                <h2 class="h5"><?php the_title(); ?><br><?php _e('Credits', 'nacelle'); ?></h2>
-
-                <?php
-                $imdbV = get_field('imdb_video');
-                if ($imdbV) : ?>
-                    <div class="cell pr-medium-3">
-
-                        <div class="solo-link">
-
-                            <a href="<?php echo $imdbV; ?>" class="catalog-title button expanded" rel="noreferrer" title="Watch <?php the_title_attribute(); ?> on <?php echo $imdbV; ?>" target="_blank" rel="noreferrer">
-
-                                <strong><?php _e("View on IMDB", 'Nacelle'); ?></strong>
-
-                            </a>
-
-                        </div>
-
-                    </div>
-                <?php endif; ?>
-
+            <div class="grid-y medium-grid-frame">
+                <h2 class="h5"><?php the_title(); ?></h2>
+                <h2 class="h4"><?php _e('Credits', 'nacelle'); ?></h2>
             </div>
 
         </div>
-
-        <?php // START the crew 
-        ?>
         <div class="cell medium-8">
 
             <?php // TALENT 
@@ -48,7 +27,7 @@ if (!empty($talents) || !empty($directors) || !empty($producers) || !empty($writ
 
                     <?php // talent title 
                     ?>
-                    <div class="cell small-4 title">
+                    <div class="cell small-4 subtitle">
 
                         <p><?php _e('Talent', 'nacelle'); ?></p>
 
@@ -88,7 +67,7 @@ if (!empty($talents) || !empty($directors) || !empty($producers) || !empty($writ
 
                     <?php // directors title 
                     ?>
-                    <div class="cell small-4 title">
+                    <div class="cell small-4 subtitle">
 
                         <p><?php _e('Director(s)', 'nacelle'); ?></p>
 
@@ -124,7 +103,7 @@ if (!empty($talents) || !empty($directors) || !empty($producers) || !empty($writ
 
                 <div class="grid-x">
 
-                    <div class="cell small-4 title">
+                    <div class="cell small-4 subtitle">
 
                         <p><?php _e('Producer(s)', 'nacelle'); ?></p>
 
@@ -158,7 +137,7 @@ if (!empty($talents) || !empty($directors) || !empty($producers) || !empty($writ
 
                 <div class="grid-x">
 
-                    <div class="cell small-4 title">
+                    <div class="cell small-4 subtitle">
 
                         <p><?php _e('Writer(s):', 'nacelle'); ?></p>
 
@@ -183,8 +162,20 @@ if (!empty($talents) || !empty($directors) || !empty($producers) || !empty($writ
             <?php endif; ?>
 
 
-        </div> <?php // end CREW 
-                ?>
+        </div>
+
+        <?php
+        $imdbV = get_field('imdb_video');
+        if ($imdbV) : ?>
+            <div class="cell">
+                <a href="<?php echo $imdbV; ?>" class="catalog-title button expanded" rel="noreferrer" title="Watch <?php the_title_attribute(); ?> on <?php echo $imdbV; ?>" target="_blank" rel="noreferrer">
+                    <strong><?php _e("View on IMDB", 'Nacelle'); ?></strong>
+                    <svg class="icon alt" width="15" height="15" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.938 8.75h-.626a.313.313 0 00-.312.313v2.187H3.75V5h2.813c.172 0 .312-.14.312-.313v-.625a.313.313 0 00-.313-.312H3.438a.938.938 0 00-.937.938v6.875c0 .517.42.937.938.937h6.874c.518 0 .938-.42.938-.938v-2.5a.313.313 0 00-.313-.312zM12.03 2.5h-2.5a.47.47 0 00-.332.8L9.897 4l-4.76 4.758a.469.469 0 000 .664l.442.442a.469.469 0 00.665 0l4.758-4.76.697.698a.47.47 0 00.801-.332v-2.5a.469.469 0 00-.469-.469z" fill-rule="nonzero" />
+                    </svg>
+                </a>
+            </div>
+        <?php endif; ?>
 
     </div>
 <?php endif; ?>

@@ -17,32 +17,16 @@ $hero_lg = $hero_image['sizes'][$img_size_lg];
 $hero_md = $hero_image['sizes'][$img_size_md];
 $hero_sm = $hero_image['sizes'][$img_size_sm];
 
-if (!empty('news_header_image')) :
-?>
-
-  <header class="featured-hero" role="banner" data-interchange="[<?php echo $hero_sm; ?>, small], [<?php echo $hero_md; ?>, medium], [<?php echo $hero_lg; ?>, large]">
-    <div class="grid-x">
-      <div class="cell">
-        <h1 class="text-center">News</h1>
-      </div>
-    </div>
-  </header>
-<?php else : ?>
-
+if (!empty('news_header_image')) : ?>
+  <?php get_template_part('template-parts/featured-image'); ?>
 <?php endif; ?>
-
-<?php //get_template_part('template-parts/featured-image-lg-title');
-?>
-
 <main class="main-container">
-
   <div class="main-grid">
     <div class="main-content">
-
-      <?php //https://developer.wordpress.org/reference/functions/query_posts/ ?>
       <?php if (have_posts()) : ?>
 
-        <?php //Start the Loop  ?>
+        <?php //Start the Loop  
+        ?>
         <?php while (have_posts()) : the_post(); ?>
 
           <?php $link = get_field('link_to_article'); ?>
@@ -52,23 +36,28 @@ if (!empty('news_header_image')) :
             <div class="grid-x grid-padding-y feed-container">
 
               <?php //If a featured image is set, insert into layout and use Interchange
-              // to select the optimal image size per named media query. ?>
+              // to select the optimal image size per named media query. 
+              ?>
               <?php if (has_post_thumbnail($post->ID)) : ?>
 
-                <?php //image ?>
+                <?php //image 
+                ?>
                 <div class="cell medium-4">
 
-                  <?php //if ($link) : ?>
-                    <a href="<?php the_permalink(); ?>">
-                      <img class="slideInFromBottom" data-interchange="[<?php the_post_thumbnail_url('fp-small'); ?>, small], [<?php the_post_thumbnail_url('fp-medium'); ?>, medium], [<?php the_post_thumbnail_url('fp-large'); ?>, large], [<?php the_post_thumbnail_url('fp-xlarge'); ?>, xlarge]">
-                      <?php echo '</a>'; ?>
-                    <?php // endif; ?>
+                  <?php //if ($link) : 
+                  ?>
+                  <a href="<?php the_permalink(); ?>">
+                    <img class="slideInFromBottom" data-interchange="[<?php the_post_thumbnail_url('fp-small'); ?>, small], [<?php the_post_thumbnail_url('fp-medium'); ?>, medium], [<?php the_post_thumbnail_url('fp-large'); ?>, large], [<?php the_post_thumbnail_url('fp-xlarge'); ?>, xlarge]">
+                    <?php echo '</a>'; ?>
+                    <?php // endif; 
+                    ?>
 
                 </div>
 
                 <div class="cell medium-8 archive-title">
 
-                  <?php //title ?>
+                  <?php //title 
+                  ?>
                   <div class="grid-x">
                     <?php // oldschool title
                     if (is_single()) {
@@ -82,12 +71,14 @@ if (!empty('news_header_image')) :
 
                   <footer class="grid-x small-up-2">
 
-                    <?php //date ?>
+                    <?php //date 
+                    ?>
                     <div class="cell date">
                       <p><?php the_time('m.j.y'); ?></p>
                     </div>
 
-                    <?php //microphone ?>
+                    <?php //microphone 
+                    ?>
                     <div class="cell text-right mic">
                       <img src="<?php echo $news_icon; ?>" />
                     </div>
@@ -99,17 +90,25 @@ if (!empty('news_header_image')) :
 
               <?php elseif (empty(has_post_thumbnail($post->ID))) : ?>
 
-                <?php // ?>
-                <?php // ?>
-                <?php // ?>
-                <?php //without image ?>
-                <?php // ?>
-                <?php // ?>
-                <?php // ?>
+                <?php // 
+                ?>
+                <?php // 
+                ?>
+                <?php // 
+                ?>
+                <?php //without image 
+                ?>
+                <?php // 
+                ?>
+                <?php // 
+                ?>
+                <?php // 
+                ?>
 
                 <div class="cell medium-12 archive-title">
 
-                  <?php //title ?>
+                  <?php //title 
+                  ?>
                   <div class="grid-x">
                     <?php
                     if (is_single()) {
@@ -121,15 +120,18 @@ if (!empty('news_header_image')) :
                     ?>
                   </div>
 
-                  <?php //meta info ?>
+                  <?php //meta info 
+                  ?>
                   <footer class="grid-x small-up-2">
 
-                    <?php //date ?>
+                    <?php //date 
+                    ?>
                     <div class="cell date">
                       <p><?php the_time('m.j.y'); ?></p>
                     </div>
 
-                    <?php //microphone ?>
+                    <?php //microphone 
+                    ?>
                     <div class="cell text-right mic">
                       <img src="<?php echo $news_icon; ?>" />
                     </div>

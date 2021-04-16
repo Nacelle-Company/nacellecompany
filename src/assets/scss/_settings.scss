@@ -88,6 +88,7 @@ $dark-nav-color: #2a2d2e;
 $body-background: $true-black;
 $footer-background: $white;
 $body-font-color: $white;
+$transparent: transparent;
 
 $body-font-family: 'MontserratRegular', 'Helvetica', sans-serif;
 $body-antialiased: true;
@@ -903,7 +904,7 @@ $tooltip-radius: $global-radius;
 // -----------
 
 $topbar-padding: .5em;
-$topbar-background: $primary-color;
+$topbar-background: $transparent;
 $topbar-submenu-background: $topbar-background;
 $topbar-title-spacing: .25em 2em;
 $topbar-input-width: 200px;

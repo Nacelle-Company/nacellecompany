@@ -18,26 +18,24 @@
 
 <footer class="grid-x grid-padding-x">
   <!-- <div class="footer-container"> -->
-  <div class="footer-container cell small-12 flex-container flex-dir-column large-flex-dir-row">
+  <div class="footer-container cell small-12 flex-container flex-dir-column large-flex-dir-row py-2">
 
     <?php if (is_active_sidebar('l-footer-widgets')) : ?>
-      <div class="flex-container large-flex-child-shrink l-footer-widgets align-center">
+      <div class="flex-container flex-child-auto l-footer-widgets align-center-middle">
         <?php dynamic_sidebar('l-footer-widgets'); ?>
       </div>
     <?php endif; ?>
-
-    <div class="flex-container large-flex-child-auto c-footer-widgets align-center-middle">
-      <?php if (is_active_sidebar('c-footer-widgets')) : ?>
+    <?php if (is_active_sidebar('c-footer-widgets')) : ?>
+      <div class="flex-container flex-child-grow c-footer-widgets align-center-middle">
         <?php dynamic_sidebar('c-footer-widgets'); ?>
-      <?php endif; ?>
-    </div>
-
-    <div class="flex-container flex-child-shrink r-footer-widgets align-center-middle">
-      <?php if (is_active_sidebar('r-footer-widgets')) : ?>
+      </div>
+    <?php endif; ?>
+    <?php if (is_active_sidebar('r-footer-widgets')) : ?>
+      <div class="flex-container flex-child-shrink r-footer-widgets align-center-middle">
         <?php get_template_part('template-parts/blocks/widget-custom'); ?>
         <?php dynamic_sidebar('r-footer-widgets'); ?>
-      <?php endif; ?>
-    </div>
+      </div>
+    <?php endif; ?>
 
   </div>
   <!-- </div> -->

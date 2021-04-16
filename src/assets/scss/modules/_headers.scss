@@ -29,19 +29,6 @@ h2 {
 	}
 }
 
-@include breakpoint(small only) {
-	.sorting a {
-		padding: 15px 0.5rem;
-		border: none;
-		box-shadow: none;
-		&:hover {
-			border: none;
-			box-shadow: none;
-			color: #7fd2e6;
-		}
-	}
-}
-
 .category-intro {
 	border-bottom: 3px solid $primary-color;
 }

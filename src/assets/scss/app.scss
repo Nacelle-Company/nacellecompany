@@ -62,13 +62,16 @@
 @import "modules/content";
 @import "modules/footer";
 @import "modules/editorStyle";
-@import "modules/newsArchive";
 @import "modules/headers";
-@import "modules/pressArchive";
 @import "modules/orbitSlider";
 @import "modules/heroVideo";
 @import "modules/circleSlider";
 @import "modules/toTop";
+
+// CPT
+@import "cpt/archiveNews";
+@import "cpt/archivePress";
+@import "cpt/singleNews";
 
 // Components
 @import "components/buttons";

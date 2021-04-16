@@ -13,7 +13,7 @@
 		height: 35vh;
 	}
 	@include breakpoint(large up) {
-		height: 70vh;
+		height: 51vh;
 	}
 	&.video {
 		height: 100vh;
@@ -22,7 +22,7 @@
 		height: 70vh;
 	}
 	&.catalog-modal {
-		height: 80vh;
+		height: 100%;
 	}
 	#big-video {
 		position: absolute;
@@ -128,10 +128,7 @@
 // video backgrounds : for mobile layout
 .inline-YTPlayer,
 .big-video {
-	zoom: 1.09;
 	@include breakpoint(medium up) {
-		padding-top: 1rem;
-		height: 75vh !important;
 		overflow: visible !important;
 	}
 }

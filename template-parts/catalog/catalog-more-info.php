@@ -1,21 +1,19 @@
 <?php
-
-$runtime = get_field('runtime');
-$date = get_field('release_date', false, false);
-$show_date = get_field('show_release_date');
+$runtime = get_post_meta(get_the_ID(), 'runtime', true);
+$date = get_post_meta(get_the_ID(), 'release_date', true);
+$show_date = get_post_meta(get_the_ID(), 'show_release_date', true);
 $genres = get_the_terms($post->ID, 'genre');
-
 ?>
-<div class="grid-x catalog-more-info meta-accordion catalog-bottom-meta mt-2" id="meta_accordion">
+<div class="grid-x catalog-more-info meta-accordion catalog-bottom-meta" id="meta_accordion">
     <article class="accordion cell" data-accordion data-allow-all-closed="true">
         <section class="accordion-item" data-accordion-item>
-            <a class="accordian-open" href="#meta_accordion" data-smooth-scroll data-animation-duration="700" data-offset="245">
-                <div class="grid-container grid-x pb-2">
-                    <div class="cell medium-6 pl-medium-1">
+            <a href="#meta_accordion" data-smooth-scroll data-animation-duration="700" data-offset="245">
+                <div class="grid-x px-medium-4 align-middle">
+                    <div class="cell small-6">
                         <div class="grid-x accordion-line"></div>
                     </div>
-                    <div class="cell medium-5 ml-medium-2 pl-medium-2">
-                        <button class="accordion-title clear primary-color mt-2 mt-medium-0" title="More info on <?php the_title(); ?>">More info
+                    <div class="cell small-5 ml-medium-2 pl-medium-2 pl-large-3">
+                        <button class="accordion-title flex-container clear primary-color pl-medium-1 pl-large-0" title="More info on <?php the_title(); ?>">More info
                             <?php get_template_part('template-parts/svg/icon-down-angle'); ?>
                         </button>
                     </div>
@@ -25,26 +23,17 @@ $genres = get_the_terms($post->ID, 'genre');
                 <div class="grid-container grid-x">
                     <div class="cell medium-8 medium-offset-4 tbp-1">
                         <div class="grid-x small-padding-collapse px-medium-2">
-                            <div class="cell medium-12 extra-metadata">
-
-                                <?php // Runtime 
-                                ?>
+                            <div class="cell medium-12">
                                 <?php if ($runtime) : ?>
                                     <div class="grid-x">
-
                                         <div class="cell small-4 title">
                                             <h3 class="md-gray-color sm-title"><?php _e('Runtime:', 'nacelle'); ?></h3>
                                         </div>
-
                                         <div class="cell small-8">
                                             <p><?php echo $runtime; ?></p>
                                         </div>
-
                                     </div>
                                 <?php endif ?>
-
-                                <?php // Premiere 
-                                ?>
                                 <?php if ($show_date) : ?>
                                     <?php $date = new DateTime($date); ?>
                                     <div class="grid-x">
@@ -56,86 +45,50 @@ $genres = get_the_terms($post->ID, 'genre');
                                         </div>
                                     </div>
                                 <?php endif; ?>
-
-                                <?php // Genre 
-                                ?>
                                 <?php if ($genres) : ?>
                                     <div class="grid-x">
                                         <div class="cell small-4 title">
-
                                             <h3 class="md-gray-color sm-title"><?php _e('Genre(s):', 'nacelle'); ?></h3>
-
                                         </div>
                                         <div class="cell small-8">
-
                                             <?php $i = 1;
-
                                             foreach ($genres as $genre) {
                                                 $genre_link = get_term_link($genre, 'genre');
                                                 if (is_wp_error($genre_link)) {
                                                     continue;
                                                 }
                                                 echo $genre->name;
-
                                                 echo ($i < count($genres)) ? ", " : "";
-                                                // Increment counter
                                                 $i++;
                                             } ?>
-
                                         </div>
                                     </div>
                                 <?php endif; ?>
-                                <?php // end genres 
-                                ?>
-
-                                <?php // rating 
-                                ?>
-                                <?php if (get_field('rating')) : ?>
+                                <?php if (get_post_meta(get_the_ID(), 'rating', true)) : ?>
                                     <div class="grid-x">
                                         <div class="cell small-4 title">
-
                                             <h3 class="md-gray-color sm-title"><?php _e('Rating:', 'nacelle'); ?></h3>
-
                                         </div>
                                         <div class="cell small-8">
-
-                                            <p><?php the_field('rating')['value'] ?></p>
-
+                                            <p><?php echo get_post_meta(get_the_ID(), 'rating', true); ?></p>
                                         </div>
                                     </div>
                                 <?php endif ?>
-
-                                <?php // copyright 
-                                ?>
-                                <?php if (get_field('copyright')) : ?>
-
+                                <?php if (get_post_meta(get_the_ID(), 'copyright', true)) : ?>
                                     <div class="grid-x">
                                         <div class="cell small-4 title">
-
                                             <h3 class="md-gray-color sm-title"><?php _e('Copyright:', 'nacelle'); ?></h3>
-
                                         </div>
                                         <div class="cell small-8">
-
-                                            <p><?php the_field('copyright')['value'] ?></p>
-
+                                            <p><?php echo get_post_meta(get_the_ID(), 'copyright', true); ?></p>
                                         </div>
                                     </div>
-
                                 <?php endif ?>
-                                <?php // end copyright 
-                                ?>
-
-                            </div> <?php // end of 8cells 
-                                    ?>
+                            </div>
                         </div>
-                    </div><?php // end of 7cells container 
-                            ?>
+                    </div>
                 </div>
-            </div> <?php // end accordian content 
-                    ?>
-        </section> <?php // end accordian section 
-                    ?>
+            </div>
+        </section>
     </article>
-</div> <?php // end catalog-bottom-meta 
-        ?>
+</div>
