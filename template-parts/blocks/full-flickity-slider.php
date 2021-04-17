@@ -28,7 +28,7 @@ $coverOpacity = get_field('cover_opacity');
 
       $img_size_lg = 'fp-large';
       $img_size_md = 'fp-medium';
-      $img_size_sm = 'medium';
+      $img_size_sm = 'fp-small';
 
       $imageHorizontal = get_field('horizontal_image');
       $imageSquare = get_field('square_image');
@@ -44,8 +44,6 @@ $coverOpacity = get_field('cover_opacity');
       }
 
       /* Get custom sizes of our image sub_field */
-      $hero_lg = $image['sizes'][$img_size_lg];
-      $hero_md = $image['sizes'][$img_size_md];
       $hero_sm = $image['sizes'][$img_size_sm];
 
       // large background image
@@ -65,10 +63,8 @@ $coverOpacity = get_field('cover_opacity');
       $hero_sm_background = $imageBackground['sizes'][$img_size_sm];
 
   ?>
-      <div class="carousel-cell">
+      <div class="carousel-cell" data-interchange="[<?php echo $hero_sm_background; ?>, small], [<?php echo $hero_md_background; ?>, medium], [<?php echo $hero_lg_background; ?>, large]">
         <figure>
-          <img class="flickity-bg-image" data-interchange="[<?php echo $hero_sm_background; ?>, default], [<?php echo $hero_sm_background; ?>, small], [<?php echo $hero_md_background; ?>, medium], [<?php echo $hero_lg_background; ?>, large]" alt="<?php echo $hero_bg_image_alt; ?>" />
-          <noscript><img src="<?php echo $hero_lg_background; ?>" alt="<?php echo $hero_bg_image_alt; ?>" /></noscript>
           <figcaption class="grid-x align-bottom">
             <div class="cell large-6">
               <div class="flickity-image">

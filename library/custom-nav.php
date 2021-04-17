@@ -55,9 +55,9 @@ if (!function_exists('wpt_register_theme_customizer')) :
 
 		// Create background color
 		$wp_customize->add_setting(
-			'background_color',
+			'bk_color',
 			array(
-				'default'   => '#000',
+				'default'   => '#fff',
 				'transport' => 'refresh',
 			)
 		);
@@ -66,7 +66,7 @@ if (!function_exists('wpt_register_theme_customizer')) :
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize,
-				'background_color',
+				'bk_color',
 				array(
 					'section' => 'colors',
 					'label'   => esc_html__('Background color', 'nacelle'),
@@ -77,7 +77,7 @@ if (!function_exists('wpt_register_theme_customizer')) :
 
 		// Create secondary background color
 		$wp_customize->add_setting(
-			'secondary_background_color',
+			'secondary_bk_color',
 			array(
 				'default'   => '#000000',
 				'transport' => 'refresh',
@@ -87,7 +87,7 @@ if (!function_exists('wpt_register_theme_customizer')) :
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize,
-				'secondary_background_color',
+				'secondary_bk_color',
 				array(
 					'section' => 'colors',
 					'label'   => esc_html__('Secondary background color', 'nacelle'),
@@ -98,9 +98,9 @@ if (!function_exists('wpt_register_theme_customizer')) :
 
 		// Create text color
 		$wp_customize->add_setting(
-			'text_color',
+			'txt_color',
 			array(
-				'default'   => '#fff',
+				'default'   => '#1d1d1d',
 				'transport' => 'refresh',
 			)
 		);
@@ -108,7 +108,7 @@ if (!function_exists('wpt_register_theme_customizer')) :
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize, 
-				'text_color', 
+				'txt_color', 
 				array(
 					'section' => 'colors',
 					'label'   => esc_html__('Text color', 'nacelle'),
@@ -117,10 +117,9 @@ if (!function_exists('wpt_register_theme_customizer')) :
 			)
 		);
 
-
 		// Create secondary text color
 		$wp_customize->add_setting(
-			'secondary_text_color',
+			'secondary_txt_color',
 			array(
 				'default'   => '#fff',
 				'transport' => 'refresh',
@@ -130,7 +129,7 @@ if (!function_exists('wpt_register_theme_customizer')) :
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize,
-				'secondary_text_color',
+				'secondary_txt_color',
 				array(
 					'section' => 'colors',
 					'label'   => esc_html__('Secondary text color', 'nacelle'),
@@ -141,7 +140,7 @@ if (!function_exists('wpt_register_theme_customizer')) :
 
 		// Create nav bg color color
 		$wp_customize->add_setting(
-			'nav_bg_color',
+			'nav_bk_color',
 			array(
 				'default'   => '#4591e5',
 				'transport' => 'refresh',
@@ -151,7 +150,7 @@ if (!function_exists('wpt_register_theme_customizer')) :
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize,
-				'nav_bg_color',
+				'nav_bk_color',
 				array(
 					'section' => 'colors',
 					'label'   => esc_html__('Navigation background color', 'nacelle'),
@@ -162,7 +161,7 @@ if (!function_exists('wpt_register_theme_customizer')) :
 
 		// Create secondary nav bg color
 		$wp_customize->add_setting(
-			'second_nav_bg_color',
+			'nav_bk_secondary_color',
 			array(
 				'default'   => '',
 				'transport' => 'refresh'
@@ -172,18 +171,18 @@ if (!function_exists('wpt_register_theme_customizer')) :
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize,
-				'second_nav_bg_color',
+				'nav_bk_secondary_color',
 				array(
 					'section' => 'colors',
-					'label'   => esc_html__('Secondary nav background color', 'nacelle'),
+					'label'   => esc_html__('Nav secondary background color', 'nacelle'),
 					'description'		=> 'CD color: none, Nacelle color: none',
 				)
 			)
 		);
 
-		// Create transparent nav text color
+		// Create navigation text secondary color
 		$wp_customize->add_setting(
-			'second_nav_text_color',
+			'nav_txt_secondary_color',
 			array(
 				'default'   => '#4591e5',
 				'transport' => 'refresh',
@@ -193,10 +192,10 @@ if (!function_exists('wpt_register_theme_customizer')) :
 		$wp_customize->add_control(
 			new WP_Customize_Color_Control(
 				$wp_customize,
-				'second_nav_text_color',
+				'nav_txt_secondary_color',
 				array(
 					'section' => 'colors',
-					'label'   => esc_html__('Secondary nav text color', 'nacelle'),
+					'label'   => esc_html__('Nav text secondary color', 'nacelle'),
 					'description'		=> 'CD color: #ffbc00'
 				)
 			)
@@ -244,6 +243,23 @@ if (!function_exists('wpt_register_theme_customizer')) :
 						'topbar'    => 'Topbar',
 						'offcanvas' => 'Offcanvas',
 					),
+				)
+			)
+		);
+
+		$wp_customize->add_control(
+			new WP_Customize_Control(
+				$wp_customize,
+				'your_setting_id',
+				array(
+					'label'          => __('Dark or light theme version?', 'theme_name'),
+					'section'        => 'your_section_id',
+					'settings'       => 'your_setting_id',
+					'type'           => 'radio',
+					'choices'        => array(
+						'dark'   => __('Dark'),
+						'light'  => __('Light')
+					)
 				)
 			)
 		);

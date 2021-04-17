@@ -73,7 +73,7 @@
 		// right menu
 		.left {
 			.menu {
-				justify-content: flex-end;
+				// justify-content: flex-end;
 			}
 		}
 		// right menu
@@ -101,6 +101,10 @@
 			background-color: transparent;
 		}
 	}
+}
+
+.transparent-header .submenu > .menu-item a {
+	color: #fff;
 }
 
 // absolute positioned top nav

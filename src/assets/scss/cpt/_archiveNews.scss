@@ -30,12 +30,12 @@
 		}
 	}
 }
-.article-row-section {
+.press-row-section {
 	@include flex-grid-row(null, $global-width, 12);
 	justify-content: center;
 }
 
-.article-row-section-inner {
+.press-row-section-inner {
 	@include flex-grid-column(12);
 
 	@include breakpoint(medium) {
@@ -43,13 +43,13 @@
 	}
 }
 
-.article-row-section-header {
+.press-row-section-header {
 	padding: 1.5rem 0;
 	margin: 0;
 	line-height: 1;
 }
 
-.article-row {
+.press-row {
 	display: flex;
 	flex-direction: column;
 	padding: 1.5rem 0;
@@ -60,7 +60,7 @@
 		flex-direction: row;
 
 		&:hover {
-			.article-row-content {
+			.press-row-content {
 				background: $light-gray;
 				& * {
 					color: $true-black;
@@ -88,17 +88,17 @@
 		}
 	}
 
-	&:not(.article-row-reversed) {
+	&:not(.press-row-reversed) {
 		.news-image-hover-background {
 			top: -48px;
 			left: -72px;
 		}
-		.article-row-img {
+		.press-row-img {
 			border-top-left-radius: 50%;
 			border-bottom-left-radius: 50%;
 		}
 
-		.article-row-content {
+		.press-row-content {
 			border-top-right-radius: $global-radius;
 			border-bottom-right-radius: $global-radius;
 			width: 100%;
@@ -106,7 +106,7 @@
 	}
 }
 
-.article-row-img {
+.press-row-img {
 	z-index: 1;
 	@include transition;
 	img {
@@ -121,7 +121,7 @@
 	}
 }
 
-.article-row-content {
+.press-row-content {
 	z-index: 0;
 	padding: 1.5rem 0 0;
 	@include transition;
@@ -135,22 +135,18 @@
 	}
 }
 
-.article-row-content-header {
-	font-size: 1.5rem;
-}
-
-.article-row-content-author,
-.article-row-content-time {
+.press-row-content-author,
+.press-row-content-time {
 	font-size: 0.875rem;
 	margin-bottom: 0;
 	color: $dark-gray;
 }
 
-.article-row-reversed {
+.press-row-reversed {
 	.news-image-hover-background {
 		right: -72px;
 	}
-	.article-row-content {
+	.press-row-content {
 		order: 2;
 		padding: 0 1.5rem 0 0;
 
@@ -160,19 +156,19 @@
 		}
 	}
 
-	.article-row-img {
+	.press-row-img {
 		order: 1;
 		@include transition;
 	}
 
 	@include breakpoint(medium) {
-		.article-row-content {
+		.press-row-content {
 			order: 1;
 			border-top-left-radius: $global-radius;
 			border-bottom-left-radius: $global-radius;
 		}
 
-		.article-row-img {
+		.press-row-img {
 			order: 2;
 			border-top-right-radius: 50%;
 			border-bottom-right-radius: 50%;

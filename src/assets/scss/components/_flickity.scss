@@ -143,13 +143,13 @@ https://flickity.metafizzy.co
 	height: 100%;
 }
 
-.flickity-bg-image {
-	width: 100%;
-	display: none;
-	@include breakpoint(medium) {
-		display: block;
-	}
-}
+// .flickity-bg-image {
+// 	width: 100%;
+// 	display: none;
+// 	@include breakpoint(medium) {
+// 		display: block;
+// 	}
+// }
 
 // // custom styles per slider
 
@@ -183,8 +183,18 @@ https://flickity.metafizzy.co
 	}
 
 	&.carousel-full--overlay {
+			@include breakpoint(small only) {
+				height: 75vh;
+			}
 		.carousel-cell {
 			height: 90vh;
+			background-position: 50% 70%;
+			background-repeat: no-repeat;
+			background-size: auto 50%;
+			@include breakpoint(medium) {
+				background-position: center;
+				background-size: cover;
+			}
 		}
 		figcaption {
 			@include breakpoint(medium) {

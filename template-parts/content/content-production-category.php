@@ -28,13 +28,14 @@
 					</h1>
 				</div>
 				<div class="cell medium-8">
-					<?php
+					<p><?php
 					if (is_category('special-production')) {
 						echo the_field('production_special_content', 'option');
 					} elseif (is_category('series-production')) {
 						echo the_field('production_series_content', 'option');
 					}
 					?>
+					</p>
 				</div>
 				<div class="cell medium-2 text-right sorting">
 					<a data-toggle="searchOffCanvas">Sort & Filter</a>

@@ -64,14 +64,19 @@ if (! function_exists('Nacelle_top_bar_r')) {
  *
  * @link http://codex.wordpress.org/Function_Reference/wp_nav_menu
  */
+
 if (!function_exists('Nacelle_top_bar_l')) {
+
     function Nacelle_top_bar_l()
     {
+        if (has_nav_menu('top-bar-l')) {
+            $alignRight = 'align-right';
+        }
         wp_nav_menu(
             array(
                 'container'      => false,
                 'menu_class'     => 'dropdown menu',
-                'items_wrap'     => '<ul id="%1$s" class="%2$s desktop-menu" data-dropdown-menu>%3$s</ul>',
+                'items_wrap'     => '<ul id="%1$s" class="%2$s desktop-menu ' . $alignRight . '" data-dropdown-menu>%3$s</ul>',
                 'theme_location' => 'top-bar-l',
                 'depth'          => 3,
                 'fallback_cb'    => false,

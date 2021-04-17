@@ -179,282 +179,140 @@ if (!function_exists('Nacelle_mobile_menu_id')) :
     }
 endif;
 
-
 /**
  * Get custom colors
- */
+ **/
 
-if (!function_exists('Nacelle_custom_colors')) :
-    function Nacelle_custom_colors()
+if (!function_exists('Nacelle_custom_colors')) : function Nacelle_custom_colors()
     {
         ob_start();
-        $text_color = get_theme_mod('text_color', '');
-        $secondary_text_color = get_theme_mod('secondary_text_color', '');
-        $background_color = get_theme_mod('background_color', '');
+        // custom color variables
         $primary_color = get_theme_mod('primary_color', '');
         $secondary_color = get_theme_mod('secondary_color', '');
-        $nav_bg_color = get_theme_mod('nav_bg_color', '');
-        $second_nav_text_color = get_theme_mod('second_nav_text_color', '');
-        $second_nav_bg_color = get_theme_mod('home_nav_bg_color', '');
-        $secondary_background_color = get_theme_mod('secondary_background_color', '');
-        if (!empty($background_color)) { ?>
-            body,
-            .featured-page .feat-content,
-            .reveal,
-            .page-template-front-grid .home-overlay.bottom {
-            background-color: #<?php echo $background_color; ?>;
-            }
-            .primary-title .entry-title,
-            .details-container details .on-sale,
-            .details-container details[open] .info p,
-            .wp-block-button .success.wp-block-button__link,
-            .button.hollow.success,.button.success:hover,
-            .synopsis.reveal blockquote p,
-            .off-canvas-content .searchandfilter input[type=submit]:hover,
-            .field-wrap input[type=button]:hover,
-            .tabs-products .tabs-title.is-active a,
-            .carousel-press figcaption h3 {
-            color: #<?php echo $background_color; ?>;
-            }
-            .archive .featured-hero h1:not(.entry-title) {
-                color: #<?php echo $background_color; ?>;
-            }
-            svg.icon.alt {
-            fill: #<?php echo $background_color; ?>;
-            }
-        <?php }
-        if (!empty($text_color)) { ?>
-            body, h1, .h1,
-            .instagram-title h3,
-            .contactModal p,
-            .mobile-app-toggle .button:hover,
-            .carousel-full h3,
-            .carousel-full p,
-            blockquote,
-            blockquote p {
-            color: <?php echo $text_color; ?>;
-            }
-        <?php }
-        if (!empty($secondary_text_color)) { ?>
-            .this {
-            color: <?php echo $secondary_text_color; ?>;
-            }
-        <?php }
-        if (!empty($primary_color)) { ?>
-            .button.hollow {
-            color: <?php echo $primary_color; ?>;
-            }
-            main a:not(.alt):not(.button),
-            .primary-color,
-            .accordion-content .title,
-            .footer-grid p,
-            .mobile-app-toggle .button,
-            .catalog .entry-title,
-            .entry-content .social a.nav-link,
-            .flickity-button {
-            color: <?php echo $primary_color; ?>;
-            }
-            .top-meta .title,
-            .button.clear.success,
-            .primary-title .entry-title,
-            .catalog-crew .title,
-            .search-results .entry-title.subheader {
-            color: <?php echo $primary_color; ?>;
-            }
-            .primary,
-            .accordion-content,
-            input[type=submit],
-            body.page-template-featured-page,
-            .archive .featured-hero,
-            .searchandfilter input[type=submit],
-            .button:not(.hollow),
-            .tabs-products .tabs-title.is-active,
-            .carousel-press figcaption {
-            background-color: <?php echo $primary_color; ?>;
-            }
-            .to-top,
-            .instagram-tab,
-            .callout-footer,
-            .mobile-app-toggle .button.is-active:hover,
-            .details-container .info,
-            .details-container details[open] .info {
-            background-color: <?php echo $primary_color; ?>;
-            }
-            .button.primary,
-            .wp-block-button .primary.wp-block-button__link,
-            .carousel-full--press figcaption,
-            .flickity-page-dots .dot {
-            background-color: <?php echo $primary_color; ?>;
-            }
-            .button.hollow {
-            border-color: <?php echo $primary_color; ?>;
-            }
-            .instagram-tab,
-            .off-canvas-content,
-            .mobile-app-toggle .button.is-active,
-            .press_release .intro,
-            .press_release .press,
-            .page-template-featured-page .off-canvas-content {
-            border-color: <?php echo $primary_color; ?>;
-            }
-            .details-container p,
-            .primary-title,
-            .search-results .entry-title.subheader {
-            border-color: <?php echo $primary_color; ?>;
-            }
-            .fas,
-            svg.footer-logo .color,
-            svg.icon,
-            .flickity-button-icon {
-            fill: <?php echo $primary_color; ?>;
-            }
-            .mobile-app-toggle .button .icon {
-            stroke: <?php echo $primary_color; ?>;
-            }
-            h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
-            color: <?php echo $primary_color; ?>;
-            }
-            .tabs-products {
-            border-bottom-color: <?php echo $primary_color; ?>;
-            }
-        <?php
+        $bk_color = get_theme_mod('bk_color', '');
+        $secondary_bk_color = get_theme_mod('secondary_bk_color', '');
+        $txt_color = get_theme_mod('txt_color', '');
+        $secondary_txt_color = get_theme_mod('secondary_txt_color', '');
+        $nav_bk_color = get_theme_mod('nav_bg_color', '');
+        $nav_bk_secondary_color = get_theme_mod('nav_bk_secondary_color', '');
+        $nav_txt_secondary_color = get_theme_mod('nav_txt_secondary_color', '');
+
+        echo ':root {';
+        if (!empty($primary_color)) {
+            echo '--primary-color:' . $primary_color . ';';
         }
         if (!empty($secondary_color)) {
-            // secondary color
-        ?>
-            .current-menu-parent > a,
-            .current-menu-item > a {
-            color: <?php echo $secondary_color; ?>;
-            }
-            .menu > li:hover > a,
-            .is-submenu-item:hover > a {
-            color: <?php echo $secondary_color; ?>;
-            }
-            .secondary-color,
-            .button.hollow:hover {
-            color: <?php echo $secondary_color; ?>;
-            }
-            .button.clear.success,
-            .press_release .intro,
-            .details-container summary,
-            .details-container .info a,
-            .close-button {
-            color: <?php echo $secondary_color; ?>;
-            }
-            .button.hollow:hover {
-            border-color: <?php echo $secondary_color; ?>;
-            }
-            .reveal header,
-            .details-container details[open] .info,
-            .featured-page .feat-content .dk-border,
-            .button.hollow.success,
-            .feed-container,
-            hr,
-            .post-navigation,
-            .carousel .flickity-page-dots .dot,
-            blockquote {
-            border-color: <?php echo $secondary_color; ?>;
-            }
+            echo '--secondary-color:' . $secondary_color . ';';
+        }
+        if (!empty($bk_color)) {
+            echo '--bk-color:' . $bk_color . ';';
+        }
+        if (!empty($secondary_bk_color)) {
+            echo '--secondary-bk-color:' . $secondary_bk_color . ';';
+        }
+        if (!empty($txt_color)) {
+            echo '--txt-color:' . $txt_color . ';';
+        }
+        if (!empty($secondary_txt_color)) {
+            echo '--secondary-txt-color:' . $secondary_txt_color . ';';
+        }
+        if (!empty($nav_bk_color)) {
+            echo '--nav-bk-color:' . $nav_bk_color . ';';
+        }
+        if (!empty($nav_bk_secondary_color)) {
+            echo '--nav-bk-secondary-color:' . $nav_bk_secondary_color . ';';
+        }
+        if (!empty($nav_txt_secondary_color)) {
+            echo '--nav-txt-secondary-color:' . $nav_txt_secondary_color . ';';
+        }
+        echo '}'; // :root close 
+?>
+        /* primary color */
+        h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,a,.button.hollowmain a:not(.alt):not(.button),.primary-color,.accordion-content .title,.footer-grid p,.mobile-app-toggle .button,.catalog .entry-title,.entry-content .social a.nav-link,.flickity-button.top-meta .title,.button.clear.success,.primary-title .entry-title,.catalog-crew .title,.search-results .entry-title.subheader {
+        color: var(--primary-color);
+        }
+        .primary,.accordion-content,input[type=submit],body.page-template-featured-page,.archive .featured-hero,.searchandfilter input[type=submit],.button:not(.hollow),.tabs-products .tabs-title.is-active,.carousel-press figcaption,.to-top,.instagram-tab,.callout-footer,.mobile-app-toggle .button.is-active:hover,.details-container .info,.details-container details[open] .info, .button.primary,.wp-block-button .primary.wp-block-button__link,.carousel-full--press figcaption,.flickity-page-dots .dot {
+        background-color: var(--primary-color);
+        }
+        .button.hollow,.instagram-tab,.off-canvas-content,.mobile-app-toggle .button.is-active,.press_release .intro,.press_release .press,.page-template-featured-page .off-canvas-content,.details-container p,.primary-title,.search-results .entry-title.subheader {
+        border-color: var(--primary-color);
+        }
+        .fas,svg.footer-logo .color,svg.icon,.flickity-button-icon {
+        fill: var(--primary-color);
+        }
+        .mobile-app-toggle .button .icon {
+        stroke: var(--primary-color);
+        }
+        .tabs-products {
+        border-bottom-color: var(--primary-color);
+        }
 
-            .secondary-bkgnd,
-            .accordion-line,
-            .button.success:not(.clear),
-            .wp-block-button .success.wp-block-button__link,
-            .off-canvas-content .searchandfilter input[type=submit],
-            .field-wrap input[type=button],
-            .button:hover,
-            .flickity-page-dots .dot.is-selected {
-            background-color: <?php echo $secondary_color; ?>;
-            }
-            .off-canvas-content .searchandfilter input[type=submit]:hover,
-            .field-wrap input[type=button]:hover {
-            background-color: <?php echo $secondary_color; ?>;
-            filter: saturate(1.5);
-            }
-            .icon.down-angle {
-            fill: <?php echo $secondary_color; ?>;
-            }
-            .pag-img-wrapper:hover {
-            background: transparent;
-            outline: 1px solid <?php echo $secondary_color; ?>;
-            }
-            .menu-icon::after {
-            background-color: <?php echo $secondary_color; ?>;
-            box-shadow: 0 7px 0 <?php echo $secondary_color; ?>, 0 14px 0 <?php echo $secondary_color; ?>;
-            }
-            .accordion-title {
-            color: <?php echo $secondary_color; ?>;
-            }
-        <?php
+        /* secondary color */
+        .current-menu-parent > a,.current-menu-item > a,.menu > li:hover > a,.is-submenu-item:hover > a,.secondary-color,.button.hollow:hover,.button.clear.success,.press_release .intro,.details-container summary,.details-container .info a,.close-button,.accordion-title {
+        color: var(--secondary-color);
         }
-        if (!empty($secondary_background_color)) {
+        .button.hollow:hover,.reveal header,.details-container details[open] .info,.featured-page .feat-content .dk-border,.button.hollow.success,.feed-container,hr,.post-navigation,.carousel .flickity-page-dots .dot,blockquote {
+        border-color: var(--secondary-color);
+        }
+        .secondary-bkgnd,.accordion-line,.button.success:not(.clear),.wp-block-button .success.wp-block-button__link,.off-canvas-content .searchandfilter input[type=submit],.field-wrap input[type=button],.button:hover,.flickity-page-dots .dot.is-selected,.menu-icon::after {
+        background-color: var(--secondary-color);
+        }
+        .off-canvas-content .searchandfilter input[type=submit]:hover,.field-wrap input[type=button]:hover {
+        background-color: var(--secondary-color);
+        filter: saturate(1.5);
+        }
+        .icon.down-angle {
+        fill: var(--secondary-color);
+        }
+        .pag-img-wrapper:hover {
+        background: transparent;
+        outline: 1px solid var(--secondary-color);
+        }
+        .menu-icon::after {
+        box-shadow: 0 7px 0 var(--secondary-color), 0 14px 0 var(--secondary-color);
+        }
 
-        ?>
-            .gallery {
-            background-color: <?php echo $secondary_background_color; ?>;
-            }
-        <?php
+        /* background color */
+        body,.featured-page .feat-content,.reveal,.page-template-front-grid .home-overlay.bottom {
+        background-color: var(--bk-color);
         }
-        if (!empty($nav_bg_color)) {
-            // nav background color
-        ?>
-            .submenu > .menu-item {
-            background: <?php echo $nav_bg_color; ?>;
-            }
-            .site-header:not(.transparent-header) {
-            background: <?php echo $nav_bg_color; ?>;
-            }
-            .title-bar {
-            background: <?php echo $nav_bg_color; ?>;
-            }
-            .top-bar {
-            background: <?php echo $nav_bg_color; ?>;
-            }
-            .menu .is-active > a {
-            background: <?php echo $nav_bg_color; ?>;
-            }
-            .pag-img-wrapper {
-            background: <?php echo $nav_bg_color; ?>;
-            }
-            .off-canvas {
-            background: <?php echo $nav_bg_color; ?>;
-            }
-            .header-search-container:hover svg.icon {
-            background: <?php echo $nav_bg_color; ?>;
-            }
-            footer.footer {
-            background: <?php echo $nav_bg_color; ?>;
-            }
-        <?php
+        .primary-title .entry-title,.details-container details .on-sale,.details-container details[open] .info p,.wp-block-button .success.wp-block-button__link,.button.hollow.success,.button.success:hover,.synopsis.reveal blockquote p,.off-canvas-content .searchandfilter input[type=submit]:hover,.field-wrap input[type=button]:hover,.tabs-products .tabs-title.is-active a,.carousel-press figcaption h3,.archive .featured-hero h1:not(.entry-title) {
+        color: var(--bk-color);
         }
-        ?>
-        <?php if (!empty($second_nav_text_color)) {
-            // home nav text color
-        ?>
-            .transparent-header .menu-item a {
-            color: <?php echo $second_nav_text_color; ?>;
-            }
-        <?php
+        svg.icon.alt {
+        fill: var(--bk-color);
         }
-        if (!empty($background_color)) {
-        ?>
-            .news-gallery h3,
-            .news-gallery p,
-            .callout-footer a,
-            .callout-footer *,
-            .button:not(.hollow),
-            .button:hover {
-            color: #<?php echo $background_color; ?>
-            }
+
+        /* secondary background color */
+        .gallery {
+        background-color: var(--secondary-bk-color);
+        }
+
+        /* text color */
+        body, h1, .h1,p,.instagram-title h3,.contactModal p,.mobile-app-toggle .button:hover,blockquote,blockquote p,.press-row:hover .press-row-content-header,.carousel-full--news h3,.carousel-full--news p,.carousel-full--press h3,.carousel-full--press p {
+        color: var(--txt-color);
+        }
+
+        /* secondary text color */
+        .carousel-full--overlay h3,.carousel-full--overlay p {
+        color: var(--secondary-txt-color);
+        }
+
+        /* navigation background color */
+        .submenu > .menu-item,.site-header:not(.transparent-header),title-bar,.top-bar,.menu .is-active > a,.pag-img-wrapper,.off-canvas,.header-search-container:hover svg.icon,footer.footer {
+        background: var(--nav-bk-color);
+        }
+
+        /* secondary navigation text color */
+        .transparent-header .menu-item a {
+        color: var(--nav-txt-secondary-color);
+        }
+
 <?php
-        }
-        // END cleanup
         $css = ob_get_clean();
         return $css;
     }
 endif;
-
-
 /**
  * Get title bar responsive toggle attribute
  */
