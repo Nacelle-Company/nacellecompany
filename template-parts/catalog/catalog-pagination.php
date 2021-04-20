@@ -17,6 +17,7 @@ $film_cat = in_category('film');
 $production_series_cat = in_category('series-production');
 $production_special_cat = in_category('specials-production');
 $news = is_singular('news');
+$pressRelease = is_singular('press_release');
 ?>
 
 <?php if ($series_cat) : ?>
@@ -133,7 +134,7 @@ $news = is_singular('news');
         )); ?>
     </div>
 
-<?php elseif ($news) : ?>
+<?php elseif ($news || $pressRelease) : ?>
     <div class="grid-x medium-up-2 grid-margin-x align-stretch">
         <div class="cell flex-container pag-img-wrapper prev mb-2">
             <div class="grid-y p-2 align-center">

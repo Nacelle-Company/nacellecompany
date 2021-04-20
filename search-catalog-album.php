@@ -47,7 +47,7 @@ get_header(); ?>
 							<?php if (get_field('square_image', $post->ID)) : ?>
 
 
-								<div class="media-container cell medium-2 mb-4 mb-medium-5 mb-medium-4 mb-large-5 mb-xlarge-3">
+								<div class="media-container cell medium-2 mb-4 mb-large-5 mb-xlarge-3">
 
 									<a href="<?php the_permalink(); ?>">
 

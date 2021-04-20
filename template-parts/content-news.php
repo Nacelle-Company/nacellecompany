@@ -77,7 +77,7 @@ $link = get_post_meta(get_the_ID(), 'link_to_article', true);
             </div>
         <?php endif; ?>
     </div>
-    <footer>
+    <footer class="pagination">
         <?php get_template_part('template-parts/catalog/catalog-pagination'); ?>
         <div class="cell flex-container align-center-middle align-spaced text-center">
             <div class="mr-1">

@@ -193,8 +193,9 @@ if (!function_exists('Nacelle_custom_colors')) : function Nacelle_custom_colors(
         $secondary_bk_color = get_theme_mod('secondary_bk_color', '');
         $txt_color = get_theme_mod('txt_color', '');
         $secondary_txt_color = get_theme_mod('secondary_txt_color', '');
-        $nav_bk_color = get_theme_mod('nav_bg_color', '');
+        $nav_bk_color = get_theme_mod('nav_bk_color', '');
         $nav_bk_secondary_color = get_theme_mod('nav_bk_secondary_color', '');
+        $nav_txt_color = get_theme_mod('nav_txt_color', '');
         $nav_txt_secondary_color = get_theme_mod('nav_txt_secondary_color', '');
 
         echo ':root {';
@@ -223,15 +224,18 @@ if (!function_exists('Nacelle_custom_colors')) : function Nacelle_custom_colors(
             echo '--nav-bk-secondary-color:' . $nav_bk_secondary_color . ';';
         }
         if (!empty($nav_txt_secondary_color)) {
+            echo '--nav-txt-color:' . $nav_txt_color . ';';
+        }
+        if (!empty($nav_txt_secondary_color)) {
             echo '--nav-txt-secondary-color:' . $nav_txt_secondary_color . ';';
         }
         echo '}'; // :root close 
 ?>
         /* primary color */
-        h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,a,.button.hollowmain a:not(.alt):not(.button),.primary-color,.accordion-content .title,.footer-grid p,.mobile-app-toggle .button,.catalog .entry-title,.entry-content .social a.nav-link,.flickity-button.top-meta .title,.button.clear.success,.primary-title .entry-title,.catalog-crew .title,.search-results .entry-title.subheader {
+        h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,.button.hollow,main a:not(.alt):not(.button),.primary-color,.accordion-content .title,.footer-grid p,.mobile-app-toggle .button,.catalog .entry-title,.entry-content .social a.nav-link,.flickity-button.top-meta .title,.primary-title .entry-title,.catalog-crew .title,.search-results .entry-title.subheader {
         color: var(--primary-color);
         }
-        .primary,.accordion-content,input[type=submit],body.page-template-featured-page,.archive .featured-hero,.searchandfilter input[type=submit],.button:not(.hollow),.tabs-products .tabs-title.is-active,.carousel-press figcaption,.to-top,.instagram-tab,.callout-footer,.mobile-app-toggle .button.is-active:hover,.details-container .info,.details-container details[open] .info, .button.primary,.wp-block-button .primary.wp-block-button__link,.carousel-full--press figcaption,.flickity-page-dots .dot {
+        .primary,.accordion-content,input[type=submit],body.page-template-featured-page,.archive .featured-hero,.searchandfilter input[type=submit],.button:not(.hollow,.clear),.tabs-products .tabs-title.is-active,.carousel-press figcaption,.to-top,.instagram-tab,.callout-footer,.mobile-app-toggle .button.is-active:hover,.details-container .info,.details-container details[open] .info, .button.primary,.wp-block-button .primary.wp-block-button__link,.carousel-full--press figcaption,.flickity-page-dots .dot {
         background-color: var(--primary-color);
         }
         .button.hollow,.instagram-tab,.off-canvas-content,.mobile-app-toggle .button.is-active,.press_release .intro,.press_release .press,.page-template-featured-page .off-canvas-content,.details-container p,.primary-title,.search-results .entry-title.subheader {
@@ -276,7 +280,7 @@ if (!function_exists('Nacelle_custom_colors')) : function Nacelle_custom_colors(
         body,.featured-page .feat-content,.reveal,.page-template-front-grid .home-overlay.bottom {
         background-color: var(--bk-color);
         }
-        .primary-title .entry-title,.details-container details .on-sale,.details-container details[open] .info p,.wp-block-button .success.wp-block-button__link,.button.hollow.success,.button.success:hover,.synopsis.reveal blockquote p,.off-canvas-content .searchandfilter input[type=submit]:hover,.field-wrap input[type=button]:hover,.tabs-products .tabs-title.is-active a,.carousel-press figcaption h3,.archive .featured-hero h1:not(.entry-title) {
+        .primary-title .entry-title,.details-container details .on-sale,.details-container details[open] .info p,.wp-block-button .success.wp-block-button__link,.button.hollow.success,.button.success:hover,.synopsis.reveal blockquote p,.off-canvas-content .searchandfilter input[type=submit]:hover,.field-wrap input[type=button]:hover,.tabs-products .tabs-title.is-active a,.carousel-press figcaption h3,.archive .featured-hero h1:not(.entry-title),.media-container .callout-footer,.accordion-content p,.button:not(.hollow) {
         color: var(--bk-color);
         }
         svg.icon.alt {
@@ -289,7 +293,7 @@ if (!function_exists('Nacelle_custom_colors')) : function Nacelle_custom_colors(
         }
 
         /* text color */
-        body, h1, .h1,p,.instagram-title h3,.contactModal p,.mobile-app-toggle .button:hover,blockquote,blockquote p,.press-row:hover .press-row-content-header,.carousel-full--news h3,.carousel-full--news p,.carousel-full--press h3,.carousel-full--press p {
+        body,p,.instagram-title h3,.contactModal p,.mobile-app-toggle .button:hover,blockquote,blockquote p,.press-row:hover .press-row-content-header,.carousel-full--news h3,.carousel-full--news p,.carousel-full--press h3,.carousel-full--press p {
         color: var(--txt-color);
         }
 
@@ -301,6 +305,14 @@ if (!function_exists('Nacelle_custom_colors')) : function Nacelle_custom_colors(
         /* navigation background color */
         .submenu > .menu-item,.site-header:not(.transparent-header),title-bar,.top-bar,.menu .is-active > a,.pag-img-wrapper,.off-canvas,.header-search-container:hover svg.icon,footer.footer {
         background: var(--nav-bk-color);
+        }
+
+        /* navigation text color */
+        .site-header:not(.transparent-header) .menu>.menu-item a,.pagination a,.pagination h4,.pagination svg.icon {
+        color: var(--nav-txt-color);
+        }
+        .pagination svg.icon {
+        fill: var(--nav-txt-color);
         }
 
         /* secondary navigation text color */

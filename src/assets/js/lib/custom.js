@@ -137,19 +137,21 @@ if (grids.length && getComputedStyle(grids[0]).gridTemplateRows !== 'masonry') {
 
 // FLICKITY SLIDER/CAROUSEL!
 // https://flickity.metafizzy.co/
-var jQueryBridget = require('jquery-bridget');
 var Flickity = require('flickity');
+require('flickity-imagesloaded');
 
-// make Flickity a jQuery plugin
-Flickity.setJQuery( $ );
-jQueryBridget( 'flickity', Flickity, $ );
-var flktyFull = $('.carousel-full--overlay').flickity({
+// FULL FLICKITY SLIDER: full-flickity-slider.php
+var flkty = new Flickity('.carousel-full--overlay', {
+	imagesLoaded: true,
 	wrapAround: true,
 	autoPlay: 17000
 }); 
+
 // CIRCLE FLICKITY SLIDER: circle-flickity-slider.php
 var flktyCircle = new Flickity('.carousel-circle', {
+	imagesLoaded: true,
 	wrapAround: true,
+	// autoPlay: 17000,
   selectedAttraction: 1, 
   friction: 1,
   cellAlign: "left"

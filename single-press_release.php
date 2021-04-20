@@ -13,10 +13,10 @@ get_header(); ?>
 ?>
 <main class="main-container">
 	<div class="main-grid">
-		<div class="main-content thin">
+		<div class="main-content">
 			<?php while (have_posts()) : the_post(); ?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-					<section class="grid-container full">
+					<div class="entry-content grid-container full">
 						<header class="grid-x press">
 
 							<div class="media-object stack-for-small">
@@ -94,14 +94,11 @@ get_header(); ?>
 								?>
 							</div>
 						</div>
-						<div>
-
 							<?php
 							$featured_posts = get_post_meta(get_the_ID(), 'talent_name', true);
 							if ($featured_posts) : ?>
 								<h4>Featured Comedy</h4>
 								<?php foreach ($featured_posts as $post) :
-
 									// Setup this post for WP functions (variable must be named $post).
 									setup_postdata($post); ?>
 									<p>
@@ -112,7 +109,6 @@ get_header(); ?>
 								// Reset the global post object so that the rest of the page works correctly.
 								wp_reset_postdata(); ?>
 							<?php endif; ?>
-
 							<?php
 							$featured_posts = get_post_meta(get_the_ID(), 'talent_name', true);
 							if ($featured_posts) : ?>
@@ -137,18 +133,20 @@ get_header(); ?>
 								// Reset the global post object so that the rest of the page works correctly.
 								wp_reset_postdata(); ?>
 							<?php endif; ?>
-
+							<hr>					
+					</div>
+					<footer class="pagination">
+						<?php get_template_part('template-parts/catalog/catalog-pagination'); ?>
+						<div class="cell flex-container align-center-middle align-spaced text-center">
+							<div class="mr-1">
+								<svg class="icon" width="7" height="11" xmlns="http://www.w3.org/2000/svg">
+									<path d="M6.01.972v8.652c0 .599-.725.899-1.148.475L.535 5.773a.673.673 0 010-.95L4.862.495A.672.672 0 016.01.972z" fill-rule="nonzero" />
+								</svg>
+							</div>
+							<a href="<?php echo get_post_type_archive_link('press_release'); ?>">Return to Press Feed</a>
 						</div>
-					</section>
-
+					</footer>
 				</article>
-
-				<?php the_post_navigation(array(
-					'mid_size' => 2,
-					'prev_text' => __('<i class="fas fa-long-arrow-alt-left"></i> Prev', 'textdomain'),
-					'next_text' => __('Next <i class="fas fa-long-arrow-alt-right"></i>', 'textdomain'),
-				)); ?>
-
 				<?php edit_post_link(__('(Edit)', 'nacelle'), '<span class="edit-link">', '</span>'); ?>
 
 			<?php endwhile; ?>

@@ -43,7 +43,7 @@ get_header(); ?>
 
 				?>
 
-					<article class="press-row <?php echo $even_odd_class; ?>" id="post-<?php the_ID(); ?>">
+					<article class="press-row flex-container flex-dir-column align-justify py-3 <?php echo $even_odd_class; ?>" id="post-<?php the_ID(); ?>">
 
 						<div class="press-row-img">
 							<a href="<?php echo esc_url($link_url); ?>" target="<?php echo esc_attr($link_target); ?>">

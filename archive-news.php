@@ -54,7 +54,7 @@ if (!empty('news_header_image')) : ?>
 
                 </div>
 
-                <div class="cell medium-8 archive-title">
+                <div class="cell medium-8 archive-title pl-medium-3">
 
                   <?php //title 
                   ?>

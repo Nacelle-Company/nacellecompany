@@ -92,14 +92,14 @@ endif;
 	<?php // get_template_part('template-parts/mobile-off-canvas'); 
 	?>
 
-	<?php // endif; 
+	<?php
+	if (is_page_template(array('page-templates/front-circles.php', 'page-templates/front-carousel.php','page-templates/front-grid.php', 'page-templates/products.php'))) {
+		$transHeader = 'transparent-header';
+	} else {
+		$transHeader = '';
+	} 
 	?>
-
-	<header class="site-header cell shrink medium-cell-block-container <?php if (is_page_template(array('page-templates/front-circles.php', 'page-templates/front-carousel.php', 'page-templates/front-grid.php'))) {
-																																				echo 'transparent-header';
-																																			} else {
-																																				echo '';
-																																			} ?>" role="banner">
+	<header class="site-header cell shrink medium-cell-block-container <?php echo $transHeader; ?>" role="banner">
 		<div class="site-title-bar title-bar" <?php Nacelle_title_bar_responsive_toggle(); ?>>
 			<div class="title-bar-left grid-x align-center-middle">
 				<button aria-label="<?php _e('Main Menu', 'nacelle'); ?>" class="menu-icon" type="button" data-toggle="<?php Nacelle_mobile_menu_id(); ?>"></button>

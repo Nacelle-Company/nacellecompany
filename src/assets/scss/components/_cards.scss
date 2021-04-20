@@ -149,16 +149,15 @@ $image-hover-wrapper-icon-size: 60px;
     }
 }
 
-
-.callout,
-.callout-body {
-    box-shadow: $callout-shadow;
+.callout-body img {
+  object-fit: cover;
+  width: 100%;
 }
 
-.callout-body img {object-fit: cover;width: 100%;}
 .callout-hover-reveal .callout-footer {
     display: none;
 }
+
 .callout-footer {
     position: relative;
     padding: $callout-footer-padding;

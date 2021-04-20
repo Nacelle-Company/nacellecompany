@@ -180,6 +180,27 @@ if (!function_exists('wpt_register_theme_customizer')) :
 			)
 		);
 
+		// Create navigation text color
+		$wp_customize->add_setting(
+			'nav_txt_color',
+			array(
+				'default'   => '#fff',
+				'transport' => 'refresh',
+			)
+		);
+
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				'nav_txt_color',
+				array(
+					'section' => 'colors',
+					'label'   => esc_html__('Nav text color', 'nacelle'),
+					'description'		=> 'CD color: #ffbc00'
+				)
+			)
+		);
+
 		// Create navigation text secondary color
 		$wp_customize->add_setting(
 			'nav_txt_secondary_color',
