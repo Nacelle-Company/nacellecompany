@@ -1,7 +1,7 @@
 html,
 body {
 	max-width: 100%;
-	overflow: hidden;
+	// overflow-x: hidden;
 }
 
 .main-container {
@@ -71,7 +71,6 @@ body {
 
 	.sidebar {
 		height: fit-content;
-		background: $dark-nav-color;
 		border-radius: 6px;
 
 		@include breakpoint(small) {

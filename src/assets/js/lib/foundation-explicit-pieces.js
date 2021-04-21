@@ -26,7 +26,7 @@ import { ResponsiveToggle } from 'foundation-sites/js/foundation.responsiveToggl
 import { Reveal } from 'foundation-sites/js/foundation.reveal';
 // import { Slider } from 'foundation-sites/js/foundation.slider';
 import { SmoothScroll } from 'foundation-sites/js/foundation.smoothScroll';
-// import { Sticky } from 'foundation-sites/js/foundation.sticky';
+import { Sticky } from 'foundation-sites/js/foundation.sticky';
 import { Tabs } from 'foundation-sites/js/foundation.tabs';
 import { Toggler } from 'foundation-sites/js/foundation.toggler';
 // import { Tooltip } from 'foundation-sites/js/foundation.tooltip';
@@ -90,7 +90,7 @@ Foundation.plugin(Reveal, 'Reveal');
 
 Foundation.plugin(SmoothScroll, 'SmoothScroll');
 
-// Foundation.plugin(Sticky, 'Sticky');
+Foundation.plugin(Sticky, 'Sticky');
 
 Foundation.plugin(Tabs, 'Tabs');
 

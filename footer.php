@@ -16,7 +16,7 @@
 ?>
 <a href="#0" class="to-top">Top</a>
 
-<footer class="grid-x grid-padding-x">
+<footer class="grid-x grid-padding-x mt-large-4">
   <!-- <div class="footer-container"> -->
   <div class="footer-container cell small-12 flex-container flex-dir-column large-flex-dir-row py-2">
 

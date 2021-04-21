@@ -23,14 +23,11 @@
         <?php Nacelle_entry_meta(); ?>
     </header>
     <div class="entry-content">
-
         <div class="grid-x">
-                <?php get_template_part('template-parts/blocks/full-hero-video'); ?>
-                <?php get_template_part('template-parts/content/content-products-catalog', 'page'); ?>
+            <?php get_template_part('template-parts/blocks/full-hero-video'); ?>
+            <?php get_template_part('template-parts/content/content-products-catalog', 'page'); ?>
         </div>
-
         <?php the_content(); ?>
-
         <?php edit_post_link(__('(Edit)', 'nacelle'), '<span class="edit-link">', '</span>'); ?>
     </div>
     <footer>

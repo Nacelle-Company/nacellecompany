@@ -17,7 +17,7 @@
 
 		<?php if (have_rows('repeater')) : ?>
 
-			<div class="grid-x small-up-1 medium-up-2 large-up-4 grid-padding-x  grid-padding-y align-center">
+			<div class="grid-x small-up-1 medium-up-2 large-up-4 grid-padding-x grid-padding-y align-center mb-large-4 pb-large-3">
 
 				<?php while (have_rows('repeater')) : the_row();
 
@@ -57,18 +57,4 @@
 
 		<?php edit_post_link(__('(Edit)', 'nacelle'), '<span class="edit-link">', '</span>'); ?>
 	</div>
-	<footer>
-		<?php
-		wp_link_pages(
-			array(
-				'before' => '<nav id="page-nav"><p>' . __('Pages:', 'nacelle'),
-				'after'  => '</p></nav>',
-			)
-		);
-		?>
-		<?php $tag = get_the_tags();
-		if ($tag) {
-			?><p><?php the_tags(); ?></p><?php
-											} ?>
-	</footer>
 </article>

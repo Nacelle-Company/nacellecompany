@@ -232,16 +232,16 @@ if (!function_exists('Nacelle_custom_colors')) : function Nacelle_custom_colors(
         echo '}'; // :root close 
 ?>
         /* primary color */
-        h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,.button.hollow,main a:not(.alt):not(.button),.primary-color,.accordion-content .title,.footer-grid p,.mobile-app-toggle .button,.catalog .entry-title,.entry-content .social a.nav-link,.flickity-button.top-meta .title,.primary-title .entry-title,.catalog-crew .title,.search-results .entry-title.subheader {
+        h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,a,.button.hollow,main a:not(.alt):not(.button),.primary-color,.accordion-content .title,.footer-grid p,.mobile-app-toggle .button,.catalog .entry-title,.entry-content .social a.nav-link,.flickity-button.top-meta .title,.primary-title .entry-title,.catalog-crew .title,.search-results .entry-title.subheader {
         color: var(--primary-color);
         }
-        .primary,.accordion-content,input[type=submit],body.page-template-featured-page,.archive .featured-hero,.searchandfilter input[type=submit],.button:not(.hollow,.clear),.tabs-products .tabs-title.is-active,.carousel-press figcaption,.to-top,.instagram-tab,.callout-footer,.mobile-app-toggle .button.is-active:hover,.details-container .info,.details-container details[open] .info, .button.primary,.wp-block-button .primary.wp-block-button__link,.carousel-full--press figcaption,.flickity-page-dots .dot {
+        .press-row:hover .press-row-content,.primary,.accordion-content,input[type=submit],body.page-template-featured-page,.archive .featured-hero,.searchandfilter input[type=submit],.button:not(.hollow,.clear),.tabs-products .tabs-title.is-active,.carousel-press figcaption,.to-top,.instagram-tab,.callout-footer,.mobile-app-toggle .button.is-active:hover,.details-container .info,.details-container details[open] .info, .button.primary,.wp-block-button .primary.wp-block-button__link,.carousel-full--press figcaption,.flickity-page-dots .dot {
         background-color: var(--primary-color);
         }
         .button.hollow,.instagram-tab,.off-canvas-content,.mobile-app-toggle .button.is-active,.press_release .intro,.press_release .press,.page-template-featured-page .off-canvas-content,.details-container p,.primary-title,.search-results .entry-title.subheader {
         border-color: var(--primary-color);
         }
-        .fas,svg.footer-logo .color,svg.icon,.flickity-button-icon {
+        .fas,svg.footer-logo .color,svg.icon,.flickity-button-icon,.press-row svg.icon.alt {
         fill: var(--primary-color);
         }
         .mobile-app-toggle .button .icon {
@@ -277,13 +277,13 @@ if (!function_exists('Nacelle_custom_colors')) : function Nacelle_custom_colors(
         }
 
         /* background color */
-        body,.featured-page .feat-content,.reveal,.page-template-front-grid .home-overlay.bottom {
+        body,.sidebar,.featured-page .feat-content,.accordion-title:hover,.accordion-title:focus,.accordion-title:visited,.reveal,.page-template-front-grid .home-overlay.bottom,.accordion {
         background-color: var(--bk-color);
         }
-        .primary-title .entry-title,.details-container details .on-sale,.details-container details[open] .info p,.wp-block-button .success.wp-block-button__link,.button.hollow.success,.button.success:hover,.synopsis.reveal blockquote p,.off-canvas-content .searchandfilter input[type=submit]:hover,.field-wrap input[type=button]:hover,.tabs-products .tabs-title.is-active a,.carousel-press figcaption h3,.archive .featured-hero h1:not(.entry-title),.media-container .callout-footer,.accordion-content p,.button:not(.hollow) {
+        .primary-title .entry-title,.press-row:hover .press-row-content-header,.press-row:hover .press-row-content-time,.details-container details .on-sale,.details-container details[open] .info p,.wp-block-button .success.wp-block-button__link,.button.hollow.success,.button.success:hover,.synopsis.reveal blockquote p,.off-canvas-content .searchandfilter input[type=submit]:hover,.field-wrap input[type=button]:hover,.tabs-products .tabs-title.is-active a,.carousel-press figcaption h3,.archive .featured-hero h1:not(.entry-title),.media-container .callout-footer,.accordion-content p,.button:not(.hollow) {
         color: var(--bk-color);
         }
-        svg.icon.alt {
+        svg.icon.alt,.press-row:hover svg.icon.alt {
         fill: var(--bk-color);
         }
 
@@ -293,13 +293,23 @@ if (!function_exists('Nacelle_custom_colors')) : function Nacelle_custom_colors(
         }
 
         /* text color */
-        body,p,.instagram-title h3,.contactModal p,.mobile-app-toggle .button:hover,blockquote,blockquote p,.press-row:hover .press-row-content-header,.carousel-full--news h3,.carousel-full--news p,.carousel-full--press h3,.carousel-full--press p {
+        body,p,.instagram-title h3,.mobile-app-toggle .button:hover,blockquote,blockquote p,.carousel-full--news h3,.carousel-full--news p,.carousel-full--press h3,.carousel-full--press p {
         color: var(--txt-color);
+        }
+        @media screen and (max-width: 39.9375em) {
+        .full-hero-video--content .media-object p {
+        color: var(--txt-color);
+        }
         }
 
         /* secondary text color */
-        .carousel-full--overlay h3,.carousel-full--overlay p {
+        .carousel-full--overlay h3,.carousel-full--overlay p,.accordion-content .sm-title {
         color: var(--secondary-txt-color);
+        }
+        @media print, screen and (min-width: 40em) {
+        .full-hero-video--content .media-object p {
+            color: var(--secondary-txt-color);
+        }
         }
 
         /* navigation background color */
@@ -311,7 +321,7 @@ if (!function_exists('Nacelle_custom_colors')) : function Nacelle_custom_colors(
         .site-header:not(.transparent-header) .menu>.menu-item a,.pagination a,.pagination h4,.pagination svg.icon {
         color: var(--nav-txt-color);
         }
-        .pagination svg.icon {
+        footer.pagination svg.icon {
         fill: var(--nav-txt-color);
         }
 

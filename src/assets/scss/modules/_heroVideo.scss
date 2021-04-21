@@ -139,7 +139,7 @@
 }
 .full-hero-video {
 	@include breakpoint(small only) {
-		height: 100vh;
+		height: calc(100vh - 15rem);
 	}
 	@include breakpoint(medium) {
 		width: auto;
@@ -160,9 +160,15 @@
 	}
 }
 .full-hero-video--content {
-	@include breakpoint(large) {
-		display: flex;
-		height: 65vh;
+	height: auto;
+		justify-content: flex-start;
+	@include breakpoint(medium up) {
+		height: calc(100vh - 100px);
 		justify-content: flex-end;
+	}
+	@include breakpoint(small only) {
+		.synopsis {
+			display: none;
+		}
 	}
 }

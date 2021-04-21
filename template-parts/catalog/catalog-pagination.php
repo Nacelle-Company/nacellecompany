@@ -15,7 +15,7 @@ $series_cat = in_category('series');
 $special_cat = in_category('special');
 $film_cat = in_category('film');
 $production_series_cat = in_category('series-production');
-$production_special_cat = in_category('specials-production');
+$production_special_cat = in_category('special-production');
 $news = is_singular('news');
 $pressRelease = is_singular('press_release');
 ?>

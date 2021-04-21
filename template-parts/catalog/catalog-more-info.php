@@ -27,7 +27,7 @@ $genres = get_the_terms($post->ID, 'genre');
                                 <?php if ($runtime) : ?>
                                     <div class="grid-x">
                                         <div class="cell small-4 title">
-                                            <h3 class="md-gray-color sm-title"><?php _e('Runtime:', 'nacelle'); ?></h3>
+                                            <h3 class="sm-title"><?php _e('Runtime:', 'nacelle'); ?></h3>
                                         </div>
                                         <div class="cell small-8">
                                             <p><?php echo $runtime; ?></p>
@@ -38,7 +38,7 @@ $genres = get_the_terms($post->ID, 'genre');
                                     <?php $date = new DateTime($date); ?>
                                     <div class="grid-x">
                                         <div class="cell small-4 title">
-                                            <h3 class="md-gray-color sm-title"><?php _e('Premiere:', 'nacelle'); ?></h3>
+                                            <h3 class="sm-title"><?php _e('Premiere:', 'nacelle'); ?></h3>
                                         </div>
                                         <div class="cell small-8">
                                             <p><?php echo $date->format('m/d/Y'); ?></p>
@@ -48,26 +48,28 @@ $genres = get_the_terms($post->ID, 'genre');
                                 <?php if ($genres) : ?>
                                     <div class="grid-x">
                                         <div class="cell small-4 title">
-                                            <h3 class="md-gray-color sm-title"><?php _e('Genre(s):', 'nacelle'); ?></h3>
+                                            <h3 class="sm-title"><?php _e('Genre(s):', 'nacelle'); ?></h3>
                                         </div>
                                         <div class="cell small-8">
-                                            <?php $i = 1;
-                                            foreach ($genres as $genre) {
-                                                $genre_link = get_term_link($genre, 'genre');
-                                                if (is_wp_error($genre_link)) {
-                                                    continue;
-                                                }
-                                                echo $genre->name;
-                                                echo ($i < count($genres)) ? ", " : "";
-                                                $i++;
-                                            } ?>
+                                            <p>
+                                                <?php $i = 1;
+                                                foreach ($genres as $genre) {
+                                                    $genre_link = get_term_link($genre, 'genre');
+                                                    if (is_wp_error($genre_link)) {
+                                                        continue;
+                                                    }
+                                                    echo $genre->name;
+                                                    echo ($i < count($genres)) ? ", " : "";
+                                                    $i++;
+                                                } ?>
+                                            </p>
                                         </div>
                                     </div>
                                 <?php endif; ?>
                                 <?php if (get_post_meta(get_the_ID(), 'rating', true)) : ?>
                                     <div class="grid-x">
                                         <div class="cell small-4 title">
-                                            <h3 class="md-gray-color sm-title"><?php _e('Rating:', 'nacelle'); ?></h3>
+                                            <h3 class=" sm-title"><?php _e('Rating:', 'nacelle'); ?></h3>
                                         </div>
                                         <div class="cell small-8">
                                             <p><?php echo get_post_meta(get_the_ID(), 'rating', true); ?></p>
@@ -77,7 +79,7 @@ $genres = get_the_terms($post->ID, 'genre');
                                 <?php if (get_post_meta(get_the_ID(), 'copyright', true)) : ?>
                                     <div class="grid-x">
                                         <div class="cell small-4 title">
-                                            <h3 class="md-gray-color sm-title"><?php _e('Copyright:', 'nacelle'); ?></h3>
+                                            <h3 class="sm-title"><?php _e('Copyright:', 'nacelle'); ?></h3>
                                         </div>
                                         <div class="cell small-8">
                                             <p><?php echo get_post_meta(get_the_ID(), 'copyright', true); ?></p>
