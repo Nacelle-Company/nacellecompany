@@ -29,8 +29,6 @@ $(function() {
     			$back_to_top.addClass('to-top-fade-out');
     		}
 		});
-		
-
     	//smooth scroll to top
     	$back_to_top.on('click', function(event){
     		event.preventDefault();
@@ -42,25 +40,21 @@ $(function() {
 
 });
 
+// for circle slider hover, I THINK lol
+// $('.vertical .tabs-title').on("mouseover", function () {
+// 	var $this = this;
+// 	var tab_id = $($this).find('a').attr('href');
+// 	// https://stackoverflow.com/a/6672579
+// 	$($this)
+// 		.addClass('is-active') //set the current as active
+// 		.siblings("li") //find sibling h3 elements
+// 		.removeClass("is-active") // and remove the active from them
 
-$('.vertical .tabs-title').on("mouseover", function () {
+// 	$(".tabs-content .tabs-panel").siblings().hide();
 
-	var $this = this;
+// 	$(".tabs-content .tabs-panel" + tab_id).show();
 
-	var tab_id = $($this).find('a').attr('href');
-
-
-	// https://stackoverflow.com/a/6672579
-	$($this)
-		.addClass('is-active') //set the current as active
-		.siblings("li") //find sibling h3 elements
-		.removeClass("is-active") // and remove the active from them
-
-	$(".tabs-content .tabs-panel").siblings().hide();
-
-	$(".tabs-content .tabs-panel" + tab_id).show();
-
-});
+// });
 
 // wordpress video
 // https://cfxdesign.com/how-to-make-the-wordpress-video-shortcode-responsive/

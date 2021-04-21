@@ -21,23 +21,31 @@
     ),
   ),
 ); ?>
-<div class="grid-x grid-padding-x" id="more">
+<div class="grid-x grid-margin-x pl-large-2" id="more">
   <div class="cell medium-3" data-sticky-container>
-    <div class="sticky" data-sticky data-margin-top="0" data-top-anchor="full_hero_video:bottom">
-      <header data-responsive-accordion-tabs="tabs" class="tabs vertical tabs-products" id="product-tabs">
-        <div class="cell is-active tabs-title" aria-selected="true">
-          <h2><a href="#panel1" aria-selected="true"><?php the_field("left_title"); ?></a></h2>
-        </div>
-        <div class="cell tabs-title">
-          <h2><a href="#panel2"><?php the_field("right_title"); ?></a></h2>
-        </div>
-      </header>
+    <div class="sticky pt-large-2" data-sticky data-margin-top="0" data-top-anchor="full_hero_video:bottom">
+      <ul data-responsive-accordion-tabs="tabs" class="vertical tabs-products tabs" id="product-tabs">
+        <li class="cell is-active tabs-title" aria-selected="true">
+          <a href="#productions" aria-selected="true">
+            <h2>
+              <?php the_field("left_title"); ?>
+            </h2>
+          </a>
+        </li>
+        <li class="cell tabs-title">
+          <a href="#podcasts">
+            <h2>
+              <?php the_field("right_title"); ?>
+            </h2>
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
   <div class="cell medium-9">
     <div class="tabs-content vertical" data-tabs-content="product-tabs">
-      <div class="tabs-panel is-active small-order-2 medium-order-1 productions" id="panel1">
-        <div class="grid-x grid-padding-x medium-up-1 large-up-2 xlarge-up-3 macro-cat-cards">
+      <div class="tabs-panel is-active small-order-2 medium-order-1 productions" id="productions">
+        <div class="grid-x grid-margin-x medium-up-1 large-up-2 macro-cat-cards">
           <?php $production_query = new WP_Query($prod_args);
           if ($production_query->have_posts()) {
             while ($production_query->have_posts()) {
@@ -94,10 +102,10 @@
                       <?php endif; ?>
                     </div>
                   </div>
-                  <div class="callout-footer">
+                  <div class="callout-footer p-2">
                     <div class="flex-container align-justify">
                       <?php ?><h4><?php echo $date->format('Y'); ?></h4>
-                      <div class="text-right"><?php echo $terms; ?></div>
+                      <div class="text-right bk-txt-color"><?php echo $terms; ?></div>
                     </div><?php ?><a href="<?php the_permalink() ?>" class="catalog-title" rel="bookmark" title="Permanent Link to<?php the_title_attribute(); ?>">
                       <h4><?php the_title(); ?></h4>
                     </a>
@@ -117,8 +125,8 @@
           wp_reset_postdata(); ?>
         </div>
       </div>
-      <div class="tabs-panel small-order-1 medium-order-2 podcasts" id="panel2">
-        <div class="grid-x grid-padding-x medium-up-2 macro-cat-cards">
+      <div class="tabs-panel small-order-1 medium-order-2 podcasts" id="podcasts">
+        <div class="grid-x grid-margin-x medium-up-1 large-up-2 macro-cat-cards">
           <?php
           $podcast_query = new WP_Query(array(
             'post_type' => 'catalog',
