@@ -3,9 +3,6 @@
 }
 .sect {
 	&-img_txt {
-		figure {
-			@include flex;
-		}
 		figcaption {
 			padding: 1em 0 0 0;
 			font-weight: 600;

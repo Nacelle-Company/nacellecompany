@@ -232,7 +232,7 @@ if (!function_exists('Nacelle_custom_colors')) : function Nacelle_custom_colors(
         echo '}'; // :root close 
 ?>
         /* primary color */
-        h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,a,.button.hollow,main a:not(.alt):not(.button),.primary-color,.accordion-content .title,.footer-grid p,.mobile-app-toggle .button,.catalog .entry-title,.entry-content .social a.nav-link,.flickity-button.top-meta .title,.primary-title .entry-title,.catalog-crew .title,.search-results .entry-title.subheader {
+        h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,a,.button.hollow,footer .social .button,main a:not(.alt):not(.button),.primary-color,.accordion-content .title,.footer-grid p,.mobile-app-toggle .button,.catalog .entry-title,.entry-content .social a.nav-link,.flickity-button.top-meta .title,.primary-title .entry-title,.catalog-crew .title,.search-results .entry-title.subheader {
         color: var(--primary-color);
         }
         .press-row:hover .press-row-content,.tabs-title > a:focus,.tabs-title > a[aria-selected='true'],.primary,.accordion-content,input[type=submit],body.page-template-featured-page,.archive .featured-hero,.searchandfilter input[type=submit],.button:not(.hollow,.clear),.tabs-products .tabs-title.is-active,.carousel-press figcaption,.to-top,.instagram-tab,.callout-footer,.mobile-app-toggle .button.is-active:hover,.details-container .info,.details-container details[open] .info, .button.primary,.wp-block-button .primary.wp-block-button__link,.carousel-full--press figcaption,.flickity-page-dots .dot {
@@ -252,7 +252,7 @@ if (!function_exists('Nacelle_custom_colors')) : function Nacelle_custom_colors(
         }
 
         /* secondary color */
-        .current-menu-parent > a,.current-menu-item > a,.menu > li:hover > a,.is-submenu-item:hover > a,.secondary-color,.button.hollow:hover,.button.clear.success,.press_release .intro,.details-container summary,.details-container .info a,.close-button,.accordion-title {
+        .current-menu-parent > a,blockquote:before,.current-menu-item > a,.menu > li:hover > a,.is-submenu-item:hover > a,.secondary-color,.button.hollow:hover,.button.clear.success,.press_release .intro,.details-container summary,.details-container .info a,.close-button,.accordion-title {
         color: var(--secondary-color);
         }
         .button.hollow:hover,.reveal header,.details-container details[open] .info,.featured-page .feat-content .dk-border,.button.hollow.success,.feed-container,hr,.post-navigation,.carousel .flickity-page-dots .dot,blockquote {
@@ -284,7 +284,7 @@ if (!function_exists('Nacelle_custom_colors')) : function Nacelle_custom_colors(
         color: var(--bk-color);
         }
         .bk-txt-color * {
-            color: var(--bk-color) !important;
+        color: var(--bk-color) !important;
         }
         svg.icon.alt,.press-row:hover svg.icon.alt {
         fill: var(--bk-color);

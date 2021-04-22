@@ -5,14 +5,24 @@ footer.footer {
 }
 
 .footer-container {
-		.l-footer-widgets {
-		@include breakpoint(medium) {
+			@include breakpoint(large) {
+			@include xy-grid-frame(false, false, null, null, true);
+		}
+	.l-footer-widgets {
+		@include breakpoint(large) {
 			justify-content: flex-start;
 		}
 	}
 	.r-footer-widgets {
-		@include breakpoint(medium) {
+		@include breakpoint(large) {
 			justify-content: flex-end;
+		}
+	}
+	.social .icon-wrapper .icon {
+		&:last-child {
+			@include breakpoint(large) {
+				padding-right: 0;
+			}
 		}
 	}
 	.icon {

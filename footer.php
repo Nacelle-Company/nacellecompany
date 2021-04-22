@@ -16,22 +16,22 @@
 ?>
 <a href="#0" class="to-top">Top</a>
 
-<footer class="grid-x grid-padding-x mt-large-4">
+<footer>
   <!-- <div class="footer-container"> -->
-  <div class="footer-container cell small-12 flex-container flex-dir-column large-flex-dir-row py-2">
+  <div class="footer-container grid-x grid-padding-y grid-padding-x large-flex-dir-row align-center-middle">
 
     <?php if (is_active_sidebar('l-footer-widgets')) : ?>
-      <div class="flex-container flex-child-auto l-footer-widgets align-center-middle">
+      <div class="cell large-4 l-footer-widgets flex-container align-center-middle">
         <?php dynamic_sidebar('l-footer-widgets'); ?>
       </div>
     <?php endif; ?>
     <?php if (is_active_sidebar('c-footer-widgets')) : ?>
-      <div class="flex-container flex-child-grow c-footer-widgets align-center-middle">
+      <div class="cell large-4 c-footer-widgets flex-container align-center-middle">
         <?php dynamic_sidebar('c-footer-widgets'); ?>
       </div>
     <?php endif; ?>
     <?php if (is_active_sidebar('r-footer-widgets')) : ?>
-      <div class="flex-container flex-child-shrink r-footer-widgets align-center-middle">
+      <div class="cell large-4 r-footer-widgets flex-container align-center-middle">
         <?php get_template_part('template-parts/blocks/widget-custom'); ?>
         <?php dynamic_sidebar('r-footer-widgets'); ?>
       </div>

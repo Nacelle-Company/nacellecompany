@@ -23,63 +23,61 @@ function my_dynamic_sidebar_params($params)
 
 ?>
 
-    <div class="grid-x align-justify align-middle social">
+    <div class="flex-container flex-dir-column large-flex-dir-row align-middle align-right social">
 
         <?php if (!empty($showContactModal)) : ?>
-            <div class="cell medium-shrink text-center contact-modal">
-                <button class="button hollow mb-0" data-open="contactModal">
+            <div class="contact-modal mb-2 mb-medium-0">
+                <button class="button clear px-0 mb-0" data-open="contactModal">
                     <?php _e('Contact', 'nacelle'); ?>
                 </button>
             </div>
         <?php endif; ?>
-        <div class="cell medium-auto">
-            <div class="grid-x align-center-middle">
-                <?php if (!empty($facebook)) : ?>
-                    <div class="icon cell auto text-center">
-                        <a href="<?php echo $facebook; ?>" class="p-2" target="_blank" aria-label="visit <?php echo get_bloginfo(); ?> facebook">
-                            <?php get_template_part('template-parts/svg/icon-facebook'); ?>
-                        </a>
-                    </div>
-                <?php endif; ?>
-                <?php if (!empty($twitter)) : ?>
-                    <div class="icon cell auto text-center">
-                        <a href="<?php echo $twitter; ?>" class="p-2" target="_blank" aria-label="visit <?php echo get_bloginfo(); ?> twitter">
-                            <?php get_template_part('template-parts/svg/icon-twitter'); ?>
-                        </a>
-                    </div>
-                <?php endif; ?>
-                <?php if (!empty($instagram)) : ?>
-                    <div class="icon cell auto text-center">
-                        <a href="<?php echo $instagram; ?>" class="p-2" target="_blank" aria-label="visit <?php echo get_bloginfo(); ?> instagram">
-                            <?php get_template_part('template-parts/svg/icon-instagram'); ?>
-                        </a>
-                    </div>
-                <?php endif; ?>
+        <div class="flex-container align-middle align-justify icon-wrapper">
+            <?php if (!empty($facebook)) : ?>
+                <div class="icon cell auto p-2 p-large-1 text-center">
+                    <a href="<?php echo $facebook; ?>" target="_blank" aria-label="visit <?php echo get_bloginfo(); ?> facebook">
+                        <?php get_template_part('template-parts/svg/icon-facebook'); ?>
+                    </a>
+                </div>
+            <?php endif; ?>
+            <?php if (!empty($twitter)) : ?>
+                <div class="icon cell auto p-2 p-large-1 text-center">
+                    <a href="<?php echo $twitter; ?>" target="_blank" aria-label="visit <?php echo get_bloginfo(); ?> twitter">
+                        <?php get_template_part('template-parts/svg/icon-twitter'); ?>
+                    </a>
+                </div>
+            <?php endif; ?>
+            <?php if (!empty($instagram)) : ?>
+                <div class="icon cell auto p-2 p-large-1 text-center">
+                    <a href="<?php echo $instagram; ?>" target="_blank" aria-label="visit <?php echo get_bloginfo(); ?> instagram">
+                        <?php get_template_part('template-parts/svg/icon-instagram'); ?>
+                    </a>
+                </div>
+            <?php endif; ?>
 
-                <?php if (!empty($youtube)) : ?>
-                    <div class="icon cell auto text-center">
-                        <a href="<?php echo $youtube; ?>" class="p-2" target="_blank" aria-label="visit <?php echo get_bloginfo(); ?> youtube">
-                            <?php get_template_part('template-parts/svg/icon-youtube'); ?>
-                        </a>
-                    </div>
-                <?php endif; ?>
+            <?php if (!empty($youtube)) : ?>
+                <div class="icon cell auto p-2 p-large-1 text-center">
+                    <a href="<?php echo $youtube; ?>" target="_blank" aria-label="visit <?php echo get_bloginfo(); ?> youtube">
+                        <?php get_template_part('template-parts/svg/icon-youtube'); ?>
+                    </a>
+                </div>
+            <?php endif; ?>
 
-                <?php if (!empty($soundcloud)) : ?>
-                    <div class="icon cell auto text-center">
-                        <a href="<?php echo $soundcloud; ?>" class="p-2" target="_blank" aria-label="visit <?php echo get_bloginfo(); ?> soundcloud">
-                            <?php get_template_part('template-parts/svg/icon-soundcloud'); ?>
-                        </a>
-                    </div>
-                <?php endif; ?>
+            <?php if (!empty($soundcloud)) : ?>
+                <div class="icon cell auto p-2 p-large-1 text-center">
+                    <a href="<?php echo $soundcloud; ?>" target="_blank" aria-label="visit <?php echo get_bloginfo(); ?> soundcloud">
+                        <?php get_template_part('template-parts/svg/icon-soundcloud'); ?>
+                    </a>
+                </div>
+            <?php endif; ?>
 
-                <?php if (!empty($spotify)) : ?>
-                    <div class="icon cell auto text-center">
-                        <a href="<?php echo $spotify; ?>" class="p-2 pr-medium-0" target="_blank" aria-label="visit <?php echo get_bloginfo(); ?> spotify">
-                            <?php get_template_part('template-parts/svg/icon-spotify'); ?>
-                        </a>
-                    </div>
-                <?php endif; ?>
-            </div>
+            <?php if (!empty($spotify)) : ?>
+                <div class="icon cell auto p-2 p-large-1 text-center">
+                    <a href="<?php echo $spotify; ?>" target="_blank" aria-label="visit <?php echo get_bloginfo(); ?> spotify">
+                        <?php get_template_part('template-parts/svg/icon-spotify'); ?>
+                    </a>
+                </div>
+            <?php endif; ?>
         </div>
     </div>
 
