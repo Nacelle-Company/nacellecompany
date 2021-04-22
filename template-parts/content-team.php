@@ -12,22 +12,15 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
 	<div class="entry-content">
-
 		<?php if (have_rows('repeater')) : ?>
-
 			<div class="grid-x small-up-1 medium-up-2 large-up-4 grid-padding-x grid-padding-y align-center mb-large-4 pb-large-3">
-
 				<?php while (have_rows('repeater')) : the_row();
-
 					// vars
 					$image = get_sub_field('image');
 					$name = get_sub_field('name');
 					$position = get_sub_field('position');
-
 					?>
-
 					<div class="cell text-center teammember">
 
 						<div class="cell team-info">

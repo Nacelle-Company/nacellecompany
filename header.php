@@ -85,15 +85,8 @@ endif;
 <body <?php body_class(); ?>>
 	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TH8K84L" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=427279594883969&ev=PageView&noscript=1" /></noscript>
-
-	<?php // if (get_theme_mod('wpt_mobile_menu_layout') === 'offcanvas') : 
-	?>
-
-	<?php // get_template_part('template-parts/mobile-off-canvas'); 
-	?>
-
 	<?php
-	if (is_page_template(array('page-templates/front-circles.php', 'page-templates/front-carousel.php','page-templates/front-grid.php', 'page-templates/products.php'))) {
+	if (is_page_template(array('page-templates/front-circles.php', 'page-templates/front-carousel.php','page-templates/front-grid.php'))) {
 		$transHeader = 'transparent-header';
 	} else {
 		$transHeader = '';
@@ -112,7 +105,7 @@ endif;
 		</div>
 
 		<nav class="site-navigation top-bar <?php echo $leftToo; ?>" role="navigation" id="<?php Nacelle_mobile_menu_id(); ?>">
-			<div class="nav-container grid-container grid-x align-middle">
+			<div class="nav-container grid-x align-middle">
 				<?php
 				if (has_nav_menu('top-bar-l')) { ?>
 					<div class="left cell auto">

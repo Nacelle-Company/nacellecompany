@@ -44,7 +44,6 @@ body {
 	// Full width template
 	.main-content-full-width {
 		@include xy-cell(12);
-
 		&.split-layout {
 			margin-left: 0;
 			margin-right: 0;
@@ -89,7 +88,6 @@ body {
 .category-special,
 .category-series {
 	.in-view {
-		// height: 325px !important;
 		@include transform(slideInFromBottom);
 	}
 }

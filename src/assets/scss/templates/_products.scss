@@ -1,62 +1,3 @@
-.page-template-products {
-	.main-container {
-		padding: 0;
-		margin-top: 0;
-	}
-
-	.main-grid {
-		margin-top: 0;
-	}
-
-	.main-content-full-width {
-		margin: 0;
-		width: 100%;
-
-		.page > header {
-			text-indent: -900px;
-			position: absolute;
-		}
-	}
-
-	.productions {
-		header h2 {
-			text-transform: uppercase;
-			margin-bottom: 0;
-		}
-	}
-
-	.nacelle-products h1 {
-		position: absolute;
-		top: 5vh;
-		left: 5vw;
-		color: $white;
-	}
-
-	.overlay {
-		position: absolute;
-		display: block;
-		width: 100%;
-		height: 100%;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-		background-color: rgba(0, 0, 0, 0.5);
-		z-index: 2;
-		cursor: pointer;
-	}
-
-	.comedy-dynamics {
-		iframe {
-			width: 100%;
-			height: 80vh;
-
-			@include breakpoint(large) {
-				height: 100%;
-			}
-		}
-	}
-}
 
 .tabs-content,
 .tabs {
@@ -67,7 +8,7 @@
 .tabs-products {
 	border-bottom: 3px solid transparent;
 	.tabs-title {
-		h2 {
+		h3 {
 			margin-bottom: 0;
 			&::before {
 				content: "\203A";

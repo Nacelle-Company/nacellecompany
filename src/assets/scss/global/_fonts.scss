@@ -59,7 +59,21 @@ p, h2, h3, h4, h5, h6 {
     font-size: 130%;
   }
 }
-
+.sm-title {
+  font-size: $small-font-size;
+}
+strong, b {
+  font-family: $strong-font-family;
+}
+em, i {
+  font-family: $italic-font-family;
+}
+em strong,
+em b,
+i strong,
+i b {
+  font-family: $strong-italic-font-family;
+}
 .p {
   font-size: 130%;
 }

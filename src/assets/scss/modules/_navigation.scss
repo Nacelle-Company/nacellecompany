@@ -109,8 +109,7 @@
 
 // absolute positioned top nav
 .page-template-front-circles,
-.page-template-front-grid,
-.page-template-products {
+.page-template-front-grid {
 	.site-navigation {
 		@include breakpoint(medium up) {
 			position: absolute;

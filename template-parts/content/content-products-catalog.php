@@ -21,28 +21,28 @@
     ),
   ),
 ); ?>
-<div class="grid-x grid-margin-x pl-large-2" id="more">
-  <div class="cell medium-3" data-sticky-container>
-    <div class="sticky pt-large-2" data-sticky data-margin-top="0" data-top-anchor="full_hero_video:bottom">
+<div class="grid-x" id="more">
+  <div class="cell medium-4 large-4 xlarge-3" data-sticky-container>
+    <div class="sticky pt-large-2" data-sticky data-margin-top="0" data-top-anchor="header:bottom">
       <ul data-responsive-accordion-tabs="tabs" class="vertical tabs-products tabs" id="product-tabs">
         <li class="cell is-active tabs-title" aria-selected="true">
           <a href="#productions" aria-selected="true">
-            <h2>
+            <h3>
               <?php the_field("left_title"); ?>
-            </h2>
+            </h3>
           </a>
         </li>
         <li class="cell tabs-title">
           <a href="#podcasts">
-            <h2>
+            <h3>
               <?php the_field("right_title"); ?>
-            </h2>
+            </h3>
           </a>
         </li>
       </ul>
     </div>
   </div>
-  <div class="cell medium-9">
+  <div class="cell medium-8 large-8 xlarge-9">
     <div class="tabs-content vertical" data-tabs-content="product-tabs">
       <div class="tabs-panel is-active small-order-2 medium-order-1 productions" id="productions">
         <div class="grid-x grid-margin-x medium-up-1 large-up-2 macro-cat-cards">
@@ -84,7 +84,8 @@
               $imageHorizontalSM = $imageHorizontal['sizes'][$img_size_sm]; ?>
               <div class="cell">
                 <div class="callout callout-hover-reveal" data-callout-hover-reveal>
-                  <div class="callout-body"><?php ?><div class="img-container">
+                  <div class="callout-body">
+                    <div class="img-container">
                       <?php if ($imageHorizontal) : ?>
                         <a href="<?php the_permalink() ?>" class="catalog-title" rel="bookmark" title="Permanent Link to<?php the_title_attribute(); ?>">
                           <img alt="<?php echo $imageHorizontalAlt; ?>" class="feat-pg horizontal" data-interchange="[<?php echo $imageHorizontalSM; ?>, default], [<?php echo $imageHorizontalSM; ?>, small], [<?php echo $imageHorizontalMD; ?>, medium], [<?php echo $imageHorizontalLG; ?>, large]">
@@ -104,10 +105,17 @@
                   </div>
                   <div class="callout-footer p-2">
                     <div class="flex-container align-justify">
-                      <?php ?><h4><?php echo $date->format('Y'); ?></h4>
-                      <div class="text-right bk-txt-color"><?php echo $terms; ?></div>
-                    </div><?php ?><a href="<?php the_permalink() ?>" class="catalog-title" rel="bookmark" title="Permanent Link to<?php the_title_attribute(); ?>">
-                      <h4><?php the_title(); ?></h4>
+                      <h4>
+                        <?php echo $date->format('Y'); ?>
+                      </h4>
+                      <div class="text-right bk-txt-color">
+                        <?php echo $terms; ?>
+                      </div>
+                    </div>
+                    <a href="<?php the_permalink() ?>" class="catalog-title" rel="bookmark" title="Permanent Link to<?php the_title_attribute(); ?>">
+                      <h4>
+                        <?php the_title(); ?>
+                      </h4>
                     </a>
                     <div class="callout-content">
                       <?php if (get_the_content()) {
@@ -194,13 +202,19 @@
                       <?php endif; ?>
                     </div>
                   </div>
-                  <div class="callout-footer">
-                    <div class="grid-x">
-                      <div class="cell medium-6"><?php ?><h4><?php echo $date->format('Y'); ?></h4>
+                  <div class="callout-footer p-2">
+                    <div class="flex-container align-justify">
+                      <h4>
+                        <?php echo $date->format('Y'); ?>
+                      </h4>
+                      <div class="text-right bk-txt-color">
+                        <?php echo $terms; ?>
                       </div>
-                      <div class="cell medium-6 text-right"><?php echo $terms; ?></div>
-                    </div><?php ?><a href="<?php the_permalink() ?>" class="catalog-title" rel="bookmark" title="Permanent Link to<?php the_title_attribute(); ?>">
-                      <h4><?php the_title(); ?></h4>
+                    </div>
+                    <a href="<?php the_permalink() ?>" class="catalog-title" rel="bookmark" title="Permanent Link to<?php the_title_attribute(); ?>">
+                      <h4>
+                        <?php the_title(); ?>
+                      </h4>
                     </a>
                     <div class="callout-content">
                       <?php if (get_the_content()) {

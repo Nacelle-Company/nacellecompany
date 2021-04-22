@@ -107,11 +107,6 @@ $image-hover-wrapper-icon-size: 60px;
 	.macro-cat-cards-wrapper {
 		align-items: baseline;
 	}
-	.callout-footer {
-		@include breakpoint(large) {
-			// margin-bottom: 4em;
-		}
-	}
 	a {
 		.catalog-title {
 			@include nothoverNS;
