@@ -46,6 +46,7 @@
       jQuery("#video-header-hero").YTPlayer();
       jQuery("#bigVideoHero").YTPlayer();
       jQuery("#modal-video").YTPlayer();
+      jQuery("#mobile_video").YTPlayer();
       jQuery("#modal-video-container").YTPlayer();
       jQuery("#fullHeroVideo").YTPlayer();
       jQuery("#modal-hero-video").YTPlayer();

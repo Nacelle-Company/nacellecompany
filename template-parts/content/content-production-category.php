@@ -56,10 +56,10 @@
 
 				<?php while (have_posts()) : the_post(); ?>
 
-					<div class="media-container cell animation-element mb-2 mb-medium-2 mb-large-4">
+					<div class="cell mb-2 mb-medium-2 mb-large-4">
 
 
-						<div class="callout callout-hover-reveal" data-callout-hover-reveal>
+						<div class="callout" data-callout-hover-reveal>
 							<a href="<?php echo get_permalink(); ?>">
 
 								<div class="callout-body">

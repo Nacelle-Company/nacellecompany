@@ -1,5 +1,5 @@
 <?php // orbit carousel code ?>
-<div class="orbit animation-element cell" data-timer-delay="2000" role="region" aria-label="Comedy Dynamics featured works" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
+<div class="orbit  cell" data-timer-delay="2000" role="region" aria-label="Comedy Dynamics featured works" data-orbit data-options="animInFromLeft:fade-in; animInFromRight:fade-in; animOutToLeft:fade-out; animOutToRight:fade-out;">
 
   <ul class="orbit-container" height="auto">
 

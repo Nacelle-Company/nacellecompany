@@ -26,7 +26,7 @@
                         if (get_sub_field('show_large')) : ?>
                             <?php if (!empty($videoLinkImage)) : ?>
                                 <div class="cell">
-                                    <div class="callout callout-hover-reveal" data-callout-hover-reveal>
+                                    <div class="callout" data-callout-hover-reveal>
                                         <div class="callout-body">
                                             <div class="image-hover-wrapper">
                                                 <a href="<?php echo $videoLinkURL; ?>" class="catalog-title" title="Watch <?php the_title_attribute(); ?> on <?php echo $videoLinkTitle; ?>" target="_blank" rel="noreferrer">
@@ -51,7 +51,7 @@
                                 </div>
                             <?php else : ?>
                                 <div class="cell">
-                                    <div class="callout callout-hover-reveal" data-callout-hover-reveal>
+                                    <div class="callout" data-callout-hover-reveal>
                                         <div class="callout-body">
                                             <div class="image-hover-wrapper">
                                                 <a href="<?php echo $videoLinkURL; ?>" class="catalog-title solo" title="Permanent Link to <?php the_title_attribute(); ?>" target="_blank" rel="noreferrer">
@@ -80,7 +80,7 @@
                             <?php endif; ?>
                         <?php else : ?>
                             <div class="cell">
-                                <div class="callout callout-hover-reveal" data-callout-hover-reveal>
+                                <div class="callout" data-callout-hover-reveal>
                                     <div class="callout-body image-hover-wrapper">
                                         <span class="image-hover-wrapper-reveal">
                                             <a href="<?php echo $videoLinkURL; ?>" class="catalog-title button hollow expanded" title="Watch <?php the_title_attribute(); ?> on <?php echo $videoLinkTitle; ?>" target="_blank" rel="noreferrer">
@@ -130,7 +130,7 @@
                         if (get_sub_field('audio_show_large')) : ?>
                             <?php if (!empty($videoLinkImage)) : ?>
                                 <div class="cell">
-                                    <div class="callout callout-hover-reveal" data-callout-hover-reveal>
+                                    <div class="callout" data-callout-hover-reveal>
                                         <div class="callout-body">
                                             <div class="image-hover-wrapper">
                                                 <a href="<?php echo $videoLinkURL; ?>" class="catalog-title" rel="bookmark" title="Watch <?php the_title_attribute(); ?> on <?php echo $videoLinkTitle; ?>" target="_blank" rel="noreferrer">
@@ -152,7 +152,7 @@
                                 </div>
                             <?php else : ?>
                                 <div class="cell">
-                                    <div class="callout callout-hover-reveal" data-callout-hover-reveal>
+                                    <div class="callout" data-callout-hover-reveal>
                                         <div class="callout-body">
                                             <div class="image-hover-wrapper">
                                                 <a href="<?php echo $videoLinkURL; ?>" class="catalog-title solo" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>" target="_blank" rel="noreferrer">
@@ -175,7 +175,7 @@
                             <?php endif; ?>
                         <?php else : ?>
                             <div class="cell">
-                                <div class="callout callout-hover-reveal" data-callout-hover-reveal>
+                                <div class="callout" data-callout-hover-reveal>
                                     <div class="callout-body image-hover-wrapper">
                                         <span class="image-hover-wrapper-reveal">
                                             <a href="<?php echo $videoLinkURL; ?>" class="catalog-title button hollow expanded" rel="bookmark" title="Watch <?php the_title_attribute(); ?> on <?php echo $videoLinkTitle; ?>" target="_blank" rel="noreferrer">

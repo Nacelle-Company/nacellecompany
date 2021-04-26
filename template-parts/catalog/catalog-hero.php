@@ -87,8 +87,21 @@ endwhile;
 wp_reset_postdata(); ?>
 
 <? if(!empty($videoHero)): ?>
+    <div class="catalog-hero hero-section" id="catalog_hero">
+    <?php if ( wp_is_mobile() ) : ?>
+<button class="button" onclick="jQuery('#mobile_video').YTPFullscreen()">bring to front / send to back</button>
 
-    <div class="catalog-hero hero-section">
+        <div id="mobile_video" class="player" data-property="{
+        videoURL:'<?php echo $videoHero; ?>',
+        containment:'#catalog_hero', 
+        mute:false, 
+        autoPlay: false,
+        showControls:true, 
+        optimizeDisplay:false,
+        loop:true, 
+        showYTLogo:true, 
+        stopMovieOnBlur:true }"></div>
+    <?php else : ?>
 
         <div id="big-video">
 
@@ -99,7 +112,8 @@ wp_reset_postdata(); ?>
                 containment:'self', 
                 coverImage:'<?php echo esc_url($profile_hero_lg['url']); ?>', 
                 mobileFallbackImage:'<?php echo esc_url($profile_hero_lg['url']); ?>', 
-                autoPlay:true, 
+                autoPlay:true,
+                useOnMobile: false,
                 mute:true, 
                 opacity:1, 
                 showControls:false, 
@@ -218,22 +232,17 @@ wp_reset_postdata(); ?>
                             <?php get_template_part('template-parts/svg/icon-expand', ''); ?>
                             <strong>Full screen</strong>
                         </button>
-
                     </div>
-
                 <?php } else {
                 }; ?>
-
             </div>
-
         </div>
+        <?php endif; // MOBILE CHECK ?>
         <div class="reveal large catalog-modal" id="catalog_modal" data-reveal data-append-to='#modal_container'>
-
-
             <div id="modalVideo" class="modal-video">
-
-                <?php
-                if ($videoHero) : ?>
+                <div class="grid-x">
+                    <div class="cell">
+                <?php if ($videoHero) : ?>
 
                     <?php // plugin docs: https://github.com/pupunzi/jquery.mb.YTPlayer/wiki#external-methods 
                     ?>
@@ -241,17 +250,18 @@ wp_reset_postdata(); ?>
                     videoURL:'<?php echo $videoHero; ?>',
                     containment:'#modalVideo', 
                     coverImage:'<?php echo $profile_hero_lg; ?>', 
-                    mobileFallbackImage:'<?php echo $profile_hero_lg; ?>', 
                     mute:false, 
                     autoPlay: false,
                     showControls:true, 
                     optimizeDisplay:true,
-                    abundance: .0,
                     loop:true, 
                     showYTLogo:true, 
                     stopMovieOnBlur:true }"></div>
 
                 <?php endif; ?>
+                    </div>
+                </div>
+                
 
             </div>
 

@@ -280,10 +280,10 @@ if (!function_exists('Nacelle_custom_colors')) : function Nacelle_custom_colors(
         body,.sidebar,.featured-page .feat-content,.accordion-title:hover,.accordion-title:focus,.accordion-title:visited,.reveal,.page-template-front-grid .home-overlay.bottom,.accordion {
         background-color: var(--bk-color);
         }
-        .primary-title .entry-title,.tabs-title > a:focus >h3,.tabs-title > a[aria-selected='true']>h3,.press-row:hover .press-row-content-header,.press-row:hover .press-row-content-time,.details-container details .on-sale,.details-container details[open] .info p,.wp-block-button .success.wp-block-button__link,.button.hollow.success,.button.success:hover,.synopsis.reveal blockquote p,.off-canvas-content .searchandfilter input[type=submit]:hover,.field-wrap input[type=button]:hover,.carousel-press figcaption h3,.archive .featured-hero h1:not(.entry-title),.media-container .callout-footer,.macro-cat-cards .callout-footer *,.accordion-content p,.button:not(.hollow) {
+        .primary-title .entry-title,.tabs-title > a:focus >h3,.tabs-title > a[aria-selected='true']>h3,.press-row:hover .press-row-content-header,.press-row:hover .press-row-content-time,.details-container details .on-sale,.details-container details[open] .info p,.wp-block-button .success.wp-block-button__link,.button.hollow.success,.button.success:hover,.synopsis.reveal blockquote p,.off-canvas-content .searchandfilter input[type=submit]:hover,.field-wrap input[type=button]:hover,.carousel-press figcaption h3,.archive .featured-hero h1:not(.entry-title),.macro-cat-cards .callout-footer,.macro-cat-cards .callout-footer *,.accordion-content p,.button:not(.hollow) {
         color: var(--bk-color);
         }
-        .bk-txt-color * {
+        .bk-txt-color *,.callout-synopsis a {
         color: var(--bk-color) !important;
         }
         svg.icon.alt,.press-row:hover svg.icon.alt {

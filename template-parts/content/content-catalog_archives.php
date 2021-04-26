@@ -7,25 +7,15 @@
 ?>
 
 <div class="cell small-order-2 medium-order-1 medium-6 productions pt-3" id="more">
-
     <header>
-
         <div class="grid-x grid-padding-x">
-
             <div class="cell medium-12 section-title">
-
                 <h2><?php the_field("left_title"); ?></h2>
-
             </div>
-
         </div>
-
     </header>
-
     <div class="entry-content" id="entry-content" style="border-right: 1px solid white;">
-
         <div class="grid-x grid-padding-x grid-padding-y medium-up-1 macro-cat-cards">
-
             <?php
             $production_query = array(
                 'post_type'              => array('catalog'),
@@ -47,7 +37,7 @@
                     ),
                 ),
             );
-// var_dump($production_query);
+            // var_dump($production_query);
             if ($production_query->have_posts()) {
 
                 while ($production_query->have_posts()) {
@@ -110,11 +100,12 @@
 
                     <div class="cell">
 
-                        <div class="callout callout-hover-reveal" data-callout-hover-reveal>
+                        <div class="callout" data-callout-hover-reveal>
 
                             <div class="callout-body">
 
-                                <?php // IMAGE ?>
+                                <?php // IMAGE 
+                                ?>
 
 
                                 <div class="img-container">
@@ -149,33 +140,27 @@
                             </div>
 
                             <div class="callout-footer">
-
-                                <div class="grid-x">
-                                    <div class="cell medium-6">
-                                        <?php // DATE ?>
-                                        <h4><?php echo $date->format('Y'); ?></h4>
-
+                                <div class="callout-content">
+                                    <div class="grid-x">
+                                        <div class="cell medium-6">
+                                            <h4><?php echo $date->format('Y'); ?></h4>
+                                        </div>
+                                        <div class="cell medium-6 text-right">
+                                            <?php echo  $terms; ?>
+                                        </div>
                                     </div>
-                                    <div class="cell medium-6 text-right">
+                                    <a href="<?php the_permalink() ?>" class="catalog-title" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>">
+                                        <h4><?php the_title(); ?></h4>
+                                    </a>
+                                    <div class="callout-synopsis">
                                         <?php
-                                        // Display post categories. 
-                                        echo  $terms;
+                                        if (get_the_content()) {
+                                            the_content();
+                                        } else {
+                                            echo $synopsis;
+                                        }
                                         ?>
                                     </div>
-                                </div>
-
-                                <?php // TITLE ?>
-                                <a href="<?php the_permalink() ?>" class="catalog-title" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>">
-                                    <h4><?php the_title(); ?></h4>
-                                </a>
-                                <div class="callout-content">
-                                    <?php
-                                    if (get_the_content()) {
-                                        the_content();
-                                    } else {
-                                        echo $synopsis;
-                                    }
-                                    ?>
                                 </div>
                             </div>
 
@@ -210,7 +195,8 @@
 
         </div>
 
-    </header><?php // .entry-header ?>
+    </header><?php // .entry-header 
+                ?>
 
     <div class="entry-content" id="entry-content">
 
@@ -291,11 +277,12 @@
 
                     <div class="cell">
 
-                        <div class="callout callout-hover-reveal" data-callout-hover-reveal>
+                        <div class="callout" data-callout-hover-reveal>
 
                             <div class="callout-body">
 
-                                <?php // IMAGE ?>
+                                <?php // IMAGE 
+                                ?>
 
 
                                 <div class="img-container">
@@ -331,32 +318,36 @@
 
                             <div class="callout-footer">
 
-                                <div class="grid-x">
-                                    <div class="cell medium-6">
-                                        <?php // DATE ?>
-                                        <h4><?php echo $date->format('Y'); ?></h4>
+                                <div class="callout-content">
+                                    <div class="grid-x">
+                                        <div class="cell medium-6">
+                                            <?php // DATE 
+                                            ?>
+                                            <h4><?php echo $date->format('Y'); ?></h4>
 
+                                        </div>
+                                        <div class="cell medium-6 text-right">
+                                            <?php
+                                            // Display post categories. 
+                                            echo  $terms;
+                                            ?>
+                                        </div>
                                     </div>
-                                    <div class="cell medium-6 text-right">
+
+                                    <?php // TITLE 
+                                    ?>
+                                    <a href="<?php the_permalink() ?>" class="catalog-title" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>">
+                                        <h4><?php the_title(); ?></h4>
+                                    </a>
+                                    <div class="callout-synopsis">
                                         <?php
-                                        // Display post categories. 
-                                        echo  $terms;
+                                        if (get_the_content()) {
+                                            the_content();
+                                        } else {
+                                            echo $synopsis;
+                                        }
                                         ?>
                                     </div>
-                                </div>
-
-                                <?php // TITLE ?>
-                                <a href="<?php the_permalink() ?>" class="catalog-title" rel="bookmark" title="Permanent Link to <?php the_title_attribute(); ?>">
-                                    <h4><?php the_title(); ?></h4>
-                                </a>
-                                <div class="callout-content">
-                                    <?php
-                                    if (get_the_content()) {
-                                        the_content();
-                                    } else {
-                                        echo $synopsis;
-                                    }
-                                    ?>
                                 </div>
                             </div>
 
@@ -373,6 +364,8 @@
 
         </div>
 
-    </div><?php // .entry-content ?>
+    </div><?php // .entry-content 
+            ?>
 
-</div><?php // #post-## ?>
+</div><?php // #post-## 
+        ?>

@@ -60,17 +60,17 @@ get_header(); ?>
                 );
                 $catalog_items = new WP_Query($catalog_items_args);
                 ?>
-                <div class="catalog-cards grid-x small-up-2 medium-up-4 large-up-6 align-top">
+                <div class="macro-cat-cards grid-x small-up-2 medium-up-4 large-up-6 align-top">
 
                     <?php if ($catalog_items->have_posts()) : $i = 1; ?>
 
                         <?php while ($catalog_items->have_posts()) : $catalog_items->the_post(); ?>
 
-                            <div class="media-container animation-element cell medium-2 ">
+                            <div class="cell medium-2 ">
 
                                 <a href="<?php the_permalink(); ?>">
 
-                                    <div class="callout callout-hover-reveal" data-callout-hover-reveal>
+                                    <div class="callout" data-callout-hover-reveal>
 
                                         <div class="callout-body">
 

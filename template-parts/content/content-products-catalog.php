@@ -45,7 +45,7 @@
   <div class="cell medium-8 large-8 xlarge-9">
     <div class="tabs-content vertical" data-tabs-content="product-tabs">
       <div class="tabs-panel is-active small-order-2 medium-order-1 productions" id="productions">
-        <div class="grid-x grid-margin-x medium-up-1 large-up-2 macro-cat-cards">
+        <div class="grid-x grid-margin-x medium-up-1 large-up-2 xlarge-up-3 macro-cat-cards">
           <?php $production_query = new WP_Query($prod_args);
           if ($production_query->have_posts()) {
             while ($production_query->have_posts()) {
@@ -83,7 +83,7 @@
               $imageHorizontalMD = $imageHorizontal['sizes'][$img_size_md];
               $imageHorizontalSM = $imageHorizontal['sizes'][$img_size_sm]; ?>
               <div class="cell">
-                <div class="callout callout-hover-reveal" data-callout-hover-reveal>
+                <div class="callout" data-callout-hover-reveal>
                   <div class="callout-body">
                     <div class="img-container">
                       <?php if ($imageHorizontal) : ?>
@@ -103,26 +103,28 @@
                       <?php endif; ?>
                     </div>
                   </div>
-                  <div class="callout-footer p-2">
-                    <div class="flex-container align-justify">
-                      <h4>
-                        <?php echo $date->format('Y'); ?>
-                      </h4>
-                      <div class="text-right bk-txt-color">
-                        <?php echo $terms; ?>
-                      </div>
-                    </div>
-                    <a href="<?php the_permalink() ?>" class="catalog-title" rel="bookmark" title="Permanent Link to<?php the_title_attribute(); ?>">
-                      <h4>
-                        <?php the_title(); ?>
-                      </h4>
-                    </a>
+                  <div class="callout-footer">
                     <div class="callout-content">
-                      <?php if (get_the_content()) {
-                        the_content();
-                      } else {
-                        echo $synopsis;
-                      } ?></div>
+                      <div class="flex-container align-justify">
+                        <h5>
+                          <?php echo $date->format('Y'); ?>
+                        </h5>
+                        <div class="text-right bk-txt-color">
+                          <?php echo $terms; ?>
+                        </div>
+                      </div>
+                      <a href="<?php the_permalink() ?>" class="catalog-title" rel="bookmark" title="Permanent Link to<?php the_title_attribute(); ?>">
+                        <h4 class="h5">
+                          <?php the_title(); ?>
+                        </h4>
+                      </a>
+                      <div class="callout-synopsis">
+                        <?php if (get_the_content()) {
+                          the_content();
+                        } else {
+                          echo $synopsis;
+                        } ?></div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -134,7 +136,7 @@
         </div>
       </div>
       <div class="tabs-panel small-order-1 medium-order-2 podcasts" id="podcasts">
-        <div class="grid-x grid-margin-x medium-up-1 large-up-2 macro-cat-cards">
+        <div class="grid-x grid-margin-x medium-up-1 large-up-2 xlarge-up-3 macro-cat-cards">
           <?php
           $podcast_query = new WP_Query(array(
             'post_type' => 'catalog',
@@ -183,7 +185,7 @@
               $imageHorizontalMD = $imageHorizontal['sizes'][$img_size_md];
               $imageHorizontalSM = $imageHorizontal['sizes'][$img_size_sm]; ?>
               <div class="cell">
-                <div class="callout callout-hover-reveal" data-callout-hover-reveal>
+                <div class="callout" data-callout-hover-reveal>
                   <div class="callout-body">
                     <div class="img-container">
                       <?php if ($imageHorizontal) : ?>
@@ -202,26 +204,29 @@
                       <?php endif; ?>
                     </div>
                   </div>
-                  <div class="callout-footer p-2">
-                    <div class="flex-container align-justify">
-                      <h4>
-                        <?php echo $date->format('Y'); ?>
-                      </h4>
-                      <div class="text-right bk-txt-color">
-                        <?php echo $terms; ?>
+                  <div class="callout-footer">
+                    <div class="callout-content">
+                      <div class="flex-container align-justify">
+                        <h5>
+                          <?php echo $date->format('Y'); ?>
+                        </h5>
+                        <div class="text-right bk-txt-color">
+                          <?php echo $terms; ?>
+                        </div>
+                      </div>
+                      <a href="<?php the_permalink() ?>" class="catalog-title" rel="bookmark" title="Permanent Link to<?php the_title_attribute(); ?>">
+                        <h4>
+                          <?php the_title(); ?>
+                        </h4>
+                      </a>
+                      <div class="callout-synopsis">
+                        <?php if (get_the_content()) {
+                          the_content();
+                        } else {
+                          echo $synopsis;
+                        } ?>
                       </div>
                     </div>
-                    <a href="<?php the_permalink() ?>" class="catalog-title" rel="bookmark" title="Permanent Link to<?php the_title_attribute(); ?>">
-                      <h4>
-                        <?php the_title(); ?>
-                      </h4>
-                    </a>
-                    <div class="callout-content">
-                      <?php if (get_the_content()) {
-                        the_content();
-                      } else {
-                        echo $synopsis;
-                      } ?></div>
                   </div>
                 </div>
               </div>

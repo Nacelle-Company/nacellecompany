@@ -38,7 +38,7 @@ get_header(); ?>
 				// show catalog aside
 				get_template_part('template-parts/catalog/catalog-aside'); ?>
 			</div>
-			<div class="cell medium-7 medium-order-1">
+			<div class="cell medium-7 medium-order-1 hero-info-crew-wrap">
 
 				<?php
 				// show hero video
@@ -209,20 +209,7 @@ get_header(); ?>
 
 		</div>
 	</div>
-	<?php // end mobile post navigation 
-	?>
-	<!-- <script>
-		jQuery(function() {
-			jQuery("#video-header-hero").YTPlayer();
-			jQuery("#modal-hero-video").YTPlayer();
-			jQuery("#modal-video").YTPlayer();
-		});
-	</script> -->
-
 <?php endwhile; ?>
-<?php // end while (have_posts) 
-?>
-
 <div class="edit-post">
 	<pre><?php edit_post_link(__('(Edit this post)', 'nacelle'), '<span class="edit-link">', '</span>'); ?></pre>
 </div>

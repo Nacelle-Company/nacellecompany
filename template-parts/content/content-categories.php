@@ -50,10 +50,10 @@ get_header(); ?>
 				</div>
 			</div>
 		</header>
-		<div class="catalog-cards grid-x small-up-2 medium-up-4 large-up-6 align-top mt-medium-3">
+		<div class="catalog-cards macro-cat-cards grid-x small-up-2 medium-up-4 large-up-6 align-top mt-medium-3">
 			<?php /* Start the Loop */ ?>
 			<?php while (have_posts()) : the_post(); ?>
-				<?php get_template_part('template-parts/content/content-categories-img'); ?>
+				<?php get_template_part('template-parts/content/content-categories-card'); ?>
 			<?php endwhile; ?>
 		<?php else : ?>
 			<?php get_template_part('template-parts/content', 'none'); ?>

@@ -930,7 +930,32 @@ $xy-block-grid-max: 8;
 
 
 // mixins
-
+/* TRUNKATE mixin for multiline */
+// http://hackingui.com/front-end/a-pure-css-solution-for-multiline-text-truncation/
+@mixin multiLineEllipsis($lineHeight: 1.2em, $lineCount: 1, $bgColor: white) {
+	overflow: hidden;
+	position: relative;
+	line-height: $lineHeight;
+	max-height: $lineHeight * $lineCount;
+	text-align: justify;
+	margin-right: -0.2em;
+	padding-right: 1em;
+	&:before {
+		content: "...";
+		position: absolute;
+		right: 3px;
+		bottom: 2px;
+	}
+	// &:after {
+	// 	content: "";
+	// 	position: absolute;
+	// 	right: 0;
+	// 	width: 1em;
+	// 	height: 1em;
+	// 	margin-top: 0.2em;
+	// 	background: $bgColor;
+	// }
+}
 @mixin nothover {
     transition: all .2s ease-in-out;
     box-shadow: 3px 2px 2px #0a0a0a6b;
@@ -949,8 +974,14 @@ $xy-block-grid-max: 8;
 }
 
 @mixin hover {
-    box-shadow: 2px 4px 21px #0a0a0a;
+    box-shadow: 1px 1px 11px 0px #0a0a0a5a;
     transform: scale(1.01);
+    transition: box-shadow .2s ease-in-out, transform .2s ease-in-out 0s; 
+}
+@mixin hover-out {
+    box-shadow: none;
+    transform: scale(1);
+    transition: box-shadow .2s ease-in-out, transform .2s ease-in-out .1s; 
 }
 
 @mixin caratAnimation {
