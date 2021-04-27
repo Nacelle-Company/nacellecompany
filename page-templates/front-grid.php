@@ -12,7 +12,7 @@ get_header(); ?>
 
 		<div class="grid-x front-grid__top grid-padding-x align-center-middle">
 
-			<div class="cell medium-12 large-8 py-medium-4 mt-medium-4">
+			<div class="cell medium-12 large-8 py-4 mt-medium-4">
 
 				<?php the_content(); ?>
 

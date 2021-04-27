@@ -1,99 +1,64 @@
-img.thumbnail.team-hover-icon {
-    position: absolute;
-    top: -7%;
-    left: -7%;
-    width: 114%;
-    z-index: -1;
-    max-width: 150%;
-    opacity: 0;
-    transition: .4s ease-in-out;
-
-    @include breakpoint(medium up) {
-        top: -5%;
-
-    }
-}
-
-.cell.text-center.teammember {
-    position: relative;
-
-    .position {
-        opacity: 0;
-        transition: .4s ease-in-out;
-
-    }
-
-    .team-info {
-        transition: .4s ease-in-out;
-
-    }
-
-    &:hover {
-        .position {
-            opacity: 1;
-            color: $true-black;
-        }
-
-        .team-info {
-            @include shadow;
-
-        }
-    }
-}
-
-.thumbnail.member{
-    transition: .4s ease-in-out;
-    position: relative;
-    margin-bottom: 6.5rem;
-
-    @include breakpoint(medium) {
-        margin-bottom: 4.5rem;
-    }
-
-    &:hover {
-        transform: scale(1.1);
-
-        & + .team-hover-icon {
-            opacity: .2;
-        }
-    }
-}
-
-
 .teammember {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    .team-info {
-        width: auto;
-        padding: 0 2rem;
-        position: absolute;
-        max-width: 75%;
-        border-radius: 4px;
-        top: 60%;
-
-                @include breakpoint(large) {
-            top: 50%;
-        }
-
-        .name {
-            font-weight: 600;
-            margin-bottom: 1rem;
-            margin-top: 7rem;
-            transition: .4s ease-in-out;
-        }
-    }
-    &:hover {
-        .team-info {
-            background-color: #fff;
-            box-shadow: 1px solid black;
-        }
-
-        .name {
-            margin-top: 7.5rem;
-            color: $true-black;
-        }
-    }
+	position: relative;
+	.position {
+		opacity: 0;
+		transition: $slider-transition;
+	}
+	.team-info {
+		padding: 0 1rem;
+		position: absolute;
+		max-width: 75%;
+		border-radius: $global-radius;
+		top: 60%;
+		transition: $slider-transition;
+		@include breakpoint(large) {
+			padding: 0 2rem;
+			top: 50%;
+		}
+		.name {
+			font-weight: 600;
+			margin-bottom: 1rem;
+			margin-top: 7rem;
+			transition: $slider-transition;
+		}
+	}
+	.thumbnail.member {
+		transition: $slider-transition;
+		position: relative;
+		margin-bottom: 8rem;
+		@include breakpoint(medium) {
+			margin-bottom: 4.5rem;
+		}
+		&:hover {
+			transform: scale(1.1);
+			& + .hover-icon {
+				opacity: 0.2;
+			}
+		}
+	}
+	.hover-icon {
+		position: absolute;
+		top: -7%;
+		left: -7%;
+		width: 114%;
+		z-index: -1;
+		max-width: 150%;
+		opacity: 0;
+		transition: $slider-transition;
+	}
+	&:hover {
+		.position {
+			opacity: 1;
+			color: $true-black;
+		}
+		.team-info {
+			@include shadow;
+			background-color: #fff;
+			box-shadow: 1px solid rgb(151, 143, 143);
+		}
+		.name {
+			margin-top: 7.5rem;
+			color: $true-black;
+		}
+	}
 }

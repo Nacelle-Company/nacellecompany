@@ -155,3 +155,9 @@ header.press {
 .sya_date {
 	font-weight: 600;
 }
+
+.no-hero-video {
+	@include breakpoint(small only) {
+		order: 2;
+	}
+}

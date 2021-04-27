@@ -21,25 +21,6 @@
 	}
 }
 
-// .press-row-section {
-// 	@include flex-grid-row(null, $global-width, 12);
-// 	justify-content: center;
-// }
-
-// .press-row-section-inner {
-// 	@include flex-grid-column(12);
-
-// 	@include breakpoint(medium) {
-// 		@include flex-grid-column(10);
-// 	}
-// }
-
-// .press-row-section-header {
-// 	padding: 1.5rem 0;
-// 	margin: 0;
-// 	line-height: 1;
-// }
-
 .press-row {
 	position: relative;
 	@include breakpoint(medium) {
@@ -61,6 +42,9 @@
 			opacity: 0;
 		}
 	}
+	.press-row-content {
+		border-radius: $global-radius;
+	}
 
 	@include breakpoint(small only) {
 		.news-image-hover-background {
@@ -73,21 +57,10 @@
 			top: -48px;
 			left: -72px;
 		}
-		// .press-row-img {
-		// 	border-top-left-radius: 50%;
-		// 	border-bottom-left-radius: 50%;
-		// }
-
-		.press-row-content {
-			border-radius: $global-radius;
-			width: 100%;
-		}
 	}
 }
 
 .press-row-img {
-	// z-index: 1;
-	// @include transition;
 	img {
 		width: 100%;
 		border-radius: 50%;
@@ -102,12 +75,8 @@
 
 .press-row-content {
 	z-index: 0;
-	padding: 1.5rem 0 0;
+	padding: 1.5rem;
 	@include transition;
-
-	@include breakpoint(medium) {
-		padding: 1.5rem;
-	}
 
 	svg .newspaper-icon {
 		fill: $light-gray;
@@ -126,18 +95,18 @@
 		right: -72px;
 	}
 	.press-row-content {
-		order: 2;
-		padding: 0 1.5rem 0 0;
-
 		@include breakpoint(medium) {
+			order: 2;
 			padding: 1.5rem;
 			width: 100%;
 		}
 	}
 
 	.press-row-img {
-		order: 1;
 		@include transition;
+		@include breakpoint(medium) {
+			order: 1;
+		}
 	}
 
 	@include breakpoint(medium) {
@@ -155,8 +124,8 @@
 	}
 }
 .feed-container {
-    border-bottom: 1px solid;
-    .archive-title {
+	border-bottom: 1px solid;
+	.archive-title {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;

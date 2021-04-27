@@ -89,18 +89,7 @@ wp_reset_postdata(); ?>
 <? if(!empty($videoHero)): ?>
     <div class="catalog-hero hero-section" id="catalog_hero">
     <?php if ( wp_is_mobile() ) : ?>
-<button class="button" onclick="jQuery('#mobile_video').YTPFullscreen()">bring to front / send to back</button>
-
-        <div id="mobile_video" class="player" data-property="{
-        videoURL:'<?php echo $videoHero; ?>',
-        containment:'#catalog_hero', 
-        mute:false, 
-        autoPlay: false,
-        showControls:true, 
-        optimizeDisplay:false,
-        loop:true, 
-        showYTLogo:true, 
-        stopMovieOnBlur:true }"></div>
+        <div id="mobile_video" onclick="jQuery('#mobile_video').YTPUnmute()" class="player" data-property="{videoURL:'<?php echo $videoHero; ?>',containment:'#catalog_hero',playOnlyIfVisible:true,abundance:0.0}"></div>
     <?php else : ?>
 
         <div id="big-video">
@@ -112,16 +101,10 @@ wp_reset_postdata(); ?>
                 containment:'self', 
                 coverImage:'<?php echo esc_url($profile_hero_lg['url']); ?>', 
                 mobileFallbackImage:'<?php echo esc_url($profile_hero_lg['url']); ?>', 
-                autoPlay:true,
                 useOnMobile: false,
-                mute:true, 
-                opacity:1, 
-                showControls:false, 
-                optimizeDisplay:true,
+                optimizedDisplay:false,
                 abundance: <?php echo $videoAbundance; ?>,
-                loop:true, 
                 showYTLogo:false,
-                stopMovieOnBlur:true,
                 playOnlyIfVisible:true,
                 startAt:<?php the_field('start_video_at'); ?> }"></div>
 
@@ -179,7 +162,7 @@ wp_reset_postdata(); ?>
                             <strong>View Page</strong>
                         </a>
 
-                        <button class="button icon" data-open="catalog_modal" onclick="jQuery('#modal-video').YTPPlay(); jQuery('#video-header-hero').YTPPause();">
+                        <button class="button icon" onclick="jQuery('#modal-video').YTPPlay(); jQuery('#video-header-hero').YTPPause();">
                             <?php get_template_part('template-parts/svg/icon-expand', ''); ?>
                             <strong>Full screen</strong>
                         </button>
@@ -199,15 +182,6 @@ wp_reset_postdata(); ?>
                             <strong>Watch</strong>
                         </button>
 
-                        <?php
-                        /* 
-                        <a class="button icon catalog-links-btn" href="#catalog_links" data-smooth-scroll data-animation-duration="700" data-offset="45">
-                            <?php get_template_part('template-parts/svg/icon-cart', ''); ?>
-                            <strong>Purchase</strong>
-                        </a>
-                        */
-                        ?>
-
                     </div>
 
                     <?php // pause button group 
@@ -219,16 +193,7 @@ wp_reset_postdata(); ?>
                             <strong>Pause</strong>
                         </button>
 
-                        <?php
-                        /*
-                        <a class="button icon catalog-links-btn" href="#catalog_links" data-smooth-scroll data-animation-duration="700" data-offset="45">
-                            <?php get_template_part('template-parts/svg/icon-cart', ''); ?>
-                            <strong>Purchase</strong>
-                        </a>
-                        */
-                        ?>
-
-                        <button class="button icon" data-open="catalog_modal" onclick="jQuery('#modal-video').YTPPlay(); jQuery('#video-header-hero').YTPPause();">
+                        <button class="button icon" onclick="jQuery('#modal-video').YTPPlay().YTPFullscreen(); jQuery('#video-header-hero').YTPPause();">
                             <?php get_template_part('template-parts/svg/icon-expand', ''); ?>
                             <strong>Full screen</strong>
                         </button>
@@ -248,21 +213,19 @@ wp_reset_postdata(); ?>
                     ?>
                     <div id="modal-video" class="player" data-property="{
                     videoURL:'<?php echo $videoHero; ?>',
-                    containment:'#modalVideo', 
+                    containment:'self', 
                     coverImage:'<?php echo $profile_hero_lg; ?>', 
                     mute:false, 
                     autoPlay: false,
                     showControls:true, 
-                    optimizeDisplay:true,
-                    loop:true, 
+                    optimizeDisplay:false,
+                    loop:false, 
                     showYTLogo:true, 
                     stopMovieOnBlur:true }"></div>
 
                 <?php endif; ?>
                     </div>
                 </div>
-                
-
             </div>
 
             <button class="close-button" data-toggle="coverOn" data-close aria-label="Close modal" type="button" onclick="jQuery('#video-header-hero').YTPPlay().YTPMute(); jQuery('#modal-video').YTPPause();">

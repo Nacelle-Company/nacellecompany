@@ -56,7 +56,7 @@ h1 {
 
 p, h2, h3, h4, h5, h6 {
   @include breakpoint(small only) {
-    font-size: 130%;
+    font-size: 120%;
   }
 }
 .sm-title {
@@ -75,7 +75,7 @@ i b {
   font-family: $strong-italic-font-family;
 }
 .p {
-  font-size: 130%;
+  font-size: 120%;
 }
 
 blockquote:before {

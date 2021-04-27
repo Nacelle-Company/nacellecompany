@@ -1,10 +1,10 @@
 <?php if (get_field('show_video_links')) : ?>
     <div class="grid-x px-large-4 small-margin-collapse" id="catalog_links">
         <div class="cell link-lg">
-            <h2 class="white-color">
+            <h2>
                 <?php _e('Watch Now', 'nacelle'); ?>
             </h2>
-            <div class="grid-x grid-padding-x medium-up-3 large-up-4">
+            <div class="grid-x grid-padding-x medium-up-3">
                 <?php if (have_rows('new_large_link')) : ?>
                     <?php while (have_rows('new_large_link')) : the_row();
                         $videoLinkTitle = get_sub_field('link_title');
@@ -108,7 +108,7 @@
             <h2 class="white-color">
                 <?php _e('Listen Now', 'nacelle'); ?>
             </h2>
-            <div class="grid-x grid-padding-x medium-up-3 large-up-4">
+            <div class="grid-x grid-padding-x medium-up-3">
                 <?php if (have_rows('audio_new_large_link')) : ?>
                     <?php while (have_rows('audio_new_large_link')) : the_row();
                         $videoLinkTitle = get_sub_field('audio_link_title');

@@ -141,7 +141,7 @@ $image-hover-wrapper-icon-size: 60px;
 	// CD catalog cards
 	// CD catalog cards
 	&.catalog-cards {
-		> .cell {
+		> .cell { 
 			@include breakpoint(medium) {
 				height: 22rem;
 			}
@@ -157,49 +157,13 @@ $image-hover-wrapper-icon-size: 60px;
 	// CD catalog cards END
 }
 .callout-footer p {
+	font-size: $small-font-size;
 	@include multiLineEllipsis(
 		$lineHeight: 1.2em,
 		$lineCount: 3,
 		$bgColor: white
 	);
 }
-// /* products: hover boxes post text */
-// .callout-footer p:before {
-// 	content: "";
-// }
-// .callout-footer p:after {
-// 	content: "";
-// }
-// /* elipsis: http://hackingui.com/front-end/a-pure-css-solution-for-multiline-text-truncation/ */
-// .callout-synopsis {
-// 	overflow: hidden;
-// 	position: relative;
-// 	line-height: 1.2em;
-// 	max-height: 3.6em;
-// 	text-align: justify;
-// 	margin-right: -1em;
-// 	padding-right: 1em;
-// }
-// .callout-synopsis:before {
-// 	content: "...";
-// 	position: absolute;
-// 	right: 10px;
-// 	bottom: 0;
-// }
-// .callout-synopsis:after {
-// 	content: "";
-// 	position: absolute;
-// 	right: 0;
-// 	width: 1em;
-// 	height: 1em;
-// 	margin-top: 0.2em;
-// 	background: white;
-// }
-
-// .media-callout-container {
-// 	@include xy-grid-collapse(cell, margin, top, medium);
-// }
-
 #breadcrumbs {
 	list-style: none;
 	margin: 10px 0;

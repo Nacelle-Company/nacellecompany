@@ -1,7 +1,6 @@
 .hero-section,
-.catalog-modal,
 .video-latest {
-	height: 27vh;
+	height: 35vh;
 	width: 100%;
 	position: relative;
 	left: 0;
@@ -9,20 +8,14 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	@include breakpoint(medium) {
-		height: 35vh;
-	}
-	@include breakpoint(large up) {
-		height: 51vh;
+	@include breakpoint(medium up) {
+		height: 50vh;
 	}
 	&.video {
 		height: 100vh;
 	}
 	&.medium-height {
 		height: 70vh;
-	}
-	&.catalog-modal {
-		height: 100%;
 	}
 	#big-video {
 		position: absolute;
@@ -42,6 +35,9 @@
 	.hero-text {
 		z-index: 1;
 	}
+}
+.catalog-modal {
+	height: 100%;
 }
 .modal-video {
 	width: 100%;
