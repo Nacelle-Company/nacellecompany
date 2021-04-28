@@ -1,0 +1,53 @@
+.catalog-more-info,
+.catalog-crew {
+	@include breakpoint(medium only) {
+		width: 50%;
+	}
+}
+.catalog-aside-wrapper {
+	position: relative;
+}
+.catalog-crew {
+	.title,
+  .crew {
+		/* ----------- iPad Pro 10.5" ----------- */
+		/* Portrait and Landscape */
+		@media only screen and (min-device-width: 834px) and (max-device-width: 1112px) and (-webkit-min-device-pixel-ratio: 2) {
+      width: 100%;
+    }
+	}
+}
+.catalog-aside {
+	@include breakpoint(medium) {
+		margin-top: -60px;
+	}
+	@include breakpoint(medium only) {
+		margin-top: -360px;
+		position: absolute;
+	}
+	@include breakpoint(xlarge) {
+		margin-top: -70px;
+	}
+	.wp-post-image {
+		box-shadow: $thumbnail-shadow;
+		width: 100%;
+	}
+	> .grid-x {
+		@include flex-align($x: center, $y: middle);
+	}
+	.artwork-container {
+		.link-icons-container {
+			@include flex-align($x: center, $y: middle);
+		}
+		.link-icons {
+			padding: 1em;
+			background: $medium-gray;
+			box-shadow: $thumbnail-shadow;
+			border-bottom-right-radius: $card-border-radius;
+			border-bottom-left-radius: $card-border-radius;
+			a img {
+				padding: 4px;
+			}
+		}
+	}
+}

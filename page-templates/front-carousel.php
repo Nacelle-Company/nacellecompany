@@ -8,7 +8,7 @@
         echo $blog_title; ?>
       </h1>
       <h2>
-        <?php if (get_field('heading')) : the_field('heading');
+        <?php if (get_post_meta(get_the_ID(), 'heading', true)) : echo get_post_meta(get_the_ID(), 'heading', true);
         endif; ?>
       </h2>
     </div>

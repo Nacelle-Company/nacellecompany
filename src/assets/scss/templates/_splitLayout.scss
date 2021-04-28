@@ -14,10 +14,6 @@
 		@include breakpoint(medium) {
 			background-size: 60%;
 		}
-		blockquote {
-			border-left-width: 5px;
-			font-size: x-large;
-		}
 	} 
 	&-banner {
 		position: relative;

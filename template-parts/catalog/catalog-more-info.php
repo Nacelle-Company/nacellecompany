@@ -4,15 +4,15 @@ $date = get_post_meta(get_the_ID(), 'release_date', true);
 $show_date = get_post_meta(get_the_ID(), 'show_release_date', true);
 $genres = get_the_terms($post->ID, 'genre');
 ?>
-<div class="grid-x catalog-more-info meta-accordion catalog-bottom-meta" id="meta_accordion">
+<div class="grid-x catalog-more-info meta-accordion catalog-bottom-meta medium-order-1 large-order-2" id="meta_accordion">
     <article class="accordion cell" data-accordion data-allow-all-closed="true">
         <section class="accordion-item" data-accordion-item>
             <a href="#meta_accordion" data-smooth-scroll data-animation-duration="700" data-offset="245">
-                <div class="grid-x px-medium-4 align-middle">
+                <div class="grid-x px-medium-3 px-large-4 align-middle">
                     <div class="cell small-6">
                         <div class="grid-x accordion-line"></div>
                     </div>
-                    <div class="cell small-5 ml-medium-2 pl-medium-2 pl-large-3">
+                    <div class="cell small-5 medium-6 large-5 pl-medium-2 pl-large-3">
                         <button class="accordion-title flex-container clear primary-color pl-medium-1 pl-large-0" title="More info on <?php the_title(); ?>">More info
                             <?php get_template_part('template-parts/svg/icon-down-angle'); ?>
                         </button>
@@ -20,9 +20,9 @@ $genres = get_the_terms($post->ID, 'genre');
                 </div>
             </a>
             <div class="grid-x accordion-content" data-tab-content>
-                <div class="grid-container grid-x">
-                    <div class="cell medium-8 medium-offset-4 tbp-1">
-                        <div class="grid-x small-padding-collapse px-medium-2">
+                <div class="flex-container grid-x align-right">
+                    <div class="cell large-6 tbp-1">
+                        <div class="grid-x small-padding-collapse">
                             <div class="cell medium-12">
                                 <?php if ($runtime) : ?>
                                     <div class="grid-x">

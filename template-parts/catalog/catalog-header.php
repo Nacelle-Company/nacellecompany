@@ -2,13 +2,13 @@
 
 		<div class="grid-x catalog grid-padding-y">
 
-			<div class="cell px-medium-3">
+			<div class="cell px-large-3">
 
 				<div class="grid-x align-justify">
 
 					<?php // title 
 					?>
-					<div class="cell medium-8 large-7">
+					<div class="cell large-7">
 						<?php
 						if (is_single()) {
 							the_title('<h1 class="entry-title">', '</h1>');
@@ -38,7 +38,7 @@
 
 					<?php // synopsis 
 					?>
-					<div class="cell medium-6 syopsis">
+					<div class="cell medium-12 large-6 synopsis">
 						<span class="invisible"><h2><?php the_title(); ?></h2></span>
 
 						<?php

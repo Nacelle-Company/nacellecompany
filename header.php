@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The template for displaying the header
  *
@@ -8,11 +7,9 @@
  * @package Nacelle
  * @since Nacelle 1.0.0
  */
-
 ?>
 <!doctype html>
 <html class="no-js" <?php language_attributes(); ?>>
-
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -60,14 +57,6 @@
 		fbq('init', '427279594883969');
 		fbq('track', 'PageView');
 	</script>
-	<?php
-	// if (get_field('site_wide_css', 'option')) {
-	// echo '<style>';
-	// 	the_field('site_wide_css', 'option');
-	// echo '</style>';
-	// }
-	?>
-
 	<?php wp_head(); ?>
 </head>
 <?php
@@ -81,7 +70,6 @@ else :
 	$align = 'align-right';
 endif;
 ?>
-
 <body <?php body_class(); ?>>
 	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TH8K84L" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=427279594883969&ev=PageView&noscript=1" /></noscript>
@@ -103,7 +91,6 @@ endif;
 				</span>
 			</div>
 		</div>
-
 		<nav class="site-navigation top-bar <?php echo $leftToo; ?>" role="navigation" id="<?php Nacelle_mobile_menu_id(); ?>">
 			<div class="nav-container grid-x align-middle">
 				<?php

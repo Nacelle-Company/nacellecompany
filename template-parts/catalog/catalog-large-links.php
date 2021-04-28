@@ -1,10 +1,10 @@
 <?php if (get_field('show_video_links')) : ?>
-    <div class="grid-x px-large-4 small-margin-collapse" id="catalog_links">
+    <div class="grid-x px-medium-3 px-large-4 small-margin-collapse" id="catalog_links">
         <div class="cell link-lg">
             <h2>
                 <?php _e('Watch Now', 'nacelle'); ?>
             </h2>
-            <div class="grid-x grid-padding-x medium-up-3">
+            <div class="grid-x grid-margin-x large-up-3">
                 <?php if (have_rows('new_large_link')) : ?>
                     <?php while (have_rows('new_large_link')) : the_row();
                         $videoLinkTitle = get_sub_field('link_title');
@@ -83,12 +83,9 @@
                                 <div class="callout" data-callout-hover-reveal>
                                     <div class="callout-body image-hover-wrapper">
                                         <span class="image-hover-wrapper-reveal">
-                                            <a href="<?php echo $videoLinkURL; ?>" class="catalog-title button hollow expanded" title="Watch <?php the_title_attribute(); ?> on <?php echo $videoLinkTitle; ?>" target="_blank" rel="noreferrer">
-                                                <strong><?php echo $videoLinkTitle; ?></strong>
-                                                <svg class="icon" width="15" height="15" xmlns="http://www.w3.org/2000/svg">
+                                            <a href="<?php echo $videoLinkURL; ?>" class="catalog-title button hollow expanded" title="Watch <?php the_title_attribute(); ?>on <?php echo $videoLinkTitle; ?>" target="_blank" rel="noreferrer"><strong><?php echo $videoLinkTitle; ?></strong><svg class="icon" width="15" height="15" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M10.938 8.75h-.626a.313.313 0 00-.312.313v2.187H3.75V5h2.813c.172 0 .312-.14.312-.313v-.625a.313.313 0 00-.313-.312H3.438a.938.938 0 00-.937.938v6.875c0 .517.42.937.938.937h6.874c.518 0 .938-.42.938-.938v-2.5a.313.313 0 00-.313-.312zM12.03 2.5h-2.5a.47.47 0 00-.332.8L9.897 4l-4.76 4.758a.469.469 0 000 .664l.442.442a.469.469 0 00.665 0l4.758-4.76.697.698a.47.47 0 00.801-.332v-2.5a.469.469 0 00-.469-.469z" fill-rule="nonzero" />
-                                                </svg>
-                                            </a>
+                                                </svg></a>
                                         </span>
                                     </div>
                                 </div>
@@ -103,12 +100,10 @@
     </div>
 <?php endif; ?>
 <?php if (get_field('show_audio_links')) : ?>
-    <div class="grid-x px-large-4 small-margin-collapse" id="catalog_links">
+    <div class="grid-x px-medium-3 px-large-4 small-margin-collapse" id="catalog_links">
         <div class="cell link-lg">
-            <h2 class="white-color">
-                <?php _e('Listen Now', 'nacelle'); ?>
-            </h2>
-            <div class="grid-x grid-padding-x medium-up-3">
+            <h2><?php _e('Listen Now', 'nacelle'); ?></h2>
+            <div class="grid-x grid-margin-x large-up-2 xlarge-up-3">
                 <?php if (have_rows('audio_new_large_link')) : ?>
                     <?php while (have_rows('audio_new_large_link')) : the_row();
                         $videoLinkTitle = get_sub_field('audio_link_title');
@@ -140,9 +135,7 @@
                                                         <img src="<?php echo $linkCustomImageSM; ?>" alt="<?php echo $videoLinkImageAlt; ?>" />
                                                     </noscript>
                                                     <span class="image-hover-wrapper-reveal">
-                                                        <p><strong><?php echo $videoHoverTitle; ?></strong><br>
-                                                            <?php get_template_part('template-parts/svg/icon-play', ''); ?>
-                                                        </p>
+                                                        <p><strong><?php echo $videoHoverTitle; ?></strong><br><?php get_template_part('template-parts/svg/icon-play', ''); ?></p>
                                                     </span>
                                                 </a>
                                                 </span>
@@ -178,12 +171,9 @@
                                 <div class="callout" data-callout-hover-reveal>
                                     <div class="callout-body image-hover-wrapper">
                                         <span class="image-hover-wrapper-reveal">
-                                            <a href="<?php echo $videoLinkURL; ?>" class="catalog-title button hollow expanded" rel="bookmark" title="Watch <?php the_title_attribute(); ?> on <?php echo $videoLinkTitle; ?>" target="_blank" rel="noreferrer">
-                                                <strong><?php echo $videoLinkTitle; ?></strong>
-                                                <svg class="icon" width="15" height="15" xmlns="http://www.w3.org/2000/svg">
+                                            <a href="<?php echo $videoLinkURL; ?>" class="catalog-title button hollow expanded" rel="bookmark" title="Watch <?php the_title_attribute(); ?>on <?php echo $videoLinkTitle; ?>" target="_blank" rel="noreferrer"><strong><?php echo $videoLinkTitle; ?></strong><svg class="icon" width="15" height="15" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M10.938 8.75h-.626a.313.313 0 00-.312.313v2.187H3.75V5h2.813c.172 0 .312-.14.312-.313v-.625a.313.313 0 00-.313-.312H3.438a.938.938 0 00-.937.938v6.875c0 .517.42.937.938.937h6.874c.518 0 .938-.42.938-.938v-2.5a.313.313 0 00-.313-.312zM12.03 2.5h-2.5a.47.47 0 00-.332.8L9.897 4l-4.76 4.758a.469.469 0 000 .664l.442.442a.469.469 0 00.665 0l4.758-4.76.697.698a.47.47 0 00.801-.332v-2.5a.469.469 0 00-.469-.469z" fill-rule="nonzero" />
-                                                </svg>
-                                            </a>
+                                                </svg></a>
                                         </span>
                                     </div>
                                 </div>

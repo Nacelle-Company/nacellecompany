@@ -17,7 +17,6 @@ function my_dynamic_sidebar_params($params)
     $youtube = get_field('youtube', 'widget_' . $widget_id);
     $soundcloud = get_field('soundcloud', 'widget_' . $widget_id);
     $spotify = get_field('spotify', 'widget_' . $widget_id);
-
     $showContactModal = get_field('show_contact_modal', 'widget_' . $widget_id);
     $contactModal = get_field('contact_modal', 'widget_' . $widget_id);
 

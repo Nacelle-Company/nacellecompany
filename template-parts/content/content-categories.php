@@ -24,7 +24,7 @@ get_header(); ?>
 		<header class="grid-container archive pb-2 pb-medium-0">
 			<div class="grid-x align-center-middle pt-2 category-intro">
 				<div class="cell small-6 medium-2">
-					<h1 class="entry-title">
+					<h1 class="entry-title h3">
 						<?php single_cat_title(); ?>
 					</h1>
 				</div>

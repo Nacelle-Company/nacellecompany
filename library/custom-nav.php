@@ -222,6 +222,27 @@ if (!function_exists('wpt_register_theme_customizer')) :
 			)
 		);
 
+		// Create navigation text secondary color
+		$wp_customize->add_setting(
+			'white_color',
+			array(
+				'default'   => '#fff',
+				'transport' => 'refresh',
+			)
+		);
+
+		$wp_customize->add_control(
+			new WP_Customize_Color_Control(
+				$wp_customize,
+				'white_color',
+				array(
+					'section' => 'colors',
+					'label'   => esc_html__('White color', 'nacelle'),
+					'description'		=> 'CD color: #fff'
+				)
+			)
+		);
+
 		// Create custom panels
 		$wp_customize->add_panel(
 			'mobile_menu_settings',

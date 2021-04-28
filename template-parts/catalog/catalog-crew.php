@@ -4,168 +4,94 @@ $directors = get_field('directors');
 $producers = get_field('producers');
 $writers = get_field('writers');
 $siteURL = get_site_url();
-
 if (!empty($talents) || !empty($directors) || !empty($producers) || !empty($writers)) :
 ?>
-    <div class="catalog-crew grid-x px-medium-4 pt-2">
-
+    <div class="catalog-crew grid-x medium-order-2 large-order-3 medium-up-1 large-up-2 px-medium-3 px-large-4 pt-2">
         <div class="cell medium-4 title">
-
             <div class="grid-y medium-grid-frame">
                 <h2 class="h5"><?php the_title(); ?></h2>
                 <h2 class="h4"><?php _e('Credits', 'nacelle'); ?></h2>
             </div>
-
         </div>
-        <div class="cell medium-8">
-
-            <?php // TALENT 
-            ?>
+        <div class="cell medium-8 crew">
             <?php if ($talents) : ?>
-
                 <div class="grid-x">
-
-                    <?php // talent title 
-                    ?>
                     <div class="cell small-4 subtitle">
-
                         <p><?php _e('Talent', 'nacelle'); ?></p>
-
                     </div>
-
-                    <?php // talent list 
-                    ?>
                     <div class="cell small-8">
-
-                        <p>
+                        <ul class="no-bullet">
                             <?php
-
                             $talentstr = array();
                             foreach ($talents as $talent) {
                                 $talentstr[] = $talent->name;
-                                $talentSlug[] = '<a class="alt" href="' . $siteURL . '/main-talent/' . $talent->slug . '/">' . $talent->name . '</a>';
+                                $talentSlug[] = '<a class="alt" href="' . $siteURL . '/main-talent/' . $talent->slug . '/" title="' . $talent->name . '">' . $talent->name . '</a>';
                             }
-                            echo implode(", ", $talentSlug);
-
+                            echo implode(',&nbsp;', $talentSlug);
                             ?>
-                        </p>
-
+                        </ul>
                     </div>
-
                 </div>
-
             <?php endif; ?>
-
-            <?php // end TALENT 
-            ?>
-            <?php // DIRECTORS 
-            ?>
-
             <?php if ($directors) : ?>
-
                 <div class="grid-x">
-
-                    <?php // directors title 
-                    ?>
                     <div class="cell small-4 subtitle">
-
                         <p><?php _e('Director(s)', 'nacelle'); ?></p>
-
                     </div>
-
                     <div class="cell small-8">
-
                         <p>
                             <?php
-
                             $directorsstr = array();
-
                             foreach ($directors as $director) {
                                 $directorsstr[] = $director->name;
-                                $directorSlug[] = '<a class="alt" href="' . $siteURL . '/directors/' . $director->slug . '/">' . $director->name . '</a>';
+                                $directorSlug[] = '<a class="alt" href="' . $siteURL . '/directors/' . $director->slug . '/" title="' . $director->name . '">' . $director->name . '</a>';
                             }
                             echo implode(", ", $directorSlug);
-
                             ?>
                         </p>
-
                     </div>
-
                 </div>
-
             <?php endif; ?>
-            <?php // end DIRECTORS 
-            ?>
-
-            <?php // PRODUCERS 
-            ?>
             <?php if ($producers) : ?>
-
                 <div class="grid-x">
-
                     <div class="cell small-4 subtitle">
-
                         <p><?php _e('Producer(s)', 'nacelle'); ?></p>
-
                     </div>
-
                     <div class="cell small-8">
-
                         <p>
                             <?php
-
                             $producerstr = array();
-
                             foreach ($producers as $producer) {
                                 $producerstr[] = $producer->name;
-                                $producerSlug[] = '<a class="alt" href="' . $siteURL . '/producers/' . $producer->slug . '/">' . $producer->name . '</a>';
+                                $producerSlug[] = '<a class="alt" href="' . $siteURL . '/producers/' . $producer->slug . '/" title="' . $producer->name . '">' . $producer->name . '</a>';
                             }
                             echo implode(", ", $producerSlug);
-
                             ?>
-
                         </p>
-
                     </div>
-
                 </div>
             <?php endif; ?>
-            <?php // end PRODUCERS 
-            ?>
-
             <?php if ($writers) : ?>
-
                 <div class="grid-x">
-
                     <div class="cell small-4 subtitle">
-
                         <p><?php _e('Writer(s):', 'nacelle'); ?></p>
-
                     </div>
-
                     <div class="cell small-8">
-
                         <p>
                             <?php $writerstr = array();
                             foreach ($writers as $writer) {
                                 $writerstr[] = $writer->name;
-                                $writerSlug[] = '<a class="alt" href="' . $siteURL . '/writers/' . $writer->slug . '">' . $writer->name . '</a>';
+                                $writerSlug[] = '<a class="alt" href="' . $siteURL . '/writers/' . $writer->slug . '" title="' . $writer->name . '">' . $writer->name . '</a>';
                             }
                             echo implode(", ", $writerSlug);
                             ?>
                         </p>
-
                     </div>
-
                 </div>
-
             <?php endif; ?>
-
-
         </div>
-
         <?php
-        $imdbV = get_field('imdb_video');
+        $imdbV = get_post_meta(get_the_ID(), 'imdb_video', true);
         if ($imdbV) : ?>
             <div class="cell">
                 <a href="<?php echo $imdbV; ?>" class="catalog-title button expanded" rel="noreferrer" title="Watch <?php the_title_attribute(); ?> on <?php echo $imdbV; ?>" target="_blank" rel="noreferrer">
@@ -176,6 +102,5 @@ if (!empty($talents) || !empty($directors) || !empty($producers) || !empty($writ
                 </a>
             </div>
         <?php endif; ?>
-
     </div>
 <?php endif; ?>

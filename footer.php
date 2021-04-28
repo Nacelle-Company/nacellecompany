@@ -66,7 +66,7 @@
   <?php // catalog item synopsis modal 
   ?>
   <div class="small synopsis reveal" id="exampleModal5" data-reveal>
-    <?php the_field('synopsis'); ?>
+    <?php echo get_post_meta(get_the_ID(), 'synopsis', true); ?>
     <button class="close-button" data-close aria-label="Close reveal" type="button">
       <span aria-hidden="true">&times;</span>
     </button>
@@ -75,7 +75,7 @@
   ?>
   <div class="reveal productsModal" id="productsModal" data-reveal>
     <div class="embed-container">
-      <?php the_field('featured_video'); ?>
+      <?php echo get_post_meta(get_the_ID(), 'featured_video', true); ?>
     </div>
     <button class="close-button" data-close aria-label="Close reveal" type="button">
       <span aria-hidden="true">&times;</span>

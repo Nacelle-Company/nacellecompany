@@ -19,10 +19,7 @@ if (have_rows('featured_posts')) :
                 $featured_img_url = get_the_post_thumbnail_url($featured_projects->ID, 'full');
             }
             $title = esc_html($featured_projects->post_title);
-
-            // $video = get_field('video_embedd', $featured_projects->ID);
             $video = get_post_meta($featured_projects->ID, 'video_embedd', true);
-            // $image = get_post_thumbnail('medium', $featured_projects->ID);
             $mask_url = get_template_directory_uri() . '/template-parts/svg/icon-mask.svg';
 
 ?>
@@ -32,7 +29,7 @@ if (have_rows('featured_posts')) :
 
                     <div id="videoHeroContainment-<?php echo $count; ?>" class="cell">
 
-                        <div id="big-video" class="big-video">
+                        <div id="big_video" class="big-video">
 
                             <?php // plugin docs: https://github.com/pupunzi/jquery.mb.YTPlayer/wiki#external-methods 
                             ?>

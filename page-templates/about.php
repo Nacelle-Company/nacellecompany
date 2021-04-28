@@ -3,12 +3,9 @@
 Template Name: About
 */
 get_header(); ?>
-
 <?php get_template_part('template-parts/featured-image'); ?>
-
 <main class="main-grid">
 <?php while (have_posts()) : the_post(); ?>
-
 		<article id="post-<?php the_ID(); ?>" <?php post_class('grid-container'); ?>>
 			<header class="text-center">
 				<?php
@@ -38,33 +35,21 @@ get_header(); ?>
                             ?>
 						<?php endwhile; ?>
 					</div>
-
 				<?php endif; ?>
-
-
 				<header class="grid-x grid-padding-x">
 					<div class="cell">
-						<?php the_field('full_width_content'); ?>
+						<?php echo get_post_meta(get_the_ID(), 'full_width_content', true); ?>
 					</div>
 				</header>
-
 				<div class="grid-x grid-padding-x">
-
 					<div class="cell medium-6 extra-content">
-						<?php if (the_field('left_content')) {
-                                the_field('left_content');
-                            } ?>
+						<?php if (get_post_meta(get_the_ID(), 'left_content', true)) { echo get_post_meta(get_the_ID(), 'left_content', true);; } ?>
 					</div>
-
-					<?php // Embedd content ?>
 					<div class="cell medium-6 extra-content">
-							<?php if (the_field('right_content')) {
-                                the_field('right_content');
-                            } ?>						</div>
+						<?php if (get_post_meta(get_the_ID(), 'right_content', true)) { echo get_post_meta(get_the_ID(), 'right_content', true);; } ?>
+						</div>
 					</div>
-
 				</div>
-
 				<?php edit_post_link(__('(Edit)', 'nacelle'), '<span class="edit-link">', '</span>');?>
 			</div>
 			<footer>
@@ -81,10 +66,8 @@ get_header(); ?>
                 } ?>
 			</footer>
 		</article>
-
 		<?php comments_template(); ?>
 	<?php endwhile; ?>
 	<script src="https://snapwidget.com/js/snapwidget.js"></script>
 </main>
-
 <?php get_footer();

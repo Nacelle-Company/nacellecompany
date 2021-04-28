@@ -110,34 +110,6 @@ $print-transparent-backgrounds: true;
 
 @include add-foundation-colors;
 
-// color mixin, https://www.sitepoint.com/dealing-color-schemes-sass/
-@mixin theme($name, $color) {
-  .#{$name} {
-    color: $color;
-  }
-}
-
-// @include theme(primary-color, $primary-color);
-@include theme(secondary-color, $secondary-color);
-@include theme(white-color, $white);
-@include theme(black-color, $black);
-@include theme(lt-gray-color, $light-gray);
-@include theme(md-gray-color, $medium-gray);
-@include theme(dk-gray-color, $dark-gray);
-
-// icon colors
-@mixin iconColor($nameIcon, $colorIcon) {
-  .#{$nameIcon} {
-    fill: $colorIcon;
-  }
-}
-@include iconColor(secondary-icon, $secondary-color);
-@include iconColor(white-icon, $white);
-@include iconColor(black-icon, $black);
-@include iconColor(lt-gray-icon, $light-gray);
-@include iconColor(md-gray-icon, $medium-gray);
-@include iconColor(dk-gray-icon, $dark-gray);
-
 // 2. Breakpoints
 // --------------
 
@@ -332,7 +304,7 @@ $breadcrumbs-item-separator-color: $medium-gray;
 // ----------
 
 $button-font-family: inherit;
-$button-padding: 0.85em 2.5em;
+$button-padding: 0.85em 2em;
 $button-margin: 0 0 $global-margin 0;
 $button-fill: solid;
 $button-background: $primary-color;

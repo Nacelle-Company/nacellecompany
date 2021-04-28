@@ -25,7 +25,7 @@
 							<?php _e('PR & Marketing: ', 'nacelle'); ?>
 						</span>
 						<span itemprop="name">
-							<?php the_field('media_contact'); ?>
+							<?php echo get_post_meta(get_the_ID(), 'media_contact', true); ?>
 						</span>
 					</div>
 				</section>
@@ -35,8 +35,8 @@
 					<div class="pl-1">
 						<p class="invisible">Phone:</p>
 						<span>
-							<a href="tel:<?php the_field('phone'); ?>">
-								<?php the_field('phone'); ?>
+							<a href="tel:<?php  echo get_post_meta(get_the_ID(), 'phone', true); ?>">
+								<?php echo get_post_meta(get_the_ID(), 'phone', true); ?>
 							</a>
 						</span>
 					</div>
@@ -45,8 +45,8 @@
 				<section class="menu simple pb-2">
 					<?php get_template_part('template-parts/svg/icon-user'); ?>
 					<div class="pl-1">
-						<a href="mailto:<?php the_field('email'); ?>?Subject=Hello%20Comedy%20Dynamics%20Press" target="_top" itemprop="email">
-							<?php the_field('email'); ?>
+						<a href="mailto:<?php  echo get_post_meta(get_the_ID(), 'email', true);  ?>?Subject=Hello%20Comedy%20Dynamics%20Press" target="_top" itemprop="email">
+							<?php  echo get_post_meta(get_the_ID(), 'email', true);  ?>
 						</a>
 					</div>
 				</section>

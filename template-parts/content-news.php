@@ -70,7 +70,6 @@ $link = get_post_meta(get_the_ID(), 'link_to_article', true);
                                 <a href="<?php echo esc_url(get_term_link($term)); ?>"><?php echo esc_html($term->name); ?></a>
                             <?php endforeach; ?>
                         <?php endif; ?>
-
                         <?php wp_reset_postdata(); ?>
                     <?php endforeach; ?>
                 </div>
