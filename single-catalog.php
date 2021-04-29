@@ -26,7 +26,7 @@ get_header(); ?>
 				get_template_part('template-parts/catalog/catalog-more-info', '');
 				get_template_part('template-parts/catalog/catalog-crew'); ?>
 			</div>
-			<div class="catalog-aside-wrapper cell medium-5 medium-offset-6 large-offset-0 medium-order-2">
+			<div class="catalog-aside-wrapper cell medium-5 medium-order-2">
 				<?php get_template_part('template-parts/catalog/catalog-aside'); ?>
 			</div>
 			<div class="cell medium-order-3">

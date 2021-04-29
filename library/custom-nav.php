@@ -133,7 +133,7 @@ if (!function_exists('wpt_register_theme_customizer')) :
 				array(
 					'section' => 'colors',
 					'label'   => esc_html__('Secondary text color', 'nacelle'),
-					'description'		=> 'CD color: #fff',
+					'description'		=> 'CD color: #000',
 				)
 			)
 		);
@@ -205,7 +205,7 @@ if (!function_exists('wpt_register_theme_customizer')) :
 		$wp_customize->add_setting(
 			'nav_txt_secondary_color',
 			array(
-				'default'   => '#4591e5',
+				'default'   => '#fff',
 				'transport' => 'refresh',
 			)
 		);

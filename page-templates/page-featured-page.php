@@ -98,5 +98,4 @@ if (!empty($featTrailerEmbed)) : ?>
 	</div>
 <?php endif ?>
 <?php // end video modal ?>
-
 <?php get_footer();

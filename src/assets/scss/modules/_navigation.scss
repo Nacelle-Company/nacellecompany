@@ -94,36 +94,16 @@
 		}
 	}
 }
-
-// PAGES WITH absolute positioned navigation
-.page-template-front-carousel {
-	.top-bar {
-		@include breakpoint(medium) {
-			position: absolute;
-			width: 100%;
-			z-index: 9;
-			justify-content: center;
-			background-color: transparent;
+.transparent-header {
+	@include breakpoint(medium up) {
+		position: absolute;
+		.top-bar {
+			@include breakpoint(medium up) {
+				background: transparent !important;
+			}
 		}
-	}
-}
-
-.transparent-header .submenu > .menu-item a {
-	color: #fff;
-}
-
-// absolute positioned top nav
-.page-template-front-circles,
-.page-template-front-grid {
-	.site-navigation {
-		@include breakpoint(medium up) {
-			position: absolute;
-			z-index: 9;
-			width: 100%;
-			background-color: transparent !important;
-		}
-		.desktop.menu {
-			align-items: center;
-		}
+		// .submenu > .menu-item a {
+		// 	color: #fff;
+		// }
 	}
 }

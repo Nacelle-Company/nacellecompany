@@ -22,19 +22,19 @@
 	<div class="cell">
 		<header class="grid-container archive pb-2 pb-medium-0">
 			<div class="grid-x align-center-middle grid-padding-y category-intro">
-				<div class="cell small-2">
-					<h1 class="entry-title">
+				<div class="cell large-2">
+					<h1 class="entry-title h2 text-center">
 						<?php single_cat_title(); ?>
 					</h1>
 				</div>
 				<div class="cell medium-8">
 					<p><?php
-					if (is_category('special-production')) {
-						echo the_field('production_special_content', 'option');
-					} elseif (is_category('series-production')) {
-						echo the_field('production_series_content', 'option');
-					}
-					?>
+							if (is_category('special-production')) {
+								echo the_field('production_special_content', 'option');
+							} elseif (is_category('series-production')) {
+								echo the_field('production_series_content', 'option');
+							}
+							?>
 					</p>
 				</div>
 				<div class="cell medium-2 text-right sorting">
@@ -43,7 +43,7 @@
 			</div>
 		</header>
 
-		<div class="grid-x medium-up-4 large-up-5 mt-medium-3">
+		<div class="catalog-cards macro-cat-cards grid-x medium-up-4 large-up-5 mt-medium-3">
 
 			<?php
 			// sort posts by title
@@ -55,49 +55,9 @@
 			if (have_posts($args)) : ?>
 
 				<?php while (have_posts()) : the_post(); ?>
+					<?php get_template_part('template-parts/content/content-categories-card'); ?>
 
-					<div class="cell mb-2 mb-medium-2 mb-large-4">
 
-
-						<div class="callout" data-callout-hover-reveal>
-							<a href="<?php echo get_permalink(); ?>">
-
-								<div class="callout-body">
-
-									<?php
-									$image_square = get_field('square_image');
-									$image_horizontal = get_field('horizontal_image');
-									if ($image_horizontal) {
-										$image = get_field('horizontal_image');
-									} elseif ($image_square) {
-										$image = get_field('square_image');
-									}
-									if (!is_array($image)) {
-										$image = acf_get_attachment($image);
-									}
-									$img_size_sm = 'fp-small';
-									$alt = $image['alt'];
-									$hero_sm = $image['sizes'][$img_size_sm];
-									?>
-									<img class="my-hero superman" data-interchange="[<?php echo $hero_sm; ?>, small]" alt="<?php echo $alt; ?>" alt="<?php echo $alt; ?>" />
-								</div>
-
-								<div class="callout-footer">
-									<?php
-									$excerpt_true = get_field('synopsis');
-									if ($excerpt_true) {
-										$excerpt = get_field('synopsis');
-										echo $excerpt;
-									}
-									?>
-
-								</div>
-
-							</a>
-
-						</div>
-
-					</div>
 
 				<?php endwhile; ?>
 

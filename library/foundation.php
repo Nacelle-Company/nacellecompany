@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Foundation PHP template
  *
@@ -219,7 +220,7 @@ if (!function_exists('Nacelle_custom_colors')) : function Nacelle_custom_colors(
         .press-row:hover .press-row-content,.tabs-title > a:focus,.tabs-title > a[aria-selected='true'],.primary,.accordion-content,input[type=submit],body.page-template-featured-page,.archive .featured-hero,.searchandfilter input[type=submit],.button:not(.hollow,.clear),.tabs-products .tabs-title.is-active,.carousel-press figcaption,.to-top,.instagram-tab,.callout-footer,.details-container .info,.details-container details[open] .info, .button.primary,.wp-block-button .primary.wp-block-button__link,.carousel-full--press figcaption,.flickity-page-dots .dot {
         background-color: var(--primary-color);
         }
-        .button.hollow,.instagram-tab,.off-canvas-content,.press_release .intro,.press_release .press,.page-template-featured-page .off-canvas-content,.details-container p,.primary-title,.search-results .entry-title.subheader {
+        .button.hollow,.category-intro,.instagram-tab,.off-canvas-content,.press_release .intro,.press_release .press,.page-template-featured-page .off-canvas-content,.details-container p,.primary-title,.search-results .entry-title.subheader {
         border-color: var(--primary-color);
         }
         .fas,svg.footer-logo .color,svg.icon,.flickity-button-icon,.press-row svg.icon.alt {
@@ -228,8 +229,11 @@ if (!function_exists('Nacelle_custom_colors')) : function Nacelle_custom_colors(
         .tabs-products {
         border-bottom-color: var(--primary-color);
         }
-        .current-menu-parent > a,blockquote:before,.current-menu-item > a,.menu > li:hover > a,.is-submenu-item:hover > a,.secondary-color,.button.hollow:hover,.button.clear.success,.press_release .intro,.details-container summary,.details-container .info a,.close-button,.accordion-title {
+        .current-menu-parent > a,blockquote:before,.current-menu-item > a,.menu > li:hover > a,.secondary-color,.button.hollow:hover,.button.clear.success,.press_release .intro,.details-container summary,.details-container .info a,.close-button,.accordion-title {
         color: var(--secondary-color);
+        }
+        .dropdown.menu .is-active > a,.is-submenu-item:hover > a {
+        color: var(--secondary-color) !important;
         }
         .button.hollow:hover,.reveal header,.details-container details[open] .info,.featured-page .feat-content .dk-border,.button.hollow.success,.feed-container,hr,.post-navigation,.carousel .flickity-page-dots .dot,blockquote {
         border-color: var(--secondary-color);
@@ -271,7 +275,7 @@ if (!function_exists('Nacelle_custom_colors')) : function Nacelle_custom_colors(
         color: var(--txt-color);
         }
         }
-        .carousel-full--overlay h3,.carousel-full--overlay p,.accordion-content .sm-title {
+        .accordion-content .sm-title {
         color: var(--secondary-txt-color);
         }
         @media print, screen and (min-width: 40em) {
@@ -279,7 +283,7 @@ if (!function_exists('Nacelle_custom_colors')) : function Nacelle_custom_colors(
         color: var(--secondary-txt-color);
         }
         }
-        .submenu > .menu-item,.site-header:not(.transparent-header),title-bar,.top-bar,.menu .is-active > a,.pag-img-wrapper,.off-canvas,.header-search-container:hover svg.icon,footer.footer {
+        .submenu > .menu-item,.title-bar,.site-header:not(.transparent-header),title-bar,.top-bar,.menu .is-active > a,.pag-img-wrapper,.off-canvas,.header-search-container:hover svg.icon,footer.footer {
         background: var(--nav-bk-color);
         }
         .site-header:not(.transparent-header) .menu>.menu-item a,.pagination a,.pagination h4,.pagination svg.icon {
@@ -295,7 +299,7 @@ if (!function_exists('Nacelle_custom_colors')) : function Nacelle_custom_colors(
         box-shadow: 0 7px 0 var(--white-color), 0 14px 0 var(--white-color);
         background-color: var(--white-color);
         }
-        .mobile-app-toggle .button:hover {
+        .mobile-app-toggle .button:hover,.carousel-full--overlay h3,.carousel-full--overlay p,label {
         color: var(--white-color);
         }
         .mobile-app-toggle .button:hover .icon {

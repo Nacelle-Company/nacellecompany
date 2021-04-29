@@ -18,6 +18,7 @@ body {
 	@include xy-grid();
 	margin-top: 2rem;
 	justify-content: center;
+	min-height: calc(100vh - 270px);
 
 	&.sidebar-left {
 		// Place the sidebar below main content on small screens ...

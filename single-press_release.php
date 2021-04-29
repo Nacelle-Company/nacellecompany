@@ -1,14 +1,11 @@
 <?php
-
 /**
  * The template for displaying all single posts and attachments
  *
  * @package Nacelle
  * @since Nacelle 1.0.0
  */
-
 get_header(); ?>
-
 <?php //get_template_part('template-parts/featured-image');
 ?>
 <main class="main-container">
@@ -18,15 +15,10 @@ get_header(); ?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<div class="entry-content grid-container full">
 						<header class="grid-x press">
-
 							<div class="media-object stack-for-small">
-
 								<div class="media-object-section">
-
 									<?php if (has_post_thumbnail()) : ?>
-
 										<?php the_post_thumbnail('medium', array('align' => 'left')); ?>
-
 									<?php endif; ?>
 								</div>
 								<div class="media-object-section">
@@ -34,7 +26,6 @@ get_header(); ?>
 										<?php the_title(); ?>
 									</h1>
 								</div>
-
 							</div>
 							<footer class="cell">
 								<?php
@@ -148,7 +139,6 @@ get_header(); ?>
 					</footer>
 				</article>
 				<?php edit_post_link(__('(Edit)', 'nacelle'), '<span class="edit-link">', '</span>'); ?>
-
 			<?php endwhile; ?>
 		</div>
 		<?php get_sidebar(); ?>

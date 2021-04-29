@@ -1,7 +1,7 @@
 <?php if (get_field('show_video_links')) : ?>
     <div class="grid-x px-medium-3 px-large-4 small-margin-collapse" id="catalog_links">
         <div class="cell link-lg">
-            <h2>
+            <h2 class="h3">
                 <?php _e('Watch Now', 'nacelle'); ?>
             </h2>
             <div class="grid-x grid-margin-x large-up-3">
@@ -102,7 +102,7 @@
 <?php if (get_field('show_audio_links')) : ?>
     <div class="grid-x px-medium-3 px-large-4 small-margin-collapse" id="catalog_links">
         <div class="cell link-lg">
-            <h2><?php _e('Listen Now', 'nacelle'); ?></h2>
+            <h2 class="h3"><?php _e('Listen Now', 'nacelle'); ?></h2>
             <div class="grid-x grid-margin-x large-up-2 xlarge-up-3">
                 <?php if (have_rows('audio_new_large_link')) : ?>
                     <?php while (have_rows('audio_new_large_link')) : the_row();

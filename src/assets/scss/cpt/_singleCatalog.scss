@@ -1,29 +1,8 @@
-.catalog-more-info,
-.catalog-crew {
-	@include breakpoint(medium only) {
-		width: 50%;
-	}
-}
-.catalog-aside-wrapper {
-	position: relative;
-}
-.catalog-crew {
-	.title,
-  .crew {
-		/* ----------- iPad Pro 10.5" ----------- */
-		/* Portrait and Landscape */
-		@media only screen and (min-device-width: 834px) and (max-device-width: 1112px) and (-webkit-min-device-pixel-ratio: 2) {
-      width: 100%;
-    }
-	}
-}
+
+
 .catalog-aside {
-	@include breakpoint(medium) {
+	@include breakpoint(large) {
 		margin-top: -60px;
-	}
-	@include breakpoint(medium only) {
-		margin-top: -360px;
-		position: absolute;
 	}
 	@include breakpoint(xlarge) {
 		margin-top: -70px;

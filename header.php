@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying the header
  *
@@ -10,6 +11,7 @@
 ?>
 <!doctype html>
 <html class="no-js" <?php language_attributes(); ?>>
+
 <head>
 	<meta charset="<?php bloginfo('charset'); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -70,15 +72,16 @@ else :
 	$align = 'align-right';
 endif;
 ?>
+
 <body <?php body_class(); ?>>
 	<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TH8K84L" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 	<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=427279594883969&ev=PageView&noscript=1" /></noscript>
 	<?php
-	if (is_page_template(array('page-templates/front-circles.php', 'page-templates/front-carousel.php','page-templates/front-grid.php'))) {
+	if (is_page_template(array('page-templates/page-front-circles.php', 'page-templates/page-front-carousel.php', 'page-templates/page-front-grid.php'))) {
 		$transHeader = 'transparent-header';
 	} else {
 		$transHeader = '';
-	} 
+	}
 	?>
 	<header class="site-header cell shrink medium-cell-block-container <?php echo $transHeader; ?>" role="banner">
 		<div class="site-title-bar title-bar" <?php Nacelle_title_bar_responsive_toggle(); ?>>
@@ -122,4 +125,15 @@ endif;
 				</div>
 			</div>
 		</nav>
+		<?php if (get_post_meta(get_the_ID(), 'heading', true)) : ?>
+			<div class="cell tagline text-center">
+				<h1 class="hide">
+					<?php $blog_title = get_bloginfo();
+					echo $blog_title; ?>
+				</h1>
+				<h2>
+					<?php echo get_post_meta(get_the_ID(), 'heading', true); ?>
+				</h2>
+			</div>
+		<?php endif; ?>
 	</header>

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template name: Split Layout
+ * Template name: Wonder
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
