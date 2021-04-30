@@ -125,14 +125,11 @@ endif;
 				</div>
 			</div>
 		</nav>
-		<?php if (get_post_meta(get_the_ID(), 'heading', true)) : ?>
+		<?php if (is_front_page() && get_field('yes_homepage_heading', 'option')) : ?>
+			<h1>YES</h1>
 			<div class="cell tagline text-center">
-				<h1 class="hide">
-					<?php $blog_title = get_bloginfo();
-					echo $blog_title; ?>
-				</h1>
 				<h2>
-					<?php echo get_post_meta(get_the_ID(), 'heading', true); ?>
+					<?php the_field('homepage_heading', 'option'); ?>
 				</h2>
 			</div>
 		<?php endif; ?>

@@ -54,6 +54,21 @@
 					$img_link = '<a href="' . $img_link_url . '" title="' . $img_link_txt . '"><figcaption class="text-center">' . $img_link_txt . ' »</figcaption></a>';
 					else : $img_link = '';
 				endif;
+				$modal_link = get_post_meta(get_the_ID(), 'layouts_' . $count . '_modal_link', true);
+				if ($modal_link) :
+					$modal_link_txt = get_post_meta(get_the_ID(), 'layouts_' . $count . '_modal_link_txt', true);
+					$modal_link_url = get_post_meta(get_the_ID(), 'layouts_' . $count . '_modal_link_url', true);
+					$modal_link = '<a href="' . $modal_link_url . '" title="' . $modal_link_txt . '"><figcaption class="text-center">' . $modal_link_txt . ' »</figcaption></a>';
+				else : $modal_link = '';
+				endif;
+				$modal_img_link = get_post_meta(get_the_ID(), 'layouts_' . $count . '_modal_img_link', true);
+				if ($modal_img_link) :
+					$modal_img_link_a = '<a href="' . $modal_img_link . '">';
+					$modal_img_link_a_end = '</a>';
+				else : 
+					$modal_img_link_a = '';
+					$modal_img_link_a_end = '';
+				endif;
 				$img = get_post_meta(get_the_ID(), 'layouts_' . $count . '_img', true);
 				echo '<section class="sect sect-img_txt" style="' . $bk_color . $border . '">';
 					echo '<div class="grid-x sect-wrap align-middle align-spaced' . $fill_img . '">';
@@ -74,7 +89,10 @@
 					echo '<button class="close-button" data-close aria-label="Close reveal" type="button">';
 						echo '<span aria-hidden="true">&times;</span>';
 					echo '</button>';
-					echo '<figure>' . wp_get_attachment_image($img, 'large') . '</figure>';
+					echo $modal_img_link_a;
+						echo '<figure>' . wp_get_attachment_image($img, 'large') . '</figure>';
+					echo $modal_img_link_a_end;
+					echo $modal_link;
 				echo '</div>';
 				break;
 
