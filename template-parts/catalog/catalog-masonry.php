@@ -80,7 +80,12 @@ if ($taxonomy == 'Producers') {
 
                 <?php
                 // workaround for image URL: https://support.advancedcustomfields.com/forums/topic/illegal-string-offset/
-                $image = get_field('square_image');
+                if(get_field('square_image')) :
+                    $image = get_field('square_image');
+                elseif(get_field('horizontal_image')) :
+                    $image = get_field('horizontal_image');
+                else : the_post_thumbnail();
+                endif;
                 if (!is_array($image)) {
                     $image = acf_get_attachment($image);
                 }
@@ -120,7 +125,12 @@ if ($taxonomy == 'Producers') {
 
                 <?php
                 // workaround for image URL: https://support.advancedcustomfields.com/forums/topic/illegal-string-offset/
-                $image = get_field('square_image');
+                if(get_field('square_image')) :
+                    $image = get_field('square_image');
+                elseif(get_field('horizontal_image')) :
+                    $image = get_field('horizontal_image');
+                else : the_post_thumbnail();
+                endif;
                 if (!is_array($image)) {
                     $image = acf_get_attachment($image);
                 }
@@ -161,7 +171,12 @@ if ($taxonomy == 'Producers') {
 
                 <?php
                 // workaround for image URL: https://support.advancedcustomfields.com/forums/topic/illegal-string-offset/
-                $image = get_field('square_image');
+                if(get_field('square_image')) :
+                    $image = get_field('square_image');
+                elseif(get_field('horizontal_image')) :
+                    $image = get_field('horizontal_image');
+                else : the_post_thumbnail();
+                endif;
                 if (!is_array($image)) {
                     $image = acf_get_attachment($image);
                 }
@@ -202,7 +217,12 @@ if ($taxonomy == 'Producers') {
 
                 <?php
                 // workaround for image URL: https://support.advancedcustomfields.com/forums/topic/illegal-string-offset/
-                $image = get_field('square_image');
+                if(get_field('square_image')) :
+                    $image = get_field('square_image');
+                elseif(get_field('horizontal_image')) :
+                    $image = get_field('horizontal_image');
+                else : the_post_thumbnail();
+                endif;
                 if (!is_array($image)) {
                     $image = acf_get_attachment($image);
                 }

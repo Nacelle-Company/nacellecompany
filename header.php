@@ -126,7 +126,6 @@ endif;
 			</div>
 		</nav>
 		<?php if (is_front_page() && get_field('yes_homepage_heading', 'option')) : ?>
-			<h1>YES</h1>
 			<div class="cell tagline text-center">
 				<h2>
 					<?php the_field('homepage_heading', 'option'); ?>

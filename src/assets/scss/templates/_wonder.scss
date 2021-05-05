@@ -7,6 +7,12 @@
 			padding: 1em 0 0 0;
 			font-weight: 600;
 		}
+		.fill-img {
+			.cell:nth-child(2) {
+				margin-bottom: 0;
+				padding-bottom: 0;
+			}
+		}
 	}
 	&-txt_quote {
 		background-size: 155%;

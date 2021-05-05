@@ -30,9 +30,13 @@
 					$border = 'border-bottom:10px solid ' . $border . ';';
 					else $border = '';
 				$fill_img = get_post_meta(get_the_ID(), 'layouts_' . $count . '_fill_img', true);
-				if($fill_img)
-					$fill_img = ' fill-img';
-					else $fill_img = ' grid-margin-y grid-padding-y';
+				if($fill_img) {
+					$fill_img = ' grid-margin-y grid-padding-y fill-img align-bottom';
+					$fill_img_cell = 'align-self-middle ';
+				} else  {
+					$fill_img = ' grid-margin-y grid-padding-y align-middle';
+					$fill_img_cell = '';
+				}
 				$flip = get_post_meta(get_the_ID(), 'layouts_' . $count . '_flip', true);
 				if($flip)
 					$flip = ' medium-order-2';
@@ -71,8 +75,8 @@
 				endif;
 				$img = get_post_meta(get_the_ID(), 'layouts_' . $count . '_img', true);
 				echo '<section class="sect sect-img_txt" style="' . $bk_color . $border . '">';
-					echo '<div class="grid-x sect-wrap align-middle align-spaced' . $fill_img . '">';
-						echo '<div class="cell medium-5' . $flip . '">';
+					echo '<div class="grid-x sect-wrap align-spaced' . $fill_img . '">';
+						echo '<div class="' . $fill_img_cell . 'cell medium-5' . $flip . '">';
 							echo apply_filters('the_content', $txt);
 							echo $btn;
 						echo '</div>';
