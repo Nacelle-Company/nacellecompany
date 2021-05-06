@@ -21,7 +21,6 @@ get_header(); ?>
 
 	$videoEmbedd = get_field('video_embedd');
 	$ticketsButtonTitle = get_field('tickets_button_title');
-	$titleColor = get_field('title_color');
 	$callout = get_field('callout');
 
 	// image 

@@ -1,10 +1,9 @@
 <?php
 $sliderSpeed = get_field('slider_speed');
-$coverOpacity = get_field('cover_opacity');
 ?>
-
-<div class="carousel carousel-full carousel-full--overlay" data-flickity='{ "imagesLoaded": true, "wrapAround": true }'>
-  <!-- "autoPlay": "17000" -->
+<div class="carousel carousel-full carousel-full--overlay" data-flickity='{ "imagesLoaded": true, "wrapAround": true,"bgLazyLoad": true }'>
+  <!-- "autoPlay": "<?php //echo $sliderSpeed; 
+                    ?>000", -->
   <?php
   /*
     *  http://codex.wordpress.org/Template_Tags/get_posts#Reset_after_Postlists_with_offset
@@ -43,15 +42,18 @@ $coverOpacity = get_field('cover_opacity');
       $size = 'medium'; // (thumbnail, medium, large, full or custom size)
 
       // get the background image
-      if (get_field('use_home_image_for_background', false, false)) {
-        $bk_image = get_field('home_image');
-        $bk_image = $bk_image['url'];
-      } else {
-        $bk_image = get_field('horizontal_image');
-        $bk_image = $bk_image['url'];
+      if (!wp_is_mobile()) {
+        if (get_field('use_home_image_for_background', false, false)) {
+          $bk_image = get_field('home_image');
+          $bk_image = $bk_image['url'];
+        } else {
+          $bk_image = get_field('horizontal_image');
+          $bk_image = $bk_image['url'];
+        }
       }
+
   ?>
-      <div class="carousel-cell" style="background-image:url('<?php echo $bk_image; ?>')">
+      <div class="carousel-cell" data-flickity-bg-lazyload="<?php echo $bk_image; ?>">
         <a href="<?php echo $thePermalink; ?>">
           <figure>
             <figcaption class="grid-x align-bottom">

@@ -20,7 +20,7 @@
 
 			</button>
 
-			<div class="grid-x grid-margin-y align-center-middle oc-container pt-4">
+			<div class="grid-x grid-margin-y align-center-middle oc-container pt-4 px-2">
 
 				<div class="cell align-self-middle filter-sidebar">
 
@@ -33,7 +33,7 @@
 						?>
 						<?php if (is_category(1973)) : ?>
 
-							<h4 class="ml-2"><?php _e('Search Films', 'nacelle'); ?></h4>
+							<h4><?php _e('Search Films', 'nacelle'); ?></h4>
 
 							<?php echo do_shortcode('[searchandfilter slug="film-search"]'); ?>
 
@@ -41,7 +41,7 @@
 							?>
 						<?php elseif (is_category(1976)) : ?>
 
-							<h4 class="ml-2"><?php _e('Search Series', 'nacelle'); ?></h4>
+							<h4><?php _e('Search Series', 'nacelle'); ?></h4>
 
 							<?php echo do_shortcode('[searchandfilter slug="series-search"]'); ?>
 
@@ -49,7 +49,7 @@
 							?>
 						<?php elseif (is_category(1975)) : ?>
 
-							<h4 class="ml-2"><?php _e('Search Specials', 'nacelle'); ?></h4>
+							<h4><?php _e('Search Specials', 'nacelle'); ?></h4>
 
 							<?php echo do_shortcode('[searchandfilter slug="special-search"]'); ?>
 
@@ -57,7 +57,7 @@
 							?>
 						<?php elseif (is_category(1974)) : ?>
 
-							<h4 class="ml-2"><?php _e('Search Albums', 'nacelle'); ?></h4>
+							<h4><?php _e('Search Albums', 'nacelle'); ?></h4>
 
 							<?php echo do_shortcode('[searchandfilter slug="album-search"]'); ?>
 
@@ -65,7 +65,7 @@
 							?>
 						<?php elseif (is_category(1979)) : ?>
 
-							<h4 class="ml-2"><?php _e('Search Series', 'nacelle'); ?></h4>
+							<h4><?php _e('Search Series', 'nacelle'); ?></h4>
 
 							<?php echo do_shortcode('[searchandfilter slug="production-series-search"]'); ?>
 
@@ -73,14 +73,14 @@
 							?>
 						<?php elseif (is_category(1980)) : ?>
 
-							<h4 class="ml-2"><?php _e('Search Specials', 'nacelle'); ?></h4>
+							<h4><?php _e('Search Specials', 'nacelle'); ?></h4>
 
 							<?php echo do_shortcode('[searchandfilter slug="production-special-search"]'); ?>
 
 						<?php endif; ?>
 					<?php else : ?>
 
-						<h4 class="ml-2"><?php _e('Search Catalog', 'nacelle'); ?></h4>
+						<h4><?php _e('Search Catalog', 'nacelle'); ?></h4>
 
 						<?php echo do_shortcode('[searchandfilter slug="album-search-2"]'); ?>
 

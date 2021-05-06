@@ -34,7 +34,8 @@ get_header(); ?>
 
             <?php if (have_posts()) : ?>
 
-                <?php //Start the Loop ?>
+                <?php //Start the Loop 
+                ?>
                 <?php while (have_posts()) : the_post(); ?>
 
                     <article id="post-<?php the_ID(); ?>" class="cell pt-3">
@@ -42,37 +43,41 @@ get_header(); ?>
                         <div class="grid-x feed-container">
 
                             <?php // If a featured image is set, insert into layout and use Interchange
-					            // to select the optimal image size per named media query. ?>
+                            // to select the optimal image size per named media query. 
+                            ?>
                             <?php if (has_post_thumbnail($post->ID)) : ?>
 
                                 <div class="cell medium-12 archive-title">
 
-                                    <div class="grid-x">
+                                    <!-- <div > -->
 
-                                        <?php // microphone ?>
-                                        <div class="cell small-2 medium-1">
-                                            <img src="<?php bloginfo('template_directory'); ?>/dist/assets/images/comedy-dynamics-mic.png" alt="microphone" />
-                                        </div>
+                                    <?php echo '<a href="' . get_permalink() . '" class="media-object stack-for-small">'; ?>
+                                    <div class="media-object-section flex-container align-top">
+                                        <img src="<?php bloginfo('template_directory'); ?>/dist/assets/images/comedy-dynamics-mic.png" alt="microphone" />
 
-                                        <?php // title ?>
-                                        <div class="cell small-10 medium-11">
-                                            <?php echo '<a href="' . get_permalink() . '">'; ?>
-
-                                            <h4>
-                                                <?php
-                                                $theTitle = get_field('title', false, false);
-                                                echo $theTitle; ?>
-                                            </h4>
-
-                                            <?php echo '</a>'; ?>
+                                        <h4>
+                                            <?php
+                                            $theTitle = get_field('title', false, false);
+                                            echo $theTitle; ?>
+                                        </h4>
+                                    </div>
+                                    <div class="media-object-section">
+                                        <div class="thumbnail">
+                                            <?php if (has_post_thumbnail()) : ?>
+                                                <?php the_post_thumbnail('thumbnail', array('align' => 'left')); ?>
+                                            <?php endif; ?>
                                         </div>
 
                                     </div>
+                                    <?php echo '</a>'; ?>
+                                    <!-- </div> -->
 
-                                    <?php // date and read more ?>
+                                    <?php // date and read more 
+                                    ?>
                                     <footer class="grid-x">
 
-                                        <?php // admin edit link ?>
+                                        <?php // admin edit link 
+                                        ?>
                                         <div class="cell small-2 medium-1">
 
                                             <?php edit_post_link(__('(Edit)', 'nacelle'), '<span class="edit-link">', '</span>'); ?>
@@ -85,7 +90,8 @@ get_header(); ?>
 
                                         </div>
 
-                                        <?php // date and read more ?>
+                                        <?php // date and read more 
+                                        ?>
                                         <div class="cell small-10 medium-11">
 
                                             <div class="grid-x small-up-2">
@@ -107,22 +113,29 @@ get_header(); ?>
 
                             <?php else : ?>
 
-                                <?php //  ?>
-                                <?php //  ?>
-                                <?php // old title ?>
-                                <?php //  ?>
-                                <?php //  ?>
+                                <?php //  
+                                ?>
+                                <?php //  
+                                ?>
+                                <?php // old title 
+                                ?>
+                                <?php //  
+                                ?>
+                                <?php //  
+                                ?>
 
                                 <div class="cell medium-12 archive-title">
 
                                     <div class="grid-x">
 
-                                        <?php // microphone ?>
+                                        <?php // microphone 
+                                        ?>
                                         <div class="cell small-2 medium-1">
                                             <img src="<?php bloginfo('template_directory'); ?>/dist/assets/images/comedy-dynamics-mic.png" />
                                         </div>
 
-                                        <?php // article title ?>
+                                        <?php // article title 
+                                        ?>
                                         <div class="cell small-10 medium-11">
                                             <?php // oldschool title
                                             if (is_single()) {
@@ -137,7 +150,8 @@ get_header(); ?>
 
                                     <footer class="grid-x">
 
-                                        <?php // admin edit link ?>
+                                        <?php // admin edit link 
+                                        ?>
                                         <div class="cell small-2 medium-1">
 
                                             <?php edit_post_link(__('(Edit)', 'nacelle'), '<span class="edit-link">', '</span>'); ?>
@@ -150,7 +164,8 @@ get_header(); ?>
 
                                         </div>
 
-                                        <?php // date and read more ?>
+                                        <?php // date and read more 
+                                        ?>
                                         <div class="cell small-10 medium-11">
 
                                             <div class="grid-x small-up-2">

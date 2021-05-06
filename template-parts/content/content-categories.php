@@ -41,11 +41,7 @@ get_header(); ?>
 						echo the_field('series_content', 'option');
 					} elseif (is_category('special')) {
 						echo the_field('special_content', 'option');
-					} elseif (is_category('special-production')) {
-						echo the_field('production_special_content', 'option');
-					} elseif (is_category('series-production')) {
-						echo the_field('production_series_content', 'option');
-					}
+					} 
 					?>
 				</div>
 			</div>

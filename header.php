@@ -83,47 +83,28 @@ endif;
 		$transHeader = '';
 	}
 	?>
-	<header class="site-header cell shrink medium-cell-block-container <?php echo $transHeader; ?>" role="banner">
-		<div class="site-title-bar title-bar" <?php Nacelle_title_bar_responsive_toggle(); ?>>
-			<div class="title-bar-left grid-x align-center-middle">
-				<button aria-label="<?php _e('Main Menu', 'nacelle'); ?>" class="menu-icon" type="button" data-toggle="<?php Nacelle_mobile_menu_id(); ?>"></button>
-				<span class="site-mobile-title title-bar-title cell text-center">
-					<?php if (function_exists('the_custom_logo')) {
-						the_custom_logo();
-					} ?>
-				</span>
-			</div>
+	<?php get_template_part('template-parts/search-off-canvas'); ?>
+
+	<header class="site-header <?php echo $transHeader; ?>" role="banner">
+		<div class="title-bar" <?php Nacelle_title_bar_responsive_toggle(); ?>>
+			<span class="title-bar-title">
+				<button aria-label="<?php _e('Main Menu', 'nacelle'); ?>" class="menu-icon-c" type="button" data-toggle="<?php Nacelle_mobile_menu_id(); ?>"></button>
+				<?php if (function_exists('the_custom_logo')) {
+					the_custom_logo();
+				} ?>
+			</span>
+			<?php if (!get_theme_mod('wpt_mobile_menu_layout') || get_theme_mod('wpt_mobile_menu_layout') === 'topbar') : ?>
+				<?php get_template_part('template-parts/mobile-top-bar'); ?>
+			<?php endif; ?>
 		</div>
-		<nav class="site-navigation top-bar <?php echo $leftToo; ?>" role="navigation" id="<?php Nacelle_mobile_menu_id(); ?>">
-			<div class="nav-container grid-x align-middle">
-				<?php
-				if (has_nav_menu('top-bar-l')) { ?>
-					<div class="left cell auto">
+		<nav class="top-bar <?php echo $leftToo; ?>" role="navigation" id="<?php Nacelle_mobile_menu_id(); ?>">
+				<?php if (has_nav_menu('top-bar-l')) : ?>
 						<?php Nacelle_top_bar_l(); ?>
-					</div>
-				<?php }
-				?>
-				<div class="top-bar-title cell shrink <?php echo $textAlign; ?>">
+				<?php endif; ?>
 					<?php if (function_exists('the_custom_logo')) {
 						the_custom_logo();
 					} ?>
-				</div>
-				<div class="right flex-container cell auto">
 					<?php Nacelle_top_bar_r(); ?>
-					<?php if (!get_theme_mod('wpt_mobile_menu_layout') || get_theme_mod('wpt_mobile_menu_layout') === 'topbar') : ?>
-						<?php get_template_part('template-parts/mobile-top-bar'); ?>
-					<?php endif; ?>
-					<?php $showSearch = get_option('options_show_nav_search');
-					if ($showSearch) : ?>
-						<div class='header-search-container' tabindex='1'>
-							<div class='search-container' tabindex='1'>
-								<?php get_template_part('template-parts/svg/icon-search'); ?>
-								<?php echo do_shortcode('[searchandfilter slug="search-form-only" fields="search" search_placeholder="Search. . ."]'); ?>
-							</div>
-						</div>
-					<?php endif; ?>
-				</div>
-			</div>
 		</nav>
 		<?php if (is_front_page() && get_field('yes_homepage_heading', 'option')) : ?>
 			<div class="cell tagline text-center">

@@ -133,3 +133,5 @@ if (grids.length && getComputedStyle(grids[0]).gridTemplateRows !== 'masonry') {
 // https://flickity.metafizzy.co/
 var Flickity = require('flickity');
 require('flickity-imagesloaded');
+var Flickity = require('flickity-bg-lazyload');
+

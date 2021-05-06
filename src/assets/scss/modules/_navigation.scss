@@ -1,95 +1,85 @@
-// Navigation breakpoints
-.mobile-menu,
-.site-title-bar {
-	@include hide-for(medium);
-}
-
-//
-.site-navigation {
-	.top-bar-left,
-	.left,
-	.top-bar-title,
-	.desktop-menu {
-		@include show-for(medium);
-	}
-}
-// navigation hover END
-// WP post navigation
-.post-navigation {
-	@include clearfix;
-}
-
-.nav-previous {
-	float: left;
-}
-
-.nav-next {
-	float: right;
-}
-// mobile navigation
 .site-header {
 	position: relative;
 	z-index: 6;
+	width: 100%;
+}
+nav ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+ul,
+ol,
+dl {
+	margin-bottom: 1rem;
+	list-style-position: outside;
+	line-height: 1.6;
+}
+.menu a,
+.menu .button {
+	line-height: 1;
+	text-decoration: none;
+	display: block;
+	padding: 0.7rem 1rem;
+}
+.menu.nested {
+	margin-right: 0;
+	margin-left: 1rem;
+}
+.is-dropdown-submenu {
+	border: none;
 }
 .title-bar {
-	.title-bar-left {
-		position: relative;
-	}
-	.menu-icon {
+	padding: 0.5rem 1rem;
+	justify-content: center;
+}
+.title-bar-title {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.menu-icon-c {
+	width: 20px;
+	height: 16px;
+	cursor: pointer;
+	margin: 0.7rem 1rem;
+	padding: 0.7rem 1rem;
+	position: absolute;
+	left: 0;
+	&:after {
 		position: absolute;
+		top: 0;
 		left: 0;
-	}
-}
-// DESKTOP NAVIGATION
-.site-navigation {
-	// default (nacelle) desktop navigation layout (logo left, nav right)
-	.nav-container,
-	.right {
+		display: block;
 		width: 100%;
+		height: 2px;
+		content: "";
 	}
-	// column for mobile
-	.right {
-		flex-direction: column;
-	}
-	// row for medium up
+}
+.top-bar {
+	display: none;
 	@include breakpoint(medium) {
-		.right {
-			flex-direction: row;
-		}
-	}
-	// right menu
-	.right {
-		@include breakpoint(medium) {
-			justify-content: flex-end;
-		}
-		> .dropdown.menu {
-			@include breakpoint(medium) {
-				justify-content: flex-end;
-			}
-		}
-	}
-
-	// alternate (Comedy Dynamics) centered desktop navigation layout
-	&.left-too {
-		// right menu
-		.left {
-			.menu {
-				// justify-content: flex-end;
-			}
-		}
-		// right menu
-		.right {
-			@include breakpoint(medium) {
-				justify-content: flex-start;
-			}
-		}
-		@include breakpoint(medium) {
-			.header-search-container {
-				display: flex;
-			}
+		padding: 0.5em;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		&.left-too {
+			justify-content: center;
 		}
 	}
 }
+
+.top-bar-right {
+	display: flex;
+}
+
+.top-bar > .menu {
+	display: none;
+	@include breakpoint(medium up) {
+		display: flex;
+	}
+}
+
 .transparent-header {
 	@include breakpoint(medium up) {
 		position: absolute;
@@ -98,8 +88,45 @@
 				background: transparent !important;
 			}
 		}
-		// .submenu > .menu-item a {
-		// 	color: #fff;
-		// }
+	}
+}
+// custom nav END
+
+// search
+.search-container {
+	@include breakpoint(medium) {
+		display: flex;
+		position: absolute;
+		right: 0;
+		align-items: center;
+		background: transparent;
+		border-radius: $button-radius;
+		transform: translate(0, 0);
+		transition: 0.3s linear;
+		ul {
+			margin-left: 0;
+			padding-right: 0.25rem;
+		}
+		.searchandfilter {
+			opacity: 0;
+			li {
+				padding: 0;
+			}
+		}
+		svg.icon {
+			height: 44px;
+			width: 44px;
+			padding: 11px;
+		}
+		input[type="text"] {
+			margin: 0;
+			padding: 0 1em;
+		}
+		&:hover {
+			transform: translate(-75px, 0);
+			.searchandfilter {
+				opacity: 1;
+			}
+		}
 	}
 }

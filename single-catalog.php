@@ -13,7 +13,6 @@ get_header(); ?>
 	$synopsis = get_post_meta(get_the_ID(), 'synopsis', true);
 	$videoEmbedd = get_post_meta(get_the_ID(), 'video_embedd', true);
 	$ticketsButtonTitle = get_post_meta(get_the_ID(), 'tickets_button_title', true);
-	$titleColor = get_post_meta(get_the_ID(), 'title_color', true);
 	$squareImage = get_post_meta(get_the_ID(), 'square_image', true);
 	?>
 	<?php get_template_part('template-parts/catalog/catalog-header', ''); ?>

@@ -23,7 +23,7 @@
 		<header class="grid-container archive pb-2 pb-medium-0">
 			<div class="grid-x align-center-middle grid-padding-y category-intro">
 				<div class="cell large-2">
-					<h1 class="entry-title h2 text-center">
+					<h1 class="entry-title h3">
 						<?php single_cat_title(); ?>
 					</h1>
 				</div>
