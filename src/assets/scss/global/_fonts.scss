@@ -66,6 +66,14 @@ h6 {
 		font-size: 120%;
 	}
 }
+// titles
+h4,
+.h4 {
+	font-weight: 400;
+}
+h2 {
+	text-transform: uppercase;
+}
 .sm-title {
 	font-size: $small-font-size;
 }
@@ -151,4 +159,32 @@ $max_font: 16px;
 
 html {
 	@include fluid-type($min_width, $max_width, $min_font, $max_font);
+}
+
+// headers
+
+.entry-title {
+	&.sm {
+		font-size: 1em;
+
+		@include breakpoint(medium up) {
+			font-size: 2em;
+		}
+	}
+}
+
+.section-title {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0;
+	padding: 10px 0;
+
+	@include breakpoint(medium) {
+		justify-content: flex-start;
+	}
+}
+
+.category-intro {
+	border-bottom: 3px solid $primary-color;
 }

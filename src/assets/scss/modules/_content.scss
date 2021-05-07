@@ -83,16 +83,6 @@ body {
 		}
 	}
 }
-
-.category-film,
-.category-album,
-.category-special,
-.category-series {
-	.in-view {
-		@include transform(slideInFromBottom);
-	}
-}
-
 .single {
 	&.single-catalog {
 		article.catalog {
@@ -101,62 +91,20 @@ body {
 	}
 	// press releases
 	&.single-press_release {
-		.press {
-			padding-bottom: 1rem;
-		}
-		.press h1 {
-			font-weight: 600;
-			text-transform: uppercase;
-		}
 		.intro * {
-			margin-bottom: 0;
 			font-size: 110%;
-		}
-		.nav-links {
-			@include xy-grid;
-			justify-content: space-between;
-			color: $success-color;
-		}
-		.content {
-			footer {
-				.title b {
-					border-bottom: 1px solid $primary-color;
-				}
-			}
 		}
 	}
 }
 .press_release {
 	.press,
 	.intro {
-		margin-bottom: 1rem;
 		border-bottom: 3px solid;
 	}
-}
-header.press {
-	footer {
-		p {
-			margin-bottom: 0;
-		}
-	}
-}
-
+} 
 .sya_date {
 	font-weight: 600;
 }
-
-header.press {
-	footer {
-		p {
-			margin-bottom: 0;
-		}
-	}
-}
-
-.sya_date {
-	font-weight: 600;
-}
-
 .no-hero-video {
 	@include breakpoint(small only) {
 		order: 2;

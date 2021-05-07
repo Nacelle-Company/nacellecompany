@@ -1,3 +1,13 @@
+.title-bar {
+	padding: 0.5rem 1rem;
+	justify-content: center;
+	@include breakpoint(medium) {
+		display: none;
+	}
+}
+.top-bar {
+	display: none;
+}
 .site-header {
 	position: relative;
 	z-index: 6;
@@ -15,6 +25,9 @@ dl {
 	list-style-position: outside;
 	line-height: 1.6;
 }
+.dropdown.menu a {
+	font-weight: 600;
+}
 .menu a,
 .menu .button {
 	line-height: 1;
@@ -28,10 +41,6 @@ dl {
 }
 .is-dropdown-submenu {
 	border: none;
-}
-.title-bar {
-	padding: 0.5rem 1rem;
-	justify-content: center;
 }
 .title-bar-title {
 	display: flex;
@@ -57,7 +66,6 @@ dl {
 	}
 }
 .top-bar {
-	display: none;
 	@include breakpoint(medium) {
 		padding: 0.5em;
 		display: flex;

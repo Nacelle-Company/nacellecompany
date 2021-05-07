@@ -1,9 +1,8 @@
 <?php
 $sliderSpeed = get_field('slider_speed');
 ?>
-<div class="carousel carousel-full carousel-full--overlay" data-flickity='{ "imagesLoaded": true, "wrapAround": true,"bgLazyLoad": true }'>
-  <!-- "autoPlay": "<?php //echo $sliderSpeed; 
-                    ?>000", -->
+<div class="carousel carousel-full carousel-full--overlay" data-flickity='{ "imagesLoaded": true, "wrapAround": true,"autoPlay": "<?php echo $sliderSpeed; ?>000","bgLazyLoad": true }'>
+  <!--  -->
   <?php
   /*
     *  http://codex.wordpress.org/Template_Tags/get_posts#Reset_after_Postlists_with_offset
@@ -51,13 +50,12 @@ $sliderSpeed = get_field('slider_speed');
           $bk_image = $bk_image['url'];
         }
       }
-
   ?>
       <div class="carousel-cell" data-flickity-bg-lazyload="<?php echo $bk_image; ?>">
         <a href="<?php echo $thePermalink; ?>">
           <figure>
             <figcaption class="grid-x align-bottom">
-              <div class="cell large-6">
+              <div class="cell large-6 fadeIn">
                 <div class="flickity-image">
                   <?php echo wp_get_attachment_image($image_array, $size); ?>
                 </div>

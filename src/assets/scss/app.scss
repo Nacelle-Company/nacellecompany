@@ -61,10 +61,9 @@
 @import "modules/content";
 @import "modules/footer";
 @import "modules/editorStyle";
-@import "modules/headers";
 // @import "modules/orbitSlider";
 @import "modules/heroVideo";
-@import "modules/circleSlider";
+// @import "modules/circleSlider";
 @import "modules/toTop";
 
 // CPT
@@ -76,7 +75,6 @@
 @import "components/buttons";
 @import "components/cards";
 @import "components/featuredImage";
-@import "components/dividers";
 @import "components/links";
 @import "components/forms";
 @import "components/widgets";
@@ -85,10 +83,8 @@
 @import "components/modals";
 @import "components/accordion";
 @import "components/plugins";
-@import "components/sliderPost";
 @import "components/flickity";
 @import "components/pagination";
-@import "components/lists";
 
 // // Templates
 @import "templates/front";
@@ -102,10 +98,6 @@
 // @import "templates/frontPartners";
 @import "templates/frontCarousel";
 @import "templates/mainTalent";
-// @import "templates/customizer";
-
-// Overwrites
-@import "global/bem";
 
 
 // PRODUCTION

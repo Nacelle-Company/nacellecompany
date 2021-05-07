@@ -14,7 +14,7 @@ get_header(); ?>
 			<?php while (have_posts()) : the_post(); ?>
 				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 					<div class="entry-content grid-container full">
-						<header class="grid-x press">
+						<header class="grid-x press pb-2 mb-2">
 							<div class="media-object stack-for-small">
 								<div class="media-object-section">
 									<?php if (has_post_thumbnail()) : ?>
@@ -31,7 +31,7 @@ get_header(); ?>
 								<?php
 								$location = get_post_meta(get_the_ID(), 'location', true);
 								$time = get_the_time('m.j.y');
-								echo '<p class="text-right"><strong>';
+								echo '<p class="text-right mb-0"><strong>';
 								echo $location . ' ';
 								echo "</strong>";
 								echo $time;
@@ -39,8 +39,8 @@ get_header(); ?>
 								?>
 							</footer>
 						</header>
-						<div class="grid-x intro pb-2">
-							<div class="cell">
+						<div class="grid-x intro pb-2 mb-2">
+							<div class="cell mb-0">
 								<?php
 								$intro = get_post_meta(get_the_ID(), 'intro', true);
 								if (!empty($intro)) {

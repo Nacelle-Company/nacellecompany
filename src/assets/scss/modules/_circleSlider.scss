@@ -379,20 +379,3 @@
     }
 	}
 }
-
-// orbit controls
-.circle-slider .orbit-container .orbit-controls.orbit-group .orbit-next {
-	z-index: 9;
-}
-// all non active slides
-.circle-slider .orbit-container .orbit-group:not(.is-active):not(.orbit-controls) > .grid-x {
-	z-index: 7;
-}
-// active slide
-.circle-slider .orbit-container .orbit-group.is-active .grid-x {
-	z-index: 0;
-}
-// active slide individual pieces
-.circle-slider .orbit-container .orbit-group.is-active .grid-x * {
-	z-index: 10;
-}

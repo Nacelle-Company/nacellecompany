@@ -21,7 +21,7 @@ $genres = get_the_terms($post->ID, 'genre');
             </a>
             <div class="grid-x accordion-content" data-tab-content>
                 <div class="flex-container grid-x align-right">
-                    <div class="cell large-6 tbp-1">
+                    <div class="cell large-6 py-2">
                         <div class="grid-x small-padding-collapse">
                             <div class="cell medium-12">
                                 <?php if ($runtime) : ?>

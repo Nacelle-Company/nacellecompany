@@ -58,18 +58,18 @@ $(function() {
 
 // wordpress video
 // https://cfxdesign.com/how-to-make-the-wordpress-video-shortcode-responsive/
-$(function () {
-	$('.mejs-overlay-loading').closest('.mejs-overlay').addClass('load'); //just a helper class
+// $(function () {
+// 	$('.mejs-overlay-loading').closest('.mejs-overlay').addClass('load'); //just a helper class
 
-	var $video = $('div.video video');
-	var vidWidth = $video.attr('width');
-	var vidHeight = $video.attr('height');
+// 	var $video = $('div.video video');
+// 	var vidWidth = $video.attr('width');
+// 	var vidHeight = $video.attr('height');
 
-	$(window).resize(function () {
-		var targetWidth = $(this).width(); //using window width here will proportion the video to be full screen; adjust as needed
-		$('div.video, div.video .mejs-container').css('height', Math.ceil(vidHeight * (targetWidth / vidWidth)));
-	}).resize();
-});
+// 	$(window).resize(function () {
+// 		var targetWidth = $(this).width(); //using window width here will proportion the video to be full screen; adjust as needed
+// 		$('div.video, div.video .mejs-container').css('height', Math.ceil(vidHeight * (targetWidth / vidWidth)));
+// 	}).resize();
+// });
 
 // toggle button
 $('[data-mobile-app-toggle] .button').click(function () {
