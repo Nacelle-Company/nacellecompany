@@ -17,7 +17,6 @@
  */
 
 get_header(); ?>
-
 <?php if (have_posts()) : ?>
 
     <main class="grid-container full">

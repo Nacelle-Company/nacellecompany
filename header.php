@@ -108,9 +108,9 @@ endif;
 		</nav>
 		<?php if (is_front_page() && get_field('yes_homepage_heading', 'option')) : ?>
 			<div class="cell tagline text-center">
-				<h2>
+				<h1>
 					<?php the_field('homepage_heading', 'option'); ?>
-				</h2>
+				</h1>
 			</div>
 		<?php endif; ?>
 	</header>

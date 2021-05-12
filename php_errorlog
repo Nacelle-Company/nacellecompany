@@ -1,8 +1,0 @@
-[02-Nov-2020 00:14:50 CST6CDT] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/comedydy/public_html/wp-content/themes/nacellecompany_2020-10-27_14-48/index.php:16
-Stack trace:
-#0 {main}
-  thrown in /home/comedydy/public_html/wp-content/themes/nacellecompany_2020-10-27_14-48/index.php on line 16
-[02-Nov-2020 05:43:52 CST6CDT] PHP Fatal error:  Uncaught Error: Call to undefined function get_header() in /home/comedydy/public_html/wp-content/themes/nacellecompany_2020-10-27_14-48/index.php:16
-Stack trace:
-#0 {main}
-  thrown in /home/comedydy/public_html/wp-content/themes/nacellecompany_2020-10-27_14-48/index.php on line 16
