@@ -2,8 +2,10 @@
 $prod_args = array(
   'post_type' => 'catalog',
   'posts_per_page' => '30',
-  'order' => 'DESC',
-  'orderby' => 'date',
+  'order'         => 'DESC',
+  'orderby'       => 'meta_value',
+  'meta_key'       => 'release_date',
+  'meta_type'      => 'DATETIME',
   'tax_query' => array(
     'relation' => 'AND',
     array(
@@ -25,6 +27,10 @@ $prod_args = array(
 $podcast_args = array(
   'post_type' => 'catalog',
   'posts_per_page' => '30',
+  'order' => 'DESC',
+  'orderby'       => 'meta_value',
+  'meta_key'       => 'release_date',
+  'meta_type'      => 'DATETIME',
   'tax_query' => array(
     array(
       'taxonomy' => 'category',
@@ -37,7 +43,7 @@ $podcast_args = array(
 <div class="grid-x" id="more">
   <div class="cell medium-4 large-4 xlarge-3 mb-2" data-sticky-container>
     <div class="sticky pt-large-2" data-sticky data-margin-top="0" data-top-anchor="header:bottom">
-      <ul data-responsive-accordion-tabs="tabs" class="vertical tabs-products tabs" id="product-tabs">
+      <ul data-responsive-accordion-tabs="tabs" data-deep-link="true" data-update-history="true" class="vertical tabs-products tabs" id="product-tabs">
         <li class="cell is-active tabs-title" aria-selected="true">
           <a href="#productions" aria-selected="true">
             <h3>

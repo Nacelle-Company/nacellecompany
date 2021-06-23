@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying catalog archive
  *
@@ -21,29 +22,34 @@ get_header(); ?>
 
 	<div class="grid-container full align-center">
 
-	<?php // check if is any of the secondary categories (album, film, production series ext.) ?>
-	<?php if (is_category(array( 'album', 'film', 'series', 'special', 'podcast' ))) :?>
+		<?php // check if is any of the secondary categories (album, film, production series ext.) 
+		?>
+		<?php if (is_category(array('album', 'film', 'series', 'special', 'podcast'))) : ?>
 
-		<?php // get the content from the template-parts folder ?>
-		<?php get_template_part('/template-parts/content/content-categories'); ?>
+			<?php // get the content from the template-parts folder 
+			?>
+			<?php get_template_part('/template-parts/content/content-categories'); ?>
 
-		<?php // production categories ?>
-	<?php elseif (is_category(array('special-production', 'series-production' ))) :?>
+			<?php // production categories 
+			?>
+		<?php elseif (is_category(array('special-production', 'series-production'))) : ?>
 
-	<?php // get the content from the template-parts folder ?>
-		<?php get_template_part('/template-parts/content/content-production-category'); ?>
+			<?php // get the content from the template-parts folder 
+			?>
+			<?php get_template_part('/template-parts/content/content-production-category'); ?>
 
-	<?php else : ?>
+		<?php else : ?>
 
-		<div class="cell text-center">
+			<div class="cell text-center">
 
-			<h3><?php _e('Sorry, we dont have anything here :(', 'comdey-dynamics'); ?></h3>
+				<h3><?php _e('Sorry, we dont have anything here :(', 'comdey-dynamics'); ?></h3>
 
-			<a class="button" data-toggle="searchFilmOffCanvas"><?php _e('Try a search!', 'nacelle'); ?></a>
+				<a class="button" data-toggle="searchFilmOffCanvas"><?php _e('Try a search!', 'nacelle'); ?></a>
 
-		</div>
+			</div>
 
-	<?php endif; // End have_posts() check.?>
+		<?php endif; // End have_posts() check.
+		?>
 
 	</div>
 

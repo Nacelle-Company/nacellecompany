@@ -1,19 +1,25 @@
 @charset 'utf-8';
 
+// CRITICAL CSS
 @import 'settings';
 @import 'foundation';
+// CRITICAL CSS ^^
 @import 'motion-ui';
 
+// CRITICAL CSSS
 @include foundation-global-styles;
+// CRITICAL CSSS
 @include foundation-xy-grid-classes;
 @include foundation-typography;
 @include foundation-button;
 @include foundation-forms;
 @include foundation-accordion;
+// CRITICAL CSSS
 @include foundation-accordion-menu;
+// CRITICAL CSSS
 // @include foundation-badge;
 @include foundation-breadcrumbs;
-// @include foundation-button-group;
+// @include foundation-button-group; 
 @include foundation-callout;
 @include foundation-card;
 @include foundation-close-button;
@@ -21,11 +27,15 @@
 // @include foundation-menu-icon;
 // @include foundation-drilldown-menu;
 @include foundation-dropdown;
+// CRITICAL CSSS
 @include foundation-dropdown-menu;
+// CRITICAL CSSS
 // @include foundation-responsive-embed;
 @include foundation-label;
 @include foundation-media-object;
+// CRITICAL CSSS
 @include foundation-off-canvas;
+// CRITICAL CSSS
 // @include foundation-orbit;
 @include foundation-pagination;
 // @include foundation-progress-bar;
@@ -44,20 +54,81 @@
 @include motion-ui-transitions;
 @include motion-ui-animations;
 
+
+
+/*
+// CRITICAL CSSS
+@include foundation-global-styles;
+// @include foundation-xy-grid-classes;
+// @include foundation-typography;
+// @include foundation-button;
+// @include foundation-forms;
+// @include foundation-accordion;
+@include foundation-accordion-menu;
+// @include foundation-badge;
+// @include foundation-breadcrumbs;
+// @include foundation-button-group;
+// @include foundation-callout;
+// @include foundation-card;
+// @include foundation-close-button;
+// @include foundation-menu;
+// @include foundation-menu-icon;
+// @include foundation-drilldown-menu;
+// @include foundation-dropdown;
+@include foundation-dropdown-menu;
+// @include foundation-responsive-embed;
+// @include foundation-label;
+// @include foundation-media-object;
+@include foundation-off-canvas;
+// @include foundation-orbit;
+// @include foundation-pagination;
+// @include foundation-progress-bar;
+// @include foundation-slider;
+// @include foundation-sticky;
+// @include foundation-reveal;
+// @include foundation-switch;
+// @include foundation-table;
+// @include foundation-tabs;
+// @include foundation-thumbnail;
+// @include foundation-title-bar;
+// @include foundation-tooltip;
+// @include foundation-top-bar;
+// @include foundation-visibility-classes;
+// @include foundation-flex-classes;
+// @include motion-ui-transitions;
+// @include motion-ui-animations;
+*/
+
 // Global
+// nav (not needed)
 @import "global/accessibility";
+// nav (not needed)
 @import "global/colors";
+// nav (not needed)
 @import "global/wpAdmin";
+// nav (not needed)
 @import "global/wpOverrides";
-// @import "global/gutenberg";
+// (not needed)
+// @import "global/gutenberg"
+
+// CRITICAL CSSS
 @import "global/fonts";
+// CRITICAL CSSS
+
+// nav (not needed)
 @import "global/icons";
+// nav (not needed)
 @import "global/animations";
+// nav (not needed)
 @import "global/spacing";
 @import "global/mobile";
 
 // Modules
+// CRITICAL CSSS
 @import "modules/navigation";
+// CRITICAL CSSS
+
+// ALL below not needed for critical (nav) css
 @import "modules/content";
 @import "modules/footer";
 @import "modules/editorStyle";

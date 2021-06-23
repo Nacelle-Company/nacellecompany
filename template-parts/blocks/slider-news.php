@@ -1,6 +1,6 @@
 <div class="carousel carousel-full carousel-full--news mb-4" data-flickity='{ "wrapAround": true, "adaptiveHeight": true, "pageDots": false, "cellSelector": ".carousel-cell" }'>
     <div class="cell primary-title p-1">
-        <h2 class="entry-title mb-0">Latest News</h2>
+        <h2 class="entry-title mb-0"><span class="hide">Comedy </span>Latest News</h2>
     </div>
     <?php
     $args = array(

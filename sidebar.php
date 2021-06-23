@@ -10,14 +10,11 @@
 ?>
 <aside class="sidebar">
 	<?php if (is_post_type_archive('press_release') || is_singular('press_release')) : ?>
-
 		<h3>
 			<?php _e('Contact Us', 'nacelle'); ?>
 		</h3>
-
 		<main>
 			<div itemscope itemtype="https://schema.org/Person">
-
 				<section class="menu simple pb-2">
 					<?php get_template_part('template-parts/svg/icon-at'); ?>
 					<div class="pl-1">
@@ -29,34 +26,27 @@
 						</span>
 					</div>
 				</section>
-
 				<section class="menu simple pb-2">
 					<?php get_template_part('template-parts/svg/icon-phone'); ?>
 					<div class="pl-1">
 						<p class="invisible">Phone:</p>
 						<span>
-							<a href="tel:<?php  echo get_post_meta(get_the_ID(), 'phone', true); ?>">
+							<a href="tel:<?php echo get_post_meta(get_the_ID(), 'phone', true); ?>">
 								<?php echo get_post_meta(get_the_ID(), 'phone', true); ?>
 							</a>
 						</span>
 					</div>
 				</section>
-
 				<section class="menu simple pb-2">
 					<?php get_template_part('template-parts/svg/icon-user'); ?>
-					<div class="pl-1">
-						<a href="mailto:<?php  echo get_post_meta(get_the_ID(), 'email', true);  ?>?Subject=Hello%20Comedy%20Dynamics%20Press" target="_top" itemprop="email">
-							<?php  echo get_post_meta(get_the_ID(), 'email', true);  ?>
+					<div class="pl-1 sm-title">
+						<a href="mailto:<?php echo get_post_meta(get_the_ID(), 'email', true);  ?>?Subject=Hello%20Comedy%20Dynamics%20Press" target="_top" itemprop="email">
+							<?php echo get_post_meta(get_the_ID(), 'email', true);  ?>
 						</a>
 					</div>
 				</section>
-
 			</div>
-
 		</main>
-
 	<?php endif; ?>
-
 	<?php dynamic_sidebar('sidebar-widgets'); ?>
-
 </aside>

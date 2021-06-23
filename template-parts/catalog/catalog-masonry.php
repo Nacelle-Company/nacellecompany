@@ -65,7 +65,7 @@ if ($taxonomy == 'Producers') {
     $taxonomyAlt = '<span class="subheader">Productions</span>'; ?>
 
     <div class="cell grid-container primary-title my-3">
-        <h2 class="entry-title mb-0"><?php echo $artistName . ' ' . $taxonomyAlt; ?></h2>
+        <h1 class="entry-title mb-0 h2"><?php echo $artistName . ' ' . $taxonomyAlt; ?></h1>
     </div>
     <div class="grid-container grid--masonry">
     <?php   global $post; // required
@@ -110,7 +110,7 @@ if ($taxonomy == 'Producers') {
 } elseif ($taxonomy == 'Main Talent') {
     $taxonomyAlt = '<span class="subheader">Catalog</span>'; ?>
     <div class="cell grid-container primary-title my-3">
-        <h2 class="entry-title mb-0"><?php echo $artistName . ' ' . $taxonomyAlt; ?></h2>
+        <h1 class="entry-title mb-0 h2"><?php echo $artistName . ' ' . $taxonomyAlt; ?></h1>
     </div>
     <div class="grid-container grid--masonry">
     <?php   global $post; // required
@@ -156,7 +156,7 @@ if ($taxonomy == 'Producers') {
     $taxonomyAlt = '<span class="subheader">Directed on</span>'; ?>
 
     <div class="cell grid-container primary-title my-3">
-        <h2 class="entry-title mb-0"><?php echo $artistName . ' ' . $taxonomyAlt; ?></h2>
+        <h1 class="entry-title mb-0 h2"><?php echo $artistName . ' ' . $taxonomyAlt; ?></h1>
     </div>
     <div class="grid-container grid--masonry">
     <?php   global $post; // required
@@ -202,7 +202,7 @@ if ($taxonomy == 'Producers') {
     $taxonomyAlt = '<span class="subheader">was a writer on</span>'; ?>
 
     <div class="cell grid-container primary-title my-3">
-        <h2 class="entry-title mb-0"><?php echo $artistName . ' ' . $taxonomyAlt; ?></h2>
+        <h1 class="entry-title mb-0 h2"><?php echo $artistName . ' ' . $taxonomyAlt; ?></h1>
     </div>
     <div class="grid-container grid--masonry">
     <?php   global $post; // required

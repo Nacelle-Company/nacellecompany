@@ -34,21 +34,21 @@ function my_dynamic_sidebar_params($params)
         <div class="flex-container align-middle align-justify icon-wrapper">
             <?php if (!empty($facebook)) : ?>
                 <div class="icon cell auto p-2 p-large-1 text-center">
-                    <a href="<?php echo $facebook; ?>" target="_blank" aria-label="visit <?php echo get_bloginfo(); ?> facebook">
+                    <a href="<?php echo $facebook; ?>" target="_blank" aria-label="visit <?php echo get_bloginfo(); ?> facebook" rel="noreferrer noopener">
                         <?php get_template_part('template-parts/svg/icon-facebook'); ?>
                     </a>
                 </div>
             <?php endif; ?>
             <?php if (!empty($twitter)) : ?>
                 <div class="icon cell auto p-2 p-large-1 text-center">
-                    <a href="<?php echo $twitter; ?>" target="_blank" aria-label="visit <?php echo get_bloginfo(); ?> twitter">
+                    <a href="<?php echo $twitter; ?>" target="_blank" aria-label="visit <?php echo get_bloginfo(); ?> twitter" rel="noreferrer noopener">
                         <?php get_template_part('template-parts/svg/icon-twitter'); ?>
                     </a>
                 </div>
             <?php endif; ?>
             <?php if (!empty($instagram)) : ?>
                 <div class="icon cell auto p-2 p-large-1 text-center">
-                    <a href="<?php echo $instagram; ?>" target="_blank" aria-label="visit <?php echo get_bloginfo(); ?> instagram">
+                    <a href="<?php echo $instagram; ?>" target="_blank" aria-label="visit <?php echo get_bloginfo(); ?> instagram" rel="noreferrer noopener">
                         <?php get_template_part('template-parts/svg/icon-instagram'); ?>
                     </a>
                 </div>
@@ -56,7 +56,7 @@ function my_dynamic_sidebar_params($params)
 
             <?php if (!empty($youtube)) : ?>
                 <div class="icon cell auto p-2 p-large-1 text-center">
-                    <a href="<?php echo $youtube; ?>" target="_blank" aria-label="visit <?php echo get_bloginfo(); ?> youtube">
+                    <a href="<?php echo $youtube; ?>" target="_blank" aria-label="visit <?php echo get_bloginfo(); ?> youtube" rel="noreferrer noopener">
                         <?php get_template_part('template-parts/svg/icon-youtube'); ?>
                     </a>
                 </div>
@@ -64,7 +64,7 @@ function my_dynamic_sidebar_params($params)
 
             <?php if (!empty($soundcloud)) : ?>
                 <div class="icon cell auto p-2 p-large-1 text-center">
-                    <a href="<?php echo $soundcloud; ?>" target="_blank" aria-label="visit <?php echo get_bloginfo(); ?> soundcloud">
+                    <a href="<?php echo $soundcloud; ?>" target="_blank" aria-label="visit <?php echo get_bloginfo(); ?> soundcloud" rel="noreferrer noopener">
                         <?php get_template_part('template-parts/svg/icon-soundcloud'); ?>
                     </a>
                 </div>
@@ -72,7 +72,7 @@ function my_dynamic_sidebar_params($params)
 
             <?php if (!empty($spotify)) : ?>
                 <div class="icon cell auto p-2 p-large-1 text-center">
-                    <a href="<?php echo $spotify; ?>" target="_blank" aria-label="visit <?php echo get_bloginfo(); ?> spotify">
+                    <a href="<?php echo $spotify; ?>" target="_blank" aria-label="visit <?php echo get_bloginfo(); ?> spotify" rel="noreferrer noopener">
                         <?php get_template_part('template-parts/svg/icon-spotify'); ?>
                     </a>
                 </div>

@@ -12,7 +12,7 @@ get_header(); ?>
 				if (is_single()) {
 					the_title('<h1 class="entry-title slideInFromBottom">', '</h1>');
 				} else {
-					the_title('<h2 class="entry-title slideInFromBottom">', '</h2>');
+					the_title('<h1 class="entry-title slideInFromBottom">', '</h1>');
 				}
 				?>
 			</header>

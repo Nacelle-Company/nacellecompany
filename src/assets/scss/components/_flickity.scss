@@ -175,7 +175,7 @@ https://flickity.metafizzy.co
 	.flickity-prev-next-button {
 		top: 94%;
 		&.previous {
-			left: 78%;
+			left: 70%;
 			@include breakpoint(medium) {
 				left: 93%;
 			}
@@ -218,7 +218,7 @@ https://flickity.metafizzy.co
 			top: 2em;
 		}
 		&.previous {
-			left: 74vw;
+			left: 68%;
 			@include breakpoint(medium) {
 				left: 90vw;
 			}
