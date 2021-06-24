@@ -45,7 +45,7 @@ if ( ! function_exists( 'Nacelle_scripts' ) ) :
 		wp_deregister_script( 'jquery' );
 
 		// CDN hosted jQuery placed in the header, as some plugins require that jQuery is loaded in the header.
-		wp_enqueue_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js', array(), '3.2.1', false );
+		wp_enqueue_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js', array(), '3.6.0', false );
 
 		// Deregister the jquery-migrate version bundled with WordPress.
 		wp_deregister_script( 'jquery-migrate' );

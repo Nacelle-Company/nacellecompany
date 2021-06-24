@@ -35,7 +35,7 @@ $mtv2V = get_post_meta(get_the_ID(), 'mtv2_video', true);
 <?php endif; ?>
 <?php if ($itunesV) : ?>
     <div class="cell">
-        <a href="<?php echo $itunesV; ?>" class="catalog-title button hollow expanded" title="Watch <?php the_title_attribute(); ?> on <?php echo $itunesV; ?>" target="_blank" rel="noreferrer">
+        <a href="<?php echo $itunesV; ?>" class="catalog-title button hollow expanded apple-link" title="Watch <?php the_title_attribute(); ?> on <?php echo $itunesV; ?>" target="_blank" rel="noreferrer">
             <strong>
                 <?php _e("Apple TV", 'Nacelle'); ?>
             </strong>

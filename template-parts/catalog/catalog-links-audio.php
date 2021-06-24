@@ -13,7 +13,7 @@ $customAtitle = get_post_meta(get_the_ID(), 'custom_audio_title', true);
 ?>
 <?php if ($itunesA) : ?>
     <div class="cell">
-        <a href="<?php echo $itunesA; ?>" class="catalog-title button hollow expanded" title="Watch <?php the_title_attribute(); ?> on <?php echo $itunesA; ?>" target="_blank" rel="noreferrer">
+        <a href="<?php echo $itunesA; ?>" class="catalog-title button hollow expanded apple-link" title="Watch <?php the_title_attribute(); ?> on <?php echo $itunesA; ?>" target="_blank" rel="noreferrer">
             <strong>
                 <?php _e("iTunes", 'Nacelle'); ?>
             </strong>

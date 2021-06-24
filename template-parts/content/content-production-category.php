@@ -28,7 +28,7 @@
 					</h1>
 				</div>
 				<div class="cell small-6 medium-2 medium-order-3 text-right sorting">
-					<a data-toggle="searchOffCanvas">Sort & Filter</a>
+					<button class="clear" data-toggle="searchOffCanvas">Sort & Filter</button>
 				</div>
 				<div class="cell medium-8 pb-2">
 					<?php

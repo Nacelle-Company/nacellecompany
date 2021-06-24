@@ -17,9 +17,9 @@ get_header(); ?>
 	?>
 	<?php get_template_part('template-parts/catalog/catalog-header', ''); ?>
 	<main class="main-content grid-x grid-padding-x medium-padding-collapse" id="post-<?php the_ID(); ?>">
-		<div class="mobile-video-container" id="mobile_video_container"></div>
 		<?php
 		if (!empty($videoEmbedd)) : ?>
+			<div class="mobile-video-container" id="mobile_video_container"></div>
 			<div class="cell medium-12 large-7 medium-order-1 flex-container flex-dir-column hero-info-crew-wrap">
 				<?php get_template_part('template-parts/catalog/catalog-hero');
 				get_template_part('template-parts/catalog/catalog-more-info', '');

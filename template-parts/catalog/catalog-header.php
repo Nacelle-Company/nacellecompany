@@ -20,7 +20,7 @@
 
 					<?php // theatre popup button 
 					?>
-					<div class="cell medium-auto text-right mr-3 breadcrumbs">
+					<div class="cell medium-auto medium-text-right mr-3 breadcrumbs">
 						<?php if (function_exists('rank_math_the_breadcrumbs')) rank_math_the_breadcrumbs(); ?>
 						<?php // include tickets modal 
 						?>

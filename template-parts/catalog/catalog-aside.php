@@ -14,7 +14,7 @@ $itunesV = get_post_meta(get_the_ID(), 'itunes_video', true);
 	<div class="grid-x">
 		<div class="cell medium-10">
 			<?php if ($itunesV) : ?>
-				<a href="<?php echo $itunesV; ?>" target="_blank" rel="noreferrer">
+				<a href="<?php echo $itunesV; ?>" target="_blank" rel="noreferrer" class="apple-link">
 					<?php the_post_thumbnail('large', array('sizes' => '(max-width:320px) 145px, (max-width:425px) 220px, 500px')); ?>
 				</a>
 			<?php else : ?>

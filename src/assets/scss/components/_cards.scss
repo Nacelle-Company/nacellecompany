@@ -157,7 +157,7 @@ $image-hover-wrapper-icon-size: 60px;
 	// CD catalog cards END
 }
 .callout-footer p {
-	font-size: $small-font-size;
+	font-size: 93%;
 	@include multiLineEllipsis(
 		$lineHeight: 1.2em,
 		$lineCount: 3,

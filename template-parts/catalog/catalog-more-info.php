@@ -12,7 +12,7 @@ $genres = get_the_terms($post->ID, 'genre');
                     <div class="cell small-6">
                         <div class="grid-x accordion-line"></div>
                     </div>
-                    <div class="cell small-5 medium-6 large-5 pl-medium-2 pl-large-3">
+                    <div class="cell small-6 large-5 pl-medium-2 pl-large-3">
                         <button class="accordion-title flex-container clear primary-color pl-medium-1 pl-large-0" title="More info on <?php the_title(); ?>">More info
                             <?php get_template_part('template-parts/svg/icon-down-angle'); ?>
                         </button>

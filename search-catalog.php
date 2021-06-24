@@ -41,7 +41,7 @@ get_header(); ?>
 
                         <div class="cell small-6 text-right sorting">
 
-                            <a data-toggle="searchOffCanvas">Sort & Filter</a>
+                            <p data-toggle="searchOffCanvas">Sort & Filter</p>
 
                         </div>
 

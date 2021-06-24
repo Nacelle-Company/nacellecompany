@@ -20,7 +20,7 @@ if (!empty($talents) || !empty($directors) || !empty($producers) || !empty($writ
                         <p><?php _e('Talent', 'nacelle'); ?></p>
                     </div>
                     <div class="cell small-8">
-                        <ul class="no-bullet">
+                        <p>
                             <?php
                             $talentstr = array();
                             foreach ($talents as $talent) {
@@ -29,7 +29,7 @@ if (!empty($talents) || !empty($directors) || !empty($producers) || !empty($writ
                             }
                             echo implode(',&nbsp;', $talentSlug);
                             ?>
-                        </ul>
+                        </p>
                     </div>
                 </div>
             <?php endif; ?>

@@ -23,19 +23,27 @@
                         $imageHorizontalLG = $imageHorizontal['sizes'][$img_size_lg];
                         $imageHorizontalMD = $imageHorizontal['sizes'][$img_size_md];
                         $imageHorizontalSM = $imageHorizontal['sizes'][$img_size_sm];
+                        $word = "apple";
+                        $mystring = $videoLinkTitle;
+                        if (strpos($mystring, $word) !== false) {
+                            $apple = 'apple-link';
+                        } else {
+                            $apple = '';
+                        }
+
                         if (get_sub_field('show_large')) : ?>
                             <?php if (!empty($videoLinkImage)) : ?>
                                 <div class="cell">
                                     <div class="callout" data-callout-hover-reveal>
                                         <div class="callout-body">
                                             <div class="image-hover-wrapper">
-                                                <a href="<?php echo $videoLinkURL; ?>" class="catalog-title" title="Watch <?php the_title_attribute(); ?> on <?php echo $videoLinkTitle; ?>" target="_blank" rel="noreferrer">
+                                                <a href="<?php echo $videoLinkURL; ?>" class="catalog-title <?php echo $apple; ?>" title="Watch <?php the_title_attribute(); ?> on <?php echo $videoLinkTitle; ?>" target="_blank" rel="noreferrer">
                                                     <span class="image-hover-wrapper-banner">
                                                         <strong>
                                                             <?php echo $videoLinkTitle; ?>
                                                         </strong>
                                                     </span>
-                                                    <img class="feat-pg" data-interchange="[<?php echo $linkCustomImageSM; ?>, small], [<?php echo $linkCustomImageMD; ?>, medium], [<?php echo $linkCustomImageLG; ?>, large]" alt="<?php echo $imageHorizontalAlt; ?>" />
+                                                    <img class="feat-pg" data-interchange="[<?php echo $linkCustomImageSM; ?>, small], [<?php echo $linkCustomImageMD; ?>, medium], [<?php echo $linkCustomImageLG; ?>, large]" alt="<?php echo $videoLinkImageAlt; ?>" />
                                                     <noscript>
                                                         <img src="<?php echo $linkCustomImageSM; ?>" alt="<?php echo $videoLinkImageAlt; ?>" />
                                                     </noscript>
@@ -54,7 +62,8 @@
                                     <div class="callout" data-callout-hover-reveal>
                                         <div class="callout-body">
                                             <div class="image-hover-wrapper">
-                                                <a href="<?php echo $videoLinkURL; ?>" class="catalog-title solo" title="Permanent Link to <?php the_title_attribute(); ?>" target="_blank" rel="noreferrer">
+
+                                                <a href="<?php echo $videoLinkURL; ?>" class="catalog-title solo <?php echo $apple; ?>" title="Permanent Link to <?php the_title_attribute(); ?>" target="_blank" rel="noreferrer">
                                                     <span class="image-hover-wrapper-banner">
                                                         <strong>
                                                             <?php echo $videoLinkTitle; ?>
@@ -83,7 +92,7 @@
                                 <div class="callout" data-callout-hover-reveal>
                                     <div class="callout-body image-hover-wrapper">
                                         <span class="image-hover-wrapper-reveal">
-                                            <a href="<?php echo $videoLinkURL; ?>" class="catalog-title button hollow expanded" title="Watch <?php the_title_attribute(); ?>on <?php echo $videoLinkTitle; ?>" target="_blank" rel="noreferrer"><strong><?php echo $videoLinkTitle; ?></strong><svg class="icon" width="15" height="15" xmlns="http://www.w3.org/2000/svg">
+                                            <a href="<?php echo $videoLinkURL; ?>" class="catalog-title button hollow expanded <?php echo $apple; ?>" title="Watch <?php the_title_attribute(); ?> on <?php echo $videoLinkTitle; ?>" target="_blank" rel="noreferrer"><strong><?php echo $videoLinkTitle; ?></strong><svg class="icon" width="15" height="15" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M10.938 8.75h-.626a.313.313 0 00-.312.313v2.187H3.75V5h2.813c.172 0 .312-.14.312-.313v-.625a.313.313 0 00-.313-.312H3.438a.938.938 0 00-.937.938v6.875c0 .517.42.937.938.937h6.874c.518 0 .938-.42.938-.938v-2.5a.313.313 0 00-.313-.312zM12.03 2.5h-2.5a.47.47 0 00-.332.8L9.897 4l-4.76 4.758a.469.469 0 000 .664l.442.442a.469.469 0 00.665 0l4.758-4.76.697.698a.47.47 0 00.801-.332v-2.5a.469.469 0 00-.469-.469z" fill-rule="nonzero" />
                                                 </svg></a>
                                         </span>

@@ -1,3 +1,7 @@
+button,
+.button {
+font-size: .95rem;
+}
 .sites-button {
   font-size: 1.25rem;
   font-weight: bold;
@@ -15,6 +19,7 @@
   margin-bottom: $mobile-app-toggle-margin-bottom;
 
   .button {
+    font-size: .95rem;
     z-index: 3;
     text-transform: uppercase;
   }

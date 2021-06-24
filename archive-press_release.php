@@ -53,8 +53,7 @@ get_header(); ?>
 
                                     <?php echo '<a href="' . get_permalink() . '" class="media-object stack-for-small">'; ?>
                                     <div class="media-object-section flex-container align-top">
-                                        <img src="<?php bloginfo('template_directory'); ?>/dist/assets/images/comedy-dynamics-mic.png" alt="microphone" />
-
+                                        <img class="mic" src="<?php bloginfo('template_directory'); ?>/dist/assets/images/comedy-dynamics-mic.png" alt="stand up comedy microphone" />
                                         <h4>
                                             <?php
                                             $theTitle = get_field('title', false, false);
@@ -100,7 +99,7 @@ get_header(); ?>
                                                     <p><?php the_time('m.j.y'); ?></p>
                                                 </div>
                                                 <div class="cell text-right">
-                                                    <a class="clear button success medium" href="<?php echo get_permalink(); ?>">Read More. . .</a>
+                                                    <a class="clear button success medium" href="<?php echo get_permalink(); ?>">More on this article. . .</a>
                                                 </div>
 
                                             </div>
@@ -131,7 +130,7 @@ get_header(); ?>
                                         <?php // microphone 
                                         ?>
                                         <div class="cell small-2 medium-1">
-                                            <img src="<?php bloginfo('template_directory'); ?>/dist/assets/images/comedy-dynamics-mic.png" />
+                                            <img class="mic" src="<?php bloginfo('template_directory'); ?>/dist/assets/images/comedy-dynamics-mic.png" alt="comedy microphone" />
                                         </div>
 
                                         <?php // article title 
@@ -174,7 +173,7 @@ get_header(); ?>
                                                     <p><?php the_time('m.j.y'); ?></p>
                                                 </div>
                                                 <div class="cell text-right">
-                                                    <a class="clear button success medium" href="<?php echo get_permalink(); ?>">Read More. . .</a>
+                                                    <a class="clear button success medium" href="<?php echo get_permalink(); ?>">More on this article. . .</a>
                                                 </div>
 
                                             </div>
