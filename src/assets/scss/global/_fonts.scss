@@ -94,6 +94,12 @@ i b {
 .p {
 	font-size: 120%;
 }
+.lead {
+	color: var(--primary-color);
+}
+time {
+	color: var(--secondary-color);
+}
 
 // https://css-tricks.com/snippets/css/simple-and-nice-blockquote-styling/
 blockquote {

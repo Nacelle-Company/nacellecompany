@@ -41,7 +41,7 @@ get_header(); ?>
 						echo the_field('series_content', 'option');
 					} elseif (is_category('special')) {
 						echo the_field('special_content', 'option');
-					} 
+					}
 					?>
 				</div>
 			</div>
@@ -61,15 +61,16 @@ get_header(); ?>
 		</div>
 	</div>
 	<?php /* Display navigation to next/previous pages when applicable */ ?>
-
+	<div id="site-content" class="text-center"></div>
 	<?php
-	if (function_exists('Nacelle_pagination')) :
-		Nacelle_pagination();
-	elseif (is_paged()) :
+	// if (function_exists('Nacelle_pagination')) :
+	// 	Nacelle_pagination();
+	// elseif (is_paged()) :
 	?>
-		<nav id="post-nav">
-			<div class="post-previous"><?php next_posts_link(__('&larr; Older posts', 'nacelle')); ?></div>
-			<div class="post-next"><?php previous_posts_link(__('Newer posts &rarr;', 'nacelle')); ?></div>
-		</nav>
-	<?php endif; ?>
+
+		<!-- <nav id="post-nav">
+			<div class="post-previous"><?php //next_posts_link(__('&larr; Older posts', 'nacelle')); ?></div>
+			<div class="post-next"><?php //previous_posts_link(__('Newer posts &rarr;', 'nacelle')); ?></div>
+		</nav> -->
+	<?php // endif; ?>
 	<?php get_footer();

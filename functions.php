@@ -41,7 +41,10 @@ require_once('library/sticky-posts.php');
 require_once('library/responsive-images.php');
 /** Gutenberg editor support */
 require_once('library/gutenberg.php');
+/** Custom Post Types UI Code */
 require_once('library/custom-post-types.php');
+/** Custom Post UI Taxonomies Code */
+require_once('library/custom-post-taxonomies.php');
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
 // require_once( 'library/class-foundationpress-protocol-relative-theme-assets.php' );
 /**
@@ -365,3 +368,71 @@ function nacellecompany_menu_add_class($atts, $item, $args)
     $atts['role'] = $class;
     return $atts;
 }
+
+
+
+/**
+ * Preload attachment image, defaults to post thumbnail
+ * https://dev.to/jacksonlewis/how-to-preload-images-in-wordpress-48di
+ */
+function preload_post_thumbnail()
+{
+    global $post;
+    /** Prevent preloading for specific content types or post types */
+    if (!is_singular()) {
+        return;
+    }
+    /** Adjust image size based on post type or other factor. */
+    $image_size = 'full';
+
+    if (is_singular('product')) {
+        $image_size = 'woocommerce_single';
+    } else if (is_singular('post')) {
+        $image_size = 'large';
+    }
+    $image_size = apply_filters('preload_post_thumbnail_image_size', $image_size, $post);
+    /** Get post thumbnail if an attachment ID isn't specified. */
+    $thumbnail_id = apply_filters('preload_post_thumbnail_id', get_post_thumbnail_id($post->ID), $post);
+
+    /** Get the image */
+    $image = wp_get_attachment_image_src($thumbnail_id, $image_size);
+    $src = '';
+    $additional_attr_array = array();
+    $additional_attr = '';
+
+    if ($image) {
+        list($src, $width, $height) = $image;
+
+        /**
+         * The following code which generates the srcset is plucked straight
+         * out of wp_get_attachment_image() for consistency as it's important
+         * that the output matches otherwise the preloading could become ineffective.
+         */
+        $image_meta = wp_get_attachment_metadata($thumbnail_id);
+
+        if (is_array($image_meta)) {
+            $size_array = array(absint($width), absint($height));
+            $srcset     = wp_calculate_image_srcset($size_array, $src, $image_meta, $thumbnail_id);
+            $sizes      = wp_calculate_image_sizes($size_array, $src, $image_meta, $thumbnail_id);
+
+            if ($srcset && ($sizes || !empty($attr['sizes']))) {
+                $additional_attr_array['imagesrcset'] = $srcset;
+
+                if (empty($attr['sizes'])) {
+                    $additional_attr_array['imagesizes'] = $sizes;
+                }
+            }
+        }
+
+        foreach ($additional_attr_array as $name => $value) {
+            $additional_attr .= "$name=" . '"' . $value . '" ';
+        }
+    } else {
+        /** Early exit if no image is found. */
+        return;
+    }
+
+    /** Output the link HTML tag */
+    printf('<link rel="preload" as="image" href="%s" %s/>', esc_url($src), $additional_attr);
+}
+add_action('wp_head', 'preload_post_thumbnail');

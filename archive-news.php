@@ -17,17 +17,27 @@ $hero_lg = $hero_image['sizes'][$img_size_lg];
 $hero_md = $hero_image['sizes'][$img_size_md];
 $hero_sm = $hero_image['sizes'][$img_size_sm];
 
+
+
 if (!empty('news_header_image')) : ?>
   <?php get_template_part('template-parts/featured-image'); ?>
 <?php endif; ?>
 <main class="main-container">
   <div class="main-grid">
-    <div class="main-content">
+    <div class="main-content archive">
       <?php if (have_posts()) : ?>
 
         <?php //Start the Loop  
         ?>
-        <?php while (have_posts()) : the_post(); ?>
+        <?php while (have_posts()) : the_post();
+          $time = get_the_time('F j, Y', $mypost->ID);
+          $timeShort = get_the_time('o-m-j', $mypost->ID);
+          $post_type = get_post_type();
+          $post_type_data = get_post_type_object($post_type);
+          $post_type_slug = $post_type_data->rewrite['slug'];
+          $post_type_name = ucwords(rtrim(trim(str_replace('-',  ' ', $post_type_slug))));
+
+        ?>
 
           <?php $link = get_field('link_to_article'); ?>
 
@@ -66,21 +76,26 @@ if (!empty('news_header_image')) : ?>
                       the_title('<h4 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h4>');
                     }
                     ?>
-
                   </div>
 
-                  <footer class="grid-x small-up-2">
+                  <footer class="grid-x flex-container flex-dir-column medium-flex-dir-row align-justify align-bottom">
 
-                    <?php //date 
-                    ?>
-                    <div class="cell date">
-                      <p><?php the_time('m.j.y'); ?></p>
+                    <div class="flex-container flex-child-shrink date">
+                      <time datetime="<?php echo $timeShort; ?>">
+                        <?php
+                        echo $time; ?>
+                      </time>
                     </div>
 
                     <?php //microphone 
                     ?>
-                    <div class="cell text-right mic">
-                      <img src="<?php echo $news_icon; ?>" />
+                    <div class="flex-container flex-child-auto align-bottom cats">
+                      <div class="cats-wrapper">
+                        <p class="mb-0"><?php echo $post_type_name; ?></p>
+                      </div>
+                      <div class="mic">
+                        <img src="<?php echo $news_icon; ?>" />
+                      </div>
                     </div>
 
                   </footer>

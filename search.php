@@ -19,11 +19,11 @@ get_header(); ?>
 
 			<?php if (have_posts()) : ?>
 				
-				<ul id="search_results">
+				<div class="archive" id="search_results">
 					<?php while (have_posts()) : the_post(); ?>
 						<?php get_template_part('template-parts/content-search'); ?>
 					<?php endwhile; ?>
-				</ul>
+				</div>
 				
 			<?php else : ?>
 				<?php get_template_part('template-parts/content', 'none'); ?>

@@ -40,7 +40,8 @@ get_header(); ?>
 					$link_title = $link['title'];
 					$link_target = $link['target'] ? $link['target'] : '_self';
 					$even_odd_class = $wp_query->current_post % 2 == 0 ? '' : 'press-row-reversed';
-
+					$time = get_the_time('F j, Y', $mypost->ID);
+					$timeShort = get_the_time('o-m-j', $mypost->ID);
 				?>
 
 					<article class="press-row flex-container flex-dir-column align-justify py-3 <?php echo $even_odd_class; ?>" id="post-<?php the_ID(); ?>">
@@ -68,8 +69,9 @@ get_header(); ?>
 									echo $theTitle; ?>
 
 								</h2>
-								<time class="press-row-content-time" datetime="2008-02-14 20:00">
-									<?php the_time('F j, Y'); ?>
+								<time class="class=" press-row-content-time"" datetime="<?php echo $timeShort; ?>">
+									<?php
+									echo $time; ?>
 								</time>
 
 								<?php edit_post_link(__('(Edit)', 'nacelle'), '<span class="edit-link">', '</span>'); ?>

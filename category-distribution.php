@@ -151,7 +151,7 @@ get_header(); ?>
 								<div class="pr-1">
 									<?php get_template_part('template-parts/svg/icon-video'); ?>
 								</div>
-								<?php _e('Specials', 'nacelle'); ?>
+								<?php _e('Series', 'nacelle'); ?>
 							</h2>
 							<div class="img-container">
 								<?php

@@ -28,7 +28,7 @@
 					</h1>
 				</div>
 				<div class="cell small-6 medium-2 medium-order-3 text-right sorting">
-					<button class="clear" data-toggle="searchOffCanvas">Sort & Filter</button>
+					<a data-toggle="searchOffCanvas">Sort & Filter</a>
 				</div>
 				<div class="cell medium-8 pb-2">
 					<?php
@@ -104,7 +104,6 @@
 			<?php endif; ?>
 
 		</div>
-
 	</div>
-
 </div>
+<div id="site-content" class="text-center"></div>
