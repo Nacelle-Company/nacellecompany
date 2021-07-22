@@ -19,7 +19,7 @@ get_header(); ?>
 
 				<header class="grid-container archive pb-2 pb-medium-0">
 
-					<div class="grid-x align-center-middle">
+					<div class="grid-x align-center-middle pt-2 category-intro">
 
 						<div class="cell small-6">
 
@@ -37,7 +37,7 @@ get_header(); ?>
 
 				</header>
 
-				<div class="grid-x small-2 medium-4 large-6 align-center-middle" id="results">
+				<div class="catalog-cards macro-cat-cards grid-x small-up-2 medium-up-4 large-up-6 align-top mt-medium-3" id="results">
 
 					<?php
 					if (have_posts()) : ?>
@@ -121,7 +121,7 @@ get_header(); ?>
 
 			</button>
 
-			<div class="grid-x grid-margin-y align-center-middle oc-container pt-4">
+			<div class="grid-x grid-margin-y align-center-middle oc-container pt-4 px-2">
 
 				<div class="cell align-self-middle filter-sidebar">
 

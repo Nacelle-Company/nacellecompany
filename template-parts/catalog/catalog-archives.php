@@ -1,31 +1,16 @@
 <div class="grid-container full align-center pt-3">
-    <?php //cell for the content 
-    ?>
-
     <header class="grid-container archive pb-2 pb-medium-0">
-
         <div class="grid-x align-center-middle">
-
             <div class="cell small-6">
-
                 <h1 class="entry-title">
-
                     <?php _e('Full Catalog', 'Nacelle') ?>
-
                 </h1>
-
             </div>
-
             <div class="cell small-6 text-right sorting">
-
                 <a data-toggle="searchOffCanvas">Sort & Filter</a>
-
             </div>
-
         </div>
-
     </header>
-
 
     <?php
     $current_page = (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -85,29 +70,24 @@
                 <?php $i += 1; ?>
             <?php endwhile; ?>
     </div>
-    <div class="grid-x">
-        <div id="catalog-pagination" class="cell text-center">
+    <div class="grid-x" id="site-content">
+        <!-- <div id="catalog-pagination" class="cell text-center"> -->
             <?php
-            $big = 999999999; // need an unlikely intege
+            // $big = 999999999; // need an unlikely intege
 
-            echo paginate_links(array(
-                'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
-                'format' => '?paged=%#%',
-                'current' => max(1, get_query_var('paged')),
-                'total' => $catalog_items->max_num_pages
-            ));
+            // echo paginate_links(array(
+            //     'base' => str_replace($big, '%#%', esc_url(get_pagenum_link($big))),
+            //     'format' => '?paged=%#%',
+            //     'current' => max(1, get_query_var('paged')),
+            //     'total' => $catalog_items->max_num_pages
+            // ));
             ?>
-        </div>
+        <!-- </div> -->
     </div>
 <?php else : ?>
 
     <?php get_template_part('template-parts/content', 'none'); ?>
 
 <?php endif; ?>
-
-
-
-
-
 </div>
 <?php wp_reset_postdata(); ?>

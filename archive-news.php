@@ -104,26 +104,7 @@ if (!empty('news_header_image')) : ?>
 
 
               <?php elseif (empty(has_post_thumbnail($post->ID))) : ?>
-
-                <?php // 
-                ?>
-                <?php // 
-                ?>
-                <?php // 
-                ?>
-                <?php //without image 
-                ?>
-                <?php // 
-                ?>
-                <?php // 
-                ?>
-                <?php // 
-                ?>
-
                 <div class="cell medium-12 archive-title">
-
-                  <?php //title 
-                  ?>
                   <div class="grid-x">
                     <?php
                     if (is_single()) {
@@ -171,6 +152,17 @@ if (!empty('news_header_image')) : ?>
     <?php get_sidebar(); ?>
 
   </div>
+  <?php /* Display navigation to next/previous pages when applicable */ ?>
+  <?php
+  if (function_exists('foundationpress_pagination')) :
+    foundationpress_pagination();
+  elseif (is_paged()) :
+  ?>
+    <nav id="post-nav">
+      <div class="post-previous"><?php next_posts_link(__('&larr; Older posts', 'foundationpress')); ?></div>
+      <div class="post-next"><?php previous_posts_link(__('Newer posts &rarr;', 'foundationpress')); ?></div>
+    </nav>
+  <?php endif; ?>
 </main>
 
 <?php get_footer();

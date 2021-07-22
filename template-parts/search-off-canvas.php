@@ -20,12 +20,12 @@
 
 			</button>
 
-			<div class="grid-x grid-margin-y align-center-middle oc-container pt-4 px-2">
+			<div class="grid-x grid-margin-y align-center-middle oc-container pt-4 px-2 px-2">
 
 				<div class="cell align-self-middle filter-sidebar">
 
 					<?php
-					$categories = array(1973, 1974, 1975, 1976, 1979, 1980);
+					$categories = array(1973, 4, 1975, 1976, 1979, 1980);
 
 					if (is_category($categories)) : ?>
 
@@ -55,11 +55,11 @@
 
 							<?php // albums 
 							?>
-						<?php elseif (is_category(1974)) : ?>
+						<?php elseif (is_category(4)) : ?>
 
 							<h4><?php _e('Search Albums', 'nacelle'); ?></h4>
 
-							<?php echo do_shortcode('[searchandfilter slug="album-search"]'); ?>
+							<?php echo do_shortcode('[searchandfilter slug="distribution-album-catalog-sidebar"]'); ?>
 
 							<?php // production series 
 							?>

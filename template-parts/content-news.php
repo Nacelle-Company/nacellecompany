@@ -84,7 +84,13 @@ $link = get_post_meta(get_the_ID(), 'link_to_article', true);
                     <path d="M6.01.972v8.652c0 .599-.725.899-1.148.475L.535 5.773a.673.673 0 010-.95L4.862.495A.672.672 0 016.01.972z" fill-rule="nonzero" />
                 </svg>
             </div>
-            <a href="<?php echo get_post_type_archive_link('news'); ?>">Return to News Feed</a>
+            <?php
+            $postType = get_post_type();
+            if ($postType == 'news') : ?>
+                <a href="<?php echo get_post_type_archive_link('news'); ?>">Return to News Feed</a>
+            <?php elseif ($postType == 'press') : ?>
+                <a href="<?php echo get_post_type_archive_link('press'); ?>">Return to News Feed</a>
+            <?php endif; ?>
         </div>
     </footer>
 </article>
