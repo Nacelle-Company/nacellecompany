@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying all single posts and attachments
  *
@@ -52,17 +53,19 @@ get_header(); ?>
 						<div class="grid-x content">
 							<div class="cell">
 								<?php the_content(); ?>
-								<?php
-								if (get_post_meta(get_the_ID(), 'show_boilerplate', true)) {
-									$boilerplate = get_option('options_boilerplate');;
-									if (!empty($boilerplate)) {
-										echo $boilerplate;
-									}
-								}
-								?>
+								<div class="callout secondary large">
+									<p>
+										<?php
+										if (get_post_meta(get_the_ID(), 'show_boilerplate', true)) {
+											$boilerplate = get_option('options_boilerplate');;
+											if (!empty($boilerplate)) {
+												echo $boilerplate;
+											}
+										}
+										?>
+									</p>
+								</div>
 								<?php echo '<p class="text-center">###</p>'; ?>
-								<?php // PDF download 
-								?>
 								<footer>
 									<h4 class="text-center">
 										<?php
@@ -85,46 +88,46 @@ get_header(); ?>
 								?>
 							</div>
 						</div>
+						<?php
+						$featured_posts = get_post_meta(get_the_ID(), 'talent_name', true);
+						if ($featured_posts) : ?>
+							<h4>Featured Comedy</h4>
+							<?php foreach ($featured_posts as $post) :
+								// Setup this post for WP functions (variable must be named $post).
+								setup_postdata($post); ?>
+								<p>
+									<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+								</p>
+							<?php endforeach; ?>
 							<?php
-							$featured_posts = get_post_meta(get_the_ID(), 'talent_name', true);
-							if ($featured_posts) : ?>
-								<h4>Featured Comedy</h4>
-								<?php foreach ($featured_posts as $post) :
-									// Setup this post for WP functions (variable must be named $post).
-									setup_postdata($post); ?>
-									<p>
-										<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-									</p>
-								<?php endforeach; ?>
+							// Reset the global post object so that the rest of the page works correctly.
+							wp_reset_postdata(); ?>
+						<?php endif; ?>
+						<?php
+						$featured_posts = get_post_meta(get_the_ID(), 'talent_name', true);
+						if ($featured_posts) : ?>
+							<h4>Featured Talent</h4>
+							<?php foreach ($featured_posts as $post) :
+								// Setup this post for WP functions (variable must be named $post).
+								setup_postdata($post); ?>
 								<?php
-								// Reset the global post object so that the rest of the page works correctly.
-								wp_reset_postdata(); ?>
-							<?php endif; ?>
+								$terms = get_field('talent');
+								if ($terms) : ?>
+									<?php foreach ($terms as $term) : ?>
+										<?php
+										$talentSlug = esc_html($term->slug);
+										$blogURL = get_bloginfo('url');
+										$talentURL = $blogURL . '/main-talent/' . $talentSlug;
+										?>
+										<a href="<?php echo $talentURL; ?>"><?php echo esc_html($term->name) . ','; ?></a>
+									<?php endforeach; ?>
+								<?php endif; ?>
+							<?php endforeach; ?>
 							<?php
-							$featured_posts = get_post_meta(get_the_ID(), 'talent_name', true);
-							if ($featured_posts) : ?>
-								<h4>Featured Talent</h4>
-								<?php foreach ($featured_posts as $post) :
-									// Setup this post for WP functions (variable must be named $post).
-									setup_postdata($post); ?>
-									<?php
-									$terms = get_field('talent');
-									if ($terms) : ?>
-										<?php foreach ($terms as $term) : ?>
-											<?php
-											$talentSlug = esc_html($term->slug);
-											$blogURL = get_bloginfo('url');
-											$talentURL = $blogURL . '/main-talent/' . $talentSlug;
-											?>
-											<a href="<?php echo $talentURL; ?>"><?php echo esc_html($term->name) . ','; ?></a>
-										<?php endforeach; ?>
-									<?php endif; ?>
-								<?php endforeach; ?>
-								<?php
-								// Reset the global post object so that the rest of the page works correctly.
-								wp_reset_postdata(); ?>
-							<?php endif; ?>
-							<hr>					
+							// Reset the global post object so that the rest of the page works correctly.
+							wp_reset_postdata(); ?>
+						<?php endif; ?>
+						<hr>
 					</div>
 					<footer class="pagination">
 						<?php get_template_part('template-parts/catalog/catalog-pagination'); ?>

@@ -79,25 +79,20 @@ wp_reset_postdata(); ?>
                         height: 0;
                     }
                 }
-
                 @media screen and (min-width: 40em) and (max-width: 63.9375em) {
                     .catalog-aside-wrapper {
                         margin-left: 50%;
                     }
-
                     .catalog-aside {
                         margin-top: -360px;
                         position: absolute;
                     }
-
                     .catalog-more-info,
                     .catalog-crew {
                         width: 50%;
                     }
                 }
-
                 @media only screen and (min-device-width: 834px) and (max-device-width: 1112px) and (-webkit-min-device-pixel-ratio: 2) {
-
                     .catalog-crew .title,
                     .catalog-crew .crew {
                         width: 100%;
@@ -105,18 +100,16 @@ wp_reset_postdata(); ?>
                 }
             </style>
             <div id="mobile_video" onclick="jQuery('#mobile_video').YTPUnmute()" class="player" data-property="{videoURL:'<?php echo $videoHero; ?>',containment:'#mobile_video_container',optimizeDisplay:false,playOnlyIfVisible:true,abundance:0}"></div>
-        <?php else : ?>
-            <style>
+            <?php else : ?>
+                <style>
                 .mobile-video-container {
                     width: 0;
                     height: 0;
                 }
-
                 @media screen and (min-width: 40em) and (max-width: 63.9375em) {
                     .catalog-aside-wrapper {
                         margin-left: 50%;
                     }
-
                     .catalog-crew,
                     .accordion {
                         width: 50%;
@@ -124,7 +117,7 @@ wp_reset_postdata(); ?>
                 }
             </style>
             <div id="big_video">
-                <div id="video-header-hero" class="player" data-property="{videoURL:'<?php echo $videoHero; ?>',containment:'self', mute:true,coverImage:'<?php echo esc_url($profile_hero_lg['url']); ?>', mobileFallbackImage:'<?php echo esc_url($profile_hero_lg['url']); ?>', useOnMobile: false,optimizedDisplay:false,abundance: <?php echo $videoAbundance; ?>,showYTLogo:false,playOnlyIfVisible:true,startAt:<?php the_field('start_video_at'); ?> }"></div>
+                <div id="video-header-hero" class="player" data-property="{videoURL:'<?php echo $videoHero; ?>',containment:'self', mute:true, mobileFallbackImage:'', useOnMobile: false,optimizedDisplay:false,abundance: <?php echo $videoAbundance; ?>,showYTLogo:false,playOnlyIfVisible:true,startAt:<?php the_field('start_video_at'); ?> }"></div>
             </div>
             <div class="hero-section-text cover-on" id="coverOn" data-toggler=".cover-on">
                 <div class="cell medium-4">

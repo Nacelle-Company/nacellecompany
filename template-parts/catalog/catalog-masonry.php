@@ -67,180 +67,265 @@ if ($taxonomy == 'Producers') {
     <div class="cell grid-container primary-title my-3">
         <h1 class="entry-title mb-0 h2"><?php echo $artistName . ' ' . $taxonomyAlt; ?></h1>
     </div>
-    <div class="grid-container grid--masonry">
-    <?php   global $post; // required
+    <div class="grid-container">
+        <div class="grid-x grid-margin-x grid-padding-y small-up-1 medium-up-2 post-grid align-center">
+            <?php global $post; // required
             $custom_posts = get_posts($producer_args);
             $count = 0;
-    foreach ($custom_posts as $post) : setup_postdata($post);
-        $count++;
-        ?>
-        <div class="grid-item">
-            
-            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-
-                <?php
-                // workaround for image URL: https://support.advancedcustomfields.com/forums/topic/illegal-string-offset/
-                if(get_field('square_image')) :
-                    $image = get_field('square_image');
-                elseif(get_field('horizontal_image')) :
-                    $image = get_field('horizontal_image');
-                else : the_post_thumbnail();
-                endif;
-                if (!is_array($image)) {
-                    $image = acf_get_attachment($image);
+            foreach ($custom_posts as $post) : setup_postdata($post);
+                $count++;
+                $trim_length = 35;
+                $value_more = '. . .';
+                $value = get_field('synopsis', $post->ID);
+                if ($value) {
+                    $synopsis = wp_trim_words($value, $trim_length, $value_more);
                 }
-                $url = $image['url'];
-                $alt = $image['alt'];
+            ?>
+                <div class="cell media-object stack-for-small">
+                    <div class="media-object-section">
+                        <?php
+                        if (get_field('square_image', $post->ID)) {
+                            $image = get_field('square_image', $post->ID);
+                            $url = $image['url'];
+                            $title = $image['title'];
+                            $alt = $image['alt'];
+                            $caption = $image['caption'];
+                            $size = 'medium';
+                            $thumb = $image['sizes'][$size];
+                            $width = $image['sizes'][$size . '-width'];
+                            $height = $image['sizes'][$size . '-height'];
+                        } else {
+                            $thumb = get_the_post_thumbnail_url($post->ID, 'medium');
+                        }
+                        if ($image) :
 
-                if (!empty($image)) : ?>
-
-                    <img class="grid--masonry__image test" src="<?php echo $url; ?>" alt="<?php echo $alt; ?>" />
-
-                <?php endif; ?>
-
-            </a>
-
+                        ?>
+                            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                                <img src="<?php echo esc_url($thumb); ?>" alt="<?php echo esc_attr($alt); ?>" />
+                            </a>
+                        <?php endif; ?>
+                    </div>
+                    <div class="media-object-section">
+                        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                            <p>
+                                <?php
+                                if ($synopsis) {
+                                    echo $synopsis;
+                                }
+                                ?>
+                            </p>
+                        </a>
+                    </div>
+                    <a class="go-corner" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                        <div class="go-arrow">
+                            →
+                        </div>
+                    </a>
+                </div>
+            <? endforeach; ?>
         </div>
-    <?endforeach; ?>
-</div>
-<?php 
-// MAIN TALENT
-// MAIN TALENT
-// MAIN TALENT
+    </div>
+<?php
 } elseif ($taxonomy == 'Main Talent') {
     $taxonomyAlt = '<span class="subheader">Catalog</span>'; ?>
     <div class="cell grid-container primary-title my-3">
         <h1 class="entry-title mb-0 h2"><?php echo $artistName . ' ' . $taxonomyAlt; ?></h1>
     </div>
-    <div class="grid-container grid--masonry">
-    <?php   global $post; // required
+    <div class="grid-container">
+        <div class="grid-x grid-margin-x grid-padding-y small-up-1 medium-up-2 post-grid align-center">
+            <?php global $post; // required
             $custom_posts = get_posts($main_talent_args);
             $count = 0;
-    foreach ($custom_posts as $post) : setup_postdata($post);
-        $count++;
-        ?>
-        <div class="grid-item">
-            
-            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-
-                <?php
-                // workaround for image URL: https://support.advancedcustomfields.com/forums/topic/illegal-string-offset/
-                if(get_field('square_image')) :
-                    $image = get_field('square_image');
-                elseif(get_field('horizontal_image')) :
-                    $image = get_field('horizontal_image');
-                else : the_post_thumbnail();
-                endif;
-                if (!is_array($image)) {
-                    $image = acf_get_attachment($image);
+            foreach ($custom_posts as $post) : setup_postdata($post);
+                $count++;
+                $trim_length = 35;
+                $value_more = '. . .';
+                $value = get_field('synopsis', $post->ID);
+                if ($value) {
+                    $synopsis = wp_trim_words($value, $trim_length, $value_more);
                 }
-                $url = $image['url'];
-                $alt = $image['alt'];
+            ?>
+                <div class="cell media-object stack-for-small">
+                    <div class="media-object-section">
+                        <?php
+                        if (get_field('square_image', $post->ID)) {
+                            $image = get_field('square_image', $post->ID);
+                            $url = $image['url'];
+                            $title = $image['title'];
+                            $alt = $image['alt'];
+                            $caption = $image['caption'];
+                            $size = 'medium';
+                            $thumb = $image['sizes'][$size];
+                            $width = $image['sizes'][$size . '-width'];
+                            $height = $image['sizes'][$size . '-height'];
+                        } else {
+                            $thumb = get_the_post_thumbnail_url($post->ID, 'medium');
+                        }
+                        if ($image) :
 
-                if (!empty($image)) : ?>
-
-                    <img class="grid--masonry__image" src="<?php echo $url; ?>" alt="<?php echo $alt; ?>" />
-
-                <?php endif; ?>
-
-            </a>
-
+                        ?>
+                            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                                <img src="<?php echo esc_url($thumb); ?>" alt="<?php echo esc_attr($alt); ?>" />
+                            </a>
+                        <?php endif; ?>
+                    </div>
+                    <div class="media-object-section">
+                        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                            <p>
+                                <?php
+                                if ($synopsis) {
+                                    echo $synopsis;
+                                }
+                                ?>
+                            </p>
+                        </a>
+                    </div>
+                    <a class="go-corner" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                        <div class="go-arrow">
+                            →
+                        </div>
+                    </a>
+                </div>
+            <? endforeach; ?>
         </div>
-    <?endforeach; ?>
-</div>
-<?php 
-// DIRECTORS
-// DIRECTORS
-// DIRECTORS
+    </div>
+<?php
+    // DIRECTORS
+    // DIRECTORS
+    // DIRECTORS
 } elseif ($taxonomy == 'Directors') {
     $taxonomyAlt = '<span class="subheader">Directed on</span>'; ?>
 
     <div class="cell grid-container primary-title my-3">
         <h1 class="entry-title mb-0 h2"><?php echo $artistName . ' ' . $taxonomyAlt; ?></h1>
     </div>
-    <div class="grid-container grid--masonry">
-    <?php   global $post; // required
+    <div class="grid-container">
+        <div class="grid-x grid-margin-x grid-padding-y small-up-1 medium-up-2 post-grid align-center">
+            <?php global $post; // required
             $custom_posts = get_posts($director_args);
             $count = 0;
-    foreach ($custom_posts as $post) : setup_postdata($post);
-        $count++;
-        ?>
-        <div class="grid-item">
-            
-            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-
-                <?php
-                // workaround for image URL: https://support.advancedcustomfields.com/forums/topic/illegal-string-offset/
-                if(get_field('square_image')) :
-                    $image = get_field('square_image');
-                elseif(get_field('horizontal_image')) :
-                    $image = get_field('horizontal_image');
-                else : the_post_thumbnail();
-                endif;
-                if (!is_array($image)) {
-                    $image = acf_get_attachment($image);
+            foreach ($custom_posts as $post) : setup_postdata($post);
+                $count++;
+                $trim_length = 35;
+                $value_more = '. . .';
+                $value = get_field('synopsis', $post->ID);
+                if ($value) {
+                    $synopsis = wp_trim_words($value, $trim_length, $value_more);
                 }
-                $url = $image['url'];
-                $alt = $image['alt'];
+            ?>
+                <div class="cell media-object stack-for-small">
+                    <div class="media-object-section">
+                        <?php
+                        if (get_field('square_image', $post->ID)) {
+                            $image = get_field('square_image', $post->ID);
+                            $url = $image['url'];
+                            $title = $image['title'];
+                            $alt = $image['alt'];
+                            $caption = $image['caption'];
+                            $size = 'medium';
+                            $thumb = $image['sizes'][$size];
+                            $width = $image['sizes'][$size . '-width'];
+                            $height = $image['sizes'][$size . '-height'];
+                        } else {
+                            $thumb = get_the_post_thumbnail_url($post->ID, 'medium');
+                        }
+                        if ($image) :
 
-                if (!empty($image)) : ?>
-
-                    <img class="grid--masonry__image" src="<?php echo $url; ?>" alt="<?php echo $alt; ?>" />
-
-                <?php endif; ?>
-
-            </a>
-
+                        ?>
+                            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                                <img src="<?php echo esc_url($thumb); ?>" alt="<?php echo esc_attr($alt); ?>" />
+                            </a>
+                        <?php endif; ?>
+                    </div>
+                    <div class="media-object-section">
+                        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                            <p>
+                                <?php
+                                if ($synopsis) {
+                                    echo $synopsis;
+                                }
+                                ?>
+                            </p>
+                        </a>
+                    </div>
+                    <a class="go-corner" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                        <div class="go-arrow">
+                            →
+                        </div>
+                    </a>
+                </div>
+            <? endforeach; ?>
         </div>
-    <?endforeach; ?>
-</div>
-<?php 
-// WRITERS
-// WRITERS
-// WRITERS
+    </div>
+<?php
+    // WRITERS
+    // WRITERS
+    // WRITERS
 } elseif ($taxonomy == 'Writers') {
     $taxonomyAlt = '<span class="subheader">was a writer on</span>'; ?>
 
     <div class="cell grid-container primary-title my-3">
         <h1 class="entry-title mb-0 h2"><?php echo $artistName . ' ' . $taxonomyAlt; ?></h1>
     </div>
-    <div class="grid-container grid--masonry">
-    <?php   global $post; // required
+    <div class="grid-container">
+        <div class="grid-x grid-margin-x grid-padding-y small-up-1 medium-up-2 post-grid align-center">
+            <?php global $post; // required
             $custom_posts = get_posts($writer_args);
             $count = 0;
-    foreach ($custom_posts as $post) : setup_postdata($post);
-        $count++;
-        ?>
-        <div class="grid-item">
-            
-            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-
-                <?php
-                // workaround for image URL: https://support.advancedcustomfields.com/forums/topic/illegal-string-offset/
-                if(get_field('square_image')) :
-                    $image = get_field('square_image');
-                elseif(get_field('horizontal_image')) :
-                    $image = get_field('horizontal_image');
-                else : the_post_thumbnail();
-                endif;
-                if (!is_array($image)) {
-                    $image = acf_get_attachment($image);
+            foreach ($custom_posts as $post) : setup_postdata($post);
+                $count++;
+                $trim_length = 35;
+                $value_more = '. . .';
+                $value = get_field('synopsis', $post->ID);
+                if ($value) {
+                    $synopsis = wp_trim_words($value, $trim_length, $value_more);
                 }
-                $url = $image['url'];
-                $alt = $image['alt'];
+            ?>
+                <div class="cell media-object stack-for-small">
+                    <div class="media-object-section">
+                        <?php
+                        if (get_field('square_image', $post->ID)) {
+                            $image = get_field('square_image', $post->ID);
+                            $url = $image['url'];
+                            $title = $image['title'];
+                            $alt = $image['alt'];
+                            $caption = $image['caption'];
+                            $size = 'medium';
+                            $thumb = $image['sizes'][$size];
+                            $width = $image['sizes'][$size . '-width'];
+                            $height = $image['sizes'][$size . '-height'];
+                        } else {
+                            $thumb = get_the_post_thumbnail_url($post->ID, 'medium');
+                        }
+                        if ($image) :
 
-                if (!empty($image)) : ?>
-
-                    <img class="grid--masonry__image" src="<?php echo $url; ?>" alt="<?php echo $alt; ?>" />
-
-                <?php endif; ?>
-
-            </a>
-
+                        ?>
+                            <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                                <img src="<?php echo esc_url($thumb); ?>" alt="<?php echo esc_attr($alt); ?>" />
+                            </a>
+                        <?php endif; ?>
+                    </div>
+                    <div class="media-object-section">
+                        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                            <p>
+                                <?php
+                                if ($synopsis) {
+                                    echo $synopsis;
+                                }
+                                ?>
+                            </p>
+                        </a>
+                    </div>
+                    <a class="go-corner" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
+                        <div class="go-arrow">
+                            →
+                        </div>
+                    </a>
+                </div>
+            <? endforeach; ?>
         </div>
-    <?endforeach; ?>
-</div>
-<?php 
+    </div>
+<?php
 }
 wp_reset_postdata();
 ?>

@@ -1,5 +1,5 @@
  <div class="main-talent">
-
+        <div class="mobile-video-container" id="mobile_video_container"></div>
          <?php
 
         get_template_part('template-parts/catalog/catalog-hero');

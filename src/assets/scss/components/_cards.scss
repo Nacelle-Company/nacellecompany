@@ -1,8 +1,7 @@
 // https://get.foundation/building-blocks/blocks/image-hover-wrapper.html
 // hover cards
 
-$image-hover-wrapper-transition: all 500ms
-	cubic-bezier(0.68, -0.55, 0.265, 1.55);
+$image-hover-wrapper-transition: all 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
 $image-hover-wrapper-transition-delay: 0.25s;
 $image-hover-wrapper-banner-width: 100%;
 $image-hover-wrapper-banner-bottomspace: 0;
@@ -141,7 +140,7 @@ $image-hover-wrapper-icon-size: 60px;
 	// CD catalog cards
 	// CD catalog cards
 	&.catalog-cards {
-		> .cell { 
+		> .cell {
 			@include breakpoint(medium) {
 				height: 22rem;
 			}
@@ -156,13 +155,12 @@ $image-hover-wrapper-icon-size: 60px;
 	// CD catalog cards END
 	// CD catalog cards END
 }
+.callout.secondary {
+	background-color: #202020;
+}
 .callout-footer p {
 	font-size: 93%;
-	@include multiLineEllipsis(
-		$lineHeight: 1.2em,
-		$lineCount: 3,
-		$bgColor: white
-	);
+	@include multiLineEllipsis($lineHeight: 1.2em, $lineCount: 3, $bgColor: white);
 }
 #breadcrumbs {
 	list-style: none;

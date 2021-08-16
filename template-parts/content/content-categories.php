@@ -19,30 +19,29 @@
 get_header(); ?>
 
 <?php if (have_posts()) : ?>
-
 	<div class="cell medium-12">
 		<header class="grid-container archive pb-2 pb-medium-0">
 			<div class="grid-x align-center-middle pt-2 category-intro">
-				<div class="cell small-6 medium-2">
-					<h1 class="entry-title h3">
+				<div class="cell small-6 flex-container align-middle">
+					<div class="pr-1 pb-1 pb-medium-0 flex-container">
+						<?php
+						if (is_category('album')) {
+							get_template_part('template-parts/svg/icon-disk');
+						} elseif (is_category('film')) {
+							get_template_part('template-parts/svg/icon-film');
+						} elseif (is_category('series')) {
+							get_template_part('template-parts/svg/icon-mic');
+						} elseif (is_category('special')) {
+							get_template_part('template-parts/svg/icon-video');
+						}
+						?>
+					</div>
+					<h1 class="catalog-title h3 mb-0">
 						<?php single_cat_title(); ?>
 					</h1>
 				</div>
-				<div class="cell small-6 medium-2 medium-order-3 text-right sorting">
+				<div class="cell small-6 text-right sorting">
 					<a data-toggle="searchOffCanvas">Sort & Filter</a>
-				</div>
-				<div class="cell medium-8 pb-2">
-					<?php
-					if (is_category('album')) {
-						echo the_field('album_content', 'option');
-					} elseif (is_category('film')) {
-						echo the_field('film_content', 'option');
-					} elseif (is_category('series')) {
-						echo the_field('series_content', 'option');
-					} elseif (is_category('special')) {
-						echo the_field('special_content', 'option');
-					}
-					?>
 				</div>
 			</div>
 		</header>
@@ -68,9 +67,12 @@ get_header(); ?>
 	// elseif (is_paged()) :
 	?>
 
-		<!-- <nav id="post-nav">
-			<div class="post-previous"><?php //next_posts_link(__('&larr; Older posts', 'nacelle')); ?></div>
-			<div class="post-next"><?php //previous_posts_link(__('Newer posts &rarr;', 'nacelle')); ?></div>
+	<!-- <nav id="post-nav">
+			<div class="post-previous"><?php //next_posts_link(__('&larr; Older posts', 'nacelle')); 
+																	?></div>
+			<div class="post-next"><?php //previous_posts_link(__('Newer posts &rarr;', 'nacelle')); 
+															?></div>
 		</nav> -->
-	<?php // endif; ?>
+	<?php // endif; 
+	?>
 	<?php get_footer();

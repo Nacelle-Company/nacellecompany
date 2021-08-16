@@ -10,9 +10,9 @@
 ?>
 <aside class="sidebar">
 	<?php if (is_post_type_archive('press_release') || is_singular('press_release')) : ?>
-		<h3>
+		<h2 class="h3">
 			<?php _e('Contact Us', 'nacelle'); ?>
-		</h3>
+		</h2>
 		<main>
 			<div itemscope itemtype="https://schema.org/Person">
 				<section class="menu simple pb-2">

@@ -5,9 +5,10 @@
 $anchor-dark-color: $black;
 $anchor-dark-color-hover: scale-color($black, $lightness: 20%);
 
-[data-whatinput="mouse"] a:focus, button:focus
-[data-whatinput="touch"] a:focus, button:focus {
-  outline: none;
+[data-whatinput="mouse"] a:focus,
+button:focus [data-whatinput="touch"] a:focus,
+button:focus {
+    outline: none;
 }
 
 footer.footer a {
@@ -46,4 +47,7 @@ footer.footer a {
 }
 .crew .no-bullet {
     margin-bottom: 1rem;
+}
+.link-light a {
+    color: #000 !important;
 }

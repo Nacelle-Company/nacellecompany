@@ -30,15 +30,14 @@ get_header(); ?>
     <div class="main-grid">
         <div class="main-content archive press-release">
             <div class="grid-x grid-margin-x grid-padding-y small-up-1 medium-up-2 post-grid">
-                <?php
-                if (have_posts()) :
-                    while (have_posts()) : the_post();
+                <?php if (have_posts()) : ?>
+                    <?php while (have_posts()) : the_post(); ?>
+                        <?php
                         $time = get_the_time('F j, Y', $mypost->ID);
                         $timeShort = get_the_time('o-m-j', $mypost->ID);
                         $theTitle = get_field('title', false, false);
-                        $news_icon = get_field('news_icon', 'option');
-                        if (has_post_thumbnail($post->ID)) :
-                ?>
+                        $news_icon = get_field('news_icon', 'option'); ?>
+                        <?php if (has_post_thumbnail($post->ID)) : ?>
                             <article id="post-<?php the_ID(); ?>" class="cell media-object card stack-for-small">
                                 <div class="flex-container flex-dir-column medium-flex-dir-row">
                                     <div class="media-object-section">
@@ -51,16 +50,22 @@ get_header(); ?>
                                     </div>
                                     <div class="media-object-section">
                                         <time datetime="<?php echo $timeShort; ?>">
-                                            <?php
-                                            echo $time; ?>
+                                            <?php echo $time; ?>
                                         </time>
                                         <p class="lead mb-0">
-                                            <?php
-                                            echo '<a href="' . get_permalink() . '">';
-                                            echo $theTitle;
-                                            echo '</a>';
-                                            ?>
+                                            <strong>
+                                                <?php
+                                                echo '<a href="' . get_permalink() . '">';
+                                                if (!empty($theTitle)) {
+                                                    echo $theTitle;
+                                                } else {
+                                                    the_title();
+                                                }
+                                                echo '</a>';
+                                                ?>
+                                            </strong>
                                         </p>
+                                        <?php edit_post_link(__('(Edit)', 'nacelle'), '<span class="edit-link">', '</span>'); ?>
                                     </div>
                                     <a class="go-corner" href="<?php echo get_permalink($mypost->ID); ?>">
                                         <div class="go-arrow">
@@ -69,77 +74,55 @@ get_header(); ?>
                                     </a>
                                 </div>
                             </article>
-                        <?php
-                        else :
-                        ?>
-                            <article class="cell medium-12 archive-title">
-
-                                <div class="grid-x">
-
-                                    <?php // microphone 
-                                    ?>
-                                    <div class="cell small-2 medium-1">
-                                        <img class="mic" src="<?php bloginfo('template_directory'); ?>/dist/assets/images/comedy-dynamics-mic.png" alt="comedy microphone" />
+                        <?php else : ?>
+                            <article id="post-<?php the_ID(); ?>" class="cell media-object card stack-for-small">
+                                <div class="flex-container flex-dir-column medium-flex-dir-row">
+                                    <div class="media-object-section">
+                                        <?php
+                                        echo '<a href="' . get_permalink() . '">';
+                                        if (has_post_thumbnail()) : the_post_thumbnail('thumbnail');
+                                        endif;
+                                        echo '</a>';
+                                        ?>
                                     </div>
-
-                                    <?php // article title 
-                                    ?>
-                                    <div class="cell small-10 medium-11">
-                                        <?php // oldschool title
+                                    <div class="media-object-section">
+                                        <time datetime="<?php echo $timeShort; ?>">
+                                            <?php echo $time; ?>
+                                        </time>
+                                        <?php
                                         if (is_single()) {
                                             the_title('<h3 class="entry-title">', '</h3>');
                                         } else {
-                                            the_title('<h4 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h4>');
+                                            the_title('<p class="entry-title lead"><strong><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></strong></p>');
                                         }
                                         ?>
-                                    </div>
-
-                                </div>
-
-                                <footer class="grid-x">
-
-                                    <?php // admin edit link 
-                                    ?>
-                                    <div class="cell small-2 medium-1">
-
                                         <?php edit_post_link(__('(Edit)', 'nacelle'), '<span class="edit-link">', '</span>'); ?>
-                                        <?php $tag = get_the_tags();
-                                        if ($tag) {
-                                        ?>
-                                            <p><?php the_tags(); ?></p>
-                                        <?php
-                                        } ?>
-
                                     </div>
-
-                                    <?php // date and read more 
-                                    ?>
-                                    <div class="cell small-10 medium-11">
-
-                                        <div class="grid-x small-up-2">
-
-                                            <div class="cell">
-                                                <p><?php the_time('m.j.y'); ?></p>
-                                            </div>
-                                            <div class="cell text-right">
-                                                <a class="clear button success medium" href="<?php echo get_permalink(); ?>">More on this article. . .</a>
-                                            </div>
-
+                                    <a class="go-corner" href="<?php echo get_permalink($mypost->ID); ?>">
+                                        <div class="go-arrow">
+                                            →
                                         </div>
-
-                                    </div>
-
-                                </footer>
-
+                                    </a>
+                                </div>
                             </article>
-                    <?php
-                        endif;
-                    endwhile;
-                else : ?>
+                        <?php endif; ?>
+                    <?php endwhile; ?>
+                <?php else : ?>
                     <?php get_template_part('template-parts/content', 'none'); ?>
                 <?php endif; ?>
                 <?php wp_reset_query(); ?>
             </div>
+            <?php /* Display navigation to next/previous pages when applicable */ ?>
+            <?php
+            if (function_exists('Nacelle_pagination')) :
+                Nacelle_pagination();
+            elseif (is_paged()) :
+            ?>
+                <nav id="post-nav">
+                    <div class="post-previous"><?php next_posts_link(__('&larr; Older posts', 'nacelle')); ?></div>
+                    <div class="post-next"><?php previous_posts_link(__('Newer posts &rarr;', 'nacelle')); ?></div>
+                </nav>
+            <?php endif; ?>
         </div>
         <?php get_sidebar(); ?>
     </div>
