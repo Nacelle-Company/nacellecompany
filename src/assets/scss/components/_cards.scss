@@ -156,26 +156,9 @@ $image-hover-wrapper-icon-size: 60px;
 	// CD catalog cards END
 }
 .callout.secondary {
-	background-color: #202020;
+	background-color: var(--nav-bk-color);
 }
 .callout-footer p {
 	font-size: 93%;
 	@include multiLineEllipsis($lineHeight: 1.2em, $lineCount: 3, $bgColor: white);
-}
-#breadcrumbs {
-	list-style: none;
-	margin: 10px 0;
-	overflow: hidden;
-}
-
-#breadcrumbs li {
-	display: inline-block;
-	vertical-align: middle;
-	margin-right: 15px;
-}
-
-#breadcrumbs .separator {
-	font-size: 18px;
-	font-weight: 100;
-	color: #ccc;
 }

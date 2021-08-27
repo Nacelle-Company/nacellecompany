@@ -109,6 +109,7 @@ if ($taxonomy == 'Producers') {
                         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
                             <p>
                                 <?php
+                                the_title('<h5 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h5>');
                                 if ($synopsis) {
                                     echo $synopsis;
                                 }
@@ -173,6 +174,7 @@ if ($taxonomy == 'Producers') {
                         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
                             <p>
                                 <?php
+                                the_title('<h5 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h5>');
                                 if ($synopsis) {
                                     echo $synopsis;
                                 }
@@ -241,6 +243,7 @@ if ($taxonomy == 'Producers') {
                         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
                             <p>
                                 <?php
+                                the_title('<h5 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h5>');
                                 if ($synopsis) {
                                     echo $synopsis;
                                 }
@@ -309,6 +312,7 @@ if ($taxonomy == 'Producers') {
                         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
                             <p>
                                 <?php
+                                the_title('<h5 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h5>');
                                 if ($synopsis) {
                                     echo $synopsis;
                                 }

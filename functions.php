@@ -29,6 +29,8 @@ require_once('library/class-foundationpress-mobile-walker.php');
 require_once('library/widget-areas.php');
 /** Return entry meta information for posts */
 require_once('library/entry-meta.php');
+/** Social sharing settings option */
+require_once('library/social-share.php');
 /** Enqueue scripts */
 require_once('library/enqueue-scripts.php');
 /** Add theme support */
@@ -190,7 +192,7 @@ function embed_youtube_parameters($code)
 // add_action('wp_enqueue_scripts', 'nacelle_enqueue_styles');
 // fix the custom post type pagination error
 // https://toolset.com/forums/topic/custom-post-type-pagination-404-error/
-function nacelle_fix_custom_posts_per_page($query_string)
+function Nacelle_fix_custom_posts_per_page($query_string)
 {
     if (is_admin() || !is_array($query_string))
         return $query_string;
@@ -211,10 +213,10 @@ function nacelle_fix_custom_posts_per_page($query_string)
     }
     return $query_string;
 }
-add_filter('request', 'nacelle_fix_custom_posts_per_page');
+add_filter('request', 'Nacelle_fix_custom_posts_per_page');
 // END fix the custom post type pagination error
 // custom logo https://since1979.dev/wordpress-add-custom-logo-support-to-your-theme/
-add_action('pre_get_posts', 'nacelle_change_category_order');
+add_action('pre_get_posts', 'Nacelle_change_category_order');
 /**
  * Customize category Query using pre_get_posts.
  * 
@@ -224,7 +226,7 @@ add_action('pre_get_posts', 'nacelle_change_category_order');
  * @todo       Change prefix to theme or plugin prefix.
  *
  */
-function nacelle_change_category_order($query)
+function Nacelle_change_category_order($query)
 {
     if ($query->is_main_query() && !$query->is_feed() && !is_admin() && is_category()) {
         $query->set('orderby', 'title');
@@ -436,3 +438,12 @@ function preload_post_thumbnail()
     printf('<link rel="preload" as="image" href="%s" %s/>', esc_url($src), $additional_attr);
 }
 add_action('wp_head', 'preload_post_thumbnail');
+
+
+// i can has custom hook
+// function custom_hook()
+// {
+//     echo 'This!!!!';
+//     do_action('Nacelle_social_share_content');
+//     echo 'That!!';
+// }

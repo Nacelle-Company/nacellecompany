@@ -8,9 +8,9 @@
 
         get_template_part('template-parts/catalog/crew-bio');
 
-        get_template_part('template-parts/blocks/video-hero');
+       //  get_template_part('template-parts/blocks/video-hero');
 
-        get_template_part('template-parts/blocks/wysiwyg');
+       //  get_template_part('template-parts/blocks/wysiwyg');
 
         ?>
  </div>

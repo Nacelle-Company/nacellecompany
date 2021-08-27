@@ -8,10 +8,10 @@ if (!empty($talents) || !empty($directors) || !empty($producers) || !empty($writ
 ?>
     <div class="catalog-crew grid-x medium-order-2 large-order-3 medium-up-1 large-up-2 px-medium-3 px-large-4 pt-2">
         <div class="cell medium-4 title">
-            <div class="grid-y medium-grid-frame">
-                <h2 class="h5"><?php the_title(); ?></h2>
-                <h2 class="h4"><?php _e('Credits', 'nacelle'); ?></h2>
-            </div>
+            <h2 class="flex-container flex-dir-column h3">
+                <span class="h6 secondary-color mb-0"><?php the_title(); ?></span>
+                <?php _e('Credits', 'nacelle'); ?>
+            </h2>
         </div>
         <div class="cell medium-8 crew">
             <?php if ($talents) : ?>
@@ -94,7 +94,7 @@ if (!empty($talents) || !empty($directors) || !empty($producers) || !empty($writ
         $imdbV = get_post_meta(get_the_ID(), 'imdb_video', true);
         if ($imdbV) : ?>
             <div class="cell">
-                <a href="<?php echo $imdbV; ?>" class="catalog-title button expanded" rel="noreferrer" title="Watch <?php the_title_attribute(); ?> on <?php echo $imdbV; ?>" target="_blank" rel="noreferrer">
+                <a href="<?php echo $imdbV; ?>" class="catalog-title button large" rel="noreferrer" title="Watch <?php the_title_attribute(); ?> on <?php echo $imdbV; ?>" target="_blank" rel="noreferrer">
                     <strong><?php _e("View on IMDB", 'Nacelle'); ?></strong>
                     <svg class="icon alt" width="15" height="15" xmlns="http://www.w3.org/2000/svg">
                         <path d="M10.938 8.75h-.626a.313.313 0 00-.312.313v2.187H3.75V5h2.813c.172 0 .312-.14.312-.313v-.625a.313.313 0 00-.313-.312H3.438a.938.938 0 00-.937.938v6.875c0 .517.42.937.938.937h6.874c.518 0 .938-.42.938-.938v-2.5a.313.313 0 00-.313-.312zM12.03 2.5h-2.5a.47.47 0 00-.332.8L9.897 4l-4.76 4.758a.469.469 0 000 .664l.442.442a.469.469 0 00.665 0l4.758-4.76.697.698a.47.47 0 00.801-.332v-2.5a.469.469 0 00-.469-.469z" fill-rule="nonzero" />

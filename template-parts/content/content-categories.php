@@ -37,6 +37,7 @@ get_header(); ?>
 						?>
 					</div>
 					<h1 class="catalog-title h3 mb-0">
+						<span class="invisible">Comedy</span>
 						<?php single_cat_title(); ?>
 					</h1>
 				</div>

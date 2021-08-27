@@ -1,13 +1,8 @@
 	<header class="catalog featured-hero grid-container fluid">
-
 		<div class="grid-x catalog grid-padding-y">
-
 			<div class="cell px-large-3">
-
 				<div class="grid-x align-justify">
 
-					<?php // title 
-					?>
 					<div class="cell large-7">
 						<?php
 						if (is_single()) {
@@ -17,48 +12,39 @@
 						}
 						?>
 					</div>
-
-					<?php // theatre popup button 
-					?>
-					<div class="cell medium-auto medium-text-right mr-3 breadcrumbs">
-						<?php if (function_exists('rank_math_the_breadcrumbs')) rank_math_the_breadcrumbs(); ?>
-						<?php // include tickets modal 
-						?>
-						<?php if (get_field('theatres_popup')) : ?>
-
-							<?php get_template_part('template-parts/blocks/tickets-modal', 'none'); ?>
-
-						<?php endif; ?>
-
+					<div class="cell medium-auto mr-3 breadcrumbs">
+						<div class="grid-x align-justify large-text-right large-flex-dir-column">
+							<div class="cell small-10 large-12">
+								<?php if (function_exists('rank_math_the_breadcrumbs')) rank_math_the_breadcrumbs(); ?>
+								<?php if (get_field('theatres_popup')) : ?>
+									<?php get_template_part('template-parts/blocks/tickets-modal', 'none'); ?>
+								<?php endif; ?>
+							</div>
+							<div class="cell small-2 large-12">
+								<div class="flex-container align-right">
+									<?php get_template_part('template-parts/blocks/social-share'); ?>
+								</div>
+							</div>
+						</div>
 					</div>
-
 				</div>
-
 				<div class="grid-x align-justify align-top">
-
-					<?php // synopsis 
-					?>
 					<div class="cell medium-12 large-6 synopsis">
-						<span class="invisible"><h2><?php the_title(); ?></h2></span>
-
+						<span class="invisible">
+							<h2><?php the_title(); ?></h2>
+						</span>
 						<?php
-						$trim_length = 35;  //desired length of text to display
-						$value_more = ' . . <button class="primary-color" data-toggle="exampleModal5" aria-controls="exampleModal5">more.</button>'; // what to add at the end of the trimmed text
-						$custom_field = 'synopsis';
-						$value = get_post_meta($post->ID, $custom_field, true);
-						if ($value) {
-							echo wp_trim_words($value, $trim_length, $value_more);
+						$synopsis_more = ' . . <button class="primary-color" data-toggle="exampleModal5" aria-controls="exampleModal5">more.</button>'; // what to add at the end of the trimmed text
+						if (get_the_content()) {
+							$synopsis = apply_filters('the_content', get_the_content());
+							$synopsis = wp_strip_all_tags($synopsis);
+						} else {
+							$synopsis = get_post_meta($post->ID, 'synopsis', true);
 						}
+						echo wp_trim_words($synopsis, 35, $synopsis_more);
 						?>
-
 					</div>
-
 				</div>
-
-			</div> <?php // END cell 
-					?>
-
-		</div> <?php // END catalog 
-				?>
-
+			</div>
+		</div>
 	</header>

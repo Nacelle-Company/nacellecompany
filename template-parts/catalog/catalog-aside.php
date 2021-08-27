@@ -18,13 +18,16 @@ $itunesV = get_post_meta(get_the_ID(), 'itunes_video', true);
 					<?php the_post_thumbnail('large', array('sizes' => '(max-width:320px) 145px, (max-width:425px) 220px, 500px')); ?>
 				</a>
 			<?php else : ?>
-				<?php if (has_post_thumbnail()) : the_post_thumbnail('large', array('sizes' => '(max-width:320px) 145px, (max-width:425px) 220px, 500px')); endif; ?>
+				<?php if (has_post_thumbnail()) : the_post_thumbnail('large', array('sizes' => '(max-width:320px) 145px, (max-width:425px) 220px, 500px'));
+				endif; ?>
 			<?php endif; ?>
-			</div>
+		</div>
 		<div class="cell medium-2 no-mobile">
 			<div class="grid-x">
 				<div class="cell pagination grid-padding-y">
-					<?php get_template_part('template-parts/catalog/catalog-pagination'); ?>
+					<div class="flex-container flex-dir-column social-share align-center align-middle">
+						<?php get_template_part('template-parts/catalog/catalog-pagination'); ?>
+					</div>
 				</div>
 			</div>
 		</div>

@@ -66,7 +66,13 @@
   <?php // catalog item synopsis modal 
   ?>
   <div class="small synopsis reveal" id="exampleModal5" data-reveal>
-    <?php echo get_post_meta(get_the_ID(), 'synopsis', true); ?>
+    <?php
+    if (get_the_content()) {
+      $synopsis = get_the_content();
+    } else {
+      $synopsis = get_post_meta($post->ID, 'synopsis', true);
+    }
+    echo $synopsis; ?>
     <button class="close-button" data-close aria-label="Close reveal" type="button">
       <span aria-hidden="true">&times;</span>
     </button>

@@ -40,41 +40,50 @@ $link = get_post_meta(get_the_ID(), 'link_to_article', true);
     </header>
     <div class="entry-content">
         <?php the_content(); ?>
+        <div class="text-center">
+            <span>###</span>
+            <div class='share-on'>Share on: </div>
+        </div>
+        <div class="flex-container social-share align-center align-middle">
+            <?php get_template_part('template-parts/blocks/social-share'); ?>
+        </div>
         <hr>
-        <?php
-        $related_posts = get_post_meta(get_the_ID(), 'related_to', true);
-        if ($related_posts) : ?>
-            <div class="grid-x grid-padding-x">
-                <div class="cell medium-6">
-                    <h4>Related Comedy</h4>
-                    <?php foreach ($related_posts as $post) :
-                        setup_postdata($post); ?>
-                        <p>
-                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-                        </p>
-                        <?php wp_reset_postdata(); ?>
-                    <?php endforeach; ?>
-                </div>
-            <?php endif; ?>
+        <div class="mb-2">
             <?php
             $related_posts = get_post_meta(get_the_ID(), 'related_to', true);
             if ($related_posts) : ?>
-                <div class="cell medium-6">
-                    <h4>Featured Talent</h4>
-                    <?php foreach ($related_posts as $post) :
-                        setup_postdata($post); ?>
-                        <?php
-                        $terms = get_field('talent');
-                        if ($terms) : ?>
-                            <?php foreach ($terms as $term) : ?>
-                                <a href="<?php echo esc_url(get_term_link($term)); ?>"><?php echo esc_html($term->name); ?></a>
-                            <?php endforeach; ?>
-                        <?php endif; ?>
-                        <?php wp_reset_postdata(); ?>
-                    <?php endforeach; ?>
+                <div class="grid-x grid-padding-x">
+                    <div class="cell medium-6">
+                        <h4>Related Comedy</h4>
+                        <?php foreach ($related_posts as $post) :
+                            setup_postdata($post); ?>
+                            <p>
+                                <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                            </p>
+                            <?php wp_reset_postdata(); ?>
+                        <?php endforeach; ?>
+                    </div>
+                <?php endif; ?>
+                <?php
+                $related_posts = get_post_meta(get_the_ID(), 'related_to', true);
+                if ($related_posts) : ?>
+                    <div class="cell medium-6">
+                        <h4>Featured Talent</h4>
+                        <?php foreach ($related_posts as $post) :
+                            setup_postdata($post); ?>
+                            <?php
+                            $terms = get_field('talent');
+                            if ($terms) : ?>
+                                <?php foreach ($terms as $term) : ?>
+                                    <a href="<?php echo esc_url(get_term_link($term)); ?>"><?php echo esc_html($term->name); ?></a>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+                            <?php wp_reset_postdata(); ?>
+                        <?php endforeach; ?>
+                    </div>
                 </div>
-            </div>
-        <?php endif; ?>
+            <?php endif; ?>
+        </div>
     </div>
     <footer class="pagination">
         <?php get_template_part('template-parts/catalog/catalog-pagination'); ?>
