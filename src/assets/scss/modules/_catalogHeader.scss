@@ -1,0 +1,20 @@
+.catalog-header {
+  background-size: 15% auto;
+  background-position: top center;
+  overflow: hidden;
+  padding: 1.25rem 0;
+  @include breakpoint(large) {
+    padding: 1.875rem 0
+  }
+  .entry-title {
+    @include breakpoint(medium) {
+      font-size: 2.5rem;
+    }
+  }
+}
+.breadcrumb-container {
+    width: 75%;
+    @include breakpoint(large) {
+      width: 100%;
+    }
+}
