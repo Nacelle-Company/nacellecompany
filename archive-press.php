@@ -17,10 +17,26 @@
  */
 
 get_header(); ?>
+<?php
+$img_size_lg = 'fp-large';
+$img_size_md = 'fp-medium';
+$img_size_sm = 'fp-small';
 
+$hero_image = get_field('news_header_image', 'option');
+$news_icon = get_field('news_icon', 'option');
+
+/* Get custom sizes of our image sub_field */
+$hero_lg = $hero_image['sizes'][$img_size_lg];
+$hero_md = $hero_image['sizes'][$img_size_md];
+$hero_sm = $hero_image['sizes'][$img_size_sm];
+
+
+
+if (!empty('news_header_image')) : ?>
+	<?php get_template_part('template-parts/featured-image'); ?>
+<?php endif; ?>
 <main class="main-container">
 	<div class="main-grid press-release">
-		<?php get_template_part('template-parts/logo-bg-header'); ?>
 		<article class="main-content grid-x grid-margin-x grid-padding-y small-up-1 medium-up-2 post-grid">
 			<?php if (have_posts()) : ?>
 				<?php while (have_posts()) : the_post(); ?>

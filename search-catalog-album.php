@@ -19,7 +19,7 @@ get_header(); ?>
 
 				<header class="grid-container archive pb-2 pb-medium-0">
 
-					<div class="grid-x align-center-middle pt-2 category-intro">
+					<div class="grid-x align-center-middle pt-2 primary-title">
 
 						<div class="cell small-6">
 

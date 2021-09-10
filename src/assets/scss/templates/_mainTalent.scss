@@ -11,10 +11,12 @@
 
 // https://css-tricks.com/a-lightweight-masonry-solution/
 // https://codepen.io/thebabydino/pen/BajGQgQ
+/*
 $w: Min(20em, 100%);
 $s: .5em;
+*/
 
-/* masonry grid styles */
+/* masonry grid styles 
 .grid--masonry {
   display: grid;
   grid-template-columns: repeat(auto-fit, $w);
@@ -40,4 +42,5 @@ $s: .5em;
         }
     }
 }
+*/
 // hover effect: https://codepen.io/Julka85/pen/JydPmN

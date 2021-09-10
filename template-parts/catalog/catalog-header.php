@@ -1,4 +1,4 @@
-	<header class="catalog featured-hero grid-container fluid">
+	<header class="catalog catalog-header featured-hero grid-container fluid">
 		<div class="grid-x catalog grid-padding-y">
 			<div class="cell px-large-3">
 				<div class="grid-x align-justify">
@@ -12,17 +12,24 @@
 						}
 						?>
 					</div>
-					<div class="cell medium-auto mr-3 breadcrumbs">
+					<div class="cell medium-auto mr-4 breadcrumbs">
 						<div class="grid-x align-justify large-text-right large-flex-dir-column">
-							<div class="cell small-10 large-12">
-								<?php if (function_exists('rank_math_the_breadcrumbs')) rank_math_the_breadcrumbs(); ?>
-								<?php if (get_field('theatres_popup')) : ?>
-									<?php get_template_part('template-parts/blocks/tickets-modal', 'none'); ?>
-								<?php endif; ?>
-							</div>
-							<div class="cell small-2 large-12">
-								<div class="flex-container align-right">
-									<?php get_template_part('template-parts/blocks/social-share'); ?>
+							<?php if (function_exists('rank_math_the_breadcrumbs') || et_field('theatres_popup')) : ?>
+								<div class="cell breadcrumb-container small-9 large-12">
+									<?php if (function_exists('rank_math_the_breadcrumbs')) rank_math_the_breadcrumbs(); ?>
+									<?php if (get_field('theatres_popup')) : ?>
+										<?php get_template_part('template-parts/blocks/tickets-modal', 'none'); ?>
+									<?php endif; ?>
+								</div>
+							<?php endif; ?>
+							<div class="cell small-3 large-12">
+								<div class="grid-x align-right">
+									<div class="cell shrink flex-container align-right">
+										<strong class="secondary-color">Share on</strong>
+									</div>
+									<div class="cell shrink flex-container align-right">
+										<?php get_template_part('template-parts/blocks/social-share'); ?>
+									</div>
 								</div>
 							</div>
 						</div>

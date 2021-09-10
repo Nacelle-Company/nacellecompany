@@ -61,6 +61,7 @@
 	</script>
 	<?php wp_head(); ?>
 </head>
+<?php flush(); ?>
 <?php
 if (has_nav_menu('top-bar-l')) :
 	$leftToo = 'left-too';
@@ -98,16 +99,16 @@ endif;
 			<?php endif; ?>
 		</div>
 		<nav class="top-bar <?php echo $leftToo; ?>" role="navigation" id="<?php Nacelle_mobile_menu_id(); ?>">
-				<?php if (has_nav_menu('top-bar-l')) : ?>
-						<?php Nacelle_top_bar_l(); ?>
-				<?php endif; ?>
-					<?php if (function_exists('the_custom_logo')) {
-						the_custom_logo();
-					} ?>
-					<?php Nacelle_top_bar_r(); ?>
+			<?php if (has_nav_menu('top-bar-l')) : ?>
+				<?php Nacelle_top_bar_l(); ?>
+			<?php endif; ?>
+			<?php if (function_exists('the_custom_logo')) {
+				the_custom_logo();
+			} ?>
+			<?php Nacelle_top_bar_r(); ?>
 		</nav>
 		<?php if (is_front_page() && get_field('yes_homepage_heading', 'option')) : ?>
-			<div class="cell tagline text-center">
+			<div class="cell text-center">
 				<h1>
 					<?php the_field('homepage_heading', 'option'); ?>
 				</h1>

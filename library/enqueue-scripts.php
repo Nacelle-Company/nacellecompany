@@ -37,7 +37,7 @@ if ( ! function_exists( 'Nacelle_scripts' ) ) :
 	function Nacelle_scripts() {
 
 		// Enqueue the main Stylesheet.
-		// wp_enqueue_style('fold-stylesheet', get_stylesheet_directory_uri() . '/dist/assets/css/' . Nacelle_asset_path('aboveFold.css'), array(), '2.10.4', 'all');
+		wp_enqueue_style('fold-stylesheet', get_stylesheet_directory_uri() . '/dist/assets/css/' . Nacelle_asset_path('aboveFold.css'), array(), '2.10.4', 'all');
 
 		wp_enqueue_style( 'main-stylesheet', get_stylesheet_directory_uri() . '/dist/assets/css/' . Nacelle_asset_path( 'app.css' ), array(), '2.10.4', 'all' );
 
@@ -70,4 +70,23 @@ if ( ! function_exists( 'Nacelle_scripts' ) ) :
 	}
 
 	add_action( 'wp_enqueue_scripts', 'Nacelle_scripts' );
+
+	// preload css in wordpress
+	// add this code in child theme function.php
+	// https://gist.github.com/insaurabh/46eac17e4e4badc694dcf42944978b1d
+	add_filter('style_loader_tag',  'preload_css', 10, 2);
+
+	function preload_css($html, $handle)
+	{
+
+		$targetHanlde = array('main-stylesheet');
+
+		if (in_array($handle, $targetHanlde)) {
+
+			$html = str_replace("rel='stylesheet'", "rel='stylesheet preload' as='style'", $html);
+		}
+
+		return $html;
+	}
+
 endif;

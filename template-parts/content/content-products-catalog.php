@@ -2,10 +2,8 @@
 $prod_args = array(
   'post_type' => 'catalog',
   'posts_per_page' => '30',
-  'order'         => 'DESC',
-  'orderby'       => 'meta_value',
-  'meta_key'       => 'release_date',
-  'meta_type'      => 'DATETIME',
+  'order'         => 'ASC',
+  'orderby'       => 'menu_order',
   'tax_query' => array(
     'relation' => 'AND',
     array(
@@ -27,10 +25,8 @@ $prod_args = array(
 $podcast_args = array(
   'post_type' => 'catalog',
   'posts_per_page' => '30',
-  'order' => 'DESC',
-  'orderby'       => 'meta_value',
-  'meta_key'       => 'release_date',
-  'meta_type'      => 'DATETIME',
+  'order' => 'ASC',
+  'orderby'       => 'menu_order',
   'tax_query' => array(
     array(
       'taxonomy' => 'category',

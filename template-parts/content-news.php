@@ -31,7 +31,7 @@ $link = get_post_meta(get_the_ID(), 'link_to_article', true);
                     ?>
                     <h4><?php _e('Read more', 'nacelle'); ?>
                         <svg class="icon" width="20" height="20" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M16.875 12.5h-1.25a.625.625 0 00-.625.625V17.5H2.5V5h5.625c.345 0 .625-.28.625-.625v-1.25a.625.625 0 00-.625-.625h-6.25C.839 2.5 0 3.34 0 4.375v13.75C0 19.161.84 20 1.875 20h13.75c1.036 0 1.875-.84 1.875-1.875v-5a.625.625 0 00-.625-.625zM19.063 0h-5c-.835 0-1.252 1.012-.665 1.602l1.396 1.395-9.52 9.517a.938.938 0 000 1.329l.885.884a.937.937 0 001.328 0l9.516-9.52 1.395 1.395c.586.585 1.602.175 1.602-.665v-5A.937.937 0 0019.062 0z" fill="#FFBC00" fill-rule="nonzero" />
+                            <path d="M16.875 12.5h-1.25a.625.625 0 00-.625.625V17.5H2.5V5h5.625c.345 0 .625-.28.625-.625v-1.25a.625.625 0 00-.625-.625h-6.25C.839 2.5 0 3.34 0 4.375v13.75C0 19.161.84 20 1.875 20h13.75c1.036 0 1.875-.84 1.875-1.875v-5a.625.625 0 00-.625-.625zM19.063 0h-5c-.835 0-1.252 1.012-.665 1.602l1.396 1.395-9.52 9.517a.938.938 0 000 1.329l.885.884a.937.937 0 001.328 0l9.516-9.52 1.395 1.395c.586.585 1.602.175 1.602-.665v-5A.937.937 0 0019.062 0z" fill-rule="nonzero" />
                         </svg>
                     </h4>
                 </a>
@@ -88,17 +88,15 @@ $link = get_post_meta(get_the_ID(), 'link_to_article', true);
     <footer class="pagination">
         <?php get_template_part('template-parts/catalog/catalog-pagination'); ?>
         <div class="cell flex-container align-center-middle align-spaced text-center">
-            <div class="mr-1">
-                <svg class="icon" width="7" height="11" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6.01.972v8.652c0 .599-.725.899-1.148.475L.535 5.773a.673.673 0 010-.95L4.862.495A.672.672 0 016.01.972z" fill-rule="nonzero" />
-                </svg>
-            </div>
+            <svg class="icon" width="7" height="11" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6.01.972v8.652c0 .599-.725.899-1.148.475L.535 5.773a.673.673 0 010-.95L4.862.495A.672.672 0 016.01.972z" fill-rule="nonzero" />
+            </svg>
             <?php
             $postType = get_post_type();
             if ($postType == 'news') : ?>
                 <a href="<?php echo get_post_type_archive_link('news'); ?>">Return to News Feed</a>
             <?php elseif ($postType == 'press') : ?>
-                <a href="<?php echo get_post_type_archive_link('press'); ?>">Return to News Feed</a>
+                <a href="<?php echo get_post_type_archive_link('press'); ?>">Return to Press Feed</a>
             <?php endif; ?>
         </div>
     </footer>

@@ -6,7 +6,7 @@ get_header(); ?>
     <?php get_template_part('template-parts/blocks/full-flickity-slider'); ?>
     <?php get_template_part('template-parts/blocks/wysiwyg'); ?>
     <div class="cell">
-      <?php get_template_part('template-parts/blocks/slider-news'); ?>
+      <?php // get_template_part('template-parts/blocks/slider-news'); ?>
       <?php get_template_part('template-parts/blocks/press-grid'); ?>
     </div>
   </main>

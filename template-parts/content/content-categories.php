@@ -21,7 +21,7 @@ get_header(); ?>
 <?php if (have_posts()) : ?>
 	<div class="cell medium-12">
 		<header class="grid-container archive pb-2 pb-medium-0">
-			<div class="grid-x align-center-middle pt-2 category-intro">
+			<div class="grid-x align-center-middle pt-2 primary-title">
 				<div class="cell small-6 flex-container align-middle">
 					<div class="pr-1 pb-1 pb-medium-0 flex-container">
 						<?php

@@ -1,7 +1,7 @@
 .title-bar {
 	padding: 0.5rem 1rem;
 	justify-content: center;
-	@include breakpoint(medium) {
+@media print,screen and (min-width: 40em) {
 		display: none;
 	}
 }
@@ -17,13 +17,6 @@ nav ul {
 	list-style: none;
 	padding: 0;
 	margin: 0;
-}
-ul,
-ol,
-dl {
-	margin-bottom: 1rem;
-	list-style-position: outside;
-	line-height: 1.6;
 }
 .dropdown.menu a {
 	font-weight: 600;
@@ -66,7 +59,7 @@ dl {
 	}
 }
 .top-bar {
-	@include breakpoint(medium) {
+@media print,screen and (min-width: 40em) {
 		padding: 0.5em;
 		display: flex;
 		align-items: center;
@@ -77,22 +70,22 @@ dl {
 	}
 }
 
-.top-bar-right {
-	display: flex;
-}
+// .top-bar-right {
+// 	display: flex;
+// }
 
 .top-bar > .menu {
 	display: none;
-	@include breakpoint(medium up) {
+@media screen and (min-width: 40em) {
 		display: flex;
 	}
 }
 
 .transparent-header {
-	@include breakpoint(medium up) {
+@media screen and (min-width: 40em) {
 		position: absolute;
 		.top-bar {
-			@include breakpoint(medium up) {
+@media screen and (min-width: 40em) {
 				background: transparent !important;
 			}
 		}
@@ -102,13 +95,13 @@ dl {
 
 // search
 .search-container {
-	@include breakpoint(medium) {
+@media print,screen and (min-width: 40em) {
 		display: flex;
 		position: absolute;
 		right: 0;
 		align-items: center;
 		background: transparent;
-		border-radius: $button-radius;
+		border-radius: 0;
 		transform: translate(0, 0);
 		transition: 0.3s linear;
 		ul {

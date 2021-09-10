@@ -7,7 +7,7 @@ get_header(); ?>
 <?php while (have_posts('')) : the_post(); ?>
 	<main class="front-grid">
 		<div class="grid-x front-grid__top grid-padding-x align-center-middle">
-			<div class="cell medium-12 large-8 py-4 mt-medium-4">
+			<div class="cell medium-12 large-10 xlarge-8 py-4 mt-medium-4">
 				<?php the_content(); ?>
 			</div>
 			<div class="front-grid__overlay" style="background-color:<?php echo get_post_meta(get_the_ID(), 'bk_color', true);  ?>;opacity: .<?php echo get_post_meta(get_the_ID(), 'bk_opacity', true);  ?>;"></div>

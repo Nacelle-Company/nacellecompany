@@ -43,8 +43,8 @@
 				}
 				$flip = get_post_meta(get_the_ID(), 'layouts_' . $count . '_flip', true);
 				if ($flip)
-					$flip = ' medium-order-2';
-				else $flip = '';
+					$flip = ' medium-order-2 pl-medium-3';
+				else $flip = ' pr-medium-3';
 				$txt = get_post_meta(get_the_ID(), 'layouts_' . $count . '_txt', true);
 				$btn = get_post_meta(get_the_ID(), 'layouts_' . $count . '_btn', true);
 				if ($btn) :
@@ -78,19 +78,24 @@
 					$modal_img_link_a_end = '';
 				endif;
 				$img = get_post_meta(get_the_ID(), 'layouts_' . $count . '_img', true);
+				if (get_post_meta(get_the_ID(), 'layouts_' . $count . '_img_width', true)) {
+					$img_width = get_post_meta(get_the_ID(), 'layouts_' . $count . '_img_width', true);
+				} else {
+					$img_width = 'medium-6';
+				}
 				echo '<section class="sect sect-img_txt ' . $bk_link_color_class . '" style="' . $bk_color . $border . '">';
-				echo '<div class="grid-x sect-wrap align-spaced' . $fill_img . '">';
-				echo '<div class="' . $fill_img_cell . 'cell medium-5' . $flip . '">';
-				echo apply_filters('the_content', $txt);
-				echo $btn;
-				echo '</div>';
-				echo '<div class="cell medium-6">';
-				echo '<a data-open="imgModal-' . $count . '">';
-				echo '<figure class="align-center">' . wp_get_attachment_image($img, 'large') . '</figure>';
-				echo '</a>';
-				echo $img_link;
-				echo '</div>';
-				echo '</div>';
+					echo '<div class="grid-x sect-wrap align-spaced' . $fill_img . '">';
+						echo '<div class="cell medium-auto ' . $fill_img_cell . $flip . '">';
+							echo apply_filters('the_content', $txt);
+							echo $btn;
+						echo '</div>';
+						echo '<div class="cell ' . $img_width . '">';
+							echo '<button class="modal-btn" data-open="imgModal-' . $count . '">';
+							echo '<figure class="align-center">' . wp_get_attachment_image($img, 'large') . '</figure>';
+							echo '</button>';
+							echo $img_link;
+						echo '</div>';
+					echo '</div>';
 				echo '</section>';
 				// Image Modal
 				echo '<div class="small reveal" id="imgModal-' . $count . '" data-reveal>';
@@ -143,10 +148,46 @@
 			case 'banner':
 				$bk_color = get_post_meta(get_the_ID(), 'layouts_' . $count . '_bk_color', true);
 				if ($bk_color)
-					$bk_color = 'background-color:' . $bk_color;
+					$bk_color = 'background-color:' . $bk_color . ';';
 				$bk_img = get_post_meta(get_the_ID(), 'layouts_' . $count . '_bk_img', true);
 				if ($bk_img)
-					$bk_img = 'background-image:url(' . wp_get_attachment_image_url($bk_img, '') . ')';
+					$bk_img = 'background-image:url(' . wp_get_attachment_image_url($bk_img, '') . ');';
+				if (get_post_meta(get_the_ID(), 'layouts_' . $count . '_bk_edge', true)) {
+					$bk_edge = get_post_meta(get_the_ID(), 'layouts_' . $count . '_bk_edge', true);
+					if ($bk_edge === 'lt') {
+						$bk_edge = 'background-position:left top;';
+					} elseif ($bk_edge === 'lc') {
+						$bk_edge = 'background-position:left center;';
+					} elseif ($bk_edge === 'lb') {
+						$bk_edge = 'background-position:left bottom;';
+					} elseif ($bk_edge === 'rt') {
+						$bk_edge = 'background-position:right top;';
+					} elseif ($bk_edge === 'rc') {
+						$bk_edge = 'background-position:right center;';
+					} elseif ($bk_edge === 'rb') {
+						$bk_edge = 'background-position:right bottom;';
+					} elseif ($bk_edge === 'ct') {
+						$bk_edge = 'background-position:center top;';
+					} elseif ($bk_edge === 'cc') {
+						$bk_edge = 'background-position:center center;';
+					} elseif ($bk_edge === 'lb') {
+						$bk_edge = 'background-position:center bottom;';
+					}
+				}
+				if (get_post_meta(get_the_ID(), 'layouts_' . $count . '_row_h', true)) {
+					$row_h = get_post_meta(get_the_ID(), 'layouts_' . $count . '_row_h', true);
+					if ($row_h === 'tall') {
+						$row_h = '<span class="my-3 my-large-4 py-3 py-large-4"></span>';
+					} elseif ($row_h === 'large') {
+						$row_h = '<span class="my-2 my-large-3 py-2 py-large-3"></span>';
+					} elseif ($row_h === 'medium') {
+						$row_h = '<span class="my-1 my-large-2 py-1 py-large-2"></span>';
+					} elseif ($row_h === 'small') {
+						$row_h = '<span class="my-1 my-large-1 py-0 py-large-1"></span>';
+					} elseif ($row_h === 'none') {
+						$row_h = '';
+					}
+				}
 				$txt = get_post_meta(get_the_ID(), 'layouts_' . $count . '_txt', true);
 				$btn = get_post_meta(get_the_ID(), 'layouts_' . $count . '_btn', true);
 				if ($btn) :
@@ -159,12 +200,14 @@
 				endif;
 				$width = get_post_meta(get_the_ID(), 'layouts_' . $count . '_width', true);
 				$overlay = get_post_meta(get_the_ID(), 'layouts_' . $count . '_bk_img_ov', true);
-				echo '<section class="sect sect-banner" style="' . $bk_color . ';' . $bk_img . ';">';
+				echo '<section class="sect sect-banner" style="' . $bk_color . $bk_img . $bk_edge . '">';
 				echo '<div class="grid-x sect-wrap grid-margin-y grid-padding-y align-center-middle">';
 				echo '<div class="cell ' . $width . '">';
+				echo $row_h;
 				echo '<div class="overlay" style="opacity:.' . $overlay . '"></div>';
 				echo apply_filters('the_content', $txt);
 				echo $btn;
+				echo $row_h;
 				echo '</div>';
 				echo '</div>';
 				echo '</section>';

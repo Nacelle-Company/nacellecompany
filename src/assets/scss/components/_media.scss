@@ -11,6 +11,9 @@
     }
 }
 
-.thumbnail {
+.thumbnail{
     border-radius: 0;
+}
+.thumbnail:not(.member):not(.hover-icon) {
+    @include cardOneShadow;
 }

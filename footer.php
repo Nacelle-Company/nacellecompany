@@ -17,11 +17,10 @@
 <a href="#0" class="to-top">Top</a>
 
 <footer>
-  <!-- <div class="footer-container"> -->
-  <div class="footer-container grid-x grid-padding-y grid-padding-x large-flex-dir-row align-center-middle">
+  <div class="footer-container grid-x grid-padding-x large-flex-dir-row align-justify">
 
     <?php if (is_active_sidebar('l-footer-widgets')) : ?>
-      <div class="cell large-4 l-footer-widgets flex-container align-center-middle">
+      <div class="cell large-4 l-footer-widgets mt-2 mt-large-0 flex-container align-center-middle">
         <?php dynamic_sidebar('l-footer-widgets'); ?>
       </div>
     <?php endif; ?>
@@ -38,8 +37,6 @@
     <?php endif; ?>
 
   </div>
-  <!-- </div> -->
-
 
   <script>
     jQuery(function() {

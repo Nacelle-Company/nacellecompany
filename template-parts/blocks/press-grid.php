@@ -31,8 +31,6 @@
             $image_array = get_field('wide_image', $mypost->ID, false);
           }
           $size = 'medium'; // (thumbnail, medium, large, full or custom size)
-
-          $alt = $wideImage['alt'];
       ?>
           <div class="cell media-object stack-for-small">
             <div class="media-object-section">

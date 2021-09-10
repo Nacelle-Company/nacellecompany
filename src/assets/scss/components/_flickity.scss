@@ -21,6 +21,32 @@ https://flickity.metafizzy.co
 	width: 100%;
 	height: 100%;
 }
+@include breakpoint(small only) {
+	.carousel-cell {
+		background-image: none !important;
+	}
+	.carousel-cell.flex-container {
+		align-items: flex-start;
+		.flickity-image {
+			flex: 0 0 93%;
+			padding-top: 2em;
+		}
+	}
+}
+@include breakpoint(large) {
+	.carousel-cell.flex-container {
+		justify-content: flex-start;
+		figcaption {
+			padding-left: 0 !important;
+		}
+		.flickity-image {
+			flex: 1 0 4%;
+		}
+		.flickity-synopsis {
+			flex: 1 0 5%;
+		}
+	}
+}
 
 /* draggable */
 
@@ -54,21 +80,21 @@ https://flickity.metafizzy.co
 	cursor: pointer;
 }
 
-.flickity-button:focus {
-	outline: none;
-	box-shadow: 0 0 0 5px #19f;
-}
+// .flickity-button:focus {
+// 	outline: none;
+// 	box-shadow: 0 0 0 5px #19f;
+// }
 
 .flickity-button:active {
 	opacity: 0.6;
 }
 
-.flickity-button:disabled {
-	opacity: 0.3;
-	cursor: auto;
-	/* prevent disabled button from capturing pointer up event. #716 */
-	pointer-events: none;
-}
+// .flickity-button:disabled {
+// 	opacity: 0.3;
+// 	cursor: auto;
+// 	/* prevent disabled button from capturing pointer up event. #716 */
+// 	pointer-events: none;
+// }
 
 /* ---- previous/next buttons ---- */
 
@@ -88,14 +114,14 @@ https://flickity.metafizzy.co
 	right: 10px;
 }
 /* right to left */
-.flickity-rtl .flickity-prev-next-button.previous {
-	left: auto;
-	right: 10px;
-}
-.flickity-rtl .flickity-prev-next-button.next {
-	right: auto;
-	left: 10px;
-}
+// .flickity-rtl .flickity-prev-next-button.previous {
+// 	left: auto;
+// 	right: 10px;
+// }
+// .flickity-rtl .flickity-prev-next-button.next {
+// 	right: auto;
+// 	left: 10px;
+// }
 
 .flickity-prev-next-button .flickity-button-icon {
 	position: absolute;
@@ -118,9 +144,9 @@ https://flickity.metafizzy.co
 	line-height: 1;
 }
 
-.flickity-rtl .flickity-page-dots {
-	direction: rtl;
-}
+// .flickity-rtl .flickity-page-dots {
+// 	direction: rtl;
+// }
 
 .flickity-page-dots .dot {
 	display: inline-block;
@@ -139,9 +165,9 @@ https://flickity.metafizzy.co
 /* ---- page dots ---- */
 // ADD THEM BACK! https://flickity.metafizzy.co/options.html#pagedots
 
-.carousel.is-fullscreen .carousel-cell {
-	height: 100%;
-}
+// .carousel.is-fullscreen .carousel-cell {
+// 	height: 100%;
+// }
 
 // .flickity-bg-image {
 // 	width: 100%;
@@ -183,9 +209,9 @@ https://flickity.metafizzy.co
 	}
 
 	&.carousel-full--overlay {
-			@include breakpoint(small only) {
-				height: 75vh;
-			}
+		@include breakpoint(small only) {
+			height: 75vh;
+		}
 		.carousel-cell {
 			height: 90vh;
 			background-position: 50% 70%;
@@ -210,37 +236,37 @@ https://flickity.metafizzy.co
 		text-transform: uppercase;
 	}
 }
-.carousel-full--news,
-.carousel-full--press {
-	.flickity-prev-next-button {
-		top: 0;
-		@include breakpoint(medium) {
-			top: 2em;
-		}
-		&.previous {
-			left: 68%;
-			@include breakpoint(medium) {
-				left: 90vw;
-			}
-		}
-		&.next {
-			@include breakpoint(medium) {
-				right: 10px;
-			}
-		}
-	}
-}
+// .carousel-full--news,
+// .carousel-full--press {
+// 	.flickity-prev-next-button {
+// 		top: 0;
+// 		@include breakpoint(medium) {
+// 			top: 2em;
+// 		}
+// 		&.previous {
+// 			left: 68%;
+// 			@include breakpoint(medium) {
+// 				left: 90vw;
+// 			}
+// 		}
+// 		&.next {
+// 			@include breakpoint(medium) {
+// 				right: 10px;
+// 			}
+// 		}
+// 	}
+// }
 
-.carousel-full--press {
-	figcaption {
-		padding: 1em;
-	}
-	img {
-		min-width: 100%;
-	}
-	.flickity-prev-next-button {
-		@include breakpoint(medium) {
-			top: 2em;
-		}
-	}
-}
+// .carousel-full--press {
+// 	figcaption {
+// 		padding: 1em;
+// 	}
+// 	img {
+// 		min-width: 100%;
+// 	}
+// 	.flickity-prev-next-button {
+// 		@include breakpoint(medium) {
+// 			top: 2em;
+// 		}
+// 	}
+// }

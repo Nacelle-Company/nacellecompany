@@ -1,8 +1,8 @@
-footer.footer {
-	@include breakpoint(medium up) {
-		padding-top: 0;
-	}
-}
+// footer.footer {
+// 	@include breakpoint(medium up) {
+// 		padding-top: 0;
+// 	}
+// }
 
 .footer-container {
 			@include breakpoint(large) {
@@ -30,69 +30,70 @@ footer.footer {
 	}
 }
 
-.home footer.cell.shrink.footer {
-	bottom: 0;
-	width: 100%;
-	z-index: 9;
+// .home footer.cell.shrink.footer {
+// 	bottom: 0;
+// 	width: 100%;
+// 	z-index: 9;
 
-	@include breakpoint(medium up) {
-		// position: absolute;
-	}
-}
+// 	@include breakpoint(medium up) {
+// 		// position: absolute;
+// 	}
+// }
 
 .footer-container {
 	width: 100%;
 	min-width: 100vw;
 	// margin-top: 10em;
-}
-
-.footer-logo {
-	display: flex;
-}
-
-.footer-container {
-	section {
-		&.widget .widget_media_image {
-			@include breakpoint(small only) {
-				text-align: center;
-			}
-		}
-
-		.icon-container {
-			text-align: center;
-
-			@include breakpoint(medium) {
-				text-align: right;
-			}
-			a.nav-link {
-				padding-left: 1rem;
-			}
-			svg {
-				width: 2rem;
-			}
-		}
-	}
-
-	.widget.logo {
+		.widget.logo {
 		@include breakpoint(small only) {
 			text-align: center;
 		}
 	}
-
-	ul {
-		list-style-type: none;
-		margin: 0;
-		padding: 0;
-	}
-
-	.contactModal {
-		text-transform: uppercase;
-		font-weight: 600;
-		margin: 11px 0;
-		text-align: center;
-
-		@include breakpoint(medium up) {
-			margin: 0;
-		}
-	}
 }
+
+// .footer-logo {
+// 	display: flex;
+// }
+
+// .footer-container {
+	// section {
+		// &.widget .widget_media_image {
+		// 	@include breakpoint(small only) {
+		// 		text-align: center;
+		// 	}
+		// }
+
+		// .icon-container {
+		// 	text-align: center;
+
+		// 	@include breakpoint(medium) {
+		// 		text-align: right;
+		// 	}
+		// 	a.nav-link {
+		// 		padding-left: 1rem;
+		// 	}
+		// 	svg {
+		// 		width: 2rem;
+		// 	}
+		// }
+	// }
+
+
+
+	// ul {
+	// 	list-style-type: none;
+	// 	margin: 0;
+	// 	padding: 0;
+	// }
+
+	// .contactModal {
+	// 	text-transform: uppercase;
+	// 	font-weight: 600;
+	// 	margin: 11px 0;
+	// 	text-align: center;
+
+	// 	@include breakpoint(medium up) {
+	// 		margin: 0;
+	// 	}
+	// }
+// }

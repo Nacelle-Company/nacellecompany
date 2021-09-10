@@ -1,17 +1,7 @@
-
-
 <?php
+
 /**
- * The template for displaying archive pages
- *
- * Used to display archive-type pages if nothing more specific matches a query.
- * For example, puts together date-based pages if no date.php file exists.
- *
- * If you'd like to further customize these archive views, you may create a
- * new template file for each one. For example, tag.php (Tag archives),
- * category.php (Category archives), author.php (Author archives), etc.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * The template for displaying search results pages.
  *
  * @package FoundationPress
  * @since FoundationPress 1.0.0
@@ -19,213 +9,119 @@
 
 get_header(); ?>
 
-<?php get_template_part( 'template-parts/featured-image' ); ?>
+<?php
+$img_size_lg = 'fp-large';
+$img_size_md = 'fp-medium';
+$img_size_sm = 'fp-small';
+
+$hero_image = get_field('news_header_image', 'option');
+
+/* Get custom sizes of our image sub_field */
+$hero_lg = $hero_image['sizes'][$img_size_lg];
+$hero_md = $hero_image['sizes'][$img_size_md];
+$hero_sm = $hero_image['sizes'][$img_size_sm];
+$link = get_the_permalink();
+$time = get_the_time('F j, Y', $mypost->ID);
+$timeShort = get_the_time('o-m-j', $mypost->ID);
+?>
 
 <main class="main-container">
-
 	<div class="main-grid">
+		<div id="search-results" class="main-content press-search">
 
-		<div class="main-content">
+			<header>
+				<h1 class="entry-title"><?php _e('Search Results for', 'foundationpress'); ?> "<?php echo get_search_query(); ?>"</h1>
+			</header>
 
-			<?php
-        // https://developer.wordpress.org/reference/functions/query_posts/
+			<?php if (have_posts()) : ?>
 
-        $current_year = date('Y');
+				<?php while (have_posts()) : the_post(); ?>
 
-        $current_month = date('M');
+					<?php // $pressLink = get_field('link_to_article', $post->ID); 
+					?>
 
-        $posts = query_posts($query_string . "&post_status=future,publish&posts_per_page=60&order=DESC");
+					<div class="grid-x grid-padding-y feed-container">
 
-        if (have_posts()) : ?>
+						<?php
+						// If a featured image is set, insert into layout and use Interchange
+						// to select the optimal image size per named media query.
+						if (has_post_thumbnail($post->ID)) : ?>
 
-			<?php //Start the Loop ?>
-			<?php while (have_posts()) : the_post(); ?>
+							<div class="cell medium-4">
 
-				<?php
-				// variables
-				$link = get_field('link_to_article');
-
-				?>
-
-				<article id="post-<?php the_ID(); ?>" class="cell pt-3">
-					<span class="search-page-title"><?php printf( esc_html__( 'Search Results for: %s', 'nacelle' ), '<span>' . get_search_query() . '</span>' ); ?></span>
-
-					<div class="grid-x feed-container">
-
-					<?php // If a featured image is set, insert into layout and use Interchange
-					// to select the optimal image size per named media query. ?>
-					<?php if (has_post_thumbnail($post->ID)) : ?>
-
-						<div class="cell medium-12 archive-title">
-
-							<div class="grid-x">
-
-								<?php // microphone ?>
-								<div class="cell small-2 medium-3">
-
-									<?php if ($link): ?>
-										<a href="<?php echo $link; ?>" target="_blank">
-											<?php the_post_thumbnail('fp-small', array('class' => 'alignleft')); ?>
-										</a>
-									<?php endif; ?>
-
-								</div>
-
-								<?php // title ?>
-								<div class="cell small-10 medium-9 press-title">
-									<div class="press-title-container">
-										<h2>
-											<?php if ($link): ?>
-												<a href="<?php echo $link; ?>" target="_blank">
-											<?php else : ?>
-												<a href="<?php echo get_permalink(); ?>">
-											<?php endif; ?>
-												<?php
-								                    $theTitle = wp_strip_all_tags(get_field('title'));
-								                    echo $theTitle; ?>
-											</a>
-										</h2>
-										<h4>
-											<?php if ($link): ?>
-												<a href="<?php echo $link; ?>" target="_blank">
-											<?php else : ?>
-												<a href="<?php echo get_permalink(); ?>">
-											<?php endif; ?>
-											<?php
-							                    $callout = wp_strip_all_tags(get_field('intro'));
-							                    echo $callout; ?>
-											</a>
-										</h4>
-									</div>
-								</div>
-
+								<?php if ($link) : ?>
+									<a href="<?php echo $link; ?>" target="_blank">
+										<?php the_post_thumbnail('fp-small', array('class' => 'alignleft')); ?>
+									</a>
+								<?php endif; ?>
 							</div>
 
-							<?php // date and read more ?>
-							<footer class="grid-x">
-
-								<?php // admin edit link ?>
-								<div class="cell small-2 medium-3">
-
-									<?php edit_post_link(__('(Edit)', 'nacelle'), '<span class="edit-link">', '</span>');?>
-									<?php $tag = get_the_tags(); if ($tag) {
-                                                ?>
-										<p><?php the_tags(); ?></p>
+							<div class="cell medium-8 archive-title">
+								<div class="grid-x">
+									<time datetime="<?php echo $timeShort; ?>">
+										<?php echo $time; ?>
+									</time>
 									<?php
-                                            } ?>
-
+									if (is_single()) {
+										the_title('<h4 class="entry-title">', '</h4>');
+									} else {
+										the_title('<h4 class="entry-title"><a href="' . esc_url($link) . '" target="_blank">', '</a></h4>');
+									}
+									echo '</a>';
+									?>
 								</div>
-
-								<?php // date and read more ?>
-								<div class="cell small-10 medium-9">
-
-									<div class="grid-x small-up-2">
-
-										<div class="cell">
-											<p><?php the_time('m.j.y'); ?></p>
-										</div>
-										<div class="cell text-right">
-											<?php if ($link): ?>
-												<a href="<?php echo $link; ?>" class="clear button success medium" target="_blank">
-											<?php else : ?>
-												<a class="clear button success medium" href="<?php echo get_permalink(); ?>">
-											<?php endif; ?>
-												<?php _e('Read More. . .', 'Nacelle'); ?>
-
-											<?php echo '</a>'; ?>
-
-											</a>
-										</div>
-
-									</div>
-
-								</div>
-
-							</footer>
-
-						</div>
-
-						<?php else : ?>
-
-						<?php //  ?>
-						<?php //  ?>
-						<?php // old title ?>
-						<?php //  ?>
-						<?php //  ?>
-
-						<div class="cell medium-12 archive-title">
-
-							<div class="grid-x">
-
-									<?php // microphone ?>
-									<div class="cell small-2 medium-1">
-										<img src="<?php bloginfo('template_directory'); ?>/dist/assets/images/nacelle-mic.png" />
-									</div>
-
-									<?php // article title ?>
-									<div class="cell small-10 medium-11">
-										<?php // oldschool title
-                          if (is_single()) {
-                              the_title('<h3 class="entry-title">', '</h3>');
-                          } else {
-                              the_title('<h4 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h4>');
-                          }
-                      ?>
-									</div>
-
 							</div>
-
-							<footer class="grid-x">
-
-								<?php // admin edit link ?>
-								<div class="cell small-2 medium-1">
-
-									<?php edit_post_link(__('(Edit)', 'nacelle'), '<span class="edit-link">', '</span>');?>
-									<?php $tag = get_the_tags(); if ($tag) {
-                          ?>
-										<p><?php the_tags(); ?></p>
+						<?php elseif (empty(has_post_thumbnail($post->ID))) : ?>
+							<div class="cell medium-12 archive-title">
+								<div class="grid-x">
 									<?php
-                      } ?>
-
+									if (is_single()) {
+										the_title('<h4 class="entry-title">', '</h4>');
+									} else {
+										the_title('<h4 class="entry-title"><a href="' . esc_url($link) . '" target="_blank">', '</a></h4>');
+									}
+									echo '</a>';
+									?>
 								</div>
+								<div class="grid-x small-up-2">
 
-								<?php // date and read more ?>
-								<div class="cell small-10 medium-11">
+									<div class="cell">
+										<p><?php the_time('m.j.y'); ?></p>
+									</div>
 
-									<div class="grid-x small-up-2">
-
-										<div class="cell">
-											<p><?php the_time('m.j.y'); ?></p>
-										</div>
-										<div class="cell text-right">
-											<a class="clear button success medium" href="<?php echo get_permalink(); ?>">Read More. . .</a>
-										</div>
-
+									<div class="cell text-right">
+										<?php if ($link) : ?>
+											<a class="success medium" href="<?php echo $link; ?>" target="_blank">Read Article</a>
+										<?php endif; ?>
 									</div>
 
 								</div>
-
-							</footer>
-
-						</div>
-
-						<?php endif;?>
+							</div>
+						<?php endif; ?>
 
 					</div>
-				</article>
 
-			<?php endwhile; ?>
+				<?php endwhile; ?>
 
 			<?php else : ?>
 				<?php get_template_part('template-parts/content', 'none'); ?>
 
-			<?php endif; // End have_posts() check.?>
+			<?php endif; ?>
+
+			<?php
+			if (function_exists('foundationpress_pagination')) :
+				foundationpress_pagination();
+			elseif (is_paged()) :
+			?>
+				<nav id="post-nav">
+					<div class="post-previous"><?php next_posts_link(__('&larr; Older posts', 'foundationpress')); ?></div>
+					<div class="post-next"><?php previous_posts_link(__('Newer posts &rarr;', 'foundationpress')); ?></div>
+				</nav>
+			<?php endif; ?>
 
 		</div>
-		<?php wp_reset_query(); ?>
 		<?php get_sidebar(); ?>
 
 	</div>
 </main>
-
 <?php get_footer();

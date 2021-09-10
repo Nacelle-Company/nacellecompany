@@ -1,53 +1,33 @@
-// @charset 'utf-8';
+@charset 'utf-8';
 
 @import 'settings';
 @import 'foundation';
 @import 'motion-ui';
 
-// // YES NEED
 @include foundation-global-styles;
-@include foundation-xy-grid-classes;
-@include foundation-typography;
-@include foundation-menu;
-@include foundation-dropdown-menu; 
-@include foundation-media-object;
-@include foundation-off-canvas;
-@include foundation-title-bar;
-@include foundation-title-bar;
-@include foundation-top-bar;
-@include foundation-visibility-classes;
-@include foundation-float-classes;
+@include foundation-xy-grid-classes(
+  $base-grid: true,
+  $margin-grid: true,
+  $padding-grid: true,
+  $block-grid: true,
+  $collapse: true, // try and get rid of these
+  $offset: true, // try and get rid of these
+  $vertical-grid: true, // try and get rid of these
+  $frame-grid: true // try and get rid of these
+);
 @include foundation-flex-classes;
-
+@include foundation-visibility-classes;
+@include foundation-accordion; // CRITICAL CSSS
+@include foundation-accordion-menu; // CRITICAL CSSS
+@include foundation-dropdown; // CRITICAL CSSS
+@include foundation-dropdown-menu; // CRITICAL CSSS
+@include foundation-media-object; // CRITICAL CSSS
+@include foundation-off-canvas; // CRITICAL CSSS
+// Global
+@import "global/mixins";
+// @import "global/spacing";
 // Modules
-@import "modules/circleSlider";
-@include motion-ui-transitions;
-@include motion-ui-animations;
-
-// // // NOT YET
-
-
-
-
-// @import "global/accessibility";
-// @import "global/colors";
-// @import "global/wpAdmin";
-// @import "global/wpOverrides";
-// // @import "global/gutenberg";
-// @import "global/fonts";
-// @import "global/icons";
-// @import "global/bem";
-// @import "global/animations";
-// @import "global/mobile";
-
-// @import "modules/search";
-// @import "modules/navigation";
-// @import "components/flickity";
-
-// CD above the fold CSS
-// all pages
-// - navigation
-// - search
-
-// home
-// - carousel full
+@import "modules/navigation"; // CRITICAL CSSS
+@import "modules/catalogHeader";
+@import "global/fonts"; // CRITICAL CSSS
+@import "global/typography"; // CRITICAL CSSS

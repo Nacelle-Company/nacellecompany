@@ -95,9 +95,9 @@
 .lead {
     color: var(--primary-color);
 }
-time {
-    color: var(--secondary-color);
-}
+// time {
+//     color: var(--secondary-color);
+// }
 .mic {
     max-width: 35px;
     @include breakpoint(small only) {

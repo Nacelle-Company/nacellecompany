@@ -10,16 +10,18 @@
                         $videoLinkTitle = get_sub_field('link_title');
                         $videoLinkURL = get_sub_field('link_url');
                         $videoHoverTitle = get_sub_field('hover_title');
+                        $videoLinkImage = get_sub_field('link_image');
+                        $imageHorizontal = get_field('horizontal_image');
                         $img_size_lg = 'fp-large';
                         $img_size_md = 'fp-medium';
                         $img_size_sm = 'fp-small';
-                        $videoLinkImage = get_sub_field('link_image');
-                        $imageHorizontal = get_field('horizontal_image');
-                        $videoLinkImageAlt = $videoLinkImage['alt'];
                         $imageHorizontalAlt = $imageHorizontal['alt'];
-                        $linkCustomImageLG = $videoLinkImage['sizes'][$img_size_lg];
-                        $linkCustomImageMD = $videoLinkImage['sizes'][$img_size_md];
-                        $linkCustomImageSM = $videoLinkImage['sizes'][$img_size_sm];
+                        if (get_sub_field('show_large')) {
+                            $videoLinkImageAlt = $videoLinkImage['alt'];
+                            $linkCustomImageLG = $videoLinkImage['sizes'][$img_size_lg];
+                            $linkCustomImageMD = $videoLinkImage['sizes'][$img_size_md];
+                            $linkCustomImageSM = $videoLinkImage['sizes'][$img_size_sm];
+                        }
                         $imageHorizontalLG = $imageHorizontal['sizes'][$img_size_lg];
                         $imageHorizontalMD = $imageHorizontal['sizes'][$img_size_md];
                         $imageHorizontalSM = $imageHorizontal['sizes'][$img_size_sm];

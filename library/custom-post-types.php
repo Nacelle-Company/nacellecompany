@@ -118,7 +118,7 @@ function cptui_register_my_cpts()
 		"query_var" => true,
 		"menu_position" => 5,
 		"menu_icon" => "dashicons-album",
-		"supports" => ["title", "editor", "thumbnail", "custom-fields"],
+		"supports" => ["title", "editor", "thumbnail", "custom-fields", "page-attributes"],
 		"taxonomies" => ["category", "main_talent", "genre", "producers", "media_category", "directors", "writers", "cd_category"],
 	];
 
