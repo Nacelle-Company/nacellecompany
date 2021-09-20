@@ -65,7 +65,7 @@ if ($taxonomy == 'Producers') {
     $taxonomyAlt = '<span class="subheader">Productions</span>'; ?>
 
     <div class="cell grid-container primary-title my-3">
-        <h1 class="entry-title mb-0 h2"><?php echo $artistName . ' ' . $taxonomyAlt; ?></h1>
+        <h2 class="entry-title mb-0"><?php echo $artistName . ' ' . $taxonomyAlt; ?></h2>
     </div>
     <div class="grid-container">
         <div class="grid-x grid-margin-x grid-padding-y small-up-1 medium-up-2 post-grid align-center">
@@ -130,7 +130,7 @@ if ($taxonomy == 'Producers') {
 } elseif ($taxonomy == 'Main Talent') {
     $taxonomyAlt = '<span class="subheader">Catalog</span>'; ?>
     <div class="cell grid-container primary-title my-3">
-        <h1 class="entry-title mb-0 h2"><?php echo $artistName . ' ' . $taxonomyAlt; ?></h1>
+        <h2 class="entry-title mb-0"><?php echo $artistName . ' ' . $taxonomyAlt; ?></h2>
     </div>
     <div class="grid-container">
         <div class="grid-x grid-margin-x grid-padding-y small-up-1 medium-up-2 post-grid align-center">
@@ -199,7 +199,7 @@ if ($taxonomy == 'Producers') {
     $taxonomyAlt = '<span class="subheader">Directed on</span>'; ?>
 
     <div class="cell grid-container primary-title my-3">
-        <h1 class="entry-title mb-0 h2"><?php echo $artistName . ' ' . $taxonomyAlt; ?></h1>
+        <h2 class="entry-title mb-0"><?php echo $artistName . ' ' . $taxonomyAlt; ?></h2>
     </div>
     <div class="grid-container">
         <div class="grid-x grid-margin-x grid-padding-y small-up-1 medium-up-2 post-grid align-center">

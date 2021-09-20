@@ -26,11 +26,11 @@ $tw_icon = '
 						</svg>
 						';
 if (get_option("social-share-facebook") == 1) {
-	$html = $html . "<div class='facebook px-1'><a target='_blank' href='http://www.facebook.com/sharer.php?u=" . $url . "'>" . $fb_icon . "</a></div>";
+	$html = $html . "<div class='facebook px-1'><a href='http://www.facebook.com/sharer.php?u=" . $url . "' rel='noopener' target='_blank'>" . $fb_icon . "</a></div>";
 }
 
 if (get_option("social-share-twitter") == 1) {
-	$html = $html . '<div class="twitter"><a href="https://twitter.com/intent/tweet?url=https:' . $urlFull . '" data-size="large" target="_blank">' . $tw_icon . '</a></div>';
+	$html = $html . '<div class="twitter"><a href="https://twitter.com/intent/tweet?url=https:' . $urlFull . '" data-size="large" target="_blank" rel="noopener">' . $tw_icon . '</a></div>';
 }
 $html = $html . '
 <script>window.twttr = (function(d, s, id) {

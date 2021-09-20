@@ -56,7 +56,7 @@ if (!empty('news_header_image')) : ?>
 
                   <?php //if ($link) : 
                   ?>
-                  <a href="<?php the_permalink(); ?>">
+                  <a href="<?php the_permalink(); ?>" aria-label="<?php the_title(); ?>">
                     <img class="slideInFromBottom" data-interchange="[<?php the_post_thumbnail_url('fp-small'); ?>, small], [<?php the_post_thumbnail_url('fp-medium'); ?>, medium], [<?php the_post_thumbnail_url('fp-large'); ?>, large], [<?php the_post_thumbnail_url('fp-xlarge'); ?>, xlarge]">
                     <?php echo '</a>'; ?>
                     <?php // endif; 
@@ -73,7 +73,7 @@ if (!empty('news_header_image')) : ?>
                     if (is_single()) {
                       the_title('<h3 class="entry-title">', '</h3>');
                     } else {
-                      the_title('<h4 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h4>');
+                      the_title('<h2 class="entry-title h4"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
                     }
                     ?>
                   </div>
@@ -108,9 +108,9 @@ if (!empty('news_header_image')) : ?>
                   <div class="grid-x">
                     <?php
                     if (is_single()) {
-                      the_title('<h4 class="entry-title">', '</h4>');
+                      the_title('<h2 class="entry-title">', '</h2>');
                     } else {
-                      the_title('<h4 class="entry-title"><a href="' . esc_url($link) . '" target="_blank">', '</a></h4>');
+                      the_title('<h2 class="entry-title h4"><a href="' . esc_url($link) . '" target="_blank">', '</a></h2>');
                     }
                     echo '</a>';
                     ?>
@@ -163,6 +163,17 @@ if (!empty('news_header_image')) : ?>
       <div class="post-next"><?php previous_posts_link(__('Newer posts &rarr;', 'nacelle')); ?></div>
     </nav>
   <?php endif; ?>
+  <script>
+    var syaContainer = document.getElementById("sya_container");
+    var years = syaContainer.querySelectorAll('h4');
+
+    // add role="button" to element
+    function addBtnRole(ele) {
+      ele = ele.querySelector('a[href="#"]');
+      ele.setAttribute('role', 'button');
+    }
+    years.forEach(addBtnRole);
+  </script>
 </main>
 
 <?php get_footer();

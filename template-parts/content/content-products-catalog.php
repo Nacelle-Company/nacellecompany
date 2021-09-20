@@ -35,6 +35,19 @@ $podcast_args = array(
     ),
   ),
 );
+$books_args = array(
+  'post_type' => 'catalog',
+  'posts_per_page' => '30',
+  'order' => 'ASC',
+  'orderby'       => 'menu_order',
+  'tax_query' => array(
+    array(
+      'taxonomy' => 'category',
+      'terms' => 'books',
+      'field' => 'slug'
+    ),
+  ),
+);
 ?>
 <div class="grid-x" id="more">
   <div class="cell medium-4 large-4 xlarge-3 mb-2" data-sticky-container>
@@ -43,14 +56,21 @@ $podcast_args = array(
         <li class="cell is-active tabs-title" aria-selected="true">
           <a href="#productions" aria-selected="true">
             <h3>
-              <?php echo get_post_meta(get_the_ID(), 'left_title', true); ?>
+              <?php echo get_post_meta(get_the_ID(), 'first_tab', true); ?>
             </h3>
           </a>
         </li>
         <li class="cell tabs-title">
           <a href="#podcasts">
             <h3>
-              <?php echo get_post_meta(get_the_ID(), 'right_title', true);  ?>
+              <?php echo get_post_meta(get_the_ID(), 'second_tab', true);  ?>
+            </h3>
+          </a>
+        </li>
+        <li class="cell tabs-title">
+          <a href="#books">
+            <h3>
+              <?php echo get_post_meta(get_the_ID(), 'third_tab', true);  ?>
             </h3>
           </a>
         </li>
@@ -145,6 +165,85 @@ $podcast_args = array(
           if ($podcast_query->have_posts()) :
             while ($podcast_query->have_posts()) :
               $podcast_query->the_post();
+              $date = get_field('release_date', false, false);
+              $synopsis = get_field('synopsis');
+              $date = new DateTime($date);
+              $taxonomy = 'category';
+              $post_terms = wp_get_object_terms($post->ID, $taxonomy, array(
+                'fields' => 'ids'
+              ));
+              $separator = '/ ';
+              if (!empty($post_terms) && !is_wp_error($post_terms)) {
+                $term_ids = implode(',', $post_terms);
+                $terms = wp_list_categories(array(
+                  'title_li' => '',
+                  'style' => 'none',
+                  'echo' => false,
+                  'taxonomy' => $taxonomy,
+                  'include' => $term_ids
+                ));
+                $terms = rtrim(trim(str_replace('<br />', $separator, $terms)), $separator);
+              }
+              // get the images
+              if (get_field('horizontal_image', false, false)) {
+                $image_array = get_field('horizontal_image', false, false);
+              } else {
+                $image_array = get_field('square_image', false, false);
+              }
+              $size = 'fp-small'; // (thumbnail, medium, large, full or custom size)
+              if (is_array($image_array) || is_object($image_array)) {
+                foreach ($image_array as $id) {
+                  get_post_meta($id);
+                }
+              }
+              if ($image_array) : ?>
+                <div class="cell">
+                  <div class="callout slideInFromBottom" data-callout-hover-reveal>
+                    <div class="callout-body">
+                      <div class="img-container">
+                        <a href="<?php the_permalink() ?>" class="catalog-title" rel="bookmark" title="Permanent Link to<?php the_title_attribute(); ?>">
+                          <?php echo wp_get_attachment_image($image_array, $size); ?>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="callout-footer">
+                      <div class="callout-content">
+                        <div class="flex-container align-justify">
+                          <h5>
+                            <?php echo $date->format('Y'); ?>
+                          </h5>
+                          <div class="text-right bk-txt-color">
+                            <?php echo $terms; ?>
+                          </div>
+                        </div>
+                        <a href="<?php the_permalink() ?>" class="catalog-title" rel="bookmark" title="Permanent Link to<?php the_title_attribute(); ?>">
+                          <h4 class="h5">
+                            <?php the_title(); ?>
+                          </h4>
+                        </a>
+                        <div class="callout-synopsis">
+                          <?php if (get_the_content()) {
+                            the_content();
+                          } else {
+                            echo $synopsis;
+                          } ?></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <?php endif; ?>
+            <?php endwhile; ?>
+          <?php endif; ?>
+          <?php wp_reset_postdata(); ?>
+        </div>
+      </div>
+      <div class="tabs-panel small-order-1 medium-order-2 podcasts p-0 px-medium-2 p-large-2" id="books">
+        <div class="grid-x grid-margin-x medium-up-1 large-up-2 xlarge-up-3 macro-cat-cards">
+          <?php
+          $books_query = new WP_Query($books_args);
+          if ($books_query->have_posts()) :
+            while ($books_query->have_posts()) :
+              $books_query->the_post();
               $date = get_field('release_date', false, false);
               $synopsis = get_field('synopsis');
               $date = new DateTime($date);
