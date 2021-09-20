@@ -7,7 +7,7 @@ get_header(); ?>
     <?php get_template_part('template-parts/blocks/wysiwyg'); ?>
     <div class="cell">
       <?php // get_template_part('template-parts/blocks/slider-news'); ?>
-      <?php get_template_part('template-parts/blocks/press-grid'); ?>
+      <?php get_template_part('template-parts/blocks/post-grid'); ?>
     </div>
   </main>
 <?php endwhile; ?>

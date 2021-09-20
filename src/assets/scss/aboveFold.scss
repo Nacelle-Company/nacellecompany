@@ -25,7 +25,7 @@
 @include foundation-off-canvas; // CRITICAL CSSS
 // Global
 @import "global/mixins";
-// @import "global/spacing";
+@import "global/spacing";
 // Modules
 @import "modules/navigation"; // CRITICAL CSSS
 @import "modules/catalogHeader";

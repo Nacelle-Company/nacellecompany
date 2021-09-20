@@ -5,16 +5,16 @@
 ?>
 <div class="grid-container fluid post-grid" id="press">
   <div class="cell primary-title p-1">
-    <h2 class="entry-title mb-0"><span class="hide">Comedy </span>Latest Press</h2>
+    <h2 class="entry-title mb-0"><span class="hide">Comedy </span>Latest News</h2>
   </div>
   <div class="grid-container py-3">
-    <div class="grid-x grid-margin-x grid-padding-y small-up-1 medium-up-2">
+    <div class="grid-x grid-margin-x grid-padding-y align-center small-up-1 medium-up-2">
       <?php
 
       $image = '';
       $args = array(
         'numberposts'        => 6, // -1 is for all
-        'post_type'        => 'press_release', // or 'post', 'page'
+        'post_type'        => 'news', // or 'post', 'page'
         'orderby'         => 'date', // or 'date', 'rand'
         'order'         => 'DESC', // or 'DESC'
       );
