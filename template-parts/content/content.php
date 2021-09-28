@@ -17,28 +17,29 @@
         if (is_single()) {
             the_title('<h1 class="entry-title">', '</h1>');
         } else {
-            the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
+            the_title('<h1 class="entry-title">', '</h1>');
         }
         ?>
-        <?php Nacelle_entry_meta(); ?>
+        <?php // Nacelle_entry_meta(); 
+        ?>
     </header>
     <div class="entry-content">
         <?php the_content(); ?>
 
-<?php edit_post_link(__('(Edit)', 'nacelle'), '<span class="edit-link">', '</span>'); ?>
-</div>
-<footer>
-    <?php
-    wp_link_pages(
-        array(
-            'before' => '<nav id="page-nav"><p>' . __('Pages:', 'nacelle'),
-            'after'  => '</p></nav>',
-        )
-    );
-    ?>
-    <?php $tag = get_the_tags();
-    if ($tag) {
+        <?php edit_post_link(__('(Edit)', 'nacelle'), '<span class="edit-link">', '</span>'); ?>
+    </div>
+    <footer>
+        <?php
+        wp_link_pages(
+            array(
+                'before' => '<nav id="page-nav"><p>' . __('Pages:', 'nacelle'),
+                'after'  => '</p></nav>',
+            )
+        );
+        ?>
+        <?php $tag = get_the_tags();
+        if ($tag) {
         ?><p><?php the_tags(); ?></p><?php
-                                        } ?>
-</footer>
+                                    } ?>
+    </footer>
 </article>

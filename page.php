@@ -17,7 +17,7 @@ get_header(); ?>
 	<div class="main-grid">
 		<div class="main-content">
 			<?php while (have_posts()) : the_post(); ?>
-				<?php get_template_part('template-parts/content', 'page'); ?>
+				<?php get_template_part('template-parts/content/content'); ?>
 				<?php comments_template(); ?>
 			<?php endwhile; ?>
 		</div>

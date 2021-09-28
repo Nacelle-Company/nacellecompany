@@ -79,20 +79,25 @@ wp_reset_postdata(); ?>
                         height: 0;
                     }
                 }
+
                 @media screen and (min-width: 40em) and (max-width: 63.9375em) {
                     .catalog-aside-wrapper {
                         margin-left: 50%;
                     }
+
                     .catalog-aside {
                         margin-top: -360px;
                         position: absolute;
                     }
+
                     .catalog-more-info,
                     .catalog-crew {
                         width: 50%;
                     }
                 }
+
                 @media only screen and (min-device-width: 834px) and (max-device-width: 1112px) and (-webkit-min-device-pixel-ratio: 2) {
+
                     .catalog-crew .title,
                     .catalog-crew .crew {
                         width: 100%;
@@ -100,16 +105,18 @@ wp_reset_postdata(); ?>
                 }
             </style>
             <div id="mobile_video" onclick="jQuery('#mobile_video').YTPUnmute()" class="player" data-property="{videoURL:'<?php echo $videoHero; ?>',containment:'#mobile_video_container',optimizeDisplay:false,playOnlyIfVisible:true,abundance:0}"></div>
-            <?php else : ?>
-                <style>
+        <?php else : ?>
+            <style>
                 .mobile-video-container {
                     width: 0;
                     height: 0;
                 }
+
                 @media screen and (min-width: 40em) and (max-width: 63.9375em) {
                     .catalog-aside-wrapper {
                         margin-left: 50%;
                     }
+
                     .catalog-crew,
                     .accordion {
                         width: 50%;
@@ -196,4 +203,39 @@ wp_reset_postdata(); ?>
         <div id="modal_container" data-toggle="coverOn" onclick="jQuery('#video-header-hero').YTPPlay().YTPMute(); jQuery('#modal-video').YTPPause();"></div>
     </div>
 <? else : ?>
+    <div class="archive grid-x align-justified medium-order-1">
+        <div class="featured-hero cell py-3">
+            <div class="hero-section-text grid-x align-center" id="coverOn" data-toggler=".cover-on">
+                <div class="cell medium-4 text-center">
+                    <?php if ($tax_page) {
+                        // get taxonomy name
+                        $tax = $wp_query->get_queried_object();
+                        $tax = get_taxonomy($tax->taxonomy);
+                        $taxonomy =  $tax->label;
+                        if ($taxonomy == 'Main Talent') {
+                            $taxonomy = 'Talent';
+                        } elseif ($taxonomy == 'Producers') {
+                            $taxonomy = substr($taxonomy, 0, -1);
+                        } elseif ($taxonomy == 'Directors') {
+                            $taxonomy = substr($taxonomy, 0, -1);
+                        } elseif ($taxonomy == 'Writers') {
+                            $taxonomy = substr($taxonomy, 0, -1);
+                        }
+                    ?>
+                        <div class="hero-text">
+                            <span style="color:var(--secondary-txt-color);"><?php echo $taxonomy; ?></span>
+                            <h1><?php echo $term->name; ?></h1>
+                        </div>
+
+                    <?php } elseif ('catalog' == get_post_type()) { ?>
+                        <div class="mobile-app-toggle play" data-mobile-app-toggle>
+                            <div class="big-video-cover"></div>
+                        </div>
+
+                    <?php } else {
+                    }; ?>
+                </div>
+            </div>
+        </div>
+    </div>
 <? endif; ?>
