@@ -1,0 +1,11 @@
+.error svg.icon {
+  max-width: 50px;
+}
+
+.error .button {
+  margin: 1em;
+  @include breakpoint(medium) {
+    margin: 0 1em;
+  }
+}
+
