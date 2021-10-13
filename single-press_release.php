@@ -41,14 +41,14 @@ get_header(); ?>
 							</footer>
 						</header>
 						<div class="grid-x intro pb-2 mb-2">
-							<div class="cell mb-0">
+							<h3 class="cell mb-0 secondary-color">
 								<?php
 								$intro = get_post_meta(get_the_ID(), 'intro', true);
 								if (!empty($intro)) {
 									echo $intro;
 								}
 								?>
-							</div>
+							</h3>
 						</div>
 						<div class="grid-x content">
 							<div class="cell">

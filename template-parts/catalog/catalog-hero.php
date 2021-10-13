@@ -145,8 +145,9 @@ wp_reset_postdata(); ?>
                     ?>
                         <div class="mobile-app-toggle play" data-mobile-app-toggle>
                             <div class="hero-text">
-                                <span class="subheader"><?php echo $taxonomy; ?></span>
-                                <h1><?php echo $term->name; ?></h1>
+                                <h1> <span class="subheader"><?php echo $taxonomy; ?></span>
+                                    <br /><?php echo $term->name; ?>
+                                </h1>
                                 <button data-toggle="coverOn" title="Watch Video" class="button clear is-active icon" onclick="jQuery('#video-header-hero').YTPUnmute()">
                                     <?php get_template_part('template-parts/svg/icon-play', ''); ?>
                                     <strong>Watch</strong>
@@ -223,8 +224,11 @@ wp_reset_postdata(); ?>
                         }
                     ?>
                         <div class="hero-text">
-                            <span style="color:var(--secondary-txt-color);"><?php echo $taxonomy; ?></span>
-                            <h1><?php echo $term->name; ?></h1>
+                            <h1>
+                                <span class="subheader" style="color:var(--secondary-txt-color);"><?php echo $taxonomy; ?></span>
+                                <br/>
+                                <?php echo $term->name; ?>
+                            </h1>
                         </div>
 
                     <?php } elseif ('catalog' == get_post_type()) { ?>

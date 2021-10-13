@@ -9,17 +9,31 @@
 get_header();
 include 'template-parts/logic/logic-404.php';
 ?>
-<main class="main-container">
+<main class="main-container-full">
 	<div class="main-grid">
 		<div class="main-content-full-width">
 			<article class="text-center">
 				<header>
-					<h1 class="entry-title"><?php _e('Oops no content on this page.', 'nacelle'); ?></h1>
+					<h1 class="entry-title"><?php _e('This is not the page you are looking for. . .', 'nacelle'); ?></h1>
 				</header>
 				<div class="entry-content">
+					<?php $bkImage = get_template_directory_uri() . '/src/assets/images/bamford-is-sad-you-are-on-404-page.png'; ?>
+					<style>
+						main.main-container-full {
+							background-image: url("<?php echo $bkImage; ?>");
+							background-repeat: no-repeat;
+							background-position: right bottom;
+							background-size: 45%;
+						}
+						@media print, screen and (min-width: 40em) {
+							main.main-container-full {
+								background-position: right top;
+							}
+						}
+					</style>
 					<div class="error">
 						<p class="bottom"><?php _e('The page you are looking for might have been moved, had its name changed, or we\'re working on it.', 'nacelle'); ?></p>
-						<h2 class="text-center h3 mb-2"><?php _e('Maybe you were looking for:', 'nacelle'); ?></h2>
+						<h2 class="text-center h3 mb-2"><?php _e('but maybe one of these are?', 'nacelle'); ?></h2>
 						<div class="grid-x align-center align-middle">
 
 							<!-- home icon and button  -->
@@ -56,6 +70,7 @@ include 'template-parts/logic/logic-404.php';
 								</a>
 							<?php endif; ?>
 						</div>
+
 					</div>
 				</div>
 
