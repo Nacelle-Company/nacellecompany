@@ -270,3 +270,9 @@ https://flickity.metafizzy.co
 // 		}
 // 	}
 // }
+
+@media print, screen and (min-width: 40em) {
+    .carousel-full .flickity-image img {
+        width: 300px;
+    }
+} 

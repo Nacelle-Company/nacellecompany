@@ -37,9 +37,9 @@ if ( ! function_exists( 'Nacelle_scripts' ) ) :
 	function Nacelle_scripts() {
 
 		// Enqueue the main Stylesheet.
-		wp_enqueue_style('fold-stylesheet', get_stylesheet_directory_uri() . '/dist/assets/css/' . Nacelle_asset_path('aboveFold.css'), array(), '2.10.4', 'all');
 
 		wp_enqueue_style( 'main-stylesheet', get_stylesheet_directory_uri() . '/dist/assets/css/' . Nacelle_asset_path( 'app.css' ), array(), '2.10.4', 'all' );
+		wp_enqueue_style('fold-stylesheet', get_stylesheet_directory_uri() . '/dist/assets/css/' . Nacelle_asset_path('aboveFold.css'), array(), '2.10.4', 'all');
 
 		// Deregister the jquery version bundled with WordPress.
 		wp_deregister_script( 'jquery' );

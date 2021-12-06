@@ -24,6 +24,7 @@
     "responsive"
   ],
   "dependencies": {
+    "browsersync": "^0.0.1-security",
     "flickity": "^2.2.2",
     "flickity-bg-lazyload": "^1.0.1",
     "flickity-fade": "^1.0.0",

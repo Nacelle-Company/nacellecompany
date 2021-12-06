@@ -1,0 +1,383 @@
+:root {
+  --primary-color: #ffbc00;
+  --secondary-color: #7fd2e6;
+  --bk-color: #2c2c2c;
+  --txt-color: #ffffff;
+  --secondary-txt-color: #000000;
+  --nav-bk-color: #202020;
+  --nav-txt-color: #ffbc00;
+  --nav-txt-secondary-color: #ffbc00;
+  --white-color: #f2f2f2;
+}
+
+.accordion-content .title,
+.breadcrumbs a,
+.button.hollow,
+.catalog .entry-title,
+.catalog-crew .title,
+.entry-content .social a.nav-link,
+.flickity-button.top-meta .title,
+.footer-grid p,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+.mobile-app-toggle .button,
+.primary-color,
+.primary-title .entry-title,
+.search-results .entry-title.subheader,
+.subheader,
+a,
+footer .social .button,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+main a:not(.alt):not(.button),
+.synopsis.reveal blockquote p {
+  color: var(--primary-color);
+}
+
+.accordion-content,
+.archive .featured-hero,
+.button.primary,
+.button:not(.hollow, .clear),
+.callout-footer,
+.carousel-full--press figcaption,
+.carousel-press figcaption,
+.details-container .info,
+.details-container details[open] .info,
+.flickity-page-dots .dot,
+.instagram-tab,
+.press-row:hover .press-row-content,
+.primary,
+.searchandfilter input[type="submit"],
+.tabs-products .tabs-title.is-active,
+.tabs-title > a:focus,
+.tabs-title > a[aria-selected="true"],
+.to-top,
+.wp-block-button .primary.wp-block-button__link,
+body.page-template-featured-page,
+input[type="submit"] {
+  background-color: var(--primary-color);
+}
+
+.button.hollow,
+.category-intro,
+.details-container p,
+.instagram-tab,
+.off-canvas-content,
+.page-template-featured-page .off-canvas-content,
+.press_release .intro,
+.press_release .press,
+.primary-title,
+.search-results .entry-title.subheader {
+  border-color: var(--primary-color);
+}
+
+.fas,
+.flickity-button-icon,
+.press-row svg.icon.alt,
+svg.footer-logo .color,
+svg.icon {
+  fill: var(--primary-color);
+}
+
+.tabs-products {
+  border-bottom-color: var(--primary-color);
+}
+
+.accordion-title,
+.button.clear.success,
+.button.hollow:hover,
+.close-button,
+.current-menu-item > a,
+.current-menu-parent > a,
+.details-container .info a,
+.details-container summary,
+.menu > li:hover > a,
+.press_release .intro,
+.secondary-color,
+blockquote:before {
+  color: var(--secondary-color);
+}
+
+.dropdown.menu .is-active > a,
+.is-submenu-item:hover > a {
+  color: var(--secondary-color) !important;
+}
+
+.button.hollow.success,
+.button.hollow:hover,
+.carousel .flickity-page-dots .dot,
+.details-container details[open] .info,
+.featured-page .feat-content .dk-border,
+.feed-container,
+.post-navigation,
+.reveal header,
+blockquote,
+hr {
+  border-color: var(--secondary-color);
+}
+
+.accordion-line,
+.button.success:not(.clear),
+.button:hover,
+.field-wrap input[type="button"],
+.flickity-page-dots .dot.is-selected,
+.off-canvas-content .searchandfilter input[type="submit"],
+.secondary-bkgnd,
+.wp-block-button .success.wp-block-button__link {
+  background-color: var(--secondary-color);
+}
+
+.field-wrap input[type="button"]:hover,
+.off-canvas-content .searchandfilter input[type="submit"]:hover {
+  background-color: var(--secondary-color);
+  filter: saturate(1.5);
+}
+
+.icon.down-angle {
+  fill: var(--secondary-color);
+}
+
+.pag-img-wrapper:hover {
+  background: 0 0;
+  outline: 1px solid var(--secondary-color);
+}
+
+.accordion,
+.accordion-title:focus,
+.accordion-title:hover,
+.accordion-title:visited,
+.featured-page .feat-content,
+.page-template-front-grid .home-overlay.bottom,
+.reveal,
+body {
+  background-color: var(--bk-color);
+}
+
+.accordion-content p,
+.archive .featured-hero h1:not(.entry-title),
+.button.hollow.success,
+.button.success:hover,
+.button:not(.clear):not(.hollow),
+.carousel-press figcaption h3,
+.details-container details .on-sale,
+.details-container details[open] .info p,
+.field-wrap input[type="button"]:hover,
+.macro-cat-cards .callout-footer,
+.macro-cat-cards .callout-footer *,
+.off-canvas-content .searchandfilter input[type="submit"]:hover,
+.press-row:hover .press-row-content-header,
+.press-row:hover .press-row-content-time,
+.tabs-title > a:focus > h3,
+.tabs-title > a[aria-selected="true"] > h3,
+.wp-block-button .success.wp-block-button__link {
+  color: var(--bk-color);
+}
+
+.bk-txt-color *,
+.callout-synopsis a,
+.contact h1 {
+  color: var(--bk-color) !important;
+}
+
+.press-row:hover svg.icon.alt,
+svg.icon.alt {
+  fill: var(--bk-color);
+}
+
+.gallery {
+  background-color: var(--secondary-bk-color);
+}
+
+.carousel-full--news h3,
+.carousel-full--news p,
+.carousel-full--press h3,
+.carousel-full--press p,
+.instagram-title h3,
+blockquote,
+blockquote p,
+body,
+p {
+  color: var(--txt-color);
+}
+
+@media screen and (max-width: 39.9375em) {
+  .full-hero-video--content .media-object p {
+    color: var(--txt-color);
+  }
+}
+
+.accordion-content .sm-title {
+  color: var(--secondary-txt-color);
+}
+
+@media print, screen and (min-width: 40em) {
+  .full-hero-video--content .media-object p {
+    color: var(--secondary-txt-color);
+  }
+}
+
+.header-search-container:hover svg.icon,
+.menu .is-active > a,
+.off-canvas,
+.pag-img-wrapper,
+.site-header:not(.transparent-header),
+.submenu > .menu-item,
+.title-bar,
+.top-bar,
+footer.footer,
+title-bar {
+  background: var(--nav-bk-color);
+}
+
+.pagination a,
+.pagination h4,
+.pagination svg.icon,
+.site-header:not(.transparent-header) .menu > .menu-item a {
+  color: var(--nav-txt-color);
+}
+
+footer.pagination svg.icon {
+  fill: var(--nav-txt-color);
+}
+
+.transparent-header .menu-item a {
+  color: var(--nav-txt-secondary-color);
+}
+
+.menu-icon::after {
+  box-shadow: 0 7px 0 var(--secondary-color), 0 14px 0 var(--secondary-color);
+  background-color: var(--secondary-color);
+}
+
+.carousel-full--overlay h3,
+.carousel-full--overlay p,
+.mobile-app-toggle .button:hover,
+label {
+  color: var(--white-color);
+}
+
+.mobile-app-toggle .button:hover .icon {
+  fill: var(--white-color);
+}
+
+body:not(.mce-content-body):not(.edit-post-visual-editor) {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232f2f2f' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+@media print, screen and (max-width: 39em) {
+  .carousel-cell.is-selected {
+    background-image: none !important;
+  }
+}
+
+ul.ap_pagination[style="display: block;"] {
+  display: flex !important;
+  justify-content: center;
+  width: 100%;
+}
+
+cite {
+  display: block;
+  font-size: 1rem;
+  color: #cdcdcd;
+}
+
+@media screen and (max-width: 39.9375em) {
+  .carousel-cell {
+    background-image: none !important;
+  }
+
+  .carousel-cell.flex-container {
+    -webkit-align-items: flex-start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+  }
+
+  .carousel-cell.flex-container .flickity-image {
+    -webkit-flex: 0 0 93%;
+    -ms-flex: 0 0 93%;
+    flex: 0 0 93%;
+    padding-top: 2em;
+  }
+}
+
+@media print, screen and (min-width: 64em) {
+  .carousel-cell.flex-container {
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+
+  .carousel-cell.flex-container figcaption {
+    padding-left: 0 !important;
+  }
+
+  .carousel-cell.flex-container .flickity-image {
+    -webkit-flex: 1 0 4%;
+    -ms-flex: 1 0 4%;
+    flex: 1 0 4%;
+  }
+
+  .carousel-cell.flex-container .flickity-synopsis {
+    -webkit-flex: 1 0 5%;
+    -ms-flex: 1 0 5%;
+    flex: 1 0 5%;
+  }
+
+  .carousel-cell.flex-container .synopsis-container {
+    max-width: 515px;
+  }
+}
+
+.cell.tagline {
+  display: none;
+}
+
+.front-carousel .carousel {
+  height: 83vh;
+}
+
+@media print, screen and (min-width: 40em) {
+  .cell.tagline {
+    display: block;
+    position: absolute;
+    top: 80px;
+  }
+
+  .front-carousel .carousel {
+    height: 91vh;
+  }
+}
+
+.custom-logo {
+  max-width: 200px;
+}
+
+a:focus {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 4px;
+}
+
+@media print, screen and (min-width: 40em) {
+  .post-grid .entry-title {
+    font-size: 2.5rem;
+  }
+}
+
+.synopsis.reveal blockquote p {
+  font-style: italic;
+}
+
+@media print, screen and (min-width: 40em) {
+  .carousel-full .flickity-image img {
+    width: 300px;
+  }
+}

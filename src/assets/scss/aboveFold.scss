@@ -31,3 +31,16 @@
 @import "modules/catalogHeader";
 @import "global/fonts"; // CRITICAL CSSS
 @import "global/typography"; // CRITICAL CSSS
+
+/**
+// // Plugins
+Critical styles for each site's custom plugin file. . . 
+To switch styles you need to comment out one or the other.
+Comedy Dynamics: wp-content/plugins/wpmudev-critical-css.php
+**/
+@import "criticalCSS/comedyDynamics";
+
+/**
+Nacelle: wp-content/plugins/wpmudev-critical-nacelle-css.php
+**/
+// @import "criticalCSS/nacelle";

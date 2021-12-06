@@ -9,10 +9,10 @@ if (has_post_thumbnail($post->ID)) :
 	}
 ?>
 	<header class="featured-hero" role="banner" <?php if ((get_post_type() == 'news' && is_archive()) || (get_post_type() == 'press' && is_archive())) : ?> <?php else : ?>data-interchange="[<?php the_post_thumbnail_url('featured-small'); ?>, small], [<?php the_post_thumbnail_url('featured-medium'); ?>, medium], [<?php the_post_thumbnail_url('featured-large'); ?>, large], [<?php the_post_thumbnail_url('featured-xlarge'); ?>, xlarge]" <?php endif; ?>>
-		<?php if ((get_post_type() == 'news') || (get_post_type() == 'press')) : ?>
+		<?php if ((get_post_type() == 'news') || (get_post2type() == 'press')) : ?>
 			<div class="grid-x align-center-middle news-header slideInFromBottom">
 				<div class="cell">
-					<h1 class="text-center mb-0"><?php _e($title, 'nacelle'); ?></h1>
+					<h2 class="text-center mb-0 h1"><?php _e($title, 'nacelle'); ?></h2>
 				</div>
 			</div>
 		<?php endif; ?>

@@ -103,6 +103,43 @@ wp_reset_postdata(); ?>
                         width: 100%;
                     }
                 }
+
+                @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+                    .mobile-video-container {
+                        width: 100%;
+                        height: 450px;
+                    }
+                }
+
+                @media screen and (max-width: 39.9375em) {
+                    .mobile-video-container {
+                        width: 100%;
+                        height: 250px;
+                    }
+                }
+                /* Media queries for standard devices: https://css-tricks.com/snippets/css/media-queries-for-standard-devices/ */
+                /* ----------- iPhone 6+, 7+ and 8+ : Landscape----------- */
+                @media only screen 
+                and (min-device-width: 414px) 
+                and (max-device-width: 736px) 
+                and (-webkit-min-device-pixel-ratio: 3) 
+                and (orientation: landscape) {
+                    .mobile-video-container {
+                        width: 100%;
+                        height: 65vh;
+                    }
+                }
+                /* ----------- iPhone X : Landscape ----------- */
+                @media only screen 
+                and (min-device-width: 375px) 
+                and (max-device-width: 812px) 
+                and (-webkit-min-device-pixel-ratio: 3)
+                and (orientation: landscape) {
+                    .mobile-video-container {
+                        width: 100%;
+                        height: 65vh;
+                    } 
+                }
             </style>
             <div id="mobile_video" onclick="jQuery('#mobile_video').YTPUnmute()" class="player" data-property="{videoURL:'<?php echo $videoHero; ?>',containment:'#mobile_video_container',optimizeDisplay:false,playOnlyIfVisible:true,abundance:0}"></div>
         <?php else : ?>
@@ -111,12 +148,10 @@ wp_reset_postdata(); ?>
                     width: 0;
                     height: 0;
                 }
-
                 @media screen and (min-width: 40em) and (max-width: 63.9375em) {
                     .catalog-aside-wrapper {
                         margin-left: 50%;
                     }
-
                     .catalog-crew,
                     .accordion {
                         width: 50%;
@@ -124,7 +159,7 @@ wp_reset_postdata(); ?>
                 }
             </style>
             <div id="big_video">
-                <div id="video-header-hero" class="player" data-property="{videoURL:'<?php echo $videoHero; ?>',containment:'self', mute:true, mobileFallbackImage:'', useOnMobile: false,optimizedDisplay:false,abundance: <?php echo $videoAbundance; ?>,showYTLogo:false,playOnlyIfVisible:true,startAt:<?php the_field('start_video_at'); ?> }"></div>
+                <div id="video-header-hero" class="player" data-property="{videoURL:'<?php echo $videoHero; ?>',containment:'self', mute:true, mobileFallbackImage:'', useOnMobile: false,optimizedDisplay:false,abundance: .1,showYTLogo:false,playOnlyIfVisible:true,startAt:<?php the_field('start_video_at'); ?> }"></div>
             </div>
             <div class="hero-section-text cover-on" id="coverOn" data-toggler=".cover-on">
                 <div class="cell medium-4">
@@ -156,13 +191,13 @@ wp_reset_postdata(); ?>
                             <div class="big-video-cover"></div>
                         </div>
                         <div class="mobile-app-toggle pause" data-mobile-app-toggle>
-                            <button class="clear button is-active icon" title="Pause" data-toggle="coverOn" onclick="jQuery('#video-header-hero').YTPMute()">
-                                <?php get_template_part('template-parts/svg/icon-pause', ''); ?>
+                            <button class="clear button is-active icon" title="Mute" data-toggle="coverOn" onclick="jQuery('#video-header-hero').YTPMute()">
+                                <?php get_template_part('template-parts/svg/icon-microphone-slash', ''); ?>
                             </button>
                             <a class="button clear icon catalog-links-btn dashicons-before dashicons-album" href="<?php echo $catalogPermalink; ?>">
                                 <strong>View Comedy</strong>
                             </a>
-                            <button class="button clear icon" title="Expand" onclick="jQuery('#modal-video').YTPPlay(); jQuery('#video-header-hero').YTPPause();">
+                            <button class="button clear icon" title="Full Screen" onclick="jQuery('#video-header-hero').YTPFullscreen()">
                                 <?php get_template_part('template-parts/svg/icon-expand', ''); ?>
                             </button>
                         </div>
@@ -178,7 +213,7 @@ wp_reset_postdata(); ?>
                             <button class="clear button small is-active icon" title="Pause" data-toggle="coverOn" onclick="jQuery('#video-header-hero').YTPMute()">
                                 <?php get_template_part('template-parts/svg/icon-pause', ''); ?>
                             </button>
-                            <button class="button clear small icon" title="Expand" onclick="jQuery('#modal-video').YTPPlay().YTPFullscreen(); jQuery('#video-header-hero').YTPPause();">
+                            <button class="button clear small icon" title="Expand" onclick="jQuery('#video-header-hero').YTPFullscreen()">
                                 <?php get_template_part('template-parts/svg/icon-expand', ''); ?>
                             </button>
                         </div>
@@ -187,22 +222,8 @@ wp_reset_postdata(); ?>
                 </div>
             </div>
         <?php endif; ?>
-        <div class="reveal large catalog-modal" id="catalog_modal" data-reveal data-append-to='#modal_container'>
-            <div id="modalVideo" class="modal-video">
-                <div class="grid-x">
-                    <div class="cell">
-                        <?php if ($videoHero) : ?>
-                            <div id="modal-video" class="player" data-property="{videoURL:'<?php echo $videoHero; ?>',containment:'self', coverImage:'<?php echo $profile_hero_lg; ?>', mute:false, autoPlay: false,showControls:true, optimizeDisplay:false,loop:false, showYTLogo:true, stopMovieOnBlur:true }"></div>
-                        <?php endif; ?>
-                    </div>
-                </div>
-            </div>
-            <button class="close-button" data-toggle="coverOn" data-close aria-label="Close modal" type="button" onclick="jQuery('#video-header-hero').YTPPlay().YTPMute(); jQuery('#modal-video').YTPPause();">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div id="modal_container" data-toggle="coverOn" onclick="jQuery('#video-header-hero').YTPPlay().YTPMute(); jQuery('#modal-video').YTPPause();"></div>
     </div>
+
 <? else : ?>
     <div class="archive grid-x align-justified medium-order-1">
         <div class="featured-hero cell py-3">
@@ -226,7 +247,7 @@ wp_reset_postdata(); ?>
                         <div class="hero-text">
                             <h1>
                                 <span class="subheader" style="color:var(--secondary-txt-color);"><?php echo $taxonomy; ?></span>
-                                <br/>
+                                <br />
                                 <?php echo $term->name; ?>
                             </h1>
                         </div>

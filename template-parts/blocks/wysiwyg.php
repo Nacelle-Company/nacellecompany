@@ -8,8 +8,17 @@ if ($tax_page) {
     $content = get_post_meta(get_the_ID(), 'wysiwyg', true);
 }
 ?>
-<div class="grid-x grid-padding-y flex-container align-center-middle">
+<div class="grid-x grid-padding-y flex-container align-center-middle" loading="lazy">
     <div class="cell small-10 large-6 mt-4">
         <?php echo $content; ?>
     </div>
 </div>
+
+<script>
+    var images = document.querySelectorAll('img');
+    console.log(images);
+    images.forEach(element => {
+        element.setAttribute('loading', 'lazy');
+    });
+    console.log(images);
+</script>

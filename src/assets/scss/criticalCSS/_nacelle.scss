@@ -1,0 +1,377 @@
+:root {
+  --primary-color: #4591e5;
+  --secondary-color: #ededed;
+  --bk-color: #f2f2f2;
+  --secondary-bk-color: #000000;
+  --txt-color: #1d1d1d;
+  --secondary-txt-color: #ffffff;
+  --nav-bk-color: #4591e5;
+  --nav-txt-color: #ffffff;
+  --nav-txt-secondary-color: #ffffff;
+  --white-color: #ffffff;
+}
+
+.accordion-content .title,
+.breadcrumbs a,
+.button.hollow,
+.catalog .entry-title,
+.catalog-crew .title,
+.entry-content .social a.nav-link,
+.flickity-button.top-meta .title,
+.footer-grid p,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+.mobile-app-toggle .button,
+.primary-color,
+.primary-title .entry-title,
+.search-results .entry-title.subheader,
+.subheader,
+a,
+footer .social .button,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+main a:not(.alt):not(.button),
+blockquote:before,
+.breadcrumbs .secondary-color {
+  color: var(--primary-color);
+}
+
+.accordion-content,
+.archive .featured-hero,
+.button.primary,
+.button:not(.hollow, .clear),
+.callout-footer,
+.carousel-full--press figcaption,
+.carousel-press figcaption,
+.details-container .info,
+.details-container details[open] .info,
+.flickity-page-dots .dot,
+.instagram-tab,
+.press-row:hover .press-row-content,
+.primary,
+.searchandfilter input[type="submit"],
+.tabs-products .tabs-title.is-active,
+.tabs-title > a:focus,
+.tabs-title > a[aria-selected="true"],
+.to-top,
+.wp-block-button .primary.wp-block-button__link,
+body.page-template-featured-page,
+input[type="submit"] {
+  background-color: var(--primary-color);
+}
+
+.button.hollow,
+.category-intro,
+.details-container p,
+.instagram-tab,
+.off-canvas-content,
+.page-template-featured-page .off-canvas-content,
+.press_release .intro,
+.press_release .press,
+.primary-title,
+.search-results .entry-title.subheader,
+blockquote {
+  border-color: var(--primary-color);
+}
+
+.fas,
+.flickity-button-icon,
+.press-row svg.icon.alt,
+svg.footer-logo .color,
+svg.icon,
+footer.pagination svg.icon {
+  fill: var(--primary-color);
+}
+
+.tabs-title {
+  border-bottom: 1px solid var(--primary-color);
+}
+
+.accordion-title,
+.button.clear.success,
+.button.hollow:hover,
+.close-button,
+.current-menu-item > a,
+.current-menu-parent > a,
+.details-container .info a,
+.details-container summary,
+.menu > li:hover > a,
+.press_release .intro,
+.secondary-color {
+  color: var(--secondary-color);
+}
+
+.dropdown.menu .is-active > a,
+.is-submenu-item:hover > a {
+  color: var(--secondary-color) !important;
+}
+
+.button.hollow.success,
+.carousel .flickity-page-dots .dot,
+.details-container details[open] .info,
+.featured-page .feat-content .dk-border,
+.feed-container,
+.post-navigation,
+.reveal header,
+hr {
+  border-color: var(--secondary-color);
+}
+
+.accordion-line,
+.button.success:not(.clear),
+.flickity-page-dots .dot.is-selected,
+.off-canvas-content .searchandfilter input[type="submit"],
+.secondary-bkgnd,
+.wp-block-button .success.wp-block-button__link {
+  background-color: var(--secondary-color);
+}
+
+.field-wrap input[type="button"]:hover,
+.off-canvas-content .searchandfilter input[type="submit"]:hover {
+  background-color: var(--secondary-color);
+  filter: saturate(1.5);
+}
+
+.icon.down-angle {
+  fill: var(--secondary-color);
+}
+
+.pag-img-wrapper:hover {
+  background: 0 0;
+  outline: 1px solid var(--secondary-color);
+}
+
+.accordion,
+.accordion-title:focus,
+.accordion-title:hover,
+.accordion-title:visited,
+.featured-page .feat-content,
+.page-template-front-grid .home-overlay.bottom,
+.reveal,
+.sidebar,
+body {
+  background-color: var(--bk-color);
+}
+
+.accordion-content p,
+.archive .featured-hero h1:not(.entry-title),
+.button.hollow.success,
+.button.success:hover,
+.button:not(.clear):not(.hollow),
+.carousel-press figcaption h3,
+.details-container details .on-sale,
+.details-container details[open] .info p,
+.field-wrap input[type="button"]:hover,
+.macro-cat-cards .callout-footer,
+.macro-cat-cards .callout-footer *,
+.off-canvas-content .searchandfilter input[type="submit"]:hover,
+.press-row:hover .press-row-content-header,
+.press-row:hover .press-row-content-time,
+.synopsis.reveal blockquote p,
+.tabs-title > a:focus > h3,
+.tabs-title > a[aria-selected="true"] > h3,
+.wp-block-button .success.wp-block-button__link {
+  color: var(--bk-color);
+}
+
+.bk-txt-color *,
+.callout-synopsis a,
+.contact h1 {
+  color: var(--bk-color) !important;
+}
+
+.press-row:hover svg.icon.alt,
+svg.icon.alt {
+  fill: var(--bk-color);
+}
+
+.gallery {
+  background-color: var(--secondary-bk-color);
+}
+
+.button.hollow:hover,
+a:hover,
+.close-button,
+.accordion-title:focus,
+.accordion-title:hover,
+.button.clear:focus,
+.button.clear:hover,
+.carousel-full--news h3,
+.carousel-full--news p,
+.carousel-full--press h3,
+.carousel-full--press p,
+.instagram-title h3,
+blockquote,
+blockquote p,
+body,
+p,
+label {
+  color: var(--txt-color);
+}
+
+@media screen and (max-width: 39.9375em) {
+  .full-hero-video--content .media-object p {
+    color: var(--txt-color);
+  }
+}
+
+.button:hover {
+  background-color: var(--txt-color);
+}
+
+.button.hollow:hover {
+  border-color: var(--txt-color);
+}
+
+.accordion-content .sm-title {
+  color: var(--secondary-txt-color);
+}
+
+@media print, screen and (min-width: 40em) {
+  .full-hero-video--content .media-object p {
+    color: var(--secondary-txt-color);
+  }
+}
+
+.header-search-container:hover svg.icon,
+.menu .is-active > a,
+.off-canvas,
+.pag-img-wrapper,
+.site-header:not(.transparent-header),
+.submenu > .menu-item,
+.title-bar,
+.top-bar,
+footer.footer,
+.field-wrap input[type="button"]:hover,
+title-bar {
+  background: var(--nav-bk-color);
+}
+
+.pagination a,
+.pagination h4,
+.pagination svg.icon,
+.site-header:not(.transparent-header) .menu > .menu-item a {
+  color: var(--nav-txt-color);
+}
+
+.transparent-header .menu-item a {
+  color: var(--nav-txt-secondary-color);
+}
+
+.menu-icon::after {
+  box-shadow: 0 7px 0 var(--white-color), 0 14px 0 var(--white-color);
+  background-color: var(--white-color);
+}
+
+.carousel-full--overlay h3,
+.carousel-full--overlay p,
+.mobile-app-toggle .button:hover {
+  color: var(--white-color);
+}
+
+.mobile-app-toggle .button:hover .icon {
+  fill: var(--white-color);
+}
+
+.site-header:not(.transparent-header) .custom-logo {
+  filter: brightness(5);
+}
+
+@media screen and (max-width: 39.9375em) {
+  .custom-logo {
+    -webkit-filter: brightness(5);
+    filter: brightness(5);
+  }
+}
+
+/* done on local theme */
+.sect-img_txt .fill-img .cell:nth-child(2) {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* nacelle site only */
+.dropdown.menu a {
+  font-weight: 600;
+}
+
+/* wide logo mobile size fix */
+.custom-logo {
+  max-width: 265px;
+}
+
+@media screen and (min-width: 40em) {
+  .custom-logo {
+    max-width: 450px;
+  }
+}
+
+/* catalog accordion "More Info" */
+.accordion-title {
+  color: var(--primary-color);
+}
+
+/* catalog accordion "More Info" */
+.icon.down-angle {
+  fill: var(--primary-color);
+}
+
+.accordion-line {
+  background-color: var(--primary-color);
+}
+
+.press-release.post-grid {
+  background: transparent;
+}
+
+/* post cards */
+.post-grid .media-object {
+  background: white;
+  border-color: var(--primary-color);
+}
+
+.go-corner {
+  background-color: var(--primary-color);
+}
+
+.go-arrow {
+  color: white;
+}
+
+.go-arrow {
+  color: white;
+}
+
+.post-grid .media-object:hover .go-arrow {
+  color: #000;
+}
+
+time {
+  color: var(--txt-color);
+}
+
+.post-grid .media-object:hover time {
+  color: var(--secondary-color);
+}
+
+.title .secondary-color {
+  color: var(--primary-color);
+}
+
+.link-light a {
+  color: #000 !important;
+}
+
+#icon-disk-lg-copy,
+#icon-home-copy,
+#icon-press {
+  fill: white;
+}
