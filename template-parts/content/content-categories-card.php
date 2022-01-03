@@ -6,8 +6,8 @@ if (!is_array($image)) {
 $alt = $image['alt'];
 if ($image) :
 ?>
-  <div class="cell medium-2">
 
+  <div class="cell medium-2">
     <a href="<?php the_permalink(); ?>" aria-label="Visit">
 
       <div class="callout" data-callout-hover-reveal>

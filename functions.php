@@ -447,3 +447,27 @@ add_action('wp_head', 'preload_post_thumbnail');
 //     do_action('Nacelle_social_share_content');
 //     echo 'That!!';
 // }
+
+# Finding handle for your plugins 
+// function display_script_handles()
+// {
+//     global $wp_scripts;
+//     if (current_user_can('manage_options')) { # Only load when user is admin
+//         echo '<strong>You can find this code in functions.php under "Finding handle for your plugins".  <a href="https://orbitingweb.com/blog/preventing-plugins-from-loading-js-css-on-all-pages/" target="_blank">Page with code</a></strong><br/><br/>';
+//         foreach ($wp_scripts->queue as $handle) :
+//             $obj = $wp_scripts->registered[$handle];
+//             echo $filename = $obj->src;
+//             echo ' : <b>Handle for this script is:</b> <span style="color:green"> ' . $handle . '</span><br/><br/>';
+//         endforeach;
+//     }
+// }
+// add_action('wp_print_scripts', 'display_script_handles');
+
+// remove width & height attributes from images
+//
+function remove_img_attr($html)
+{
+    return preg_replace('/(width|height)="\d+"\s/', "", $html);
+}
+
+add_filter('post_thumbnail_html', 'remove_img_attr');
