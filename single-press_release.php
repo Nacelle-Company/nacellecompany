@@ -22,23 +22,23 @@ get_header(); ?>
 										<?php the_post_thumbnail('medium', array('align' => 'left')); ?>
 									<?php endif; ?>
 								</div>
-								<div class="media-object-section">
+								<div class="media-object-section flex-container flex-dir-column align-justify">
 									<h1>
 										<?php the_title(); ?>
 									</h1>
+									<footer class="cell">
+										<?php
+										$location = get_post_meta(get_the_ID(), 'location', true);
+										$time = get_the_time('m.j.y');
+										echo '<p><strong>';
+										echo $location . ' ';
+										echo "</strong>";
+										echo $time;
+										echo '</p>';
+										?>
+									</footer>
 								</div>
 							</div>
-							<footer class="cell">
-								<?php
-								$location = get_post_meta(get_the_ID(), 'location', true);
-								$time = get_the_time('m.j.y');
-								echo '<p class="text-right mb-0"><strong>';
-								echo $location . ' ';
-								echo "</strong>";
-								echo $time;
-								echo '</p>';
-								?>
-							</footer>
 						</header>
 						<div class="grid-x intro pb-2 mb-2">
 							<h3 class="cell mb-0 secondary-color">
