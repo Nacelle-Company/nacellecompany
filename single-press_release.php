@@ -96,7 +96,7 @@ get_header(); ?>
 											<?php
 											$featured_posts = get_post_meta(get_the_ID(), 'talent_name', true);
 											if ($featured_posts) : ?>
-												<h4>Featured Comedy</h4>
+												<h4>Press Release Comedy</h4>
 												<?php foreach ($featured_posts as $post) :
 													// Setup this post for WP functions (variable must be named $post).
 													setup_postdata($post); ?>
@@ -111,7 +111,7 @@ get_header(); ?>
 											<?php
 											$featured_posts = get_post_meta(get_the_ID(), 'talent_name', true);
 											if ($featured_posts) : ?>
-												<h4>Featured Talent</h4>
+												<h4>Press Release Talent</h4>
 												<?php foreach ($featured_posts as $post) :
 													// Setup this post for WP functions (variable must be named $post).
 													setup_postdata($post); ?>
