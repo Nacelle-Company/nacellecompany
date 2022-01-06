@@ -39,11 +39,11 @@
 				</section>
 				<section class="menu simple pb-2">
 					<?php get_template_part('template-parts/svg/icon-user'); ?>
-					<h5 class="pl-1">
+					<h4 class="pl-1 h6">
 						<a href="mailto:<?php echo get_post_meta(get_the_ID(), 'email', true);  ?>?Subject=Hello%20Comedy%20Dynamics%20Press" target="_top" itemprop="email">
 							<?php echo get_post_meta(get_the_ID(), 'email', true);  ?>
 						</a>
-					</h5>
+					</h4>
 				</section>
 			</div>
 		</main>

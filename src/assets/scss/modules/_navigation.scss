@@ -1,76 +1,82 @@
 .title-bar {
-	padding: 0.5rem 1rem;
-	justify-content: center;
-@media print,screen and (min-width: 40em) {
-		display: none;
-	}
+  padding: 0.5rem 1rem;
+  justify-content: center;
+  @media print, screen and (min-width: 40em) {
+    display: none;
+  }
 }
 .top-bar {
-	display: none;
+  display: none;
 }
 .site-header {
-	position: relative;
-	z-index: 6;
-	width: 100%;
+  position: relative;
+  z-index: 6;
+  width: 100%;
 }
 .custom-logo {
-	max-width: 200px;
+  max-width: 200px;
 }
 nav ul {
-	list-style: none;
-	padding: 0;
-	margin: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 .dropdown.menu a {
-	font-weight: 600;
+  font-weight: 600;
 }
 .menu a,
 .menu .button {
-	line-height: 1;
-	text-decoration: none;
-	display: block;
-	padding: 0.7rem 1rem;
+  line-height: 1;
+  text-decoration: none;
+  display: block;
+  padding: 0.7rem 1rem;
 }
 .menu.nested {
-	margin-right: 0;
-	margin-left: 1rem;
+  margin-right: 0;
+  margin-left: 1rem;
 }
 .is-dropdown-submenu {
-	border: none;
+  border: none;
+}
+.menu.simple {
+	display: flex;
+}
+.menu.simple a {
+  padding: 0;
 }
 .title-bar-title {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .menu-icon-c {
-	width: 20px;
-	height: 16px;
-	cursor: pointer;
-	margin: 0.7rem 1rem;
-	padding: 0.7rem 1rem;
-	position: absolute;
-	left: 0;
-	&:after {
-		position: absolute;
-		top: 0;
-		left: 0;
-		display: block;
-		width: 100%;
-		height: 2px;
-		content: "";
-	}
+  width: 20px;
+  height: 16px;
+  cursor: pointer;
+  margin: 0.7rem 1rem;
+  padding: 0.7rem 1rem;
+  position: absolute;
+  left: 0;
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 2px;
+    content: "";
+  }
 }
 .top-bar {
-@media print,screen and (min-width: 40em) {
-		padding: 0.5em;
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		&.left-too {
-			justify-content: center;
-		}
-	}
+  @media print, screen and (min-width: 40em) {
+    padding: 0.5em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    &.left-too {
+      justify-content: center;
+    }
+  }
 }
 
 // .top-bar-right {
@@ -78,59 +84,59 @@ nav ul {
 // }
 
 .top-bar > .menu {
-	display: none;
-@media screen and (min-width: 40em) {
-		display: flex;
-	}
+  display: none;
+  @media screen and (min-width: 40em) {
+    display: flex;
+  }
 }
 
 .transparent-header {
-@media screen and (min-width: 40em) {
-		position: absolute;
-		.top-bar {
-@media screen and (min-width: 40em) {
-				background: transparent !important;
-			}
-		}
-	}
+  @media screen and (min-width: 40em) {
+    position: absolute;
+    .top-bar {
+      @media screen and (min-width: 40em) {
+        background: transparent !important;
+      }
+    }
+  }
 }
 // custom nav END
 
 // search
 .search-container {
-@media print,screen and (min-width: 40em) {
-		display: flex;
-		position: absolute;
-		right: 0;
-		align-items: center;
-		background: transparent;
-		border-radius: 0;
-		transform: translate(0, 0);
-		transition: 0.3s linear;
-		ul {
-			margin-left: 0;
-			padding-right: 0.25rem;
-		}
-		.searchandfilter {
-			opacity: 0;
-			li {
-				padding: 0;
-			}
-		}
-		svg.icon {
-			height: 44px;
-			width: 44px;
-			padding: 11px;
-		}
-		input[type="text"] {
-			margin: 0;
-			padding: 0 1em;
-		}
-		&:hover {
-			transform: translate(-75px, 0);
-			.searchandfilter {
-				opacity: 1;
-			}
-		}
-	}
+  @media print, screen and (min-width: 40em) {
+    display: flex;
+    position: absolute;
+    right: 0;
+    align-items: center;
+    background: transparent;
+    border-radius: 0;
+    transform: translate(0, 0);
+    transition: 0.3s linear;
+    ul {
+      margin-left: 0;
+      padding-right: 0.25rem;
+    }
+    .searchandfilter {
+      opacity: 0;
+      li {
+        padding: 0;
+      }
+    }
+    svg.icon {
+      height: 44px;
+      width: 44px;
+      padding: 11px;
+    }
+    input[type="text"] {
+      margin: 0;
+      padding: 0 1em;
+    }
+    &:hover {
+      transform: translate(-75px, 0);
+      .searchandfilter {
+        opacity: 1;
+      }
+    }
+  }
 }

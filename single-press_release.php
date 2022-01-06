@@ -54,6 +54,62 @@ get_header(); ?>
 							<div class="cell">
 								<?php the_content(); ?>
 								<footer>
+									<div class="text-center">
+										<span>###</span>
+										<div class='share-on'>Share on: </div>
+									</div>
+									<div class="flex-container social-share align-center align-middle">
+										<?php get_template_part('template-parts/blocks/social-share'); ?>
+									</div>
+									<hr>
+									<?php
+									$featured_posts = get_post_meta(get_the_ID(), 'talent_name', true);
+									$stills_download = get_field('stills_download');
+									$pdf_download = get_field('pdf_download');
+									if (!empty($stills_download) || !empty($pdf_download) || !empty($featured_posts)) : ?>
+										<header class="grid-x mb-2">
+											<h4>RELATED INFO</h4>
+										</header>
+										<div class="grid-x grid-padding-x mb-2">
+											<?php if (!empty($stills_download) || !empty($pdf_download)) : ?>
+												<div class="cell medium-4">
+													<h6>DOWNLOADS</h6>
+													<?php if (!empty($stills_download)) : ?>
+														<a href="<?php echo the_field('stills_download'); ?>" download>– Stills</a>
+													<?php endif; ?>
+													<?php if (!empty($pdf_download)) : ?>
+														<br>
+														<a href="<?php echo the_field('pdf_download'); ?>" download>– Press Release</a>
+													<?php endif; ?>
+												</div>
+											<?php endif; ?>
+											<?php if ($featured_posts) : ?>
+												<div class="cell medium-4">
+													<h6 class="secondary-color">COMEDY</h6>
+													<?php foreach ($featured_posts as $post) :
+														setup_postdata($post);
+														$terms = get_field('talent');
+													?>
+														<p>
+															<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+														</p>
+													<?php endforeach; ?>
+												</div>
+												<div class="cell medium-4">
+													<h6 class="secondary-color">TALENT</h6>
+													<?php foreach ($terms as $term) : ?>
+														<?php
+														$talentSlug = esc_html($term->slug);
+														$blogURL = get_bloginfo('url');
+														$talentURL = $blogURL . '/main-talent/' . $talentSlug;
+														?>
+														<a href="<?php echo $talentURL; ?>"><?php echo esc_html($term->name) . ','; ?></a>
+													<?php endforeach; ?>
+												</div>
+											<?php endif; ?>
+											<?php wp_reset_postdata(); ?>
+										</div>
+									<?php endif; ?>
 									<div class="callout secondary large">
 										<p>
 											<?php
@@ -65,73 +121,6 @@ get_header(); ?>
 											}
 											?>
 										</p>
-									</div>
-									<div class="text-center">
-										<span>###</span>
-										<div class='share-on'>Share on: </div>
-									</div>
-									<div class="flex-container social-share align-center align-middle">
-										<?php get_template_part('template-parts/blocks/social-share'); ?>
-									</div>
-									<hr>
-									<div class="mb-2">
-										<?php if (!empty($stills_download) || !empty($pdf_download)) { ?>
-											<h4 class="text-center">
-												<?php
-												$stills_download = get_post_meta(get_the_ID(), 'stills_download', true);
-												$stills_url = wp_get_attachment_url($stills_download);
-												if (!empty($stills_download)) {
-													echo '<a href="' . $stills_url . '" download>Stills, </a>';
-												}
-												?>
-											<?php
-											$pdf_download = get_post_meta(get_the_ID(), 'stills_download', true);
-											$pdf_url = wp_get_attachment_url($pdf_download);
-											if (!empty($pdf_download)) {
-												echo '<a href="' . $pdf_url . '" download>Press Release</a>';
-											}
-										}
-											?>
-											</h4>
-											<?php
-											$featured_posts = get_post_meta(get_the_ID(), 'talent_name', true);
-											if ($featured_posts) : ?>
-												<h4>Press Release Comedy</h4>
-												<?php foreach ($featured_posts as $post) :
-													// Setup this post for WP functions (variable must be named $post).
-													setup_postdata($post); ?>
-													<p>
-														<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-													</p>
-												<?php endforeach; ?>
-												<?php
-												// Reset the global post object so that the rest of the page works correctly.
-												wp_reset_postdata(); ?>
-											<?php endif; ?>
-											<?php
-											$featured_posts = get_post_meta(get_the_ID(), 'talent_name', true);
-											if ($featured_posts) : ?>
-												<h4>Press Release Talent</h4>
-												<?php foreach ($featured_posts as $post) :
-													// Setup this post for WP functions (variable must be named $post).
-													setup_postdata($post); ?>
-													<?php
-													$terms = get_field('talent');
-													if ($terms) : ?>
-														<?php foreach ($terms as $term) : ?>
-															<?php
-															$talentSlug = esc_html($term->slug);
-															$blogURL = get_bloginfo('url');
-															$talentURL = $blogURL . '/main-talent/' . $talentSlug;
-															?>
-															<a href="<?php echo $talentURL; ?>"><?php echo esc_html($term->name) . ','; ?></a>
-														<?php endforeach; ?>
-													<?php endif; ?>
-												<?php endforeach; ?>
-												<?php
-												// Reset the global post object so that the rest of the page works correctly.
-												wp_reset_postdata(); ?>
-											<?php endif; ?>
 									</div>
 								</footer>
 							</div>
