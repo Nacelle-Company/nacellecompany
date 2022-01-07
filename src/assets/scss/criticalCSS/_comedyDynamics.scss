@@ -103,7 +103,7 @@ svg.icon {
 .press_release .intro,
 .secondary-color,
 blockquote:before {
-  color: var(--secondary-color);
+  color: var(--secondary-color) !important;
 }
 
 .dropdown.menu .is-active > a,

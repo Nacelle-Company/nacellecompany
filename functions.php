@@ -237,12 +237,12 @@ function Nacelle_change_category_order($query)
 // https://wpbeaches.com/remove-unused-image-media-sizes-wordpress-theme/
 // remove sidebar debug on wp top bar
 // https://wordpress.org/support/topic/remove-sidebar-debug/
-function remove_admin_links($wp_admin_bar)
-{
-    // remove Sidebar Debug link (Custom Sidebars plugin)
-    $wp_admin_bar->remove_node('cs-explain');
-}
-add_action('admin_bar_menu', 'remove_admin_links', 9999);
+// function remove_admin_links($wp_admin_bar)
+// {
+//     // remove Sidebar Debug link (Custom Sidebars plugin)
+//     $wp_admin_bar->remove_node('cs-explain');
+// }
+// add_action('admin_bar_menu', 'remove_admin_links', 9999);
 
 
 // duplicate pages
@@ -471,3 +471,10 @@ function remove_img_attr($html)
 }
 
 add_filter('post_thumbnail_html', 'remove_img_attr');
+
+// View all WP Post variables
+function wpmix_display_globals($content)
+{
+    return $content . var_export($GLOBALS['post'], TRUE);
+}
+add_filter('the_content', 'wpmix_display_globals');

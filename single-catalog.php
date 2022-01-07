@@ -31,37 +31,8 @@ get_header(); ?>
 			<div class="cell medium-order-3">
 				<?php get_template_part('template-parts/catalog/catalog-large-links'); ?>
 			</div>
-			<div class="cell medium-order-4">
-				<?php
-				$featured_posts = get_post_meta(get_the_ID(), 'related_news_or_press', true);
-				if ($featured_posts) : ?>
-					<div class="grid-x px-large-4">
-						<div class="cell medium-12">
-							<h4>Related News & Press</h4>
-							<?php foreach ($featured_posts as $post) :
-								// Setup this post for WP functions (variable must be named $post).
-								setup_postdata($post); ?>
-								<p>
-									<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-								</p>
-								<?php
-								$talents = get_post_meta(get_the_ID(), 'talent', true);
-								if ($talents) {
-									echo '<h4>Featured Talent</h4>';
-									$talentstr = array();
-									foreach ($talents as $talent) {
-										$talentstr[] = $talent->name;
-										$talentSlug[] = '<a class="alt" href="' . $siteURL . '/main-talent/' . $talent->slug . '">' . $talent->name . '</a>';
-									}
-									echo implode(", ", $talentSlug);
-								}
-								?>
-							<?php endforeach; ?>
-							<?php
-							wp_reset_postdata(); ?>
-						</div>
-					</div>
-				<?php endif; ?>
+			<div class="grid-x grid-container medium-order-4">
+				<?php get_template_part('template-parts/catalog/single-catalog-related'); ?>
 			</div>
 		<?php else : ?>
 			<div class="no-hero-video cell medium-7">
