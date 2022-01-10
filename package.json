@@ -32,7 +32,7 @@
     "flickity-imagesloaded": "^2.0.0",
     "foundation-sites": "6.4.3",
     "jquery": "^3.6.0",
-    "jquery-bridget": "^3.0.0",
+    "jquery-bridget": "^3.0.1",
     "logrocket": "^1.1.0",
     "motion-ui": "~1.2.2",
     "tenon-node": "^0.4.1",
