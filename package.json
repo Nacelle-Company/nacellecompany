@@ -25,7 +25,7 @@
   ],
   "dependencies": {
     "browsersync": "^0.0.1-security",
-    "flickity": "^2.2.2",
+    "flickity": "^2.3.0",
     "flickity-bg-lazyload": "^1.0.1",
     "flickity-fade": "^1.0.0",
     "flickity-fullscreen": "^1.1.1",
