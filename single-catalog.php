@@ -31,7 +31,7 @@ get_header(); ?>
 			<div class="cell medium-order-3">
 				<?php get_template_part('template-parts/catalog/catalog-large-links'); ?>
 			</div>
-			<div class="grid-x grid-container medium-order-4">
+			<div class="cell medium-order-4 related">
 				<?php get_template_part('template-parts/catalog/single-catalog-related'); ?>
 			</div>
 		<?php else : ?>
