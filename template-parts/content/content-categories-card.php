@@ -1,4 +1,14 @@
 <?php
+$trim_length = 20;  //desired length of text to display
+$value_more = ' . . .'; // what to add at the end of the trimmed text
+$custom_field = 'synopsis';
+$value = get_post_meta($post->ID, $custom_field, true);
+if ($value) {
+  $short_synopsis = wp_trim_words($value, $trim_length, $value_more);
+} else {
+  $short_synopsis = get_the_content();
+}
+
 $image = get_field('square_image');
 if (!is_array($image)) {
   $image = acf_get_attachment($image);
@@ -19,15 +29,7 @@ if ($image) :
 
         <div class="callout-footer">
           <div class="callout-content">
-            <p><?php
-                $trim_length = 20;  //desired length of text to display
-                $value_more = ' . . .'; // what to add at the end of the trimmed text
-                $custom_field = 'synopsis';
-                $value = get_post_meta($post->ID, $custom_field, true);
-                if ($value) {
-                  echo wp_trim_words($value, $trim_length, $value_more);
-                }
-                ?></p>
+            <p><?php echo $short_synopsis; ?></p>
           </div>
 
         </div>

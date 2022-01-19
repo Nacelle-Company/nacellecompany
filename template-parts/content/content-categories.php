@@ -46,7 +46,7 @@ get_header(); ?>
 				</div>
 			</div>
 		</header>
-		<div class="catalog-cards macro-cat-cards grid-x small-up-2 medium-up-4 large-up-6 align-top mt-medium-3">
+		<div class="catalog-cards macro-cat-cards grid-x grid-margin-y small-up-2 medium-up-4 large-up-6 align-top mt-medium-3">
 			<?php /* Start the Loop */ ?>
 			<?php while (have_posts()) : the_post(); ?>
 				<?php get_template_part('template-parts/content/content-categories-card'); ?>
@@ -60,20 +60,5 @@ get_header(); ?>
 
 		</div>
 	</div>
-	<?php /* Display navigation to next/previous pages when applicable */ ?>
-	<div id="site-content" class="text-center"></div>
-	<?php
-	// if (function_exists('Nacelle_pagination')) :
-	// 	Nacelle_pagination();
-	// elseif (is_paged()) :
-	?>
 
-	<!-- <nav id="post-nav">
-			<div class="post-previous"><?php //next_posts_link(__('&larr; Older posts', 'nacelle')); 
-																	?></div>
-			<div class="post-next"><?php //previous_posts_link(__('Newer posts &rarr;', 'nacelle')); 
-															?></div>
-		</nav> -->
-	<?php // endif; 
-	?>
 	<?php get_footer();

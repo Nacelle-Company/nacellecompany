@@ -478,3 +478,5 @@ function wpmix_display_globals($content)
     return $content . var_export($GLOBALS['post'], TRUE);
 }
 add_filter('the_content', 'wpmix_display_globals');
+
+
