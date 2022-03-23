@@ -10,7 +10,7 @@
  * @package wp_rig
  */
 
- namespace WP_Rig\WP_Rig;
+namespace WP_Rig\WP_Rig;
 
 ?>
 
@@ -56,7 +56,7 @@
 
 		<div class="grid-item grid-item__hover">
 			<a href="<?php echo esc_attr( $permalink ); ?>" aria-label="visit">
-			<?php echo $image; ?>
+			<?php echo wp_kses( $image, 'post' ); ?>
 			</a>
 			<a href="<?php echo esc_attr( $permalink ); ?>" aria-label="visit">
 			<div class="grid-item__content">

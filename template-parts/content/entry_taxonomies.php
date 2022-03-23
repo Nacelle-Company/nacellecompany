@@ -18,7 +18,9 @@ $taxonomies = wp_list_filter(
 <div class="entry-taxonomies">
 	<?php
 	if ( is_post_type_archive() ) {
-		if ( function_exists( 'rank_math_the_breadcrumbs' ) ) rank_math_the_breadcrumbs();
+		if ( function_exists( 'rank_math_the_breadcrumbs' ) ) {
+			rank_math_the_breadcrumbs();
+		}
 	} else {
 		// Show terms for all taxonomies associated with the post.
 		foreach ( $taxonomies as $taxonomy ) { // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
@@ -28,14 +30,14 @@ $taxonomies = wp_list_filter(
 
 			switch ( $taxonomy->name ) {
 				case 'category':
-					$class            = 'category-links term-links';
-					$list             = get_the_category_list( esc_html( $separator ), '', $post->ID );
+					$class = 'category-links term-links';
+					$list  = get_the_category_list( esc_html( $separator ), '', $post->ID );
 					/* translators: %s: list of taxonomy terms */
 					$placeholder_text = __( 'Posted in %s', 'wp-rig' );
 					break;
 				case 'post_tag':
-					$class            = 'tag-links term-links';
-					$list             = get_the_tag_list( '', esc_html( $separator ), '', $post->ID );
+					$class = 'tag-links term-links';
+					$list  = get_the_tag_list( '', esc_html( $separator ), '', $post->ID );
 					/* translators: %s: list of taxonomy terms */
 					$placeholder_text = __( 'Tagged %s', 'wp-rig' );
 					break;

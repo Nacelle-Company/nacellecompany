@@ -31,14 +31,13 @@ namespace WP_Rig\WP_Rig;
 			} else {
 				$synopsis = get_post_meta( $post->ID, 'synopsis', true );
 			}
-			echo $synopsis;
+			echo esc_html( $synopsis );
 			?>
 		</div>
 	</div>
 	<!-- simple modal END -->
 
 	<?php get_template_part( 'template-parts/footer/footer-widgets' ); ?>
-	<?php // get_template_part( 'template-parts/footer/info' ); ?>
 </footer><!-- #colophon -->
 </div><!-- #page -->
 

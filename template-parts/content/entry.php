@@ -18,9 +18,8 @@ if ( is_post_type_archive() ) {
 
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( $article_class ); ?>>
-	<?php
-	if ( is_post_type_archive() ) { // ? if archive for any posts
-	?>
+
+	<?php if ( is_post_type_archive() ) : ?>
 
 		<div class="grid-item post-grid__wrapper">
 			<?php
@@ -35,8 +34,9 @@ if ( is_post_type_archive() ) {
 
 		</div>
 
-	<? } else {
+	<?php else : ?>
 
+		<?php
 		if ( ! is_front_page() ) { // ? if NOT the front page
 			get_template_part( 'template-parts/content/entry_header', get_post_type() );
 		}
@@ -49,9 +49,9 @@ if ( is_post_type_archive() ) {
 		}
 
 		get_template_part( 'template-parts/content/entry_footer', get_post_type() );
+		?>
 
-	}
-	?>
+	<?php endif; ?>
 </article><!-- #post-<?php the_ID(); ?> -->
 
 <?php

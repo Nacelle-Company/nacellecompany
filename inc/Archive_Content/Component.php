@@ -15,12 +15,12 @@ use function add_theme_support;
 use function get_theme_mod;
 
 /**
-  * Class for allowing administrators to decide whether to display content or excerpt in archives.
-  *
-  * Exposes template tags:
-  * * `wp_rig()->using_archive_excerpts()`
-  */
-  class Component implements Component_Interface, Templating_Component_Interface {
+ * Class for allowing administrators to decide whether to display content or excerpt in archives.
+ *
+ * Exposes template tags:
+ * * `wp_rig()->using_archive_excerpts()`
+ */
+class Component implements Component_Interface, Templating_Component_Interface {
 
 	/**
 	 * Gets the unique identifier for the theme component.
@@ -48,8 +48,10 @@ use function get_theme_mod;
 	public function template_tags() : array {
 		return array(
 			'using_archive_excerpts' => array(
-				$this, 'using_archive_excerpts' ),
-			);
+				$this,
+				'using_archive_excerpts',
+			),
+		);
 	}
 
 	/**
@@ -59,17 +61,21 @@ use function get_theme_mod;
 	 */
 	public function action_register_customizer_control( WP_Customize_Manager $wp_customize ) {
 		// Register the Customizer setting and ensure its value is a boolean.
-		$wp_customize->add_setting( 'archives_use_excerpt', array(
-			'default'			=> false,
-			'sanitize_callback' => 'rest_sanitize_boolean',
+		$wp_customize->add_setting(
+			'archives_use_excerpt',
+			array(
+				'default'           => false,
+				'sanitize_callback' => 'rest_sanitize_boolean',
 			)
 		);
 
 		// Register the Customizer control for the setting, using a checkbox.
-		$wp_customize->add_control('archives_use_excerpt', array(
-			'label'	=> __( 'Use excerpts in archive views?', 'wp_rig'),
-			'section' => 'theme_options',
-			'type' => 'checkbox',
+		$wp_customize->add_control(
+			'archives_use_excerpt',
+			array(
+				'label'   => __( 'Use excerpts in archive views?', 'wp_rig' ),
+				'section' => 'theme_options',
+				'type'    => 'checkbox',
 			)
 		);
 	}
@@ -82,4 +88,4 @@ use function get_theme_mod;
 	public function using_archive_excerpts() : bool {
 		return (bool) get_theme_mod( 'archives_use_excerpt' );
 	}
-  }
+}

@@ -50,7 +50,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	/**
 	 * Display Tax Terms
 	 *
-	 * @param mixed $taxonomy
+	 * @param mixed $taxonomy Parameter comment.
 	 * A little text.
 	 */
 	public function display_tax_terms( $taxonomy ) {
@@ -76,7 +76,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 
 		endif;
 		if ( $terms_list ) {
-			echo $terms_list;
+			echo wp_kses( $terms_list, 'post' );
 		}
 	}
 }

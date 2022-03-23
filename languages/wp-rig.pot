@@ -298,23 +298,23 @@ msgid "in %s"
 msgstr ""
 
 #. translators: separator between taxonomy terms
-#: template-parts/content/entry_taxonomies.php:27
+#: template-parts/content/entry_taxonomies.php:29
 msgctxt "list item separator"
 msgid ", "
 msgstr ""
 
 #. translators: %s: list of taxonomy terms
-#: template-parts/content/entry_taxonomies.php:34
+#: template-parts/content/entry_taxonomies.php:36
 msgid "Posted in %s"
 msgstr ""
 
 #. translators: %s: list of taxonomy terms
-#: template-parts/content/entry_taxonomies.php:40
+#: template-parts/content/entry_taxonomies.php:42
 msgid "Tagged %s"
 msgstr ""
 
 #. translators: %s: taxonomy name
-#: template-parts/content/entry_taxonomies.php:47
+#: template-parts/content/entry_taxonomies.php:49
 msgid "%s:"
 msgstr ""
 
