@@ -13,12 +13,37 @@ namespace WP_Rig\WP_Rig;
 
 ?>
 
-	<footer id="colophon" class="site-footer">
-		<?php get_template_part( 'template-parts/footer/info' ); ?>
-	</footer><!-- #colophon -->
+<footer id="colophon" class="site-footer">
+	<script>
+		// hero video jquery call
+		jQuery(function() {
+		jQuery("#hero_video").YTPlayer();
+		});
+	</script>
+	<!-- simple modal -->
+	<!-- https://codepen.io/timothylong/pen/AJxrPR -->
+	<div id="open-modal" class="modal-window">
+		<div>
+			<a href="#" title="Close" class="modal-close">Close</a>
+			<?php
+			if ( get_the_content() ) {
+				$synopsis = get_the_content();
+			} else {
+				$synopsis = get_post_meta( $post->ID, 'synopsis', true );
+			}
+			echo $synopsis;
+			?>
+		</div>
+	</div>
+	<!-- simple modal END -->
+
+	<?php get_template_part( 'template-parts/footer/footer-widgets' ); ?>
+	<?php // get_template_part( 'template-parts/footer/info' ); ?>
+</footer><!-- #colophon -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
 
 </body>
+
 </html>

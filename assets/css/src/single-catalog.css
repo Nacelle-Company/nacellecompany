@@ -1,0 +1,158 @@
+@import "_grid.css";
+
+.catalog,
+.entry-header,
+.dl-list__info,
+.entry-main__crew,
+.dl-list__crew,
+.entry-header__breadcrumbs {
+	display: grid;
+}
+
+/* initial layout */
+@media screen and (--wide-menu-query) {
+
+	.entry-main input:checked ~ .tab-content {
+		padding: 1em 1em 1em 2em;
+	}
+
+	/* define grid areas */
+	.entry-header {
+		grid-area: header;
+	}
+
+	.entry-video {
+		grid-area: video;
+	}
+
+	.entry-image {
+		grid-area: image;
+	}
+
+	.entry-main {
+		grid-area: main;
+		padding-left: 2em;
+	}
+
+	.entry-buttons {
+		grid-area: footer;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.catalog:not(.no-video) {
+		grid-template-columns: auto 40%;
+		grid-template-areas:
+			"header header"
+			"video image"
+			"main image"
+			"footer footer";
+	}
+
+	.catalog.no-video {
+		grid-template-columns: 60% 40%;
+		grid-template-areas:
+			"header header"
+			"main image"
+			"main ."
+			"footer footer";
+	}
+
+	.no-video .entry-image .wp-post-image {
+		transform: translateY(-25vh);
+	}
+}
+
+/* header */
+.entry-header * {
+	padding-left: 0;
+}
+
+@media screen and (--wide-menu-query) {
+
+	.entry-header {
+		width: 100%;
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.entry-header__breadcrumbs {
+		justify-content: flex-end;
+	}
+}
+
+/**
+  * DEFINITION LISTS
+  *
+  **/
+
+/* more info */
+.dl-list__info {
+	grid-template-columns: auto 1fr;
+	align-items: flex-start;
+}
+
+.dl-list h4 {
+	margin: 0;
+	text-align: right;
+}
+
+.tab-label {
+	justify-content: space-between;
+	background-color: var(--color-theme-primary);
+	border-bottom: 1px solid #fff;
+
+	&:hover {
+		background-color: var(--color-theme-secondary);
+	}
+}
+
+.tab-close {
+	background-color: var(--color-theme-primary);
+
+	&:hover {
+		background-color: var(--color-theme-secondary);
+	}
+}
+
+input:checked + .tab-label {
+	background-color: var(--color-theme-primary);
+}
+
+/* crew */
+.crew__title h2 {
+	margin: 0;
+}
+
+.dl-list__crew {
+	grid-template-columns: auto 1fr;
+}
+
+.entry-main__crew {
+	padding: 1em;
+}
+
+@media screen and (--wide-menu-query) {
+
+	.dl-list__info {
+		grid-template-columns: 1fr 1fr;
+		align-items: flex-start;
+	}
+
+	.dl-list__crew {
+		grid-template-columns: auto 1fr;
+	}
+
+	.entry-main__crew {
+		grid-template-columns: 33% 1fr;
+		grid-gap: 1em;
+		padding: 1em;
+	}
+}
+
+/* featured image */
+@media screen and (--wide-menu-query) {
+
+	.entry-image .wp-post-image {
+		transform: translateY(-5vw);
+	}
+}

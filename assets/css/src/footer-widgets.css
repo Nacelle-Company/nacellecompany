@@ -1,0 +1,20 @@
+/* styles for the footer widgets area */
+
+.footer-widgets-area {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 2rem;
+}
+
+.footer-widgets-area * {
+	min-width: 0;
+}
+
+.menu-footer-social-container .menu {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.menu-footer-social-container .menu-item {
+	padding: 1em;
+}

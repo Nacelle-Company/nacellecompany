@@ -120,5 +120,8 @@
     "lint": "eslint assets/js/src/",
     "lint:gulp": "eslint gulp/",
     "lint:gulp:fix": "eslint --fix gulp/"
+  },
+  "dependencies": {
+    "flickity": "^3.0.0"
   }
 }

@@ -64,3 +64,39 @@ require get_template_directory() . '/inc/functions.php';
 
 // Initialize the theme.
 call_user_func( 'WP_Rig\WP_Rig\wp_rig' );
+
+
+// ? ACF options page
+if ( function_exists( 'acf_add_options_page' ) ) {
+
+	acf_add_options_page();
+}
+
+/**
+ * Show Custom Post Types in Category Archive Page
+ * By default WordPress custom post types do not appear in a category or tag archive page
+ *
+ * @param posts custom post types
+ * @return $query
+ * @link https://wpbeaches.com/show-custom-post-types-category-archive-page/, https://www.smashingmagazine.com/2014/08/customizing-wordpress-archives-categories-terms-taxonomies/#adding-custom-post-types-to-category-or-tag-archives
+ */
+
+add_filter( 'pre_get_posts', '_wp_rig_cpt_category_archives' );
+/**
+ * CPT Archives
+ *
+ * @param variable $query Description.
+ **/
+function _wp_rig_cpt_category_archives( $query ) {
+	if ( $query->is_category() && $query->is_main_query() ) {
+		$query->set(
+			'post_type',
+			array(
+				'post',
+				'catalog',
+			)
+		);
+	}
+	return $query;
+}
+

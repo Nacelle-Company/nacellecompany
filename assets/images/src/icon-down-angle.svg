@@ -1,0 +1,4 @@
+<svg viewBox="0 0 40 15" preserveAspectRatio="xMidYMid meet" class="fas icon down-angle ml-1" width="25" height="17" xmlns="http://www.w3.org/2000/svg" aria-labelledby="iconDown">
+    <title id="iconDown">down</title>
+    <path d="M11.21 15.6L.62 5a1.86 1.86 0 010-2.63L2.38.6a1.86 1.86 0 012.64 0l7.51 7.5 7.5-7.5a1.86 1.86 0 012.65 0l1.76 1.76c.73.73.73 1.91 0 2.64L13.84 15.6c-.7.73-1.9.73-2.63 0z" fill-rule="nonzero" />
+</svg>

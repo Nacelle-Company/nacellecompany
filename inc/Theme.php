@@ -153,6 +153,11 @@ class Theme {
 			new Styles\Component(),
 			new Scripts\Component(),
 			new Excerpts\Component(),
+			new Archive_Content\Component(),
+			new Tax_Terms\Component(),
+			new Related_Posts\Component(),
+			new Post_Grid\Component(),
+			new Flickity\Component(),
 		);
 
 		if ( defined( 'JETPACK__VERSION' ) ) {

@@ -6,12 +6,13 @@
  **/
 
 :root {
+	--page-width: 90rem;
 	--content-width: 45rem;
 	--dropdown-symbol-width: 0.7em;
 
 	/* Typography */
-	--global-font-family: "Crimson Text", serif;
-	--highlight-font-family: "Roboto Condensed", "Helvetica Neue", "Arial Narrow", sans-serif;
+	--global-font-family: "Montserrat", sans-serif;
+	--highlight-font-family: "Montserrat", sans-serif;
 	--global-font-size: 20;
 	--global-font-line-height: 1.4;
 
@@ -21,12 +22,21 @@
 	--font-size-large: calc(36 / var(--global-font-size) * 1rem);
 	--font-size-larger: calc(48 / var(--global-font-size) * 1rem);
 
+	/* Grid items */
+	--grid-item-row-gap: 7rem;
+	--grid-item-row-bottom-spacing: 1rem;
+	--grid-item-row-gap-sm: 2rem;
+
+	/* Utilities */
+	--border-radius: 5px;
+
 	/* Colors */
-	--global-font-color: #333;
+	--global-font-color: #fff;
+	--global-color-dark: #202020;
 	--border-color-dark: #333;
 	--border-color-light: #ccc;
 	--color-link: #0073aa;
-	--color-link-visited: #333;
+	--color-link-visited: #fff;
 	--color-link-active: #00a0d2;
 	--color-quote-border: #000;
 	--color-quote-citation: #6c7781;

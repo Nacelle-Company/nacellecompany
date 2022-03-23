@@ -1,0 +1,18 @@
+.grid {
+	display: grid;
+}
+
+@media screen and (--wide-menu-query) {
+
+	.grid__half {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+.post-grid__half {
+	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+
+	@media screen and (--wide-menu-query) {
+		grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+	}
+}

@@ -1,0 +1,21 @@
+/**
+ * Icon title
+ * Icon on the left title on the right.
+ */
+
+.icon-title {
+	display: flex;
+	align-items: center;
+}
+
+.icon-title .icon {
+	margin-right: 0.5rem;
+}
+
+.icon-title .title {
+	margin: 0 0;
+}
+
+/**
+ * END Icon title
+ */

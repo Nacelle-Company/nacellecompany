@@ -25,6 +25,11 @@ namespace WP_Rig\WP_Rig;
 		<script>document.documentElement.classList.remove( 'no-js' );</script>
 		<?php
 	}
+	if ( get_theme_mod( 'desktop_nav_center' ) ) {
+		$desktop_nav_layout = ' site-header_center';
+	} else {
+		$desktop_nav_layout = '';
+	}
 	?>
 
 	<?php wp_head(); ?>
@@ -35,10 +40,15 @@ namespace WP_Rig\WP_Rig;
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'wp-rig' ); ?></a>
 
-	<header id="masthead" class="site-header">
+	<header id="masthead" class="site-header<?php echo esc_attr( $desktop_nav_layout ); ?>">
 		<?php get_template_part( 'template-parts/header/custom_header' ); ?>
+
+		<?php get_template_part( 'template-parts/header/navigation_secondary' ); ?>
 
 		<?php get_template_part( 'template-parts/header/branding' ); ?>
 
-		<?php get_template_part( 'template-parts/header/navigation' ); ?>
+		<?php get_template_part( 'template-parts/header/navigation_primary' ); ?>
+
+		<?php get_template_part( 'template-parts/header/navigation_mobile' ); ?>
+
 	</header><!-- #masthead -->

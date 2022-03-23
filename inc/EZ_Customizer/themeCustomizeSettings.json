@@ -6,6 +6,11 @@
       "id": "global",
       "title": "WP Rig Settings",
       "priority": 30
+    },
+    {
+      "id": "about",
+      "title": "About",
+      "priority": 31
     }
   ],
   "settings": [
@@ -13,6 +18,74 @@
       "id": "ga_id",
       "label": "Google Analytics ID",
       "section": "global",
+      "refresh": false
+    },
+    {
+      "id": "show_search",
+      "type": "checkbox",
+      "label": "Show search",
+      "section": "global",
+      "refresh": false
+    },
+    {
+      "id": "desktop_nav_center",
+      "type": "checkbox",
+      "label": "Desktop navigation center",
+      "default": false,
+      "section": "global",
+      "refresh": true
+    },
+    {
+      "id": "homepage_heading",
+      "label": "Homepage heading",
+      "section": "global",
+      "description": "Leave blank to not display",
+      "refresh": false
+    },
+    {
+      "id": "boilerplate",
+      "label": "Boilerplate",
+      "type": "textarea",
+      "section": "global",
+      "refresh": false
+    },
+    {
+      "id": "site_branding",
+      "label": "Show site branding",
+      "type": "checkbox",
+      "section": "global",
+      "default": false,
+      "refresh": true
+    },
+    {
+      "id": "show_site_title",
+      "label": "Show site title",
+      "type": "checkbox",
+      "section": "global",
+      "default": false,
+      "refresh": false
+    },
+    {
+      "id": "show_tagline",
+      "label": "Show site tagline",
+      "type": "checkbox",
+      "section": "global",
+      "default": false,
+      "refresh": false
+    },
+    {
+      "id": "custom_logo",
+      "label": "Show custom logo",
+      "type": "checkbox",
+      "section": "global",
+      "default": false,
+      "refresh": false
+    },
+    {
+      "id": "test_title",
+      "label": "Test title",
+      "section": "about",
+      "default": "THis is my content",
       "refresh": false
     }
   ]

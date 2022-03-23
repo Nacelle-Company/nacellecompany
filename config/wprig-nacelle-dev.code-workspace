@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": ".."
+		}
+    ],
+    "settings": {
+		"phpcs.enable": true,
+		"phpcs.composerJsonPath": "./wp-content/themes/wprig-nacelle-dev/composer.json",
+		"phpcs.standard": "WordPress",
+		"editor.renderWhitespace": "all"
+	}
+}

@@ -93,8 +93,8 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			$version = wp_rig()->get_asset_version( $js_dir . $data['file'] );
 
 			/*
-			 * Enqueue global JavaScript files immediately and register the other ones for later use.
-			 */
+			* Enqueue global JavaScript files immediately and register the other ones for later use.
+			*/
 			if ( $data['global'] ) {
 				wp_enqueue_script( $handle, $src, $data['deps'], $version, $data['footer'] );
 			} else {
@@ -102,8 +102,8 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			}
 
 			/**
-			 * Set async and deferred attributes.
-			 */
+			* Set async and deferred attributes.
+			*/
 			if ( 'async' === $data['loading'] ) {
 				wp_script_add_data( $handle, 'async', true );
 			}
@@ -112,8 +112,8 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			}
 
 			/**
-			 *  Uses wp_localize_scripts
-			 */
+			*  Uses wp_localize_scripts
+			*/
 			if ( $data['localize'] ) {
 				foreach ( $data['localize'] as $object => $vars ) {
 					wp_localize_script( $handle, $object, $vars );
@@ -169,26 +169,34 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		}
 
 		$js_files = array(
-			'wp-rig-custom' => array(
+			'wp-rig-custom'   => array(
 				'file'    => 'custom.min.js',
 				'loading' => 'defer',
 				'global'  => false,
 			),
-			'wp-rig-global' => array(
+			'wp-rig-global'   => array(
 				'file'   => 'global.min.js',
 				'global' => true,
+			),
+			'wp-rig-flickity' => array(
+				'file'   => 'flickity.min.js',
+				'global' => false,
+			),
+			'wp-rig-flickity-bg-lazyload' => array(
+				'file'   => 'flickity-bg-lazyload.min.js',
+				'global' => false,
 			),
 		);
 
 		/**
-		 * Filters default JS files.
-		 *
-		 * @param array $js_files Associative array of JS files, as $handle => $data pairs.
-		 *                         $data must be an array with keys 'file' (file path relative to 'assets/js'
-		 *                         directory), and optionally 'global' (whether the file should immediately be
-		 *                         enqueued instead of just being registered) and 'preload_callback' (callback)
-		 *                         function determining whether the file should be preloaded for the current request).
-		 */
+		* Filters default JS files.
+		*
+		* @param array $js_files Associative array of JS files, as $handle => $data pairs.
+		*                         $data must be an array with keys 'file' (file path relative to 'assets/js'
+		*                         directory), and optionally 'global' (whether the file should immediately be
+		*                         enqueued instead of just being registered) and 'preload_callback' (callback)
+		*                         function determining whether the file should be preloaded for the current request).
+		*/
 		$js_files = apply_filters( 'wp_rig_js_files', $js_files );
 
 		$this->js_files = array();

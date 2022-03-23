@@ -7,23 +7,60 @@
 
 namespace WP_Rig\WP_Rig;
 
+if ( is_post_type_archive() ) {
+
+	wp_rig()->print_styles( 'wp-rig-post-grid' ); // ? post grid CSS
+
+	$article_class = 'entry post-grid';
+} else {
+	$article_class = 'entry';
+}
+
 ?>
-
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'entry' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( $article_class ); ?>>
 	<?php
-	get_template_part( 'template-parts/content/entry_header', get_post_type() );
+	if ( is_post_type_archive() ) { // ? if archive for any posts
+	?>
 
-	if ( is_search() ) {
-		get_template_part( 'template-parts/content/entry_summary', get_post_type() );
-	} else {
-		get_template_part( 'template-parts/content/entry_content', get_post_type() );
+		<div class="grid-item post-grid__wrapper">
+			<?php
+
+			get_template_part( 'template-parts/content/entry_thumbnail', get_post_type() );
+			get_template_part( 'template-parts/content/entry_title', get_post_type() );
+			get_template_part( 'template-parts/content/entry_summary', get_post_type() );
+			get_template_part( 'template-parts/content/entry_footer', get_post_type() );
+			get_template_part( 'template-parts/content/entry_go-corner', get_post_type() );
+
+			?>
+
+		</div>
+
+	<? } else {
+
+		if ( ! is_front_page() ) { // ? if NOT the front page
+			get_template_part( 'template-parts/content/entry_header', get_post_type() );
+		}
+
+		if ( is_search() ) { // ? if a search results page
+			get_template_part( 'template-parts/content/entry_summary', get_post_type() );
+
+		} else { // ? if not a search results page
+			get_template_part( 'template-parts/content/entry_content', get_post_type() );
+		}
+
+		get_template_part( 'template-parts/content/entry_footer', get_post_type() );
+
 	}
-
-	get_template_part( 'template-parts/content/entry_footer', get_post_type() );
 	?>
 </article><!-- #post-<?php the_ID(); ?> -->
 
 <?php
+
+// ? add related posts
+if ( is_single() ) {
+	get_template_part( 'template-parts/content/entry_related' );
+}
+
 if ( is_singular( get_post_type() ) ) {
 	// Show post navigation only when the post type is 'post' or has an archive.
 	if ( 'post' === get_post_type() || get_post_type_object( get_post_type() )->has_archive ) {

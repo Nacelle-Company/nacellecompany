@@ -25,6 +25,10 @@
 @import "_typography.css";
 @import "_elements.css";
 @import "_links.css";
+@import "_header-search.css";
+@import "_modal.css";
+@import "_grid.css";
+@import "_icons.css";
 
 /*--------------------------------------------------------------
 # Accessibility
@@ -79,26 +83,33 @@
 @media (--sidebar-query) {
 
 	.has-sidebar .site {
-		margin: 0 1em;
+		margin: 0;
 		display: grid;
-		grid-template-columns: 3fr 1fr;
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-areas:
+			"header header header header"
+			"main main main sidebar"
+			"footer footer footer footer";
 		grid-gap: 2rem;
 		justify-content: center;
 	}
 
-	.site-header,
-	.site-footer {
-		grid-column: 1 / -1;
+	.site-header {
+		grid-area: header;
 	}
 
 	.site-main {
-		grid-column: 1;
+		grid-area: main;
 		min-width: 0;
 	}
 
 	.primary-sidebar {
-		grid-column: 2;
+		grid-area: sidebar;
 		min-width: 0;
+	}
+
+	.site-footer {
+		grid-area: footer;
 	}
 }
 
@@ -113,6 +124,7 @@ textarea {
 
 /* stylelint-disable */
 button,
+.button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
@@ -122,13 +134,15 @@ input[type="submit"] {
 	background: #eee;
 	color: rgba(0, 0, 0, 0.8);
 	font-size: 0.75rem;
+	text-decoration: none;
 	line-height: 1;
-	padding: 0.6em 1em 0.4em;
+	padding: 0.85em 2em;
 	cursor: pointer;
 }
 /* stylelint-enable */
 
 button:hover,
+.button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
@@ -137,6 +151,8 @@ input[type="submit"]:hover {
 
 button:active,
 button:focus,
+.button:active,
+.button:focus,
 input[type="button"]:active,
 input[type="button"]:focus,
 input[type="reset"]:active,
@@ -196,7 +212,26 @@ select {
 --------------------------------------------------------------*/
 
 .site-header {
-	padding-bottom: 1em;
+	background: var(--global-color-dark);
+}
+
+@media (--wide-menu-query) {
+
+	.site-header {
+		display: grid;
+		grid-template-columns: repeat(2, auto);
+		align-items: center;
+		justify-content: space-between;
+
+		&.site-header_center {
+			grid-template-columns: repeat(3, auto);
+			justify-content: center;
+		}
+	}
+
+	.primary-menu-container {
+		position: relative;
+	}
 }
 
 .header-image {
@@ -210,15 +245,16 @@ select {
 
 .custom-logo-link {
 	display: inline-block;
-	margin: 0 auto 1em;
+	margin: 0 auto;
 }
 
 .site-branding {
 	text-align: center;
-	padding: 60px 0 1.75em;
+	padding: 0.25em 2em;
+
 	@media screen and (max-width: 600px) {
-		padding: 1.75em 0;
-		margin:0;
+		padding: 0.75em 0;
+		margin: 0;
 	}
 }
 
@@ -262,37 +298,46 @@ select {
 	border-radius: 0;
 	background: transparent;
 
-
 	&.icon {
-		border:none;
+		border: none;
 		position: absolute;
-		top: 40px;
-		left: 5px;
-		display:none;
+		top: 0;
+		left: 0;
+		transform: translate(0.5em, 1.5em);
+		display: none;
 
 		@media screen and (max-width: 600px) {
-			display:block;
+			display: block;
 		}
 
-		& .dashicons-menu-alt:before {
+		& .dashicons-menu-alt::before {
 			font-size: 40px;
 		}
 
 		& svg.close {
-			display:none;
+			display: none;
 		}
 	}
 }
 
+.admin-bar .nav--toggle-small .menu-toggle .icon {
+	transform: translate(0.5em, 4em);
+}
+
 .nav--toggle-small {
+
 	& .menu {
 		display: none;
 	}
+
 	&.nav--toggled-on {
+
 		& .menu {
 			display: block;
 		}
+
 		@media screen and (min-width: 600px) {
+
 			& .menu {
 				display: flex;
 				justify-content: center;
@@ -302,52 +347,68 @@ select {
 		& .menu-toggle.icon svg.close {
 			display: block;
 		}
+
 		& svg.open-menu {
 			display: none;
 		}
-
 	}
+
 	&.icon-nav {
+
 		& .menu {
-			display: block;
+
+			/* display: block; */
 		}
+
 		@media screen and (min-width: 600px) {
+
 			& .menu {
 				display: flex;
-				justify-content: center;
+				justify-content: space-evenly;
+				align-items: center;
 			}
 		}
-		@media screen and (max-width:600px) {
-			& .primary-menu-container {
+
+		@media screen and (max-width: 600px) {
+
+			& .mobile-menu-container {
 				position: absolute;
-				background: white;
+				background: var(--global-color-dark);
 				width: 100vw;
 				top: 300px;
 				left: 0;
-				height: 200%;
+				height: 0;
 				padding: 20px 30px;
 				opacity: 0;
-				transition: opacity .3s, top .3s ease-out;
+				transition: opacity 0.3s, top 0.3s ease-out;
 			}
+
 			&.nav--toggled-on {
-				& .menu-toggle span.dashicons:before {
+
+				& .menu-toggle span.dashicons::before {
 					content: "\f158";
 				}
-				& .primary-menu-container {
-					top: 180px;
+
+				& .mobile-menu-container {
+					top: 135px;
+					z-index: 1;
+					height: 200%;
 					opacity: 1;
-					transition: opacity .3s, top .3s ease-out;
+					transition:
+						opacity 0.3s,
+						top 0.3s ease-out,
+						height 0.3s ease-out;
 				}
 			}
 		}
-
 	}
 }
 
 .nav--toggle-small,
 .nav--toggle-sub .dropdown,
 .nav--toggle-sub .dropdown-toggle {
-	display: none;
+
+	/* display: none; */
 }
 
 @media (--narrow-menu-query) {
@@ -357,92 +418,92 @@ select {
 	}
 }
 
-@media (--wide-menu-query) {
+/* @media (--wide-menu-query) { */
 
-	.nav--toggle-small .menu-toggle {
-		display: none;
-	}
+.nav--toggle-small .menu-toggle {
+	display: none;
+}
 
-	.nav--toggle-small .menu {
-		display: block;
-	}
+.nav--toggle-small .menu {
+	display: block;
+}
 
-	.nav--toggle-sub ul ul {
-		display: none;
-		position: absolute;
-		top: 100%;
-		flex-direction: column;
-		background: #fff;
-		margin-left: 0;
-		box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-		z-index: 100;
-	}
+.nav--toggle-sub ul ul {
+	display: none;
+	position: absolute;
+	top: 100%;
+	flex-direction: column;
+	background: #fff;
+	margin-left: 0;
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	z-index: 100;
+}
 
-	.nav--toggle-sub .dropdown,
-	.nav--toggle-sub .dropdown-toggle {
-		display: block;
-		background: transparent;
-		position: absolute;
-		right: 0;
-		top: 50%;
-		width: var(--dropdown-symbol-width);
-		height: var(--dropdown-symbol-width);
-		font-size: inherit;
-		line-height: inherit;
-		margin: 0;
-		padding: 0;
-		border: none;
-		border-radius: 0;
-		transform: translateY(-50%);
-		overflow: visible;
-	}
+.nav--toggle-sub .dropdown,
+.nav--toggle-sub .dropdown-toggle {
+	display: block;
+	background: transparent;
+	position: absolute;
+	right: 0;
+	top: 50%;
+	width: var(--dropdown-symbol-width);
+	height: var(--dropdown-symbol-width);
+	font-size: inherit;
+	line-height: inherit;
+	margin: 0;
+	padding: 0;
+	border: none;
+	border-radius: 0;
+	transform: translateY(-50%);
+	overflow: visible;
+}
 
-	.nav--toggle-sub .dropdown-symbol {
-		display: block;
-		background: transparent;
-		position: absolute;
-		right: 20%;
-		top: 35%;
-		width: 60%;
-		height: 60%;
-		border: solid var(--border-color-dark);
-		border-width: 0 2px 2px 0;
-		transform: translateY(-50%) rotate(45deg);
-	}
+.nav--toggle-sub .dropdown-symbol {
+	display: block;
+	background: transparent;
+	position: absolute;
+	right: 20%;
+	top: 35%;
+	width: 60%;
+	height: 60%;
+	border: solid var(--border-color-dark);
+	border-width: 0 2px 2px 0;
+	transform: translateY(-50%) rotate(45deg);
+}
 
-	.nav--toggle-sub ul ul .dropdown,
-	.nav--toggle-sub ul ul .dropdown-toggle {
-		top: 40%;
-		right: 0.2em;
-	}
+.nav--toggle-sub ul ul .dropdown,
+.nav--toggle-sub ul ul .dropdown-toggle {
+	top: 40%;
+	right: 0.2em;
+}
 
-	.nav--toggle-sub ul ul .dropdown-symbol {
-		transform: rotate(-45deg);
-	}
+.nav--toggle-sub ul ul .dropdown-symbol {
+	transform: rotate(-45deg);
+}
 
-	.nav--toggle-sub .dropdown-toggle:hover,
-	.nav--toggle-sub .menu-item--has-toggle:hover .dropdown-toggle {
-		pointer-events: none;
-	}
+.nav--toggle-sub .dropdown-toggle:hover,
+.nav--toggle-sub .menu-item--has-toggle:hover .dropdown-toggle {
+	pointer-events: none;
+}
 
-	/* Need menu-item-has-children for non-JS */
-	.nav--toggle-sub li.menu-item-has-children,
-	.nav--toggle-sub li.menu-item--has-toggle {
-		position: relative;
-		padding-right: var(--dropdown-symbol-width);
-	}
+/* Need menu-item-has-children for non-JS */
+.nav--toggle-sub li.menu-item-has-children,
+.nav--toggle-sub li.menu-item--has-toggle {
+	position: relative;
+	padding-right: var(--dropdown-symbol-width);
+}
 
-	/*
+/*
 	 * If the dropdown toggle is active with JS, then
 	 * we'll take care of showing the submenu with JS.
 	 */
-	.nav--toggle-sub li:hover > ul,
-	.nav--toggle-sub li.menu-item--toggled-on > ul,
-	.nav--toggle-sub li:not(.menu-item--has-toggle):focus > ul {
-		display: block;
-	}
+.nav--toggle-sub li:hover > ul,
+.nav--toggle-sub li.menu-item--toggled-on > ul,
+.nav--toggle-sub li:not(.menu-item--has-toggle):focus > ul {
+	display: block;
+}
 
-	/*
+/*
 	 * "focus-within" is an alternative to focus class for
 	 * supporting browsers (all but IE/Edge) for no-JS context
 	 * (e.g. AMP) See https://caniuse.com/#feat=css-focus-within
@@ -450,21 +511,25 @@ select {
 	 * This selector needs to stay separated, otherwise submenus
 	 * will not be displayed with IE/Edge.
 	 */
-	.nav--toggle-sub li:not(.menu-item--has-toggle):focus-within > ul {
-		display: block;
-	}
+.nav--toggle-sub li:not(.menu-item--has-toggle):focus-within > ul {
+	display: block;
 }
+
+/* } */
 
 /*--------------------------------------------------------------
 ## Main navigation menu
 --------------------------------------------------------------*/
 .main-navigation {
 	display: block;
-	margin: 0 auto 2em;
 	padding: 0 1em;
-	max-width: var(--content-width);
+	max-width: var(--site-width);
 	font-family: var(--highlight-font-family);
 	font-stretch: condensed;
+
+	&.main-navigation_wide-menu {
+		display: none;
+	}
 }
 
 .main-navigation a {
@@ -472,7 +537,6 @@ select {
 	width: 100%;
 	padding: 0.5em 1em 0.5em 0;
 	text-decoration: none;
-	color: var(--global-font-color);
 }
 
 .main-navigation a:hover,
@@ -498,12 +562,21 @@ select {
 
 @media (--wide-menu-query) {
 
+	.main-navigation.main-navigation_wide-menu {
+		display: block;
+	}
+
+	.main-navigation.nav--toggle-small {
+		display: none;
+	}
+
 	.main-navigation ul li a {
 		padding: 0.4em 0.5em;
 	}
 
 	.main-navigation ul li {
 		margin: 0 0 0 0.5em;
+		flex: 0 0 auto;
 	}
 
 	.main-navigation ul li:first-child {
@@ -655,7 +728,8 @@ select {
 	font-stretch: condensed;
 }
 
-.site-info {
+.site-info,
+.text-center {
 	text-align: center;
 }
 

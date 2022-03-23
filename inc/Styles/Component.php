@@ -312,6 +312,61 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					return 'front-page.php' === basename( $template );
 				},
 			),
+			'wp-rig-footer-widgets' => array(
+				'file' => 'footer-widgets.min.css',
+				'preload_callback' => function () {
+					return wp_rig()->is_footer_widgets_active();
+				},
+			),
+			'wp-rig-category'    => array(
+				'file'             => 'category.min.css',
+				'preload_callback' => function() {
+					global $template;
+					return 'category.php' === basename( $template );
+				},
+			),
+			'wp-rig-subcategory'    => array(
+				'file'             => 'subcategory.min.css',
+				'preload_callback' => function() {
+					global $template;
+					return 'subcategory.php' === basename( $template );
+				},
+			),
+			'wp-rig-single-catalog'    => array(
+				'file'             => 'single-catalog.min.css',
+				'preload_callback' => function() {
+					global $template;
+					return 'single-catalog.php' === basename( $template );
+				},
+			),
+			'wp-rig-hero-video'    => array(
+				'file'             => 'hero-video.min.css',
+				'preload_callback' => function() {
+					global $template;
+					return 'single-catalog.php' === basename( $template );
+				},
+			),
+			'wp-rig-accordion'    => array(
+				'file'             => 'accordion.min.css',
+				'preload_callback' => function() {
+					global $template;
+					return 'single-catalog.php' === basename( $template );
+				},
+			),
+			'wp-rig-flickity'    => array(
+				'file'             => 'flickity.min.css',
+				'preload_callback' => function() {
+					global $template;
+					return 'front-page.php' === basename( $template );
+				},
+			),
+			'wp-rig-post-grid'    => array(
+				'file'             => 'post-grid.min.css',
+				'preload_callback' => function() {
+					global $template;
+					return 'front-page.php' === basename( $template );
+				},
+			),
 		);
 
 		/**
@@ -359,8 +414,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		}
 
 		$google_fonts = array(
-			'Roboto Condensed' => array( '400', '400i', '700', '700i' ),
-			'Crimson Text'     => array( '400', '400i', '600', '600i' ),
+			'Montserrat' => array( '400', '700', '900' ),
 		);
 
 		/**

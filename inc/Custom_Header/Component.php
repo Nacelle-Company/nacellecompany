@@ -53,6 +53,7 @@ class Component implements Component_Interface {
 					'width'              => 1600,
 					'height'             => 250,
 					'flex-height'        => true,
+					'layout-center'      => false,
 					'wp-head-callback'   => array( $this, 'wp_head_callback' ),
 				)
 			)
@@ -74,6 +75,6 @@ class Component implements Component_Interface {
 			return;
 		}
 
-		echo '<style type="text/css">.site-title a, .site-description { color: #' . esc_attr( $header_text_color ) . '; }</style>';
+		echo '<style type="text/css">.site-title a, .site-description, .main-navigation a { color: #' . esc_attr( $header_text_color ) . '; }</style>';
 	}
 }
