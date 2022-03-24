@@ -30,16 +30,16 @@
 
 @media (--wide-menu-query) {
 
+	.searchandfilter ul li {
+		display: none;
+	}
+
 	.searchandfilter {
 
 		&:hover .sf-field-search {
 			z-index: 1;
 			opacity: 1;
 		}
-	}
-
-	.searchandfilter ul li {
-		display: none;
 	}
 
 	.sf-field-search {

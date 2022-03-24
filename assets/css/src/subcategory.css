@@ -23,7 +23,7 @@
 
 /* grid item content */
 .grid-item__hover .grid-item__content {
-	background-color: orange;
+	background-color: var(--color-theme-primary);
 	color: var(--global-color-dark);
 	padding: 0.5rem 1rem 1rem 1rem;
 	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);

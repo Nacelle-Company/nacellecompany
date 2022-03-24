@@ -1,13 +1,20 @@
 {
-	"folders": [
-		{
-			"path": ".."
-		}
+    "folders": [
+        {
+            "path": ".."
+        }
     ],
     "settings": {
 		"phpcs.enable": true,
 		"phpcs.composerJsonPath": "./wp-content/themes/wprig-nacelle-dev/composer.json",
 		"phpcs.standard": "WordPress",
-		"editor.renderWhitespace": "all"
+		"phpcs.executablePath": "/Users/lukey/.composer/vendor/bin/phpcs",
+		"phpcbf.enable": true,
+		"phpcbf.onsave": true,
+		"phpcbf.executablePath": "/Users/lukey/.composer/vendor/bin/phpcbf",
+		"phpcbf.standard": "WordPress",
+        "editor.renderWhitespace": "all",
+        "editor.hover.enabled": true,
+        "php.suggest.basic": false
 	}
 }
