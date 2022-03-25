@@ -751,3 +751,34 @@ were hidden (via .neverending) before. */
 .infinity-end.neverending .site-footer {
 	display: block;
 }
+
+/*--------------------------------------------------------------
+# Overlays
+--------------------------------------------------------------*/
+
+.overlay {
+	position: absolute;
+	width: 100vw;
+	height: 100%;
+	background-color: #000;
+}
+
+/*--------------------------------------------------------------
+# Heights
+--------------------------------------------------------------*/
+
+.h-full {
+	height: 100vh;
+}
+
+.h-80 {
+	height: 80vh;
+}
+
+.h-60 {
+	height: 60vh;
+}
+
+.h-50 {
+	height: 50vh;
+}

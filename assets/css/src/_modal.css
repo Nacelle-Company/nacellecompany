@@ -30,6 +30,10 @@
 	background: var(--global-color-dark);
 }
 
+.modal-window_large > div {
+	width: 50vw;
+}
+
 .modal-window header {
 	font-weight: bold;
 }
@@ -48,6 +52,12 @@
 	top: 0;
 	width: 70px;
 	text-decoration: none;
+}
+
+.modal-close:target {
+	visibility: visible;
+	opacity: 1;
+	pointer-events: auto;
 }
 
 .container {

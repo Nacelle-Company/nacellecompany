@@ -1,0 +1,19 @@
+.wonder-section__banner {
+	position: relative;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+
+	.cell *:not(.overlay) {
+		z-index: 1;
+	}
+}
+
+.wonder-section {
+	position: relative;
+	background-repeat: no-repeat;
+}
+
+.z-1 {
+	z-index: 1;
+}

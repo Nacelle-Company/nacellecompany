@@ -20,12 +20,16 @@ namespace WP_Rig\WP_Rig;
 		jQuery("#hero_video").YTPlayer();
 		});
 	</script>
-	<!-- simple modal -->
-	<!-- https://codepen.io/timothylong/pen/AJxrPR -->
+
 	<div id="open-modal" class="modal-window">
 		<div>
 			<a href="#" title="Close" class="modal-close">Close</a>
 			<?php
+			/**
+			 * Simple modal.
+			 *
+			 * @link https://codepen.io/timothylong/pen/AJxrPR
+			 */
 			if ( get_the_content() ) {
 				$synopsis = get_the_content();
 			} else {

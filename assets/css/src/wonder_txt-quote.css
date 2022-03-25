@@ -1,0 +1,8 @@
+.wonder-section__txt-quote {
+	background-size: 155%;
+	background-repeat: no-repeat;
+
+	@media (--content-query) {
+		background-size: 60%;
+	}
+}

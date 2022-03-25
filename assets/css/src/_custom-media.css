@@ -9,3 +9,9 @@
 @custom-media --wide-menu-query screen and (min-width: 37.5em);
 @custom-media --content-query screen and (min-width: 48em);
 @custom-media --sidebar-query screen and (min-width: 60em);
+
+/**
+ *
+ * Use case: @media (--content-query) {}
+ *
+ **/

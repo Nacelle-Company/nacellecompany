@@ -13,8 +13,11 @@
 		"phpcbf.onsave": true,
 		"phpcbf.executablePath": "/Users/lukey/.composer/vendor/bin/phpcbf",
 		"phpcbf.standard": "WordPress",
+		"phpsab.standard": "WordPress",
         "editor.renderWhitespace": "all",
         "editor.hover.enabled": true,
-        "php.suggest.basic": false
+        "php.suggest.basic": false,
+        "phpcbf.documentFormattingProvider": false,
+        "html.format.templating": true
 	}
 }
