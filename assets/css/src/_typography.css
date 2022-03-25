@@ -49,8 +49,18 @@ q {
 }
 
 blockquote {
-	border-left: 4px solid var(--color-quote-border);
-	margin: 0;
+	margin: 0 0 1rem;
+	padding: 0.5625rem 1.25rem 0 1.1875rem;
+	border-left: 10px solid var(--color-theme-primary);
+	line-height: 1.6;
+	font-size: 120%;
+
+	&::before {
+		content: "\201C";
+		font-size: 4em;
+		line-height: 0.1;
+		vertical-align: -0.4em;
+	}
 }
 
 .entry-content > blockquote {
@@ -71,6 +81,10 @@ blockquote cite {
 	margin-top: 1em;
 	position: relative;
 	font-style: normal;
+}
+
+cite::before {
+	content: "— ";
 }
 
 address {

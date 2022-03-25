@@ -4,6 +4,10 @@
 
 @media screen and (--wide-menu-query) {
 
+	.grid__full {
+		grid-template-columns: auto;
+	}
+
 	.grid__half {
 		grid-template-columns: 1fr 1fr;
 	}

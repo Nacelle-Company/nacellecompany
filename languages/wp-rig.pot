@@ -36,7 +36,7 @@ msgstr ""
 msgid "Front Page"
 msgstr ""
 
-#: header.php:41
+#: header.php:48
 msgid "Skip to content"
 msgstr ""
 
@@ -87,6 +87,14 @@ msgstr ""
 #. translators: %s: slug
 #: inc/Theme.php:120
 msgid "No theme component with the slug %s exists."
+msgstr ""
+
+#: page-templates/page-wonder.php:3
+msgid "Wonder"
+msgstr ""
+
+#: page-templates/page-wonder.php:42
+msgid "(Edit)"
 msgstr ""
 
 #: inc/Accessibility/Component.php:69

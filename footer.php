@@ -20,7 +20,7 @@ namespace WP_Rig\WP_Rig;
 		jQuery("#hero_video").YTPlayer();
 		});
 	</script>
-
+<?php if ( is_singular( 'catalog' ) ) : ?>
 	<div id="open-modal" class="modal-window">
 		<div>
 			<a href="#" title="Close" class="modal-close">Close</a>
@@ -40,6 +40,7 @@ namespace WP_Rig\WP_Rig;
 		</div>
 	</div>
 	<!-- simple modal END -->
+	<?php endif; ?>
 
 	<?php get_template_part( 'template-parts/footer/footer-widgets' ); ?>
 </footer><!-- #colophon -->

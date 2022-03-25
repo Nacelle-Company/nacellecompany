@@ -1,19 +1,27 @@
-.wonder-section__banner {
+.banner {
 	position: relative;
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
+	overflow: hidden;
 
-	.cell *:not(.overlay) {
-		z-index: 1;
+	& .grid {
+		align-items: center;
+		margin-top: 1.25rem;
+		margin-bottom: 1.25rem;
 	}
-}
 
-.wonder-section {
-	position: relative;
-	background-repeat: no-repeat;
-}
+	& .banner__img {
+		position: absolute;
+		z-index: -1;
+		left: 0;
+		width: auto;
+		height: 100%;
+		min-width: max-content;
 
-.z-1 {
-	z-index: 1;
+		@media (--content-query) {
+			height: auto;
+			width: 100%;
+		}
+	}
 }

@@ -381,8 +381,8 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					return 'wonder.php' === basename( $template );
 				},
 			),
-			'wp-rig-wonder_img-txt'    => array(
-				'file'             => 'wonder_img-txt.min.css',
+			'wp-rig-wonder_txt-img'    => array(
+				'file'             => 'wonder_txt-img.min.css',
 				'preload_callback' => function() {
 					global $template;
 					return 'wonder.php' === basename( $template );
