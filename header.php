@@ -59,7 +59,11 @@ namespace WP_Rig\WP_Rig;
 		<?php get_template_part( 'template-parts/header/navigation_mobile' ); ?>
 
 	</header><!-- #masthead -->
+	<?php
+	if ( is_archive() ) :
+		?>
 	<div id="offcanvasFilter" class="offcanvas-filter">
 		<a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
 		<?php echo do_shortcode( '[searchandfilter slug="distribution-album-catalog-sidebar"]' ); ?>
 	</div>
+	<?php endif; ?>

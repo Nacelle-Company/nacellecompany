@@ -1,66 +1,86 @@
 @import "_custom-properties";
 
-@media (--narrow-menu-query) {
+.mobile-menu-container {
 
-	.mobile-menu-container .searchandfilter ul {
-		display: inline-flex;
-		align-items: center;
-	}
+	@media (--narrow-menu-query) {
 
-	.searchandfilter .sf-field-submit {
-		margin-left: 1em;
-		padding: 10px 0;
-		position: relative;
-
-		&::after {
-			content: url("/wp-content/themes/wprig-nacelle-dev/assets/images/icon-search.svg");
-			position: absolute;
-			left: 15px;
-			top: 24px;
-			fill: var(--color-theme-primary);
-		}
-	}
-
-	.sf-field-submit input[type=submit] {
-		position: relative;
-		margin-top: 8px;
-		padding: 0.95em 2em;
-	}
-}
-
-.site-header {
-
-	@media (--wide-menu-query) {
-
-		& .searchandfilter ul li {
-			display: none;
+		& .searchandfilter ul {
+			display: inline-flex;
+			align-items: center;
 		}
 
-		& .searchandfilter {
+		& .searchandfilter .sf-field-submit {
+			margin-left: 1em;
+			padding: 10px 0;
+			position: relative;
 
-			&:hover .sf-field-search {
-				z-index: 1;
-				opacity: 1;
+			&::after {
+				content: url("/wp-content/themes/wprig-nacelle-dev/assets/images/icon-search.svg");
+				position: absolute;
+				left: 15px;
+				top: 24px;
+				fill: var(--color-theme-primary);
 			}
 		}
 
-		& .sf-field-search {
+		& .sf-field-submit input[type=submit] {
+			position: relative;
+			margin-top: 8px;
+			padding: 0.95em 2em;
+		}
+	}
+}
+
+.primary-menu-container {
+
+	@media (--content-query) {
+		display: grid;
+		grid-template-columns: 1fr auto;
+
+		& .searchandfilter {
+			width: 40px;
+			height: 40px;
+
+			&::before {
+				content: url("/wp-content/themes/wprig-nacelle-dev/assets/images/icon-search.svg");
+				position: absolute;
+				right: -10px;
+				top: 15px;
+			}
+		}
+
+		& .sf-field-search { /* search input */
 			position: absolute;
-			right: -40px;
+			right: -20px;
 			top: 0;
 			z-index: -1;
 			opacity: 0;
 			transition: opacity 0.2s ease-in-out;
 		}
 
-		& .searchandfilter::before {
-			content: url("/wp-content/themes/wprig-nacelle-dev/assets/images/icon-search.svg");
-			font-size: 12px;
-			opacity: 1;
-			color: red;
-			position: absolute;
-			right: -35px;
-			top: 15px;
+		& .searchandfilter ul {
+			visibility: hidden;
+			transition: all 0.5s linear;
+		}
+
+		& .searchandfilter:hover { /* HOVER */
+
+			& ul {
+				visibility: visible;
+			}
+
+			& .sf-field-search {
+				z-index: 1;
+				opacity: 1;
+			}
+
+			& .sf-field-submit {
+				z-index: 9;
+			}
+
+			&::before {
+				z-index: 8;
+			}
 		}
 	}
 }
