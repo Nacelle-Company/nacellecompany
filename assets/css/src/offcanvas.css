@@ -1,0 +1,81 @@
+@import "_custom-properties.css";
+
+.page-header.archive {
+	background-color: var(--color-theme-primary);
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	align-items: baseline;
+	transition: margin-right 0.5s;
+
+	& .filter-toggle {
+		text-align: right;
+	}
+
+	& .filter-toggle_title {
+		display: none;
+
+		@media (--content-query) {
+			display: inline;
+		}
+	}
+}
+
+.offcanvas-filter {
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	right: 0;
+	background-color: var(--border-color-dark);
+	overflow-x: hidden;
+	transition: 0.5s;
+	padding-top: 60px;
+}
+
+.offcanvas-filter a {
+	padding: 8px 8px 8px 32px;
+	text-decoration: none;
+	font-size: 25px;
+	color: #818181;
+	display: block;
+	transition: 0.3s;
+}
+
+.offcanvas-filter a:hover {
+	color: #f1f1f1;
+}
+
+.offcanvas-filter .close-btn {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
+	cursor: pointer;
+}
+
+.filter.overlay {
+	transition: margin-right 0.5s linear;
+	padding: 16px;
+}
+
+.filter-toggle {
+	text-align: right;
+	font-size: var(--font-size-large);
+
+	& .filter-toggle_title {
+		font-size: var(--font-size-regular);
+	}
+}
+
+@media (--narrow-menu-query) {
+
+	.offcanvas-filter {
+		padding-top: 15px;
+	}
+
+	.offcanvas-filter a {
+		font-size: 18px;
+	}
+}

@@ -71,18 +71,18 @@ if ( $btn ) {
 				if ( $btn ) {
 					?>
 				<a href="<?php echo esc_url( $btn_url['url'] ); ?>" class="button"
-				<?php
-				if ( $btn_color ) {
-					$btn_color = 'style="background:' . $btn_color . '";';
-					echo wp_kses( $btn_color, 'post' );
-				}
-				?>
+					<?php
+					if ( $btn_color ) {
+						$btn_color = 'style="background:' . $btn_color . '";';
+						echo wp_kses( $btn_color, 'post' );
+					}
+					?>
 				>
-				<?php echo wp_kses( $btn_txt, 'post' ); ?>
+					<?php echo wp_kses( $btn_txt, 'post' ); ?>
 				</a>
 				<?php } ?>
 			</div>
-			<div class="overlay z--1" style="opacity:0.<?php echo esc_html( $overlay ); ?>"></div>
+			<div class="overlay wonder-banner z--1" style="opacity:0.<?php echo esc_html( $overlay ); ?>"></div>
 		</div>
 	</div>
 </section>

@@ -15,6 +15,7 @@
 	--highlight-font-family: "Montserrat", sans-serif;
 	--global-font-size: 20;
 	--global-font-line-height: 1.4;
+	--global-font-line-height-sm: 1;
 
 	/* Custom editor font sizes */
 	--font-size-small: calc(16 / var(--global-font-size) * 1rem);

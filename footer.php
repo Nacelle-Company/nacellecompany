@@ -43,6 +43,22 @@ namespace WP_Rig\WP_Rig;
 	<?php endif; ?>
 
 	<?php get_template_part( 'template-parts/footer/footer-widgets' ); ?>
+	<!-- offcanvas -->
+	<script>
+		/* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
+		function openNav() {
+		document.getElementById("offcanvasFilter").style.width = "250px";
+		document.getElementById("pageHeader").style.marginRight = "250px";
+		document.getElementById('filterOverlay').style.visibility = "visible";
+		}
+
+		/* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+		function closeNav() {
+			document.getElementById("offcanvasFilter").style.width = "0";
+			document.getElementById("pageHeader").style.marginRight = "0";
+			document.getElementById('filterOverlay').style.visibility = "hidden";
+		}
+	</script>
 </footer><!-- #colophon -->
 </div><!-- #page -->
 

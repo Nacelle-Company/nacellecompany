@@ -28,36 +28,39 @@
 	}
 }
 
-@media (--wide-menu-query) {
+.site-header {
 
-	.searchandfilter ul li {
-		display: none;
-	}
+	@media (--wide-menu-query) {
 
-	.searchandfilter {
-
-		&:hover .sf-field-search {
-			z-index: 1;
-			opacity: 1;
+		& .searchandfilter ul li {
+			display: none;
 		}
-	}
 
-	.sf-field-search {
-		position: absolute;
-		right: -40px;
-		top: 0;
-		z-index: -1;
-		opacity: 0;
-		transition: opacity 0.2s ease-in-out;
-	}
+		& .searchandfilter {
 
-	.searchandfilter::before {
-		content: url("/wp-content/themes/wprig-nacelle-dev/assets/images/icon-search.svg");
-		font-size: 12px;
-		opacity: 1;
-		color: red;
-		position: absolute;
-		right: -35px;
-		top: 15px;
+			&:hover .sf-field-search {
+				z-index: 1;
+				opacity: 1;
+			}
+		}
+
+		& .sf-field-search {
+			position: absolute;
+			right: -40px;
+			top: 0;
+			z-index: -1;
+			opacity: 0;
+			transition: opacity 0.2s ease-in-out;
+		}
+
+		& .searchandfilter::before {
+			content: url("/wp-content/themes/wprig-nacelle-dev/assets/images/icon-search.svg");
+			font-size: 12px;
+			opacity: 1;
+			color: red;
+			position: absolute;
+			right: -35px;
+			top: 15px;
+		}
 	}
 }

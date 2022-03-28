@@ -191,7 +191,7 @@ msgstr ""
 
 #. translators: %s: Post title.
 #. translators: %s: Name of current post. Only visible to screen readers
-#: inc/Excerpts/Component.php:44, template-parts/content/entry_content.php:42
+#: inc/Excerpts/Component.php:44, template-parts/content/entry_content.php:44
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
@@ -233,11 +233,11 @@ msgstr ""
 msgid "Invalid theme stylesheet handle: %s"
 msgstr ""
 
-#: template-parts/catalog/catalog_entry.php:49, template-parts/content/entry-attachment.php:33, template-parts/content/entry.php:69
+#: template-parts/catalog/catalog_entry.php:49, template-parts/content/entry-attachment.php:33, template-parts/content/entry.php:71
 msgid "Previous:"
 msgstr ""
 
-#: template-parts/catalog/catalog_entry.php:50, template-parts/content/entry-attachment.php:43, template-parts/content/entry.php:70
+#: template-parts/catalog/catalog_entry.php:50, template-parts/content/entry-attachment.php:43, template-parts/content/entry.php:72
 msgid "Next:"
 msgstr ""
 
@@ -271,7 +271,7 @@ msgstr ""
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
-#: template-parts/content/entry_content.php:57
+#: template-parts/content/entry_content.php:59
 msgid "Pages:"
 msgstr ""
 
@@ -371,6 +371,10 @@ msgstr ""
 #. translators: %s: search query
 #: template-parts/content/page_header.php:41
 msgid "Search Results for: %s"
+msgstr ""
+
+#: template-parts/content/page_header.php:60
+msgid "Sort & Filter"
 msgstr ""
 
 #: template-parts/content/pagination.php:13

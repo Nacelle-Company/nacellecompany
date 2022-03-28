@@ -760,11 +760,22 @@ were hidden (via .neverending) before. */
 	position: absolute;
 	left: 0;
 	top: 0;
-	z-index: 0;
-	width: 100vw;
-	height: 100%;
-	background-color: #000;
 	transition: opacity 0.4s ease-in-out;
+
+	&.wonder-banner {
+		background-color: #000;
+		z-index: 0;
+		width: 100vw;
+		height: 100%;
+	}
+
+	&.filter {
+		background-color: rgba(0, 0, 0, 0.372);
+		z-index: 1;
+		width: 100vw;
+		height: 100%;
+		visibility: hidden;
+	}
 }
 
 /*--------------------------------------------------------------

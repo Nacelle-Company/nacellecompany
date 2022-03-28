@@ -12,6 +12,8 @@ if ( is_post_type_archive() ) {
 	wp_rig()->print_styles( 'wp-rig-post-grid' ); // ? post grid CSS
 
 	$article_class = 'entry post-grid';
+} elseif ( is_page( 'about' ) ) {
+	$article_class = 'grid';
 } else {
 	$article_class = 'entry';
 }
