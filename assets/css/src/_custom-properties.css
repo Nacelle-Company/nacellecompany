@@ -13,7 +13,7 @@
 	/* Typography */
 	--global-font-family: "Montserrat", sans-serif;
 	--highlight-font-family: "Montserrat", sans-serif;
-	--global-font-size: 20;
+	--global-font-size: 15;
 	--global-font-line-height: 1.4;
 	--global-font-line-height-sm: 0.5;
 
@@ -32,26 +32,26 @@
 	--border-radius: 5px;
 
 	/* Colors */
-	--global-font-color: #000;
+	--global-font-color: #fff;
 	--global-color-dark: #202020;
 	--border-color-dark: #333;
 	--border-color-light: #ccc;
-	--color-link: #0073aa;
+	--color-link: #7fd2e6;
 	--color-link-visited: #fff;
 	--color-link-active: #00a0d2;
 	--color-quote-border: #000;
 	--color-quote-citation: #6c7781;
 
 	/* Custom editor colors */
-	--color-theme-primary: #e36d60;
-	--color-theme-secondary: #41848f;
+	--color-theme-primary: #ffbc00;
+	--color-theme-secondary: #7fd2e6;
 	--color-theme-red: #c0392b;
 	--color-theme-green: #27ae60;
 	--color-theme-blue: #2980b9;
 	--color-theme-yellow: #f1c40f;
 	--color-theme-black: #1c2833;
 	--color-theme-grey: #95a5a6;
-	--color-theme-white: #ecf0f1;
+	--color-theme-white: #fff;
 	--color-custom-daylight: #97c0b7;
 	--color-custom-sun: #eee9d1;
 }

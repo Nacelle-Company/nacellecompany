@@ -16,6 +16,10 @@
 	margin: 0 0;
 }
 
+svg.icon {
+	fill: var(--color-theme-primary);
+}
+
 /**
  * END Icon title
  */

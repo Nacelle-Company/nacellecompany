@@ -26,6 +26,7 @@ h6 {
 	font-family: var(--highlight-font-family);
 	font-stretch: condensed;
 	clear: both;
+	color: var(--color-theme-primary);
 }
 
 .entry-title-singular,
@@ -128,3 +129,10 @@ big {
 	font-size: 125%;
 }
 
+.lead {
+	color: var(--color-theme-primary);
+}
+
+time {
+	color: var(--color-theme-secondary);
+}

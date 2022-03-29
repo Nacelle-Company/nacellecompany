@@ -33,19 +33,25 @@
 
 .primary-menu-container {
 
+	& input[name="_sf_submit"] {
+		background-color: transparent;
+		border: none;
+	}
+
 	@media (--content-query) {
 		display: grid;
 		grid-template-columns: 1fr auto;
 
 		& .searchandfilter {
 			width: 40px;
-			height: 40px;
+			height: 33px;
 
 			&::before {
 				content: url("/wp-content/themes/wprig-nacelle-dev/assets/images/icon-search.svg");
 				position: absolute;
+				fill: var(--color-theme-primary);
 				right: -10px;
-				top: 15px;
+				top: 10px;
 			}
 		}
 
@@ -72,10 +78,12 @@
 			& .sf-field-search {
 				z-index: 1;
 				opacity: 1;
+				padding: 5px;
 			}
 
 			& .sf-field-submit {
 				z-index: 9;
+				padding: 0;
 			}
 
 			&::before {

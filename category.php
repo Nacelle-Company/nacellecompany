@@ -43,16 +43,24 @@ wp_rig()->print_styles( 'wp-rig-content' );
 		wp_rig()->print_styles( 'wp-rig-subcategory', 'wp-rig-offcanvas' );
 
 		get_template_part( 'template-parts/content/page_header' );
-
-		get_template_part( 'template-parts/category/subcategory' );
-
+		?>
+		<?php if ( have_posts() ) : ?>
+			<div class="subcategory-wrapper">
+				<?php
+				while ( have_posts() ) :
+					the_post();
+					?>
+					<?php get_template_part( 'template-parts/category/subcategory' ); ?>
+				<?php endwhile; ?>
+			</div>
+			<?php
+		endif;
 	} elseif ( have_posts() ) {
 
 		get_template_part( 'template-parts/content/page_header' );
 
 		while ( have_posts() ) {
 			the_post();
-
 			get_template_part( 'template-parts/content/entry', get_post_type() );
 		}
 

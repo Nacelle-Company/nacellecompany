@@ -9,16 +9,33 @@ namespace WP_Rig\WP_Rig;
 
 wp_rig()->print_styles( 'wp-rig-offcanvas' );
 
-global $searchandfilter;
-$sf_current_query = $searchandfilter->get( 45354 )->current_query();
-$sf_current_query->get_search_term();
+	global $searchandfilter;
+	$sf_current_query = $searchandfilter->get( 46515 )->current_query();
 
-if ( have_posts() && strlen( trim( get_search_query() ) ) !== 0 ) {
-	$archive_title = 'Search results: "' . $sf_current_query->get_search_term() . '"';
-} else {
-	$archive_title = single_term_title( '', false );
-}
-?>
+	/**
+	 * Get labels for Multiple Fields by Field Name
+	 *
+	 * @param Type $var Description
+	 * @link https://searchandfilter.com/documentation/accessing-search-data/#get-labelsfor-multiple-fields-by-field-name
+	 */
+	$args = array(
+		'str'                   => '%2$s',
+		'delim'                 => array( ', ', ' - ' ),
+		'field_delim'               => ', ',
+		'show_all_if_empty'         => false,
+	);
+
+	if ( have_posts() && strlen( trim( get_search_query() ) ) !== 0 ) {
+		$archive_title = 'Search results: "' . $sf_current_query->get_search_term() . '"';
+	} elseif ( $sf_current_query->is_filtered() > 0 ) {
+		$archive_title = 'Filter by: "' . $sf_current_query->get_fields_html(
+			array( '_sft_genre', '_sft_main_talent', '_sft_producers', '_sft_directors', '_sft_writers' ),
+			$args
+		) . '"';
+	} else {
+		$archive_title = single_term_title( '', false );
+	}
+	?>
 	<div id="offcanvasOverlay" class="offcanvas overlay" href="javascript:void(0)" onclick="closeNav()"></div>
 	<header class="page-header archive">
 		<h1 class="title">
@@ -29,7 +46,6 @@ if ( have_posts() && strlen( trim( get_search_query() ) ) !== 0 ) {
 			?>
 		</h1>
 		<?php
-
 			/**
 			 * Offcanvas.
 			 *
@@ -42,10 +58,9 @@ if ( have_posts() && strlen( trim( get_search_query() ) ) !== 0 ) {
 					<?php echo esc_html__( 'Sort & Filter', 'wp-rig' ); ?>
 				</span>
 			</span>
-
 			<div id="offcanvasMenu" class="offcanvas-menu">
 				<a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
-				<?php echo do_shortcode( '[searchandfilter slug="distribution-album-catalog-sidebar"]' ); ?>
+				<?php echo do_shortcode( '[searchandfilter slug="search-catalog"]' ); ?>
 			</div>
 			<!-- offcanvas -->
 			<script>

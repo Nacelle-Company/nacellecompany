@@ -38,17 +38,19 @@ if ( is_404() ) {
 	</header><!-- .page-header -->
 	<?php
 } elseif ( is_home() && ! is_front_page() ) {
+	// ? The catalog-search form id= 46515.
+	// ? The search-form-only form id= 32392.
 	global $searchandfilter;
-	$sf_current_query = $searchandfilter->get( 45354 )->current_query();
+	$sf_current_query = $searchandfilter->get( 46515 )->current_query();
 	if ( $sf_current_query ) { // ? If we are on a search results page print the search bar header.
 		get_template_part( 'template-parts/modules/page_header-search' );
 	} else {
 		?>
-	<header class="page-header">
-		<h1 class="page-title">
-			<?php single_post_title(); ?>
-		</h1>
-	</header><!-- .page-header -->
+		<header class="page-header">
+			<h1 class="page-title">
+				<?php single_post_title(); ?>
+			</h1>
+		</header><!-- .page-header -->
 		<?php
 	}
 } elseif ( is_archive() ) {

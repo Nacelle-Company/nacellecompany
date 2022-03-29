@@ -13,7 +13,10 @@
 .grid-item {
 	position: relative;
 
-	/* padding-bottom: var(--grid-item-row-gap); */
+	& .title {
+		color: var(--global-color-dark);
+		margin: 1em 0;
+	}
 }
 
 /* block image */

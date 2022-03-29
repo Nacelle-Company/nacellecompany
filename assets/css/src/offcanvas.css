@@ -1,7 +1,7 @@
 @import "_custom-properties.css";
 
 .page-header.archive {
-	background-color: var(--color-theme-primary);
+	border-bottom: 3px solid var(--color-theme-primary);
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	align-items: baseline;
@@ -9,6 +9,11 @@
 
 	& .offcanvas-toggle {
 		text-align: right;
+		color: var(--color-theme-secondary);
+
+		&:hover {
+
+		}
 	}
 
 	& .offcanvas-toggle_title {
@@ -35,7 +40,7 @@
 	z-index: 1;
 	top: 0;
 	right: 0;
-	background-color: var(--border-color-dark);
+	background-color: var(--global-color-dark);
 	overflow-x: hidden;
 	transition: 0.5s;
 	padding-top: 60px;
@@ -55,6 +60,11 @@
 	font-size: var(--font-size-large);
 	margin-right: 0;
 	transition: margin-right 0.5s linear;
+
+	@media (--content-query) {
+		font-size: var(--font-size-regular);
+
+	}
 
 	& .offcanvas-toggle_title {
 		font-size: var(--font-size-regular);
