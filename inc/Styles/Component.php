@@ -406,7 +406,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				'file'             => 'offcanvas.min.css',
 				'preload_callback' => function() {
 					global $template;
-					return 'subcategory.php' === basename( $template );
+					return 'page_header.php' === basename( $template );
 				},
 			),
 		);

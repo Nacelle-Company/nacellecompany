@@ -23,14 +23,6 @@ if ( is_404() ) {
 		</h1>
 	</header><!-- .page-header -->
 	<?php
-} elseif ( is_home() && ! is_front_page() ) {
-	?>
-	<header class="page-header">
-		<h1 class="page-title">
-			<?php single_post_title(); ?>
-		</h1>
-	</header><!-- .page-header -->
-	<?php
 } elseif ( is_search() ) {
 	?>
 	<header class="page-header">
@@ -45,25 +37,35 @@ if ( is_404() ) {
 		</h1>
 	</header><!-- .page-header -->
 	<?php
-} elseif ( is_archive() ) {
-	$archive_title = single_term_title( '', false );
-	?>
-	<header class="page-header archive" id="pageHeader">
-		<h1 class="title">
-			<?php
-			// Might need this: post_type_archive_title(); ?
-			echo wp_kses( $archive_title, 'post' );
-			the_archive_description( '<div class="archive-description">', '</div>' );
-			?>
-		</h1>
-		<?php
-		/**
-		 * Offcanvas filters.
-		 *
-		 * @link https://www.w3schools.com/howto/howto_js_off-canvas.asp
-		 **/
+} elseif ( is_home() && ! is_front_page() ) {
+	global $searchandfilter;
+	$sf_current_query = $searchandfilter->get( 45354 )->current_query();
+	if ( $sf_current_query ) { // ? If we are on a search results page print the search bar header.
+		get_template_part( 'template-parts/modules/page_header-search' );
+	} else {
 		?>
-		<span onclick="openNav()" style="cursor:pointer" class="filter-toggle">&#9776; <span class="filter-toggle_title"><?php echo esc_html__( 'Sort & Filter', 'wp-rig' ); ?></span></span>
+	<header class="page-header">
+		<h1 class="page-title">
+			<?php single_post_title(); ?>
+		</h1>
 	</header><!-- .page-header -->
+		<?php
+	}
+} elseif ( is_archive() ) {
+	$current_term = get_queried_object();
+	if ( $current_term->parent == 0 ) { // ? If it is a parent category. Good stackoverflow article: https://wordpress.stackexchange.com/a/209468/150803.
+		?>
+			<header class="page-header archive">
+				<?php
+				post_type_archive_title();
+				single_term_title( '<h1 class="page-title">', '</h1>' );
+				the_archive_description( '<div class="archive-description">', '</div>' );
+				?>
+			</header><!-- .page-header -->
+		<?php
+	} else {
+		get_template_part( 'template-parts/modules/page_header-search' );
+	}
+	?>
 	<?php
 }

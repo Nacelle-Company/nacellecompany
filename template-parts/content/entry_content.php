@@ -8,17 +8,9 @@
 namespace WP_Rig\WP_Rig;
 
 $video_embedd = get_post_meta( get_the_ID(), 'video_embedd', true );
-if ( is_page( 'about' ) ) {
-	$width_class = ' medium-6 aligncenter';
-}
 ?>
 
-<div class="entry-content entry-content
-<?php
-if ( is_page( 'about' ) ) {
-	echo esc_html( $width_class ); }
-?>
-">
+<div class="entry-content entry-content">
 	<?php
 	if ( ! is_singular( get_post_type() ) && wp_rig()->using_archive_excerpts() ) {
 		the_excerpt();

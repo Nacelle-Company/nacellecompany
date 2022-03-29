@@ -48,9 +48,12 @@
 		padding: 0.2rem 1rem;
 		opacity: 1;
 		height: var(--grid-item-row-gap);
+		width: 100%;
 		top: calc(100% - 14rem);
 		transition: transform 0.4s ease-in-out;
 		z-index: -1;
+		line-height: 1;
+
 	}
 
 	/* grid item's content on hover */

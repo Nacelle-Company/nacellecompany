@@ -22,7 +22,7 @@ namespace WP_Rig\WP_Rig;
 	<div class="entry-header__breadcrumbs">
 		<?php
 		// ? breadcrumbs
-		if ( function_exists( 'rank_math_the_breadcrumbs' ) || et_field( 'theatres_popup' ) ) {
+		if ( function_exists( 'rank_math_the_breadcrumbs' ) || get_field( 'theatres_popup' ) ) {
 			if ( function_exists( 'rank_math_the_breadcrumbs' ) ) {
 				rank_math_the_breadcrumbs();}
 		}
@@ -35,5 +35,3 @@ namespace WP_Rig\WP_Rig;
 		?>
 	</div>
 </header><!-- .entry-header -->
-
-

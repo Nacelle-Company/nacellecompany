@@ -7,7 +7,7 @@
 
 :root {
 	--page-width: 90rem;
-	--content-width: 45rem;
+	--content-width: 50rem;
 	--dropdown-symbol-width: 0.7em;
 
 	/* Typography */
@@ -15,7 +15,7 @@
 	--highlight-font-family: "Montserrat", sans-serif;
 	--global-font-size: 20;
 	--global-font-line-height: 1.4;
-	--global-font-line-height-sm: 1;
+	--global-font-line-height-sm: 0.5;
 
 	/* Custom editor font sizes */
 	--font-size-small: calc(16 / var(--global-font-size) * 1rem);

@@ -46,24 +46,10 @@ namespace WP_Rig\WP_Rig;
 </div>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'wp-rig' ); ?></a>
-	<div id="filterOverlay" class="filter overlay" href="javascript:void(0)" onclick="closeNav()"></div>
 	<header id="masthead" class="site-header<?php echo esc_attr( $desktop_nav_layout ); ?>">
 		<?php get_template_part( 'template-parts/header/custom_header' ); ?>
-
 		<?php get_template_part( 'template-parts/header/navigation_secondary' ); ?>
-
 		<?php get_template_part( 'template-parts/header/branding' ); ?>
-
 		<?php get_template_part( 'template-parts/header/navigation_primary' ); ?>
-
 		<?php get_template_part( 'template-parts/header/navigation_mobile' ); ?>
-
 	</header><!-- #masthead -->
-	<?php
-	if ( is_archive() ) :
-		?>
-	<div id="offcanvasFilter" class="offcanvas-filter">
-		<a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
-		<?php echo do_shortcode( '[searchandfilter slug="distribution-album-catalog-sidebar"]' ); ?>
-	</div>
-	<?php endif; ?>

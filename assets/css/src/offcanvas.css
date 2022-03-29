@@ -7,11 +7,11 @@
 	align-items: baseline;
 	transition: margin-right 0.5s;
 
-	& .filter-toggle {
+	& .offcanvas-toggle {
 		text-align: right;
 	}
 
-	& .filter-toggle_title {
+	& .offcanvas-toggle_title {
 		display: none;
 
 		@media (--content-query) {
@@ -20,7 +20,15 @@
 	}
 }
 
-.offcanvas-filter {
+.offcanvas.overlay {
+	background-color: rgba(0, 0, 0, 0.372);
+	z-index: 1;
+	width: 100vw;
+	height: 100%;
+	visibility: hidden;
+}
+
+.offcanvas-menu {
 	height: 100%;
 	width: 0;
 	position: fixed;
@@ -33,7 +41,7 @@
 	padding-top: 60px;
 }
 
-.offcanvas-filter .close-btn {
+.offcanvas-menu .close-btn {
 	position: absolute;
 	top: 0;
 	right: 25px;
@@ -42,26 +50,24 @@
 	cursor: pointer;
 }
 
-.filter.overlay {
-	transition: margin-right 0.5s linear;
-}
-
-.filter-toggle {
+.offcanvas-toggle {
 	text-align: right;
 	font-size: var(--font-size-large);
+	margin-right: 0;
+	transition: margin-right 0.5s linear;
 
-	& .filter-toggle_title {
+	& .offcanvas-toggle_title {
 		font-size: var(--font-size-regular);
 	}
 }
 
 @media (--narrow-menu-query) {
 
-	.offcanvas-filter {
+	.offcanvas-menu {
 		padding-top: 15px;
 	}
 
-	.offcanvas-filter a {
+	.offcanvas-menu a {
 		font-size: 18px;
 	}
 }
