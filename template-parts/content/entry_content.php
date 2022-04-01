@@ -10,7 +10,7 @@ namespace WP_Rig\WP_Rig;
 $video_embedd = get_post_meta( get_the_ID(), 'video_embedd', true );
 ?>
 
-<div class="entry-content entry-content">
+<div class="entry-content">
 	<?php
 	if ( ! is_singular( get_post_type() ) && wp_rig()->using_archive_excerpts() ) {
 		the_excerpt();

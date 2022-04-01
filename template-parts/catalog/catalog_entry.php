@@ -24,6 +24,7 @@ endif;
 		<?php endif; ?>
 	<div class="entry-image"><?php the_post_thumbnail( 'large' ); ?></div>
 	<div class="entry-main">
+		<!-- #TODO: add screenreader text to everything: <h2 class="screen-reader-text">Post navigation</h2> -->
 		<?php get_template_part( 'template-parts/catalog/parts/catalog_more-info', get_post_type() ); ?>
 		<?php get_template_part( 'template-parts/catalog/parts/catalog_crew', get_post_type() ); ?>
 	</div>
@@ -31,13 +32,7 @@ endif;
 </article><!-- #post-<?php the_ID(); ?> -->
 
 <?php
-
-// ? add related posts
-// ? TODO: get catalog related posts
-if ( is_single() ) {
-	get_template_part( 'template-parts/content/entry_related' );
-}
-
+get_template_part( 'template-parts/catalog/parts/catalog_related' );
 /**
  * Catalog pagination
  */

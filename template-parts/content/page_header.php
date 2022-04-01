@@ -41,7 +41,7 @@ if ( is_404() ) {
 	// ? The catalog-search form id= 46515.
 	// ? The search-form-only form id= 32392.
 	global $searchandfilter;
-	$sf_current_query = $searchandfilter->get( 46515 )->current_query();
+	$sf_current_query = $searchandfilter->get( 33926 )->current_query();
 	if ( $sf_current_query ) { // ? If we are on a search results page print the search bar header.
 		get_template_part( 'template-parts/modules/page_header-search' );
 	} else {
@@ -53,21 +53,15 @@ if ( is_404() ) {
 		</header><!-- .page-header -->
 		<?php
 	}
-} elseif ( is_archive() ) {
-	$current_term = get_queried_object();
-	if ( $current_term->parent == 0 ) { // ? If it is a parent category. Good stackoverflow article: https://wordpress.stackexchange.com/a/209468/150803.
-		?>
-			<header class="page-header archive">
-				<?php
-				post_type_archive_title();
-				single_term_title( '<h1 class="page-title">', '</h1>' );
-				the_archive_description( '<div class="archive-description">', '</div>' );
-				?>
-			</header><!-- .page-header -->
-		<?php
+} elseif ( is_archive() || is_single() ) {
+	$current_post_type = get_post_type( $post->ID, false );
+	$the_post_type     = get_post_type_object( get_post_type() );
+	if ( 'catalog' === $current_post_type ) {
+			get_template_part( 'template-parts/modules/page_header-search' );
 	} else {
-		get_template_part( 'template-parts/modules/page_header-search' );
+		if ( $the_post_type ) {
+			$post_type_title = '<header class="page-header archive"><h1 class="page-title archive-title">' . $the_post_type->labels->singular_name . '</h1></header>';
+			echo wp_kses( $post_type_title, 'post' );
+		}
 	}
-	?>
-	<?php
 }

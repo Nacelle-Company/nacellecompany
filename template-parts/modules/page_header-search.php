@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying the page header with offcanvas search.
+ * Template part for displaying the offscreen filter menu.
  *
  * @package wp_rig
  */
@@ -10,7 +10,7 @@ namespace WP_Rig\WP_Rig;
 wp_rig()->print_styles( 'wp-rig-offcanvas' );
 
 	global $searchandfilter;
-	$sf_current_query = $searchandfilter->get( 46515 )->current_query();
+	$sf_current_query = $searchandfilter->get( 33926 )->current_query();
 
 	/**
 	 * Get labels for Multiple Fields by Field Name
@@ -24,7 +24,7 @@ wp_rig()->print_styles( 'wp-rig-offcanvas' );
 		'field_delim'               => ', ',
 		'show_all_if_empty'         => false,
 	);
-
+	// ? if search
 	if ( have_posts() && strlen( trim( get_search_query() ) ) !== 0 ) {
 		$archive_title = 'Search results: "' . $sf_current_query->get_search_term() . '"';
 	} elseif ( $sf_current_query->is_filtered() > 0 ) {
@@ -37,7 +37,7 @@ wp_rig()->print_styles( 'wp-rig-offcanvas' );
 	}
 	?>
 	<div id="offcanvasOverlay" class="offcanvas overlay" href="javascript:void(0)" onclick="closeNav()"></div>
-	<header class="page-header archive">
+	<header class="page-header page-header_catalog">
 		<h1 class="title">
 			<?php
 			// Might need this: post_type_archive_title(); ?

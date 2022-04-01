@@ -1,0 +1,47 @@
+.entry-buttons {
+	padding: 0 1em;
+
+	@media (--content-query) {
+
+		grid-area: footer;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		align-items: baseline;
+		gap: 2em;
+		padding: 0 2em;
+		margin-bottom: 4em;
+
+	}
+
+	& .title {
+		grid-column: 1/span 2;
+		margin-bottom: 0;
+
+		@media (--content-query) {
+
+			grid-column: 1/span 3;
+		}
+
+	}
+
+	& .button {
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+
+		&:hover {
+			color: var(--global-color-dark);
+		}
+	}
+}
+
+.entry-buttons__wrapper {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(47%, 1fr));
+	gap: 1em;
+
+	@media (--content-query) {
+		grid-template-columns: repeat(auto-fit, minmax(31%, 1fr));
+	}
+
+}

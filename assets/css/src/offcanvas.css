@@ -1,6 +1,5 @@
-@import "_custom-properties.css";
 
-.page-header.archive {
+.page-header_catalog {
 	border-bottom: 3px solid var(--color-theme-primary);
 	display: grid;
 	grid-template-columns: 1fr 1fr;

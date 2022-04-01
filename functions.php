@@ -100,3 +100,15 @@ function _wp_rig_cpt_category_archives( $query ) {
 	return $query;
 }
 
+/**
+ * Prints the post object.
+ *
+ * TODO: delete this on production
+ *
+ * @param Type $post The post object or whichever variable.
+ **/
+function printVar( $post ) {
+	echo '<pre style="color:#000;position:absolute;width: 100%;z-index:9;">';
+	print_r( $post );
+	echo '</pre>';
+}

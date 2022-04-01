@@ -409,6 +409,20 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					return 'page_header.php' === basename( $template );
 				},
 			),
+			'wp-rig-catalog_buttons'    => array(
+				'file'             => 'catalog_buttons.min.css',
+				'preload_callback' => function() {
+					global $template;
+					return 'single-catalog.php' === basename( $template );
+				},
+			),
+			'wp-rig-catalog_related'    => array(
+				'file'             => 'catalog_related.min.css',
+				'preload_callback' => function() {
+					global $template;
+					return 'single-catalog.php' === basename( $template );
+				},
+			),
 		);
 
 		/**

@@ -88,9 +88,9 @@
 		grid-template-columns: repeat(4, 1fr);
 		grid-template-areas:
 			"header header header header"
+			"pHeader pHeader pHeader pHeader"
 			"main main main sidebar"
 			"footer footer footer footer";
-		grid-gap: 2rem;
 		justify-content: center;
 	}
 
@@ -129,7 +129,7 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 	border: 1px solid;
-	border-color: var(--border-color-light) var(--border-color-light) #bbb;
+	border-color: var(--border-color-light) var(--border-color-light) var(--color-theme-secondary);
 	border-radius: 6px;
 	background: var(--color-theme-primary);
 	color: rgba(0, 0, 0, 0.8);
@@ -139,6 +139,10 @@ input[type="submit"] {
 	padding: 0.85em 2em;
 	cursor: pointer;
 	transition: background-color 0.25s ease-out, color 0.25s ease-out;
+
+	& .icon {
+		fill: var(--global-color-dark);
+	}
 }
 /* stylelint-enable */
 
@@ -147,7 +151,7 @@ button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-	border-color: var(--color-theme-secondary) #bbb #aaa;
+	border-color: var(--color-theme-secondary) var(--color-theme-secondary) var(--border-color-light);
 	background-color: var(--color-theme-secondary);
 }
 
@@ -392,6 +396,7 @@ select {
 				top: 300px;
 				left: 0;
 				height: 0;
+				z-index: -1;
 				padding: 20px 30px;
 				opacity: 0;
 				transition: opacity 0.3s, top 0.3s ease-out;
@@ -651,6 +656,12 @@ select {
 		padding-left: 0;
 		padding-right: 0;
 	}
+
+	.page-header {
+		grid-area: pHeader;
+		grid-column: 1 / span 4;
+		order: 1;
+	}
 }
 
 .nav-links {
@@ -764,62 +775,4 @@ select {
 were hidden (via .neverending) before. */
 .infinity-end.neverending .site-footer {
 	display: block;
-}
-
-/*--------------------------------------------------------------
-# Overlays
---------------------------------------------------------------*/
-
-.overlay {
-	position: absolute;
-	left: 0;
-	top: 0;
-	transition: opacity 0.4s ease-in-out;
-
-	&.wonder-banner {
-		background-color: #000;
-		z-index: 0;
-		width: 100vw;
-		height: 100%;
-	}
-}
-
-/*--------------------------------------------------------------
-# Heights
---------------------------------------------------------------*/
-
-.h-full {
-	height: 100vh;
-}
-
-.h-80 {
-	height: 80vh;
-}
-
-.h-60 {
-	height: 60vh;
-}
-
-.h-50 {
-	height: 50vh;
-}
-
-/*--------------------------------------------------------------
-# Z Index
---------------------------------------------------------------*/
-
-.z--1 {
-	z-index: -1;
-}
-
-.z-0 {
-	z-index: 0;
-}
-
-.z-1 {
-	z-index: 1;
-}
-
-.z-9 {
-	z-index: 999;
 }

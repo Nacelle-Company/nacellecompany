@@ -233,11 +233,11 @@ msgstr ""
 msgid "Invalid theme stylesheet handle: %s"
 msgstr ""
 
-#: template-parts/catalog/catalog_entry.php:49, template-parts/content/entry-attachment.php:33, template-parts/content/entry.php:64
+#: template-parts/catalog/catalog_entry.php:44, template-parts/content/entry-attachment.php:33, template-parts/content/entry.php:60
 msgid "Previous:"
 msgstr ""
 
-#: template-parts/catalog/catalog_entry.php:50, template-parts/content/entry-attachment.php:43, template-parts/content/entry.php:65
+#: template-parts/catalog/catalog_entry.php:45, template-parts/content/entry-attachment.php:43, template-parts/content/entry.php:61
 msgid "Next:"
 msgstr ""
 
@@ -413,15 +413,15 @@ msgstr ""
 msgid "Sort & Filter"
 msgstr ""
 
-#: template-parts/catalog/parts/catalog_buttons.php:17
+#: template-parts/catalog/parts/catalog_buttons.php:18
 msgid "Watch Now"
 msgstr ""
 
-#: template-parts/catalog/parts/catalog_buttons.php:22
+#: template-parts/catalog/parts/catalog_buttons.php:23
 msgid "Apple TV"
 msgstr ""
 
-#: template-parts/catalog/parts/catalog_buttons.php:47
+#: template-parts/catalog/parts/catalog_buttons.php:48
 msgid "Listen Now"
 msgstr ""
 

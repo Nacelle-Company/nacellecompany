@@ -26,7 +26,7 @@ if ( 'post' === $post_type_obj->name || $post_type_obj->has_archive ) {
 		esc_html( get_the_modified_date() )
 	);
 
-	$time_string = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
+	// $time_string = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
 }
 
 $author_string = '';

@@ -92,7 +92,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		$slider_speed = get_field( 'slider_speed' );
 		?>
 
-		<div class="main-carousel" data-flickity='{ "wrapAround": true, "lazyLoad": true, "setGallerySize": false, "autoPlay":<?php echo esc_html( $slider_speed ); ?>000 }'>
+		<div class="main-carousel" data-flickity='{ "wrapAround": true, "lazyLoad": true, "setGallerySize": false, "pageDots": false, "autoPlay":<?php echo esc_html( $slider_speed ); ?>000 }'>
 		<?php
 		$slider_posts = $slides;
 		if ( $slides ) :
@@ -100,6 +100,8 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				$the_title     = get_the_title( $slide->ID );
 				$the_permalink = get_the_permalink( $slide->ID );
 				$the_synopsis  = get_field( 'synopsis', $slide->ID );
+				$the_synopsis  = wp_strip_all_tags( $the_synopsis );
+				$the_synopsis  = substr( $the_synopsis, 0, 200 );
 
 				// ? images
 				$the_slider_img     = get_field( 'home_image', $slide );

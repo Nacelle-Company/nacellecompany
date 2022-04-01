@@ -7,13 +7,14 @@
 
 namespace WP_Rig\WP_Rig;
 
-$itunes_video = get_post_meta( get_the_ID(), 'itunes_video', true );
-?>
+wp_rig()->print_styles( 'wp-rig-catalog_buttons' );
 
-<?php if ( get_field( 'show_video_links' ) ) : ?>
+$itunes_video = get_post_meta( get_the_ID(), 'itunes_video', true );
+
+if ( get_field( 'show_video_links' ) ) : ?>
 	<div class="entry-buttons">
 		<div class="entry-buttons__wrapper">
-			<h2 class="h3">
+			<h2 class="title h3">
 				<?php esc_html_e( 'Watch Now', 'wp-rig' ); ?>
 			</h2>
 			<?php if ( $itunes_video ) : ?>
@@ -43,7 +44,7 @@ $itunes_video = get_post_meta( get_the_ID(), 'itunes_video', true );
 			<?php endif; ?>
 		</div>
 		<div class="entry-buttons__wrapper">
-			<h2 class="h3">
+			<h2 class="title h3">
 				<?php esc_html_e( 'Listen Now', 'wp-rig' ); ?>
 			</h2>
 			<?php if ( have_rows( 'audio_new_large_link' ) ) : ?>

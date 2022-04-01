@@ -23,21 +23,19 @@ input {
 	display: flex;
 	padding: 1em;
 	cursor: pointer;
-}
 
-.tab-label::after {
-	content: "❯";
-	width: 1em;
-	height: 1em;
-	text-align: center;
-	transition: all 0.35s;
+	&::after {
+		content: "❯";
+		margin-left: 1em;
+		transition: all 0.35s;
+	}
 }
 
 .tab-content {
 	max-height: 0;
 	padding: 0 1em;
-	color: #2c3e50;
-	background: #fff;
+	color: var(--global-font-color);
+	background: var(--global-color-dark);
 	transition: all 0.35s;
 }
 
@@ -56,4 +54,17 @@ input:checked + .tab-label::after {
 input:checked ~ .tab-content {
 	max-height: 100vh;
 	padding: 1em;
+}
+
+
+.tab-label {
+	border-bottom: 1px solid var(--color-theme-secondary);
+}
+
+.tab-close {
+	background-color: var(--color-theme-primary);
+
+	&:hover {
+		background-color: var(--color-theme-secondary);
+	}
 }

@@ -22,6 +22,31 @@
 # Post and page content
 --------------------------------------------------------------*/
 
+.single {
+
+	& .entry {
+		padding: 0 1em;
+	}
+
+	& .entry-content > * {
+		padding-left: 0;
+	}
+
+	@media (--content-query) {
+
+		& .entry-header {
+			grid-template-areas:
+				"image header"
+				"image meta";
+			column-gap: 1em;
+		}
+
+		& .post-thumbnail {
+			grid-area: image;
+		}
+	}
+}
+
 /* Custom rule  for sticky posts:
 .sticky {
 
@@ -35,13 +60,17 @@
 	font-size: larger;
 }
 
-.entry {
-	margin-bottom: 1rem;
-}
+/* .entry:not(.post-grid) {
+	padding: 0 1em;
+
+	@media (--content-query) {
+		padding: 0 2em;
+	}
+} */
 
 .entry-meta,
-.entry-footer {
-	font-family: var(--highlight-font-family);
+.entry-footer,
+.entry-taxonomies {
 	font-stretch: condensed;
 	font-size: 80%;
 }
@@ -50,14 +79,20 @@
 	margin: 1em 0;
 }
 
+.entry-actions {
+	position: absolute;
+	right: 1em;
+	bottom: 1em;
+}
+
 /* Hides the update date and time. */
 .updated:not(.published) {
 	display: none;
 }
 
-.post-thumbnail img {
+/* .post-thumbnail img {
 	margin: 0 auto;
-}
+} */
 
 .page-content,
 .entry-summary {
@@ -67,8 +102,7 @@
 .entry-content {
 
 	@media (--content-query) {
-		width: var(--content-width);
-		margin: 4em auto auto;
+		max-width: var(--content-width);
 	}
 }
 
@@ -77,9 +111,9 @@
 	padding-left: 3.5em;
 }
 
+/* .entry-summary > * */
 .page-content > *,
-.entry-content > *,
-.entry-summary > * {
+.entry-content > * {
 	margin-right: auto;
 	margin-left: auto;
 	padding-right: 1.5rem;
@@ -87,9 +121,8 @@
 	max-width: var(--page-width);
 }
 
+/* .entry-header, */
 .page-header,
-.entry-header,
-.entry-footer,
 .site-info,
 .post-navigation,
 .page-navigation,
@@ -98,12 +131,15 @@
 	margin-bottom: 1.5em;
 }
 
+/* .entry-header, */
+
+/* .entry-summary > *, */
+
+/* .entry-footer, */
+
+/* .page-header, */
 .page-content > *,
 .entry-content > *,
-.entry-summary > *,
-.page-header,
-.entry-header,
-.entry-footer,
 .site-info,
 .post-navigation,
 .page-navigation,
@@ -113,6 +149,29 @@
 	padding-right: 1.5rem;
 	padding-left: 1.5rem;
 	max-width: var(--page-width);
+}
+
+.page-header {
+	margin-top: 0;
+	padding: 0.5em 1em;
+	border-bottom: 2px solid var(--color-theme-primary);
+
+	@media (--content-query) {
+		padding: 0.5em 2em;
+
+	}
+
+	& .archive-title,
+	& .title {
+		color: var(--color-theme-primary);
+	}
+}
+
+.entry.page {
+
+	@media (--content-query) {
+		justify-items: center;
+	}
 }
 
 @media (--content-query) {
@@ -138,9 +197,10 @@
 	margin-right: 1em;
 }
 
+/* padding: 1.5em 1.5rem 3em; */
+
 .entry-footer {
 	clear: both;
-	padding: 1.5em 1.5rem 3em;
 }
 
 @media (--content-query) {

@@ -1,0 +1,36 @@
+
+.catalog-related {
+	margin-bottom: 4em;
+	background-color: var(--global-color-dark);
+	padding: 1em 2em;
+
+	@media (--content-query) {
+		grid-template-columns: repeat(auto-fit, minmax(31%, 1fr));
+		column-gap: 2em;
+	}
+
+	& > .title {
+
+		@media (--content-query) {
+			grid-column: 1/span 3;
+		}
+	}
+
+	& > .wrap {
+
+		& > .title {
+			grid-column: 1/span 2;
+			border-bottom: 2px solid var(--color-theme-secondary);
+		}
+
+		& > .grid {
+			grid-template-columns: 2fr 1fr;
+			gap: 1em;
+			padding: 1em;
+		}
+	}
+
+	& .attachment-thumbnail {
+		justify-self: flex-end;
+	}
+}

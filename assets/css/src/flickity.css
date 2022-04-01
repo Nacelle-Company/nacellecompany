@@ -62,9 +62,9 @@ https://flickity.metafizzy.co
 
 .flickity-button {
 	position: absolute;
-	background: hsla(0, 0%, 100%, 0.75);
 	border: none;
-	color: #333;
+	color: var(--color-theme-primary);
+	background-color: transparent;
 }
 
 .flickity-button:hover {
@@ -98,7 +98,6 @@ https://flickity.metafizzy.co
 	top: 50%;
 	width: 44px;
 	height: 44px;
-	border-radius: 50%;
 	bottom: 20px;
 	top: unset;
 	transform: none;
@@ -168,7 +167,7 @@ https://flickity.metafizzy.co
 
 /* Dev custom styles */
 .main-carousel {
-	height: 85vh;
+	height: 75vh;
 }
 
 /* carousel height, as percentage of width */
@@ -185,9 +184,14 @@ https://flickity.metafizzy.co
 	align-items: flex-end;
 }
 
-@media (--wide-menu-query) {
+.caption {
+	padding-bottom: 4em;
+}
+
+@media (--content-query) {
 
 	.caption {
+		padding-bottom: 0;
 		max-width: 50%;
 	}
 }

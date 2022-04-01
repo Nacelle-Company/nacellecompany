@@ -24,16 +24,16 @@ if ( post_password_required() || ! post_type_supports( $support_slug, 'thumbnail
 if ( is_singular( get_post_type() ) ) {
 	?>
 	<div class="post-thumbnail">
-		<?php the_post_thumbnail( 'wp-rig-featured', array( 'class' => 'skip-lazy' ) ); ?>
+		<?php the_post_thumbnail( 'medium', array( 'class' => 'skip-lazy' ) ); ?>
 	</div><!-- .post-thumbnail -->
 	<?php
-} if ( is_post_type_archive() ) {
+} elseif ( is_post_type_archive() ) {
 	?>
-	<div class="entry-thumbnail archive-posts">
+	<div class="entry-thumbnail">
 		<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
 			<?php
 			global $wp_query;
-			if ( 0 === $wp_query->current_post ) {
+			if ( 4 > $wp_query->current_post ) {
 				the_post_thumbnail(
 					'post-thumbnail',
 					array(
@@ -47,7 +47,7 @@ if ( is_singular( get_post_type() ) ) {
 				);
 			} else {
 				the_post_thumbnail(
-					'post-thumbnail',
+					'medium',
 					array(
 						'alt' => the_title_attribute(
 							array(

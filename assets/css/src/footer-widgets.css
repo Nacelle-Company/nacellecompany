@@ -2,8 +2,13 @@
 
 .footer-widgets-area {
 	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	grid-gap: 2rem;
+	justify-items: center;
+
+	@media (--content-query) {
+		justify-items: normal;
+		grid-template-columns: repeat(3, 1fr);
+		grid-gap: 2rem;
+	}
 }
 
 .footer-widgets-area * {

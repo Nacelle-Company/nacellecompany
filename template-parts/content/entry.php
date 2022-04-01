@@ -8,42 +8,36 @@
 namespace WP_Rig\WP_Rig;
 
 if ( is_post_type_archive() ) {
-
 	wp_rig()->print_styles( 'wp-rig-post-grid' ); // ? post grid CSS
-
-	$article_class = 'entry post-grid';
-} elseif ( is_page( 'about' ) ) {
-	$article_class = 'grid';
+	$article_class = 'entry grid-item archive-grid__item';
+} elseif ( is_single() ) {
+	$article_class = 'entry grid single-grid__item';
 } else {
 	$article_class = 'entry';
 }
-
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( $article_class ); ?>>
 	<?php if ( is_post_type_archive() ) : ?>
-		<div class="grid-item post-grid__wrapper">
 			<?php
 			get_template_part( 'template-parts/content/entry_thumbnail', get_post_type() );
 			get_template_part( 'template-parts/content/entry_title', get_post_type() );
-			get_template_part( 'template-parts/content/entry_summary', get_post_type() );
+			if ( ! is_post_type_archive( 'news' ) ) {
+				get_template_part( 'template-parts/content/entry_summary', get_post_type() );
+			}
 			get_template_part( 'template-parts/content/entry_footer', get_post_type() );
 			get_template_part( 'template-parts/content/entry_go-corner', get_post_type() );
 			?>
-		</div>
 	<?php else : ?>
 		<?php
 		if ( ! is_front_page() ) { // ? if NOT the front page
 			get_template_part( 'template-parts/content/entry_header', get_post_type() );
 		}
-
 		if ( is_search() ) { // ? if a search results page
 			get_template_part( 'template-parts/content/entry_summary', get_post_type() );
-
 		} else { // ? if not a search results page
 			get_template_part( 'template-parts/content/entry_content', get_post_type() );
 		}
-
-		get_template_part( 'template-parts/content/entry_footer', get_post_type() );
+		// get_template_part( 'template-parts/content/entry_footer', get_post_type() );
 		?>
 
 	<?php endif; ?>

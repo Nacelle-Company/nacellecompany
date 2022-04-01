@@ -1,12 +1,14 @@
-@import "_custom-properties.css";
-
 /* CSS Tricks!!! https://codepen.io/chriscoyier/pen/xBmYJN */
 
 /* grid item's wrapper */
 .subcategory-wrapper {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 	grid-gap: var(--grid-item-row-gap-sm) 0;
+
+	@media (--content-query) {
+		grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+		gap: var(--grid-item-row-bottom-spacing) 0;
+	}
 }
 
 /* grid item */
@@ -15,7 +17,15 @@
 
 	& .title {
 		color: var(--global-color-dark);
-		margin: 1em 0;
+		margin: 0;
+	}
+
+	@media (--content-query) {
+
+		& .title {
+			padding: 1em 0 0 0;
+			margin: 0;
+		}
 	}
 }
 
@@ -34,10 +44,6 @@
 
 @media (--wide-menu-query) {
 
-	/* grid item's wrapper */
-	.subcategory-wrapper {
-		gap: var(--grid-item-row-bottom-spacing) 0;
-	}
 
 	/* grid item */
 	.grid-item {
