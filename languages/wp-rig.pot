@@ -233,11 +233,11 @@ msgstr ""
 msgid "Invalid theme stylesheet handle: %s"
 msgstr ""
 
-#: template-parts/catalog/catalog_entry.php:44, template-parts/content/entry-attachment.php:33, template-parts/content/entry.php:58
+#: template-parts/catalog/catalog_entry.php:44, template-parts/content/entry-attachment.php:33, template-parts/content/entry.php:57
 msgid "Previous:"
 msgstr ""
 
-#: template-parts/catalog/catalog_entry.php:45, template-parts/content/entry-attachment.php:43, template-parts/content/entry.php:59
+#: template-parts/catalog/catalog_entry.php:45, template-parts/content/entry-attachment.php:43, template-parts/content/entry.php:58
 msgid "Next:"
 msgstr ""
 

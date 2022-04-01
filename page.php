@@ -12,6 +12,7 @@ namespace WP_Rig\WP_Rig;
 get_header();
 
 wp_rig()->print_styles( 'wp-rig-content' );
+get_template_part( 'template-parts/content/entry_header', get_post_type() );
 
 ?>
 	<main id="primary" class="site-main">

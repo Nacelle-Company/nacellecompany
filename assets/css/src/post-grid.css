@@ -61,16 +61,6 @@
 	}
 }
 
-.archive {
-
-	& .primary-sidebar {
-
-		@media (--sidebar-query) {
-			grid-column: 9 / span 3;
-		}
-	}
-}
-
 .archive-grid__item {
 	display: grid;
 	gap: 0.5em;

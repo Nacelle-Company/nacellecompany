@@ -58,10 +58,8 @@ if ( is_404() ) {
 	$the_post_type     = get_post_type_object( get_post_type() );
 	if ( 'catalog' === $current_post_type ) {
 			get_template_part( 'template-parts/modules/page_header-search' );
-	} else {
-		if ( $the_post_type ) {
+	} elseif ( $the_post_type ) {
 			$post_type_title = '<header class="page-header archive"><h1 class="page-title archive-title">' . $the_post_type->labels->singular_name . '</h1></header>';
 			echo wp_kses( $post_type_title, 'post' );
-		}
 	}
 }

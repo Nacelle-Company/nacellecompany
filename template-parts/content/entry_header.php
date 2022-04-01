@@ -9,7 +9,7 @@ namespace WP_Rig\WP_Rig;
 
 ?>
 
-<header class="entry-header grid">
+<header class="page-header grid">
 	<?php
 	if ( ! is_search() ) {
 		get_template_part( 'template-parts/content/entry_thumbnail', get_post_type() );

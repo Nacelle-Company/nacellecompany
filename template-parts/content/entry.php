@@ -29,9 +29,9 @@ if ( is_post_type_archive() ) {
 			?>
 	<?php else : ?>
 		<?php
-		if ( ! is_front_page() ) { // ? if NOT the front page
-			get_template_part( 'template-parts/content/entry_header', get_post_type() );
-		}
+		// if ( ! is_front_page() ) { // ? if NOT the front page
+		// get_template_part( 'template-parts/content/entry_header', get_post_type() );
+		// }
 		if ( is_search() ) { // ? if a search results page
 			get_template_part( 'template-parts/content/entry_summary', get_post_type() );
 		} else { // ? if not a search results page
