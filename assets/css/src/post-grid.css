@@ -51,11 +51,23 @@
 	padding: 0 1em;
 
 	@media (--content-query) {
-		padding: 0 2em;
+		grid-template-columns: 1fr;
 	}
 
 	@media (--sidebar-query) {
+		grid-column: 2 / span 7;
+		padding: 0;
 		grid-template-columns: 1fr 1fr;
+	}
+}
+
+.archive {
+
+	& .primary-sidebar {
+
+		@media (--sidebar-query) {
+			grid-column: 9 / span 3;
+		}
 	}
 }
 

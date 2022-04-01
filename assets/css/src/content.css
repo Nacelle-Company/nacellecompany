@@ -167,10 +167,21 @@
 	}
 }
 
-.entry.page {
+.page {
 
-	@media (--content-query) {
-		justify-items: center;
+	& .entry {
+
+		@media (--sidebar-query) {
+			grid-column: 3 / span 8;
+			justify-items: center;
+		}
+	}
+}
+
+.type-page {
+
+	& .entry-header {
+		text-align: center;
 	}
 }
 

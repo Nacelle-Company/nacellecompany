@@ -37,7 +37,6 @@ if ( is_post_type_archive() ) {
 		} else { // ? if not a search results page
 			get_template_part( 'template-parts/content/entry_content', get_post_type() );
 		}
-		// get_template_part( 'template-parts/content/entry_footer', get_post_type() );
 		?>
 
 	<?php endif; ?>

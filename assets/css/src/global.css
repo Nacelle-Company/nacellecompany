@@ -82,34 +82,35 @@
 
 @media (--sidebar-query) {
 
-	.has-sidebar .site {
+	.has-sidebar .site,
+	.page .site-main {
 		margin: 0;
 		display: grid;
-		grid-template-columns: repeat(4, 1fr);
+		grid-template-columns: repeat(12, 1fr);
 		grid-template-areas:
-			"header header header header"
-			"pHeader pHeader pHeader pHeader"
-			"main main main sidebar"
-			"footer footer footer footer";
+			"hd hd hd hd hd hd hd hd hd hd hd hd"
+			"ph ph ph ph ph ph ph ph ph ph ph ph"
+			"mn mn mn mn mn mn mn mn sb sb sb sb"
+			"ft ft ft ft ft ft ft ft ft ft ft ft";
 		justify-content: center;
 	}
 
 	.site-header {
-		grid-area: header;
+		grid-area: hd;
 	}
 
 	.site-main {
-		grid-area: main;
+		grid-area: mn;
 		min-width: 0;
 	}
 
 	.primary-sidebar {
-		grid-area: sidebar;
+		grid-area: sb;
 		min-width: 0;
 	}
 
 	.site-footer {
-		grid-area: footer;
+		grid-area: ft;
 	}
 }
 
@@ -647,7 +648,7 @@ select {
 	font-stretch: condensed;
 }
 
-@media (--content-query) {
+@media (--sidebar-query) {
 
 	.site-main .comment-navigation,
 	.site-main .posts-navigation,
@@ -658,9 +659,7 @@ select {
 	}
 
 	.page-header {
-		grid-area: pHeader;
-		grid-column: 1 / span 4;
-		order: 1;
+		grid-area: ph;
 	}
 }
 

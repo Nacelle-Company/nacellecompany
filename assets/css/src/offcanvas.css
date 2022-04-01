@@ -9,10 +9,6 @@
 	& .offcanvas-toggle {
 		text-align: right;
 		color: var(--color-theme-secondary);
-
-		&:hover {
-
-		}
 	}
 
 	& .offcanvas-toggle_title {
