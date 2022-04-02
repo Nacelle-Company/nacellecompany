@@ -1,24 +1,28 @@
+@import "_modal.css";
+
 .catalog,
-.entry-header,
 .dl-list__info,
 .entry-main__crew,
-.dl-list__crew,
-.entry-header__breadcrumbs {
+.dl-list__crew {
 	display: grid;
 }
 
-/* header */
 .entry-header {
-	padding: 0 1em;
-}
+	border-bottom: none;
+	background-color: var(--global-color-dark);
+	padding: 1em;
 
-@media (--content-query) {
-
-	.entry-header {
+	@media (--content-query) {
+		display: grid;
 		grid-area: header;
 		grid-template-columns: 1fr 1fr;
-		padding: 0 2em;
+		gap: 1em;
+		padding: 2em;
 	}
+}
+
+.entry-title {
+	margin-top: 0;
 }
 
 /* initial layout */
@@ -61,17 +65,6 @@
 
 	.no-video .entry-image .wp-post-image {
 		transform: translateY(-9vh);
-	}
-}
-
-.entry-header__breadcrumbs {
-	font-size: var(--font-size-small);
-}
-
-@media screen and (--wide-menu-query) {
-
-	.entry-header__breadcrumbs {
-		justify-content: flex-end;
 	}
 }
 

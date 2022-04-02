@@ -33,6 +33,10 @@
 			color: var(--global-color-dark);
 		}
 	}
+
+	& .icon {
+		margin-left: 5px;
+	}
 }
 
 .entry-buttons__wrapper {

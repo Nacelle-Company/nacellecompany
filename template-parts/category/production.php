@@ -25,42 +25,41 @@ $production_special_post_two = get_field( 'production_special_post_two', 'option
 $img_special_two             = get_field( 'horizontal_image', $production_special_post_two );
 $img_special_two_alt          = $img_special_two['alt'];
 ?>
-<div class="category-wrapper">
-<?php
-if ( ! empty( $img_series_one ) ) {
-	?>
-	<a href="<?php echo esc_html( get_home_url() ); ?>/category/production/series/">
-	<?php get_template_part( 'template-parts/svg/icon-disk' ); ?>
-		<img src="<?php echo esc_url( $img_series_one['url'] ); ?>" alt="<?php echo esc_attr( $img_series_one_alt ); ?>" />
-	</a>
-	<?php
-}
-
-if ( ! empty( $img_series_two ) ) {
-	?>
-	<a href="<?php echo esc_html( get_home_url() ); ?>/category/production/series/">
-		<img src="<?php echo esc_url( $img_series_two['url'] ); ?>" alt="<?php echo esc_attr( $img_series_two_alt ); ?>" />
-	</a>
-	<?php
-}
-?>
-</div >
-<div class="category-wrapper">
-<?php
-if ( ! empty( $img_special_one ) ) {
-	?>
-	<a href="<?php echo esc_html( get_home_url() ); ?>/category/production/special/">
-		<img src="<?php echo esc_url( $img_special_one['url'] ); ?>" alt="<?php echo esc_attr( $img_special_one_alt ); ?>" />
-	</a>
-	<?php
-}
-
-if ( ! empty( $img_special_two ) ) {
-	?>
-	<a href="<?php echo esc_html( get_home_url() ); ?>/category/production/special/">
-		<img src="<?php echo esc_url( $img_special_two['url'] ); ?>" alt="<?php echo esc_attr( $img_special_two_alt ); ?>" />
-	</a>
+<div class="category-container grid">
+	<div class="category-wrapper grid">
+		<a href="<?php echo esc_html( get_home_url() ); ?>/category/production/series/"></a>
+		<div class="icon-title">
+			<?php get_template_part( 'template-parts/svg/icon-video' ); ?>
+			<h2 class="title"><?php esc_html_e( 'Series', 'wp-rig' ); ?></h2>
+		</div>
 		<?php
-}
-?>
-</div >
+		if ( ! empty( $img_series_one ) ) :
+			?>
+		<img src="<?php echo esc_url( $img_series_one['url'] ); ?>" alt="<?php echo esc_attr( $img_series_one_alt ); ?>" />
+			<?php
+		endif;
+		if ( ! empty( $img_series_two ) ) :
+			?>
+		<img src="<?php echo esc_url( $img_series_two['url'] ); ?>" alt="<?php echo esc_attr( $img_series_two_alt ); ?>" />
+		<?php endif; ?>
+	</div>
+
+	<div class="category-wrapper grid">
+
+		<a href="<?php echo esc_html( get_home_url() ); ?>/category/production/special/"></a>
+			<div class="icon-title">
+				<?php get_template_part( 'template-parts/svg/icon-mic' ); ?>
+				<h2 class="title"><?php esc_html_e( 'Special', 'wp-rig' ); ?></h2>
+			</div>
+			<?php
+			if ( ! empty( $img_special_one ) ) :
+				?>
+			<img src="<?php echo esc_url( $img_special_one['url'] ); ?>" alt="<?php echo esc_attr( $img_special_one_alt ); ?>" />
+				<?php
+				endif;
+			if ( ! empty( $img_special_two ) ) :
+				?>
+			<img src="<?php echo esc_url( $img_special_two['url'] ); ?>" alt="<?php echo esc_attr( $img_special_two_alt ); ?>" />
+			<?php endif; ?>
+	</div>
+</div>

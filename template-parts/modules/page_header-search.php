@@ -10,7 +10,7 @@ namespace WP_Rig\WP_Rig;
 wp_rig()->print_styles( 'wp-rig-offcanvas' );
 
 	global $searchandfilter;
-	$sf_current_query = $searchandfilter->get( 33926 )->current_query();
+	$sf_current_query = $searchandfilter->get( 46515 )->current_query();
 
 	/**
 	 * Get labels for Multiple Fields by Field Name
@@ -62,20 +62,18 @@ wp_rig()->print_styles( 'wp-rig-offcanvas' );
 				<a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
 				<?php echo do_shortcode( '[searchandfilter slug="search-catalog"]' ); ?>
 			</div>
-			<!-- offcanvas -->
-			<script>
-				/* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
-				function openOffcanvas() {
-				document.getElementById("offcanvasMenu").style.width = "250px";
-				document.getElementById("offcanvasToggle").style.marginRight = "250px";
-				document.getElementById('offcanvasOverlay').style.visibility = "visible";
-				}
-
-				/* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
-				function closeNav() {
-					document.getElementById("offcanvasMenu").style.width = "0";
-					document.getElementById("offcanvasToggle").style.marginRight = "0";
-					document.getElementById('offcanvasOverlay').style.visibility = "hidden";
-				}
-			</script>
 	</header><!-- .page-header -->
+	<!-- offcanvas -->
+	<script>
+		/* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
+		function openOffcanvas() {
+		document.getElementById("offcanvasMenu").style.width = "250px";
+		document.getElementById('offcanvasOverlay').style.visibility = "visible";
+		}
+
+		/* Set the width of the side navigation to 0 and the left margin of the page content to 0, and the background color of body to white */
+		function closeNav() {
+			document.getElementById("offcanvasMenu").style.width = "0";
+			document.getElementById('offcanvasOverlay').style.visibility = "hidden";
+		}
+	</script>

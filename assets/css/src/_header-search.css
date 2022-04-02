@@ -41,6 +41,7 @@
 	@media (--content-query) {
 		display: grid;
 		grid-template-columns: 1fr auto;
+		position: relative;
 
 		& .searchandfilter {
 			width: 40px;

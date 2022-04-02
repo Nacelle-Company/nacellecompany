@@ -29,10 +29,11 @@
 	--grid-item-row-gap-sm: 2rem;
 
 	/* Utilities */
-	--border-radius: 5px;
+	--border-radius: 2px;
 
 	/* Colors */
 	--global-font-color: #fff;
+	--global-font-color-inverse: #202020;
 	--global-color-light-dark: #2c2c2c;
 	--global-color-dark: #202020;
 	--border-color-dark: #333;

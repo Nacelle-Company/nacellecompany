@@ -17,7 +17,7 @@ namespace WP_Rig\WP_Rig;
 	<script>
 		// hero video jquery call
 		jQuery(function() {
-		jQuery("#hero_video").YTPlayer();
+			jQuery("#hero_video").YTPlayer();
 		});
 	</script>
 	<?php if ( is_singular( 'catalog' ) ) : ?>

@@ -6,8 +6,7 @@
 	position: relative;
 }
 
-.hero-video__cover,
-.hero-video__controls {
+.hero-video__cover {
 	height: 100%;
 	position: absolute;
 	width: 100%;
@@ -21,10 +20,34 @@
 }
 
 .hero-video__controls {
-	z-index: 2;
 	display: flex;
-	align-items: center;
-	justify-content: center;
+	justify-content: flex-end;
+	position: absolute;
+	top: 2em;
+	right: 2em;
+	z-index: 5;
+
+	& .icon {
+		position: absolute;
+		right: 1em;
+	}
+
+}
+
+/*--------------------------------------------------------------
+# Icon volume toggle
+--------------------------------------------------------------*/
+.helper-trigger,
+.helper-show {
+	display: none;
+}
+
+.helper-trigger[type=checkbox]:checked + .helper-show {
+	display: block;
+}
+
+.helper-trigger[type=checkbox]:checked + .helper-show + .helper-hide {
+	display: none;
 }
 
 /*

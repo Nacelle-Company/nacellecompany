@@ -1,22 +1,15 @@
 
-.page-header_catalog {
-	border-bottom: 3px solid var(--color-theme-primary);
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	align-items: baseline;
-	transition: margin-right 0.5s;
 
-	& .offcanvas-toggle {
-		text-align: right;
-		color: var(--color-theme-secondary);
-	}
+.offcanvas-toggle {
+	text-align: right;
+	color: var(--color-theme-secondary);
+}
 
-	& .offcanvas-toggle_title {
-		display: none;
+.offcanvas-toggle_title {
+	display: none;
 
-		@media (--content-query) {
-			display: inline;
-		}
+	@media (--content-query) {
+		display: inline;
 	}
 }
 
@@ -25,7 +18,17 @@
 	z-index: 1;
 	width: 100vw;
 	height: 100%;
+	position: absolute;
 	visibility: hidden;
+}
+
+.offcanvas-menu .close-btn {
+	position: absolute;
+	top: 0;
+	right: 25px;
+	font-size: 36px;
+	margin-left: 50px;
+	cursor: pointer;
 }
 
 .offcanvas-menu {
@@ -41,24 +44,11 @@
 	padding-top: 60px;
 }
 
-.offcanvas-menu .close-btn {
-	position: absolute;
-	top: 0;
-	right: 25px;
-	font-size: 36px;
-	margin-left: 50px;
-	cursor: pointer;
-}
-
 .offcanvas-toggle {
-	text-align: right;
 	font-size: var(--font-size-large);
-	margin-right: 0;
-	transition: margin-right 0.5s linear;
 
 	@media (--content-query) {
 		font-size: var(--font-size-regular);
-
 	}
 
 	& .offcanvas-toggle_title {

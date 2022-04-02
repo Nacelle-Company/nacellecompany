@@ -25,8 +25,8 @@
 @import "_typography.css";
 @import "_elements.css";
 @import "_links.css";
+@import "_headers.css";
 @import "_header-search.css";
-@import "_modal.css";
 @import "_grid.css";
 @import "_icons.css";
 
@@ -80,10 +80,13 @@
 	max-width: 100%;
 }
 
+.site-main {
+	display: grid;
+}
+
 @media (--sidebar-query) {
 
 	.has-sidebar .site {
-		margin: 0 1em;
 		display: grid;
 		grid-template-columns: 3fr 1fr;
 		grid-gap: 2rem;
@@ -117,26 +120,34 @@ textarea {
 
 /* stylelint-disable */
 button,
+.button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 	border: 1px solid;
 	border-color: var(--border-color-light) var(--border-color-light) #bbb;
 	border-radius: 3px;
-	background: #eee;
-	color: rgba(0, 0, 0, 0.8);
+	background: var(--color-theme-secondary);
+	color: var(--global-font-color-inverse);
 	font-size: 0.75rem;
 	line-height: 1;
-	padding: 0.6em 1em 0.4em;
+	padding: 0.85em 2em;
 	cursor: pointer;
+	transition: color 0.1s ease-in-out;
+
+	& .icon {
+		fill: var(--global-font-color-inverse);
+	}
 }
 /* stylelint-enable */
 
 button:hover,
+.button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-	border-color: var(--border-color-light) #bbb #aaa;
+	background-color: var(--color-theme-primary);
+	border-color: var(--color-theme-secondary) var(--color-theme-secondary) var(--color-theme-secondary);
 }
 
 button:active,
@@ -192,39 +203,20 @@ textarea:focus {
 }
 
 select {
+	color: var(--global-font-color-inverse);
 	border: 1px solid var(--border-color-light);
-}
-
-/*--------------------------------------------------------------
-# Header
---------------------------------------------------------------*/
-
-.site-header {
-	padding-bottom: 1em;
-}
-
-.header-image {
-	margin: 0 auto;
-}
-
-.header-image img {
-	display: block;
-	margin: 0 auto;
+	border-radius: var(--border-radius);
+	max-width: 170px;
 }
 
 .custom-logo-link {
 	display: inline-block;
-	margin: 0 auto 1em;
 }
 
 .site-branding {
 	text-align: center;
-	padding: 60px 0 1.75em;
-
-	@media screen and (max-width: 600px) {
-		padding: 1.75em 0;
-		margin: 0;
-	}
+	padding: 1em 0;
+	margin: 0;
 }
 
 .site-title {
@@ -275,7 +267,7 @@ select {
 		left: 5px;
 		display: none;
 
-		@media screen and (max-width: 600px) {
+		@media screen and (max-width: 768px) {
 			display: block;
 		}
 
@@ -291,13 +283,13 @@ select {
 
 .nav--toggle-small {
 
-	& .menu {
+	& .mobile-menu-container {
 		display: none;
 	}
 
 	&.nav--toggled-on {
 
-		& .menu {
+		& .mobile-menu-container {
 			display: block;
 		}
 
@@ -321,9 +313,9 @@ select {
 
 	&.icon-nav {
 
-		& .menu {
-			display: block;
-		}
+		/* & .menu {
+			display: none;
+		} */
 
 		@media screen and (min-width: 600px) {
 
@@ -335,9 +327,9 @@ select {
 
 		@media screen and (max-width: 600px) {
 
-			& .primary-menu-container {
+			& .mobile-menu-container {
 				position: absolute;
-				background: white;
+				background: var(--global-color-dark);
 				width: 100vw;
 				top: 300px;
 				left: 0;
@@ -353,9 +345,10 @@ select {
 					content: "\f158";
 				}
 
-				& .primary-menu-container {
-					top: 180px;
+				& .mobile-menu-container {
+					top: 110px;
 					opacity: 1;
+					z-index: 1001;
 					transition: opacity 0.3s, top 0.3s ease-out;
 				}
 			}
@@ -372,7 +365,7 @@ select {
 
 @media (--narrow-menu-query) {
 
-	.nav--toggle-small.nav--toggled-on .menu {
+	.nav--toggle-small.nav--toggled-on .mobile-menu-container {
 		display: block;
 	}
 }
@@ -392,7 +385,7 @@ select {
 		position: absolute;
 		top: 100%;
 		flex-direction: column;
-		background: #fff;
+		background: var(--global-color-dark);
 		margin-left: 0;
 		box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 		z-index: 100;
@@ -480,11 +473,23 @@ select {
 --------------------------------------------------------------*/
 .main-navigation {
 	display: block;
-	margin: 0 auto 2em;
+	margin: 0 auto 0;
 	padding: 0 1em;
 	max-width: var(--content-width);
 	font-family: var(--highlight-font-family);
 	font-stretch: condensed;
+
+	@media (--sidebar-query) {
+		display: none;
+	}
+}
+
+.main-navigation_wide-menu {
+	display: none;
+
+	@media (--sidebar-query) {
+		display: block;
+	}
 }
 
 .main-navigation a {

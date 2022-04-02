@@ -417,7 +417,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				},
 			),
 			'wp-rig-catalog_related'    => array(
-				'file'             => 'catalog_related.min.css',
+				'file'              => 'catalog_related.min.css',
 				'preload_callback' => function() {
 					global $template;
 					return 'single-catalog.php' === basename( $template );

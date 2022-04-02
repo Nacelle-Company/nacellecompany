@@ -45,22 +45,6 @@
 /*--------------------------------------------------------------
 # Archive grid
 --------------------------------------------------------------*/
-.archive-main {
-	display: grid;
-	gap: 1em;
-	padding: 0 1em;
-
-	@media (--content-query) {
-		grid-template-columns: 1fr;
-	}
-
-	@media (--sidebar-query) {
-		grid-column: 2 / span 7;
-		padding: 0;
-		grid-template-columns: 1fr 1fr;
-	}
-}
-
 .archive-grid__item {
 	display: grid;
 	gap: 0.5em;
@@ -83,6 +67,7 @@
 
 	& .entry-header {
 		grid-area: header;
+		padding: 0;
 
 		& .entry-title {
 			margin: 0;
@@ -191,16 +176,8 @@
 	}
 }
 
-
-.archive-posts {
-
-	&.entry-footer {
-		width: 100%;
-		display: grid;
-		grid-template-columns: auto auto;
-		justify-content: space-between;
-		padding-right: 1.5rem;
-		padding-left: 1.5rem;
-		margin-top: 0;
-	}
+/* HOME POST GRID */
+.home .entry-title {
+	grid-column: 1/-1;
+	justify-self: center;
 }

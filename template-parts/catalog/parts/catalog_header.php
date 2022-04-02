@@ -9,8 +9,8 @@ namespace WP_Rig\WP_Rig;
 
 ?>
 
-<header class="entry-header entry-header__catalog">
-	<div class="entry-header__content">
+<header class="entry-header">
+	<div class="entry-title__wrapper">
 		<?php
 		/**
 		 * Title and content

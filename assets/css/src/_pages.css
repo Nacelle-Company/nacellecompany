@@ -1,0 +1,9 @@
+.home {
+
+	& .site-main {
+
+		@media (--wide-menu-query) {
+			gap: 4em;
+		}
+	}
+}

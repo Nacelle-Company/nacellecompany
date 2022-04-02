@@ -17,15 +17,13 @@ namespace WP_Rig\WP_Rig;
 get_header();
 
 wp_rig()->print_styles( 'wp-rig-content' );
-
+$post_class = '';
 if ( is_post_type_archive() ) {
 	$post_class = ' archive-main';
-} else {
-	$post_class = '';
 }
-// if ( have_posts() ) {
-		get_template_part( 'template-parts/content/page_header' ); // ? PAGE HEADER
-// }
+
+get_template_part( 'template-parts/content/page_header' ); // ? PAGE HEADER
+
 ?>
 	<main id="primary" class="site-main<?php echo esc_html( $post_class ); ?>">
 		<?php
