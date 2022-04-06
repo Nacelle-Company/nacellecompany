@@ -8,18 +8,18 @@
 namespace WP_Rig\WP_Rig;
 
 ?>
-<div class="hero-video__controls">
+<div class="hero-video__controls hero-video__controls-new">
 <input class="helper-trigger" type="checkbox" id="volumeToggle" name="volumeToggle"/>
 	<div class="col-md-8 helper-show">
 		<label class="btn btn-link" for="volumeToggle"></label>
-		<label onclick="jQuery('#hero_video').YTPToggleVolume().YTPToggleMask()" class="btn btn-primary" for="volumeToggle">
-			<svg class="icon icon-off" width="30" height="24" xmlns="http://www.w3.org/2000/svg" aria-labelledby="iconVolumeOff">
+		<label onclick="jQuery('#hero_video__desktop').YTPToggleVolume().YTPToggleMask()" class="btn btn-primary" for="volumeToggle">
+			<!-- <svg class="icon icon-off" width="30" height="24" xmlns="http://www.w3.org/2000/svg" aria-labelledby="iconVolumeOff">
 				<title id="iconVolumeOff">Volume Off</title>
 				<path d="M15.908.172a1.693 1.693 0 0 0-1.819.277L6.961 6.782H2.535C1.135 6.782 0 7.917 0 9.269v5.023c0 1.4 1.135 2.488 2.535 2.488h4.428l7.125 6.333a1.691 1.691 0 0 0 1.819.277c.607-.272.994-.875.994-1.54V1.71c-.047-.665-.385-1.267-.993-1.54Zm11.235 11.633 2.484-2.484a1.267 1.267 0 1 0-1.793-1.793l-2.482 2.534-2.53-2.488a1.267 1.267 0 1 0-1.792 1.793l2.484 2.484-2.484 2.484a1.267 1.267 0 1 0 1.792 1.792l2.53-2.484 2.484 2.484a1.267 1.267 0 1 0 1.793-1.793l-2.486-2.53Z" fill="#7fd2e6" fill-rule="nonzero"/>
-			</svg>
+			</svg> -->
 		</label>
 	</div>
-	<label onclick="jQuery('#hero_video').YTPToggleVolume().YTPToggleMask()" class="btn btn-default helper-hide" for="volumeToggle">
+	<label onclick="jQuery('#hero_video__desktop').YTPToggleVolume().YTPToggleMask()" class="btn btn-default helper-hide" for="volumeToggle">
 	<?php get_template_part( 'template-parts/svg/icon-play-hollow' ); ?>
 		<!-- <svg class="icon icon-on" width="30" height="22" xmlns="http://www.w3.org/2000/svg" aria-labelledby="iconVolumeOn">
 			<title id="iconVolumeOn">Volume On</title>

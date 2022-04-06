@@ -18,7 +18,9 @@ get_header();
 
 wp_rig()->print_styles( 'wp-rig-content' );
 $post_class = '';
-if ( is_post_type_archive() ) {
+if ( is_post_type_archive( 'press_release' ) ) {
+	$post_class = ' archive-main archive__press_release';
+} elseif ( is_post_type_archive() ) {
 	$post_class = ' archive-main';
 }
 

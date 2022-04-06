@@ -6,4 +6,8 @@
 			gap: 4em;
 		}
 	}
+
+	& .entry-content {
+		margin-top: 2em;
+	}
 }

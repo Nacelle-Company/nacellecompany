@@ -101,7 +101,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		if ( $this->is_primary_sidebar_active() ) {
 			global $template;
 
-			if ( ! in_array( basename( $template ), array( 'page.php', 'front-page.php', 'category.php', 'single-catalog.php', '404.php', '500.php', 'offline.php', 'page-about.php', 'page-wonder.php', 'search.php' ) ) ) {
+			if ( ! in_array( basename( $template ), array( 'page.php', 'front-page.php', 'category.php', 'single-catalog.php', '404.php', '500.php', 'offline.php', 'page-about.php', 'page-wonder.php', 'search.php', 'taxonomy.php' ) ) ) {
 				$classes[] = 'has-sidebar';
 			}
 		}

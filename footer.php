@@ -18,6 +18,7 @@ namespace WP_Rig\WP_Rig;
 		// hero video jquery call
 		jQuery(function() {
 			jQuery("#hero_video").YTPlayer();
+			jQuery("#hero_video__desktop").YTPlayer();
 		});
 	</script>
 	<?php if ( is_singular( 'catalog' ) ) : ?>
@@ -31,7 +32,7 @@ namespace WP_Rig\WP_Rig;
 				 * @link https://codepen.io/timothylong/pen/AJxrPR
 				 */
 				if ( get_the_content() ) {
-					$synopsis = get_the_content();
+					$synopsis = get_the_content( $post->ID );
 				} else {
 					$synopsis = get_post_meta( $post->ID, 'synopsis', true );
 				}

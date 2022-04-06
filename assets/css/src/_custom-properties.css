@@ -18,6 +18,7 @@
 	--global-font-line-height-sm: 0.5;
 
 	/* Custom editor font sizes */
+	--font-size-xsmall: calc(5 / var(--global-font-size) * 2rem);
 	--font-size-small: calc(10 / var(--global-font-size) * 1rem);
 	--font-size-regular: calc(var(--global-font-size) / 16 * 1rem);
 	--font-size-large: calc(36 / var(--global-font-size) * 1rem);
@@ -34,6 +35,7 @@
 	/* Colors */
 	--global-font-color: #fff;
 	--global-font-color-inverse: #202020;
+	--global-color-dark-overlay: rgb(32 32 32 / 85%);
 	--global-color-light-dark: #2c2c2c;
 	--global-color-dark: #202020;
 	--border-color-dark: #333;

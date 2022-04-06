@@ -8,7 +8,7 @@
 namespace WP_Rig\WP_Rig;
 
 ?>
-<section class="error">
+<section class="error grid">
 	<?php get_template_part( 'template-parts/content/page_header' ); ?>
 
 	<div class="page-content">

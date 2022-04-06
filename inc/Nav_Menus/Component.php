@@ -28,7 +28,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 
 	const PRIMARY_NAV_MENU_SLUG   = 'primary';
 	const SECONDARY_NAV_MENU_SLUG = 'secondary';
-	const MOBILE_NAV_MENU_SLUG = 'mobile';
+	const MOBILE_NAV_MENU_SLUG    = 'mobile';
 
 	/**
 	 * All theme settings - from JSON file.

@@ -18,7 +18,7 @@ $copyright = get_post_meta( get_the_ID(), 'copyright', true );
 ?>
 <div class="tab">
 	<input type="checkbox" id="more_info">
-	<label class="tab-label" for="more_info">More Info</label>
+	<label class="tab-label" for="more_info">More Info<span class="dashicons dashicons-arrow-right"></span></label>
 	<div class="tab-content">
 		<dl class="dl-list dl-list__info">
 			<?php if ( $runtime ) : ?>

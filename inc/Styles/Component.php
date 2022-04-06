@@ -416,12 +416,32 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					return 'single-catalog.php' === basename( $template );
 				},
 			),
-			'wp-rig-catalog_related'    => array(
-				'file'              => 'catalog_related.min.css',
+			'wp-rig-catalog_footer'    => array(
+				'file'              => 'catalog_footer.min.css',
 				'preload_callback' => function() {
 					global $template;
 					return 'single-catalog.php' === basename( $template );
 				},
+			),
+			'wp-rig-social-share'    => array(
+				'file'              => 'social-share.min.css',
+				'preload_callback' => function() {
+					global $template;
+					return 'single-catalog.php' === basename( $template );
+				},
+			),
+			'wp-rig-social-share'    => array(
+				'file'              => 'social-share.min.css',
+				'preload_callback' => function() {
+					global $template;
+					return 'single-catalog.php' === basename( $template );
+				},
+			),
+			'wp-rig-related_posts'    => array(
+				'file'           => 'related_posts.min.css',
+			),
+			'wp-rig-pagination'    => array(
+				'file'           => 'pagination.min.css',
 			),
 		);
 

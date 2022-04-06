@@ -89,7 +89,7 @@
 	.has-sidebar .site {
 		display: grid;
 		grid-template-columns: 3fr 1fr;
-		grid-gap: 2rem;
+		column-gap: 2rem;
 		justify-content: center;
 	}
 
@@ -589,10 +589,6 @@ select {
 		padding-left: 0;
 		padding-right: 0;
 	}
-}
-
-.nav-links {
-	display: flex;
 }
 
 .comment-navigation .nav-previous,

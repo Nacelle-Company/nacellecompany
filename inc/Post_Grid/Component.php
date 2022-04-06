@@ -7,6 +7,8 @@
 
 namespace WP_Rig\WP_Rig\Post_Grid;
 
+global $query;
+
 use WP_Rig\WP_Rig\Component_Interface;
 use WP_Rig\WP_Rig\Templating_Component_Interface;
 
@@ -46,44 +48,47 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	 *
 	 * @param Variable $the_posts Pull post data.
 	 */
-	public function display_post_grid() {
-
+	public function display_post_grid( $query, $artist_name ) {
+		// var_dump( $query );
+		// OLD CODE.
 		$image   = '';
-		$args    = array(
-			'numberposts' => 6, // ? -1 is for all
-			'post_type'   => 'news', // ? or 'post', 'page'
-			'orderby'     => 'date', // ? or 'date', 'rand'
-			'order'       => 'DESC', // ? or 'DESC'
-		);
-		$myposts = get_posts( $args );
-		if ( $myposts ) :
-			foreach ( $myposts as $mypost ) :
-				$the_title  = get_the_title( $mypost->ID );
-				$time       = get_the_time( 'F j, Y', $mypost->ID );
-				$time_short = get_the_time( 'o-m-j', $mypost->ID );
-				$image      = get_field( 'wide_image', $mypost->ID );
+			$args    = array(
+				'numberposts' => 6, // ? -1 is for all
+				'post_type'   => $query, // ? or 'post', 'page'
+				'orderby'     => 'date', // ? or 'date', 'rand'
+				'order'       => 'DESC', // ? or 'DESC'
+			);
 
-				// ? get the images
-				if ( get_field( 'wide_image', $mypost->ID, false ) ) {
-					$image_array = get_field( 'wide_image', $mypost->ID, false );
-				}
-				$size = 'medium'; // ? (thumbnail, medium, large, full or custom size)
-				?>
+			$the_posts = get_posts( $args );
+			if ( $the_posts ) :
+				foreach ( $the_posts as $the_post ) :
+					$the_title  = get_the_title( $the_post->ID );
+					$time       = get_the_time( 'F j, Y', $the_post->ID );
+					$time_short = get_the_time( 'o-m-j', $the_post->ID );
+					$image      = get_field( 'wide_image', $the_post->ID );
+					$custom_posts = get_posts( $producer_args );
+					$count = 0;
+					// ? get the images
+					if ( get_field( 'wide_image', $the_post->ID, false ) ) {
+						$image_array = get_field( 'wide_image', $the_post->ID, false );
+					}
+					$size = 'medium'; // ? (thumbnail, medium, large, full or custom size)
+					?>
 				<div class="grid-item grid grid__half">
 					<div class="grid-item__img">
-						<?php echo '<a href="' . get_permalink( $mypost->ID ) . '">'; ?>
+						<?php echo '<a href="' . get_permalink( $the_post->ID ) . '">'; ?>
 						<?php
 						$image = get_the_post_thumbnail(
-							$mypost->ID,
+							$the_post->ID,
 							'medium',
 							array(
 								'title' => $the_title,
 								'alt'   => $the_title,
 							)
 						);
-						echo $image;
+							echo $image;
 						?>
-						<?php echo '</a>'; ?>
+							<?php echo '</a>'; ?>
 					</div>
 					<div class="grid-item__content">
 						<time datetime="<?php echo $time_short; ?>">
@@ -91,30 +96,30 @@ class Component implements Component_Interface, Templating_Component_Interface {
 							echo $time;
 							?>
 						</time>
-						<?php echo '<a href="' . get_permalink( $mypost->ID ) . '">'; ?>
+							<?php echo '<a href="' . get_permalink( $the_post->ID ) . '">'; ?>
 						<p class="lead"><?php echo $the_title; ?></p>
-						<?php echo '</a>'; ?>
+							<?php echo '</a>'; ?>
 						<p>
 							<?php
 							$trim_length  = 15;  // ? desired length of text to display
 							$value_more   = '. . .'; // ? what to add at the end of the trimmed text
 							$custom_field = 'intro';
-							$value        = get_field( 'intro', $mypost->ID );
+							$value        = get_field( 'intro', $the_post->ID );
 							if ( $value ) {
 								echo wp_trim_words( $value, $trim_length, $value_more );
 							}
 							?>
 						</p>
 					</div>
-					<a class="go-corner" href="<?php echo get_permalink( $mypost->ID ); ?>">
+					<a class="go-corner" href="<?php echo get_permalink( $the_post->ID ); ?>">
 						<div class="go-arrow">
 							→
 						</div>
 					</a>
 				</div>
-				<?php
-			endforeach;
-			wp_reset_postdata();
+					<?php
+				endforeach;
+				wp_reset_postdata();
 		endif;
 	}
 }

@@ -1,0 +1,8 @@
+.social-share {
+	max-width: min-content;
+	text-align: center;
+
+	& .grid {
+		align-items: center;
+	}
+}

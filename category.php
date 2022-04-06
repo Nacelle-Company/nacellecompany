@@ -24,7 +24,7 @@ wp_rig()->print_styles( 'wp-rig-content' );
 
 		wp_rig()->print_styles( 'wp-rig-category' );
 
-		get_template_part( 'template-parts/content/page_header' );
+		// get_template_part( 'template-parts/content/page_header' );
 
 		get_template_part( 'template-parts/category/distribution' );
 
@@ -34,7 +34,7 @@ wp_rig()->print_styles( 'wp-rig-content' );
 
 		wp_rig()->print_styles( 'wp-rig-category' );
 
-		get_template_part( 'template-parts/content/page_header' );
+		// get_template_part( 'template-parts/content/page_header' );
 
 		get_template_part( 'template-parts/category/production' );
 

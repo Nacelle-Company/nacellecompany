@@ -8,9 +8,6 @@
 namespace WP_Rig\WP_Rig;
 
 global $searchandfilter;
-$current_post_type = get_post_type( $post->ID, false );
-$the_post_type     = get_post_type_object( get_post_type() );
-$post_type_title = $the_post_type->labels->singular_name;
 
 if ( is_404() ) {
 	?>
@@ -21,19 +18,15 @@ if ( is_404() ) {
 	</header><!-- .page-header -->
 	<?php
 } elseif ( is_home() && ! have_posts() ) {
-	?>
-	<header class="page-header">
-		<h1 class="page-title">
-			<?php esc_html_e( 'Nothing Found', 'wp-rig' ); ?>
-		</h1>
-	</header><!-- .page-header -->
-	<?php
+	get_template_part( 'template-parts/modules/search_page-header' );
 } elseif ( is_home() && ! is_front_page() ) {
 	$sf_current_query = $searchandfilter->get( 46515 )->current_query();
-	get_template_part( 'template-parts/modules/page_header-search' );
+	get_template_part( 'template-parts/modules/search_page-header' );
 } elseif ( is_archive() ) {
+	$current_post_type = get_post_type( $post->ID, false );
+	$the_post_type     = get_post_type_object( get_post_type() );
 	if ( 'catalog' === $current_post_type ) {
-		get_template_part( 'template-parts/modules/page_header-search' );
+		get_template_part( 'template-parts/modules/search_page-header' );
 	} else {
 		?>
 		<div class="page-header">
@@ -43,20 +36,15 @@ if ( is_404() ) {
 	}
 } elseif ( is_page() ) {
 	?>
-	<header class="page-header">
+	<header class="page-header page-header__page">
 		<h1 class="page-title">
 			<?php single_post_title(); ?>
 		</h1>
 	</header><!-- .page-header -->
 	<?php
 } elseif ( is_single() ) {
-	?>
-	<header class="page-header">
-		<h1 class="page-title">
-			<?php echo wp_kses( $post_type_title, 'post' ); ?>
-		</h1>
-	</header><!-- .page-header -->
-	<?php
+
+	get_template_part( 'template-parts/modules/search_page-header' );
 } elseif ( is_search() ) {
 	?>
 	<header class="page-header">

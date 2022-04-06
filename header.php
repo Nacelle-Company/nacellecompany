@@ -42,11 +42,15 @@ namespace WP_Rig\WP_Rig;
 	 * TODO: remove the "<div class="wp-body-open">" container
 	 */
 	wp_body_open();
-	if ( ! is_front_page() ) {
+	if ( 'catalog' == get_post_type( $post ) ) {
+			$front_page_class = ' catalog-new';
+	} elseif ( ! is_front_page() ) {
 		$front_page_class = '';
 	} else {
 		$front_page_class = ' front-page';
 	}
+
+
 	?>
 </div>
 <div id="page" class="site grid">

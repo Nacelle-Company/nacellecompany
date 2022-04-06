@@ -28,12 +28,14 @@
 /* initial layout */
 @media (--content-query) {
 
-	.entry-main input:checked ~ .tab-content {
+	/* .entry-main input:checked ~ .tab-content {
 		padding: 1em 1em 1em 2em;
-	}
+	} */
 
 	.entry-video {
 		grid-area: video;
+
+
 	}
 
 	.entry-image {
@@ -77,11 +79,18 @@
 .dl-list__info {
 	grid-template-columns: auto 1fr;
 	align-items: flex-start;
+	padding: 1em;
+	margin-top: 0;
 }
 
 .dl-list h4 {
 	margin: 0;
 	text-align: right;
+	text-transform: uppercase;
+
+	@media (--content-query) {
+		font-size: var(--font-size-xsmall);
+	}
 }
 
 
@@ -99,10 +108,10 @@
 	padding: 1em;
 }
 
-@media screen and (--wide-menu-query) {
+@media (--wide-menu-query) {
 
 	.dl-list__info {
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: 43% 1fr;
 		align-items: flex-start;
 	}
 
@@ -122,5 +131,97 @@
 
 	.entry-image .wp-post-image {
 		transform: translateY(-5vw);
+	}
+}
+
+/* NEW LAYOUT below */
+
+/* NEW LAYOUT below */
+
+/* NEW LAYOUT below */
+
+/* NEW LAYOUT below */
+.entry.entry-new:not(.no-video) {
+	grid-template-rows: 26vh 1fr auto auto auto;
+
+	@media (--content-query) {
+		grid-template-columns: 1fr 4fr 2fr 1fr;
+		grid-template-rows: 2fr auto auto auto auto;
+		grid-row-gap: 1em;
+	}
+
+}
+
+.entry-video__desktop {
+	display: none;
+
+	@media (--content-query) {
+		display: block;
+	}
+}
+
+.entry-video__mobile {
+	max-width: 100vw;
+
+	@media (--content-query) {
+		display: none;
+	}
+}
+
+.entry-header__video-new {
+
+	@media (--content-query) {
+		grid-area: header;
+		grid-column: 1/-1;
+		grid-row: 1/span 1;
+		min-height: 70vh;
+	}
+
+
+}
+
+.entry-header__container-new {
+	padding: 1em;
+
+	@media (--content-query) {
+		grid-column: 2/span 1;
+		grid-row: 2/span 1;
+	}
+
+	& .entry-header__breadcrumbs {
+		text-align: left;
+	}
+}
+
+.entry-image-new {
+
+	@media (--content-query) {
+		grid-area: image;
+		grid-column: 3/span 1;
+		position: relative;
+
+		& .wp-post-image {
+			transform: translateY(-35vh);
+			position: absolute;
+		}
+	}
+}
+
+.entry-main.entry-main-new {
+	padding-left: 0;
+
+	@media (--content-query) {
+		grid-area: main;
+		grid-row: 3/span 1;
+		grid-column: 2/span 1;
+	}
+}
+
+.entry-buttons.entry-buttons-new {
+	padding: 1em;
+
+	@media (--content-query) {
+		padding-left: 0;
+		grid-column: 2/span 2;
 	}
 }

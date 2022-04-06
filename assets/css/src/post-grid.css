@@ -53,6 +53,7 @@
 		"meta"
 		"image"
 		"summary";
+	align-content: baseline;
 
 	&:not(.has-post-thumbnail) {
 		grid-template-areas:

@@ -108,7 +108,15 @@ function _wp_rig_cpt_category_archives( $query ) {
  * @param Type $post The post object or whichever variable.
  **/
 function printVar( $post ) {
-	echo '<pre style="color:#000;position:absolute;width: 100%;z-index:9;">';
+	echo '<pre style="color:#000">';
 	print_r( $post );
 	echo '</pre>';
+}
+
+function is_post_type( $type ) {
+	global $wp_query;
+	if ( $type == get_post_type( $wp_query->post->ID ) ) {
+		return true;
+	}
+	return false;
 }

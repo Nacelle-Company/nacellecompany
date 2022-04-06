@@ -9,18 +9,9 @@ namespace WP_Rig\WP_Rig\Related_Posts;
 
 use WP_Rig\WP_Rig\Component_Interface;
 use WP_Rig\WP_Rig\Templating_Component_Interface;
-use function WP_Rig\WP_Rig\wp_rig;
-use function get_the_category;
-use function add_action;
-use function add_filter;
-use function wp_enqueue_script;
-use function get_theme_file_uri;
-use function get_theme_file_path;
-use function wp_script_add_data;
-use function wp_localize_script;
 
 /**
- * Class for related posts
+ * Class for displaying related posts.
  *
  * Exposes template tags:
  * * `wp_rig()->the_comments( array $args = array() )`
@@ -42,7 +33,6 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	 * Adds the action and filter hooks to integrate with WordPress.
 	 */
 	public function initialize() {
-		add_action( 'wp_enqueue_scripts', array( $this, 'action_enqueue_related_posts_script' ) );
 	}
 
 	/**
@@ -57,59 +47,161 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			'display_related_posts' => array( $this, 'display_related_posts' ),
 		);
 	}
-
 	/**
-	 * Return comma-separated list of current post category IDs.
+	 * Display Tax Terms
+	 *
+	 * @param mixed $taxonomy Parameter comment.
+	 * A little text.
 	 */
-	public function get_post_category_ids() {
-		$categories = get_the_category();
-		$cat_ids = array();
+	public function display_related_posts( $ids ) {
 
-		if ( ! empty( $categories ) ) {
-			foreach ( $categories as $category ) {
-				$cat_ids[] = $category->cat_ID;
-			}
-		}
-
-		return implode( ',', $cat_ids );
-	}
-
-	/**
-	 * Enqueues the related posts script file.
-	 */
-	public function action_enqueue_related_posts_script() {
-
-		// If the AMP plugin is active, return early.
-		if ( wp_rig()->is_amp() ) {
-			return;
-		}
-
-		// ? Enqueue the navigation script.
-		if ( is_single() ) {
-			wp_enqueue_script(
-				'wp-rig-related-posts',
-				get_theme_file_uri( '/assets/js/related.min.js' ),
-				array(),
-				wp_rig()->get_asset_version( get_theme_file_path( '/assets/js/related.min.js' ) ),
-				false
-			);
-			wp_script_add_data( 'wp-rig-related-posts', 'defer', true );
-			wp_localize_script(
-				'wp-rig-related-posts',
-				'postdata',
+		if ( $ids ) :
+			setup_postdata( $post );
+			$catalog_query = new \WP_Query(
 				array(
-					'post_ID'   => get_the_ID(),
-					'cat_ids'   => $this->get_post_category_ids(),
-					'rest_url'  => rest_url( 'wp/v2/' ),
+					'post_type'       => 'catalog',
+					'post__in'        => $ids,
+					'posts_per_page'  => 5,
 				)
 			);
-		}
-	}
+			$pr_query = new \WP_Query(
+				array(
+					'post_type'       => 'press_release',
+					'post__in'        => $ids,
+					'posts_per_page'  => 5,
+				)
+			);
+			$news_query    = new \WP_Query(
+				array(
+					'post_type'       => 'news',
+					'post__in'        => $ids,
+					'posts_per_page'  => 5,
+				)
+			);
+			?>
+		<div class="post-footer__related grid">
+			<header class="title">
+				<h3>RELATED</h3>
+			</header>
+				<?php
+				// ? get each post type's # of posts
+				$catalog_post_count = $catalog_query->post_count;
+				$pr_post_count      = $pr_query->post_count;
+				$news_post_count    = $news_query->post_count;
+				$post_count_all     = 0;
+				// ? if post type has posts add one to $post_count_all variable
+				if ( $catalog_post_count > 0 ) {
+					$post_count_all++;
+				}
+				if ( $pr_post_count > 0 ) {
+					$post_count_all++;
+				}
+				if ( $news_post_count > 0 ) {
+					$post_count_all++;
+				}
+				// ? if only one post type on medium-up screens make layout 3 columns
+				if ( 1 === $post_count_all ) {
+					$columns  = 'medium-4';
+					$margin_x = ' grid-margin-x';
+				} elseif ( 2 === $post_count_all ) {
+					$columns  = 'medium-6';
+					$margin_x = ' related-cpt-wrapper';
+				} else { // ? otherwise do full width
+					$columns  = 'medium-12';
+					$margin_x = '';
+				}
+				?>
+				<?php
+				if ( $pr_query->have_posts() ) :
+					$count = 0;
+					?>
+					<div class="wrap<?php echo esc_html( $margin_x ); ?>">
+							<?php
+							while ( $pr_query->have_posts() ) :
+								$pr_query->the_post();
+								$count++;
+								$the_title     = get_the_title();
+								$permalink     = get_permalink();
+								$the_post_type = get_post_type_object( get_post_type() );
+								$the_post_type = strtoupper( $the_post_type->labels->singular_name );
+								?>
+								<?php if ( 1 === $count ) : ?>
+						<h4 class="title">
+									<?php echo esc_html( $the_post_type ); ?>
+						</h4>
+									<?php
+								endif; // ? CARDS
+								?>
+						<a href="<?php echo wp_kses( $permalink, 'post' ); ?>" class="grid <?php echo wp_kses( $columns, 'post' ); ?>">
+							<p><?php echo wp_kses( $the_title, 'post' ); ?></p>
+								<?php echo get_the_post_thumbnail( $post->ID, 'thumbnail' ); ?>
+						</a>
+						<?php endwhile; ?>
+					</div>
 
-	/**
-	 * Display related posts.
-	 */
-	public function display_related_posts() {
-		echo '<h2>New Related Posts:</h2>';
+				<?php endif; ?>
+				<?php
+				if ( $catalog_query->have_posts() ) :
+					$count = 0;
+					?>
+
+			<div class="wrap<?php echo esc_html( $margin_x ); ?>">
+					<?php
+					while ( $catalog_query->have_posts() ) :
+						$catalog_query->the_post();
+						$count++;
+						$the_title     = get_the_title();
+						$permalink     = get_permalink();
+						$the_post_type = get_post_type_object( get_post_type() );
+						$the_post_type = strtoupper( $the_post_type->labels->singular_name );
+						?>
+						<?php if ( 1 === $count ) : ?>
+				<h4 class="title">
+							<?php echo esc_html( $the_post_type ); ?>
+				</h4>
+							<?php
+						endif; // ? CARDS
+						?>
+				<a href="<?php echo wp_kses( $permalink, 'post' ); ?>" class="grid <?php echo wp_kses( $columns, 'post' ); ?>">
+						<p><?php echo wp_kses( $the_title, 'post' ); ?></p>
+						<?php echo get_the_post_thumbnail( $post->ID, 'thumbnail' ); ?>
+				</a>
+				<?php endwhile; ?>
+			</div>
+
+				<?php endif; ?>
+				<?php
+				if ( $news_query->have_posts() ) :
+					$count = 0;
+					?>
+
+			<div class="wrap<?php echo esc_html( $margin_x ); ?>">
+					<?php
+					while ( $news_query->have_posts() ) :
+						$news_query->the_post();
+						$count++;
+						$the_title     = get_the_title();
+						$permalink     = get_permalink();
+						$the_post_type = get_post_type_object( get_post_type() );
+						$the_post_type = strtoupper( $the_post_type->labels->singular_name );
+						?>
+						<?php if ( 1 === $count ) : ?>
+				<h4 class="title">
+							<?php echo esc_html( $the_post_type ); ?>
+				</h4>
+							<?php
+						endif;
+						?>
+				<a href="<?php echo wp_kses( $permalink, 'post' ); ?>" class="grid <?php echo wp_kses( $columns, 'post' ); ?>">
+					<p><?php echo wp_kses( $the_title, 'post' ); ?></p>
+						<?php echo get_the_post_thumbnail( $post->ID, 'thumbnail' ); ?>
+				</a>
+				<?php endwhile; ?>
+			</div>
+				<?php endif; ?>
+			</div>
+			<?php
+		endif;
+		wp_reset_postdata();
 	}
 }

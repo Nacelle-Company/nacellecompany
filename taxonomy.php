@@ -13,7 +13,7 @@ namespace WP_Rig\WP_Rig;
 
 get_header();
 
-wp_rig()->print_styles( 'wp-rig-content' );
+wp_rig()->print_styles( 'wp-rig-content', 'wp-rig-post-grid' );
 
 ?>
 	<main id="primary" class="site-main">
@@ -21,12 +21,16 @@ wp_rig()->print_styles( 'wp-rig-content' );
 		if ( have_posts() ) {
 
 			get_template_part( 'template-parts/content/page_header' );
-
-			while ( have_posts() ) {
-				the_post();
-				get_template_part( 'template-parts/content/entry_post-grid', get_post_type() );
-			}
-
+			?>
+			<div class="archive-main post-grid">
+				<?php
+				while ( have_posts() ) {
+					the_post();
+					wp_rig()->display_tax_posts();
+				}
+				?>
+			</div>
+			<?php
 			if ( ! is_singular() ) {
 				get_template_part( 'template-parts/content/pagination' );
 			}
@@ -36,5 +40,4 @@ wp_rig()->print_styles( 'wp-rig-content' );
 		?>
 	</main><!-- #primary -->
 <?php
-get_sidebar();
 get_footer();

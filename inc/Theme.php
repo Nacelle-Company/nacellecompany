@@ -156,8 +156,10 @@ class Theme {
 			new Archive_Content\Component(),
 			new Tax_Terms\Component(),
 			new Related_Posts\Component(),
+			new Pagination\Component(),
 			new Post_Grid\Component(),
 			new Flickity\Component(),
+			new Tax_Posts\Component(),
 		);
 
 		if ( defined( 'JETPACK__VERSION' ) ) {

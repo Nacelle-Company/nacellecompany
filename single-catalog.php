@@ -20,7 +20,7 @@ wp_rig()->print_styles( 'wp-rig-content', 'wp-rig-single-catalog', 'wp-rig-accor
 	while ( have_posts() ) {
 		the_post();
 
-		get_template_part( 'template-parts/catalog/catalog_entry', get_post_type() );
+		get_template_part( 'template-parts/catalog/catalog_entry-new', get_post_type() );
 
 	}
 	?>

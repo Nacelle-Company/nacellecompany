@@ -102,7 +102,7 @@
 	max-width: var(--page-width);
 }
 
-.page-header,
+/* .page-header, */
 .site-info,
 .post-navigation,
 .page-navigation,
@@ -147,17 +147,25 @@
 .archive-main {
 	display: grid;
 	gap: 1em;
-	margin: 0 1em;
+	margin: 1em;
 	justify-items: center;
 
 	@media (--content-query) {
 		grid-template-columns: 1fr;
+		margin: 2em 1em;
 	}
 
 	@media (--sidebar-query) {
 		grid-template-columns: 1fr 1fr 1fr;
 		max-width: var(--page-width);
 		justify-self: center;
+	}
+
+	@media (--sidebar-query) {
+
+		&.archive__press_release {
+			grid-template-columns: 1fr 1fr;
+		}
 	}
 }
 
@@ -369,7 +377,7 @@
 --------------------------------------------------------------*/
 
 .has-small-font-size {
-	font-size: var(--font-size-small);
+	font-size: var(--font-size-xsmall);
 }
 
 .has-regular-font-size {
@@ -435,5 +443,19 @@
 
 	.medium-12 {
 		width: 100%;
+	}
+}
+
+/* TO DELETE before production */
+.search__post_grid {
+	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+
+	/* This is better for small screens, once min() is better supported */
+
+	/* grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr)); */
+	gap: 1rem;
+
+	& .grid-item {
+		border: 1px solid var(--color-theme-green);
 	}
 }

@@ -8,7 +8,7 @@
 namespace WP_Rig\WP_Rig;
 
 wp_rig()->print_styles( 'wp-rig-post-grid' );
-get_template_part( 'template-parts/content/entry_thumbnail', get_post_type() );
+// get_template_part( 'template-parts/content/entry_thumbnail', get_post_type() );
 wp_rig()->using_archive_excerpts()
 ?>
 <div class="archive-main post-grid">

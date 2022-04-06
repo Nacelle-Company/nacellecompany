@@ -239,3 +239,36 @@
 }
 
 */
+
+/* new icons */
+.hero-video__controls.hero-video__controls-new {
+	right: unset;
+	top: unset;
+	z-index: 9;
+
+	& .icon-play__wrapper {
+		position: absolute;
+		transform: translate(10px, 10px);
+	}
+
+	@media (--content-query) {
+
+		& .icon-play__wrapper {
+			position: absolute;
+			transform: translate(50vw, 30vh);
+			z-index: 9;
+
+			& .icon-play__hollow {
+				stroke: var(--color-link);
+				opacity: 0.5;
+				cursor: pointer;
+			}
+
+			&:hover {
+				opacity: 1;
+			}
+		}
+
+	}
+
+}

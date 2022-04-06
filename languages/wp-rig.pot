@@ -36,7 +36,7 @@ msgstr ""
 msgid "Front Page"
 msgstr ""
 
-#: header.php:53
+#: header.php:57
 msgid "Skip to content"
 msgstr ""
 
@@ -191,7 +191,7 @@ msgstr ""
 
 #. translators: %s: Post title.
 #. translators: %s: Name of current post. Only visible to screen readers
-#: inc/Excerpts/Component.php:44, template-parts/content/entry_content.php:41
+#: inc/Excerpts/Component.php:44, template-parts/content/entry_content.php:34
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
@@ -209,6 +209,14 @@ msgstr ""
 
 #: inc/Nav_Menus/Component.php:245
 msgid "main-navigation nav--toggle-sub nav--toggle-small icon-nav"
+msgstr ""
+
+#: inc/Pagination/Component.php:66, template-parts/content/entry-attachment.php:33
+msgid "Previous:"
+msgstr ""
+
+#: inc/Pagination/Component.php:67, template-parts/content/entry-attachment.php:43
+msgid "Next:"
 msgstr ""
 
 #. translators: %s: JS handle
@@ -233,14 +241,6 @@ msgstr ""
 msgid "Invalid theme stylesheet handle: %s"
 msgstr ""
 
-#: template-parts/catalog/catalog_entry.php:44, template-parts/content/entry-attachment.php:33, template-parts/content/entry.php:57
-msgid "Previous:"
-msgstr ""
-
-#: template-parts/catalog/catalog_entry.php:45, template-parts/content/entry-attachment.php:43, template-parts/content/entry.php:58
-msgid "Next:"
-msgstr ""
-
 #: template-parts/category/distribution.php:38
 msgid "Albums"
 msgstr ""
@@ -249,12 +249,16 @@ msgstr ""
 msgid "Films"
 msgstr ""
 
-#: template-parts/category/distribution.php:64
+#: template-parts/category/distribution.php:64, template-parts/category/production.php:33
 msgid "Series"
 msgstr ""
 
 #: template-parts/category/distribution.php:77
 msgid "Specials"
+msgstr ""
+
+#: template-parts/category/production.php:52
+msgid "Special"
 msgstr ""
 
 #: template-parts/content/entry-attachment.php:49
@@ -271,7 +275,11 @@ msgstr ""
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
-#: template-parts/content/entry_content.php:56
+#: template-parts/content/entry_content-news.php:30, template-parts/modules/news_content.php:24
+msgid "Read more"
+msgstr ""
+
+#: template-parts/content/entry_content.php:47
 msgid "Pages:"
 msgstr ""
 
@@ -360,16 +368,12 @@ msgstr ""
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
 
-#: template-parts/content/page_header.php:14
+#: template-parts/content/page_header.php:16
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
-#: template-parts/content/page_header.php:22
-msgid "Nothing Found"
-msgstr ""
-
 #. translators: %s: search query
-#: template-parts/content/page_header.php:33
+#: template-parts/content/page_header.php:55
 msgid "Search Results for: %s"
 msgstr ""
 
@@ -409,20 +413,24 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: template-parts/modules/page_header-search.php:58
+#: template-parts/modules/search_page-header.php:100
 msgid "Sort & Filter"
 msgstr ""
 
-#: template-parts/catalog/parts/catalog_buttons.php:18
+#: template-parts/catalog/parts/catalog_buttons-new.php:18, template-parts/catalog/parts/catalog_buttons.php:18
 msgid "Watch Now"
 msgstr ""
 
-#: template-parts/catalog/parts/catalog_buttons.php:23
+#: template-parts/catalog/parts/catalog_buttons-new.php:23, template-parts/catalog/parts/catalog_buttons.php:23
 msgid "Apple TV"
 msgstr ""
 
-#: template-parts/catalog/parts/catalog_buttons.php:48
+#: template-parts/catalog/parts/catalog_buttons-new.php:48, template-parts/catalog/parts/catalog_buttons.php:48
 msgid "Listen Now"
+msgstr ""
+
+#: template-parts/catalog/parts/catalog_crew.php:19
+msgid "View on IMDB"
 msgstr ""
 
 #: template-parts/catalog/parts/catalog_more-info.php:25

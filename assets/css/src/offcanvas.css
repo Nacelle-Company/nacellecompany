@@ -35,13 +35,22 @@
 	height: 100%;
 	width: 0;
 	position: fixed;
-	z-index: 1;
+	z-index: 5;
 	top: 0;
 	right: 0;
 	background-color: var(--global-color-dark);
 	overflow-x: hidden;
 	transition: 0.5s;
 	padding-top: 60px;
+
+	@media (--narrow-menu-query) {
+
+		padding-top: 15px;
+
+		& a {
+			font-size: 18px;
+		}
+	}
 }
 
 .offcanvas-toggle {
@@ -56,13 +65,4 @@
 	}
 }
 
-@media (--narrow-menu-query) {
 
-	.offcanvas-menu {
-		padding-top: 15px;
-	}
-
-	.offcanvas-menu a {
-		font-size: 18px;
-	}
-}
