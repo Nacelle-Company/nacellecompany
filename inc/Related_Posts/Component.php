@@ -78,130 +78,166 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					'posts_per_page'  => 5,
 				)
 			);
-			?>
-		<div class="post-footer__related grid">
-			<header class="title">
-				<h3>RELATED</h3>
-			</header>
-				<?php
-				// ? get each post type's # of posts
+							// ? get each post type's # of posts
 				$catalog_post_count = $catalog_query->post_count;
 				$pr_post_count      = $pr_query->post_count;
 				$news_post_count    = $news_query->post_count;
 				$post_count_all     = 0;
 				// ? if post type has posts add one to $post_count_all variable
-				if ( $catalog_post_count > 0 ) {
-					$post_count_all++;
-				}
-				if ( $pr_post_count > 0 ) {
-					$post_count_all++;
-				}
-				if ( $news_post_count > 0 ) {
-					$post_count_all++;
-				}
+			if ( $catalog_post_count > 0 ) {
+				$post_count_all++;
+			}
+			if ( $pr_post_count > 0 ) {
+				$post_count_all++;
+			}
+			if ( $news_post_count > 0 ) {
+				$post_count_all++;
+			}
 				// ? if only one post type on medium-up screens make layout 3 columns
-				if ( 1 === $post_count_all ) {
-					$columns  = 'medium-4';
-					$margin_x = ' grid-margin-x';
-				} elseif ( 2 === $post_count_all ) {
-					$columns  = 'medium-6';
-					$margin_x = ' related-cpt-wrapper';
-				} else { // ? otherwise do full width
-					$columns  = 'medium-12';
-					$margin_x = '';
-				}
-				?>
+			if ( 1 === $post_count_all ) {
+				$columns  = 'medium-4';
+				$margin_x = ' grid-margin-x';
+			} elseif ( 2 === $post_count_all ) {
+				$columns  = 'medium-6';
+				$margin_x = ' related-cpt-wrapper';
+			} else { // ? otherwise do full width
+				$columns  = 'medium-12';
+				$margin_x = '';
+			}
+			?>
+
+
+
+			<!-- Wrapper and header -->
+			<div class="post-footer__related grid">
+				<header class="title">
+					<h3>RELATED</h3>
+				</header>
+
+
+
+				<!-- Press releases -->
 				<?php
 				if ( $pr_query->have_posts() ) :
 					$count = 0;
 					?>
 					<div class="wrap<?php echo esc_html( $margin_x ); ?>">
-							<?php
-							while ( $pr_query->have_posts() ) :
-								$pr_query->the_post();
-								$count++;
-								$the_title     = get_the_title();
-								$permalink     = get_permalink();
-								$the_post_type = get_post_type_object( get_post_type() );
-								$the_post_type = strtoupper( $the_post_type->labels->singular_name );
-								?>
-								<?php if ( 1 === $count ) : ?>
-						<h4 class="title">
+						<?php
+						while ( $pr_query->have_posts() ) :
+							$pr_query->the_post();
+							$count++;
+							$the_title     = get_the_title();
+							$permalink     = get_permalink();
+							$the_post_type = get_post_type_object( get_post_type() );
+							$the_post_type = strtoupper( $the_post_type->labels->singular_name );
+							?>
+							<?php if ( 1 === $count ) : ?>
+								<h4 class="title">
 									<?php echo esc_html( $the_post_type ); ?>
-						</h4>
-									<?php
-								endif; // ? CARDS
-								?>
-						<a href="<?php echo wp_kses( $permalink, 'post' ); ?>" class="grid <?php echo wp_kses( $columns, 'post' ); ?>">
-							<p><?php echo wp_kses( $the_title, 'post' ); ?></p>
+								</h4>
+								<?php
+							endif; // ? CARDS
+							?>
+							<a href="<?php echo wp_kses( $permalink, 'post' ); ?>" class="grid <?php echo wp_kses( $columns, 'post' ); ?>">
+								<p><?php echo wp_kses( $the_title, 'post' ); ?></p>
 								<?php echo get_the_post_thumbnail( $post->ID, 'thumbnail' ); ?>
-						</a>
+							</a>
 						<?php endwhile; ?>
 					</div>
-
 				<?php endif; ?>
+
+
+
+				<!-- Catalog posts -->
 				<?php
 				if ( $catalog_query->have_posts() ) :
 					$count = 0;
 					?>
-
-			<div class="wrap<?php echo esc_html( $margin_x ); ?>">
-					<?php
-					while ( $catalog_query->have_posts() ) :
-						$catalog_query->the_post();
-						$count++;
-						$the_title     = get_the_title();
-						$permalink     = get_permalink();
-						$the_post_type = get_post_type_object( get_post_type() );
-						$the_post_type = strtoupper( $the_post_type->labels->singular_name );
-						?>
-						<?php if ( 1 === $count ) : ?>
-				<h4 class="title">
-							<?php echo esc_html( $the_post_type ); ?>
-				</h4>
-							<?php
-						endif; // ? CARDS
-						?>
-				<a href="<?php echo wp_kses( $permalink, 'post' ); ?>" class="grid <?php echo wp_kses( $columns, 'post' ); ?>">
-						<p><?php echo wp_kses( $the_title, 'post' ); ?></p>
-						<?php echo get_the_post_thumbnail( $post->ID, 'thumbnail' ); ?>
-				</a>
-				<?php endwhile; ?>
-			</div>
-
+					<div class="wrap<?php echo esc_html( $margin_x ); ?>">
+						<?php
+						while ( $catalog_query->have_posts() ) :
+							$catalog_query->the_post();
+							$count++;
+							$the_title     = get_the_title();
+							$permalink     = get_permalink();
+							$the_post_type = get_post_type_object( get_post_type() );
+							$the_post_type = strtoupper( $the_post_type->labels->singular_name );
+							?>
+							<?php if ( 1 === $count ) : ?>
+								<h4 class="title">
+									<?php echo esc_html( $the_post_type ); ?>
+								</h4>
+								<?php
+							endif; // ? CARDS
+							?>
+							<a href="<?php echo wp_kses( $permalink, 'post' ); ?>" class="grid <?php echo wp_kses( $columns, 'post' ); ?>">
+								<p><?php echo wp_kses( $the_title, 'post' ); ?></p>
+								<?php echo get_the_post_thumbnail( $post->ID, 'thumbnail' ); ?>
+							</a>
+						<?php endwhile; ?>
+					</div>
 				<?php endif; ?>
+
+
+
+				<!-- News posts -->
 				<?php
 				if ( $news_query->have_posts() ) :
 					$count = 0;
 					?>
-
-			<div class="wrap<?php echo esc_html( $margin_x ); ?>">
-					<?php
-					while ( $news_query->have_posts() ) :
-						$news_query->the_post();
-						$count++;
-						$the_title     = get_the_title();
-						$permalink     = get_permalink();
-						$the_post_type = get_post_type_object( get_post_type() );
-						$the_post_type = strtoupper( $the_post_type->labels->singular_name );
-						?>
-						<?php if ( 1 === $count ) : ?>
-				<h4 class="title">
-							<?php echo esc_html( $the_post_type ); ?>
-				</h4>
-							<?php
-						endif;
-						?>
-				<a href="<?php echo wp_kses( $permalink, 'post' ); ?>" class="grid <?php echo wp_kses( $columns, 'post' ); ?>">
-					<p><?php echo wp_kses( $the_title, 'post' ); ?></p>
-						<?php echo get_the_post_thumbnail( $post->ID, 'thumbnail' ); ?>
-				</a>
-				<?php endwhile; ?>
-			</div>
+					<div class="wrap<?php echo esc_html( $margin_x ); ?>">
+						<?php
+						while ( $news_query->have_posts() ) :
+							$news_query->the_post();
+							$count++;
+							$the_title     = get_the_title();
+							$permalink     = get_permalink();
+							$the_post_type = get_post_type_object( get_post_type() );
+							$the_post_type = strtoupper( $the_post_type->labels->singular_name );
+							?>
+							<?php if ( 1 === $count ) : ?>
+								<h4 class="title">
+									<?php echo esc_html( $the_post_type ); ?>
+								</h4>
+								<?php
+							endif;
+							?>
+							<a href="<?php echo wp_kses( $permalink, 'post' ); ?>" class="grid <?php echo wp_kses( $columns, 'post' ); ?>">
+								<p><?php echo wp_kses( $the_title, 'post' ); ?></p>
+								<?php echo get_the_post_thumbnail( $post->ID, 'thumbnail' ); ?>
+							</a>
+						<?php endwhile; ?>
+					</div>
 				<?php endif; ?>
+
+				<?php
+				if ( ! is_singular( 'catalog' ) ) {
+					?>
+					<div class="wrap<?php echo esc_html( $margin_x ); ?>">
+						<h4 class="title">
+							<?php echo esc_html( 'Featured Talent' ); ?>
+						</h4>
+						<?php
+						foreach ( $ids as $post ) {
+							$the_terms = get_field( 'talent' );
+							if ( $the_terms ) {
+								foreach ( $the_terms as $the_term ) :
+									?>
+									<a href="<?php echo esc_url( get_term_link( $the_term ) ); ?>">
+										<?php echo esc_html( $the_term->name ) . ', '; ?>
+									</a>
+									<?php
+								endforeach;
+							}
+						}
+						?>
+					</div>
+				<?php } ?>
+			<!-- Wrapper close and reset post data -->
 			</div>
-			<?php
+					<?php
 		endif;
+
 		wp_reset_postdata();
 	}
 }

@@ -14,18 +14,18 @@ a:visited {
 	color: var(--color-link-visited);
 }
 
-a:hover,
-a:focus,
-a:active {
+a:not(.button):hover,
+a:not(.button):focus,
+a:not(.button):active {
 	color: var(--color-link-active);
 }
 
-a:focus {
+a:not(.button):focus {
 	outline: thin dotted;
 }
 
-a:hover,
-a:active {
+a:not(.button):hover,
+a:not(.button):active {
 	outline: 0;
 }
 

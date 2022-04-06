@@ -35,6 +35,28 @@ if ( has_post_thumbnail() ) {
 the_content();
 get_template_part( 'template-parts/modules/social-share' );
 
+
+
+// Related posts!!!!!!!
+
+if ( $related_posts ) {
+	foreach ( $related_posts as $post ) {
+		setup_postdata( $post );
+		?>
+		<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+		<?php
+	}
+	wp_reset_postdata();
+}
+
+echo '<br>';
+
+
+
+
+
+
+
 ?>
 <footer class="post-footer">
 	<?php
