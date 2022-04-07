@@ -3,7 +3,7 @@
      title="WP Rig logo by Morten Rand-Hendriksen">
 
 # New theme features
-### - Single Catalog
+- #### Single Catalog
   - Large video header with play icon to full screen.
   - Full text synopsis vs popup.
   - More Info dropdown: Genre is now linked to their respective pages.
