@@ -29,9 +29,9 @@ namespace WP_Rig\WP_Rig;
 		// ? social icons
 		get_template_part( 'temlate-parts/content/entry-social', get_post_type() );
 		// ? theaters popup
-		if ( get_field( 'theatres_popup' ) ) {
-			get_template_part( 'template-parts/content/entry_tickets-modal', get_post_type() );
-		}
+		// if ( get_field( 'theatres_popup' ) ) {
+		// get_template_part( 'template-parts/content/entry_tickets-modal', get_post_type() );
+		// }
 		?>
 	</div>
 </header><!-- .entry-header -->

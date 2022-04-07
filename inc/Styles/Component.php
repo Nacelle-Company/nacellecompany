@@ -433,13 +433,6 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					return 'single-catalog.php' === basename( $template );
 				},
 			),
-			'wp-rig-social-share'    => array(
-				'file'              => 'social-share.min.css',
-				'preload_callback' => function() {
-					global $template;
-					return 'single-catalog.php' === basename( $template );
-				},
-			),
 			'wp-rig-related_posts'    => array(
 				'file'           => 'related_posts.min.css',
 			),
