@@ -221,7 +221,6 @@
 	padding: 1em;
 
 	@media (--content-query) {
-		padding-left: 0;
 		grid-column: 2/span 2;
 	}
 }

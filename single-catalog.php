@@ -11,7 +11,7 @@ namespace WP_Rig\WP_Rig;
 
 get_header();
 
-wp_rig()->print_styles( 'wp-rig-content', 'wp-rig-single-catalog', 'wp-rig-accordion' );
+wp_rig()->print_styles( 'wp-rig-content', 'wp-rig-single-catalog' );
 
 ?>
 <main id="primary" class="site-main">

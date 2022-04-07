@@ -419,6 +419,22 @@ msgstr ""
 msgid "Sort & Filter"
 msgstr ""
 
+#: template-parts/catalog/parts/catalog_accordion.php:27
+msgid "Runtime"
+msgstr ""
+
+#: template-parts/catalog/parts/catalog_accordion.php:33
+msgid "Premiere"
+msgstr ""
+
+#: template-parts/catalog/parts/catalog_accordion.php:40
+msgid "Rating"
+msgstr ""
+
+#: template-parts/catalog/parts/catalog_accordion.php:45
+msgid "Copyright"
+msgstr ""
+
 #: template-parts/catalog/parts/catalog_buttons-new.php:18, template-parts/catalog/parts/catalog_buttons.php:18
 msgid "Watch Now"
 msgstr ""
@@ -433,20 +449,4 @@ msgstr ""
 
 #: template-parts/catalog/parts/catalog_crew.php:19
 msgid "View on IMDB"
-msgstr ""
-
-#: template-parts/catalog/parts/catalog_more-info.php:25
-msgid "Runtime"
-msgstr ""
-
-#: template-parts/catalog/parts/catalog_more-info.php:31
-msgid "Premiere"
-msgstr ""
-
-#: template-parts/catalog/parts/catalog_more-info.php:38
-msgid "Rating"
-msgstr ""
-
-#: template-parts/catalog/parts/catalog_more-info.php:43
-msgid "Copyright"
 msgstr ""

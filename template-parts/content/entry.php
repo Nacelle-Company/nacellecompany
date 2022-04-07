@@ -11,7 +11,8 @@ if ( is_post_type_archive() ) {
 	wp_rig()->print_styles( 'wp-rig-post-grid' ); // ? post grid CSS
 	$article_class = 'entry grid-item archive-grid__item';
 } elseif ( is_single() ) {
-	$article_class = 'entry grid single-grid__item';
+	wp_rig()->print_styles( 'wp-rig-content_posts' );
+	$article_class = 'entry single-post';
 } else {
 	$article_class = 'entry';
 }

@@ -23,6 +23,7 @@
 	display: flex;
 	padding: 1em;
 	cursor: pointer;
+	border-bottom: 1px solid var(--color-theme-secondary);
 }
 
 .tab-content {
@@ -39,6 +40,11 @@
 	padding: 1em;
 	font-size: 0.75em;
 	cursor: pointer;
+	background-color: var(--color-theme-primary);
+
+	&:hover {
+		background-color: var(--color-theme-secondary);
+	}
 }
 
 .tab-label .dashicons {
@@ -51,17 +57,4 @@ input:checked + .tab-label .dashicons {
 
 input:checked ~ .tab-content {
 	max-height: 100vh;
-}
-
-
-.tab-label {
-	border-bottom: 1px solid var(--color-theme-secondary);
-}
-
-.tab-close {
-	background-color: var(--color-theme-primary);
-
-	&:hover {
-		background-color: var(--color-theme-secondary);
-	}
 }

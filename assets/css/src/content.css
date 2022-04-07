@@ -22,60 +22,6 @@
 # Post and page content
 --------------------------------------------------------------*/
 
-.single {
-
-	& .entry-content > * {
-		padding-left: 0;
-	}
-
-	@media (--content-query) {
-
-		& .post-thumbnail {
-			grid-area: image;
-		}
-	}
-}
-
-.single-grid__item {
-	padding: 1em;
-
-	/* &.news { */
-
-	@media (--content-query) {
-		grid-template-columns: 1fr 1fr;
-		gap: 2em;
-	}
-
-	/* } */
-	& .post-footer,
-	& .post-content {
-
-		@media (--content-query) {
-			grid-column: 1/-1;
-		}
-	}
-
-	& .post-title {
-		display: grid;
-		grid-template-rows: auto;
-		align-content: space-between;
-	}
-
-	& .post-intro {
-		color: var(--color-theme-secondary);
-		order: 2;
-
-		@media (--content-query) {
-			order: unset;
-		}
-	}
-}
-
-.boilerplate {
-	padding: 2em;
-	background-color: var(--global-color-dark);
-}
-
 /* Custom rule  for sticky posts:
 .sticky {
 
@@ -111,21 +57,10 @@
 	display: none;
 }
 
-/* .post-thumbnail img {
-	margin: 0 auto;
-} */
-
 .page-content,
 .entry-summary {
 	margin: 1em 0 0;
 }
-
-/* .entry-content {
-
-	@media (--content-query) {
-		max-width: var(--content-width);
-	}
-} */
 
 .entry-content > ul,
 .entry-content > ol {
@@ -483,19 +418,5 @@
 
 	.medium-12 {
 		width: 100%;
-	}
-}
-
-/* TO DELETE before production */
-.search__post_grid {
-	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-
-	/* This is better for small screens, once min() is better supported */
-
-	/* grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr)); */
-	gap: 1rem;
-
-	& .grid-item {
-		border: 1px solid var(--color-theme-green);
 	}
 }

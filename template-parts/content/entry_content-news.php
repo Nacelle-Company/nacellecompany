@@ -13,15 +13,15 @@ $related_posts = get_post_meta( get_the_ID(), 'related_to', true );
 // The post thumbnail.
 if ( has_post_thumbnail() ) {
 	?>
-	<a href="<?php echo esc_html( $news_link ); ?>" target="_blank">
-		<?php the_post_thumbnail( 'medium-large', array( 'align' => 'left' ) ); ?>
+	<a href="<?php echo esc_html( $news_link ); ?>" class="post-image" target="_blank">
+		<?php the_post_thumbnail( 'medium-large' ); ?>
 	</a>
 	<?php
 }
 ?>
 
 <!-- The post title. -->
-<a href="<?php echo esc_html( $news_link ); ?>" target="_blank">
+<a href="<?php echo esc_html( $news_link ); ?>" class="post-title" target="_blank">
 	<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	<h4>
 		<?php esc_html_e( 'Read more', 'wp-rig' ); ?>

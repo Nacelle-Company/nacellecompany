@@ -15,7 +15,7 @@ $boilerplate         = get_option( 'options_boilerplate' );
 	<?php
 	// The post thumbnail.
 	if ( has_post_thumbnail() ) {
-		the_post_thumbnail( 'medium-large', array( 'align' => 'left' ) );
+		the_post_thumbnail( 'medium-large', array( 'class' => 'post-image' ) );
 	}
 	?>
 	<div class="post-title">

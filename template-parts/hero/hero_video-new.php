@@ -12,9 +12,9 @@ if ( $hero_video ) {
 	$hero_video = get_field( 'video_embedd' );
 }
 if ( ! empty( $hero_video ) ) : ?>
-	<div class="entry-video entry-video__mobile" onclick="jQuery('#hero_video').YTPFullscreen().YTPToggleMask()">
+	<div class="entry-video entry-video__mobile" onclick="jQuery('#hero_video').YTPPlay().YTPFullscreen().YTPToggleMask().YTPToggleVolume()">
 		<div class="hero-video__wrapper">
-			<div id="hero_video" class="player" data-property="{videoURL:'<?php echo esc_html( $hero_video ); ?>',showControls: false,showYTLogo: false,containment:'.entry-header__video-new',ratio:'auto', mute:true, mobileFallbackImage:'', useOnMobile: true,optimizedDisplay:true,abundance:0.01,anchor: 'top,top',playOnlyIfVisible:true,mask:'/wp-content/themes/wprig-nacelle-dev/assets/images/src/ytplayer-mask.png'}"></div>
+			<div id="hero_video" class="player" data-property="{videoURL:'<?php echo esc_html( $hero_video ); ?>',showYTLogo: false,containment:'.entry-header__video-new',ratio:'auto', mute:true, mobileFallbackImage:'', useOnMobile: true,optimizedDisplay:true,abundance:0.01,anchor: 'top,top',playOnlyIfVisible:true,mask:'/wp-content/themes/wprig-nacelle-dev/assets/images/src/ytplayer-mask.png'}"></div>
 			<?php get_template_part( 'template-parts/modules/icon_volume-toggle-new' ); ?>
 		</div>
 	</div>

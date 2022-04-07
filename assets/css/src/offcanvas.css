@@ -1,5 +1,6 @@
-
-
+/*--------------------------------------------------------------
+# Offcanvas menu
+--------------------------------------------------------------*/
 .offcanvas-toggle {
 	text-align: right;
 	color: var(--color-theme-secondary);
@@ -64,5 +65,3 @@
 		font-size: var(--font-size-regular);
 	}
 }
-
-

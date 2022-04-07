@@ -76,5 +76,5 @@
 }
 
 small {
-	color: lightgray;
+	color: var(--color-theme-white);
 }

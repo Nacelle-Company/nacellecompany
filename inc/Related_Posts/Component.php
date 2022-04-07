@@ -102,8 +102,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				$columns  = 'medium-12';
 				$margin_x = '';
 			}
-					global $post;
-
+			global $post;
 			?>
 
 
@@ -111,7 +110,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			<!-- Wrapper and header -->
 			<div class="post-footer__related grid">
 				<header class="title">
-					<h3>RELATED</h3>
+					<h2>RELATED</h2>
 				</header>
 
 
@@ -121,7 +120,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				if ( $pr_query->have_posts() ) :
 					$count = 0;
 					?>
-					<div class="wrap<?php echo esc_html( $margin_x ); ?>">
+					<div class="related-posts__wrap">
 						<?php
 						while ( $pr_query->have_posts() ) :
 							$pr_query->the_post();
@@ -132,15 +131,15 @@ class Component implements Component_Interface, Templating_Component_Interface {
 							$the_post_type = strtoupper( $the_post_type->labels->singular_name );
 							?>
 							<?php if ( 1 === $count ) : ?>
-								<h4 class="title">
+								<h4 class="related-posts__title">
 									<?php echo esc_html( $the_post_type ); ?>
 								</h4>
 								<?php
 							endif; // ? CARDS
 							?>
-							<a href="<?php echo wp_kses( $permalink, 'post' ); ?>" class="grid <?php echo wp_kses( $columns, 'post' ); ?>">
-								<p><?php echo wp_kses( $the_title, 'post' ); ?></p>
-								<?php echo get_the_post_thumbnail( $post->ID, 'thumbnail' ); ?>
+							<a href="<?php echo wp_kses( $permalink, 'post' ); ?>" class="related-posts__card grid <?php echo wp_kses( $columns, 'post' ); ?>">
+								<p class="related_posts__post-title"><?php echo wp_kses( $the_title, 'post' ); ?></p>
+								<?php echo get_the_post_thumbnail( $post->ID, 'thumbnail', array( 'class' => 'related-posts__image' ) ); ?>
 							</a>
 						<?php endwhile; ?>
 					</div>
@@ -153,7 +152,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				if ( $catalog_query->have_posts() ) :
 					$count = 0;
 					?>
-					<div class="wrap<?php echo esc_html( $margin_x ); ?>">
+					<div class="related-posts__wrap">
 						<?php
 						while ( $catalog_query->have_posts() ) :
 							$catalog_query->the_post();
@@ -164,15 +163,15 @@ class Component implements Component_Interface, Templating_Component_Interface {
 							$the_post_type = strtoupper( $the_post_type->labels->singular_name );
 							?>
 							<?php if ( 1 === $count ) : ?>
-								<h4 class="title">
+								<h4 class="related-posts__title">
 									<?php echo esc_html( $the_post_type ); ?>
 								</h4>
 								<?php
 							endif; // ? CARDS
 							?>
-							<a href="<?php echo wp_kses( $permalink, 'post' ); ?>" class="grid <?php echo wp_kses( $columns, 'post' ); ?>">
-								<p><?php echo wp_kses( $the_title, 'post' ); ?></p>
-								<?php echo get_the_post_thumbnail( $post, 'thumbnail' ); ?>
+							<a href="<?php echo wp_kses( $permalink, 'post' ); ?>" class="related-posts__card grid">
+								<p class="related_posts__post-title"><?php echo wp_kses( $the_title, 'post' ); ?></p>
+								<?php echo get_the_post_thumbnail( $post, 'thumbnail', array( 'class' => 'related-posts__image' ) ); ?>
 							</a>
 						<?php endwhile; ?>
 					</div>
@@ -185,7 +184,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				if ( $news_query->have_posts() ) :
 					$count = 0;
 					?>
-					<div class="wrap<?php echo esc_html( $margin_x ); ?>">
+					<div class="related-posts__wrap">
 						<?php
 						while ( $news_query->have_posts() ) :
 							$news_query->the_post();
@@ -196,25 +195,26 @@ class Component implements Component_Interface, Templating_Component_Interface {
 							$the_post_type = strtoupper( $the_post_type->labels->singular_name );
 							?>
 							<?php if ( 1 === $count ) : ?>
-								<h4 class="title">
+								<h4 class="related-posts__title">
 									<?php echo esc_html( $the_post_type ); ?>
 								</h4>
 								<?php
 							endif;
 							?>
-							<a href="<?php echo wp_kses( $permalink, 'post' ); ?>" class="grid <?php echo wp_kses( $columns, 'post' ); ?>">
-								<p><?php echo wp_kses( $the_title, 'post' ); ?></p>
-								<?php echo get_the_post_thumbnail( $post->ID, 'thumbnail' ); ?>
+							<a href="<?php echo wp_kses( $permalink, 'post' ); ?>" class="related-posts__card grid <?php echo wp_kses( $columns, 'post' ); ?>">
+								<p class="related_posts__post-title"><?php echo wp_kses( $the_title, 'post' ); ?></p>
+								<?php echo get_the_post_thumbnail( $post->ID, 'thumbnail', array( 'class' => 'related-posts__image' ) ); ?>
 							</a>
 						<?php endwhile; ?>
 					</div>
 				<?php endif; ?>
 
 				<?php
+				// Main talent list.
 				if ( ! is_singular( 'catalog' ) ) {
 					?>
-					<div class="wrap<?php echo esc_html( $margin_x ); ?>">
-						<h4 class="title">
+					<div class="related-posts__wrap">
+						<h4 class="related-posts__title">
 							<?php echo esc_html( 'Featured Talent' ); ?>
 						</h4>
 						<?php

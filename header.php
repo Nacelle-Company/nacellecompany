@@ -42,12 +42,12 @@ namespace WP_Rig\WP_Rig;
 	 * TODO: remove the "<div class="wp-body-open">" container
 	 */
 	wp_body_open();
-	if ( 'catalog' == get_post_type( $post ) ) {
+	if ( is_single() && 'catalog' === get_post_type_object( get_post_type() )->has_archive ) {
 			$front_page_class = ' catalog-new';
-	} elseif ( ! is_front_page() ) {
-		$front_page_class = '';
-	} else {
+	} elseif ( is_front_page() ) {
 		$front_page_class = ' front-page';
+	} else {
+		$front_page_class = '';
 	}
 
 

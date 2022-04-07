@@ -1,4 +1,3 @@
-
 /*--------------------------------------------------------------
 # Content navigation
 --------------------------------------------------------------*/
@@ -16,14 +15,20 @@
 
 .posts-navigation .nav-previous,
 .post-navigation .nav-previous {
-	width: 50%;
-	flex: 1 0 50%;
+
+	@media (--content-query) {
+		width: 25%;
+		flex: 0 0 25%;
+	}
 }
 
 .posts-navigation .nav-next,
 .post-navigation .nav-next {
 	text-align: end;
-	flex: 1 0 50%;
+
+	@media (--content-query) {
+		flex: 0 0 25%;
+	}
 }
 
 .post-navigation-sub span {
@@ -90,6 +95,8 @@
 .post-navigation {
 	margin: unset;
 	max-width: none;
+	width: 100%;
+	padding: 0 1em;
 
 	@media (--content-query) {
 		grid-column: 1/-1;
@@ -101,7 +108,6 @@
 		display: flex;
 
 		@media (--content-query) {
-			width: 100%;
 			justify-content: space-between;
 		}
 	}
