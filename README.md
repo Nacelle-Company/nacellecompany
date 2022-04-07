@@ -3,13 +3,13 @@
      title="WP Rig logo by Morten Rand-Hendriksen">
 
 # New theme features
-- #### Single Catalog
+- ### Single Catalog
   - Large video header with play icon to full screen.
   - Full text synopsis vs popup.
   - More Info dropdown: Genre is now linked to their respective pages.
   - Pagination moved to footer.
 
-### *(default WP Rig readme below)*
+### *(default [WP Rig](https://github.com/wprig/wprig) readme below)*
 # WP Rig: WordPress Theme Boilerplate
 [![Build Status](https://travis-ci.com/wprig/wprig.svg?branch=master)](https://travis-ci.com/github/wprig/wprig)
 [![License: GPL](https://img.shields.io/github/license/wprig/wprig)](/LICENSE)
