@@ -46,28 +46,26 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	/**
 	 * Display Post Grid
 	 *
-	 * @param Variable $the_posts Pull post data.
+	 * @param var $query Pull post data.
 	 */
-	public function display_post_grid( $query, $artist_name ) {
+	public function display_post_grid( $query ) {
 		// var_dump( $query );
 		// OLD CODE.
-		$image   = '';
-			$args    = array(
-				'numberposts' => 6, // ? -1 is for all
-				'post_type'   => $query, // ? or 'post', 'page'
-				'orderby'     => 'date', // ? or 'date', 'rand'
-				'order'       => 'DESC', // ? or 'DESC'
+			$args = array(
+				'numberposts' => 6,
+				'post_type'   => $query,
+				'orderby'     => 'date',
+				'order'       => 'DESC',
 			);
 
 			$the_posts = get_posts( $args );
 			if ( $the_posts ) :
 				foreach ( $the_posts as $the_post ) :
-					$the_title  = get_the_title( $the_post->ID );
-					$time       = get_the_time( 'F j, Y', $the_post->ID );
-					$time_short = get_the_time( 'o-m-j', $the_post->ID );
-					$image      = get_field( 'wide_image', $the_post->ID );
-					$custom_posts = get_posts( $producer_args );
-					$count = 0;
+					$the_title     = get_the_title( $the_post->ID );
+					$time          = get_the_time( 'F j, Y', $the_post->ID );
+					$time_short    = get_the_time( 'o-m-j', $the_post->ID );
+					$image         = get_field( 'wide_image', $the_post->ID );
+					$the_permalink = get_permalink( $the_post->ID );
 					// ? get the images
 					if ( get_field( 'wide_image', $the_post->ID, false ) ) {
 						$image_array = get_field( 'wide_image', $the_post->ID, false );
@@ -76,9 +74,9 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					?>
 				<div class="grid-item grid grid__half">
 					<div class="grid-item__img">
-						<?php echo '<a href="' . get_permalink( $the_post->ID ) . '">'; ?>
+						<?php echo wp_kses( '<a href="' . get_permalink( $the_post->ID ) . '">', 'post' ); ?>
 						<?php
-						$image = get_the_post_thumbnail(
+						echo get_the_post_thumbnail(
 							$the_post->ID,
 							'medium',
 							array(
@@ -86,32 +84,31 @@ class Component implements Component_Interface, Templating_Component_Interface {
 								'alt'   => $the_title,
 							)
 						);
-							echo $image;
 						?>
 							<?php echo '</a>'; ?>
 					</div>
 					<div class="grid-item__content">
-						<time datetime="<?php echo $time_short; ?>">
+						<time datetime="<?php echo esc_html( $time_short ); ?>">
 							<?php
-							echo $time;
+							echo esc_html( $time );
 							?>
 						</time>
-							<?php echo '<a href="' . get_permalink( $the_post->ID ) . '">'; ?>
-						<p class="lead"><?php echo $the_title; ?></p>
+							<?php echo wp_kses( '<a href="' . $the_permalink . '">', 'post' ); ?>
+						<p class="lead"><?php echo esc_html( $the_title ); ?></p>
 							<?php echo '</a>'; ?>
 						<p>
 							<?php
-							$trim_length  = 15;  // ? desired length of text to display
-							$value_more   = '. . .'; // ? what to add at the end of the trimmed text
-							$custom_field = 'intro';
-							$value        = get_field( 'intro', $the_post->ID );
+							$trim_length = 15;  // Desired length of text to display.
+							$value_more  = '. . .'; // ? what to add at the end of the trimmed text
+							$value       = get_field( 'intro', $the_post->ID );
+							$value       = wp_trim_words( $value, $trim_length, $value_more );
 							if ( $value ) {
-								echo wp_trim_words( $value, $trim_length, $value_more );
+								echo wp_kses( $value, 'post' );
 							}
 							?>
 						</p>
 					</div>
-					<a class="go-corner" href="<?php echo get_permalink( $the_post->ID ); ?>">
+					<a class="go-corner" href="<?php echo wp_kses( $the_permalink, 'post' ); ?>">
 						<div class="go-arrow">
 							→
 						</div>

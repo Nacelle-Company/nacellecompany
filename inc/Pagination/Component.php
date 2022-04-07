@@ -49,9 +49,6 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	}
 	/**
 	 * Display Tax Terms
-	 *
-	 * @param mixed $taxonomy Parameter comment.
-	 * A little text.
 	 */
 	public function display_pagination() {
 
@@ -59,13 +56,12 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		 * Catalog pagination
 		 */
 		if ( is_singular( get_post_type() ) ) {
-			// Show post navigation only when the post type is 'post' or has an archive.
+
 			if ( 'post' === get_post_type() || get_post_type_object( get_post_type() )->has_archive ) {
 				the_post_navigation(
 					array(
 						'prev_text' => '<div class="post-navigation-sub"><span class="dashicons dashicons-arrow-left"></span><span>' . esc_html__( 'Previous:', 'wp-rig' ) . '</span></div><h3>%title</h3>',
 						'next_text' => '<div class="post-navigation-sub"></span><span>' . esc_html__( 'Next:', 'wp-rig' ) . '</span><span class="dashicons dashicons-arrow-right"></div><h3>%title</h3>',
-						'in_same_term' => true,
 					)
 				);
 			}

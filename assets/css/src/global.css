@@ -281,11 +281,11 @@ select {
 	}
 }
 
-.nav--toggle-small {
+.nav--toggle-small .mobile-menu-container {
+	display: none;
+}
 
-	& .mobile-menu-container {
-		display: none;
-	}
+.nav--toggle-small {
 
 	&.nav--toggled-on {
 
@@ -312,10 +312,6 @@ select {
 	}
 
 	&.icon-nav {
-
-		/* & .menu {
-			display: none;
-		} */
 
 		@media screen and (min-width: 600px) {
 

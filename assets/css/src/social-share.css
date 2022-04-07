@@ -1,8 +1,11 @@
 .social-share {
 	max-width: min-content;
 	text-align: center;
+	margin: 2em auto;
 
-	& .grid {
+	& .social-share__icons {
+		display: flex;
 		align-items: center;
+		justify-content: space-between;
 	}
 }

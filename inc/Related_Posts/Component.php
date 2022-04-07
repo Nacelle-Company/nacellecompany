@@ -48,13 +48,11 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		);
 	}
 	/**
-	 * Display Tax Terms
+	 * Display related posts.
 	 *
-	 * @param mixed $taxonomy Parameter comment.
-	 * A little text.
+	 * @param var $ids The selected related posts.
 	 */
 	public function display_related_posts( $ids ) {
-
 		if ( $ids ) :
 			setup_postdata( $post );
 			$catalog_query = new \WP_Query(
@@ -64,7 +62,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					'posts_per_page'  => 5,
 				)
 			);
-			$pr_query = new \WP_Query(
+			$pr_query      = new \WP_Query(
 				array(
 					'post_type'       => 'press_release',
 					'post__in'        => $ids,
@@ -104,6 +102,8 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				$columns  = 'medium-12';
 				$margin_x = '';
 			}
+					global $post;
+
 			?>
 
 
@@ -172,7 +172,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 							?>
 							<a href="<?php echo wp_kses( $permalink, 'post' ); ?>" class="grid <?php echo wp_kses( $columns, 'post' ); ?>">
 								<p><?php echo wp_kses( $the_title, 'post' ); ?></p>
-								<?php echo get_the_post_thumbnail( $post->ID, 'thumbnail' ); ?>
+								<?php echo get_the_post_thumbnail( $post, 'thumbnail' ); ?>
 							</a>
 						<?php endwhile; ?>
 					</div>

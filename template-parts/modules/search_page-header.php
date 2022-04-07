@@ -94,7 +94,7 @@ wp_rig()->print_styles( 'wp-rig-offcanvas' );
 			 * @link https://www.w3schools.com/howto/howto_js_off-canvas.asp
 			 */
 		?>
-			<span id="offcanvasToggle" class="offcanvas-toggle" onclick="openOffcanvas()" style="cursor:pointer">
+			<span id="offcanvasToggle" class="offcanvas-toggle" onclick="openOffcanvas()" style="cursor:pointer" title="Offcanvas sort & filter menu">
 				&#9776;
 				<span class="offcanvas-toggle_title">
 					<?php echo esc_html__( 'Sort & Filter', 'wp-rig' ); ?>

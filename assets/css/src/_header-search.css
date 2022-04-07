@@ -33,10 +33,10 @@
 
 .primary-menu-container {
 
-	& input[name="_sf_submit"] {
+	/* & input[name="_sf_submit"] {
 		background-color: transparent;
 		border: none;
-	}
+	} */
 
 	@media (--content-query) {
 		display: grid;
@@ -47,22 +47,42 @@
 			width: 40px;
 			height: 33px;
 
+			/* search icon */
 			&::before {
 				content: url("/wp-content/themes/wprig-nacelle-dev/assets/images/icon-search.svg");
 				position: absolute;
 				right: -10px;
-				top: 10px;
+				top: 5px;
 			}
 		}
 
-		& .sf-field-search { /* search input */
+		& .sf-field-search {
+
+			/* search input */
 			position: absolute;
-			right: -20px;
+			left: 90%;
 			top: 0;
 			z-index: -1;
 			opacity: 0;
-			transition: opacity 0.2s ease-in-out;
+			padding: 0;
+			transition: opacity 0.2s ease-out;
 		}
+
+		& .sf-field-submit {
+
+			/* search input */
+			position: absolute;
+			left: 160%;
+			top: 0;
+			z-index: -1;
+			opacity: 0;
+			padding: 0;
+			transition: opacity 0.2s ease-out;
+		}
+
+		/* & .sf-field-submit {
+			z-index: 2;
+		} */
 
 		& .searchandfilter ul {
 			visibility: hidden;
@@ -75,19 +95,18 @@
 				visibility: visible;
 			}
 
-			& .sf-field-search {
+			& .sf-field-search,
+			& .sf-field-submit {
 				z-index: 1;
 				opacity: 1;
-				padding: 5px;
 			}
 
-			& .sf-field-submit {
+			/* & .sf-field-submit {
 				z-index: 9;
-				padding: 0;
-			}
+			} */
 
 			&::before {
-				z-index: 8;
+				z-index: -1;
 			}
 		}
 	}

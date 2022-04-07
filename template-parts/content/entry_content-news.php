@@ -9,13 +9,8 @@ namespace WP_Rig\WP_Rig;
 
 $news_link     = get_post_meta( get_the_ID(), 'link_to_article', true );
 $related_posts = get_post_meta( get_the_ID(), 'related_to', true );
-$related_footer_posts = get_post_meta( get_the_ID(), 'related_catalog_items', true );
 
-// $the_terms;
-// $the_term;
-printVar( $related_posts );
-printVar( $related_footer_posts );
-
+// The post thumbnail.
 if ( has_post_thumbnail() ) {
 	?>
 	<a href="<?php echo esc_html( $news_link ); ?>" target="_blank">
@@ -24,6 +19,8 @@ if ( has_post_thumbnail() ) {
 	<?php
 }
 ?>
+
+<!-- The post title. -->
 <a href="<?php echo esc_html( $news_link ); ?>" target="_blank">
 	<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	<h4>
@@ -31,35 +28,30 @@ if ( has_post_thumbnail() ) {
 		<?php get_template_part( 'template-parts/svg/icon-external-link' ); ?>
 	</h4>
 </a>
-<?php
-the_content();
-get_template_part( 'template-parts/modules/social-share' );
+<!-- The post content -->
+<div class="post-content">
+	<?php
+	the_content(
+		sprintf(
+			wp_kses(
+				/* translators: %s: Name of current post. Only visible to screen readers */
+				__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'wp-rig' ),
+				array(
+					'span' => array(
+						'class' => array(),
+					),
+				)
+			),
+			get_the_title()
+		)
+	);
+	?>
 
-
-
-// Related posts!!!!!!!
-
-if ( $related_posts ) {
-	foreach ( $related_posts as $post ) {
-		setup_postdata( $post );
-		?>
-		<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
-		<?php
-	}
-	wp_reset_postdata();
-}
-
-echo '<br>';
-
-
-
-
-
-
-
-?>
+</div>
+<!-- Post footer. -->
 <footer class="post-footer">
 	<?php
+	get_template_part( 'template-parts/modules/social-share' );
 	wp_rig()->print_styles( 'wp-rig-related_posts' );
 	wp_rig()->display_related_posts( $related_posts );
 	?>

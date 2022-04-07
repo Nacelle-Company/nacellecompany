@@ -22,7 +22,7 @@ $url      = esc_url( $url_full );
 <div class="social-share">
 
 	<h3 class='share-on'><span class="has-theme-secondary-color">###</span><br>Share</h3>
-	<div class="grid grid__half">
+	<div class="social-share__icons">
 		<div class='facebook px-1'>
 			<a href="http://www.facebook.com/sharer.php?u=<?php echo wp_kses( $url, 'post' ); ?>" rel="noopener" target="_blank">
 				<span class="dashicons dashicons-facebook"></span>

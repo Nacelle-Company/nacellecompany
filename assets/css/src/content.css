@@ -36,6 +36,46 @@
 	}
 }
 
+.single-grid__item {
+	padding: 1em;
+
+	/* &.news { */
+
+	@media (--content-query) {
+		grid-template-columns: 1fr 1fr;
+		gap: 2em;
+	}
+
+	/* } */
+	& .post-footer,
+	& .post-content {
+
+		@media (--content-query) {
+			grid-column: 1/-1;
+		}
+	}
+
+	& .post-title {
+		display: grid;
+		grid-template-rows: auto;
+		align-content: space-between;
+	}
+
+	& .post-intro {
+		color: var(--color-theme-secondary);
+		order: 2;
+
+		@media (--content-query) {
+			order: unset;
+		}
+	}
+}
+
+.boilerplate {
+	padding: 2em;
+	background-color: var(--global-color-dark);
+}
+
 /* Custom rule  for sticky posts:
 .sticky {
 

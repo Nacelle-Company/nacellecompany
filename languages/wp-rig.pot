@@ -191,7 +191,9 @@ msgstr ""
 
 #. translators: %s: Post title.
 #. translators: %s: Name of current post. Only visible to screen readers
-#: inc/Excerpts/Component.php:44, template-parts/content/entry_content.php:34
+#. translators: %s: Name of current post. Only visible to screen readers
+#. translators: %s: Name of current post. Only visible to screen readers
+#: inc/Excerpts/Component.php:44, template-parts/content/entry_content-news.php:38, template-parts/content/entry_content-press_release.php:50, template-parts/content/entry_content.php:34
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
@@ -211,11 +213,11 @@ msgstr ""
 msgid "main-navigation nav--toggle-sub nav--toggle-small icon-nav"
 msgstr ""
 
-#: inc/Pagination/Component.php:66, template-parts/content/entry-attachment.php:33
+#: inc/Pagination/Component.php:63, template-parts/content/entry-attachment.php:33
 msgid "Previous:"
 msgstr ""
 
-#: inc/Pagination/Component.php:67, template-parts/content/entry-attachment.php:43
+#: inc/Pagination/Component.php:64, template-parts/content/entry-attachment.php:43
 msgid "Next:"
 msgstr ""
 
@@ -275,7 +277,7 @@ msgstr ""
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
-#: template-parts/content/entry_content-news.php:30, template-parts/modules/news_content.php:24
+#: template-parts/content/entry_content-news.php:27, template-parts/modules/news_content.php:24
 msgid "Read more"
 msgstr ""
 

@@ -7,7 +7,7 @@
 
 namespace WP_Rig\WP_Rig;
 
-$video_embedd = get_post_meta( get_the_ID(), 'video_embedd', true );
+$video_embedd  = get_post_meta( get_the_ID(), 'video_embedd', true );
 $the_post_type = get_post_type();
 
 // Build the synopsis.
