@@ -94,16 +94,19 @@ https://flickity.metafizzy.co
 
 /* ---- previous/next buttons ---- */
 
-.flickity-prev-next-button {
+button.flickity-prev-next-button {
 	top: 50%;
 	width: 44px;
 	height: 44px;
 	bottom: 20px;
 	top: unset;
 	transform: none;
-
-	/* vertically center */
 	transform: translateY(-50%);
+	border: none;
+
+	& .flickity-button-icon {
+		fill: var(--color-theme-primary);
+	}
 }
 
 .flickity-prev-next-button.previous {

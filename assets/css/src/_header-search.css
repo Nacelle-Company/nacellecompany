@@ -23,12 +23,9 @@
 
 	@media (--content-query) {
 
-		& .sf-field-submit::after {
-			content: url("/wp-content/themes/wprig-nacelle-dev/assets/images/icon-search.svg");
-			position: absolute;
-			left: 15px;
-			top: 24px;
-			fill: var(--color-theme-primary);
+		& .searchandfilter ul {
+			display: flex;
+			justify-content: center;
 		}
 	}
 }

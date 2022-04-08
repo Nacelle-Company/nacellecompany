@@ -464,10 +464,14 @@ select {
 
 .main-navigation a {
 	display: block;
-	width: 90%;
 	padding: 0.5em 1em 0.5em 0;
 	text-decoration: none;
 	color: var(--global-font-color);
+
+	@media (--narrow-menu-query) {
+		width: 90%;
+
+	}
 
 	@media (--content-query) {
 		width: 100%;
