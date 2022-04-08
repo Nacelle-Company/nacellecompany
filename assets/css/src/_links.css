@@ -4,14 +4,25 @@
 # Links
 --------------------------------------------------------------*/
 /* stylelint-disable */
+
 a {
 	color: var(--color-link);
 	text-decoration: none;
-}
-/* stylelint-enable */
 
-a:visited {
-	color: var(--color-link-visited);
+	&:visited {
+		color: var(--color-link-visited);
+	}
+
+	&.button {
+
+		&:visited {
+			color: var(--global-color-grey-light);
+
+			& .icon {
+				fill: var(--global-color-grey-light);
+			}
+		}
+	}
 }
 
 a:not(.button):hover,
@@ -34,3 +45,4 @@ a:not(.button):active {
 	width: 100%;
 	height: 100%;
 }
+/* stylelint-enable */

@@ -241,7 +241,7 @@
 */
 
 /* new icons */
-.hero-video__controls.hero-video__controls-new {
+.hero-video__controls {
 	right: unset;
 	top: unset;
 	z-index: 9;

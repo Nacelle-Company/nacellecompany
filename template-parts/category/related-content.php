@@ -14,10 +14,10 @@ if ( $distribution ) :
 	?>
 	<div class="grid related-content">
 		<div class="embed-container">
-			<iframe src="<?php echo wp_kses( $distribution['left_dist_content'], 'post' ); ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<iframe title="<?php echo wp_kses( $distribution['right_dist_content'], 'strip' ); ?>" src="<?php echo wp_kses( $distribution['left_dist_content'], 'post' ); ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 		</div>
 		<div class="embed-container_info">
-			<?php echo $distribution['right_dist_content']; ?>
+			<?php echo wp_kses( $distribution['right_dist_content'], 'post' ); ?>
 		</div>
 	</div>
 <?php endif; ?>

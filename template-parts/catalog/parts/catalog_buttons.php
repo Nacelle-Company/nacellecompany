@@ -32,7 +32,7 @@ if ( get_field( 'show_video_links' ) ) : ?>
 				while ( have_rows( 'new_large_link' ) ) :
 					the_row();
 					$video_title = get_sub_field( 'link_title' );
-					$video_link = get_sub_field( 'link_url' );
+					$video_link  = get_sub_field( 'link_url' );
 					?>
 					<a href="<?php echo esc_html( $video_link ); ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo esc_html( $video_title ); ?>" target="_blank" rel="noreferrer">
 						<strong><?php echo esc_html( $video_title ); ?></strong>

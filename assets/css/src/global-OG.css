@@ -25,10 +25,6 @@
 @import "_typography.css";
 @import "_elements.css";
 @import "_links.css";
-@import "_headers.css";
-@import "_header-search.css";
-@import "_grid.css";
-@import "_icons.css";
 
 /*--------------------------------------------------------------
 # Accessibility
@@ -80,16 +76,13 @@
 	max-width: 100%;
 }
 
-.site-main {
-	display: grid;
-}
-
 @media (--sidebar-query) {
 
 	.has-sidebar .site {
+		margin: 0 1em;
 		display: grid;
 		grid-template-columns: 3fr 1fr;
-		column-gap: 2rem;
+		grid-gap: 2rem;
 		justify-content: center;
 	}
 
@@ -119,39 +112,27 @@ textarea {
 /* stylelint-enable */
 
 /* stylelint-disable */
-button:not(.dropdown-toggle),
-.button,
+button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 	border: 1px solid;
-	border-color: var(--color-theme-secondary) var(--color-theme-secondary) var(--color-theme-secondary);
+	border-color: var(--border-color-light) var(--border-color-light) #bbb;
 	border-radius: 3px;
-	background: transparent;
-	color: var(--global-font-color);
+	background: #eee;
+	color: rgba(0, 0, 0, 0.8);
 	font-size: 0.75rem;
 	line-height: 1;
-	padding: 0.85em 2em;
+	padding: 0.6em 1em 0.4em;
 	cursor: pointer;
-
-	& .icon {
-		fill: var(--global-font-color);
-	}
 }
 /* stylelint-enable */
 
 button:hover,
-.button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-	background-color: var(--color-theme-secondary);
-	color: var(--global-font-color-inverse);
-	border-color: var(--color-theme-secondary) var(--color-theme-secondary) var(--color-theme-secondary);
-
-	& .icon {
-		fill: var(--global-font-color-inverse);
-	}
+	border-color: var(--border-color-light) #bbb #aaa;
 }
 
 button:active,
@@ -207,20 +188,39 @@ textarea:focus {
 }
 
 select {
-	color: var(--global-font-color-inverse);
 	border: 1px solid var(--border-color-light);
-	border-radius: var(--border-radius);
-	max-width: 170px;
+}
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+
+.site-header {
+	padding-bottom: 1em;
+}
+
+.header-image {
+	margin: 0 auto;
+}
+
+.header-image img {
+	display: block;
+	margin: 0 auto;
 }
 
 .custom-logo-link {
 	display: inline-block;
+	margin: 0 auto 1em;
 }
 
 .site-branding {
 	text-align: center;
-	padding: 1em 0;
-	margin: 0;
+	padding: 60px 0 1.75em;
+
+	@media screen and (max-width: 600px) {
+		padding: 1.75em 0;
+		margin: 0;
+	}
 }
 
 .site-title {
@@ -267,8 +267,13 @@ select {
 	&.icon {
 		border: none;
 		position: absolute;
-		top: 25px;
+		top: 40px;
 		left: 5px;
+		display: none;
+
+		@media screen and (max-width: 600px) {
+			display: block;
+		}
 
 		& .dashicons-menu-alt::before {
 			font-size: 40px;
@@ -280,28 +285,24 @@ select {
 	}
 }
 
-.nav--toggle-small .mobile-menu-container {
-	display: none;
-}
-
 .nav--toggle-small {
 
-	@media (--sidebar-query) {
+	& .menu {
 		display: none;
-
-		& .menu-toggle {
-			display: none;
-		}
-
-		& .mobile-menu-container { /* mobile menu container */
-			display: none;
-		}
 	}
 
-	&.nav--toggled-on { /* hamburger is active */
+	&.nav--toggled-on {
 
-		& .mobile-menu-container {
+		& .menu {
 			display: block;
+		}
+
+		@media screen and (min-width: 600px) {
+
+			& .menu {
+				display: flex;
+				justify-content: center;
+			}
 		}
 
 		& .menu-toggle.icon svg.close {
@@ -316,15 +317,27 @@ select {
 
 	&.icon-nav {
 
+		& .menu {
+			display: block;
+		}
+
+		@media screen and (min-width: 600px) {
+
+			& .menu {
+				display: flex;
+				justify-content: center;
+			}
+		}
+
 		@media screen and (max-width: 600px) {
 
-			& .mobile-menu-container {
+			& .primary-menu-container {
 				position: absolute;
-				background: var(--global-color-dark);
+				background: white;
 				width: 100vw;
 				top: 300px;
 				left: 0;
-				height: auto;
+				height: 200%;
 				padding: 20px 30px;
 				opacity: 0;
 				transition: opacity 0.3s, top 0.3s ease-out;
@@ -336,107 +349,116 @@ select {
 					content: "\f158";
 				}
 
-				& .mobile-menu-container {
-					top: 89px;
+				& .primary-menu-container {
+					top: 180px;
 					opacity: 1;
-					z-index: 1001;
 					transition: opacity 0.3s, top 0.3s ease-out;
 				}
 			}
 		}
+
 	}
 }
 
-/* @media (--wide-menu-query) { */
-
-.nav--toggle-small .menu {
-	display: block;
-}
-
-.nav--toggle-sub ul ul {
-	display: none;
-	position: absolute;
-	top: 100%;
-	flex-direction: column;
-	background: var(--global-color-dark);
-	margin-left: 0;
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	z-index: 100;
-
-	@media (--narrow-menu-query) {
-		position: relative;
-		max-width: 90%;
-	}
-}
-
+.nav--toggle-small,
 .nav--toggle-sub .dropdown,
 .nav--toggle-sub .dropdown-toggle {
-	display: block;
-	background: transparent;
-	position: absolute;
-	right: 0;
-	width: var(--dropdown-symbol-width);
-	height: var(--dropdown-symbol-width);
-	font-size: inherit;
-	line-height: inherit;
-	margin: 0;
-	padding: 0;
-	border: none;
-	border-radius: 0;
-	transform: translateY(-50%);
-	overflow: visible;
+	display: none;
+}
 
-	@media (--content-query) {
-		top: 50%;
+@media (--narrow-menu-query) {
+
+	.nav--toggle-small.nav--toggled-on .menu {
+		display: block;
 	}
 }
 
-.nav--toggle-sub .dropdown-symbol {
-	display: block;
-	background: transparent;
-	position: absolute;
-	right: 20%;
-	top: 35%;
-	width: 60%;
-	height: 60%;
-	border: solid var(--border-color-dark);
-	border-width: 0 2px 2px 0;
-	transform: translateY(-50%) rotate(45deg);
-}
+@media (--wide-menu-query) {
 
-.nav--toggle-sub ul ul .dropdown,
-.nav--toggle-sub ul ul .dropdown-toggle {
-	top: 40%;
-	right: 0.2em;
-}
+	.nav--toggle-small .menu-toggle {
+		display: none;
+	}
 
-.nav--toggle-sub ul ul .dropdown-symbol {
-	transform: rotate(-45deg);
-}
+	.nav--toggle-small .menu {
+		display: block;
+	}
 
-.nav--toggle-sub .dropdown-toggle:hover,
-.nav--toggle-sub .menu-item--has-toggle:hover .dropdown-toggle {
-	pointer-events: none;
-}
+	.nav--toggle-sub ul ul {
+		display: none;
+		position: absolute;
+		top: 100%;
+		flex-direction: column;
+		background: #fff;
+		margin-left: 0;
+		box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+		z-index: 100;
+	}
 
-/* Need menu-item-has-children for non-JS */
-.nav--toggle-sub li.menu-item-has-children,
-.nav--toggle-sub li.menu-item--has-toggle {
-	position: relative;
-	padding-right: var(--dropdown-symbol-width-large);
-}
+	.nav--toggle-sub .dropdown,
+	.nav--toggle-sub .dropdown-toggle {
+		display: block;
+		background: transparent;
+		position: absolute;
+		right: 0;
+		top: 50%;
+		width: var(--dropdown-symbol-width);
+		height: var(--dropdown-symbol-width);
+		font-size: inherit;
+		line-height: inherit;
+		margin: 0;
+		padding: 0;
+		border: none;
+		border-radius: 0;
+		transform: translateY(-50%);
+		overflow: visible;
+	}
 
-/*
+	.nav--toggle-sub .dropdown-symbol {
+		display: block;
+		background: transparent;
+		position: absolute;
+		right: 20%;
+		top: 35%;
+		width: 60%;
+		height: 60%;
+		border: solid var(--border-color-dark);
+		border-width: 0 2px 2px 0;
+		transform: translateY(-50%) rotate(45deg);
+	}
+
+	.nav--toggle-sub ul ul .dropdown,
+	.nav--toggle-sub ul ul .dropdown-toggle {
+		top: 40%;
+		right: 0.2em;
+	}
+
+	.nav--toggle-sub ul ul .dropdown-symbol {
+		transform: rotate(-45deg);
+	}
+
+	.nav--toggle-sub .dropdown-toggle:hover,
+	.nav--toggle-sub .menu-item--has-toggle:hover .dropdown-toggle {
+		pointer-events: none;
+	}
+
+	/* Need menu-item-has-children for non-JS */
+	.nav--toggle-sub li.menu-item-has-children,
+	.nav--toggle-sub li.menu-item--has-toggle {
+		position: relative;
+		padding-right: var(--dropdown-symbol-width);
+	}
+
+	/*
 	 * If the dropdown toggle is active with JS, then
 	 * we'll take care of showing the submenu with JS.
 	 */
-.nav--toggle-sub li:hover > ul,
-.nav--toggle-sub li.menu-item--toggled-on > ul,
-.nav--toggle-sub li:not(.menu-item--has-toggle):focus > ul {
-	display: block;
-}
+	.nav--toggle-sub li:hover > ul,
+	.nav--toggle-sub li.menu-item--toggled-on > ul,
+	.nav--toggle-sub li:not(.menu-item--has-toggle):focus > ul {
+		display: block;
+	}
 
-/*
+	/*
 	 * "focus-within" is an alternative to focus class for
 	 * supporting browsers (all but IE/Edge) for no-JS context
 	 * (e.g. AMP) See https://caniuse.com/#feat=css-focus-within
@@ -444,34 +466,29 @@ select {
 	 * This selector needs to stay separated, otherwise submenus
 	 * will not be displayed with IE/Edge.
 	 */
-.nav--toggle-sub li:not(.menu-item--has-toggle):focus-within > ul {
-	display: block;
+	.nav--toggle-sub li:not(.menu-item--has-toggle):focus-within > ul {
+		display: block;
+	}
 }
-
-/* } */
 
 /*--------------------------------------------------------------
 ## Main navigation menu
 --------------------------------------------------------------*/
 .main-navigation {
-	margin: 0 auto 0;
+	display: block;
+	margin: 0 auto 2em;
 	padding: 0 1em;
 	max-width: var(--content-width);
 	font-family: var(--highlight-font-family);
 	font-stretch: condensed;
 }
 
-
 .main-navigation a {
 	display: block;
-	width: 90%;
+	width: 100%;
 	padding: 0.5em 1em 0.5em 0;
 	text-decoration: none;
 	color: var(--global-font-color);
-
-	@media (--content-query) {
-		width: 100%;
-	}
 }
 
 .main-navigation a:hover,
@@ -539,6 +556,112 @@ select {
 }
 
 /*--------------------------------------------------------------
+# Content navigation
+--------------------------------------------------------------*/
+.site-main .comment-navigation,
+.site-main .posts-navigation,
+.site-main .post-navigation,
+.site-main .pagination {
+	border-bottom: 1px solid var(--border-color-dark);
+	margin: 0 auto 2em;
+	max-width: var(--content-width);
+	overflow: hidden;
+	padding: 0 1.5rem 2em;
+	font-family: var(--highlight-font-family);
+	font-stretch: condensed;
+}
+
+@media (--content-query) {
+
+	.site-main .comment-navigation,
+	.site-main .posts-navigation,
+	.site-main .post-navigation,
+	.site-main .pagination {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+.nav-links {
+	display: flex;
+}
+
+.comment-navigation .nav-previous,
+.posts-navigation .nav-previous,
+.post-navigation .nav-previous {
+	width: 50%;
+	flex: 1 0 50%;
+}
+
+.comment-navigation .nav-next,
+.posts-navigation .nav-next,
+.post-navigation .nav-next {
+	text-align: end;
+	flex: 1 0 50%;
+}
+
+.post-navigation-sub span {
+	color: var(--global-font-color);
+	text-decoration: none;
+	display: inline-block;
+}
+
+.site-main .pagination {
+	margin-bottom: 1.5em;
+}
+
+.pagination .nav-links {
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.pagination .page-numbers {
+	display: inline-block;
+	margin-bottom: 0.5em;
+	margin-right: 1em;
+	border: 1px solid var(--color-link);
+	min-width: 1.75em;
+	line-height: 1.75;
+	text-align: center;
+	text-decoration: none;
+}
+
+.pagination a:visited {
+	color: var(--color-link);
+}
+
+.pagination a:hover,
+.pagination a:focus,
+.pagination a:active {
+	border-color: var(--color-link-active);
+}
+
+.pagination .prev,
+.pagination .next {
+	min-width: auto;
+	border-color: transparent;
+	text-decoration: underline;
+}
+
+.pagination .prev:hover,
+.pagination .prev:focus,
+.pagination .prev:active,
+.pagination .next:hover,
+.pagination .next:focus,
+.pagination .next:active {
+	border-color: transparent;
+}
+
+.pagination .dots {
+	min-width: auto;
+	border: none;
+}
+
+.pagination .current {
+	border-color: var(--border-color-dark);
+}
+
+/*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
 .site-footer {
@@ -569,47 +692,4 @@ select {
 were hidden (via .neverending) before. */
 .infinity-end.neverending .site-footer {
 	display: block;
-}
-
-
-/* Main menu and hamburger menu responsive display */
-
-/* Min width possible up to tablet max size */
-
-/* --narrow-menu-query: (max-width: 37.5em) */
-
-/* --tablet-menu-query: (max-width: 48em) */
-
-/* --wide-menu-query: (min-width: 37.5em) */
-
-/* --content-query: (min-width: 48em) */
-
-/* --sidebar-query: (min-width: 60em) */
-
-/* MOBILE NAV hamburger */
-.nav--toggle-small { /* mobile nav container */
-
-
-}
-
-/* Desktop menu to min width tablet */
-.main-navigation_wide-menu {
-	display: none;
-
-	@media (--sidebar-query) {
-		display: block;
-	}
-}
-
-/* .nav--toggle-small,
-.nav--toggle-sub .dropdown,
-.nav--toggle-sub .dropdown-toggle {
-	display: none;
-} */
-
-@media (--narrow-menu-query) {
-
-	.nav--toggle-small.nav--toggled-on .mobile-menu-container {
-		display: block;
-	}
 }

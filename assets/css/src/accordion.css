@@ -23,7 +23,13 @@
 	display: flex;
 	padding: 1em;
 	cursor: pointer;
-	border-bottom: 1px solid var(--color-theme-secondary);
+	border-bottom: 0.5px solid var(--global-color-grey);
+
+	& h2 {
+		font-size: var(--font-size-regular);
+		color: var(--color-theme-secondary);
+		margin: 0;
+	}
 }
 
 .tab-content {

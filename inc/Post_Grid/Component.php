@@ -73,8 +73,8 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					$size = 'medium'; // ? (thumbnail, medium, large, full or custom size)
 					?>
 				<div class="grid-item grid grid__half">
+					<a href="<?php echo wp_kses( get_permalink( $the_post->ID ), 'post' ); ?>" class="link-absolute" title="<?php echo esc_html( $the_title ); ?>"><span class="screen-reader-text"><?php echo esc_html( $the_title ); ?></span></a>
 					<div class="grid-item__img">
-						<?php echo wp_kses( '<a href="' . get_permalink( $the_post->ID ) . '">', 'post' ); ?>
 						<?php
 						echo get_the_post_thumbnail(
 							$the_post->ID,
@@ -85,7 +85,6 @@ class Component implements Component_Interface, Templating_Component_Interface {
 							)
 						);
 						?>
-							<?php echo '</a>'; ?>
 					</div>
 					<div class="grid-item__content">
 						<time datetime="<?php echo esc_html( $time_short ); ?>">
@@ -93,9 +92,9 @@ class Component implements Component_Interface, Templating_Component_Interface {
 							echo esc_html( $time );
 							?>
 						</time>
-							<?php echo wp_kses( '<a href="' . $the_permalink . '">', 'post' ); ?>
-						<p class="lead"><?php echo esc_html( $the_title ); ?></p>
-							<?php echo '</a>'; ?>
+						<p class="lead">
+							<?php echo esc_html( $the_title ); ?>
+						</p>
 						<p>
 							<?php
 							$trim_length = 15;  // Desired length of text to display.
@@ -108,11 +107,9 @@ class Component implements Component_Interface, Templating_Component_Interface {
 							?>
 						</p>
 					</div>
-					<a class="go-corner" href="<?php echo wp_kses( $the_permalink, 'post' ); ?>">
-						<div class="go-arrow">
-							→
-						</div>
-					</a>
+					<div class="go-arrow">
+						→
+					</div>
 				</div>
 					<?php
 				endforeach;

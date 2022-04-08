@@ -7,12 +7,12 @@
 # Header
 --------------------------------------------------------------*/
 
-.site-header:not(.front-page):not(.catalog-new) {
+.site-header:not(.front-page):not(.catalog) {
 	background: var(--global-color-dark);
 }
 
 .site-header.front-page,
-.site-header.catalog-new {
+.site-header.catalog:not(.no-post-video) {
 
 	@media (--content-query) {
 		position: absolute;

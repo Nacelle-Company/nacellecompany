@@ -32,7 +32,7 @@ $img_special_alt           = $img_special['alt'];
 if ( ! empty( $img_album ) ) :
 	?>
 	<div class="category-wrapper grid">
-		<a href="<?php echo esc_html( get_home_url() ); ?>/category/distribution/album/" class="link-absolute"></a>
+		<a href="<?php echo esc_html( get_home_url() ); ?>/category/distribution/album/" class="link-absolute" title="<?php esc_html_e( 'Albums', 'wp-rig' ); ?>"></a>
 		<div class="icon-title">
 			<?php get_template_part( 'template-parts/svg/icon-disk' ); ?>
 			<h2 class="title"><?php esc_html_e( 'Albums', 'wp-rig' ); ?></h2>
@@ -45,7 +45,7 @@ endif;
 if ( ! empty( $img_film ) ) :
 	?>
 	<div class="category-wrapper grid">
-		<a href="<?php echo esc_html( get_home_url() ); ?>/category/distribution/film/" class="link-absolute"></a>
+		<a href="<?php echo esc_html( get_home_url() ); ?>/category/distribution/film/" class="link-absolute" title="<?php esc_html_e( 'Films', 'wp-rig' ); ?>"></a>
 		<div class="icon-title">
 			<?php get_template_part( 'template-parts/svg/icon-film' ); ?>
 			<h2 class="title"><?php esc_html_e( 'Films', 'wp-rig' ); ?></h2>
@@ -58,7 +58,7 @@ endif;
 if ( ! empty( $img_series ) ) :
 	?>
 	<div class="category-wrapper grid">
-		<a href="<?php echo esc_html( get_home_url() ); ?>/category/distribution/series/" class="link-absolute"></a>
+		<a href="<?php echo esc_html( get_home_url() ); ?>/category/distribution/series/" class="link-absolute" title="<?php esc_html_e( 'Series', 'wp-rig' ); ?>"></a>
 		<div class="icon-title">
 			<?php get_template_part( 'template-parts/svg/icon-video' ); ?>
 			<h2 class="title"><?php esc_html_e( 'Series', 'wp-rig' ); ?></h2>
@@ -71,7 +71,7 @@ endif;
 if ( ! empty( $img_special ) ) :
 	?>
 	<div class="category-wrapper grid">
-		<a href="<?php echo esc_html( get_home_url() ); ?>/category/distribution/special/" class="link-absolute"></a>
+		<a href="<?php echo esc_html( get_home_url() ); ?>/category/distribution/special/" class="link-absolute" title="<?php esc_html_e( 'Specials', 'wp-rig' ); ?>"></a>
 		<div class="icon-title">
 			<?php get_template_part( 'template-parts/svg/icon-mic' ); ?>
 			<h2 class="title"><?php esc_html_e( 'Specials', 'wp-rig' ); ?></h2>

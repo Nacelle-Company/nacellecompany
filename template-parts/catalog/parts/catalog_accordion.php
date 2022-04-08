@@ -18,9 +18,9 @@ $genres    = get_the_terms( $post->ID, 'genre' );
 $rating    = get_post_meta( get_the_ID(), 'rating', true );
 $copyright = get_post_meta( get_the_ID(), 'copyright', true );
 ?>
-<div class="tab">
+<div class="entry-accordion tab">
 	<input type="checkbox" id="more_info">
-	<label class="tab-label" for="more_info">More Info<span class="dashicons dashicons-arrow-right"></span></label>
+	<label class="tab-label" for="more_info"><h2><span class="screen-reader-text"><?php single_post_title(); ?></span>MORE INFO</h2><span class="dashicons dashicons-arrow-right"></span></label>
 	<div class="tab-content">
 		<dl class="dl-list dl-list__info">
 			<?php if ( $runtime ) : ?>

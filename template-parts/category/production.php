@@ -27,7 +27,7 @@ $img_special_two_alt          = $img_special_two['alt'];
 ?>
 <div class="category-container grid">
 	<div class="category-wrapper grid">
-		<a href="<?php echo esc_html( get_home_url() ); ?>/category/production/series/" class="link-absolute"></a>
+		<a href="<?php echo esc_html( get_home_url() ); ?>/category/production/series/" class="link-absolute" title="<?php esc_html_e( 'Series', 'wp-rig' ); ?>"></a>
 		<div class="icon-title">
 			<?php get_template_part( 'template-parts/svg/icon-video' ); ?>
 			<h2 class="title"><?php esc_html_e( 'Series', 'wp-rig' ); ?></h2>
@@ -46,10 +46,10 @@ $img_special_two_alt          = $img_special_two['alt'];
 
 	<div class="category-wrapper grid">
 
-		<a href="<?php echo esc_html( get_home_url() ); ?>/category/production/special/" class="link-absolute"></a>
+		<a href="<?php echo esc_html( get_home_url() ); ?>/category/production/special/" class="link-absolute" title="<?php esc_html_e( 'Specials', 'wp-rig' ); ?>"></a>
 			<div class="icon-title">
 				<?php get_template_part( 'template-parts/svg/icon-mic' ); ?>
-				<h2 class="title"><?php esc_html_e( 'Special', 'wp-rig' ); ?></h2>
+				<h2 class="title"><?php esc_html_e( 'Specials', 'wp-rig' ); ?></h2>
 			</div>
 			<?php
 			if ( ! empty( $img_special_one ) ) :

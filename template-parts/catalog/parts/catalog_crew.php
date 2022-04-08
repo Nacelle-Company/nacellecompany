@@ -12,10 +12,10 @@ $imdbv = get_post_meta( get_the_ID(), 'imdb_video', true );
 
 <div class="entry-main__crew">
 
-	<div class="crew__title">
-		<h2 class="has-small-font-size"><?php single_post_title(); ?></h2>
-		<h4 class="has-theme-secondary-color">Credits</h4>
-		<a href="<?php echo wp_kses( $imdbv, 'post' ); ?>" class="button" rel="noreferrer" title="Watch <?php the_title_attribute(); ?> on <?php echo wp_kses( $imdbv, 'post' ); ?>" target="_blank" rel="noreferrer">
+	<div class="crew-title__wrapper">
+		<h2 class="crew-title__catalog"><?php single_post_title(); ?><br><span class="crew-title">CREDITS</span></h2>
+
+		<a href="<?php echo wp_kses( $imdbv, 'post' ); ?>" class="button crew-title__button" rel="noreferrer" title="Watch <?php the_title_attribute(); ?> on <?php echo wp_kses( $imdbv, 'post' ); ?>" target="_blank" rel="noreferrer">
 			<strong><?php esc_html_e( 'View on IMDB', 'wp-rig' ); ?></strong>
 			<?php get_template_part( 'template-parts/svg/icon-external-link' ); ?>
 		</a>

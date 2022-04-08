@@ -28,7 +28,7 @@
 .grid-item {
 	position: relative;
 	top: 0;
-	background-color: var(--global-color-light-dark);
+	background-color: var(--global-color-grey-dark);
 	border-radius: 4px;
 	padding: 1.5em;
 	border: 1px solid var(--color-theme-secondary);

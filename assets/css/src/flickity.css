@@ -168,6 +168,7 @@ https://flickity.metafizzy.co
 /* Dev custom styles */
 .main-carousel {
 	height: 75vh;
+	margin-bottom: 3em;
 }
 
 /* carousel height, as percentage of width */

@@ -295,9 +295,9 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			),
 			'wp-rig-sidebar'    => array(
 				'file'             => 'sidebar.min.css',
-				'preload_callback' => function() {
-					return wp_rig()->is_primary_sidebar_active();
-				},
+				// 'preload_callback' => function() {
+				// return wp_rig()->is_primary_sidebar_active();
+				// },
 			),
 			'wp-rig-widgets'    => array(
 				'file'             => 'widgets.min.css',
@@ -344,10 +344,6 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			),
 			'wp-rig-hero-video'    => array(
 				'file'             => 'hero-video.min.css',
-				'preload_callback' => function() {
-					global $template;
-					return 'single-catalog.php' === basename( $template );
-				},
 			),
 			'wp-rig-accordion'    => array(
 				'file'             => 'accordion.min.css',
@@ -419,19 +415,8 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					return 'single-catalog.php' === basename( $template );
 				},
 			),
-			'wp-rig-catalog_footer'    => array(
-				'file'              => 'catalog_footer.min.css',
-				'preload_callback' => function() {
-					global $template;
-					return 'single-catalog.php' === basename( $template );
-				},
-			),
 			'wp-rig-social-share'    => array(
 				'file'              => 'social-share.min.css',
-				'preload_callback' => function() {
-					global $template;
-					return 'single-catalog.php' === basename( $template );
-				},
 			),
 			'wp-rig-related_posts'    => array(
 				'file'           => 'related_posts.min.css',

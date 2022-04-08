@@ -98,7 +98,7 @@ if ( ! empty( $image ) ) {
 
 		<a href="<?php echo esc_attr( $permalink ); ?>" aria-label="visit">
 		<div class="grid-item__content">
-			<h6 class="title"><?php echo esc_attr( $the_title ); ?></h6>
+			<h2 class="title"><?php echo esc_attr( $the_title ); ?></h2>
 			<sub><?php echo esc_html( $synopsis ); ?></sub>
 		</div>
 		</a>
@@ -111,7 +111,7 @@ if ( ! empty( $image ) ) {
 	<div class="grid-item grid-item__plain">
 		<a href="<?php echo esc_attr( $permalink ); ?>" aria-label="visit">
 			<div class="grid-item__content">
-				<h6 class="title"><?php echo esc_attr( $the_title ); ?></h6>
+				<h2 class="title"><?php echo esc_attr( $the_title ); ?></h2>
 				<sub><?php echo esc_html( $synopsis ); ?></sub>
 			</div>
 		</a>

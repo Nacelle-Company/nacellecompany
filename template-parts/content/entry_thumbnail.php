@@ -30,7 +30,7 @@ if ( is_singular( get_post_type() ) ) {
 } elseif ( is_post_type_archive() ) {
 	?>
 	<div class="entry-thumbnail">
-		<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
+		<a class="post-thumbnail" href="<?php the_permalink(); ?>">
 			<?php
 			global $wp_query;
 			if ( 4 > $wp_query->current_post ) {
@@ -63,7 +63,7 @@ if ( is_singular( get_post_type() ) ) {
 	<?php
 } else {
 	?>
-	<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
+	<a class="post-thumbnail" href="<?php the_permalink(); ?>">
 		<?php
 		global $wp_query;
 		if ( 0 === $wp_query->current_post ) {
