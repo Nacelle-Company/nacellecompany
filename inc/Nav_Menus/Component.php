@@ -179,8 +179,10 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		}
 
 		$args['theme_location'] = static::PRIMARY_NAV_MENU_SLUG;
-
 		wp_nav_menu( $args );
+		echo '<div class="searchandfilter__wrap">';
+		echo do_shortcode( '[searchandfilter slug="search-form-only"]' );
+		echo '</div>';
 	}
 
 	/**

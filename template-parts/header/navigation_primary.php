@@ -16,6 +16,8 @@ if ( ! wp_rig()->is_primary_nav_menu_active() ) {
 
 	<div class="primary-menu-container">
 		<?php wp_rig()->display_primary_nav_menu( array( 'menu_id' => 'primary-menu' ) ); ?>
-		<?php echo do_shortcode( '[searchandfilter slug="search-form-only"]' ); ?>
+		<!-- <div class="searchandfilter__wrap"> -->
+			<?php // echo do_shortcode( '[searchandfilter slug="search-form-only"]' ); ?>
+		<!-- </div> -->
 	</div>
 </nav><!-- #site-navigation_primary -->

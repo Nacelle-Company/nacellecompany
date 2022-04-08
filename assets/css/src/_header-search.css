@@ -1,5 +1,6 @@
 @import "_custom-properties";
 
+/* search for mobile menu */
 .mobile-menu-container {
 
 	@media (--narrow-menu-query) {
@@ -39,17 +40,27 @@
 
 		/* base styles */
 		display: grid;
-		grid-template-columns: 1fr auto;
+		grid-template-columns: 2fr 1fr;
+	}
+}
+
+.searchandfilter__wrap {
+
+	@media (--content-query) { /* for desktop */
 		position: relative;
+
+		/* base styles */
 
 		& .searchandfilter {
 			position: absolute;
+			padding: 1em;
 			top: 60%;
-			left: 120%;
+			left: 65%;
 			transform: translate(-50%, -50%);
 			display: flex;
 			justify-content: center;
 			align-items: center;
+			background: var(--global-color-dark);
 		}
 
 		& .searchandfilter ul {
@@ -76,11 +87,6 @@
 		/* pseudo icon styles */
 		& .searchandfilter::before {
 			content: url("/wp-content/themes/wprig-nacelle-dev/assets/images/icon-search.svg");
-			width: 40px;
-			height: 40px;
-			left: 20px;
-			position: absolute;
-			top: 15px;
 		}
 
 		/* hover actions */
