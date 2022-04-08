@@ -99,8 +99,18 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			foreach ( $slider_posts as $slide ) :
 				$the_title     = get_the_title( $slide->ID );
 				$the_permalink = get_the_permalink( $slide->ID );
-				$the_synopsis  = get_field( 'synopsis', $slide->ID );
-				$the_synopsis  = wp_strip_all_tags( $the_synopsis );
+				// $the_synopsis  = get_field( 'synopsis', $slide->ID );
+
+				$the_content = apply_filters( 'the_content', get_the_content( '', '', $slide ) );
+				// $the_content = apply_filters( 'the_content', get_the_content( get_the_content( '', '', $slide ) ) );
+				// Build the synopsis.
+				if ( $the_content ) {
+					$the_synopsis = $the_content;
+					$the_synopsis = wp_strip_all_tags( $the_synopsis );
+				} else {
+					$the_synopsis = get_post_meta( $slide->ID, 'synopsis', true );
+				}
+				// $the_synopsis  = wp_strip_all_tags( $the_synopsis );
 				$the_synopsis  = substr( $the_synopsis, 0, 200 );
 
 				// ? images
