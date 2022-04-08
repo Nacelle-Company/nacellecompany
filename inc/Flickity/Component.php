@@ -92,7 +92,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		$slider_speed = get_field( 'slider_speed' );
 		?>
 
-		<div class="main-carousel" data-flickity='{ "wrapAround": true, "lazyLoad": true, "setGallerySize": false, "pageDots": false, "autoPlay":<?php echo esc_html( $slider_speed ); ?>000 }'>
+		<div class="main-carousel" data-flickity='{ "wrapAround": true, "lazyLoad": false, "setGallerySize": false, "pageDots": false, "autoPlay":<?php echo esc_html( $slider_speed ); ?>000 }'>
 		<?php
 		$slider_posts = $slides;
 		if ( $slides ) :

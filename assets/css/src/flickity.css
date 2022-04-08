@@ -200,7 +200,8 @@ button.flickity-prev-next-button {
 	}
 }
 
-.flickity-lazyloaded {
+.flickity-lazyloaded,
+.attachment-full {
 	position: absolute;
 	top: 0;
 	left: 0;

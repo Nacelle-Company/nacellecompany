@@ -201,15 +201,15 @@ msgstr ""
 msgid "Mobile"
 msgstr ""
 
-#: inc/Nav_Menus/Component.php:224, template-parts/header/navigation_mobile.php:41
+#: inc/Nav_Menus/Component.php:226, template-parts/header/navigation_mobile.php:41
 msgid "Open menu"
 msgstr ""
 
-#: inc/Nav_Menus/Component.php:236
+#: inc/Nav_Menus/Component.php:238
 msgid "main-navigation main-navigation_wide-menu nav--toggle-sub"
 msgstr ""
 
-#: inc/Nav_Menus/Component.php:245
+#: inc/Nav_Menus/Component.php:247
 msgid "main-navigation nav--toggle-sub nav--toggle-small icon-nav"
 msgstr ""
 

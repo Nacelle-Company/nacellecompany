@@ -60,7 +60,7 @@
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			background: var(--global-color-dark);
+
 		}
 
 		& .searchandfilter ul {
@@ -70,7 +70,7 @@
 		}
 
 		& .sf-field-search { /* search input */
-			background-color: var(--global-color-dark);
+
 			border: none;
 			outline: none;
 			width: 0;
@@ -86,7 +86,7 @@
 
 		/* pseudo icon styles */
 		& .searchandfilter::before {
-			content: url("/wp-content/themes/wprig-nacelle-dev/assets/images/icon-search.svg");
+			content: url(../images/icon-search.svg);
 		}
 
 		/* hover actions */
