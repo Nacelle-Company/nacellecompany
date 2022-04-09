@@ -24,9 +24,7 @@ if ( is_post_type_archive() ) {
 
 		get_template_part( 'template-parts/content/entry_thumbnail', get_post_type() );
 		get_template_part( 'template-parts/content/entry_title', get_post_type() );
-		if ( ! is_post_type_archive( 'news' ) ) {
-			get_template_part( 'template-parts/content/entry_summary', get_post_type() );
-		}
+		get_template_part( 'template-parts/content/entry_summary', get_post_type() );
 		get_template_part( 'template-parts/content/entry_footer', get_post_type() );
 		get_template_part( 'template-parts/content/entry_go-corner', get_post_type() );
 

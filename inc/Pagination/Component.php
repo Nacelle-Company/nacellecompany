@@ -60,8 +60,8 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			if ( 'post' === get_post_type() || get_post_type_object( get_post_type() )->has_archive ) {
 				the_post_navigation(
 					array(
-						'prev_text' => '<div class="post-navigation-sub"><span class="dashicons dashicons-arrow-left"></span><span>' . esc_html__( 'Previous:', 'wp-rig' ) . '</span></div><h3>%title</h3>',
-						'next_text' => '<div class="post-navigation-sub"></span><span>' . esc_html__( 'Next:', 'wp-rig' ) . '</span><span class="dashicons dashicons-arrow-right"></div><h3>%title</h3>',
+						'prev_text' => '<div class="post-navigation-sub"><span class="dashicons dashicons-arrow-left"></span><span>' . esc_html__( 'Previous:', 'wp-rig' ) . '</span></div>%title',
+						'next_text' => '<div class="post-navigation-sub"></span><span>' . esc_html__( 'Next:', 'wp-rig' ) . '</span><span class="dashicons dashicons-arrow-right"></div>%title',
 					)
 				);
 			}

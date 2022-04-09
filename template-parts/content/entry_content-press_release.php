@@ -12,34 +12,34 @@ $related_posts       = get_post_meta( get_the_ID(), 'talent_name', true );
 $boilerplate         = get_option( 'options_boilerplate' );
 
 ?>
-	<?php
-	// The post thumbnail.
-	if ( has_post_thumbnail() ) {
-		the_post_thumbnail( 'medium-large', array( 'class' => 'post-image' ) );
-	}
-	?>
-	<div class="post-title">
-		<!-- The post title. -->
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+<?php
+// The post thumbnail.
+if ( has_post_thumbnail() ) {
+	the_post_thumbnail( 'medium-large', array( 'class' => 'post-image' ) );
+}
+?>
+<div class="post-title">
+	<!-- The post title. -->
+	<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
-		<!-- Post intro. -->
-		<h3 class="post-intro">
-			<?php
-			if ( ! empty( $press_release_intro ) ) {
-				echo wp_kses( $press_release_intro, 'post' );
-			}
-			?>
-		</h3>
+	<!-- Post intro. -->
+	<h3 class="post-intro">
 		<?php
-		$location = get_post_meta( get_the_ID(), 'location', true );
-		$time     = get_the_time( 'm.j.y' );
-		echo '<p><strong>';
-		echo esc_html( $location ) . ' ';
-		echo '</strong>';
-		echo esc_html( $time );
-		echo '</p>';
+		if ( ! empty( $press_release_intro ) ) {
+			echo wp_kses( $press_release_intro, 'post' );
+		}
 		?>
-	</div>
+	</h3>
+	<?php
+	$location = get_post_meta( get_the_ID(), 'location', true );
+	$time     = get_the_time( 'm.j.y' );
+	echo '<p><strong>';
+	echo esc_html( $location ) . ' ';
+	echo '</strong>';
+	echo esc_html( $time );
+	echo '</p>';
+	?>
+</div>
 <!-- The post content -->
 <div class="post-content">
 	<?php

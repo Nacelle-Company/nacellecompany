@@ -22,7 +22,7 @@
 		}
 	}
 
-	@media (--content-query) {
+	@media (--wide-menu-query) {
 
 		& .searchandfilter ul {
 			display: flex;

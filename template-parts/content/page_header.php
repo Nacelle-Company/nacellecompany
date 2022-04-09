@@ -9,6 +9,24 @@ namespace WP_Rig\WP_Rig;
 
 global $searchandfilter;
 
+add_filter(
+	'get_the_archive_title',
+	function ( $title ) {
+		if ( is_category() ) {
+			$title = single_cat_title( '', false );
+		} elseif ( is_tag() ) {
+			$title = single_tag_title( '', false );
+		} elseif ( is_author() ) {
+			$title = '<span class="vcard">' . get_the_author() . '</span>';
+		} elseif ( is_tax() ) { // for custom post types
+			$title = sprintf( __( '%1$s' ), single_term_title( '', false ) );
+		} elseif ( is_post_type_archive() ) {
+			$title = post_type_archive_title( '', false );
+		}
+		return $title;
+	}
+);
+
 if ( is_404() ) {
 	?>
 	<header class="page-header">
@@ -23,17 +41,9 @@ if ( is_404() ) {
 	$sf_current_query = $searchandfilter->get( 46515 )->current_query();
 	get_template_part( 'template-parts/modules/search_page-header' );
 } elseif ( is_archive() ) {
-	$current_post_type = get_post_type( $post->ID, false );
-	$the_post_type     = get_post_type_object( get_post_type() );
-	if ( 'catalog' === $current_post_type ) {
+
 		get_template_part( 'template-parts/modules/search_page-header' );
-	} else {
-		?>
-		<div class="page-header">
-			<?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
-		</div>
-		<?php
-	}
+
 } elseif ( is_page() ) {
 	?>
 	<header class="page-header page-header__page">

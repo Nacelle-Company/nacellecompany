@@ -64,21 +64,25 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					$the_title     = get_the_title( $the_post->ID );
 					$time          = get_the_time( 'F j, Y', $the_post->ID );
 					$time_short    = get_the_time( 'o-m-j', $the_post->ID );
-					$image         = get_field( 'wide_image', $the_post->ID );
-					$the_permalink = get_permalink( $the_post->ID );
-					// ? get the images
-					if ( get_field( 'wide_image', $the_post->ID, false ) ) {
-						$image_array = get_field( 'wide_image', $the_post->ID, false );
+					// ? get the images.
+					if ( get_the_post_thumbnail( $the_post->ID ) ) {
+						$has_post_thumbnail = ' has-post-thumbnail';
+					} else {
+						$has_post_thumbnail = '';
 					}
-					$size = 'medium'; // ? (thumbnail, medium, large, full or custom size)
 					?>
-				<div class="grid-item grid grid__half">
+				<div class="grid-item archive-grid__item<?php echo esc_html( $has_post_thumbnail ); ?>">
 					<a href="<?php echo wp_kses( get_permalink( $the_post->ID ), 'post' ); ?>" class="link-absolute" title="<?php echo esc_html( $the_title ); ?>"><span class="screen-reader-text"><?php echo esc_html( $the_title ); ?></span></a>
-					<div class="grid-item__img">
+					<div class="entry-header">
+						<h2 class="entry-title">
+							<?php echo esc_html( $the_title ); ?>
+						</h2>
+					</div>
+					<div class="entry-thumbnail">
 						<?php
 						echo get_the_post_thumbnail(
 							$the_post->ID,
-							'medium',
+							'medium-large',
 							array(
 								'title' => $the_title,
 								'alt'   => $the_title,
@@ -86,29 +90,17 @@ class Component implements Component_Interface, Templating_Component_Interface {
 						);
 						?>
 					</div>
-					<div class="grid-item__content">
+					<div class="entry-footer">
 						<time datetime="<?php echo esc_html( $time_short ); ?>">
 							<?php
 							echo esc_html( $time );
 							?>
 						</time>
-						<p class="lead">
-							<?php echo esc_html( $the_title ); ?>
-						</p>
-						<p>
-							<?php
-							$trim_length = 15;  // Desired length of text to display.
-							$value_more  = '. . .'; // ? what to add at the end of the trimmed text
-							$value       = get_field( 'intro', $the_post->ID );
-							$value       = wp_trim_words( $value, $trim_length, $value_more );
-							if ( $value ) {
-								echo wp_kses( $value, 'post' );
-							}
-							?>
-						</p>
 					</div>
-					<div class="go-arrow">
-						→
+					<div class="go-corner">
+						<div class="go-arrow">
+							→
+						</div>
 					</div>
 				</div>
 					<?php

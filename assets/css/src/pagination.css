@@ -39,6 +39,7 @@
 
 .site-main .pagination {
 	margin-bottom: 1.5em;
+	grid-column: 1/-1;
 }
 
 .pagination .nav-links {

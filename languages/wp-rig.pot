@@ -366,12 +366,12 @@ msgstr ""
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
 
-#: template-parts/content/page_header.php:16
+#: template-parts/content/page_header.php:34
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
 #. translators: %s: search query
-#: template-parts/content/page_header.php:55
+#: template-parts/content/page_header.php:65
 msgid "Search Results for: %s"
 msgstr ""
 
@@ -411,7 +411,7 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: template-parts/modules/search_page-header.php:100
+#: template-parts/modules/search_page-header.php:112
 msgid "Sort & Filter"
 msgstr ""
 

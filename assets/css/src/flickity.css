@@ -99,10 +99,14 @@ button.flickity-prev-next-button {
 	width: 44px;
 	height: 44px;
 	bottom: 20px;
-	top: unset;
+	top: 3em;
 	transform: none;
 	transform: translateY(-50%);
 	border: none;
+
+	@media (--content-query) {
+		top: unset;
+	}
 
 	& .flickity-button-icon {
 		fill: var(--color-theme-primary);
@@ -170,8 +174,21 @@ button.flickity-prev-next-button {
 
 /* Dev custom styles */
 .main-carousel {
-	height: 75vh;
+	height: 100vh;
 	margin-bottom: 3em;
+
+	@media (--wide-menu-query) {
+		height: 155vh;
+	}
+
+	@media (--content-query) {
+		height: 55vh;
+	}
+
+	@media (--sidebar-query) {
+		height: 80vh;
+	}
+
 }
 
 /* carousel height, as percentage of width */
@@ -181,33 +198,64 @@ button.flickity-prev-next-button {
 
 /* cell inherit height from carousel */
 .carousel-cell {
-	height: 100%;
+	max-height: -webkit-fill-available;
+
+	/* height: 100%; */
 	width: 100vw;
-	padding: 1em;
-	display: flex;
-	align-items: flex-end;
+}
+
+figure {
+	margin: 0;
+
+	/* position: relative; */
+
+	/* @media (--sidebar-query) {
+		height: 100%;
+	} */
 }
 
 .caption {
-	padding-bottom: 4em;
-}
+	padding: 1em;
 
-@media (--content-query) {
-
-	.caption {
-		padding-bottom: 0;
-		max-width: 50%;
+	@media (--content-query) {
+		display: grid;
+		grid-template-columns: auto 2fr;
+		padding: 3em;
+		gap: 1em;
+		position: absolute;
+		bottom: 0;
 	}
+
+	@media (--sidebar-query) {
+		max-width: 60vw;
+	}
+
 }
 
 .flickity-lazyloaded,
 .attachment-full {
-	position: absolute;
+
+	/* object-fit: cover; */
+
+	@media (--sidebar-query) {
+		width: 100%;
+	}
+
+	/* position: absolute;
 	top: 0;
 	left: 0;
 	z-index: -1;
-	width: 100%;
+	width: 100%; */
 }
+
+.flickity-title {
+
+	@media (--content-query) {
+		margin-top: 0;
+	}
+}
+
+
 
 .flickity-prev-next-button.previous {
 	left: auto;

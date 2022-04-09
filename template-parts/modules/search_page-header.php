@@ -11,6 +11,10 @@ global $query;
 
 wp_rig()->print_styles( 'wp-rig-offcanvas' );
 
+	// $current_post_type = get_post_type( $post->ID, false );
+	// $the_post_type     = get_post_type_object( get_post_type() );
+	// $archive_title     = $current_post_type->labels->singular_name;
+
 	global $searchandfilter;
 	$sf_current_query = $searchandfilter->get( 46515 )->current_query();
 	$single_icon_inline = '';
@@ -35,7 +39,17 @@ wp_rig()->print_styles( 'wp-rig-offcanvas' );
 			$args
 		) . '"';
 	} elseif ( is_archive() ) {
-		$archive_title = single_term_title( '', false );
+		$current_post_type  = get_post_type( $post->ID, false );
+		$archive_title = get_the_archive_title();
+
+		// Set the searchandfilter plugin's shortcode per post type.
+		if ( 'catalog' === $current_post_type ) {
+			$searchandfilter_menu = '[searchandfilter slug="search-catalog"]';
+		} elseif ( 'news' === $current_post_type ) {
+			$searchandfilter_menu = '[searchandfilter slug="offcanvas-news-search"]';
+		} elseif ( 'press_release' === $current_post_type ) {
+			$searchandfilter_menu = '[searchandfilter slug="offcanvas-press-release-search"]';
+		}
 		$the_query     = get_queried_object();
 		if ( is_tax() ) {
 			$tax_name      = strtoupper( $the_query->taxonomy );
@@ -51,9 +65,7 @@ wp_rig()->print_styles( 'wp-rig-offcanvas' );
 			}
 		}
 	} elseif ( is_single() ) {
-		$current_post_type  = get_post_type( $post->ID, false );
-		$the_post_type      = get_post_type_object( get_post_type() );
-		$archive_title      = $the_post_type->labels->singular_name;
+
 		$single_icon_inline = ' grid';
 		if ( 'News' === $archive_title ) {
 			$tax_icon = 'welcome-widgets-menus';
@@ -66,22 +78,22 @@ wp_rig()->print_styles( 'wp-rig-offcanvas' );
 	}
 	?>
 	<div id="offcanvasOverlay" class="offcanvas overlay" href="javascript:void(0)" onclick="closeNav()"></div>
-	<header class="page-header page-header_catalog">
+	<header class="page-header page-header_sortandfilter">
 		<div class="title-wrap<?php echo esc_html( $single_icon_inline ); ?>">
 			<?php
 			if ( is_tax() || is_single() ) :
 				?>
-			<h5 class="has-theme-secondary-color">
-				<span class="dashicons dashicons-<?php echo esc_html( $tax_icon ); ?>"></span>
-				<?php
-				if ( is_tax() ) {
-					echo esc_html( $tax_name ); }
-				?>
-			</h5>
+				<h5 class="has-theme-secondary-color">
+					<span class="dashicons dashicons-<?php echo esc_html( $tax_icon ); ?>"></span>
+					<?php
+					if ( is_tax() ) {
+						echo esc_html( $tax_name );
+					}
+					?>
+				</h5>
 			<?php endif; ?>
 			<h1 class="title">
 				<?php
-				// Might need this: post_type_archive_title(); ?
 				echo wp_kses( $archive_title, 'post' );
 				the_archive_description( '<div class="archive-description">', '</div>' );
 				?>
@@ -102,7 +114,8 @@ wp_rig()->print_styles( 'wp-rig-offcanvas' );
 			</span>
 			<div id="offcanvasMenu" class="offcanvas-menu">
 				<a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
-				<?php echo do_shortcode( '[searchandfilter slug="search-catalog"]' ); ?>
+				<h3 class="offcanvas-title">Sort & Filter</h3>
+				<?php echo do_shortcode( $searchandfilter_menu ); ?>
 			</div>
 	</header><!-- .page-header -->
 	<!-- offcanvas -->

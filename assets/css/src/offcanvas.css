@@ -1,6 +1,11 @@
 /*--------------------------------------------------------------
 # Offcanvas menu
 --------------------------------------------------------------*/
+.offcanvas-title {
+	padding: 0 1.5em;
+	margin: 1em 0;
+}
+
 .offcanvas-toggle {
 	text-align: right;
 	color: var(--color-theme-secondary);
@@ -28,7 +33,8 @@
 	top: 0;
 	right: 25px;
 	font-size: 36px;
-	margin-left: 50px;
+
+	/* margin-left: 50px; */
 	cursor: pointer;
 }
 

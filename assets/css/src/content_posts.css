@@ -3,6 +3,10 @@
 --------------------------------------------------------------*/
 .single-post {
 	padding: 1em;
+
+	@media (--content-query) {
+		padding: 2em;
+	}
 }
 
 .single-post.has-post-thumbnail {
@@ -24,7 +28,7 @@
 .post-title {
 	display: grid;
 	grid-template-rows: auto;
-	align-content: space-between;
+	align-content: flex-start;
 	grid-column: 3/-1;
 }
 

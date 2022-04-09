@@ -116,33 +116,7 @@
 	}
 }
 
-/*--------------------------------------------------------------
-# Archive main
---------------------------------------------------------------*/
-.archive-main {
-	display: grid;
-	gap: 1em;
-	margin: 1em;
-	justify-items: center;
 
-	@media (--content-query) {
-		grid-template-columns: 1fr;
-		margin: 2em 1em;
-	}
-
-	@media (--sidebar-query) {
-		grid-template-columns: 1fr 1fr 1fr;
-		max-width: var(--page-width);
-		justify-self: center;
-	}
-
-	@media (--sidebar-query) {
-
-		&.archive__press_release {
-			grid-template-columns: 1fr 1fr;
-		}
-	}
-}
 
 @media (--content-query) {
 

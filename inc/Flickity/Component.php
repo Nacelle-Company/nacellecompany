@@ -92,28 +92,25 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		$slider_speed = get_field( 'slider_speed' );
 		?>
 
-		<div class="main-carousel" data-flickity='{ "wrapAround": true, "lazyLoad": false, "setGallerySize": false, "pageDots": false, "autoPlay":<?php echo esc_html( $slider_speed ); ?>000 }'>
+		<div class="main-carousel" data-flickity='{ "wrapAround": true, "lazyLoad": false, "setGallerySize": false, "pageDots": false, "autoPlay":9000<?php // echo esc_html( $slider_speed ); ?>000 }'>
 		<?php
 		$slider_posts = $slides;
 		if ( $slides ) :
 			foreach ( $slider_posts as $slide ) :
 				$the_title     = get_the_title( $slide->ID );
 				$the_permalink = get_the_permalink( $slide->ID );
-				// $the_synopsis  = get_field( 'synopsis', $slide->ID );
+				$the_content   = apply_filters( 'the_content', get_the_content( '', '', $slide ) );
 
-				$the_content = apply_filters( 'the_content', get_the_content( '', '', $slide ) );
-				// $the_content = apply_filters( 'the_content', get_the_content( get_the_content( '', '', $slide ) ) );
 				// Build the synopsis.
 				if ( $the_content ) {
 					$the_synopsis = $the_content;
-					$the_synopsis = wp_strip_all_tags( $the_synopsis );
 				} else {
 					$the_synopsis = get_post_meta( $slide->ID, 'synopsis', true );
 				}
-				// $the_synopsis  = wp_strip_all_tags( $the_synopsis );
-				$the_synopsis  = substr( $the_synopsis, 0, 200 );
+				$the_synopsis = wp_strip_all_tags( $the_synopsis );
+				$the_synopsis = substr( $the_synopsis, 0, 200 );
 
-				// ? images
+				// Get the background images.
 				$the_slider_img     = get_field( 'home_image', $slide );
 				$the_horizontal_img = get_field( 'horizontal_image', $slide );
 				$size               = 'full';
@@ -122,6 +119,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				} else {
 					$image = $the_horizontal_img['id'];
 				}
+				// Get the small thumb for the capption area.
 				$the_square_img = get_field( 'square_image', $slide );
 				if ( ! empty( $the_square_img ) ) {
 					$square_image = wp_get_attachment_image( $the_square_img['id'], 'thumbnail', false, array( 'class' => 'grid-item__img' ) );
@@ -136,12 +134,12 @@ class Component implements Component_Interface, Templating_Component_Interface {
 								</a>
 							</div>
 							<div class="flickity-synopsis">
-								<h3>
+								<h3 class="flickity-title">
 									<?php echo esc_html( $the_title ); ?>
 								</h3>
 								<?php if ( ! empty( $the_synopsis ) ) : ?>
 									<div class="synopsis-container">
-										<?php echo $the_synopsis; ?>
+										<?php echo esc_html( $the_synopsis ); ?>
 									</div>
 								<?php else : ?>
 									<br>

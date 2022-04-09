@@ -17,11 +17,12 @@ namespace WP_Rig\WP_Rig;
 get_header();
 
 wp_rig()->print_styles( 'wp-rig-content' );
-$post_class = '';
-if ( is_post_type_archive( 'press_release' ) ) {
-	$post_class = ' archive-main archive__press_release';
-} elseif ( is_post_type_archive() ) {
-	$post_class = ' archive-main';
+
+if ( is_post_type_archive() ) {
+	$current_post_type = get_post_type();
+	$post_class        = ' archive-main archive__' . $current_post_type;
+} else {
+	$post_class = '';
 }
 
 get_template_part( 'template-parts/content/page_header' ); // ? PAGE HEADER
@@ -35,6 +36,7 @@ get_template_part( 'template-parts/content/page_header' ); // ? PAGE HEADER
 				get_template_part( 'template-parts/content/entry', get_post_type() );
 			}
 			if ( ! is_singular() ) {
+				wp_rig()->print_styles( 'wp-rig-pagination' );
 				get_template_part( 'template-parts/content/pagination' );
 			}
 		} else {
