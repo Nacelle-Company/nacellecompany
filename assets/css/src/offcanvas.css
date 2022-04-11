@@ -58,6 +58,11 @@
 			font-size: 18px;
 		}
 	}
+
+	/* Offcanvas search and filter menu */
+	& .searchandfilter ul ul {
+		padding-left: 0;
+	}
 }
 
 .offcanvas-toggle {

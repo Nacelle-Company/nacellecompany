@@ -44,7 +44,7 @@ wp_rig()->print_styles( 'wp-rig-offcanvas' );
 
 		// Set the searchandfilter plugin's shortcode per post type.
 		if ( 'catalog' === $current_post_type ) {
-			$searchandfilter_menu = '[searchandfilter slug="search-catalog"]';
+			$searchandfilter_menu = '[searchandfilter slug="offcanvas-catalog-search"]';
 		} elseif ( 'news' === $current_post_type ) {
 			$searchandfilter_menu = '[searchandfilter slug="offcanvas-news-search"]';
 		} elseif ( 'press_release' === $current_post_type ) {
@@ -65,7 +65,9 @@ wp_rig()->print_styles( 'wp-rig-offcanvas' );
 			}
 		}
 	} elseif ( is_single() ) {
-
+		$post = get_queried_object();
+		$archive_title = get_post_type_object( get_post_type( $post ) );
+		$archive_title = $archive_title->labels->singular_name;
 		$single_icon_inline = ' grid';
 		if ( 'News' === $archive_title ) {
 			$tax_icon = 'welcome-widgets-menus';

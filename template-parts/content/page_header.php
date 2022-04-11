@@ -38,7 +38,6 @@ if ( is_404() ) {
 } elseif ( is_home() && ! have_posts() ) {
 	get_template_part( 'template-parts/modules/search_page-header' );
 } elseif ( is_home() && ! is_front_page() ) {
-	$sf_current_query = $searchandfilter->get( 46515 )->current_query();
 	get_template_part( 'template-parts/modules/search_page-header' );
 } elseif ( is_archive() ) {
 

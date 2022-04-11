@@ -7,6 +7,9 @@
 
 namespace WP_Rig\WP_Rig;
 
+global $searchandfilter;
+global $sf_current_query;
+
 if ( is_post_type_archive() ) {
 	wp_rig()->print_styles( 'wp-rig-post-grid' ); // ? post grid CSS
 	$article_class = 'entry grid-item archive-grid__item';

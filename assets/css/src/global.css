@@ -89,8 +89,12 @@
 	.has-sidebar .site {
 		display: grid;
 		grid-template-columns: 3fr 1fr;
+		min-height: 100vh;
+		align-items: flex-start;
+		grid-template-rows: auto auto 1fr auto;
 		column-gap: 2rem;
-		justify-content: center;
+
+		/* justify-content: center; */
 	}
 
 	.site-header,

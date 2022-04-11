@@ -16,15 +16,7 @@ wp_rig()->print_styles( 'wp-rig-subcategory' );
 
 global $searchandfilter;
 
-
-
 // Variables.
-$sf_current_query = $searchandfilter->get( 46515 )->current_query(); // Search and Filter plugin.
-// $catalog_post     = get_post_type( get_the_ID() );
-// $catalog_post = get_post_type_object( get_post_type( $post->label ) );
-// echo $catalog_post;
-
-// echo $catalog_post;
 $count            = $wp_query->current_post;
 $the_title        = get_the_title();
 $permalink        = get_permalink();
