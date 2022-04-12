@@ -32,6 +32,7 @@
 
 	/* Utilities */
 	--border-radius: 2px;
+	--flickity-desktop-height: 80vh;
 
 	/* Colors */
 	--global-font-color: #fff;

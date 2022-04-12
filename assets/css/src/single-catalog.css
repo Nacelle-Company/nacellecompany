@@ -1,6 +1,6 @@
-/**
- * Single catalog post
- **/
+/*--------------------------------------------------------------
+# Single catalog post
+--------------------------------------------------------------*/
 
 .catalog,
 .dl-list__info,
@@ -30,10 +30,6 @@
 /* initial layout */
 @media (--content-query) {
 
-	/* .entry-main input:checked ~ .tab-content {
-		padding: 1em 1em 1em 2em;
-	} */
-
 	.entry-video {
 		grid-area: video;
 
@@ -42,6 +38,7 @@
 
 	.entry-image {
 		grid-area: image;
+		z-index: 1001;
 	}
 
 	.entry-main {
@@ -49,24 +46,14 @@
 		padding-left: 2em;
 	}
 
-	/* .catalog:not(.no-video) {
-		grid-template-columns: auto 40%;
-		grid-template-areas:
-			"header header"
-			"video image"
-			"main image"
-			"footer footer";
-	} */
-
 	.no-video .entry-image .wp-post-image {
 		transform: translateY(-9vh);
 	}
 }
 
-/**
-  * DEFINITION LISTS
-  *
-  **/
+/*--------------------------------------------------------------
+# DEFINITION LISTS
+--------------------------------------------------------------*/
 
 /* more info */
 .dl-list__info {
@@ -159,12 +146,9 @@
 	}
 }
 
-/*
- *
- * NEW LAYOUT below
- *
- */
-
+/*--------------------------------------------------------------
+# NEW LAYOUT below
+--------------------------------------------------------------*/
 .entry.catalog {
 	grid-template-rows: 26vh 1fr auto auto auto;
 
@@ -249,12 +233,6 @@
 		grid-column: 2/span 2;
 	}
 }
-
-/* NO VIDEO */
-
-/* NO VIDEO */
-
-/* NO VIDEO */
 
 /* NO VIDEO */
 .entry.no-video {

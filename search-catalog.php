@@ -17,10 +17,9 @@ wp_rig()->print_styles( 'wp-rig-subcategory', 'wp-rig-offcanvas' );
 	<main id="primary" class="site-main">
 		<?php
 		if ( have_posts() ) {
-			 $current_post = get_queried_object();
-
-			// Check if the current post belongs to the advert post type, if not, bail
-			if ( $current_post->post_type !== 'catalog' ) {
+			$current_post = get_queried_object();
+			// Check if the current post belongs to the advert post type, if not, bail.
+			if ( 'catalog' !== $current_post->post_type ) {
 				get_template_part( 'template-parts/content/page_header' );
 			}
 			echo '<div class="subcategory-wrapper">';

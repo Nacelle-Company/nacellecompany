@@ -2,180 +2,6 @@
  * Hero video
  */
 
-.hero-video__wrapper {
-	position: relative;
-}
-
-.hero-video__cover {
-	height: 100%;
-	position: absolute;
-	width: 100%;
-	left: 0;
-	top: 0;
-	z-index: 1;
-}
-
-.hero-video__cover {
-	background: #000000c8;
-}
-
-.hero-video__controls {
-	display: flex;
-	justify-content: flex-end;
-	position: absolute;
-	top: 2em;
-	right: 2em;
-	z-index: 5;
-
-	& .icon {
-		position: absolute;
-		right: 1em;
-	}
-
-}
-
-/*--------------------------------------------------------------
-# Icon volume toggle
---------------------------------------------------------------*/
-.helper-trigger,
-.helper-show {
-	display: none;
-}
-
-.helper-trigger[type=checkbox]:checked + .helper-show {
-	display: block;
-}
-
-.helper-trigger[type=checkbox]:checked + .helper-show + .helper-hide {
-	display: none;
-}
-
-/*
-.hero-section,
-.video-latest {
-	width: 100%;
-	height: 100%;
-	position: relative;
-	left: 0;
-	text-align: center;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-
-	.big-video-cover {
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		left: 0;
-		top: 0;
-		z-index: 0;
-		background: #000000c8;
-
-		@media (--content-query) {
-			height: 100%;
-		}
-	}
-
-	.hero-text {
-		z-index: 1;
-	}
-}
-
-.hero-video__player {
-	position: absolute;
-	overflow: hidden;
-	height: inherit;
-	width: inherit;
-}
-
-.hero-info-crew-wrap {
-
-	@media (--content-query) {
-		display: block;
-	}
-}
-
-.mobile-video-container {
-
-	@media (--content-query) {
-		width: 100%;
-		height: auto;
-	}
-}
-
-.hero-video {
-
-	@media (--content-query) {
-		height: calc(60vw - 25em);
-	}
-}
-
-/* ----------- iPad Pro 10.5" ----------- */
-
-/* Portrait and Landscape */
-@media only screen and (min-device-width: 834px) and (max-device-width: 1112px) and (-webkit-min-device-pixel-ratio: 2) {
-
-	.mobile-video-container {
-		width: 100%;
-		height: 520px;
-	}
-}
-
-.catalog-modal {
-	height: 100%;
-}
-
-.modal-video {
-	width: 100%;
-	height: 100%;
-}
-
-.hero-section-text {
-	color: #fefefe;
-	text-shadow: 1px 1px 2px #0a0a0a;
-	z-index: 2;
-	position: unset !important;
-
-	.play {
-		opacity: 0;
-		visibility: hidden;
-	}
-
-	.pause {
-		opacity: 1;
-		position: absolute;
-		left: 7px;
-		top: 0;
-		margin-bottom: 0;
-		width: auto;
-
-		@media (--content-query) {
-			left: 0;
-		}
-
-		.buttton {
-			padding: 0 1em;
-			border: none;
-
-			&:hover {
-				background-color: transparent;
-			}
-		}
-	}
-
-	&.cover-on {
-
-		.play {
-			opacity: 1;
-			visibility: visible;
-		}
-
-		.pause {
-			opacity: 0;
-		}
-	}
-}
-
 /* video backgrounds : for mobile layout */
 .inline-YTPlayer,
 .big-video {
@@ -185,66 +11,47 @@
 	}
 }
 
-/*
-.player {
-
-	@include breakpoint(small only) {
-		overflow: visible !important;
-	}
+/*--------------------------------------------------------------
+# Icon volume toggle
+--------------------------------------------------------------*/
+.helper-trigger,
+.helper-show {
+	opacity: 0;
 }
 
-.full-hero-video {
-
-	@include breakpoint(small only) {
-		height: calc(100vh - 15rem);
-	}
-
-	@include breakpoint(medium) {
-		width: auto;
-		overflow: hidden;
-		position: relative;
-		flex-wrap: nowrap;
-		align-items: stretch;
-	}
-
-	.mb_YTPlayer {
-
-		@include breakpoint(small only) {
-			background-image: none !important;
-		}
-	}
-
-	.mbYTP_wrapper {
-
-		@include breakpoint(small only) {
-			display: none;
-		}
-	}
+.helper-trigger {
+	width: 100%;
+	height: 100%;
 }
 
-.full-hero-video--content {
-	justify-content: flex-start;
-
-	@include breakpoint(medium up) {
-		height: calc(100vh - 100px);
-		justify-content: flex-end;
-	}
-
-	@include breakpoint(small only) {
-
-		.synopsis {
-			display: none;
-		}
-	}
+.helper-trigger[type="checkbox"]:checked + .helper-show {
+	display: block;
+	transition: opacity 0.6s linear;
 }
 
-*/
+.helper-trigger[type="checkbox"]:checked + .helper-show + .helper-hide {
+	display: block;
+	opacity: 0;
+}
 
-/* new icons */
+.mbYTP_wrapper .YTPOverlay {
+	transition-duration: 0.4s !important;
+}
+
 .hero-video__controls {
+	width: 100%;
+	height: 100%;
 	right: unset;
 	top: unset;
-	z-index: 9;
+	display: flex;
+	justify-content: flex-end;
+	position: absolute;
+	z-index: 999;
+
+	& .icon {
+		position: absolute;
+		right: 1em;
+	}
 
 	& .icon-play__wrapper {
 		position: absolute;
@@ -255,8 +62,7 @@
 
 		& .icon-play__wrapper {
 			position: absolute;
-			transform: translate(50vw, 30vh);
-			z-index: 9;
+			transform: translate(-50vw, 35vh);
 
 			& .icon-play__hollow {
 				stroke: var(--color-link);

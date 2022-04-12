@@ -1,26 +1,24 @@
 /*--------------------------------------------------------------
->>> TABLE OF CONTENTS:
-----------------------------------------------------------------
-#
+# Go corner
 --------------------------------------------------------------*/
+.go-corner {
+	display: flex;
+	align-items: center;
+	position: absolute;
+	width: 32px;
+	height: 32px;
+	overflow: hidden;
+	top: 0;
+	right: 0;
+	opacity: 0.7;
+	background-color: var(--color-theme-secondary);
+	border-radius: 0 4px 0 32px;
+}
 
-/* CUSTOM STYLES
- * archive's (news, press, press releases)
- * TODO: move to specific files
-*/
-
-
-/*--------------------------------------------------------------
-# Post grid
---------------------------------------------------------------*/
-
-/* .post-grid__half {
-	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-
-	@media screen and (--wide-menu-query) {
-		grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-	}
-} */
+.go-arrow {
+	transform: translate(10px, -2px);
+	color: var(--border-color-dark);
+}
 
 /*--------------------------------------------------------------
 # Grid item styles
@@ -60,28 +58,6 @@
 }
 
 /*--------------------------------------------------------------
-# Go corner
---------------------------------------------------------------*/
-.go-corner {
-	display: flex;
-	align-items: center;
-	position: absolute;
-	width: 32px;
-	height: 32px;
-	overflow: hidden;
-	top: 0;
-	right: 0;
-	opacity: 0.7;
-	background-color: var(--color-theme-secondary);
-	border-radius: 0 4px 0 32px;
-}
-
-.go-arrow {
-	transform: translate(10px, -2px);
-	color: var(--border-color-dark);
-}
-
-/*--------------------------------------------------------------
 # Archive main grid
 --------------------------------------------------------------*/
 .archive-main {
@@ -109,6 +85,35 @@
 
 .archive-grid__item {
 	display: grid;
+	gap: 1em;
+
+	/*--------------------------------------------------------------
+	# Grid areas
+	--------------------------------------------------------------*/
+	grid-template-areas:
+		"header"
+		"footer"
+		"image"
+		"summary";
+	align-content: baseline;
+
+	@media (--wide-menu-query) {
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: auto;
+		grid-template-areas:
+			"image header"
+			"image summary"
+			"footer summary";
+	}
+
+	&:not(.has-post-thumbnail) {
+		grid-template-columns: auto;
+		grid-template-rows: auto;
+		grid-template-areas:
+			"header"
+			"footer"
+			"summary";
+	}
 
 	& .wp-post-image {
 		margin: 0;
@@ -147,48 +152,6 @@
 		flex-wrap: wrap;
 	}
 
-	/* &:not(.has-post-thumbnail) {
-
-		& .entry-footer {
-
-			@media (--content-query) {
-				flex-direction: row;
-			}
-		}
-	} */
-
-}
-
-/*--------------------------------------------------------------
-# Grid areas
---------------------------------------------------------------*/
-.archive-grid__item {
-	display: grid;
-	gap: 1em;
-	grid-template-areas:
-		"header"
-		"footer"
-		"image"
-		"summary";
-	align-content: baseline;
-
-	@media (--wide-menu-query) {
-		grid-template-columns: 1fr 1fr;
-		grid-template-rows: auto;
-		grid-template-areas:
-			"image header"
-			"image summary"
-			"footer summary";
-	}
-
-	&:not(.has-post-thumbnail) {
-		grid-template-columns: auto;
-		grid-template-rows: auto;
-		grid-template-areas:
-			"header"
-			"footer"
-			"summary";
-	}
 }
 
 .type-press_release {
@@ -198,8 +161,6 @@
 
 		& .entry-summary {
 
-			/* grid-area: footer; */
-
 			& > p {
 				margin-top: 0;
 			}
@@ -207,55 +168,10 @@
 
 		& .entry-footer {
 			grid-area: footer;
-
-			/* grid-column: 1/-1; */
-
-			/* flex-direction: row; */
 		}
 	}
 }
 
-/* .post-grid__wrapper {
-	background: var(--global-color-dark);
-
-	@media (--content-query) {
-		display: grid;
-		grid-template-areas:
-			"image title"
-			"image summary"
-			"image footer";
-
-		& .entry-thumbnail {
-			grid-area: image;
-
-		}
-
-		& .entry-header {
-			grid-area: title;
-			margin: 0 0;
-		}
-
-		& .entry-summary {
-			grid-area: summary;
-			margin-top: 0;
-		}
-
-		& .entry-footer {
-			grid-area: footer;
-			width: 100%;
-			display: grid;
-			grid-template-columns: auto auto;
-			justify-content: space-between;
-			margin: 0 0;
-
-		}
-
-		& .entry-title {
-			margin-top: 0;
-		}
-
-	}
-} */
 
 /* HOME POST GRID */
 .home .entry-title {

@@ -18,6 +18,7 @@ get_header();
 
 wp_rig()->print_styles( 'wp-rig-content' );
 global $searchandfilter;
+
 $sf_current_query = $searchandfilter->get( 46515 )->current_query();
 
 if ( is_post_type_archive() ) {
@@ -33,6 +34,7 @@ get_template_part( 'template-parts/content/page_header' ); // ? PAGE HEADER
 	<main id="primary" class="site-main<?php echo esc_html( $post_class ); ?>">
 		<?php
 		if ( have_posts() ) {
+
 			while ( have_posts() ) {
 				the_post();
 				get_template_part( 'template-parts/content/entry', get_post_type() );

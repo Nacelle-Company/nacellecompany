@@ -11,19 +11,25 @@
 
 namespace WP_Rig\WP_Rig;
 
+global $the_post_id;
+
 ?>
 
 <footer id="colophon" class="site-footer">
-	<script>
-		// YTPlayer hero video jquery call
-		jQuery(function() {
-			jQuery("#hero_video").YTPlayer();
-			jQuery("#hero_video__desktop").YTPlayer();
-		});
-	</script>
+	<?php if ( ! is_front_page() ) : ?>
+		<script>
+			// YTPlayer hero video jquery call
+			jQuery(function() {
+				jQuery("#hero_video_<?php echo esc_html( $the_post_id ); ?>").YTPlayer();
+				jQuery("#hero_video__desktop_<?php echo esc_html( $the_post_id ); ?>").YTPlayer();
+			});
+		</script>
+	<?php endif; ?>
 	<?php get_template_part( 'template-parts/footer/footer-widgets' ); ?>
 </footer><!-- #colophon -->
 </div><!-- #page -->
-	<?php wp_footer(); ?>
+	<?php
+	wp_footer();
+	?>
 </body>
 </html>

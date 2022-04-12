@@ -57,7 +57,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	}
 
 	/**
-	 * Enqueues the related posts script file.
+	 * Enqueues the flickity script file.
 	 */
 	public function action_enqueue_flickity_script() {
 
@@ -89,82 +89,144 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		/*
 		*  http://codex.wordpress.org/Template_Tags/get_posts#Reset_after_Postlists_with_offset
 		*/
+		global $the_post_id;
 		$slider_speed = get_field( 'slider_speed' );
+		if ( get_field( 'group_slides' ) ) {
+			$group_cells           = '"groupCells": true, "groupCells": 2,';
+			$slider_custom_classes = ' group-cells';
+		} else {
+			$group_cells           = '';
+			$slider_custom_classes = '';
+		}
+
 		?>
 
-		<div class="main-carousel" data-flickity='{ "wrapAround": true, "lazyLoad": false, "setGallerySize": false, "pageDots": false, "autoPlay":9000<?php // echo esc_html( $slider_speed ); ?>000 }'>
-		<?php
-		$slider_posts = $slides;
-		if ( $slides ) :
-			foreach ( $slider_posts as $slide ) :
-				$the_title     = get_the_title( $slide->ID );
-				$the_permalink = get_the_permalink( $slide->ID );
-				$the_content   = apply_filters( 'the_content', get_the_content( '', '', $slide ) );
+		<div class="main-carousel<?php echo esc_html( $slider_custom_classes ); ?>" data-flickity='{<?php echo esc_html( $group_cells ); ?>"wrapAround": true,"lazyLoad": false, "setGallerySize": false, "pageDots": false}'>
+			<?php
+			$slider_posts = $slides;
+			if ( $slides ) :
+				foreach ( $slider_posts as $slide ) :
 
-				// Build the synopsis.
-				if ( $the_content ) {
-					$the_synopsis = $the_content;
-				} else {
-					$the_synopsis = get_post_meta( $slide->ID, 'synopsis', true );
-				}
-				$the_synopsis = wp_strip_all_tags( $the_synopsis );
-				$the_synopsis = substr( $the_synopsis, 0, 200 );
+					/**
+					 * Initial variables.
+					 */
+					$the_post_id   = $slide->ID;
+					$blog_url      = get_bloginfo( 'url' );
+					$the_title     = get_the_title( $slide );
+					$the_permalink = get_the_permalink( $slide );
 
-				// Get the background images.
-				$the_slider_img     = get_field( 'home_image', $slide );
-				$the_horizontal_img = get_field( 'horizontal_image', $slide );
-				$size               = 'full';
-				if ( ! empty( $the_slider_img ) ) {
-					$image = $the_slider_img['id'];
-				} else {
-					$image = $the_horizontal_img['id'];
-				}
-				// Get the small thumb for the capption area.
-				$the_square_img = get_field( 'square_image', $slide );
-				if ( ! empty( $the_square_img ) ) {
-					$square_image = wp_get_attachment_image( $the_square_img['id'], 'thumbnail', false, array( 'class' => 'grid-item__img' ) );
-				}
-				?>
-				<div class="carousel-cell">
-					<figure>
-						<figcaption class="caption">
-							<div class="flickity-image">
-								<a href="<?php echo esc_html( $the_permalink ); ?>">
-									<?php echo $square_image; ?>
-								</a>
-							</div>
-							<div class="flickity-synopsis">
-								<h3 class="flickity-title">
-									<?php echo esc_html( $the_title ); ?>
-								</h3>
-								<?php if ( ! empty( $the_synopsis ) ) : ?>
-									<div class="synopsis-container">
-										<?php echo esc_html( $the_synopsis ); ?>
-									</div>
-								<?php else : ?>
-									<br>
-								<?php endif; ?>
-							</div>
-						</figcaption>
-						<?php
-						echo wp_get_attachment_image(
-							$image,
-							$size,
-							false,
-							array(
-								'data-flickity-lazyload' => wp_get_attachment_image_url( $image, $size ),
-								'data-flickity-lazyload-srcset' => wp_get_attachment_image_srcset( $image, $size ),
-							)
-						);
-						?>
-					</figure>
-				</div>
+					/**
+					 * Slide text content.
+					 */
+					$the_content = apply_filters( 'the_content', get_the_content( '', '', $slide ) );
+					// Build the synopsis.
+					if ( $the_content ) {
+						$the_synopsis = $the_content;
+					} else {
+						$the_synopsis = get_post_meta( $slide->ID, 'synopsis', true );
+					}
+					// Trunkate the synopsis.
+					$the_synopsis = wp_strip_all_tags( $the_synopsis );
+					$the_synopsis = wp_trim_words( $the_synopsis, 35 );
 
-				<?php
-			endforeach;
-		endif;
-		?>
+					/**
+					 * Slide images.
+					 */
+					$size               = 'full';
+					$the_slider_img     = get_field( 'home_image', $slide );
+					$the_horizontal_img = get_field( 'horizontal_image', $slide );
+					// Get the background images.
+					if ( $the_slider_img ) {
+						$image = $the_slider_img['id'];
+					} else {
+						$image = $the_horizontal_img['id'];
+					}
+					// Small thumb for slide content area.
+					$square_img = get_field( 'square_image', $slide );
+					if ( $square_img ) {
+						$square_img = wp_get_attachment_image( $square_img['id'], 'thumbnail', false, array( 'class' => 'grid-item__img' ) );
+					}
+
+					/**
+					 * Hero video.
+					 */
+					$hero_video_show = get_field( 'video_on_homepage_slider', $slide );
+					// Get the video. As long as the catalog post's t/f switch is on.
+					if ( true === $hero_video_show ) {
+						$hero_video          = get_field( 'video_embedd', $slide );
+						$hero_video_fallback = wp_get_attachment_image_url( $image, $size );
+					}
+					?>
+
+					<div class="carousel-cell <?php echo esc_html( $the_post_id ); ?>">
+						<figure>
+							<figcaption class="caption">
+								<div class="flickity-image">
+									<a href="<?php echo esc_html( $the_permalink ); ?>">
+										<?php echo wp_kses( $square_img, 'post' ); ?>
+									</a>
+								</div>
+								<div class="flickity-synopsis">
+									<h3 class="flickity-title">
+										<?php echo esc_html( $the_title ); ?>
+									</h3>
+									<?php if ( ! empty( $the_synopsis ) ) : ?>
+										<div class="synopsis-container">
+											<?php echo esc_html( $the_synopsis ); ?>
+										</div>
+									<?php else : ?>
+										<br>
+									<?php endif; ?>
+								</div>
+							</figcaption>
+							<?php
+							if ( true === $hero_video_show ) {
+								wp_rig()->print_styles( 'wp-rig-hero-video' );
+								?>
+								<div id="hero_video_<?php echo esc_html( $the_post_id ); ?>"
+								class="player"
+									data-property="{
+										videoURL: '<?php echo esc_html( $hero_video ); ?>',
+										mute: true,
+										containment:'self',
+										showYTLogo: false,
+										abundance: 0.3,
+										playOnlyIfVisible:true,
+										mobileFallbackImage: '<?php echo wp_kses( $hero_video_fallback, 'post' ); ?>',
+										mask:'<?php echo wp_kses( $blog_url, 'post' ); ?>/wp-content/themes/wp-rig-nacelle/assets/images/ytplayer-mask.png'}">
+									<?php get_template_part( 'template-parts/modules/icon_volume-toggle' ); ?>
+								</div>
+								<?php
+							} else {
+								echo wp_get_attachment_image(
+									$image,
+									$size,
+									false,
+									array(
+										'data-flickity-lazyload' => wp_get_attachment_image_url( $image, $size ),
+										'data-flickity-lazyload-srcset' => wp_get_attachment_image_srcset( $image, $size ),
+									)
+								);
+							}
+							?>
+						</figure>
+						<script>
+							jQuery(function() {
+								jQuery("#hero_video_<?php echo esc_html( $the_post_id ); ?>").YTPlayer();
+								var heroVideo = document.querySelector("#hero_video_<?php echo esc_html( $the_post_id ); ?>");
+								var flickityBtn = document.querySelectorAll(".flickity-button");
+								// console.log(flickityBtn);
+								jQuery(flickityBtn).on( 'click', '.button', function() {
+									jQuery(heroVideo).YTPToggleVolume().YTPToggleMask();
+								});
+							});
+						</script>
+					</div>
+					<?php
+				endforeach;
+			endif;
+			?>
 		</div>
 		<?php
-	} // ? END display_flickity()
+	} // END display_flickity().
 }
