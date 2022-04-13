@@ -23,20 +23,18 @@ wp_rig()->print_styles( 'wp-rig-content' );
 	if ( is_category( 'distribution' ) ) {
 
 		wp_rig()->print_styles( 'wp-rig-category' );
-
-		// get_template_part( 'template-parts/content/page_header' );
-
 		get_template_part( 'template-parts/category/distribution' );
 
-		get_template_part( 'template-parts/category/related-content' );
+		wp_rig()->print_styles( 'wp-rig-extra_content' );
+		wp_rig()->display_extra_content();
 
 	} elseif ( is_category( 'production' ) ) {
 
 		wp_rig()->print_styles( 'wp-rig-category' );
-
-		// get_template_part( 'template-parts/content/page_header' );
-
 		get_template_part( 'template-parts/category/production' );
+
+		wp_rig()->print_styles( 'wp-rig-extra_content' );
+		wp_rig()->display_extra_content();
 
 	} elseif ( is_category( array( 'album', 'film', 'series', 'special', 'podcast', 'series-production', 'special-production' ) ) ) {
 

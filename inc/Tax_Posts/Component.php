@@ -8,7 +8,7 @@
 namespace WP_Rig\WP_Rig\Tax_Posts;
 
 global $query;
-global $post; // required
+global $post; // Required.
 
 use WP_Rig\WP_Rig\Component_Interface;
 use WP_Rig\WP_Rig\Templating_Component_Interface;
@@ -52,20 +52,17 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	}
 	/**
 	 * Display Tax Terms
-	 *
-	 * @param mixed $taxonomy Parameter comment.
-	 * A little text.
 	 */
 	public function display_tax_posts() {
 		?>
 		<div class="grid-item grid grid__half">
 			<div class="grid-item__img">
-				<?php echo '<a href="' . get_permalink() . '">'; ?>
+				<?php echo wp_kses( '<a href="' . get_permalink() . '">', 'post' ); ?>
 					<?php the_post_thumbnail(); ?>
 				<?php echo '</a>'; ?>
 			</div>
 			<div class="grid-item__content">
-					<?php echo '<a href="' . get_permalink() . '">'; ?>
+					<?php echo wp_kses( '<a href="' . get_permalink() . '">', 'post' ); ?>
 				<p class="lead"><?php the_title(); ?></p>
 					<?php echo '</a>'; ?>
 				<p>
@@ -75,12 +72,12 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					$custom_field = 'intro';
 					$value        = get_field( 'intro' );
 					if ( $value ) {
-						echo wp_trim_words( $value, $trim_length, $value_more );
+						echo wp_kses( wp_trim_words( $value, $trim_length, $value_more ), 'post' );
 					}
 					?>
 				</p>
 			</div>
-			<a class="go-corner" href="<?php echo get_permalink(); ?>">
+			<a class="go-corner" href="<?php echo wp_kses( get_permalink(), 'post' ); ?>">
 				<div class="go-arrow">
 					→
 				</div>

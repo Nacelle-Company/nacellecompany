@@ -5,7 +5,7 @@
  * @package wp_rig
  */
 
- namespace WP_Rig\WP_Rig\Archive_Content;
+namespace WP_Rig\WP_Rig\Archive_Content;
 
 use WP_Rig\WP_Rig\Component_Interface;
 use WP_Rig\WP_Rig\Templating_Component_Interface;
@@ -73,7 +73,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		$wp_customize->add_control(
 			'archives_use_excerpt',
 			array(
-				'label'   => __( 'Use excerpts in archive views?', 'wp_rig' ),
+				'label'   => __( 'Use excerpts in archive views?', 'wp-rig' ),
 				'section' => 'theme_options',
 				'type'    => 'checkbox',
 			)

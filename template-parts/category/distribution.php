@@ -1,9 +1,11 @@
 <?php
 /**
- * Template part for the catalog/comedy distribution catalog page.
+ * Template distribution category page.
  *
- * @package distribution category
+ * @package wp_rig
  */
+
+namespace WP_Rig\WP_Rig;
 
 // ? albums
 $distribution_album_post = get_field( 'distribution_album_post', 'option' );
@@ -28,58 +30,57 @@ $img_special_alt           = $img_special['alt'];
 
 <div class="category-container grid">
 
-<?php
-if ( ! empty( $img_album ) ) :
-	?>
-	<div class="category-wrapper grid">
-		<a href="<?php echo esc_html( get_home_url() ); ?>/category/distribution/album/" class="link-absolute" title="<?php esc_html_e( 'Albums', 'wp-rig' ); ?>"></a>
-		<div class="icon-title">
-			<?php get_template_part( 'template-parts/svg/icon-disk' ); ?>
-			<h2 class="title"><?php esc_html_e( 'Albums', 'wp-rig' ); ?></h2>
-		</div>
-		<img src="<?php echo esc_url( $img_album['url'] ); ?>" alt="<?php echo esc_attr( $img_album_alt ); ?>" />
-	</div>
 	<?php
-endif;
-
-if ( ! empty( $img_film ) ) :
-	?>
-	<div class="category-wrapper grid">
-		<a href="<?php echo esc_html( get_home_url() ); ?>/category/distribution/film/" class="link-absolute" title="<?php esc_html_e( 'Films', 'wp-rig' ); ?>"></a>
-		<div class="icon-title">
-			<?php get_template_part( 'template-parts/svg/icon-film' ); ?>
-			<h2 class="title"><?php esc_html_e( 'Films', 'wp-rig' ); ?></h2>
+	if ( ! empty( $img_album ) ) :
+		?>
+		<div class="category-wrapper grid">
+			<a href="<?php echo esc_html( get_home_url() ); ?>/category/distribution/album/" class="link-absolute" title="<?php esc_html_e( 'Albums', 'wp-rig' ); ?>"></a>
+			<div class="icon-title">
+				<?php get_template_part( 'template-parts/svg/icon-disk' ); ?>
+				<h2 class="title"><?php esc_html_e( 'Albums', 'wp-rig' ); ?></h2>
+			</div>
+			<img src="<?php echo esc_url( $img_album['url'] ); ?>" alt="<?php echo esc_attr( $img_album_alt ); ?>" />
 		</div>
-		<img src="<?php echo esc_url( $img_film['url'] ); ?>" alt="<?php echo esc_attr( $img_film_alt ); ?>" />
-	</div>
-	<?php
-endif;
+		<?php
+	endif;
 
-if ( ! empty( $img_series ) ) :
-	?>
-	<div class="category-wrapper grid">
-		<a href="<?php echo esc_html( get_home_url() ); ?>/category/distribution/series/" class="link-absolute" title="<?php esc_html_e( 'Series', 'wp-rig' ); ?>"></a>
-		<div class="icon-title">
-			<?php get_template_part( 'template-parts/svg/icon-video' ); ?>
-			<h2 class="title"><?php esc_html_e( 'Series', 'wp-rig' ); ?></h2>
+	if ( ! empty( $img_film ) ) :
+		?>
+		<div class="category-wrapper grid">
+			<a href="<?php echo esc_html( get_home_url() ); ?>/category/distribution/film/" class="link-absolute" title="<?php esc_html_e( 'Films', 'wp-rig' ); ?>"></a>
+			<div class="icon-title">
+				<?php get_template_part( 'template-parts/svg/icon-film' ); ?>
+				<h2 class="title"><?php esc_html_e( 'Films', 'wp-rig' ); ?></h2>
+			</div>
+			<img src="<?php echo esc_url( $img_film['url'] ); ?>" alt="<?php echo esc_attr( $img_film_alt ); ?>" />
 		</div>
-		<img src="<?php echo esc_url( $img_series['url'] ); ?>" alt="<?php echo esc_attr( $img_series_alt ); ?>" />
-	</div>
-	<?php
-endif;
+		<?php
+	endif;
 
-if ( ! empty( $img_special ) ) :
-	?>
-	<div class="category-wrapper grid">
-		<a href="<?php echo esc_html( get_home_url() ); ?>/category/distribution/special/" class="link-absolute" title="<?php esc_html_e( 'Specials', 'wp-rig' ); ?>"></a>
-		<div class="icon-title">
-			<?php get_template_part( 'template-parts/svg/icon-mic' ); ?>
-			<h2 class="title"><?php esc_html_e( 'Specials', 'wp-rig' ); ?></h2>
+	if ( ! empty( $img_series ) ) :
+		?>
+		<div class="category-wrapper grid">
+			<a href="<?php echo esc_html( get_home_url() ); ?>/category/distribution/series/" class="link-absolute" title="<?php esc_html_e( 'Series', 'wp-rig' ); ?>"></a>
+			<div class="icon-title">
+				<?php get_template_part( 'template-parts/svg/icon-video' ); ?>
+				<h2 class="title"><?php esc_html_e( 'Series', 'wp-rig' ); ?></h2>
+			</div>
+			<img src="<?php echo esc_url( $img_series['url'] ); ?>" alt="<?php echo esc_attr( $img_series_alt ); ?>" />
 		</div>
-		<img src="<?php echo esc_url( $img_special['url'] ); ?>" alt="<?php echo esc_attr( $img_special_alt ); ?>" />
-	</div>
-	<?php
-endif;
-?>
+		<?php
+	endif;
 
+	if ( ! empty( $img_special ) ) :
+		?>
+		<div class="category-wrapper grid">
+			<a href="<?php echo esc_html( get_home_url() ); ?>/category/distribution/special/" class="link-absolute" title="<?php esc_html_e( 'Specials', 'wp-rig' ); ?>"></a>
+			<div class="icon-title">
+				<?php get_template_part( 'template-parts/svg/icon-mic' ); ?>
+				<h2 class="title"><?php esc_html_e( 'Specials', 'wp-rig' ); ?></h2>
+			</div>
+			<img src="<?php echo esc_url( $img_special['url'] ); ?>" alt="<?php echo esc_attr( $img_special_alt ); ?>" />
+		</div>
+		<?php
+	endif;
+	?>
 </div>

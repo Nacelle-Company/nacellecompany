@@ -14,14 +14,11 @@ $txt     = get_post_meta( get_the_ID(), 'layouts_' . $count . '_txt', true );
 $btn     = get_post_meta( get_the_ID(), 'layouts_' . $count . '_btn', true );
 $bk_edge = get_post_meta( get_the_ID(), 'layouts_' . $count . '_bk_edge', true );
 $row_h   = get_post_meta( get_the_ID(), 'layouts_' . $count . '_row_h', true );
-// $width   = get_post_meta( get_the_ID(), 'layouts_' . $count . '_width', true );
 $overlay = get_post_meta( get_the_ID(), 'layouts_' . $count . '_bk_img_ov', true );
 if ( $bk_img ) {
 	$bk_img = 'background-image:url(' . wp_get_attachment_image_url( $bk_img, '' ) . ');';
 }
-// if ( $bk_img ) {
-// $bk_img = wp_get_attachment_image( $bk_img, 'large', false, array( 'class' => 'banner__img' ) ); // ? https://jasonyingling.me/using-wordpress-responsive-images-advanced-custom-fields/
-// }
+
 if ( $bk_edge ) {
 	if ( 'lt' === $bk_edge ) {
 		$bk_edge = 'background-position:left top;';

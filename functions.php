@@ -112,10 +112,12 @@ function printVar( $post ) {
 	print_r( $post );
 	echo '</pre>';
 }
-
+/**
+ * Allow wp_query.
+ **/
 function is_post_type( $type ) {
 	global $wp_query;
-	if ( $type == get_post_type( $wp_query->post->ID ) ) {
+	if ( get_post_type( $wp_query->post->ID ) === $type ) {
 		return true;
 	}
 	return false;

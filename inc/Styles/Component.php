@@ -424,6 +424,9 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			'wp-rig-pagination'    => array(
 				'file'           => 'pagination.min.css',
 			),
+			'wp-rig-extra_content'    => array(
+				'file'           => 'extra_content.min.css',
+			),
 		);
 
 		/**

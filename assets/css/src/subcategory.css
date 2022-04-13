@@ -15,12 +15,17 @@
 .grid-item {
 	position: relative;
 
-
-
 	& .title {
 		color: var(--global-color-dark);
 		margin: 0;
 		font-size: var(--font-size-normal);
+	}
+
+	& .subcategory-image {
+
+		@media (--narrow-menu-query) {
+			min-width: 100%;
+		}
 	}
 
 	@media (--content-query) {
@@ -48,12 +53,10 @@
 	}
 }
 
-.grid-item__plain {
-
-	& .grid-item__content {
-		height: 100%;
-	}
+.grid-item__plain .grid-item__content {
+	height: 100%;
 }
+
 
 /* block image */
 .grid-item__img {

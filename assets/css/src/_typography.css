@@ -107,6 +107,7 @@ pre {
 	max-width: 100%;
 	overflow: auto;
 	padding: 1.5em;
+	overflow: visible;
 }
 /* stylelint-enable */
 

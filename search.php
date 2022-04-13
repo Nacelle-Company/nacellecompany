@@ -15,14 +15,8 @@ wp_rig()->print_styles( 'wp-rig-content' );
 global $searchandfilter;
 global $sf_current_query;
 
-// if ( is_post_type_archive() ) {
 	$current_post_type = get_post_type();
 	$post_class        = ' archive-main archive__' . $current_post_type;
-// } else {
-	// $post_class = '';
-// }
-	// echo get_post_type();
-
 
 get_template_part( 'template-parts/content/page_header' ); // ? PAGE HEADER
 

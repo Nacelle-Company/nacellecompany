@@ -1,6 +1,8 @@
 <?php
 /**
  * Pagination next arrow.
+ *
+ * @package category
  **/
 
 ?>

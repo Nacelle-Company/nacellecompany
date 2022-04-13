@@ -142,7 +142,7 @@ button.flickity-prev-next-button {
 	}
 }
 
-figure {
+.carousel-cell figure {
 	margin: 0;
 
 	@media (--sidebar-query) {

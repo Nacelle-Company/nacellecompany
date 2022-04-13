@@ -12,12 +12,6 @@ wp_rig()->print_styles( 'wp-rig-social-share' );
 $html     = '';
 $url_full = get_permalink( $post->ID );
 $url      = esc_url( $url_full );
-
-// if ( get_option( 'social-share-facebook' ) === 1 ) {
-// }
-
-// if ( get_option( 'social-share-twitter' ) === 1 ) {
-// }
 ?>
 <div class="social-share">
 
@@ -25,7 +19,7 @@ $url      = esc_url( $url_full );
 	<div class="social-share__icons">
 		<a href="http://www.facebook.com/sharer.php?u=<?php echo wp_kses( $url, 'post' ); ?>" rel="noopener" target="_blank">
 			<svg class="icon" width="25" height="25" xmlns="http://www.w3.org/2000/svg" aria-labelledby="facebookIcon" role="img">
-				<title id="facebookIcon">Share on<?php echo get_bloginfo(); ?> Facebook</title>
+				<title id="facebookIcon">Share on<?php echo wp_kses( get_bloginfo(), 'post' ); ?> Facebook</title>
 				<path d="M25 1.38v22.24c0 .76-.62 1.37-1.38 1.37h-6.37v-9.67h3.25l.48-3.77h-3.74V9.14c0-1.1.3-1.84 1.87-1.84h2V3.92c-.35-.04-1.53-.15-2.91-.15-2.88 0-4.86 1.76-4.86 5v2.78h-3.26v3.77h3.26V25H1.38C.62 25 0 24.38 0 23.62V1.38C0 .62.62 0 1.38 0h22.24C24.38 0 25 .62 25 1.38z" fill-rule="nonzero" />
 			</svg>
 		</a>

@@ -82,6 +82,7 @@
 
 .site-main {
 	display: grid;
+
 }
 
 @media (--sidebar-query) {
@@ -593,12 +594,6 @@ were hidden (via .neverending) before. */
 
 /* --sidebar-query: (min-width: 60em) */
 
-/* MOBILE NAV hamburger */
-.nav--toggle-small { /* mobile nav container */
-
-
-}
-
 /* Desktop menu to min width tablet */
 .main-navigation_wide-menu {
 	display: none;
@@ -607,12 +602,6 @@ were hidden (via .neverending) before. */
 		display: block;
 	}
 }
-
-/* .nav--toggle-small,
-.nav--toggle-sub .dropdown,
-.nav--toggle-sub .dropdown-toggle {
-	display: none;
-} */
 
 @media (--narrow-menu-query) {
 

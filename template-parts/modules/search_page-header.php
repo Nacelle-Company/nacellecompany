@@ -11,12 +11,8 @@ global $query;
 
 wp_rig()->print_styles( 'wp-rig-offcanvas' );
 
-	// $current_post_type = get_post_type( $post->ID, false );
-	// $the_post_type     = get_post_type_object( get_post_type() );
-	// $archive_title     = $current_post_type->labels->singular_name;
-
 	global $searchandfilter;
-	$sf_current_query = $searchandfilter->get( 46515 )->current_query();
+	$sf_current_query   = $searchandfilter->get( 46515 )->current_query();
 	$single_icon_inline = '';
 	/**
 	 * Get labels for Multiple Fields by Field Name
@@ -27,7 +23,7 @@ wp_rig()->print_styles( 'wp-rig-offcanvas' );
 	$args = array(
 		'str'               => '%2$s',
 		'delim'             => array( ', ', ' - ' ),
-		'field_delim'        => ', ',
+		'field_delim'       => ', ',
 		'show_all_if_empty' => false,
 	);
 	// ? if search
@@ -39,8 +35,8 @@ wp_rig()->print_styles( 'wp-rig-offcanvas' );
 			$args
 		) . '"';
 	} elseif ( is_archive() ) {
-		$current_post_type  = get_post_type( $post->ID, false );
-		$archive_title = get_the_archive_title();
+		$current_post_type = get_post_type( $post->ID, false );
+		$archive_title     = get_the_archive_title();
 
 		// Set the searchandfilter plugin's shortcode per post type.
 		if ( 'catalog' === $current_post_type ) {
@@ -50,10 +46,10 @@ wp_rig()->print_styles( 'wp-rig-offcanvas' );
 		} elseif ( 'press_release' === $current_post_type ) {
 			$searchandfilter_menu = '[searchandfilter slug="offcanvas-press-release-search"]';
 		}
-		$the_query     = get_queried_object();
+		$the_query = get_queried_object();
 		if ( is_tax() ) {
-			$tax_name      = strtoupper( $the_query->taxonomy );
-			$tax_name      = str_replace( '_', ' ', $tax_name );
+			$tax_name = strtoupper( $the_query->taxonomy );
+			$tax_name = str_replace( '_', ' ', $tax_name );
 			if ( 'directors' === $the_query->taxonomy ) {
 				$tax_icon = 'megaphone';
 			} elseif ( 'producers' === $the_query->taxonomy ) {
@@ -65,14 +61,14 @@ wp_rig()->print_styles( 'wp-rig-offcanvas' );
 			}
 		}
 	} elseif ( is_single() ) {
-		$post = get_queried_object();
-		$archive_title = get_post_type_object( get_post_type( $post ) );
-		$archive_title = $archive_title->labels->singular_name;
+		$the_post           = get_queried_object();
+		$archive_title      = get_post_type_object( get_post_type( $the_post ) );
+		$archive_title      = $archive_title->labels->singular_name;
 		$single_icon_inline = ' grid';
 		if ( 'News' === $archive_title ) {
 			$tax_icon = 'welcome-widgets-menus';
 		} else {
-			$tax_icon = 'megaphone';
+			$tax_icon      = 'megaphone';
 			$archive_title = rtrim( $archive_title, 's' );
 		}
 	} else {

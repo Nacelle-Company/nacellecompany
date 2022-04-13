@@ -160,6 +160,7 @@ class Theme {
 			new Post_Grid\Component(),
 			new Flickity\Component(),
 			new Tax_Posts\Component(),
+			new Extra_Content\Component(),
 		);
 
 		if ( defined( 'JETPACK__VERSION' ) ) {

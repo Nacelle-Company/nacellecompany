@@ -1,3 +1,5 @@
+/* eslint-disable no-redeclare */
+/* eslint-disable eqeqeq */
 /*!
  * Flickity PACKAGED v2.3.0
  * Touch, responsive, flickable carousels
@@ -19,6 +21,7 @@
 
 ( function( window, factory ) {
 	// universal module definition
+	// eslint-disable-next-line no-redeclare
 	/*jshint strict: false */ /* globals define, module, require */
 	if ( typeof define === 'function' && define.amd ) {
 		// AMD
@@ -296,6 +299,7 @@
 
 	const logError = typeof console === 'undefined' ? noop :
 		function( message ) {
+			// eslint-disable-next-line no-console
 			console.error( message );
 		};
 
@@ -336,10 +340,8 @@
 
 	// -------------------------- getStyle -------------------------- //
 
-	/**
- * getStyle, get style of element, check for Firefox bug
- * https://bugzilla.mozilla.org/show_bug.cgi?id=548397
- */
+	// getStyle, get style of element, check for Firefox bug.
+	// https://bugzilla.mozilla.org/show_bug.cgi?id=548397
 	function getStyle( elem ) {
 		const style = getComputedStyle( elem );
 		if ( ! style ) {

@@ -82,7 +82,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 						<?php
 						echo get_the_post_thumbnail(
 							$the_post->ID,
-							'medium-large',
+							'medium_large',
 							array(
 								'title' => $the_title,
 								'alt'   => $the_title,

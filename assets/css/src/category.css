@@ -5,6 +5,17 @@
 	margin: 2em 0;
 	gap: 1em;
 	padding: 1em;
+
+	@media (--sidebar-query) {
+
+		&.prod {
+			grid-template-columns: 1fr 1fr;
+			max-width: var(--page-width);
+			margin: 0 auto;
+			gap: 2em;
+			padding: 2em;
+		}
+	}
 }
 
 .category-wrapper {

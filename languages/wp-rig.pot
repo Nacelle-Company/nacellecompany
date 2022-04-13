@@ -105,6 +105,10 @@ msgstr ""
 msgid "Collapse child menu"
 msgstr ""
 
+#: inc/Archive_Content/Component.php:76
+msgid "Use excerpts in archive views?"
+msgstr ""
+
 #: inc/Comments/Component.php:149
 msgid "New comment(s)"
 msgstr ""
@@ -243,19 +247,19 @@ msgstr ""
 msgid "Invalid theme stylesheet handle: %s"
 msgstr ""
 
-#: template-parts/category/distribution.php:35, template-parts/category/distribution.php:38
+#: template-parts/category/distribution.php:37, template-parts/category/distribution.php:40
 msgid "Albums"
 msgstr ""
 
-#: template-parts/category/distribution.php:48, template-parts/category/distribution.php:51
+#: template-parts/category/distribution.php:50, template-parts/category/distribution.php:53
 msgid "Films"
 msgstr ""
 
-#: template-parts/category/distribution.php:61, template-parts/category/distribution.php:64, template-parts/category/production.php:30, template-parts/category/production.php:33
+#: template-parts/category/distribution.php:63, template-parts/category/distribution.php:66, template-parts/category/production.php:33, template-parts/category/production.php:36
 msgid "Series"
 msgstr ""
 
-#: template-parts/category/distribution.php:74, template-parts/category/distribution.php:77, template-parts/category/production.php:49, template-parts/category/production.php:52
+#: template-parts/category/distribution.php:76, template-parts/category/distribution.php:79, template-parts/category/production.php:52, template-parts/category/production.php:55
 msgid "Specials"
 msgstr ""
 
@@ -411,7 +415,7 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: template-parts/modules/search_page-header.php:114
+#: template-parts/modules/search_page-header.php:110
 msgid "Sort & Filter"
 msgstr ""
 
