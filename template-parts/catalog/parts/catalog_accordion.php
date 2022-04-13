@@ -20,7 +20,7 @@ $copyright = get_post_meta( get_the_ID(), 'copyright', true );
 ?>
 <div class="entry-accordion tab">
 	<input type="checkbox" id="more_info">
-	<label class="tab-label" for="more_info"><h2><span class="screen-reader-text"><?php single_post_title(); ?></span>MORE INFO</h2><span class="dashicons dashicons-arrow-right"></span></label>
+	<label class="tab-label" for="more_info"><h2><span class="screen-reader-text"><?php single_post_title(); ?></span>MORE INFO</h2><?php get_template_part( 'template-parts/svg/icon-down-angle' ); ?></label>
 	<div class="tab-content">
 		<dl class="dl-list dl-list__info">
 			<?php if ( $runtime ) : ?>

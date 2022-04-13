@@ -113,3 +113,20 @@
 		}
 	}
 }
+
+/* .page-header, */
+.post-navigation,
+.page-navigation {
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+}
+
+.entry-content > *,
+.post-navigation,
+.page-navigation {
+	margin-left: auto;
+	margin-right: auto;
+	padding-right: 1.5rem;
+	padding-left: 1.5rem;
+	max-width: var(--page-width);
+}

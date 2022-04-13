@@ -4,6 +4,12 @@
 	display: grid;
 	justify-items: center;
 
+	@media (--wide-menu-query) {
+		grid-template-columns: 1fr;
+		justify-items: center;
+		gap: 1em;
+	}
+
 	@media (--content-query) {
 		justify-items: normal;
 		grid-template-columns: repeat(3, 1fr);

@@ -291,7 +291,10 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			),
 			'wp-rig-content'    => array(
 				'file'             => 'content.min.css',
-				'preload_callback' => '__return_true',
+				'preload_callback' => function() {
+					global $template;
+					return 'single-catalog.php' !== basename( $template );
+				},
 			),
 			'wp-rig-sidebar'    => array(
 				'file'             => 'sidebar.min.css',
@@ -303,13 +306,6 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				'file'             => 'widgets.min.css',
 				'preload_callback' => function() {
 					return wp_rig()->is_primary_sidebar_active();
-				},
-			),
-			'wp-rig-front-page' => array(
-				'file' => 'front-page.min.css',
-				'preload_callback' => function() {
-					global $template;
-					return 'front-page.php' === basename( $template );
 				},
 			),
 			'wp-rig-footer-widgets' => array(
@@ -364,34 +360,6 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				'preload_callback' => function() {
 					global $template;
 					return 'front-page.php' === basename( $template );
-				},
-			),
-			'wp-rig-wonder'    => array(
-				'file'             => 'wonder.min.css',
-				'preload_callback' => function() {
-					global $template;
-					return 'wonder.php' === basename( $template );
-				},
-			),
-			'wp-rig-wonder_banner'    => array(
-				'file'             => 'wonder_banner.min.css',
-				'preload_callback' => function() {
-					global $template;
-					return 'wonder.php' === basename( $template );
-				},
-			),
-			'wp-rig-wonder_txt-img'    => array(
-				'file'             => 'wonder_txt-img.min.css',
-				'preload_callback' => function() {
-					global $template;
-					return 'wonder.php' === basename( $template );
-				},
-			),
-			'wp-rig-wonder_txt-quote'    => array(
-				'file'             => 'wonder_txt-quote.min.css',
-				'preload_callback' => function() {
-					global $template;
-					return 'wonder.php' === basename( $template );
 				},
 			),
 			'wp-rig-related_content'    => array(

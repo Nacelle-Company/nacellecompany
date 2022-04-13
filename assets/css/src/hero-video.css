@@ -62,6 +62,25 @@
 
 		& .icon-play__wrapper {
 			position: absolute;
+			transform: translate(-50vw, 12vh);
+
+			& .icon-play__hollow {
+				stroke: var(--color-link);
+				opacity: 0.5;
+				cursor: pointer;
+			}
+
+			&:hover {
+				opacity: 1;
+			}
+		}
+
+	}
+
+	@media (--sidebar-query) {
+
+		& .icon-play__wrapper {
+			position: absolute;
 			transform: translate(-50vw, 35vh);
 
 			& .icon-play__hollow {

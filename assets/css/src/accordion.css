@@ -24,6 +24,7 @@
 	padding: 1em;
 	cursor: pointer;
 	border-bottom: 0.5px solid var(--global-color-grey);
+	align-items: center;
 
 	& h2 {
 		font-size: var(--font-size-regular);
@@ -53,12 +54,13 @@
 	}
 }
 
-.tab-label .dashicons {
+.tab-label .icon {
 	transition: transform 0.2s linear;
+	margin-left: 1em;
 }
 
-input:checked + .tab-label .dashicons {
-	transform: rotate(90deg);
+input:checked + .tab-label .icon {
+	transform: scaleY(-1);
 }
 
 input:checked ~ .tab-content {
