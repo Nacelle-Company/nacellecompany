@@ -12,8 +12,13 @@
 }
 
 /* grid item */
-.grid-item {
+.gi {
 	position: relative;
+	color: var(--global-color-dark);
+
+	@media (--content-query) {
+		padding-bottom: var(--grid-item-row-gap);
+	}
 
 	& .title {
 		color: var(--global-color-dark);
@@ -30,80 +35,48 @@
 
 	@media (--content-query) {
 
-		& img {
-			height: 100%;
-			object-fit: cover;
-		}
-
 		& .title {
-			padding: 1em 0 0 0;
+			padding-top: 0.5em;
 			margin: 0;
 			font-size: var(--font-size-small);
 		}
 	}
-
-	& .grid-item__content {
-		color: var(--global-color-dark);
-		padding: 0.5rem 1rem 1rem 1rem;
-		box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
-
-		@media (--narrow-menu-query) {
-			background-color: var(--color-theme-primary);
-		}
-	}
 }
 
-.grid-item__plain .grid-item__content {
-	height: 100%;
-}
+.gi__content {
 
-
-/* block image */
-.grid-item__img {
-	z-index: 9;
-}
-
-
-@media (--wide-menu-query) {
-
-
-	/* grid item */
-	.grid-item {
-		position: relative;
-		padding-bottom: var(--grid-item-row-gap);
+	@media (--narrow-menu-query) {
+		padding: 1em;
+		background-color: var(--color-theme-primary);
 	}
 
-	/* grid item's content static */
-	.grid-item__hover .grid-item__content {
+	@media (--wide-menu-query) {
 		position: absolute;
-		padding: 0.2rem 1rem;
-		opacity: 1;
 		height: var(--grid-item-row-gap);
-		width: 100%;
+		padding: 0 1rem;
 		top: calc(100% - 14rem);
 		transition: all 0.4s ease-in-out;
 		z-index: -1;
-		line-height: 1;
-
 	}
+}
+
+/* hover actions! */
+@media (--wide-menu-query) {
 
 	/* grid item's content on hover */
-	.grid-item__hover:hover .grid-item__content,
-	.grid-item__hover a:hover .grid-item__content {
+	.gi:hover .gi__content,
+	.gi a:hover .gi__content {
 		background-color: var(--color-theme-primary);
 		opacity: 1;
+		min-width: 100%;
 		transform: translateY(100%);
 	}
 }
 
-.entry-actions {
-	position: absolute;
-	right: 2em;
-	bottom: 7em;
-}
+/* Random styles */
 
-.post-edit-link {
-	color: #939393;
-	font-size: 8px;
-	position: absolute;
+/* Grid item without an image */
+.gi__plain .gi__content {
+	height: 100%;
+	background-color: var(--color-theme-primary);
 }

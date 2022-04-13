@@ -38,12 +38,12 @@ $img_special_two_alt         = $img_special_two['alt'];
 		<?php
 		if ( ! empty( $img_series_one ) ) :
 			?>
-			<img src="<?php echo esc_url( $img_series_one['url'] ); ?>" alt="<?php echo esc_attr( $img_series_one_alt ); ?>" />
+			<img src="<?php echo esc_url( $img_series_one['url'] ); ?>" alt="<?php echo esc_attr( $img_series_one_alt ); ?>" class="no-lazy"/>
 			<?php
 		endif;
 		if ( ! empty( $img_series_two ) ) :
 			?>
-		<img src="<?php echo esc_url( $img_series_two['url'] ); ?>" alt="<?php echo esc_attr( $img_series_two_alt ); ?>" />
+		<img src="<?php echo esc_url( $img_series_two['url'] ); ?>" alt="<?php echo esc_attr( $img_series_two_alt ); ?>" class="no-lazy"/>
 		<?php endif; ?>
 	</div>
 
@@ -57,12 +57,12 @@ $img_special_two_alt         = $img_special_two['alt'];
 			<?php
 			if ( ! empty( $img_special_one ) ) :
 				?>
-			<img src="<?php echo esc_url( $img_special_one['url'] ); ?>" alt="<?php echo esc_attr( $img_special_one_alt ); ?>" />
+			<img src="<?php echo esc_url( $img_special_one['url'] ); ?>" alt="<?php echo esc_attr( $img_special_one_alt ); ?>" class="no-lazy"/>
 				<?php
 				endif;
 			if ( ! empty( $img_special_two ) ) :
 				?>
-			<img src="<?php echo esc_url( $img_special_two['url'] ); ?>" alt="<?php echo esc_attr( $img_special_two_alt ); ?>" />
+			<img src="<?php echo esc_url( $img_special_two['url'] ); ?>" alt="<?php echo esc_attr( $img_special_two_alt ); ?>" class="no-lazy"/>
 			<?php endif; ?>
 	</div>
 </div>

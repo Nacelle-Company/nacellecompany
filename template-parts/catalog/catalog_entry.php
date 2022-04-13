@@ -50,7 +50,7 @@ $itunes_video = get_post_meta( get_the_ID(), 'itunes_video', true );
 		</div>
 		<div class="entry-image">
 			<a href="<?php echo esc_html( $itunes_video ); ?>" target="_blank" rel="noreferrer" class="apple-link">
-			<?php the_post_thumbnail( 'medium_large' ); ?>
+			<?php the_post_thumbnail( 'medium_large', array( 'class' => 'attachment-medium_large size-medium_large wp-post-image no-lazy' ) ); ?>
 			</a>
 		</div>
 		<div class="entry-main">

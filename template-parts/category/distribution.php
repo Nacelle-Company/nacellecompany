@@ -39,7 +39,7 @@ $img_special_alt           = $img_special['alt'];
 				<?php get_template_part( 'template-parts/svg/icon-disk' ); ?>
 				<h2 class="title"><?php esc_html_e( 'Albums', 'wp-rig' ); ?></h2>
 			</div>
-			<img src="<?php echo esc_url( $img_album['url'] ); ?>" alt="<?php echo esc_attr( $img_album_alt ); ?>" />
+			<img src="<?php echo esc_url( $img_album['url'] ); ?>" alt="<?php echo esc_attr( $img_album_alt ); ?>" class="no-lazy"/>
 		</div>
 		<?php
 	endif;
@@ -52,7 +52,7 @@ $img_special_alt           = $img_special['alt'];
 				<?php get_template_part( 'template-parts/svg/icon-film' ); ?>
 				<h2 class="title"><?php esc_html_e( 'Films', 'wp-rig' ); ?></h2>
 			</div>
-			<img src="<?php echo esc_url( $img_film['url'] ); ?>" alt="<?php echo esc_attr( $img_film_alt ); ?>" />
+			<img src="<?php echo esc_url( $img_film['url'] ); ?>" alt="<?php echo esc_attr( $img_film_alt ); ?>" class="no-lazy"/>
 		</div>
 		<?php
 	endif;
@@ -65,7 +65,7 @@ $img_special_alt           = $img_special['alt'];
 				<?php get_template_part( 'template-parts/svg/icon-video' ); ?>
 				<h2 class="title"><?php esc_html_e( 'Series', 'wp-rig' ); ?></h2>
 			</div>
-			<img src="<?php echo esc_url( $img_series['url'] ); ?>" alt="<?php echo esc_attr( $img_series_alt ); ?>" />
+			<img src="<?php echo esc_url( $img_series['url'] ); ?>" alt="<?php echo esc_attr( $img_series_alt ); ?>" class="no-lazy"/>
 		</div>
 		<?php
 	endif;
@@ -78,7 +78,7 @@ $img_special_alt           = $img_special['alt'];
 				<?php get_template_part( 'template-parts/svg/icon-mic' ); ?>
 				<h2 class="title"><?php esc_html_e( 'Specials', 'wp-rig' ); ?></h2>
 			</div>
-			<img src="<?php echo esc_url( $img_special['url'] ); ?>" alt="<?php echo esc_attr( $img_special_alt ); ?>" />
+			<img src="<?php echo esc_url( $img_special['url'] ); ?>" alt="<?php echo esc_attr( $img_special_alt ); ?>" class="no-lazy"/>
 		</div>
 		<?php
 	endif;

@@ -90,7 +90,6 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		*  http://codex.wordpress.org/Template_Tags/get_posts#Reset_after_Postlists_with_offset
 		*/
 		global $the_post_id;
-		$slider_speed = get_field( 'slider_speed' );
 		if ( get_field( 'group_slides' ) ) {
 			$group_cells           = '"groupCells": true, "groupCells": 2,';
 			$slider_custom_classes = ' group-cells';
@@ -143,8 +142,9 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					}
 					// Small thumb for slide content area.
 					$square_img = get_field( 'square_image', $slide );
+					$square_siz = 'thumbnail'; // (thumbnail, medium, large, full or custom size)
 					if ( $square_img ) {
-						$square_img = wp_get_attachment_image( $square_img['id'], 'thumbnail', false, array( 'class' => 'grid-item__img' ) );
+						$square_img = wp_get_attachment_image( $square_img, $square_siz, false, array( 'class' => 'no-lazy grid-item__img' ) );
 					}
 
 					/**
@@ -200,11 +200,13 @@ class Component implements Component_Interface, Templating_Component_Interface {
 							} else {
 								echo wp_get_attachment_image(
 									$image,
-									$size,
+									'full',
 									false,
 									array(
-										'data-flickity-lazyload' => wp_get_attachment_image_url( $image, $size ),
-										'data-flickity-lazyload-srcset' => wp_get_attachment_image_srcset( $image, $size ),
+										// 'data-flickity-lazyload' => wp_get_attachment_image_url( $image, $size ),
+										// 'data-flickity-lazyload-srcset' => wp_get_attachment_image_srcset( $image, $size ),
+										'class'   => 'no-lazy attachment-full',
+										'loading' => 'eager',
 									)
 								);
 							}
