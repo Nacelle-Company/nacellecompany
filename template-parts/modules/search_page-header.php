@@ -12,7 +12,7 @@ global $query;
 wp_rig()->print_styles( 'wp-rig-offcanvas' );
 
 	global $searchandfilter;
-	$sf_current_query   = $searchandfilter->get( 46515 )->current_query();
+	$sf_current_query   = $searchandfilter->get( 46579 )->current_query();
 	$single_icon_inline = '';
 	$searchandfilter_menu = '[searchandfilter slug="main-search"]';
 	/**
@@ -27,17 +27,23 @@ wp_rig()->print_styles( 'wp-rig-offcanvas' );
 		'show_all_if_empty' => false,
 	);
 	if ( have_posts() && strlen( trim( get_search_query() ) ) !== 0 ) {                                    // If is search.
-		echo 'if #1';
+		if ( is_user_logged_in() ) {
+			echo 'search_page-header.php - if have_posts() and a search query';
+		}
 		$archive_title = 'Search results: "' . $sf_current_query->get_search_term() . '"';
 		$searchandfilter_menu = '[searchandfilter slug="offcanvas-catalog-search"]';
-	} elseif ( $sf_current_query->is_filtered() > 0 ) {
-		echo 'if #2';
+	} elseif ( $sf_current_query->is_filtered() > 0 ) { // Search and filter plugin "filter search"
+		if ( is_user_logged_in() ) {
+			echo 'Search and filter plugin "filter search"';
+		}
 		$archive_title = 'Filter by: "' . $sf_current_query->get_fields_html(
 			array( '_sft_genre', '_sft_main_talent', '_sft_producers', '_sft_directors', '_sft_writers' ),
 			$args
 		) . '"';
 	} elseif ( is_archive() ) {
-		echo 'if #3';
+		if ( is_user_logged_in() ) {
+			echo 'search_page-header.php - is_archive()';
+		}
 		$current_post_type = get_post_type( $post->ID, false );
 		$archive_title     = get_the_archive_title();
 		// Set the searchandfilter plugin's shortcode per post type.
@@ -63,7 +69,9 @@ wp_rig()->print_styles( 'wp-rig-offcanvas' );
 			}
 		}
 	} elseif ( is_singular( array( 'news', 'press_release' ) ) ) {
-		echo 'if news or press release';
+		if ( is_user_logged_in() ) {
+			echo 'if news or press release';
+		}
 		$the_post           = get_queried_object();
 		// printVar( $the_post );
 		$archive_title      = get_post_type_object( get_post_type( $the_post ) );
@@ -76,7 +84,9 @@ wp_rig()->print_styles( 'wp-rig-offcanvas' );
 			$archive_title = rtrim( $archive_title, 's' );
 		}
 	} else {
-		echo 'else!!!';
+		if ( is_user_logged_in() ) {
+			echo 'search_page-header.php - final else!!!';
+		}
 		$archive_title = 'Search results: "' . $sf_current_query->get_search_term() . '"';
 		$searchandfilter_menu = '[searchandfilter slug="offcanvas-catalog-search"]';
 	}

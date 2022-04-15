@@ -49,7 +49,7 @@ if ( is_404() ) {
 
 
 
-} elseif ( is_archive() ) {
+} elseif ( is_archive() || is_singular() && ! is_page() ) {
 	get_template_part( 'template-parts/modules/search_page-header' );
 
 
@@ -65,12 +65,6 @@ if ( is_404() ) {
 
 
 
-} elseif ( is_singular() ) {
-	get_template_part( 'template-parts/modules/search_page-header' );
-
-
-
-	// Search results pages.
 } else {
 	get_template_part( 'template-parts/modules/search_page-header' );
 }

@@ -17,6 +17,20 @@ if ( 'attachment' === $support_slug ) {
 	}
 }
 
+// ACF images.
+$size = 'medium_large';
+if ( get_field( 'square_image' ) ) {
+	$img = get_field( 'square_image' );
+	$img = wp_get_attachment_image( $img, $size );
+
+} elseif ( get_field( 'horizontal_image' ) ) {
+	$img = get_field( 'horizontal_image' );
+	$img = wp_get_attachment_image( $img, $size );
+
+} else {
+	$img = get_the_post_thumbnail();
+}
+
 if ( post_password_required() || ! post_type_supports( $support_slug, 'thumbnail' ) || ! has_post_thumbnail() ) {
 	return;
 }
@@ -67,28 +81,9 @@ if ( is_singular( get_post_type() ) ) {
 		<?php
 		global $wp_query;
 		if ( 0 === $wp_query->current_post ) {
-			the_post_thumbnail(
-				'post-thumbnail',
-				array(
-					'class' => 'skip-lazy',
-					'alt'   => the_title_attribute(
-						array(
-							'echo' => false,
-						)
-					),
-				)
-			);
+			echo wp_kses( $img, 'post' );
 		} else {
-			the_post_thumbnail(
-				'post-thumbnail',
-				array(
-					'alt' => the_title_attribute(
-						array(
-							'echo' => false,
-						)
-					),
-				)
-			);
+			echo wp_kses( $img, 'post' );
 		}
 		?>
 	</a><!-- .post-thumbnail -->

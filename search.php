@@ -48,18 +48,3 @@ get_template_part( 'template-parts/content/page_header' ); // ? PAGE HEADER
 <?php
 get_sidebar();
 get_footer();
-
-// might need:
-
-if ( ! is_singular() ) :
-	wp_rig()->print_styles( 'wp-rig-pagination' );
-	get_template_part( 'template-parts/content/pagination' );
-		// if ( 'post' === get_post_type() || get_post_type_object( get_post_type() )->has_archive ) {
-		// the_post_navigation(
-		// array(
-		// 'prev_text' => '<div class="post-navigation-sub"><span class="dashicons dashicons-arrow-left"></span><span>' . esc_html__( 'Previous:', 'wp-rig' ) . '</span></div>%title',
-		// 'next_text' => '<div class="post-navigation-sub"></span><span>' . esc_html__( 'Next:', 'wp-rig' ) . '</span><span class="dashicons dashicons-arrow-right"></div>%title',
-		// )
-		// );
-		// }
-endif;
