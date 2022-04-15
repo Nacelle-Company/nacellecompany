@@ -40,6 +40,14 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
+#: search.php:53, inc/Pagination/Component.php:63, template-parts/content/entry-attachment.php:33
+msgid "Previous:"
+msgstr ""
+
+#: search.php:54, inc/Pagination/Component.php:64, template-parts/content/entry-attachment.php:43
+msgid "Next:"
+msgstr ""
+
 #: sidebar.php:20
 msgid "Asides"
 msgstr ""
@@ -217,14 +225,6 @@ msgstr ""
 msgid "main-navigation nav--toggle-sub nav--toggle-small icon-nav"
 msgstr ""
 
-#: inc/Pagination/Component.php:63, template-parts/content/entry-attachment.php:33
-msgid "Previous:"
-msgstr ""
-
-#: inc/Pagination/Component.php:64, template-parts/content/entry-attachment.php:43
-msgid "Next:"
-msgstr ""
-
 #. translators: %s: JS handle
 #: inc/Scripts/Component.php:148
 msgid "Invalid theme JS handle: %s"
@@ -247,19 +247,19 @@ msgstr ""
 msgid "Invalid theme stylesheet handle: %s"
 msgstr ""
 
-#: template-parts/category/distribution.php:37, template-parts/category/distribution.php:40
+#: template-parts/category/distribution.php:39, template-parts/category/distribution.php:42
 msgid "Albums"
 msgstr ""
 
-#: template-parts/category/distribution.php:50, template-parts/category/distribution.php:53
+#: template-parts/category/distribution.php:56, template-parts/category/distribution.php:59
 msgid "Films"
 msgstr ""
 
-#: template-parts/category/distribution.php:63, template-parts/category/distribution.php:66, template-parts/category/production.php:33, template-parts/category/production.php:36
+#: template-parts/category/distribution.php:73, template-parts/category/distribution.php:76, template-parts/category/production.php:33, template-parts/category/production.php:36
 msgid "Series"
 msgstr ""
 
-#: template-parts/category/distribution.php:76, template-parts/category/distribution.php:79, template-parts/category/production.php:52, template-parts/category/production.php:55
+#: template-parts/category/distribution.php:90, template-parts/category/distribution.php:93, template-parts/category/production.php:52, template-parts/category/production.php:55
 msgid "Specials"
 msgstr ""
 
@@ -337,16 +337,15 @@ msgid "%s:"
 msgstr ""
 
 #: template-parts/content/error-404.php:16
-msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgid "The page you are looking for may have been moved, had its name changed or we’re working on it."
 msgstr ""
 
-#: template-parts/content/error-404.php:27
+#: template-parts/content/error-404.php:19
+msgid "Maybe try one of these? %1$s"
+msgstr ""
+
+#: template-parts/content/error-404.php:58
 msgid "Most Used Categories"
-msgstr ""
-
-#. translators: %1$s: smiley
-#: template-parts/content/error-404.php:45
-msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
 
 #: template-parts/content/error-500.php:14
@@ -371,7 +370,7 @@ msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searc
 msgstr ""
 
 #: template-parts/content/page_header.php:34
-msgid "Oops! That page can&rsquo;t be found."
+msgid "This is not the page you are looking for. . ."
 msgstr ""
 
 #. translators: %s: search query
@@ -415,7 +414,7 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: template-parts/modules/search_page-header.php:110
+#: template-parts/modules/search_page-header.php:111
 msgid "Sort & Filter"
 msgstr ""
 

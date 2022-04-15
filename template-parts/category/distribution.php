@@ -7,29 +7,18 @@
 
 namespace WP_Rig\WP_Rig;
 
-// ? albums
-$distribution_album_post = get_field( 'distribution_album_post', 'option' );
-$img_album               = get_field( 'square_image', $distribution_album_post );
-$img_album_alt           = $img_album['alt'];
-
-// ? films
-$distribution_film_post = get_field( 'distribution_film_post', 'option' );
-$img_film               = get_field( 'square_image', $distribution_film_post );
-$img_film_alt           = $img_film['alt'];
-
-// ? series
-$distribution_series_post = get_field( 'distribution_series_post', 'option' );
-$img_series               = get_field( 'square_image', $distribution_series_post );
-$img_series_alt           = $img_series['alt'];
-
-// ? specials
+$distribution_album_post   = get_field( 'distribution_album_post', 'option' );
+$img_album                 = get_field( 'square_image', $distribution_album_post );
+$distribution_film_post     = get_field( 'distribution_film_post', 'option' );
+$img_film                   = get_field( 'square_image', $distribution_film_post );
+$distribution_series_post  = get_field( 'distribution_series_post', 'option' );
+$img_series                = get_field( 'square_image', $distribution_series_post );
 $distribution_special_post = get_field( 'distribution_special_post', 'option' );
 $img_special               = get_field( 'square_image', $distribution_special_post );
-$img_special_alt           = $img_special['alt'];
+$size                      = 'medium_large';
 ?>
 
 <div class="category-container grid">
-
 	<?php
 	if ( ! empty( $img_album ) ) :
 		?>
@@ -39,7 +28,11 @@ $img_special_alt           = $img_special['alt'];
 				<?php get_template_part( 'template-parts/svg/icon-disk' ); ?>
 				<h2 class="title"><?php esc_html_e( 'Albums', 'wp-rig' ); ?></h2>
 			</div>
-			<img src="<?php echo esc_url( $img_album['url'] ); ?>" alt="<?php echo esc_attr( $img_album_alt ); ?>" class="no-lazy"/>
+			<?php
+			if ( $img_album ) {
+				echo wp_get_attachment_image( $img_album, $size );
+			}
+			?>
 		</div>
 		<?php
 	endif;
@@ -52,8 +45,12 @@ $img_special_alt           = $img_special['alt'];
 				<?php get_template_part( 'template-parts/svg/icon-film' ); ?>
 				<h2 class="title"><?php esc_html_e( 'Films', 'wp-rig' ); ?></h2>
 			</div>
-			<img src="<?php echo esc_url( $img_film['url'] ); ?>" alt="<?php echo esc_attr( $img_film_alt ); ?>" class="no-lazy"/>
-		</div>
+			<?php
+			if ( $img_film ) {
+				echo wp_get_attachment_image( $img_film, $size );
+			}
+			?>
+			</div>
 		<?php
 	endif;
 
@@ -65,7 +62,11 @@ $img_special_alt           = $img_special['alt'];
 				<?php get_template_part( 'template-parts/svg/icon-video' ); ?>
 				<h2 class="title"><?php esc_html_e( 'Series', 'wp-rig' ); ?></h2>
 			</div>
-			<img src="<?php echo esc_url( $img_series['url'] ); ?>" alt="<?php echo esc_attr( $img_series_alt ); ?>" class="no-lazy"/>
+			<?php
+			if ( $img_series ) {
+				echo wp_get_attachment_image( $img_series, $size );
+			}
+			?>
 		</div>
 		<?php
 	endif;
@@ -78,7 +79,11 @@ $img_special_alt           = $img_special['alt'];
 				<?php get_template_part( 'template-parts/svg/icon-mic' ); ?>
 				<h2 class="title"><?php esc_html_e( 'Specials', 'wp-rig' ); ?></h2>
 			</div>
-			<img src="<?php echo esc_url( $img_special['url'] ); ?>" alt="<?php echo esc_attr( $img_special_alt ); ?>" class="no-lazy"/>
+			<?php
+			if ( $img_special ) {
+				echo wp_get_attachment_image( $img_special, $size );
+			}
+			?>
 		</div>
 		<?php
 	endif;

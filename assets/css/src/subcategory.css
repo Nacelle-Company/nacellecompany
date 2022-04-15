@@ -76,7 +76,19 @@
 /* Random styles */
 
 /* Grid item without an image */
-.gi__plain .gi__content {
-	height: 100%;
-	background-color: var(--color-theme-primary);
+.gi__plain {
+
+	& .gi__content {
+		height: 70%;
+		background-color: var(--color-theme-primary);
+		top: unset;
+		color: var(--global-color-dark);
+	}
+
+	&:hover {
+
+		& .gi__content {
+			transform: none;
+		}
+	}
 }

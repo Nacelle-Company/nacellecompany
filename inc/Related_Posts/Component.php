@@ -54,7 +54,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	 */
 	public function display_related_posts( $ids ) {
 		if ( $ids ) :
-			setup_postdata( $post );
+			setup_postdata( $ids );
 			$catalog_query = new \WP_Query(
 				array(
 					'post_type'       => 'catalog',

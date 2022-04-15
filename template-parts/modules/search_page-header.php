@@ -29,6 +29,7 @@ wp_rig()->print_styles( 'wp-rig-offcanvas' );
 	// ? if search
 	if ( have_posts() && strlen( trim( get_search_query() ) ) !== 0 ) {
 		$archive_title = 'Search results: "' . $sf_current_query->get_search_term() . '"';
+		$searchandfilter_menu = '[searchandfilter slug="offcanvas-catalog-search"]';
 	} elseif ( $sf_current_query->is_filtered() > 0 ) {
 		$archive_title = 'Filter by: "' . $sf_current_query->get_fields_html(
 			array( '_sft_genre', '_sft_main_talent', '_sft_producers', '_sft_directors', '_sft_writers' ),
@@ -37,14 +38,13 @@ wp_rig()->print_styles( 'wp-rig-offcanvas' );
 	} elseif ( is_archive() ) {
 		$current_post_type = get_post_type( $post->ID, false );
 		$archive_title     = get_the_archive_title();
-
 		// Set the searchandfilter plugin's shortcode per post type.
-		if ( 'catalog' === $current_post_type ) {
-			$searchandfilter_menu = '[searchandfilter slug="offcanvas-catalog-search"]';
-		} elseif ( 'news' === $current_post_type ) {
+		if ( 'news' === $current_post_type ) {
 			$searchandfilter_menu = '[searchandfilter slug="offcanvas-news-search"]';
 		} elseif ( 'press_release' === $current_post_type ) {
 			$searchandfilter_menu = '[searchandfilter slug="offcanvas-press-release-search"]';
+		} else {
+			$searchandfilter_menu = '[searchandfilter slug="offcanvas-catalog-search"]';
 		}
 		$the_query = get_queried_object();
 		if ( is_tax() ) {
@@ -73,6 +73,7 @@ wp_rig()->print_styles( 'wp-rig-offcanvas' );
 		}
 	} else {
 		$archive_title = 'Search results: "' . $sf_current_query->get_search_term() . '"';
+		$searchandfilter_menu = '[searchandfilter slug="offcanvas-catalog-search"]';
 	}
 	?>
 	<div id="offcanvasOverlay" class="offcanvas overlay" href="javascript:void(0)" onclick="closeNav()"></div>

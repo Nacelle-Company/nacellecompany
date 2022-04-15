@@ -60,6 +60,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			while ( have_rows( "extra_content_$term", 'option' ) ) :
 				the_row();
 				if ( get_row_layout() === 'embed_with_text' ) {
+					$swap = '';
 					if ( get_sub_field( 'embed_swap' ) ) {
 						$swap = ' swap';
 					}

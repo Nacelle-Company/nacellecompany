@@ -30,8 +30,8 @@ add_filter(
 if ( is_404() ) {
 	?>
 	<header class="page-header">
-		<h1 class="page-title">
-			<?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'wp-rig' ); ?>
+		<h1 class="page-title" style="text-align: center;">
+			<?php esc_html_e( 'This is not the page you are looking for. . .', 'wp-rig' ); ?>
 		</h1>
 	</header><!-- .page-header -->
 	<?php

@@ -122,3 +122,5 @@ function is_post_type( $type ) {
 	}
 	return false;
 }
+
+// TODO: Move category acf fields to parent categories: https://www.advancedcustomfields.com/resources/custom-location-rules/.

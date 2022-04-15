@@ -14,6 +14,7 @@ namespace WP_Rig\WP_Rig;
 
 wp_rig()->print_styles( 'wp-rig-subcategory' );
 
+
 global $searchandfilter;
 
 // Variables.
@@ -94,7 +95,6 @@ if ( ! empty( $img ) ) {
 				<sub><?php echo esc_html( $synopsis ); ?></sub>
 			</div>
 		</a>
-		<?php get_template_part( 'template-parts/content/entry_actions', get_post_type() ); ?>
 	</div>
 		<?php
 }
