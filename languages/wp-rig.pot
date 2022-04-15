@@ -40,14 +40,6 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: search.php:53, inc/Pagination/Component.php:63, template-parts/content/entry-attachment.php:33
-msgid "Previous:"
-msgstr ""
-
-#: search.php:54, inc/Pagination/Component.php:64, template-parts/content/entry-attachment.php:43
-msgid "Next:"
-msgstr ""
-
 #: sidebar.php:20
 msgid "Asides"
 msgstr ""
@@ -225,6 +217,14 @@ msgstr ""
 msgid "main-navigation nav--toggle-sub nav--toggle-small icon-nav"
 msgstr ""
 
+#: inc/Pagination/Component.php:62, template-parts/content/entry-attachment.php:33
+msgid "Previous:"
+msgstr ""
+
+#: inc/Pagination/Component.php:63, template-parts/content/entry-attachment.php:43
+msgid "Next:"
+msgstr ""
+
 #. translators: %s: JS handle
 #: inc/Scripts/Component.php:148
 msgid "Invalid theme JS handle: %s"
@@ -247,19 +247,19 @@ msgstr ""
 msgid "Invalid theme stylesheet handle: %s"
 msgstr ""
 
-#: template-parts/category/distribution.php:39, template-parts/category/distribution.php:42
+#: template-parts/category/distribution.php:26, template-parts/category/distribution.php:29
 msgid "Albums"
 msgstr ""
 
-#: template-parts/category/distribution.php:56, template-parts/category/distribution.php:59
+#: template-parts/category/distribution.php:43, template-parts/category/distribution.php:46
 msgid "Films"
 msgstr ""
 
-#: template-parts/category/distribution.php:73, template-parts/category/distribution.php:76, template-parts/category/production.php:33, template-parts/category/production.php:36
+#: template-parts/category/distribution.php:60, template-parts/category/distribution.php:63, template-parts/category/production.php:22, template-parts/category/production.php:25
 msgid "Series"
 msgstr ""
 
-#: template-parts/category/distribution.php:90, template-parts/category/distribution.php:93, template-parts/category/production.php:52, template-parts/category/production.php:55
+#: template-parts/category/distribution.php:77, template-parts/category/distribution.php:80, template-parts/category/production.php:39, template-parts/category/production.php:42
 msgid "Specials"
 msgstr ""
 
@@ -374,7 +374,7 @@ msgid "This is not the page you are looking for. . ."
 msgstr ""
 
 #. translators: %s: search query
-#: template-parts/content/page_header.php:64
+#: template-parts/content/page_header.php:62
 msgid "Search Results for: %s"
 msgstr ""
 
@@ -414,7 +414,7 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: template-parts/modules/search_page-header.php:111
+#: template-parts/modules/search_page-header.php:109
 msgid "Sort & Filter"
 msgstr ""
 

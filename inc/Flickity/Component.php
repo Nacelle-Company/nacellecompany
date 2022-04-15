@@ -136,9 +136,9 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					$the_horizontal_img = get_field( 'horizontal_image', $slide );
 					// Get the background images.
 					if ( $the_slider_img ) {
-						$image = $the_slider_img['id'];
+						$image = $the_slider_img;
 					} else {
-						$image = $the_horizontal_img['id'];
+						$image = $the_horizontal_img;
 					}
 					// Small thumb for slide content area.
 					$square_img = get_field( 'square_image', $slide );
@@ -194,7 +194,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 										playOnlyIfVisible:true,
 										mobileFallbackImage: '<?php echo wp_kses( $hero_video_fallback, 'post' ); ?>',
 										mask:'<?php echo wp_kses( $blog_url, 'post' ); ?>/wp-content/themes/wp-rig-nacelle/assets/images/ytplayer-mask.png'}">
-									<?php get_template_part( 'template-parts/modules/icon_volume-toggle' ); ?>
+										<?php get_template_part( 'template-parts/modules/icon_volume-toggle' ); ?>
 								</div>
 								<?php
 							} else {

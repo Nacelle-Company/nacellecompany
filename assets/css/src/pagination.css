@@ -5,7 +5,6 @@
 .site-main .posts-navigation,
 .site-main .post-navigation,
 .site-main .pagination {
-	border-bottom: 1px solid var(--border-color-dark);
 	margin: 0 auto 2em;
 	overflow: hidden;
 	padding: 0 1em 2em;

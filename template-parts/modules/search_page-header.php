@@ -14,10 +14,10 @@ wp_rig()->print_styles( 'wp-rig-offcanvas' );
 	global $searchandfilter;
 	$sf_current_query   = $searchandfilter->get( 46515 )->current_query();
 	$single_icon_inline = '';
+	$searchandfilter_menu = '[searchandfilter slug="main-search"]';
 	/**
 	 * Get labels for Multiple Fields by Field Name
 	 *
-	 * @param Type $var Description
 	 * @link https://searchandfilter.com/documentation/accessing-search-data/#get-labelsfor-multiple-fields-by-field-name
 	 */
 	$args = array(
@@ -26,16 +26,18 @@ wp_rig()->print_styles( 'wp-rig-offcanvas' );
 		'field_delim'       => ', ',
 		'show_all_if_empty' => false,
 	);
-	// ? if search
-	if ( have_posts() && strlen( trim( get_search_query() ) ) !== 0 ) {
+	if ( have_posts() && strlen( trim( get_search_query() ) ) !== 0 ) {                                    // If is search.
+		echo 'if #1';
 		$archive_title = 'Search results: "' . $sf_current_query->get_search_term() . '"';
 		$searchandfilter_menu = '[searchandfilter slug="offcanvas-catalog-search"]';
 	} elseif ( $sf_current_query->is_filtered() > 0 ) {
+		echo 'if #2';
 		$archive_title = 'Filter by: "' . $sf_current_query->get_fields_html(
 			array( '_sft_genre', '_sft_main_talent', '_sft_producers', '_sft_directors', '_sft_writers' ),
 			$args
 		) . '"';
 	} elseif ( is_archive() ) {
+		echo 'if #3';
 		$current_post_type = get_post_type( $post->ID, false );
 		$archive_title     = get_the_archive_title();
 		// Set the searchandfilter plugin's shortcode per post type.
@@ -60,8 +62,10 @@ wp_rig()->print_styles( 'wp-rig-offcanvas' );
 				$tax_icon = 'admin-users';
 			}
 		}
-	} elseif ( is_single() ) {
+	} elseif ( is_singular( array( 'news', 'press_release' ) ) ) {
+		echo 'if news or press release';
 		$the_post           = get_queried_object();
+		// printVar( $the_post );
 		$archive_title      = get_post_type_object( get_post_type( $the_post ) );
 		$archive_title      = $archive_title->labels->singular_name;
 		$single_icon_inline = ' grid';
@@ -72,6 +76,7 @@ wp_rig()->print_styles( 'wp-rig-offcanvas' );
 			$archive_title = rtrim( $archive_title, 's' );
 		}
 	} else {
+		echo 'else!!!';
 		$archive_title = 'Search results: "' . $sf_current_query->get_search_term() . '"';
 		$searchandfilter_menu = '[searchandfilter slug="offcanvas-catalog-search"]';
 	}
@@ -105,17 +110,17 @@ wp_rig()->print_styles( 'wp-rig-offcanvas' );
 			 * @link https://www.w3schools.com/howto/howto_js_off-canvas.asp
 			 */
 		?>
-			<span id="offcanvasToggle" class="offcanvas-toggle" onclick="openOffcanvas()" style="cursor:pointer" title="Offcanvas sort & filter menu">
-				&#9776;
-				<span class="offcanvas-toggle_title">
-					<?php echo esc_html__( 'Sort & Filter', 'wp-rig' ); ?>
-				</span>
+		<span id="offcanvasToggle" class="offcanvas-toggle" onclick="openOffcanvas()" style="cursor:pointer" title="Offcanvas sort & filter menu">
+			&#9776;
+			<span class="offcanvas-toggle_title">
+				<?php echo esc_html__( 'Sort & Filter', 'wp-rig' ); ?>
 			</span>
-			<div id="offcanvasMenu" class="offcanvas-menu">
-				<a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
-				<h3 class="offcanvas-title">Sort & Filter</h3>
-				<?php echo do_shortcode( $searchandfilter_menu ); ?>
-			</div>
+		</span>
+		<div id="offcanvasMenu" class="offcanvas-menu">
+			<a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
+			<h3 class="offcanvas-title">Sort & Filter</h3>
+			<?php echo do_shortcode( $searchandfilter_menu ); ?>
+		</div>
 	</header><!-- .page-header -->
 	<!-- offcanvas -->
 	<script>

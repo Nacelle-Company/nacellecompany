@@ -1,17 +1,17 @@
 <?php
 /**
- * WP_Rig\WP_Rig\Pagination\Pagination class
+ * WP_Rig\WP_Rig\Pagination_Archive\Pagination_Archive class
  *
  * @package wp_rig
  */
 
-namespace WP_Rig\WP_Rig\Pagination;
+namespace WP_Rig\WP_Rig\Pagination_Archive;
 
 use WP_Rig\WP_Rig\Component_Interface;
 use WP_Rig\WP_Rig\Templating_Component_Interface;
 
 /**
- * Class for displaying pagination.
+ * Class for displaying archive pagination.
  *
  * Exposes template tags:
  * * `wp_rig()->the_comments( array $args = array() )`
@@ -26,7 +26,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	 * @return string Component slug.
 	 */
 	public function get_slug() : string {
-		return 'pagination';
+		return 'pagination_archive';
 	}
 
 	/**
@@ -44,31 +44,34 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	 */
 	public function template_tags() : array {
 		return array(
-			'display_pagination' => array( $this, 'display_pagination' ),
+			'display_pagination_archive' => array( $this, 'display_pagination_archive' ),
 		);
 	}
 	/**
 	 * Display Tax Terms
+	 *
+	 * @param category_slug $category_slug Get category slug.
 	 */
-	public function display_pagination() {
-		/**
-		 * Catalog pagination
-		 */
-		if ( is_singular( get_post_type() ) ) {
-
-			if ( 'post' === get_post_type() || get_post_type_object( get_post_type() )->has_archive ) {
-				the_post_navigation(
+	public function display_pagination_archive( $category_slug ) {
+		global $wp_query;
+		$big = 9999999; // Need an unlikely integer.
+		?>
+		<nav class="navigation pagination" aria-label="Page navigation">
+			<h2 class="screen-reader-text"><?php echo esc_html( $category_slug ); ?> category navigation</h2>
+			<?php
+			echo wp_kses(
+				paginate_links(
 					array(
-						'prev_text'    => '<div class="post-navigation-sub"><span class="dashicons dashicons-arrow-left"></span><span>' . esc_html__( 'Previous:', 'wp-rig' ) . '</span></div>%title',
-						'next_text'    => '<div class="post-navigation-sub"></span><span>' . esc_html__( 'Next:', 'wp-rig' ) . '</span><span class="dashicons dashicons-arrow-right"></div>%title',
+						'base'    => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+						'format'  => '?paged=%#%',
+						'current' => max( 1, get_query_var( 'paged' ) ),
+						'total'   => $wp_query->max_num_pages,
 					)
-				);
-			}
-
-			// Show comments only when the post type supports it and when comments are open or at least one comment exists.
-			if ( post_type_supports( get_post_type(), 'comments' ) && ( comments_open() || get_comments_number() ) ) {
-				comments_template();
-			}
-		}
+				),
+				'post'
+			);
+			?>
+		</nav>
+		<?php
 	}
 }

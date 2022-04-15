@@ -161,6 +161,7 @@ class Theme {
 			new Flickity\Component(),
 			new Tax_Posts\Component(),
 			new Extra_Content\Component(),
+			new Pagination_Archive\Component(),
 		);
 
 		if ( defined( 'JETPACK__VERSION' ) ) {

@@ -9,7 +9,7 @@ namespace WP_Rig\WP_Rig;
 
 global $searchandfilter;
 
-add_filter(
+add_filter( // Remove "Category:" from "Category: category_name" in archive title.
 	'get_the_archive_title',
 	function ( $title ) {
 		if ( is_category() ) {
@@ -35,15 +35,26 @@ if ( is_404() ) {
 		</h1>
 	</header><!-- .page-header -->
 	<?php
-} elseif ( is_home() && ! have_posts() ) {
-	get_template_part( 'template-parts/modules/search_page-header' );
-} elseif ( is_home() && ! is_front_page() ) {
-	get_template_part( 'template-parts/modules/search_page-header' );
+
+
+
+} elseif ( ! have_posts() ) {
+	?>
+	<header class="page-header">
+		<h1 class="page-title">
+			<?php esc_html_e( 'Nothing Found', 'wp-rig' ); ?>
+		</h1>
+	</header><!-- .page-header -->
+	<?php
+
+
+
 } elseif ( is_archive() ) {
+	get_template_part( 'template-parts/modules/search_page-header' );
 
-		get_template_part( 'template-parts/modules/search_page-header' );
 
-} elseif ( is_page() ) {
+
+} elseif ( is_page() && ! is_front_page() ) {        // All pages that are not the front page.
 	?>
 	<header class="page-header page-header__page">
 		<h1 class="page-title">
@@ -51,21 +62,15 @@ if ( is_404() ) {
 		</h1>
 	</header><!-- .page-header -->
 	<?php
-} elseif ( is_single() ) {
 
+
+
+} elseif ( is_singular() ) {
 	get_template_part( 'template-parts/modules/search_page-header' );
-} elseif ( is_search() ) {
-	?>
-	<header class="page-header">
-		<h1 class="page-title">
-			<?php
-			printf(
-				/* translators: %s: search query */
-				esc_html__( 'Search Results for: %s', 'wp-rig' ),
-				'<span>' . get_search_query() . '</span>'
-			);
-			?>
-		</h1>
-	</header><!-- .page-header -->
-	<?php
+
+
+
+	// Search results pages.
+} else {
+	get_template_part( 'template-parts/modules/search_page-header' );
 }
