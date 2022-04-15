@@ -71,7 +71,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					<div class="extra_content grid" id="embedVideoContainment_<?php echo esc_html( $count ); ?>"  onclick="jQuery('#embedVideo_<?php echo esc_html( $count ); ?>').YTPToggleVolume().YTPToggleMask()">
 						<div class="embed__wrap<?php echo esc_html( $swap ); ?>">
 						<?php if ( get_sub_field( 'embed' ) ) { ?>
-							<div id="embedVideo_<?php echo esc_html( $count ); ?>" class="player" data-property="{videoURL:'http://youtu.be/<?php the_sub_field( 'embed' ); ?>',mask:'<?php echo wp_kses( $blog_url, 'post' ); ?>/wp-content/themes/wp-rig-nacelle/assets/images/ytplayer-mask.png', playOnlyIfVisible:true, anchor:'top,center',containment:'#embedVideoContainment_<?php echo esc_html( $count ); ?>',autoPlay:true, loop:true, mute:true, startAt:0, opacity:1, showControls:false}"></div>
+							<div id="embedVideo_<?php echo esc_html( $count ); ?>" class="player" data-property="{videoURL:'http://youtu.be/<?php the_sub_field( 'embed' ); ?>',mask:'<?php echo wp_kses( $blog_url, 'post' ); ?>/wp-content/themes/wp-rig/assets/images/ytplayer-mask.png', playOnlyIfVisible:true, anchor:'top,center',containment:'#embedVideoContainment_<?php echo esc_html( $count ); ?>',autoPlay:true, loop:true, mute:true, startAt:0, opacity:1, showControls:false}"></div>
 							<?php } ?>
 						</div>
 						<script>

@@ -12,7 +12,7 @@ global $query;
 wp_rig()->print_styles( 'wp-rig-offcanvas' );
 
 	global $searchandfilter;
-	$sf_current_query   = $searchandfilter->get( 46579 )->current_query();
+	$sf_current_query   = $searchandfilter->get( 34033 )->current_query();
 	$single_icon_inline = '';
 	$searchandfilter_menu = '[searchandfilter slug="main-search"]';
 	/**

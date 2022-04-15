@@ -193,7 +193,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 										abundance: 0.3,
 										playOnlyIfVisible:true,
 										mobileFallbackImage: '<?php echo wp_kses( $hero_video_fallback, 'post' ); ?>',
-										mask:'<?php echo wp_kses( $blog_url, 'post' ); ?>/wp-content/themes/wp-rig-nacelle/assets/images/ytplayer-mask.png'}">
+										mask:'<?php echo wp_kses( $blog_url, 'post' ); ?>/wp-content/themes/wp-rig/assets/images/ytplayer-mask.png'}">
 										<?php get_template_part( 'template-parts/modules/icon_volume-toggle' ); ?>
 								</div>
 								<?php
@@ -203,8 +203,6 @@ class Component implements Component_Interface, Templating_Component_Interface {
 									'full',
 									false,
 									array(
-										// 'data-flickity-lazyload' => wp_get_attachment_image_url( $image, $size ),
-										// 'data-flickity-lazyload-srcset' => wp_get_attachment_image_srcset( $image, $size ),
 										'class'   => 'no-lazy attachment-full',
 										'loading' => 'eager',
 									)
