@@ -31,7 +31,16 @@ wp_rig()->print_styles( 'wp-rig-offcanvas' );
 			echo 'search_page-header.php - if have_posts() and a search query';
 		}
 		$archive_title = 'Search results: "' . $sf_current_query->get_search_term() . '"';
-		$searchandfilter_menu = '[searchandfilter slug="offcanvas-catalog-search"]';
+				$current_post_type = get_post_type( $post->ID, false );
+		// Set the searchandfilter plugin's shortcode per post type.
+		if ( 'news' === $current_post_type ) {
+			$searchandfilter_menu = '[searchandfilter slug="offcanvas-news-search"]';
+		} elseif ( 'press_release' === $current_post_type ) {
+			$searchandfilter_menu = '[searchandfilter slug="offcanvas-press-release-search"]';
+		} else {
+			$searchandfilter_menu = '[searchandfilter slug="offcanvas-catalog-search"]';
+		}
+		// $searchandfilter_menu = '[searchandfilter slug="offcanvas-catalog-search"]';
 	} elseif ( $sf_current_query->is_filtered() > 0 ) { // Search and filter plugin "filter search"
 		if ( is_user_logged_in() ) {
 			echo 'Search and filter plugin "filter search"';
@@ -41,9 +50,9 @@ wp_rig()->print_styles( 'wp-rig-offcanvas' );
 			$args
 		) . '"';
 	} elseif ( is_archive() ) {
-		if ( is_user_logged_in() ) {
-			echo 'search_page-header.php - is_archive()';
-		}
+		// if ( is_user_logged_in() ) {
+		// echo 'search_page-header.php - is_archive()';
+		// }
 		$current_post_type = get_post_type( $post->ID, false );
 		$archive_title     = get_the_archive_title();
 		// Set the searchandfilter plugin's shortcode per post type.
@@ -69,11 +78,10 @@ wp_rig()->print_styles( 'wp-rig-offcanvas' );
 			}
 		}
 	} elseif ( is_singular( array( 'news', 'press_release' ) ) ) {
-		if ( is_user_logged_in() ) {
-			echo 'if news or press release';
-		}
+		// if ( is_user_logged_in() ) {
+		// echo 'if news or press release';
+		// }
 		$the_post           = get_queried_object();
-		// printVar( $the_post );
 		$archive_title      = get_post_type_object( get_post_type( $the_post ) );
 		$archive_title      = $archive_title->labels->singular_name;
 		$single_icon_inline = ' grid';
