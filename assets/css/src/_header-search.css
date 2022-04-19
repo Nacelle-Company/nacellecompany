@@ -38,8 +38,29 @@
 
 	@media (--content-query) { /* for desktop */
 
+		position: relative;
+
 		/* base styles */
 		display: grid;
 		grid-template-columns: 2fr 1fr;
+
+		& .ajax-search-item {
+			top: 0;
+		}
+
+		& .asp_w_container {
+			max-width: 200px;
+			position: absolute;
+			z-index: 99;
+			top: 0;
+		}
+
+		& .wpdreams_asp_sc {
+			z-index: 999;
+		}
+
+		& .results {
+			z-index: 9999;
+		}
 	}
 }

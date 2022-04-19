@@ -18,6 +18,7 @@ $current_post_type   = get_post_type( $post->ID, false );
 $archive_title       = get_the_archive_title();
 $the_query           = get_queried_object();
 $single_icon_inline  = '';
+$tax_icon = strtolower( $the_query->cat_name );
 
 if ( 'catalog' === $current_post_type ) {
 	$tax_icon = strtolower( $the_query->cat_name );

@@ -263,19 +263,19 @@ function islastFocusableElement( container, element, focusSelector ) {
 // Plugin: Ajax Search Lite
 // Where: Top nav search icon
 // Requires: WP menu item needs .search-hover class
-const searchHover = document.querySelector( '.search-hover' );
-const searchDrop = searchHover.querySelector( '.sub-menu' );
+// const searchHover = document.querySelector( '.search-hover' );
+// const searchDrop = searchHover.querySelector( '.sub-menu' );
 
-searchHover.addEventListener( 'mouseover', mOver, false );
+// searchHover.addEventListener( 'mouseover', mOver, false );
 
-function mOver() {
-	searchDrop.setAttribute( 'style', 'display:block;' );
-}
+// function mOver() {
+// 	searchDrop.setAttribute( 'style', 'display:block;' );
+// }
 
-document.addEventListener( 'click', function( event ) {
-	const isClickInside = searchDrop.contains( event.target );
+// document.addEventListener( 'click', function( event ) {
+// 	const isClickInside = searchDrop.contains( event.target );
 
-	if ( ! isClickInside ) {
-		searchDrop.setAttribute( 'style', 'display:none;' );
-	}
-} );
+// 	if ( ! isClickInside ) {
+// 		searchDrop.setAttribute( 'style', 'display:none;' );
+// 	}
+// } );

@@ -46,10 +46,9 @@
 }
 
 .page-header_sortandfilter {
-	display: grid;
-	grid-template-columns: 1fr auto;
+	display: flex;
+	justify-content: space-between;
 	align-items: center;
-	transition: margin-right 0.5s;
 }
 
 @media (--sidebar-query) {
@@ -81,19 +80,12 @@
 		align-items: center;
 		column-gap: 1em;
 	}
-
-	& .icon {
-
-		& [fill] {
-			fill: var(--color-theme-secondary);
-		}
-	}
 }
 
 .title-wrap__icon {
-
+	display: flex;
+	align-items: center;
 }
-
 
 /*--------------------------------------------------------------
 # Header breadcrumbs

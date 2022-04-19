@@ -5,28 +5,17 @@
  * Icon on the left title on the right.
  */
 
-.icon-title {
-	display: flex;
-	align-items: center;
-}
-
-.icon-title .icon {
+.icon {
 	margin-right: 0.5rem;
+
+	& [fill] {
+		fill: var(--color-theme-secondary);
+	}
 }
 
-.icon-title .title {
-	margin: 0 0;
+.menu {
+
+	& svg.icon {
+		fill: var(--color-theme-primary);
+	}
 }
-
-svg.icon {
-	fill: var(--color-theme-secondary);
-	margin-right: 10px;
-}
-
-/**
- * END Icon title
- */
-
-/* .dashicons {
-	color: var(--color-theme-secondary);
-} */
