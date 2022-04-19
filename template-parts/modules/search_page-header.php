@@ -19,7 +19,11 @@ $archive_title       = get_the_archive_title();
 $the_query           = get_queried_object();
 $single_icon_inline  = '';
 
-if ( 'news' === $current_post_type ) {
+if ( 'catalog' === $current_post_type ) {
+	$tax_icon = strtolower( $the_query->cat_name );
+	$ajax_offcanvas_search = '[wpdreams_ajaxsearchpro id=1]';
+} elseif ( 'news' === $current_post_type ) {
+	echo 'news first if clause';
 	$searchandfilter_menu = '[searchandfilter slug="offcanvas-news-search"]';
 	$tax_icon = 'newspaper';
 	if ( is_singular() ) {
@@ -29,15 +33,21 @@ if ( 'news' === $current_post_type ) {
 	}
 } elseif ( 'press_release' === $current_post_type ) {
 	$searchandfilter_menu = '[searchandfilter slug="offcanvas-press-release-search"]';
-	$tax_icon = 'megaphone';
+	$tax_icon            = 'megaphone';
 	if ( is_singular() ) {
-		$the_post           = get_queried_object();
-		$archive_title      = get_post_type_object( get_post_type( $the_post ) );
-		$archive_title      = $archive_title->labels->singular_name;
-		$single_icon_inline = ' grid';
+		echo 'SINGULAR!';
+		$the_post      = get_queried_object();
+		$archive_title = get_post_type_object( get_post_type( $the_post ) );
+		$archive_title = $archive_title->labels->singular_name;
 		$archive_title = rtrim( $archive_title, 's' );
+	} elseif ( is_archive() ) {
+		echo 'archive!!!';
+	} else {
+		echo 'gotta be a search page!!!';
+		echo $sf_current_query->is_filtered();
 	}
-} else {
+} elseif ( is_search() ) {
+	echo 'ajax search plugin search results';
 	$searchandfilter_menu = '[searchandfilter slug="offcanvas-catalog-search"]';
 }
 if ( is_tax() ) {
@@ -68,7 +78,7 @@ if ( is_tax() ) {
 	?>
 	<div id="offcanvasOverlay" class="offcanvas overlay" href="javascript:void(0)" onclick="closeNav()"></div>
 	<header class="page-header page-header_sortandfilter">
-		<div class="title-wrap">
+		<div class="title-wrap title-wrap__icon">
 			<h1 class="title">
 				<?php
 				get_template_part( 'template-parts/svg/icon', $tax_icon );
@@ -87,7 +97,7 @@ if ( is_tax() ) {
 		<div id="offcanvasMenu" class="offcanvas-menu">
 			<a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
 			<h3 class="offcanvas-title">Search</h3>
-			<?php echo do_shortcode( '[wpdreams_ajaxsearchlite]' ); ?>
+			<?php echo do_shortcode( $ajax_offcanvas_search ); ?>
 			<?php echo do_shortcode( $searchandfilter_menu ); ?>
 		</div>
 	</header><!-- .page-header -->

@@ -72,6 +72,8 @@
 
 	& .title {
 		text-transform: capitalize;
+		display: flex;
+		align-items: center;
 	}
 
 	&.grid {
@@ -88,6 +90,9 @@
 	}
 }
 
+.title-wrap__icon {
+
+}
 
 
 /*--------------------------------------------------------------

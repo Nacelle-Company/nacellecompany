@@ -19,7 +19,8 @@
 }
 
 svg.icon {
-	fill: var(--color-theme-primary);
+	fill: var(--color-theme-secondary);
+	margin-right: 10px;
 }
 
 /**

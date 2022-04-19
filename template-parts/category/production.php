@@ -21,7 +21,7 @@ $size                        = 'medium_large';
 	<div class="category-wrapper grid">
 		<a href="<?php echo esc_html( get_home_url() ); ?>/category/production/series/" class="link-absolute" title="<?php esc_html_e( 'Series', 'wp-rig' ); ?>"></a>
 		<div class="icon-title">
-			<?php get_template_part( 'template-parts/svg/icon-video' ); ?>
+			<?php get_template_part( 'template-parts/svg/icon-series' ); ?>
 			<h2 class="title"><?php esc_html_e( 'Series', 'wp-rig' ); ?></h2>
 		</div>
 		<?php
