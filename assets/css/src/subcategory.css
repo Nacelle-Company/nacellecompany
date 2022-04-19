@@ -57,6 +57,7 @@
 		top: calc(100% - 14rem);
 		transition: all 0.4s ease-in-out;
 		z-index: -1;
+		min-width: 100%;
 	}
 }
 
@@ -68,7 +69,6 @@
 	.gi a:hover .gi__content {
 		background-color: var(--color-theme-primary);
 		opacity: 1;
-		min-width: 100%;
 		transform: translateY(100%);
 	}
 }

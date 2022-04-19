@@ -157,7 +157,7 @@
 .type-press_release {
 
 	@media (--wide-menu-query) {
-		grid-template-columns: 33% 2fr;
+		grid-template-columns: 33% 67%;
 
 		& .entry-summary {
 

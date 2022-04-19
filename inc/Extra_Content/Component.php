@@ -66,6 +66,8 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					}
 					if ( get_sub_field( 'embed_info_bottom' ) ) {
 						$embed_info_bottom = ' embed-info__bottom';
+					} else {
+						$embed_info_bottom = '';
 					}
 					?>
 					<div class="extra_content grid" id="embedVideoContainment_<?php echo esc_html( $count ); ?>"  onclick="jQuery('#embedVideo_<?php echo esc_html( $count ); ?>').YTPToggleVolume().YTPToggleMask()">
