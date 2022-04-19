@@ -18,14 +18,15 @@ $current_post_type   = get_post_type( $post->ID, false );
 $archive_title       = get_the_archive_title();
 $the_query           = get_queried_object();
 $single_icon_inline  = '';
-$tax_icon = strtolower( $the_query->cat_name );
-
+// $tax_icon = strtolower( $the_query->cat_name );
+// echo $tax_icon;
 if ( 'catalog' === $current_post_type ) {
 	$tax_icon = strtolower( $the_query->cat_name );
 	$ajax_offcanvas_search = '[wpdreams_ajaxsearchpro id=1]';
 } elseif ( 'news' === $current_post_type ) {
 	echo 'news first if clause';
-	$searchandfilter_menu = '[searchandfilter slug="offcanvas-news-search"]';
+	// $searchandfilter_menu = '[searchandfilter slug="offcanvas-news-search"]';
+	$ajax_offcanvas_search = '[wpdreams_ajaxsearchpro id=4]'; // News search: #4.
 	$tax_icon = 'newspaper';
 	if ( is_singular() ) {
 		$the_post           = get_queried_object();
@@ -33,7 +34,8 @@ if ( 'catalog' === $current_post_type ) {
 		$archive_title      = $archive_title->labels->singular_name;
 	}
 } elseif ( 'press_release' === $current_post_type ) {
-	$searchandfilter_menu = '[searchandfilter slug="offcanvas-press-release-search"]';
+	// $searchandfilter_menu = '[searchandfilter slug="offcanvas-press-release-search"]';
+	$ajax_offcanvas_search = '[wpdreams_ajaxsearchpro id=3]'; // Press Release search: #3.
 	$tax_icon            = 'megaphone';
 	if ( is_singular() ) {
 		echo 'SINGULAR!';
@@ -42,7 +44,7 @@ if ( 'catalog' === $current_post_type ) {
 		$archive_title = $archive_title->labels->singular_name;
 		$archive_title = rtrim( $archive_title, 's' );
 	} elseif ( is_archive() ) {
-		echo 'archive!!!';
+
 	} else {
 		echo 'gotta be a search page!!!';
 		echo $sf_current_query->is_filtered();

@@ -19,3 +19,8 @@
 		fill: var(--color-theme-primary);
 	}
 }
+
+.close-btn {
+	font-size: var(--font-size-larger);
+
+}

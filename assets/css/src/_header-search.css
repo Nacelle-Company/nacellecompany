@@ -36,6 +36,16 @@
 /* https://codepen.io/dickyal6/pen/rNxKROO */
 .primary-menu-container {
 
+	@media (--wide-menu-query) {
+
+		& .asp_w_container {
+			max-width: 200px;
+			position: absolute;
+			z-index: 5;
+			top: 0;
+		}
+	}
+
 	@media (--content-query) { /* for desktop */
 
 		position: relative;
@@ -48,19 +58,12 @@
 			top: 0;
 		}
 
-		& .asp_w_container {
-			max-width: 200px;
-			position: absolute;
-			z-index: 99;
-			top: 0;
-		}
-
-		& .wpdreams_asp_sc {
+		/* & .wpdreams_asp_sc {
 			z-index: 999;
 		}
 
 		& .results {
 			z-index: 9999;
-		}
+		} */
 	}
 }
