@@ -1,9 +1,38 @@
 /*--------------------------------------------------------------
 # Offcanvas menu
 --------------------------------------------------------------*/
+
+.offcanvas-menu {
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 5;
+	top: 0;
+	right: 0;
+	background-color: var(--global-color-dark);
+	overflow-x: hidden;
+	transition: 0.5s;
+	padding-top: 60px;
+
+	@media (--narrow-menu-query) {
+
+		padding-top: 15px;
+
+		& a {
+			font-size: 18px;
+		}
+	}
+
+	& .wpdreams_asl_container {
+		max-width: 170px;
+		margin: 0 auto 0 1.5em !important;
+	}
+}
+
 .offcanvas-title {
-	padding: 0 1.5em;
-	margin: 1em 0;
+	margin: 0;
+	padding: 5px 1em 10px;
+	font-size: 16px;
 }
 
 .offcanvas-toggle {
@@ -44,31 +73,4 @@
 	right: 25px;
 	font-size: 36px;
 	cursor: pointer;
-}
-
-.offcanvas-menu {
-	height: 100%;
-	width: 0;
-	position: fixed;
-	z-index: 5;
-	top: 0;
-	right: 0;
-	background-color: var(--global-color-dark);
-	overflow-x: hidden;
-	transition: 0.5s;
-	padding-top: 60px;
-
-	@media (--narrow-menu-query) {
-
-		padding-top: 15px;
-
-		& a {
-			font-size: 18px;
-		}
-	}
-
-	/* Offcanvas search and filter menu */
-	& .searchandfilter ul ul {
-		padding-left: 0;
-	}
 }

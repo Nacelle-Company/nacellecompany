@@ -12,8 +12,13 @@ optgroup,
 textarea {
 	color: var(--global-font-color);
 	font-family: var(--global-font-family);
-	font-size: var(--font-size-regular);
+	font-size: var(--font-size-small);
 	line-height: var(--global-font-line-height);
+}
+
+select {
+	height: 28px;
+	padding: 0 0 0 10px;
 }
 /* stylelint-enable */
 

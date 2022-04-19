@@ -71,10 +71,7 @@
 	}
 
 	& .title {
-
-		@media (--sidebar-query) {
-			margin: 0 0;
-		}
+		text-transform: capitalize;
 	}
 
 	&.grid {
@@ -82,7 +79,16 @@
 		align-items: center;
 		column-gap: 1em;
 	}
+
+	& .icon {
+
+		& [fill] {
+			fill: var(--color-theme-secondary);
+		}
+	}
 }
+
+
 
 /*--------------------------------------------------------------
 # Header breadcrumbs
