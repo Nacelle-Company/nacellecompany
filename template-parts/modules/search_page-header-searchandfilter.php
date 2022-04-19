@@ -27,12 +27,11 @@ wp_rig()->print_styles( 'wp-rig-offcanvas' );
 		'show_all_if_empty' => false,
 	);
 	if ( have_posts() && strlen( trim( get_search_query() ) ) !== 0 ) {                                    // If is search.
-		// if ( is_user_logged_in() ) {
-		// echo 'search_page-header.php - if have_posts() and a search query';
-		// }
+		if ( is_user_logged_in() ) {
+			echo 'search_page-header.php - if have_posts() and a search query';
+		}
 		$archive_title = 'Search results: "' . $sf_current_query->get_search_term() . '"';
 				$current_post_type = get_post_type( $post->ID, false );
-		// $archive_title     = get_the_archive_title();
 		// Set the searchandfilter plugin's shortcode per post type.
 		if ( 'news' === $current_post_type ) {
 			$searchandfilter_menu = '[searchandfilter slug="offcanvas-news-search"]';
@@ -43,9 +42,9 @@ wp_rig()->print_styles( 'wp-rig-offcanvas' );
 		}
 		// $searchandfilter_menu = '[searchandfilter slug="offcanvas-catalog-search"]';
 	} elseif ( $sf_current_query->is_filtered() > 0 ) { // Search and filter plugin "filter search"
-		// if ( is_user_logged_in() ) {
-		// echo 'Search and filter plugin "filter search"';
-		// }
+		if ( is_user_logged_in() ) {
+			echo 'Search and filter plugin "filter search"';
+		}
 		$archive_title = 'Filter by: "' . $sf_current_query->get_fields_html(
 			array( '_sft_genre', '_sft_main_talent', '_sft_producers', '_sft_directors', '_sft_writers' ),
 			$args
@@ -93,9 +92,9 @@ wp_rig()->print_styles( 'wp-rig-offcanvas' );
 			$archive_title = rtrim( $archive_title, 's' );
 		}
 	} else {
-		// if ( is_user_logged_in() ) {
-		// echo 'search_page-header.php - final else!!!';
-		// }
+		if ( is_user_logged_in() ) {
+			echo 'search_page-header.php - final else!!!';
+		}
 		$archive_title = 'Search results: "' . $sf_current_query->get_search_term() . '"';
 		$searchandfilter_menu = '[searchandfilter slug="offcanvas-catalog-search"]';
 	}

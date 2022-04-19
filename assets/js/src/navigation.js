@@ -257,3 +257,14 @@ function islastFocusableElement( container, element, focusSelector ) {
 	}
 	return false;
 }
+
+// Custom JS
+const searchHover = document.querySelector( '.search-hover' );
+const searchDrop = searchHover.querySelector( '.sub-menu' );
+
+searchHover.addEventListener( 'mouseover', mOver, false );
+
+function mOver() {
+	searchDrop.setAttribute( 'style', 'background-color:blue;' );
+}
+
