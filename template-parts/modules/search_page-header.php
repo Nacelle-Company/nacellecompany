@@ -12,20 +12,26 @@ global $query;
 wp_rig()->print_styles( 'wp-rig-offcanvas' );
 
 global $searchandfilter;
-$sf_current_query    = $searchandfilter->get( 46578 )->current_query();
-$searchandfilter_menu = '[searchandfilter slug="main-search"]';
-$current_post_type   = get_post_type( $post->ID, false );
-$archive_title       = get_the_archive_title();
-$the_query           = get_queried_object();
-$single_icon_inline  = '';
+$current_post_type    = get_post_type( $post->ID, false );
+$archive_title        = get_the_archive_title();
+$the_query            = get_queried_object();
+$the_post_object      = get_post_type_object( get_post_type( $the_query ) );
+$archive_single_title = $the_post_object->labels->singular_name;
+
+$search_results    = $archive_single_title . '<span class="search-results__title"><em>&nbsp;- search results for "' . get_search_query() . '"</em></span>';
 // $tax_icon = strtolower( $the_query->cat_name );
 // echo $tax_icon;
+
 if ( 'catalog' === $current_post_type ) {
 	$tax_icon = strtolower( $the_query->cat_name );
 	$ajax_offcanvas_search = '[wpdreams_ajaxsearchpro id=1]';
+
+
+
 } elseif ( 'news' === $current_post_type ) {
-	echo 'news first if clause';
-	// $searchandfilter_menu = '[searchandfilter slug="offcanvas-news-search"]';
+	if ( get_search_query() ) {
+		$archive_title = $search_results;
+	}
 	$ajax_offcanvas_search = '[wpdreams_ajaxsearchpro id=4]'; // News search: #4.
 	$tax_icon = 'newspaper';
 	if ( is_singular() ) {
@@ -34,7 +40,7 @@ if ( 'catalog' === $current_post_type ) {
 		$archive_title      = $archive_title->labels->singular_name;
 	}
 } elseif ( 'press_release' === $current_post_type ) {
-	// $searchandfilter_menu = '[searchandfilter slug="offcanvas-press-release-search"]';
+	$archive_title         = $search_results;
 	$ajax_offcanvas_search = '[wpdreams_ajaxsearchpro id=3]'; // Press Release search: #3.
 	$tax_icon            = 'megaphone';
 	if ( is_singular() ) {
@@ -47,12 +53,15 @@ if ( 'catalog' === $current_post_type ) {
 
 	} else {
 		echo 'gotta be a search page!!!';
-		echo $sf_current_query->is_filtered();
 	}
 } elseif ( is_search() ) {
 	echo 'ajax search plugin search results';
 	$searchandfilter_menu = '[searchandfilter slug="offcanvas-catalog-search"]';
 }
+
+
+
+
 if ( is_tax() ) {
 	$tax_name = strtoupper( $the_query->taxonomy );
 	$tax_name = str_replace( '_', ' ', $tax_name );
@@ -101,7 +110,6 @@ if ( is_tax() ) {
 			<a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
 			<h3 class="offcanvas-title">Search</h3>
 			<?php echo do_shortcode( $ajax_offcanvas_search ); ?>
-			<?php echo do_shortcode( $searchandfilter_menu ); ?>
 		</div>
 	</header><!-- .page-header -->
 	<!-- offcanvas -->

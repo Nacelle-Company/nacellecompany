@@ -9,7 +9,7 @@ namespace WP_Rig\WP_Rig;
 
 ?>
 <section class="error grid">
-	<?php get_template_part( 'template-parts/content/page_header' ); ?>
+	<?php // get_template_part( 'template-parts/content/page_header' ); ?>
 
 	<div class="page-content">
 		<?php

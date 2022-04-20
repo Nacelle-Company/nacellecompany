@@ -67,3 +67,10 @@
 		} */
 	}
 }
+
+.search-results__title {
+	font-size: var(--font-size-regular);
+	line-height: 1;
+	font-weight: 400;
+	text-transform: lowercase;
+}

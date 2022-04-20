@@ -38,17 +38,6 @@ if ( is_404() ) {
 
 
 
-} elseif ( ! have_posts() ) {
-	?>
-	<header class="page-header">
-		<h1 class="page-title">
-			<?php esc_html_e( 'Nothing Found', 'wp-rig' ); ?>
-		</h1>
-	</header><!-- .page-header -->
-	<?php
-
-
-
 } elseif ( is_archive() || is_singular() && ! is_page() ) {
 	get_template_part( 'template-parts/modules/search_page-header' );
 
