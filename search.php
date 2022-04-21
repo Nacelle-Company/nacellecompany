@@ -12,11 +12,13 @@ namespace WP_Rig\WP_Rig;
 get_header();
 
 wp_rig()->print_styles( 'wp-rig-content' );
-global $searchandfilter;
-global $queried_object;
-global $current_post_type;
-global $category_slug;
 
+if ( is_post_type_archive() ) {
+	$queried_object    = get_queried_object();
+	$category_slug     = $queried_object->slug;
+}
+
+$current_post_type = get_post_type();
 $post_class        = ' archive-main archive__' . $current_post_type;
 get_template_part( 'template-parts/content/page_header' ); // ? PAGE HEADER
 ?>
@@ -26,18 +28,7 @@ get_template_part( 'template-parts/content/page_header' ); // ? PAGE HEADER
 			wp_rig()->print_styles( 'wp-rig-post-grid' );
 			while ( have_posts() ) :
 				the_post();
-				?>
-				<article id="post-<?php the_ID(); ?>" class="grid-item archive-grid__item">
-				<a href="<?php echo the_permalink(); ?>" class="link-absolute" aria-label="visit" title="<?php the_title(); ?>"></a>
-						<?php
-						get_template_part( 'template-parts/content/entry_thumbnail', get_post_type() );
-						get_template_part( 'template-parts/content/entry_title', get_post_type() );
-						get_template_part( 'template-parts/content/entry_summary', get_post_type() );
-						get_template_part( 'template-parts/content/entry_meta', get_post_type() );
-						get_template_part( 'template-parts/content/entry_go-corner', get_post_type() );
-						?>
-				</article>
-				<?php
+				get_template_part( 'template-parts/content/entry', get_post_type() );
 			endwhile;
 			wp_rig()->print_styles( 'wp-rig-pagination' );                         // Pagination for subcategories.
 			wp_rig()->display_pagination_archive( $category_slug );

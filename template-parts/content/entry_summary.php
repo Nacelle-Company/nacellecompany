@@ -7,8 +7,16 @@
 
 namespace WP_Rig\WP_Rig;
 
+global $synopsis;
+$synopsis = get_field( 'synopsis', $post->ID );
 ?>
 
 <div class="entry-summary">
-	<?php the_excerpt(); ?>
+	<?php
+	if ( get_the_excerpt() ) {
+		the_excerpt();
+	} else {
+		echo wp_kses( $synopsis, 'post' );
+	}
+	?>
 </div><!-- .entry-summary -->

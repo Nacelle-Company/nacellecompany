@@ -17,9 +17,8 @@ namespace WP_Rig\WP_Rig;
 get_header();
 
 wp_rig()->print_styles( 'wp-rig-content' );
-global $searchandfilter;
 
-$sf_current_query = $searchandfilter->get( 46515 )->current_query();
+$current_post_type = get_post_type();
 
 if ( is_post_type_archive() ) {
 	$current_post_type = get_post_type();
