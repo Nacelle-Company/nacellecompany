@@ -69,7 +69,7 @@
 
 .offcanvas-menu {
 
-	.close-btn {
+	& .close-btn {
 		position: absolute;
 		top: 0;
 		right: 25px;

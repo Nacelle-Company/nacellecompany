@@ -45,11 +45,21 @@
 	}
 }
 
-.page-header_sortandfilter {
-	display: flex;
-	justify-content: space-between;
+.page-header__filters {
+	display: grid;
+	grid-template-columns: auto auto;
 	align-items: center;
+	justify-content: space-between;
 }
+
+/* .ajaxsearch_results-wrap {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 4;
+} */
 
 @media (--sidebar-query) {
 

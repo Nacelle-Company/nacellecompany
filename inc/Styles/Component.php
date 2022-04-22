@@ -324,11 +324,18 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					return 'category.php' === basename( $template );
 				},
 			),
-			'wp-rig-subcategory'    => array(
-				'file'             => 'subcategory.min.css',
+			'wp-rig-catalog-cards'    => array(
+				'file'             => 'catalog-cards.min.css',
 				'preload_callback' => function() {
 					global $template;
-					return 'subcategory.php' === basename( $template );
+					return array( 'archive-catalog.php', 'category.php', 'taxonomy.php' ) === basename( $template );
+				},
+			),
+			'wp-rig-offcanvas'    => array(
+				'file'             => 'offcanvas.min.css',
+				'preload_callback' => function() {
+					global $template;
+					return array( 'archive-catalog.php', 'category.php', 'taxonomy.php' ) === basename( $template );
 				},
 			),
 			'wp-rig-single-catalog'    => array(
@@ -367,13 +374,6 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				'preload_callback' => function() {
 					global $template;
 					return 'related_content.php' === basename( $template );
-				},
-			),
-			'wp-rig-offcanvas'    => array(
-				'file'             => 'offcanvas.min.css',
-				'preload_callback' => function() {
-					global $template;
-					return 'page_header.php' === basename( $template );
 				},
 			),
 			'wp-rig-catalog_buttons'    => array(

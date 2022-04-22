@@ -10,7 +10,10 @@ namespace WP_Rig\WP_Rig;
 global $searchandfilter;
 global $sf_current_query;
 
-if ( is_post_type_archive() || is_search() ) {
+$sf_current_query = $searchandfilter->get( 46681 )->current_query();
+printVar( $sf_current_query->get_field_string( '_sft_category' ) );
+
+if ( is_post_type_archive() || $sf_current_query->is_filtered() ) {
 	wp_rig()->print_styles( 'wp-rig-post-grid' ); // ? post grid CSS
 	$article_class = 'entry grid-item archive-grid__item';
 } elseif ( is_single() ) {
@@ -23,7 +26,7 @@ if ( is_post_type_archive() || is_search() ) {
 <article id="post-<?php the_ID(); ?>" <?php post_class( $article_class ); ?>>
 
 	<?php
-	if ( is_post_type_archive() || is_search() ) {
+	if ( is_post_type_archive() || $sf_current_query->is_filtered() ) {
 
 		get_template_part( 'template-parts/content/entry_thumbnail', get_post_type() );
 		get_template_part( 'template-parts/content/entry_title', get_post_type() );

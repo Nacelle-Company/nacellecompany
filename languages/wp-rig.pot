@@ -36,7 +36,7 @@ msgstr ""
 msgid "Front Page"
 msgstr ""
 
-#: header.php:65
+#: header.php:62
 msgid "Skip to content"
 msgstr ""
 
@@ -369,12 +369,17 @@ msgstr ""
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
 
-#: template-parts/content/page_header.php:34
-msgid "This is not the page you are looking for. . ."
+#: template-parts/content/page_header.php:15
+msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
-#: template-parts/content/page_header.php:45
+#: template-parts/content/page_header.php:24
 msgid "Nothing Found"
+msgstr ""
+
+#. translators: %s: search query
+#: template-parts/content/page_header.php:45
+msgid "Search Results for: %s"
 msgstr ""
 
 #: template-parts/content/pagination.php:13
@@ -413,7 +418,7 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: template-parts/modules/search_page-header-searchandfilter.php:134, template-parts/modules/search_page-header.php:135
+#: template-parts/modules/offcanvas-menu.php:17
 msgid "Sort & Filter"
 msgstr ""
 
