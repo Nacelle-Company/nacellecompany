@@ -15,19 +15,18 @@ namespace WP_Rig\WP_Rig;
 get_header();
 
 $queried_object = get_queried_object();
-// printVar( $queried_object );
 $category_id    = $queried_object->term_id;
 $children       = get_term_children( $category_id, 'category' );
 $category_slug  = $queried_object->slug;
-$query          = new \WP_Query(
-	array(
-		'post_type'     => 'catalog',
-		'category_name' => $category_slug,
-		'orderby'       => 'title',
-		'order'         => 'ASC',
-		'paged'         => get_query_var( 'paged' ),
-	)
-);
+// $query          = new \WP_Query(
+// array(
+// 'post_type'     => 'catalog',
+// 'category_name' => $category_slug,
+// 'orderby'       => 'title',
+// 'order'         => 'ASC',
+// 'paged'         => get_query_var( 'paged' ),
+// )
+// );
 ?>
 <!-- #category.php -->
 <main id="primary" class="site-main">

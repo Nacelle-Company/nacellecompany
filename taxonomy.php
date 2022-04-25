@@ -12,6 +12,10 @@
 namespace WP_Rig\WP_Rig;
 
 get_header();
+// $term      = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
+// $query_obj = get_queried_object();
+// $obj_tax   = $query_obj->taxonomy;
+// $obj_slug  = $query_obj->slug;
 
 ?>
 	<main id="primary" class="site-main">

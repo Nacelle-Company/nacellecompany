@@ -11,7 +11,7 @@ if ( is_404() ) {
 	?>
 	<header class="page-header">
 		<h1 class="page-title">
-			404!!!!!
+			<!-- 404!!!!! -->
 			<?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'wp-rig' ); ?>
 		</h1>
 	</header><!-- .page-header -->
@@ -20,7 +20,7 @@ if ( is_404() ) {
 	?>
 	<header class="page-header">
 		<h1 class="page-title">
-			is_home() && ! have_posts()!!!!!!
+			<!-- is_home() && ! have_posts()!!!!!! -->
 			<?php esc_html_e( 'Nothing Found', 'wp-rig' ); ?>
 		</h1>
 	</header><!-- .page-header -->
@@ -29,34 +29,29 @@ if ( is_404() ) {
 	?>
 	<header class="page-header">
 		<h1 class="page-title">
-			is_home() && ! is_front_page()!!!!!!
+			<!-- is_home() && ! is_front_page()!!!!!! -->
 			<?php single_post_title(); ?>
 		</h1>
 	</header><!-- .page-header -->
 	<?php
-} elseif ( is_search() ) {
-	?>
-	<header class="page-header">
-		<h1 class="page-title">
-			is_search()!!!!!!!!
-			<?php
-			printf(
-				/* translators: %s: search query */
-				esc_html__( 'Search Results for: %s', 'wp-rig' ),
-				'<span>' . get_search_query() . '</span>'
-			);
-			?>
-		</h1>
-	</header><!-- .page-header -->
-	<?php
-} elseif ( is_archive() ) {
+} elseif ( is_archive() || is_search() ) {
 	?>
 	<div id="offcanvasOverlay" class="offcanvas overlay" href="javascript:void(0)" onclick="closeNav()"></div>
 	<header class="page-header page-header__filters">
 		<!-- <pre>is_archive()!!!!!!!</pre> -->
 		<h1 class="page-title">
 			<?php
-
+			if ( is_tax() ) {
+				$tax_current = $wp_query->get_queried_object();
+				$tax_name    = $tax_current->taxonomy . ': ';
+				echo esc_html( ucfirst( $tax_name ) );
+			} elseif ( is_search() ) {
+				printf(
+				/* translators: %s: search query */
+					esc_html__( 'Search Results for: %s', 'wp-rig' ),
+					'<span>' . get_search_query() . '</span>'
+				);
+			}
 			echo post_type_archive_title( '', false ); // Gets "ARCHIVE" title ( not category title ).
 			echo single_term_title();
 			the_archive_description( '<div class="archive-description">', '</div>' );

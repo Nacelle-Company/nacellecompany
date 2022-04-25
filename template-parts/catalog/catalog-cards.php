@@ -14,38 +14,45 @@ namespace WP_Rig\WP_Rig;
 
 wp_rig()->print_styles( 'wp-rig-catalog-cards' );
 
+global $post;
+global $category_slug;
 global $searchandfilter;
 
-$query_obj = get_queried_object();
-$obj_tax   = $query_obj->taxonomy;
-$obj_slug  = $query_obj->slug;
-
-printVar( $query_obj );
-if ( is_tax( $obj_tax ) ) {
-	$taxonomy_name = $obj_tax;
-	echo $taxonomy_name;
-} elseif ( is_tax( $obj_tax ) ) {
-	$taxonomy_name = 'category';
-	echo $taxonomy_name;
-}
-
-$query = new \WP_Query(
-	array(
+// Set variables, per category or taxonomy, that will fill the wp_query array.
+if ( is_tax() ) {
+	$tax_current = $wp_query->get_queried_object();
+	$tax_name    = $tax_current->taxonomy;
+	$tax_slug    = $tax_current->slug;
+	$args        = array(
 		'post_type' => 'catalog',
-		'orderby'  => 'title',
-		'taxonomy' => $taxonomy_name,
-		'order'    => 'ASC',
-		'paged'    => get_query_var( 'paged' ),
-	)
-);
-// printVar( $query );
+		'tax_query' => array(
+			array(
+				'taxonomy' => $tax_name,
+				'field'    => 'slug',
+				'terms'    => $tax_slug,
+			),
+		),
+	);
+	$query       = new \WP_Query( $args );
+
+} elseif ( is_category() ) {
+	$query = new \WP_Query(
+		array(
+			'post_type'     => 'catalog',
+			'category_name' => $category_slug,
+			'orderby'       => 'title',
+			'order'         => 'ASC',
+			'paged'         => get_query_var( 'paged' ),
+		)
+	);
+}
 ?>
 <div class="catalog-cards__wrap">
 	<?php
 	while ( $query->have_posts() ) :
 		$query->the_post();
 		// Variables.
-		$count       = $wp_query->current_post;
+		$count       = $query->current_post;
 		$the_title   = get_the_title();
 		$permalink   = get_permalink();
 		$content_wp  = get_the_content();
@@ -82,11 +89,14 @@ $query = new \WP_Query(
 			$synopsis   = $content_wp;
 		}
 
-		$img = get_field( 'square_image' );
+		$img             = get_field( 'square_image' );
+		// $post_id         = get_the_ID(); // Or use the post id if you already have it.
+		$category_object = get_the_category( $post );
+		$category_slug   = $category_object[0]->slug;
 		// Start card element.
 		if ( ! empty( $img ) ) {
 			?>
-			<div class="gi">
+			<div class="gi <?php echo esc_attr( $category_slug ); ?>">
 				<a href="<?php echo esc_attr( $permalink ); ?>" class="link-absolute" aria-label="visit" title="<?php the_title(); ?>"></a>
 
 					<?php

@@ -61,6 +61,16 @@
 	}
 }
 
+.gi.production {
+
+	& .gi__content {
+
+		@media (--wide-menu-query) {
+			top: calc(100% - 20.65rem);
+		}
+	}
+}
+
 /* hover actions! */
 @media (--wide-menu-query) {
 
