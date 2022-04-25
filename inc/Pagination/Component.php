@@ -54,6 +54,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		/**
 		 * Catalog pagination
 		 */
+
 		if ( is_singular( get_post_type() ) ) {
 
 			if ( 'post' === get_post_type() || get_post_type_object( get_post_type() )->has_archive ) {

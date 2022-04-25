@@ -128,7 +128,8 @@
 		}
 	}
 
-	& .entry-thumbnail {
+	& .entry-thumbnail,
+	& .post-thumbnail {
 		grid-area: image;
 
 		@media (--wide-menu-query) {

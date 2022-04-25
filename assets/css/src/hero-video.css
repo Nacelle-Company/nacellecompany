@@ -55,26 +55,24 @@
 
 	& .icon-play__wrapper {
 		position: absolute;
-		transform: translate(10px, 10px);
+		transform: translate(-40vw, 9vh);
+
+		@media (--content-query) {
+			transform: translate(-45vw, 19vh);
+		}
 	}
 
-	@media (--content-query) {
+	.icon-play__hollow {
 
-		& .icon-play__wrapper {
-			position: absolute;
-			transform: translate(-50vw, 12vh);
-
-			& .icon-play__hollow {
-				stroke: var(--color-link);
-				opacity: 0.5;
-				cursor: pointer;
-			}
+		@media (--content-query) {
+			stroke: var(--color-link);
+			opacity: 0.5;
+			cursor: pointer;
 
 			&:hover {
 				opacity: 1;
 			}
 		}
-
 	}
 
 	@media (--sidebar-query) {

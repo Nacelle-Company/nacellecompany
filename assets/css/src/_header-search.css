@@ -39,7 +39,7 @@
 	@media (--wide-menu-query) {
 
 		& .asp_w_container {
-			max-width: 200px;
+			max-width: 500px;
 			position: absolute;
 			z-index: 5;
 			top: 0;

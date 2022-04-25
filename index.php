@@ -18,7 +18,11 @@ get_header();
 
 wp_rig()->print_styles( 'wp-rig-content' );
 
+// Globals
 $current_post_type = get_post_type();
+$queried_obj       = get_queried_object();
+$queried_id        = get_queried_object_id();
+$obj_slug          = $queried_obj->name;
 
 if ( is_post_type_archive() ) {
 	$current_post_type = get_post_type();
@@ -26,7 +30,6 @@ if ( is_post_type_archive() ) {
 } else {
 	$post_class = '';
 }
-// printVar( $current_post_type );
 get_template_part( 'template-parts/content/page_header' ); // ? PAGE HEADER
 
 ?>
@@ -39,8 +42,8 @@ get_template_part( 'template-parts/content/page_header' ); // ? PAGE HEADER
 				get_template_part( 'template-parts/content/entry', get_post_type() );
 			}
 			if ( ! is_singular() ) {
-				wp_rig()->print_styles( 'wp-rig-pagination' );
-				get_template_part( 'template-parts/content/pagination' );
+				wp_rig()->print_styles( 'wp-rig-pagination' );                         // Pagination for subcategories.
+				wp_rig()->display_pagination_archive( $obj_slug );
 			}
 		} else {
 			get_template_part( 'template-parts/content/error' );

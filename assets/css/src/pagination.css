@@ -7,9 +7,13 @@
 .site-main .pagination {
 	margin: 0 auto 2em;
 	overflow: hidden;
-	padding: 0 1em 2em;
+	padding: 2em 1em;
 	font-family: var(--highlight-font-family);
 	font-stretch: condensed;
+
+	@media (--sidebar-query) {
+		padding: 2em 10vw;
+	}
 }
 
 .posts-navigation .nav-previous,
@@ -106,10 +110,7 @@
 
 	& .nav-links {
 		display: flex;
-
-		@media (--content-query) {
-			justify-content: space-between;
-		}
+		justify-content: space-between;
 	}
 }
 
@@ -128,4 +129,11 @@
 	padding-right: 1.5rem;
 	padding-left: 1.5rem;
 	max-width: var(--page-width);
+}
+
+.post-navigation {
+
+	& .dashicons {
+		line-height: 0.6;
+	}
 }

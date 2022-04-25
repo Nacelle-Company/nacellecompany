@@ -15,36 +15,17 @@ namespace WP_Rig\WP_Rig;
 wp_rig()->print_styles( 'wp-rig-catalog-cards' );
 
 global $post;
-global $category_slug;
+global $obj_slug;
 global $searchandfilter;
 
 // Set variables, per category or taxonomy, that will fill the wp_query array.
 if ( is_tax() ) {
-	$tax_current = $wp_query->get_queried_object();
-	$tax_name    = $tax_current->taxonomy;
-	$tax_slug    = $tax_current->slug;
-	$args        = array(
-		'post_type' => 'catalog',
-		'tax_query' => array(
-			array(
-				'taxonomy' => $tax_name,
-				'field'    => 'slug',
-				'terms'    => $tax_slug,
-			),
-		),
-	);
-	$query       = new \WP_Query( $args );
+	global $tax_query; // Find these args in taxonomy.php.
+	$query = $tax_query;
 
 } elseif ( is_category() ) {
-	$query = new \WP_Query(
-		array(
-			'post_type'     => 'catalog',
-			'category_name' => $category_slug,
-			'orderby'       => 'title',
-			'order'         => 'ASC',
-			'paged'         => get_query_var( 'paged' ),
-		)
-	);
+	global $cat_query; // Find these args in category.php.
+	$query = $cat_query;
 }
 ?>
 <div class="catalog-cards__wrap">
@@ -90,13 +71,12 @@ if ( is_tax() ) {
 		}
 
 		$img             = get_field( 'square_image' );
-		// $post_id         = get_the_ID(); // Or use the post id if you already have it.
 		$category_object = get_the_category( $post );
-		$category_slug   = $category_object[0]->slug;
+		$obj_slug   = $category_object[0]->slug;
 		// Start card element.
 		if ( ! empty( $img ) ) {
 			?>
-			<div class="gi <?php echo esc_attr( $category_slug ); ?>">
+			<div class="gi <?php echo esc_attr( $obj_slug ); ?>">
 				<a href="<?php echo esc_attr( $permalink ); ?>" class="link-absolute" aria-label="visit" title="<?php the_title(); ?>"></a>
 
 					<?php

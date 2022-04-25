@@ -26,6 +26,10 @@
 	border-bottom: 2px solid var(--color-theme-primary);
 	padding: 0 1em;
 
+	&:not(.page-header__filters) {
+		text-align: center;
+	}
+
 	@media (--content-query) {
 		padding: 0.5em 2em;
 		grid-column: 1/-1;
@@ -42,6 +46,11 @@
 		@media (--content-query) {
 			text-align: center;
 		}
+	}
+
+	& .num_posts {
+		font-size: 13px;
+		color: var(--color-theme-secondary);
 	}
 }
 

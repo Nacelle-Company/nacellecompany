@@ -50,14 +50,14 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	/**
 	 * Display Tax Terms
 	 *
-	 * @param category_slug $category_slug Get category slug.
+	 * @param obj_slug $obj_slug Get category slug.
 	 */
-	public function display_pagination_archive( $category_slug ) {
+	public function display_pagination_archive( $obj_slug ) {
 		global $wp_query;
 		$big = 9999999; // Need an unlikely integer.
 		?>
 		<nav class="navigation pagination" aria-label="Page navigation">
-			<h2 class="screen-reader-text"><?php echo esc_html( $category_slug ); ?> category navigation</h2>
+			<h2 class="screen-reader-text"><?php echo esc_html( $obj_slug ); ?> category navigation</h2>
 			<?php
 			echo wp_kses(
 				paginate_links(

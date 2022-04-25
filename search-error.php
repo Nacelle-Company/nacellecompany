@@ -9,7 +9,7 @@
 
 namespace WP_Rig\WP_Rig;
 
-global $category_slug;
+global $obj_slug;
 
 get_header();
 
@@ -19,7 +19,7 @@ wp_rig()->print_styles( 'wp-rig-content' );
 // if ( is_post_type_archive() || $sf_current_query->is_filtered() ) {
 // 	$sf_current_query_cat = $sf_current_query->get_field_string( '_sft_category' );
 // 	if ( str_contains( $sf_current_query_cat, 'Category' ) ) {
-// 		$category_slug = $sf_current_query_cat;
+// 		$obj_slug = $sf_current_query_cat;
 // 	}
 // }
 
@@ -35,7 +35,7 @@ get_template_part( 'template-parts/content/page_header' ); // ? PAGE HEADER
 				get_template_part( 'template-parts/content/entry', get_post_type() );
 			endwhile;
 			wp_rig()->print_styles( 'wp-rig-pagination' );                         // Pagination for subcategories.
-			wp_rig()->display_pagination_archive( $category_slug );
+			wp_rig()->display_pagination_archive( $obj_slug );
 		else :
 			get_template_part( 'template-parts/content/error' );
 		endif;

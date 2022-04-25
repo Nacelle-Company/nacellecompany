@@ -11,7 +11,7 @@
 
 namespace WP_Rig\WP_Rig;
 
-global $the_post_id;
+global $queried_id;
 
 ?>
 
@@ -20,8 +20,8 @@ global $the_post_id;
 		<script>
 			// YTPlayer hero video jquery call
 			jQuery(function() {
-				jQuery("#hero_video_<?php echo esc_html( $the_post_id ); ?>").YTPlayer();
-				jQuery("#hero_video__desktop_<?php echo esc_html( $the_post_id ); ?>").YTPlayer();
+				jQuery("#hero_video_<?php echo esc_html( $queried_id ); ?>").YTPlayer();
+				jQuery("#hero_video__desktop_<?php echo esc_html( $queried_id ); ?>").YTPlayer();
 			});
 		</script>
 	<?php endif; ?>

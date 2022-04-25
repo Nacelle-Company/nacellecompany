@@ -7,10 +7,11 @@
 
 namespace WP_Rig\WP_Rig;
 
-global $the_post_id;
+global $queried_id;
+
 ?>
 <div class="hero-video__controls">
-<input class="helper-trigger" type="checkbox" id="volumeToggle" name="volumeToggle" onclick="jQuery('#hero_video_<?php echo esc_html( $the_post_id ); ?>').YTPToggleVolume().YTPToggleMask()"/>
+<input class="helper-trigger" type="checkbox" id="volumeToggle" name="volumeToggle" onclick="jQuery('#hero_video_<?php echo esc_html( $queried_id ); ?>').YTPToggleVolume().YTPToggleMask()"/>
 	<div class="col-md-8 helper-show">
 		<label class="btn btn-link" for="volumeToggle"></label>
 		<label class="btn btn-primary" for="volumeToggle">

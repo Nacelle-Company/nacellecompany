@@ -89,7 +89,6 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		/*
 		*  http://codex.wordpress.org/Template_Tags/get_posts#Reset_after_Postlists_with_offset
 		*/
-		global $the_post_id;
 		if ( get_field( 'group_slides' ) ) {
 			$group_cells           = '"groupCells": true, "groupCells": 2,';
 			$slider_custom_classes = ' group-cells';
@@ -109,7 +108,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					/**
 					 * Initial variables.
 					 */
-					$the_post_id   = $slide->ID;
+					$slide_id   = $slide->ID;
 					$blog_url      = get_bloginfo( 'url' );
 					$the_title     = get_the_title( $slide );
 					$the_permalink = get_the_permalink( $slide );
@@ -158,7 +157,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					}
 					?>
 
-					<div class="carousel-cell <?php echo esc_html( $the_post_id ); ?>">
+					<div class="carousel-cell <?php echo esc_html( $slide_id ); ?>">
 						<figure>
 							<figcaption class="caption">
 								<div class="flickity-image">
@@ -183,7 +182,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 							if ( true === $hero_video_show ) {
 								wp_rig()->print_styles( 'wp-rig-hero-video' );
 								?>
-								<div id="hero_video_<?php echo esc_html( $the_post_id ); ?>"
+								<div id="hero_video_<?php echo esc_html( $slide_id ); ?>"
 								class="player"
 									data-property="{
 										videoURL: '<?php echo esc_html( $hero_video ); ?>',
@@ -212,8 +211,8 @@ class Component implements Component_Interface, Templating_Component_Interface {
 						</figure>
 						<script>
 							jQuery(function() {
-								jQuery("#hero_video_<?php echo esc_html( $the_post_id ); ?>").YTPlayer();
-								var heroVideo = document.querySelector("#hero_video_<?php echo esc_html( $the_post_id ); ?>");
+								jQuery("#hero_video_<?php echo esc_html( $slide_id ); ?>").YTPlayer();
+								var heroVideo = document.querySelector("#hero_video_<?php echo esc_html( $slide_id ); ?>");
 								var flickityBtn = document.querySelectorAll(".flickity-button");
 								// console.log(flickityBtn);
 								jQuery(flickityBtn).on( 'click', '.button', function() {

@@ -24,3 +24,8 @@
 	font-size: var(--font-size-larger);
 
 }
+
+.dashicons-arrow-left::before,
+.dashicons-arrow-right::before {
+	color: var(--color-theme-secondary);
+}
