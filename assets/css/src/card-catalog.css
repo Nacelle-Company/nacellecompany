@@ -1,7 +1,7 @@
 /* CSS Tricks!!! https://codepen.io/chriscoyier/pen/xBmYJN */
 
 /* grid item's wrapper */
-.catalog-cards__wrap {
+.site-main__catalog {
 	display: grid;
 	grid-gap: var(--grid-item-row-gap-sm) 0;
 

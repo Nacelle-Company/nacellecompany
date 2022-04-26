@@ -1,15 +1,16 @@
 <?php
 /**
- * The template for displaying the catalog archive pages
+ * The template for displaying category archives.
  *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * When active, applies to all category archives.
+ * To target a specific category, rename file to category-{slug/id}.php
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#category
  *
  * @package wp_rig
  */
 
 namespace WP_Rig\WP_Rig;
-
-global $obj_slug;
 
 get_header();
 
@@ -17,14 +18,18 @@ wp_rig()->print_styles( 'wp-rig-content' );
 
 ?>
 <!-- #archive-catalog.php -->
-	<main id="primary" class="site-main">
+	<main id="primary" class="site-main site-main__catalog">
 		<?php
 		if ( have_posts() ) {
 
 			get_template_part( 'template-parts/content/page_header' );
-			get_template_part( 'template-parts/catalog/catalog-cards' );
-			wp_rig()->print_styles( 'wp-rig-pagination' );                         // Pagination for subcategories.
-			wp_rig()->display_pagination_archive( $obj_slug );
+
+			while ( have_posts() ) {
+				the_post();
+				get_template_part( 'template-parts/content/entry', get_post_type() );
+			}
+
+			get_template_part( 'template-parts/content/pagination' );
 		} else {
 			get_template_part( 'template-parts/content/error' );
 		}

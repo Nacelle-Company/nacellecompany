@@ -1,6 +1,9 @@
 /*--------------------------------------------------------------
 # Offcanvas menu
 --------------------------------------------------------------*/
+.page-header__offcanvas {
+	position: relative;
+}
 
 .offcanvas-menu {
 	height: 100%;
@@ -46,7 +49,16 @@
 
 	& .offcanvas-toggle_title {
 		font-size: var(--font-size-regular);
+
+		& .search-filter-reset {
+			position: absolute;
+			bottom: -1.5em;
+			right: 0;
+			font-size: var(--font-size-xsmall);
+		}
 	}
+
+
 }
 
 /* stylelint-disable-next-line no-descending-specificity */

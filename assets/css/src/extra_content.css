@@ -2,6 +2,7 @@
 .extra_content__container {
 	display: grid;
 	gap: 2em;
+	grid-column: 1/-1;
 }
 
 .extra_content {

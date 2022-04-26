@@ -47,12 +47,12 @@ main {
  */
 
 h1 {
-	font-size: 1.25em;
+	font-size: 2em;
 	margin: 0.67em 0;
 
-	@media (--wide-menu-query) {
+	/* @media (--wide-menu-query) {
 		font-size: 2em;
-	}
+	} */
 }
 
 /* Grouping content

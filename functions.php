@@ -112,6 +112,7 @@ function printVar( $post ) {
 	print_r( $post );
 	echo '</pre>';
 }
+
 /**
  * Allow wp_query.
  **/

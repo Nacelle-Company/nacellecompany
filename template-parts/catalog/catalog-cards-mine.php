@@ -16,16 +16,17 @@ wp_rig()->print_styles( 'wp-rig-catalog-cards' );
 
 global $post;
 global $obj_slug;
-global $searchandfilter;
+global $tax_slug;
 
-// Set variables, per category or taxonomy, that will fill the wp_query array.
 if ( is_tax() ) {
 	global $tax_query; // Find these args in taxonomy.php.
 	$query = $tax_query;
-
 } elseif ( is_category() ) {
 	global $cat_query; // Find these args in category.php.
 	$query = $cat_query;
+} else {
+	global $base_catalog_query;
+	$query = $base_catalog_query;
 }
 ?>
 <div class="catalog-cards__wrap">

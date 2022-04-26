@@ -324,8 +324,8 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					return 'category.php' === basename( $template );
 				},
 			),
-			'wp-rig-catalog-cards'    => array(
-				'file'             => 'catalog-cards.min.css',
+			'wp-rig-card-catalog'    => array(
+				'file'             => 'card-catalog.min.css',
 				'preload_callback' => function() {
 					global $template;
 					return array( 'archive-catalog.php', 'category.php', 'taxonomy.php' ) === basename( $template );

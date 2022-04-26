@@ -23,13 +23,13 @@ $current_post_type = get_post_type();
 $queried_obj       = get_queried_object();
 $queried_id        = get_queried_object_id();
 $obj_slug          = $queried_obj->name;
-
-if ( is_post_type_archive() ) {
-	$current_post_type = get_post_type();
-	$post_class        = ' archive-main archive__' . $current_post_type;
-} else {
-	$post_class = '';
-}
+printVar($current_post_type);
+// if ( is_post_type_archive() ) {
+// 	$current_post_type = get_post_type();
+// 	$post_class        = ' archive-main archive__' . $current_post_type;
+// } else {
+// 	$post_class = '';
+// }
 get_template_part( 'template-parts/content/page_header' ); // ? PAGE HEADER
 
 ?>

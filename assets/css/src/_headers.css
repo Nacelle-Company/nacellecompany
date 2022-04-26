@@ -26,10 +26,6 @@
 	border-bottom: 2px solid var(--color-theme-primary);
 	padding: 0 1em;
 
-	&:not(.page-header__filters) {
-		text-align: center;
-	}
-
 	@media (--content-query) {
 		padding: 0.5em 2em;
 		grid-column: 1/-1;
@@ -47,18 +43,32 @@
 			text-align: center;
 		}
 	}
+}
 
-	& .num_posts {
-		font-size: 13px;
-		color: var(--color-theme-secondary);
-	}
+.page .page-header {
+	text-align: center;
 }
 
 .page-header__filters {
-	display: grid;
-	grid-template-columns: auto auto;
-	align-items: center;
-	justify-content: space-between;
+	border-bottom: none;
+
+	@media (--sidebar-query) {
+		grid-template-columns: 1fr;
+		padding: 0;
+	}
+
+	& .filters-wrap {
+		display: grid;
+		grid-template-columns: auto auto;
+		align-items: center;
+		justify-content: space-between;
+		border-bottom: 2px solid var(--color-theme-primary);
+		padding: 0 1em;
+
+		@media (--sidebar-query) {
+			padding: 0.5em 2em;
+		}
+	}
 }
 
 /* .ajaxsearch_results-wrap {

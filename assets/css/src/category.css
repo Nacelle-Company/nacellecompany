@@ -1,21 +1,27 @@
 @import "_custom-properties.css";
 
-.category-container {
-	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-	margin: 2em 0;
+.parent-cat__container {
+	margin: 0;
 	gap: 1em;
 	padding: 1em;
+	grid-column: 1/-1;
+	background-color: var(--global-color-dark);
 
 	@media (--sidebar-query) {
+		grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
+		padding: 0 8em 3em 8em;
+		gap: 2em;
 
 		&.prod {
-			grid-template-columns: 1fr 1fr;
-			max-width: var(--page-width);
-			margin: 0 auto;
-			gap: 2em;
-			padding: 2em;
+			grid-template-columns: repeat(auto-fit, minmax(33%, 1fr));
 		}
 	}
+}
+
+.parent-cat__subtitle {
+	grid-column: 1/-1;
+	text-align: center;
+	margin-top: 2em;
 }
 
 .category-wrapper {

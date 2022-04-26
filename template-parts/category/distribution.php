@@ -18,7 +18,7 @@ $img_special               = get_field( 'square_image', $distribution_special_po
 $size                      = 'medium_large';
 ?>
 
-<div class="category-container grid">
+<div class="parent-cat__container grid">
 	<?php
 	if ( ! empty( $img_album ) ) :
 		?>
@@ -87,5 +87,7 @@ $size                      = 'medium_large';
 		</div>
 		<?php
 	endif;
+	// Extra content.
+	wp_rig()->display_extra_content();
 	?>
 </div>

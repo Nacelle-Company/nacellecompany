@@ -9,14 +9,13 @@ namespace WP_Rig\WP_Rig;
 
 wp_rig()->print_styles( 'wp-rig-offcanvas' );
 
-$ajax_offcanvas_search = '[wpdreams_ajaxsearchpro id=1]';
-
 ?>
 <!-- OFFCANVAS MENU toggle -->
 <span id="offcanvasToggle" class="offcanvas-toggle" onclick="openOffcanvas()" style="cursor:pointer" title="Offcanvas sort & filter menu">
 	&#9776;
 	<span class="offcanvas-toggle_title">
 		<?php echo esc_html__( 'Sort & Filter', 'wp-rig' ); ?>
+		<a href="#" class="search-filter-reset" data-search-form-id="46681" data-sf-submit-form="always">Reset</a>
 	</span>
 </span>
 
