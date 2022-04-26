@@ -32,16 +32,12 @@
 
 	}
 
-	& .archive-title,
-	& .title {
+	& .archive-title {
 		color: var(--color-theme-primary);
 	}
 
-	&.page-header__page .page-title {
-
-		@media (--content-query) {
-			text-align: center;
-		}
+	& .title {
+		color: var(--color-theme-primary);
 	}
 }
 

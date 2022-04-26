@@ -44,6 +44,11 @@
 			z-index: 5;
 			top: 0;
 		}
+
+		& .ajaxsearchpro.vertical {
+			width: 250px;
+			min-width: 250px;
+		}
 	}
 
 	@media (--content-query) { /* for desktop */

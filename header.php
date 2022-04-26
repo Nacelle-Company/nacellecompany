@@ -61,7 +61,6 @@ namespace WP_Rig\WP_Rig;
 <div id="page" class="site grid">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'wp-rig' ); ?></a>
 	<header id="masthead" class="site-header<?php echo esc_attr( $desktop_nav_layout ); ?><?php echo esc_attr( $front_page_class ); ?><?php echo esc_attr( $has_video_class ); ?>">
-		<?php // get_template_part( 'template-parts/header/custom_header' ); ?>
 		<?php get_template_part( 'template-parts/header/navigation_secondary' ); ?>
 		<?php get_template_part( 'template-parts/header/branding' ); ?>
 		<?php get_template_part( 'template-parts/header/navigation_primary' ); ?>

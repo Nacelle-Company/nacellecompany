@@ -16,7 +16,7 @@ get_header();
 
 wp_rig()->print_styles( 'wp-rig-content' );
 
-// Globals
+// Globals.
 $queried_obj = get_queried_object();
 $obj_slug    = $queried_obj->slug;
 

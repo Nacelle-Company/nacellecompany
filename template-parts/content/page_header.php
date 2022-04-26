@@ -42,7 +42,7 @@ if ( is_404() ) {
 		</h1>
 	</header><!-- .page-header -->
 	<?php
-} elseif ( is_archive() && is_post_type('catalog') ) {
+} elseif ( is_archive() && is_post_type( 'catalog' ) ) {
 
 	?>
 	<div id="offcanvasOverlay" class="offcanvas overlay" href="javascript:void(0)" onclick="closeNav()"></div>
@@ -112,8 +112,8 @@ if ( is_404() ) {
 	<header class="page-header">
 		<h1 class="page-title">
 			<?php
-			$post = get_queried_object();
-			$the_post_type = get_post_type_object( get_post_type( $post ) );
+			$the_post      = get_queried_object();
+			$the_post_type = get_post_type_object( get_post_type( $the_post ) );
 			if ( $the_post_type ) {
 				echo esc_html( $the_post_type->labels->singular_name );
 			}

@@ -124,8 +124,10 @@ function is_post_type( $type ) {
 	return false;
 }
 
-// TODO: Move category acf fields to parent categories: https://www.advancedcustomfields.com/resources/custom-location-rules/.
-
+/**
+ *
+ * TODO: Move category acf fields to parent categories: https://www.advancedcustomfields.com/resources/custom-location-rules/.
+ **/
 function wp_rig_nacelle_duplicate_post_as_draft() {
 	 global $wpdb;
 	if ( ! ( isset( $_GET['post'] ) || isset( $_POST['post'] ) || ( isset( $_REQUEST['action'] ) && 'wp_rig_nacelle_duplicate_post_as_draft' == $_REQUEST['action'] ) ) ) {
@@ -139,30 +141,15 @@ function wp_rig_nacelle_duplicate_post_as_draft() {
 		return;
 	}
 
-	/*
-	* get the original post id
-	*/
 	$post_id = ( isset( $_GET['post'] ) ? absint( $_GET['post'] ) : absint( $_POST['post'] ) );
-	/*
-	* and all the original post data then
-	*/
+
 	$post = get_post( $post_id );
 
-	/*
-	* if you don't want current user to be the new post author,
-	* then change next couple of lines to this: $new_post_author = $post->post_author;
-	*/
 	$current_user = wp_get_current_user();
 	$new_post_author = $current_user->ID;
 
-	/*
-	* if post data exists, create the post duplicate
-	*/
 	if ( isset( $post ) && $post != null ) {
 
-		/*
-		* new post data array
-		*/
 		$args = array(
 			'comment_status' => $post->comment_status,
 			'ping_status'    => $post->ping_status,

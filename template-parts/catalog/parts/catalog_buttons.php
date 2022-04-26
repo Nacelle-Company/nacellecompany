@@ -52,7 +52,7 @@ if ( get_field( 'show_video_links' ) ) : ?>
 				while ( have_rows( 'audio_new_large_link' ) ) :
 					the_row();
 					$audio_title = get_sub_field( 'audio_link_title' );
-					$audio_link = get_sub_field( 'audio_link_url' );
+					$audio_link  = get_sub_field( 'audio_link_url' );
 					?>
 					<a href="<?php echo esc_html( $audio_link ); ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo esc_html( $audio_title ); ?>" target="_blank" rel="noreferrer">
 						<strong><?php echo esc_html( $audio_title ); ?></strong>

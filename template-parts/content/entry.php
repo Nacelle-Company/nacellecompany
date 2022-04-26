@@ -11,7 +11,6 @@ global $searchandfilter;
 global $sf_current_query;
 
 $sf_current_query = $searchandfilter->get( 46681 )->current_query();
-// printVar( $sf_current_query->get_field_string( '_sft_category' ) );
 
 if ( is_post_type_archive() || $sf_current_query->is_filtered() || is_search() ) {
 	wp_rig()->print_styles( 'wp-rig-post-grid' ); // ? post grid CSS

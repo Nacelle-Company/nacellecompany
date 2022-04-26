@@ -6,7 +6,7 @@
  */
 
 namespace WP_Rig\WP_Rig;
-
+// TODO: 404 page finish.
 ?>
 <section class="error">
 	<?php get_template_part( 'template-parts/content/page_header' ); ?>

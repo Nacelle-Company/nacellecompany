@@ -69,6 +69,11 @@
 	align-items: flex-start;
 	padding: 1em;
 	margin-top: 0;
+
+	@media (--wide-menu-query) {
+		grid-template-columns: 43% 1fr;
+		align-items: flex-start;
+	}
 }
 
 .dl-list h4 {
@@ -122,6 +127,10 @@
 
 .dl-list__crew {
 	grid-template-columns: auto 1fr;
+
+	@media (--wide-menu-query) {
+		grid-template-columns: auto 1fr;
+	}
 }
 
 .entry-main__crew,
@@ -143,31 +152,6 @@
 		padding: 1em;
 	}
 }
-
-.dl-list__info {
-
-	@media (--wide-menu-query) {
-		grid-template-columns: 43% 1fr;
-		align-items: flex-start;
-	}
-}
-
-.dl-list__crew {
-
-	@media (--wide-menu-query) {
-		grid-template-columns: auto 1fr;
-	}
-}
-
-
-/* featured image */
-
-/* @media screen and (--wide-menu-query) {
-
-	.entry-image .wp-post-image {
-		transform: translateY(-5vw);
-	}
-} */
 
 /*--------------------------------------------------------------
 # NEW LAYOUT below

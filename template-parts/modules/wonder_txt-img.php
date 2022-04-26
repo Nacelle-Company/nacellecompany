@@ -4,7 +4,7 @@
  *
  * @package wp_rig
  */
-
+// TODO: finish Wonder page layout.
 namespace WP_Rig\WP_Rig;
 
 global $count;

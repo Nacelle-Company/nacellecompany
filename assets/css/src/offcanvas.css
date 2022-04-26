@@ -17,12 +17,28 @@
 	transition: 0.5s;
 	padding-top: 60px;
 
+	& .close-btn {
+		position: absolute;
+		top: 0;
+		right: 25px;
+		font-size: 36px;
+		cursor: pointer;
+	}
+
 	@media (--narrow-menu-query) {
 
 		padding-top: 15px;
 
 		& a {
 			font-size: 18px;
+		}
+	}
+
+	@media (--sidebar-query) {
+
+		& .asp_w_container {
+			width: 85%;
+			margin-left: 1.5em;
 		}
 	}
 
@@ -78,24 +94,3 @@
 	position: absolute;
 	visibility: hidden;
 }
-
-.offcanvas-menu {
-
-	& .close-btn {
-		position: absolute;
-		top: 0;
-		right: 25px;
-		font-size: 36px;
-		cursor: pointer;
-	}
-
-	@media (--sidebar-query) {
-
-		& .asp_w_container {
-			width: 85%;
-			margin-left: 1.5em;
-		}
-	}
-}
-
-

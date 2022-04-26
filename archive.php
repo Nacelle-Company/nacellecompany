@@ -13,16 +13,15 @@ get_header();
 
 wp_rig()->print_styles( 'wp-rig-content' );
 
-// Globals
 $current_post_type = get_post_type();
 if ( 'news' === $current_post_type || 'press_release' === $current_post_type ) {
 	$main_class = 'site-main archive-main';
 } else {
 	$main_class = 'site-main';
 }
-$queried_obj       = get_queried_object();
-$queried_id        = get_queried_object_id();
-$obj_slug          = $queried_obj->name;
+$queried_obj = get_queried_object();
+$queried_id  = get_queried_object_id();
+$obj_slug    = $queried_obj->name;
 
 get_template_part( 'template-parts/content/page_header' );
 
