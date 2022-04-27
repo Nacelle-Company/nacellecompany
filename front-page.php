@@ -34,6 +34,6 @@ get_header();
 		<div>
 
 
-	</main><!-- #primary -->
+	</main>
 <?php
 get_footer();

@@ -14,10 +14,9 @@ namespace WP_Rig\WP_Rig;
 
 get_header();
 
-wp_rig()->print_styles( 'wp-rig-content' );
+wp_rig()->print_styles( 'wp-rig-pagination' );
 
 ?>
-<!-- #taxonomy.php -->
 	<main id="primary" class="site-main site-main__catalog">
 		<?php
 		if ( have_posts() ) {
@@ -35,6 +34,6 @@ wp_rig()->print_styles( 'wp-rig-content' );
 			get_template_part( 'template-parts/content/error' );
 		}
 		?>
-	</main><!-- #primary -->
+	</main>
 <?php
 get_footer();

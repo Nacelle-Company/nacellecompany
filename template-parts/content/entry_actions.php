@@ -50,4 +50,4 @@ namespace WP_Rig\WP_Rig;
 		' </span>'
 	);
 	?>
-</div><!-- .entry-actions -->
+</div>

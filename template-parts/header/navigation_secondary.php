@@ -17,4 +17,4 @@ if ( ! wp_rig()->is_secondary_nav_menu_active() ) {
 	<div class="secondary-menu-container">
 		<?php wp_rig()->display_secondary_nav_menu( array( 'menu_id' => 'secondary-menu' ) ); ?>
 	</div>
-</nav><!-- #site-navigation_secondary -->
+</nav>

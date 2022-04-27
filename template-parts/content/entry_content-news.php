@@ -19,8 +19,6 @@ if ( has_post_thumbnail() ) {
 	<?php
 }
 ?>
-
-<!-- The post title. -->
 <a href="<?php echo esc_html( $news_link ); ?>" class="post-title" target="_blank">
 	<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	<h4>
@@ -28,7 +26,6 @@ if ( has_post_thumbnail() ) {
 		<?php get_template_part( 'template-parts/svg/icon-external-link' ); ?>
 	</h4>
 </a>
-<!-- The post content -->
 <div class="post-content">
 	<?php
 	the_content(
@@ -48,7 +45,7 @@ if ( has_post_thumbnail() ) {
 	?>
 
 </div>
-<!-- Post footer. -->
+
 <footer class="post-footer">
 	<?php
 	get_template_part( 'template-parts/modules/social-share' );

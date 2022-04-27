@@ -19,8 +19,6 @@ $itunes_video = get_post_meta( get_the_ID(), 'itunes_video', true );
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( $post_class ); ?>>
-
-	<!-- NEW LAYOUT -->
 		<?php
 		if ( ! empty( $video_embedd ) ) {
 			get_template_part( 'template-parts/catalog/parts/catalog_header', get_post_type() );
@@ -54,13 +52,15 @@ $itunes_video = get_post_meta( get_the_ID(), 'itunes_video', true );
 			</a>
 		</div>
 		<div class="entry-main">
-			<!-- #TODO: add screenreader text to everything: <h2 class="screen-reader-text">Post navigation</h2> -->
-			<?php get_template_part( 'template-parts/catalog/parts/catalog_accordion', get_post_type() ); ?>
+			<?php
+			// TODO: add screenreader text to everything: < h2 class = 'screen-reader-text' > Post navigation.
+			get_template_part( 'template-parts/catalog/parts/catalog_accordion', get_post_type() );
+			?>
 			<?php get_template_part( 'template-parts/catalog/parts/catalog_crew', get_post_type() ); ?>
 		</div>
 		<?php get_template_part( 'template-parts/catalog/parts/catalog_buttons' ); ?>
 
-</article><!-- #post-<?php the_ID(); ?> -->
+</article>
 
 <footer class="post-footer">
 	<?php

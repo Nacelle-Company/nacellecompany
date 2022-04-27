@@ -43,5 +43,5 @@ namespace WP_Rig\WP_Rig;
 		}
 	}
 	?>
-</div><!-- .site-branding -->
+</div>
 <?php endif; ?>

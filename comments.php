@@ -48,7 +48,7 @@ wp_rig()->print_styles( 'wp-rig-comments' );
 				);
 			}
 			?>
-		</h2><!-- .comments-title -->
+		</h2>
 
 		<?php the_comments_navigation(); ?>
 
@@ -64,4 +64,4 @@ wp_rig()->print_styles( 'wp-rig-comments' );
 
 	comment_form();
 	?>
-</div><!-- #comments -->
+</div>

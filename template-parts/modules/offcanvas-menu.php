@@ -9,17 +9,23 @@ namespace WP_Rig\WP_Rig;
 
 wp_rig()->print_styles( 'wp-rig-offcanvas' );
 
+global $searchandfilter;
+$sf_current_query = $searchandfilter->get( 46681 )->current_query();
 ?>
-<!-- OFFCANVAS MENU toggle -->
+
 <span id="offcanvasToggle" class="offcanvas-toggle" onclick="openOffcanvas()" style="cursor:pointer" title="Offcanvas sort & filter menu">
 	&#9776;
 	<span class="offcanvas-toggle_title">
-		<?php echo esc_html__( 'Sort & Filter', 'wp-rig' ); ?>
+		<?php
+		echo esc_html__( 'Sort & Filter', 'wp-rig' );
+		if ( $sf_current_query->is_filtered() ) :
+			?>
 		<a href="#" class="search-filter-reset" data-search-form-id="46681" data-sf-submit-form="always">Reset</a>
+			<?php
+		endif;
+		?>
 	</span>
 </span>
-
-<!-- OFFCANVAS menu -->
 <div id="offcanvasMenu" class="offcanvas-menu">
 	<a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
 	<h3 class="offcanvas-title">Sort & Filter</h3>

@@ -17,4 +17,4 @@ if ( ! wp_rig()->is_primary_nav_menu_active() ) {
 	<div class="primary-menu-container">
 		<?php wp_rig()->display_primary_nav_menu( array( 'menu_id' => 'primary-menu' ) ); ?>
 	</div>
-</nav><!-- #site-navigation_primary -->
+</nav>

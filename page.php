@@ -24,6 +24,6 @@ get_template_part( 'template-parts/content/page_header' );
 			get_template_part( 'template-parts/content/entry', 'page' );
 		}
 		?>
-	</main><!-- #primary -->
+	</main>
 <?php
 get_footer();

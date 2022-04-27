@@ -144,10 +144,6 @@ class Component implements Component_Interface, Templating_Component_Interface {
 						<?php endwhile; ?>
 					</div>
 				<?php endif; ?>
-
-
-
-				<!-- Catalog posts -->
 				<?php
 				if ( $catalog_query->have_posts() ) :
 					$count = 0;
@@ -176,10 +172,6 @@ class Component implements Component_Interface, Templating_Component_Interface {
 						<?php endwhile; ?>
 					</div>
 				<?php endif; ?>
-
-
-
-				<!-- News posts -->
 				<?php
 				if ( $news_query->have_posts() ) :
 					$count = 0;
@@ -233,7 +225,6 @@ class Component implements Component_Interface, Templating_Component_Interface {
 						?>
 					</div>
 				<?php } ?>
-			<!-- Wrapper close and reset post data -->
 			</div>
 					<?php
 		endif;

@@ -89,7 +89,7 @@
 
 	.has-sidebar .site {
 		display: grid;
-		grid-template-columns: 3fr 1fr;
+		grid-template-columns: 4fr 1fr;
 		min-height: 100vh;
 		align-items: flex-start;
 		grid-auto-rows: min-content;
@@ -105,11 +105,6 @@
 
 	.site-main {
 		grid-column: 1;
-		min-width: 0;
-	}
-
-	.primary-sidebar {
-		grid-column: 2;
 		min-width: 0;
 	}
 }

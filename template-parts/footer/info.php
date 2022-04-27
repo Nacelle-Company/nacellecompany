@@ -25,4 +25,4 @@ namespace WP_Rig\WP_Rig;
 		the_privacy_policy_link( '<span class="sep"> | </span>' );
 	}
 	?>
-</div><!-- .site-info -->
+</div>

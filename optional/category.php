@@ -34,7 +34,7 @@ wp_rig()->print_styles( 'wp-rig-content' );
 			get_template_part( 'template-parts/content/error' );
 		}
 		?>
-	</main><!-- #primary -->
+	</main>
 <?php
 get_sidebar();
 get_footer();

@@ -13,7 +13,7 @@ namespace WP_Rig\WP_Rig;
 		<h1 class="page-title">
 			<?php esc_html_e( 'Oops! Something went wrong.', 'wp-rig' ); ?>
 		</h1>
-	</header><!-- .page-header -->
+	</header>
 
 	<div class="page-content">
 		<?php
@@ -24,5 +24,5 @@ namespace WP_Rig\WP_Rig;
 			wp_service_worker_error_details_template();
 		}
 		?>
-	</div><!-- .page-content -->
-</section><!-- .error -->
+	</div>
+</section>

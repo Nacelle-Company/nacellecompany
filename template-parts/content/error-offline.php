@@ -13,7 +13,7 @@ namespace WP_Rig\WP_Rig;
 		<h1 class="page-title">
 			<?php esc_html_e( 'Oops! It looks like you&#8217;re offline.', 'wp-rig' ); ?>
 		</h1>
-	</header><!-- .page-header -->
+	</header>
 
 	<div class="page-content">
 		<?php
@@ -21,5 +21,5 @@ namespace WP_Rig\WP_Rig;
 			wp_service_worker_error_message_placeholder();
 		}
 		?>
-	</div><!-- .page-content -->
-</section><!-- .error -->
+	</div>
+</section>

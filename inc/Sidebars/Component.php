@@ -28,6 +28,7 @@ use function dynamic_sidebar;
 class Component implements Component_Interface, Templating_Component_Interface {
 
 	const PRIMARY_SIDEBAR_SLUG = 'sidebar-1';
+	const SECONDARY_SIDEBAR_SLUG = 'sidebar-2';
 	const FOOTER_WIDGETS_SLUG  = 'footer-widgets';
 
 	/**
@@ -58,6 +59,8 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		return array(
 			'is_primary_sidebar_active' => array( $this, 'is_primary_sidebar_active' ),
 			'display_primary_sidebar'   => array( $this, 'display_primary_sidebar' ),
+			'is_secondary_sidebar_active' => array( $this, 'is_secondary_sidebar_active' ),
+			'display_secondary_sidebar'   => array( $this, 'display_secondary_sidebar' ),
 			'is_footer_widgets_active' => array( $this, 'is_footer_widgets_active' ),
 			'display_footer_widgets'   => array( $this, 'display_footer_widgets' ),
 		);
@@ -69,8 +72,19 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	public function action_register_sidebars() {
 		register_sidebar(
 			array(
-				'name'          => esc_html__( 'Sidebar', 'wp-rig' ),
+				'name'          => esc_html__( 'News Sidebar', 'wp-rig' ),
 				'id'            => static::PRIMARY_SIDEBAR_SLUG,
+				'description'   => esc_html__( 'Add widgets here.', 'wp-rig' ),
+				'before_widget' => '<section id="%1$s" class="widget %2$s">',
+				'after_widget'  => '</section>',
+				'before_title'  => '<h3 class="widget-title">',
+				'after_title'   => '</h3>',
+			)
+		);
+		register_sidebar(
+			array(
+				'name'          => esc_html__( 'Press Release Sidebar', 'wp-rig' ),
+				'id'            => static::SECONDARY_SIDEBAR_SLUG,
 				'description'   => esc_html__( 'Add widgets here.', 'wp-rig' ),
 				'before_widget' => '<section id="%1$s" class="widget %2$s">',
 				'after_widget'  => '</section>',
@@ -122,6 +136,22 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	 */
 	public function display_primary_sidebar() {
 		dynamic_sidebar( static::PRIMARY_SIDEBAR_SLUG );
+	}
+
+	/**
+	 * Checks whether the secondary sidebar is active.
+	 *
+	 * @return bool True if the secondary sidebar is active, false otherwise.
+	 */
+	public function is_secondary_sidebar_active() : bool {
+		return (bool) is_active_sidebar( static::SECONDARY_SIDEBAR_SLUG );
+	}
+
+	/**
+	 * Displays the secondary sidebar.
+	 */
+	public function display_secondary_sidebar() {
+		dynamic_sidebar( static::SECONDARY_SIDEBAR_SLUG );
 	}
 
 	/**

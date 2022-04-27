@@ -23,7 +23,6 @@ namespace WP_Rig\WP_Rig;
 			<span><?php _e( 'Home', 'nacelle' ); ?></span>
 		</a>
 
-		<!-- main catalog button and icon  -->
 		<a href="
 		<?php
 		bloginfo( 'url' );
@@ -69,6 +68,6 @@ namespace WP_Rig\WP_Rig;
 			);
 			?>
 			</ul>
-		</div><!-- .widget -->
-	</div><!-- .page-content -->
-</section><!-- .error -->
+		</div>
+	</div>
+</section

@@ -49,4 +49,4 @@ if ( get_the_content() ) {
 		)
 	);
 	?>
-</div><!-- .entry-content -->
+</div>

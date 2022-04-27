@@ -65,4 +65,4 @@ namespace WP_Rig\WP_Rig;
 		<?php get_template_part( 'template-parts/header/branding' ); ?>
 		<?php get_template_part( 'template-parts/header/navigation_primary' ); ?>
 		<?php get_template_part( 'template-parts/header/navigation_mobile' ); ?>
-	</header><!-- #masthead -->
+	</header>

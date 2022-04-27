@@ -38,7 +38,7 @@ if ( is_post_type_archive() || $sf_current_query->is_filtered() || is_search() )
 
 	}
 	?>
-</article><!-- #post-<?php the_ID(); ?> -->
+</article>
 
 <?php
 if ( is_singular( get_post_type() ) ) {

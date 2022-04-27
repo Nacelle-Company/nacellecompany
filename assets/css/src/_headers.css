@@ -67,6 +67,18 @@
 	}
 }
 
+.page-title__wrap {
+
+	& .page-title {
+		margin-bottom: 0;
+	}
+
+	& .page-title__sub {
+		color: var(--color-theme-secondary);
+		margin-top: 0.5em;
+	}
+}
+
 /* .ajaxsearch_results-wrap {
 	position: absolute;
 	left: 0;

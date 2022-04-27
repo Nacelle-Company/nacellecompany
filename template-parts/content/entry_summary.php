@@ -19,4 +19,4 @@ $synopsis = get_field( 'synopsis', $post->ID );
 		echo wp_kses( $synopsis, 'post' );
 	}
 	?>
-</div><!-- .entry-summary -->
+</div>

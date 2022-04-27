@@ -106,5 +106,5 @@ if ( ! empty( $post->post_parent ) && 'attachment' === get_post_type() ) {
 		<?php
 	}
 	?>
-</div><!-- .entry-meta -->
+</div>
 <?php

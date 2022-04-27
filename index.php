@@ -43,7 +43,7 @@ get_template_part( 'template-parts/content/page_header' ); // ? PAGE HEADER
 			get_template_part( 'template-parts/content/error' );
 		}
 		?>
-	</main><!-- #primary -->
+	</main>
 <?php
 get_sidebar();
 get_footer();

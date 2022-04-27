@@ -108,7 +108,7 @@ function _wp_rig_cpt_category_archives( $query ) {
  * @param Type $post The post object or whichever variable.
  **/
 function printVar( $post ) {
-	echo '<pre style="color:#000">';
+	echo '<pre style="color:#fff">';
 	print_r( $post );
 	echo '</pre>';
 }
@@ -129,7 +129,7 @@ function is_post_type( $type ) {
  * TODO: Move category acf fields to parent categories: https://www.advancedcustomfields.com/resources/custom-location-rules/.
  **/
 function wp_rig_nacelle_duplicate_post_as_draft() {
-	 global $wpdb;
+	global $wpdb;
 	if ( ! ( isset( $_GET['post'] ) || isset( $_POST['post'] ) || ( isset( $_REQUEST['action'] ) && 'wp_rig_nacelle_duplicate_post_as_draft' == $_REQUEST['action'] ) ) ) {
 		wp_die( 'No post to duplicate has been supplied!' );
 	}
@@ -221,3 +221,15 @@ function wp_rig_nacelle_duplicate_post_link( $actions, $post ) {
 add_filter( 'page_row_actions', 'wp_rig_nacelle_duplicate_post_link', 10, 2 );
 
 // Duplicate pages END.
+
+// Set default post order.
+add_action( 'pre_get_posts', 'wp_rig_nacelle_change_sort_order' );
+function wp_rig_nacelle_change_sort_order( $query ) {
+	if ( is_category() ) :
+		// If you wanted it for the archive of a custom post type use: is_post_type_archive( $post_type )
+		// Set the order ASC or DESC
+		$query->set( 'order', 'ASC' );
+		// Set the orderby
+		$query->set( 'orderby', 'title' );
+		endif;
+};

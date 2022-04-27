@@ -18,4 +18,4 @@ wp_rig()->print_styles( 'wp-rig-footer-widgets', 'wp-rig-widgets' );
 ?>
 <aside id="footer-widgets" class="footer-widgets-area widget-area">
 	<?php wp_rig()->display_footer_widgets(); ?>
-</aside><!-- #secondary -->
+</aside>

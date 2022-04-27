@@ -23,6 +23,19 @@ a {
 			}
 		}
 	}
+
+	&.button-return {
+		max-width: max-content;
+		justify-self: center;
+		display: flex;
+
+		&:hover {
+
+			& .icon [fill] {
+				fill: var(--global-color-dark);
+			}
+		}
+	}
 }
 
 a:not(.button):hover,

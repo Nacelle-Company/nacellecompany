@@ -39,7 +39,7 @@ if ( is_singular( get_post_type() ) ) {
 	?>
 	<div class="post-thumbnail">
 		<?php the_post_thumbnail( 'medium', array( 'class' => 'skip-lazy' ) ); ?>
-	</div><!-- .post-thumbnail -->
+	</div>
 	<?php
 } elseif ( is_post_type_archive() ) {
 	?>
@@ -72,7 +72,7 @@ if ( is_singular( get_post_type() ) ) {
 				);
 			}
 			?>
-		</a><!-- .post-thumbnail -->
+		</a>
 	</div>
 	<?php
 } else {
@@ -86,6 +86,6 @@ if ( is_singular( get_post_type() ) ) {
 			echo wp_kses( $img, 'post' );
 		}
 		?>
-	</a><!-- .post-thumbnail -->
+	</a>
 	<?php
 }

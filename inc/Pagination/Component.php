@@ -48,12 +48,12 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		);
 	}
 	/**
-	 * Display Tax Terms
+	 * Display pagination
 	 */
 	public function display_pagination() {
-		/**
-		 * Catalog pagination
-		 */
+	/**
+	 * Catalog pagination
+	 */
 
 		if ( is_singular( get_post_type() ) ) {
 

@@ -30,6 +30,6 @@ if ( is_home() ) {
 
 		get_template_part( 'template-parts/content/pagination' );
 		?>
-	</main><!-- #primary -->
+	</main>
 <?php
 get_footer();

@@ -12,4 +12,4 @@ wp_rig()->print_styles( 'wp-rig-hero-video' );
 ?>
 <header class="entry-header__video">
 	<?php get_template_part( 'template-parts/hero/hero_video', get_post_type() ); ?>
-</header><!-- .entry-header -->
+</header>

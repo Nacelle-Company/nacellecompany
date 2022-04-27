@@ -24,6 +24,6 @@ wp_rig()->print_styles( 'wp-rig-single-catalog' );
 
 	}
 	?>
-</main><!-- #primary -->
+</main>
 <?php
 get_footer();

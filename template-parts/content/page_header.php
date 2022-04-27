@@ -8,15 +8,18 @@
 namespace WP_Rig\WP_Rig;
 
 global $obj_slug;
+global $searchandfilter;
+$sf_current_query = $searchandfilter->get( 46681 )->current_query();
+
+$queried_obj = get_queried_object();
 
 if ( is_404() ) {
 	?>
 	<header class="page-header">
 		<h1 class="page-title">
-			<!-- 404!!!!! -->
 			<?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'wp-rig' ); ?>
 		</h1>
-	</header><!-- .page-header -->
+	</header>
 	<?php
 } elseif ( is_home() && ! have_posts() ) {
 	?>
@@ -24,7 +27,7 @@ if ( is_404() ) {
 		<h1 class="page-title">
 			<?php esc_html_e( 'Nothing Found', 'wp-rig' ); ?>
 		</h1>
-	</header><!-- .page-header -->
+	</header>
 	<?php
 } elseif ( is_home() && ! is_front_page() ) {
 	?>
@@ -32,18 +35,48 @@ if ( is_404() ) {
 		<h1 class="page-title">
 			<?php single_post_title(); ?>
 		</h1>
-	</header><!-- .page-header -->
+	</header>
 	<?php
 } elseif ( is_page() ) {
 	?>
 	<header class="page-header">
-		<h1 class="page-title center-text">
+		<h1 class="page-title">
 			<?php single_post_title(); ?>
 		</h1>
-	</header><!-- .page-header -->
+	</header>
 	<?php
-} elseif ( is_archive() && is_post_type( 'catalog' ) ) {
-
+} elseif ( is_post_type( 'catalog' ) && $sf_current_query->is_filtered() ) {
+	$sf_tax_args             = array(
+		'str'               => '%1$s: %2$s',
+		'delim'             => array( ', ', ' - ' ),
+		'field_delim'        => ', ',
+		'show_all_if_empty' => false,
+	);
+	// $tax_names = $sf_current_query->get_fields_html( array( '_sft_genre' ), $sf_tax_args );
+	$team = $sf_current_query->get_fields_html(
+		array( '_sft_producers', '_sft_directors', '_sft_writers', '_sft_main_talent' ),
+		$sf_tax_args
+	);
+	?>
+	<header class="page-header page-header__filters">
+		<div class="filters-wrap">
+			<div class="page-title__wrap">
+				<h1 class="page-title">
+					<?php
+					echo single_term_title();
+					// echo esc_html( $tax_names );
+					?>
+					<br>
+				</h1>
+				<h3 class="page-title__sub"><sub><?php echo esc_html( $team ); ?></sub></h3>
+			</div>
+			<div class="page-header__offcanvas">
+				<?php get_template_part( 'template-parts/modules/offcanvas-menu' ); ?>
+			</div>
+		</div>
+	</header>
+	<?php
+} elseif ( is_archive() && is_post_type( 'catalog' ) && ! $sf_current_query->is_filtered() ) {
 	?>
 	<div id="offcanvasOverlay" class="offcanvas overlay" href="javascript:void(0)" onclick="closeNav()"></div>
 	<header class="page-header page-header__filters">
@@ -53,11 +86,8 @@ if ( is_404() ) {
 				if ( is_singular() ) {
 					$the_post_type = get_post_type_object( get_post_type( $post ) );
 					echo esc_html( $the_post_type->label );
-				} elseif ( is_tax() ) {
-					$tax_current = $wp_query->get_queried_object();
-					$tax_name    = $tax_current->taxonomy;
-					echo esc_html( ucfirst( $tax_name ) );
 				} elseif ( is_search() ) {
+					echo 'is search';
 					printf(
 					/* translators: %s: search query */
 						esc_html__( 'Search Results for: %s', 'wp-rig' ),
@@ -93,7 +123,7 @@ if ( is_404() ) {
 		endif;
 		// END Parent categories subcategories.
 		?>
-	</header><!-- .page-header -->
+	</header>
 	<?php
 } elseif ( is_archive() ) {
 	?>
@@ -105,7 +135,7 @@ if ( is_404() ) {
 			echo single_term_title();
 			?>
 		</h1>
-	</header><!-- .page-header -->
+	</header>
 	<?php
 } elseif ( is_singular() ) {
 	?>
@@ -119,7 +149,7 @@ if ( is_404() ) {
 			}
 			?>
 		</h1>
-	</header><!-- .page-header -->
+	</header>
 	<?php
 } elseif ( is_search() ) {
 	?>
@@ -133,7 +163,7 @@ if ( is_404() ) {
 			);
 			?>
 		</h1>
-	</header><!-- .page-header -->
+	</header>
 	<?php
 } else {
 	?>
@@ -141,6 +171,6 @@ if ( is_404() ) {
 		<h1 class="page-title">
 			<?php single_post_title(); ?>
 		</h1>
-	</header><!-- .page-header -->
+	</header>
 	<?php
 }

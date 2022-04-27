@@ -17,7 +17,6 @@ get_header();
 wp_rig()->print_styles( 'wp-rig-content' );
 
 ?>
-<!-- #archive-catalog.php -->
 	<main id="primary" class="site-main site-main__catalog">
 		<?php
 		if ( have_posts() ) {
@@ -28,12 +27,11 @@ wp_rig()->print_styles( 'wp-rig-content' );
 				the_post();
 				get_template_part( 'template-parts/content/entry', get_post_type() );
 			}
-
 			get_template_part( 'template-parts/content/pagination' );
 		} else {
 			get_template_part( 'template-parts/content/error' );
 		}
 		?>
-	</main><!-- #primary -->
+	</main>
 <?php
 get_footer();

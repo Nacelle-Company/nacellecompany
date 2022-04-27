@@ -19,10 +19,9 @@ if ( has_post_thumbnail() ) {
 }
 ?>
 <div class="post-title">
-	<!-- The post title. -->
+
 	<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 
-	<!-- Post intro. -->
 	<h3 class="post-intro">
 		<?php
 		if ( ! empty( $press_release_intro ) ) {
@@ -40,7 +39,6 @@ if ( has_post_thumbnail() ) {
 	echo '</p>';
 	?>
 </div>
-<!-- The post content -->
 <div class="post-content">
 	<?php
 	the_content(
@@ -60,7 +58,6 @@ if ( has_post_thumbnail() ) {
 	?>
 
 </div>
-<!-- Post footer. -->
 <footer class="post-footer">
 	<?php
 	get_template_part( 'template-parts/modules/social-share' );

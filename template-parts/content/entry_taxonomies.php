@@ -67,4 +67,4 @@ $taxonomies = wp_list_filter(
 		}
 	}
 	?>
-</div><!-- .entry-taxonomies -->
+</div>

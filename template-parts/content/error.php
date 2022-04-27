@@ -47,5 +47,5 @@ namespace WP_Rig\WP_Rig;
 
 		get_search_form();
 		?>
-	</div><!-- .page-content -->
-</section><!-- .error -->
+	</div>
+</section>

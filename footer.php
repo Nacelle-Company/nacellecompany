@@ -26,8 +26,8 @@ global $queried_id;
 		</script>
 	<?php endif; ?>
 	<?php get_template_part( 'template-parts/footer/footer-widgets' ); ?>
-</footer><!-- #colophon -->
-</div><!-- #page -->
+</footer>
+</div>
 	<?php
 	wp_footer();
 	?>
