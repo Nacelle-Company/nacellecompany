@@ -6,28 +6,30 @@
 	padding: 1.5rem;
 	font-family: var(--highlight-font-family);
 	font-stretch: condensed;
-	max-width: var(--content-width);
+	min-width: 100%;
 	margin-left: auto;
 	margin-right: auto;
+	background-color: var(--global-color-dark);
 
-	@media (--content-query) {
-		grid-column: 2;
+	@media (--sidebar-query) {
+		max-width: var(--content-width);
+		min-width: none;
+		grid-column: 3;
 		min-width: 100%;
+		min-height: 100%;
+		padding: 2em;
+		position: sticky;
+		top: 0;
 	}
-}
 
-@media (--content-query) {
+	@media (--sidebar-query) {
 
-	.primary-sidebar {
+		/* grid-column: 3; */
+	}
+
+	& .sf_date_field {
 		padding-left: 0;
-		padding-right: 0;
-	}
-
-}
-
-@media (--sidebar-query) {
-
-	.primary-sidebar {
-		padding: 0;
 	}
 }
+
+

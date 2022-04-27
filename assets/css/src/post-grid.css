@@ -64,15 +64,16 @@
 	display: grid;
 	gap: 1em;
 	margin: 1em;
+}
 
-	@media (--wide-menu-query) {
-		gap: 2em;
-		grid-template-columns: repeat(auto-fill, minmax(540px, 1fr));
-	}
+.archive-main {
 
 	@media (--content-query) {
-		grid-template-columns: 1fr;
+		grid-template-columns: repeat(auto-fill, minmax(435px, 1fr));
 	}
+}
+
+.archive-main {
 
 	@media (--sidebar-query) {
 		grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));

@@ -56,6 +56,10 @@ button.flickity-prev-next-button {
 	transform: translateY(-50%);
 	border: none;
 
+	&:hover {
+		background-color: transparent;
+	}
+
 	@media (--content-query) {
 		top: unset;
 	}

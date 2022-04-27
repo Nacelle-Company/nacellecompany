@@ -7,6 +7,10 @@
 	grid-column: 1/-1;
 	background-color: var(--global-color-dark);
 
+	@media (--content-query) {
+		grid-template-columns: 1fr 1fr;
+	}
+
 	@media (--sidebar-query) {
 		grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
 		padding: 0 8em 3em 8em;

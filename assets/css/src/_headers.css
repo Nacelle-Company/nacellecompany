@@ -29,7 +29,11 @@
 	@media (--content-query) {
 		padding: 0.5em 2em;
 		grid-column: 1/-1;
+	}
 
+	@media (--sidebar-query) {
+		padding: 0.5em 2em;
+		grid-column: 1/-1;
 	}
 
 	& .archive-title {
@@ -38,6 +42,21 @@
 
 	& .title {
 		color: var(--color-theme-primary);
+	}
+}
+
+.page-header:not(.page-header__filters) {
+
+	@media (--sidebar-query) {
+		display: grid;
+		grid-template-columns: 1fr 5fr 1fr;
+	}
+
+	& .page-title {
+
+		@media (--sidebar-query) {
+			grid-column: 2;
+		}
 	}
 }
 
@@ -78,15 +97,6 @@
 		margin-top: 0.5em;
 	}
 }
-
-/* .ajaxsearch_results-wrap {
-	position: absolute;
-	left: 0;
-	top: 0;
-	width: 100%;
-	height: 100%;
-	z-index: 4;
-} */
 
 @media (--sidebar-query) {
 

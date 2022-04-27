@@ -6,7 +6,11 @@
 	grid-gap: var(--grid-item-row-gap-sm) 0;
 
 	@media (--content-query) {
-		grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+		grid-template-columns: 1fr 1fr;
+	}
+
+	@media (--sidebar-query) {
+		grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
 		gap: var(--grid-item-row-bottom-spacing) 0;
 	}
 }
