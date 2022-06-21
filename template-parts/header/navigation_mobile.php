@@ -50,4 +50,10 @@ if ( ! wp_rig()->is_mobile_nav_menu_active() ) {
 		<?php wp_rig()->display_mobile_nav_menu( array( 'menu_id' => 'mobile-menu' ) ); ?>
 		<?php echo do_shortcode( '[searchandfilter slug="search-form-only"]' ); ?>
 	</div>
+
+	<div class="mobile-menu-search">
+		<div class="search">
+			<?php echo do_shortcode('[wpdreams_ajaxsearchpro id=2]'); ?>
+		</div>
+	</div>
 </nav>

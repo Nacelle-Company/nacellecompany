@@ -40,7 +40,7 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: sidebar.php:20
+#: sidebar.php:24
 msgid "Asides"
 msgstr ""
 
@@ -197,7 +197,7 @@ msgstr ""
 #. translators: %s: Name of current post. Only visible to screen readers
 #. translators: %s: Name of current post. Only visible to screen readers
 #. translators: %s: Name of current post. Only visible to screen readers
-#: inc/Excerpts/Component.php:44, template-parts/content/entry_content-news.php:38, template-parts/content/entry_content-press_release.php:50, template-parts/content/entry_content.php:34
+#: inc/Excerpts/Component.php:44, template-parts/content/entry_content-news.php:35, template-parts/content/entry_content-press_release.php:48, template-parts/content/entry_content.php:34
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
@@ -217,11 +217,11 @@ msgstr ""
 msgid "main-navigation nav--toggle-sub nav--toggle-small icon-nav"
 msgstr ""
 
-#: inc/Pagination/Component.php:62, template-parts/content/entry-attachment.php:33
+#: inc/Pagination/Component.php:63, template-parts/content/entry-attachment.php:33
 msgid "Previous:"
 msgstr ""
 
-#: inc/Pagination/Component.php:63, template-parts/content/entry-attachment.php:43
+#: inc/Pagination/Component.php:64, template-parts/content/entry-attachment.php:43
 msgid "Next:"
 msgstr ""
 
@@ -230,15 +230,19 @@ msgstr ""
 msgid "Invalid theme JS handle: %s"
 msgstr ""
 
-#: inc/Sidebars/Component.php:72
-msgid "Sidebar"
+#: inc/Sidebars/Component.php:75
+msgid "News Sidebar"
 msgstr ""
 
-#: inc/Sidebars/Component.php:74, inc/Sidebars/Component.php:85
+#: inc/Sidebars/Component.php:77, inc/Sidebars/Component.php:88, inc/Sidebars/Component.php:99
 msgid "Add widgets here."
 msgstr ""
 
-#: inc/Sidebars/Component.php:83
+#: inc/Sidebars/Component.php:86
+msgid "Press Release Sidebar"
+msgstr ""
+
+#: inc/Sidebars/Component.php:97
 msgid "Footer widgets"
 msgstr ""
 
@@ -255,11 +259,11 @@ msgstr ""
 msgid "Films"
 msgstr ""
 
-#: template-parts/category/distribution.php:60, template-parts/category/distribution.php:63, template-parts/category/production.php:22, template-parts/category/production.php:25
+#: template-parts/category/distribution.php:60, template-parts/category/distribution.php:63, template-parts/category/production.php:18, template-parts/category/production.php:21
 msgid "Series"
 msgstr ""
 
-#: template-parts/category/distribution.php:77, template-parts/category/distribution.php:80, template-parts/category/production.php:39, template-parts/category/production.php:42
+#: template-parts/category/distribution.php:77, template-parts/category/distribution.php:80, template-parts/category/production.php:31, template-parts/category/production.php:34
 msgid "Specials"
 msgstr ""
 
@@ -277,7 +281,7 @@ msgstr ""
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
-#: template-parts/content/entry_content-news.php:27
+#: template-parts/content/entry_content-news.php:25
 msgid "Read more"
 msgstr ""
 
@@ -344,7 +348,7 @@ msgstr ""
 msgid "Maybe try one of these? %1$s"
 msgstr ""
 
-#: template-parts/content/error-404.php:58
+#: template-parts/content/error-404.php:57
 msgid "Most Used Categories"
 msgstr ""
 
@@ -357,28 +361,29 @@ msgid "Oops! It looks like you&#8217;re offline."
 msgstr ""
 
 #. translators: 1: link to WP admin new post page.
-#: template-parts/content/error.php:23
+#: template-parts/content/error.php:22
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: template-parts/content/error.php:38
+#: template-parts/content/error.php:37
 msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
 msgstr ""
 
-#: template-parts/content/error.php:44
+#: template-parts/content/error.php:43
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
 
-#: template-parts/content/page_header.php:15
+#: template-parts/content/page_header.php:20
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
-#: template-parts/content/page_header.php:24
+#: template-parts/content/page_header.php:28
 msgid "Nothing Found"
 msgstr ""
 
 #. translators: %s: search query
-#: template-parts/content/page_header.php:45
+#. translators: %s: search query
+#: template-parts/content/page_header.php:93, template-parts/content/page_header.php:161
 msgid "Search Results for: %s"
 msgstr ""
 
@@ -418,7 +423,7 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: template-parts/modules/offcanvas-menu.php:17
+#: template-parts/modules/offcanvas-menu.php:20
 msgid "Sort & Filter"
 msgstr ""
 
@@ -438,15 +443,15 @@ msgstr ""
 msgid "Copyright"
 msgstr ""
 
-#: template-parts/catalog/parts/catalog_buttons.php:18
+#: template-parts/catalog/parts/catalog_buttons.php:44
 msgid "Watch Now"
 msgstr ""
 
-#: template-parts/catalog/parts/catalog_buttons.php:23
+#: template-parts/catalog/parts/catalog_buttons.php:49
 msgid "Apple TV"
 msgstr ""
 
-#: template-parts/catalog/parts/catalog_buttons.php:48
+#: template-parts/catalog/parts/catalog_buttons.php:337
 msgid "Listen Now"
 msgstr ""
 

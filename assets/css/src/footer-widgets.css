@@ -1,31 +1,31 @@
 /* styles for the footer widgets area */
 
 .footer-widgets-area {
-	display: grid;
-	justify-items: center;
+    display: grid;
+    justify-items: center;
 
-	@media (--wide-menu-query) {
-		grid-template-columns: 1fr;
-		justify-items: center;
-		gap: 1em;
-	}
+    @media (--wide-menu-query) {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 1em;
+    }
 
-	@media (--content-query) {
-		justify-items: normal;
-		grid-template-columns: repeat(3, 1fr);
-		grid-gap: 2rem;
-	}
+    @media (--content-query) {
+        justify-items: normal;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 2rem;
+    }
 }
 
 .footer-widgets-area * {
-	min-width: 0;
+    min-width: 0;
 }
 
 .menu-footer-social-container .menu {
-	display: flex;
-	justify-content: flex-end;
+    display: flex;
+    justify-content: flex-end;
 }
 
 .menu-footer-social-container .menu-item {
-	padding: 1em;
+    padding: 1em 5px;
 }

@@ -10,6 +10,6 @@ namespace WP_Rig\WP_Rig;
 wp_rig()->print_styles( 'wp-rig-hero-video' );
 
 ?>
-<header class="entry-header__video">
-	<?php get_template_part( 'template-parts/hero/hero_video', get_post_type() ); ?>
+<header class="entry-header__video-container">
+    <?php get_template_part( 'template-parts/hero/hero_video', get_post_type() ); ?>
 </header>

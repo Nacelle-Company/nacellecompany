@@ -2,15 +2,17 @@
 	padding: 0 1em;
 
 	@media (--content-query) {
-
 		grid-area: footer;
 		display: grid;
-		grid-template-columns: 1fr 1fr;
+		grid-template-columns: 1fr;
 		align-items: baseline;
 		gap: 2em;
 		padding: 0 2em;
 		margin-bottom: 4em;
+	}
 
+	@media (--sidebar-query) {
+		grid-template-columns: 1fr 1fr;
 	}
 
 	& .title {
@@ -43,6 +45,10 @@
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(47%, 1fr));
 	gap: 1em;
+
+	@media (--content-query) {
+		grid-template-columns: auto;
+	}
 
 	@media (--sidebar-query) {
 		grid-template-columns: repeat(auto-fit, minmax(31%, 1fr));

@@ -4,6 +4,7 @@
 # Typography
 --------------------------------------------------------------*/
 /* stylelint-disable */
+/* stylelint-enable */
 body,
 button,
 input,
@@ -12,7 +13,7 @@ optgroup,
 textarea {
 	color: var(--global-font-color);
 	font-family: var(--global-font-family);
-	font-size: var(--font-size-small);
+	font-size: var(--font-size-regular);
 	line-height: var(--global-font-line-height);
 }
 
@@ -20,7 +21,7 @@ select {
 	height: 28px;
 	padding: 0 0 0 10px;
 }
-/* stylelint-enable */
+
 
 h1,
 h2,

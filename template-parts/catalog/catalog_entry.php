@@ -15,7 +15,14 @@ else :
 	$post_class = 'entry no-video';
 endif;
 $itunes_video = get_post_meta( get_the_ID(), 'itunes_video', true );
-
+$itunes_audio_url = get_post_meta(get_the_ID(), 'itunes_audio_url', true);
+if ( ! empty( $itunes_video ) ) :
+	$itunes_url = $itunes_video;
+elseif( ! empty( $itunes_audio_url ) ) :
+	$itunes_url = $itunes_audio_url;
+else :
+	$itunes_url = '';
+endif;
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( $post_class ); ?>>
@@ -47,9 +54,13 @@ $itunes_video = get_post_meta( get_the_ID(), 'itunes_video', true );
 			</div>
 		</div>
 		<div class="entry-image">
-			<a href="<?php echo esc_html( $itunes_video ); ?>" target="_blank" rel="noreferrer" class="apple-link">
-			<?php the_post_thumbnail( 'medium_large', array( 'class' => 'attachment-medium_large size-medium_large wp-post-image no-lazy' ) ); ?>
+			<?php if ( ! empty( $itunes_url )) : ?>
+			<a href="<?php echo esc_html( $itunes_url ); ?>" target="_blank" rel="noreferrer" class="apple-link">
+				<?php the_post_thumbnail( 'medium_large', array( 'class' => 'attachment-medium_large size-medium_large wp-post-image no-lazy' ) ); ?>
 			</a>
+			<?php else : ?>
+				<?php the_post_thumbnail( 'medium_large', array( 'class' => 'attachment-medium_large size-medium_large wp-post-image no-lazy' ) ); ?>
+			<?php endif; ?>
 		</div>
 		<div class="entry-main">
 			<?php
