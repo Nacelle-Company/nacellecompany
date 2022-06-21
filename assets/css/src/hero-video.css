@@ -122,10 +122,6 @@
     min-width: 100vw;
     animation: 40s ease-out 0s infinite running slideUpAndDownSM;
 
-    @media (--narrow-menu-query) {
-        z-index: -2;
-    }
-
     @media (--content-query) {
         animation: 80s ease-out 0s infinite running slideUpAndDown;
     }
@@ -144,10 +140,6 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-
-    @media (--narrow-menu-query) {
-        z-index: -1;
-    }
 }
 
 .icon-play__title {
