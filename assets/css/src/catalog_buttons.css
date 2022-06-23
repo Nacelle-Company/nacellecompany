@@ -1,19 +1,4 @@
 .entry-buttons {
-	padding: 0 1em;
-
-	@media (--content-query) {
-		grid-area: footer;
-		display: grid;
-		grid-template-columns: 1fr;
-		align-items: baseline;
-		gap: 2em;
-		padding: 0 2em;
-		margin-bottom: 4em;
-	}
-
-	@media (--sidebar-query) {
-		grid-template-columns: 1fr 1fr;
-	}
 
 	& .title {
 		grid-column: 1/span 2;

@@ -10,9 +10,9 @@ namespace WP_Rig\WP_Rig;
 
 $video_embedd = get_post_meta( get_the_ID(), 'video_embedd', true );
 if ( ! empty( $video_embedd ) ) :
-	$post_class = 'entry';
+	$post_class = 'entry video';
 else :
-	$post_class = 'entry no-video';
+	$post_class = 'entry';
 endif;
 $itunes_video = get_post_meta( get_the_ID(), 'itunes_video', true );
 $itunes_audio_url = get_post_meta(get_the_ID(), 'itunes_audio_url', true);
@@ -65,9 +65,7 @@ endif;
 		<div class="entry-main">
 			<?php
 			// TODO: add screenreader text to everything: < h2 class = 'screen-reader-text' > Post navigation.
-			get_template_part( 'template-parts/catalog/parts/catalog_accordion', get_post_type() );
-			?>
-			<?php get_template_part( 'template-parts/catalog/parts/catalog_crew', get_post_type() ); ?>
+			get_template_part( 'template-parts/catalog/parts/catalog_crew', get_post_type() ); ?>
 		</div>
 		<?php get_template_part( 'template-parts/catalog/parts/catalog_buttons' ); ?>
 
