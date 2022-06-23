@@ -162,7 +162,7 @@
 .entry.catalog {
 
     &:not(.no-video) {
-        grid-template-rows: 26vh 1fr auto auto auto;
+        grid-template-rows: 35vh 1fr auto auto auto;
 
         @media (--content-query) {
             grid-template-rows: 40vh auto auto auto;

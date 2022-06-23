@@ -13,7 +13,6 @@ $the_post_type = get_post_type();
 // Build the synopsis.
 if ( get_the_content() ) {
 	$synopsis = apply_filters( 'the_content', get_the_content() );
-	$synopsis = wp_strip_all_tags( $synopsis );
 } else {
 	$synopsis = get_post_meta( $post->ID, 'synopsis', true );
 }
@@ -26,11 +25,9 @@ if ( get_the_content() ) {
 	} elseif ( is_singular( 'catalog' ) ) {
 		echo wp_kses( $synopsis, 'post' );
 	} else {
-
 		the_content(
 			sprintf(
 				wp_kses(
-				/* translators: %s: Name of current post. Only visible to screen readers */
 					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'wp-rig' ),
 					array(
 						'span' => array(

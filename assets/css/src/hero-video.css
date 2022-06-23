@@ -11,6 +11,20 @@
     }
 }
 
+.video-play-btn__mobile {
+
+    @media (--content-query) {
+        display: none;
+    }
+}
+
+.video-play-btn__desktop {
+
+    @media (--narrow-menu-query) {
+        display: none;
+    }
+}
+
 .entry-header__video {
     min-height: 100%;
     width: 100%;

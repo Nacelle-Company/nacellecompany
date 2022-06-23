@@ -16,15 +16,17 @@ $synopsis    = '';
 $trim_length = 17; // ? Trimming the synopsis. desired length of text to display.
 $value_more  = ' . . . '; // ? What to add at the end of the trimmed text.
 $image       = '';
-$img         = get_field( 'square_image' );
 $size        = 'wp-rig-square';
+$queried_id  = get_queried_object();
+$obj_slug    = $queried_id->slug;
 
-// if ( $count < 13 ) {
-// 	$attr = 'no-lazy';
-// } else {
-// 	$attr = 'lazy';
-// }
-		// Assign content if avaliable, otherwise use the synopsis acf.
+if ( 'special-production' === $obj_slug || 'series-production' === $obj_slug || 'production' === $obj_slug ) {
+	$img = get_field( 'horizontal_image' );
+} else {
+	$img = get_field( 'square_image' );
+}
+
+// Assign content if avaliable, otherwise use the synopsis acf.
 if ( $content_acf ) {
 	$content_acf = wp_trim_words( $content_acf, $trim_length, $value_more ); // Final synopsis.
 	$synopsis    = $content_acf;

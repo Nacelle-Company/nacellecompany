@@ -7,7 +7,7 @@
     "settings": {
         "phpcs.enable": true,
         "phpcs.composerJsonPath": "./wp-content/themes/wprig-nacelle-dev/composer.json",
-        "phpcs.standard": "/Users/lukey/Sites/config/rulesetsPHPCS.xml",
+        "phpcs.standard": "/Users/lukey/Sites/config/rulesetsPHPCStabs.xml",
         "phpcs.executablePath": "/Users/lukey/.composer/vendor/bin/phpcs",
         "phpcbf.enable": true,
         "phpcbf.onsave": true,
@@ -18,10 +18,11 @@
         "editor.hover.enabled": true,
         "php.suggest.basic": false,
         "phpcbf.documentFormattingProvider": false,
-		"html.format.templating": true,
-		"editor.guides.highlightActiveIndentation": true,
-		"editor.guides.indentation": true,
-        "editor.detectIndentation": true,
-        "editor.insertSpaces": false
+        "html.format.templating": true,
+        "editor.guides.highlightActiveIndentation": true,
+        "editor.guides.indentation": true,
+        "editor.detectIndentation": false,
+		"editor.insertSpaces": false,
+		"remove-tabs-on-save.ignoreMakefiles": false
     }
 }
