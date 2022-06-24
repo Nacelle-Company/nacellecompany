@@ -183,7 +183,7 @@
 }
 
 /* if video present the info is wrapped in .entry-catalog__content-wrap */
-.entry-catalog__content-wrap {
+.catalog-wrap {
 
 	@media (--content-query) {
 		display: grid;
@@ -225,7 +225,7 @@
 
 		@media (--sidebar-query) {
 			grid-row: 3/span 1;
-			grid-column: 1/span 1;
+			grid-column: 1/span 2;
 
 		}
 	}

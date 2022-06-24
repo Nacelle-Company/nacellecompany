@@ -28,7 +28,7 @@ endif;
 <article id="post-<?php the_ID(); ?>" <?php post_class( $post_class ); ?>>
 		<?php if ( ! empty( $video_embedd ) ) : ?>
 			<?php get_template_part( 'template-parts/catalog/parts/catalog_header', get_post_type() ); ?>
-			<div class="entry-catalog__content-wrap">
+			<div class="catalog-wrap">
 		<?php endif; ?>
 		<div class="entry-header__container">
 			<div class="entry-title__wrapper">
