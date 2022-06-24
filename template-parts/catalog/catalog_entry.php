@@ -26,11 +26,10 @@ endif;
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( $post_class ); ?>>
-		<?php
-		if ( ! empty( $video_embedd ) ) {
-			get_template_part( 'template-parts/catalog/parts/catalog_header', get_post_type() );
-		}
-		?>
+		<?php if ( ! empty( $video_embedd ) ) : ?>
+			<?php get_template_part( 'template-parts/catalog/parts/catalog_header', get_post_type() ); ?>
+			<div class="entry-catalog__content-wrap">
+		<?php endif; ?>
 		<div class="entry-header__container">
 			<div class="entry-title__wrapper">
 				<?php
@@ -67,8 +66,12 @@ endif;
 			// TODO: add screenreader text to everything: < h2 class = 'screen-reader-text' > Post navigation.
 			get_template_part( 'template-parts/catalog/parts/catalog_crew', get_post_type() ); ?>
 		</div>
-		<?php get_template_part( 'template-parts/catalog/parts/catalog_buttons' ); ?>
-
+		<div class="entry-buttons">
+			<?php get_template_part( 'template-parts/catalog/parts/catalog_buttons' ); ?>
+		</div>
+		<?php if ( ! empty( $video_embedd ) ) : ?>
+			</div>
+		<?php endif; ?>
 </article>
 
 <footer class="post-footer">

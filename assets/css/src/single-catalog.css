@@ -116,16 +116,12 @@
 		grid-column: 2/span 1;
 		grid-row: 1/span 2;
 		position: relative;
-
-		& img {
-			transform: none;
-		}
 	}
 }
 
 .entry-main {
 	display: grid;
-	padding: 0 1em;
+	padding: 1em;
 
 	@media (--wide-menu-query) {
 		grid-template-columns: 1fr 1fr;
@@ -174,10 +170,10 @@
 
 .entry.catalog {
 	grid-auto-rows: auto;
+	padding: 0 1em;
 
 	@media (--content-query) {
 		grid-template-columns: 2fr 1fr;
-		padding: 0 1em;
 	}
 
 	@media (--sidebar-query) {
@@ -186,31 +182,25 @@
 	}
 }
 
-.catalog.video {
-	grid-template-rows: 35vh 1fr auto auto auto;
+/* if video present the info is wrapped in .entry-catalog__content-wrap */
+.entry-catalog__content-wrap {
 
 	@media (--content-query) {
-		grid-template-rows: 40vh auto auto auto;
-		grid-template-columns: 4fr 2fr;
-		max-width: unset;
-		margin: unset;
+		display: grid;
+		grid-template-rows: auto;
+		grid-template-columns: 2fr 1fr;
 	}
 
 	@media (--sidebar-query) {
-		grid-template-columns: 4em 4fr 2fr 4em;
-		grid-row-gap: 1em;
+		max-width: 1444px;
+		margin: 0 auto;
 	}
 
 	& .entry-header__container {
 
 		@media (--content-query) {
-			grid-row: 2/span 1;
+			grid-row: 1/span 1;
 			grid-column: 1/span 1;
-		}
-
-		@media (--sidebar-query) {
-			grid-row: 2/span 1;
-			grid-column: 2/span 1;
 		}
 	}
 
@@ -222,8 +212,8 @@
 		}
 
 		@media (--sidebar-query) {
-			grid-column: 2/span 1;
-			grid-row: 3/span 1;
+			grid-column: 1/span 1;
+			grid-row: 2/span 1;
 		}
 	}
 
@@ -234,29 +224,52 @@
 		}
 
 		@media (--sidebar-query) {
-			grid-row: 4/span 2;
-			grid-column: 2/span 2;
+			grid-row: 3/span 1;
+			grid-column: 1/span 1;
 
 		}
+	}
+
+	& .entry-image {
+
+		& img {
+
+			@media (--content-query) {
+				transform: translateY(-5vh);
+			}
+
+			@media (--sidebar-query) {
+				transform: translateY(-15vh);
+				position: absolute;
+			}
+		}
+	}
+}
+
+.catalog.video {
+	grid-template-rows: 35vh 1fr auto auto auto;
+	padding: unset;
+
+	@media (--content-query) {
+		grid-template-columns: 1fr;
+		grid-template-rows: 60vh auto;
+		grid-row-gap: 1em;
+		max-width: unset;
+		margin: unset;
 	}
 }
 
 .entry.catalog .entry-image {
 
 	@media (--content-query) {
-		grid-row: 2/span 1;
+		grid-row: 1/span 2;
 		grid-column: 2/span 1;
+		padding-right: 1em;
+		z-index: 2;
 	}
 
 	@media (--sidebar-query) {
-		grid-column: 3/span 1;
-	}
-
-	& img {
-
-		@media (--sidebar-query) {
-			position: absolute;
-			transform: translateY(-15vh);
-		}
+		grid-column: 2/span 1;
+		grid-row: 1/span 2;
 	}
 }

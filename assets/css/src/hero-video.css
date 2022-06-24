@@ -2,14 +2,6 @@
  * Hero video
  */
 
-/* video backgrounds : for mobile layout */
-.inline-YTPlayer,
-.big-video {
-
-	@media (--content-query) {
-		overflow: visible !important;
-	}
-}
 
 .video-play-btn__mobile {
 
@@ -47,34 +39,8 @@
 # Icon volume toggle
 --------------------------------------------------------------*/
 
-/* .helper-trigger,
-.helper-show {
-    opacity: 0;
-}
-
-.helper-trigger {
-
-    width: 100%;
-    height: 100%;
-}
-
-.helper-trigger[type="checkbox"]:checked + .helper-show {
-    display: block;
-    transition: opacity 0.6s linear;
-}
-
-.helper-trigger[type="checkbox"]:checked + .helper-show + .helper-hide {
-    display: block;
-    opacity: 0;
-} */
-
 .entry-header__video-cover {
-	z-index: 9;
-
-	@media (--content-query) {
-		height: 70vh;
-		align-items: flex-end;
-	}
+	z-index: 1;
 }
 
 @keyframes slideUpAndDown {
@@ -183,6 +149,7 @@
 
 	@media (--content-query) {
 		grid-column: 1/-1;
+		z-index: 1;
 	}
 }
 
