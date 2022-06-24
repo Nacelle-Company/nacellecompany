@@ -299,6 +299,14 @@ select {
 
 .nav--toggle-small .mobile-menu-container {
 	display: none;
+
+	& .menu-item {
+		font-size: var(--font-size-regular);
+	}
+
+	& .menu > .menu-item {
+		border-bottom: 1px solid var(--border-color-dark);
+	}
 }
 
 .nav--toggle-small {
@@ -383,6 +391,7 @@ select {
 	@media (--narrow-menu-query) {
 		position: relative;
 		max-width: 90%;
+		padding-left: 2em;
 	}
 }
 
@@ -392,6 +401,7 @@ select {
 	background: transparent;
 	position: absolute;
 	right: 0;
+	top: 20px;
 	width: var(--dropdown-symbol-width);
 	height: var(--dropdown-symbol-width);
 	font-size: inherit;
@@ -486,17 +496,17 @@ select {
 
 .main-navigation a {
 	display: block;
-	padding: 0.5em 1em 0.5em 0;
 	text-decoration: none;
 	color: var(--global-font-color);
 
 	@media (--narrow-menu-query) {
 		width: 90%;
-
+		padding: 1em 0;
 	}
 
 	@media (--content-query) {
 		width: 100%;
+		padding: 0.5em 1em 0.5em 0;
 	}
 }
 
