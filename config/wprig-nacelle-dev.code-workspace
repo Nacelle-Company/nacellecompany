@@ -7,7 +7,7 @@
     "settings": {
         "phpcs.enable": true,
         "phpcs.composerJsonPath": "./wp-content/themes/wprig-nacelle-dev/composer.json",
-        "phpcs.standard": "/Users/lukey/Sites/config/rulesetsPHPCStabs.xml",
+        "phpcs.standard": "rulesetsPHPCS.xml",
         "phpcs.executablePath": "/Users/lukey/.composer/vendor/bin/phpcs",
         "phpcbf.enable": true,
         "phpcbf.onsave": true,
@@ -22,7 +22,8 @@
         "editor.guides.highlightActiveIndentation": true,
         "editor.guides.indentation": true,
         "editor.detectIndentation": false,
-		"editor.insertSpaces": false,
-		"remove-tabs-on-save.ignoreMakefiles": false
+        "editor.insertSpaces": false,
+        "remove-tabs-on-save.ignoreMakefiles": false,
+        "prettier.useTabs": true
     }
 }

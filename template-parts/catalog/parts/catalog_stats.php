@@ -9,8 +9,6 @@ namespace WP_Rig\WP_Rig;
 
 use DateTime;
 
-// wp_rig()->print_styles( 'wp-rig-accordion' );
-
 $runtime   = get_post_meta( get_the_ID(), 'runtime', true );
 $date      = get_post_meta( get_the_ID(), 'release_date', true );
 $show_date = get_post_meta( get_the_ID(), 'show_release_date', true );

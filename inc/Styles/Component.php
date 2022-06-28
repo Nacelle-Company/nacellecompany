@@ -348,8 +348,8 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			'wp-rig-hero-video'    => array(
 				'file'             => 'hero-video.min.css',
 			),
-			'wp-rig-flickity'    => array(
-				'file'             => 'flickity.min.css',
+			'wp-rig-front-page'    => array(
+				'file'             => 'front-page.min.css',
 				'preload_callback' => function() {
 					global $template;
 					return 'front-page.php' === basename( $template );

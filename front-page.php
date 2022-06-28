@@ -13,6 +13,7 @@ get_header();
 // Use grid layout if blog index is displayed.
 
 	wp_rig()->print_styles( 'wp-rig-content' );
+	wp_rig()->print_styles( 'wp-rig-front-page' );
 
 ?>
 	<main id="primary" class="site-main">

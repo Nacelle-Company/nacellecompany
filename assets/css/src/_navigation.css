@@ -1,0 +1,374 @@
+.has-sidebar .site {
+
+	@media (--sidebar-query) {
+		display: grid;
+		grid-template-columns: 1fr 4fr 1fr 1fr;
+		grid-auto-rows: min-content;
+		min-height: 100vh;
+		align-items: flex-start;
+
+		& .site-header,
+		& .site-footer {
+			grid-column: 1 / -1;
+		}
+
+		& .site-main {
+			grid-column: 2;
+			min-width: 0;
+		}
+	}
+}
+
+/*--------------------------------------------------------------
+## Basic navigation menus - handles submenu and small screen toggle
+--------------------------------------------------------------*/
+.nav--toggle-small .menu-toggle {
+	display: block;
+	margin: 0;
+	padding: 0.6em 1.2em 0.5em;
+	font-family: var(--highlight-font-family);
+	font-stretch: condensed;
+	font-size: 80%;
+	text-transform: uppercase;
+	border: 2px solid var(--color-theme-secondary);
+	border-radius: 0;
+	background: transparent;
+
+
+	&.icon {
+		border: none;
+		position: absolute;
+		top: 25px;
+		left: 5px;
+
+		& .dashicons-menu-alt::before {
+			font-size: 40px;
+		}
+
+		& svg.close {
+			display: none;
+		}
+	}
+}
+
+.mobile-menu-search {
+
+	& .search {
+		position: absolute;
+		top: 30px;
+		right: 30px;
+
+		@media (--narrow-menu-query) {
+			text-align: right;
+			left: 30px;
+		}
+	}
+}
+
+.nav--toggle-small .mobile-menu-container {
+	display: none;
+
+	& .menu-item {
+		font-size: var(--font-size-regular);
+	}
+
+	& .menu > .menu-item {
+		border-bottom: 1px solid var(--border-color-dark);
+	}
+}
+
+.nav--toggle-small {
+
+	@media (--sidebar-query) {
+		display: none;
+
+		& .menu-toggle {
+			display: none;
+		}
+
+		& .mobile-menu-container { /* mobile menu container */
+			display: none;
+		}
+	}
+
+	&.nav--toggled-on { /* hamburger is active */
+
+		& .mobile-menu-container {
+			display: block;
+		}
+
+		& .menu-toggle.icon svg.close {
+			display: block;
+		}
+
+		& svg.open-menu {
+			display: none;
+		}
+
+	}
+
+	&.icon-nav {
+
+		@media screen and (max-width: 600px) {
+
+			& .mobile-menu-container {
+				position: absolute;
+				background: var(--global-color-dark);
+				width: 100vw;
+				top: 300px;
+				left: 0;
+				height: auto;
+				padding: 20px 30px;
+				opacity: 0;
+				transition: opacity 0.3s, top 0.3s ease-out;
+			}
+
+			&.nav--toggled-on {
+
+				& .menu-toggle span.dashicons::before {
+					content: "\f158";
+				}
+
+				& .mobile-menu-container {
+					top: 89px;
+					opacity: 1;
+					z-index: 1001;
+					transition: opacity 0.3s, top 0.3s ease-out;
+				}
+			}
+		}
+	}
+}
+
+/* @media (--wide-menu-query) { */
+
+.nav--toggle-small .menu {
+	display: block;
+}
+
+.nav--toggle-sub ul ul {
+	display: none;
+	position: absolute;
+	top: 100%;
+	flex-direction: column;
+	background: var(--global-color-dark);
+	margin-left: 0;
+	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+	z-index: 100;
+
+	@media (--narrow-menu-query) {
+		position: relative;
+		max-width: 90%;
+		padding-left: 2em;
+	}
+}
+
+.nav--toggle-sub .dropdown,
+.nav--toggle-sub .dropdown-toggle {
+	display: block;
+	background: transparent;
+	position: absolute;
+	right: 0;
+	top: 20px;
+	width: var(--dropdown-symbol-width);
+	height: var(--dropdown-symbol-width);
+	font-size: inherit;
+	line-height: inherit;
+	margin: 0;
+	padding: 0;
+	border: none;
+	border-radius: 0;
+	transform: translateY(-50%);
+	overflow: visible;
+
+	@media (--content-query) {
+		top: 50%;
+	}
+}
+
+.nav--toggle-sub .dropdown-symbol {
+	display: block;
+	background: transparent;
+	position: absolute;
+	right: 20%;
+	top: 35%;
+	width: 60%;
+	height: 60%;
+	border: solid var(--border-color-dark);
+	border-width: 0 2px 2px 0;
+	transform: translateY(-50%) rotate(45deg);
+}
+
+.nav--toggle-sub ul ul .dropdown,
+.nav--toggle-sub ul ul .dropdown-toggle {
+	top: 40%;
+	right: 0.2em;
+}
+
+.nav--toggle-sub ul ul .dropdown-symbol {
+	transform: rotate(-45deg);
+}
+
+.nav--toggle-sub .dropdown-toggle:hover,
+.nav--toggle-sub .menu-item--has-toggle:hover .dropdown-toggle {
+	pointer-events: none;
+}
+
+/* Need menu-item-has-children for non-JS */
+.nav--toggle-sub li.menu-item-has-children,
+.nav--toggle-sub li.menu-item--has-toggle {
+	position: relative;
+	padding-right: var(--dropdown-symbol-width-large);
+}
+
+/*
+     * If the dropdown toggle is active with JS, then
+     * we'll take care of showing the submenu with JS.
+     */
+.nav--toggle-sub li:hover > ul,
+.nav--toggle-sub li.menu-item--toggled-on > ul,
+.nav--toggle-sub li:not(.menu-item--has-toggle):focus > ul {
+	display: block;
+}
+
+/*
+     * "focus-within" is an alternative to focus class for
+     * supporting browsers (all but IE/Edge) for no-JS context
+     * (e.g. AMP) See https://caniuse.com/#feat=css-focus-within
+     *
+     * This selector needs to stay separated, otherwise submenus
+     * will not be displayed with IE/Edge.
+     */
+.nav--toggle-sub li:not(.menu-item--has-toggle):focus-within > ul {
+	display: block;
+}
+
+/* } */
+
+/*--------------------------------------------------------------
+## Main navigation menu
+--------------------------------------------------------------*/
+.main-navigation {
+	margin: 0 auto 0;
+	padding: 0 1em;
+	max-width: var(--content-width);
+	font-family: var(--highlight-font-family);
+	font-stretch: condensed;
+
+	@media (--narrow-menu-query) {
+		width: 100%;
+		height: 90px;
+	}
+}
+
+
+.main-navigation a {
+	display: block;
+	text-decoration: none;
+	color: var(--global-font-color);
+
+	@media (--narrow-menu-query) {
+		width: 90%;
+		padding: 1em 0;
+	}
+
+	@media (--content-query) {
+		width: 100%;
+		padding: 0.5em 1em 0.5em 0;
+	}
+}
+
+.main-navigation a:hover,
+.main-navigation a:focus {
+	text-decoration: underline;
+}
+
+.main-navigation .current-menu-item > a,
+.main-navigation .current-menu-ancestor > a {
+	font-weight: 700;
+}
+
+.main-navigation ul {
+	display: block;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.main-navigation ul ul li {
+	padding-left: 1em;
+}
+
+@media (--wide-menu-query) {
+
+	.main-navigation ul li a {
+		padding: 0.4em 0.5em;
+	}
+
+	.main-navigation ul li {
+		margin: 0 0 0 0.5em;
+	}
+
+	.main-navigation ul li:first-child {
+		margin-left: 0;
+	}
+
+	.main-navigation ul ul a {
+		width: 200px;
+	}
+
+	/* stylelint-disable */
+	.main-navigation ul ul li {
+		padding-left: 0;
+		margin-left: 0;
+	}
+	/* stylelint-enable */
+
+	.main-navigation ul ul li a {
+		width: 218px;
+		background: none;
+	}
+
+	.main-navigation ul ul ul {
+		top: 0;
+		left: 100%;
+		min-height: 100%;
+	}
+
+	.main-navigation .menu {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+.site-branding {
+	text-align: center;
+	padding: 1em 0;
+	margin: 0;
+
+	@media (--narrow-menu-query) {
+		width: 55%;
+		position: absolute;
+		transform: translateX(23vw);
+	}
+}
+
+
+/* Desktop menu to min width tablet */
+.main-navigation_wide-menu {
+	display: none;
+
+	@media (--sidebar-query) {
+		display: block;
+
+		/* position: relative; */
+	}
+}
+
+@media (--narrow-menu-query) {
+
+	.nav--toggle-small.nav--toggled-on .mobile-menu-container {
+		display: block;
+	}
+}

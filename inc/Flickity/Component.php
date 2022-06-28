@@ -108,7 +108,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					/**
 					 * Initial variables.
 					 */
-					$slide_id   = $slide->ID;
+					$slide_id      = $slide->ID;
 					$blog_url      = get_bloginfo( 'url' );
 					$the_title     = get_the_title( $slide );
 					$the_permalink = get_the_permalink( $slide );
@@ -139,12 +139,12 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					} else {
 						$image = $the_horizontal_img;
 					}
-					// Small thumb for slide content area.
-					$square_img = get_field( 'square_image', $slide );
-					$square_siz = 'thumbnail'; // (thumbnail, medium, large, full or custom size)
-					if ( $square_img ) {
-						$square_img = wp_get_attachment_image( $square_img, $square_siz, false, array( 'class' => 'no-lazy grid-item__img' ) );
-					}
+
+						$img = get_field( 'square_image', $slide );
+
+						$img_src      = wp_get_attachment_image_src( $img, 'thumbnail' );
+						$img_srcset   = wp_get_attachment_image_srcset( $img, 'thumbnail' );
+						$img_alt_text = get_post_meta( $img, '_wp_attachment_image_alt', true );
 
 					/**
 					 * Hero video.
@@ -160,10 +160,20 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					<div class="carousel-cell <?php echo esc_html( $slide_id ); ?>">
 						<figure>
 							<figcaption class="caption">
+							<a class="caption-link" href="<?php echo esc_html( $the_permalink ); ?>">
 								<div class="flickity-image">
-									<a href="<?php echo esc_html( $the_permalink ); ?>">
-										<?php echo wp_kses( $square_img, 'post' ); ?>
-									</a>
+									<?php if ( $img_src ) { ?>
+										<img class="no-lazy grid-item__img"
+										width="150" height="150"
+											src="<?php echo esc_url( $img_src[0] ); ?>"
+											title="<?php the_title(); ?>"
+											srcset="<?php echo esc_url( $img_src[0] ); ?><?php echo esc_html( ' 150w' ); ?>"
+											sizes="(max-width: 2000px) 150px"
+											alt="<?php echo esc_html( $img_alt_text ); ?>"
+										/>
+									<?php } ?>
+
+
 								</div>
 								<div class="flickity-synopsis">
 									<h3 class="flickity-title">
@@ -177,6 +187,8 @@ class Component implements Component_Interface, Templating_Component_Interface {
 										<br>
 									<?php endif; ?>
 								</div>
+								</a>
+
 							</figcaption>
 							<?php
 							if ( true === $hero_video_show ) {
@@ -209,6 +221,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 							}
 							?>
 						</figure>
+						<?php if ( true === $hero_video_show ) : ?>
 						<script>
 							jQuery(function() {
 								jQuery("#hero_video_<?php echo esc_html( $slide_id ); ?>").YTPlayer();
@@ -220,6 +233,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 								});
 							});
 						</script>
+						<?php endif; ?>
 					</div>
 					<?php
 				endforeach;

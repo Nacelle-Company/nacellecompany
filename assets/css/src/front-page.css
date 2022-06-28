@@ -1,3 +1,91 @@
+
+.site-header {
+	z-index: 9;
+
+	@media (--sidebar-query) {
+		display: grid;
+		grid-template-columns: auto auto auto;
+		align-items: center;
+		justify-content: center;
+		gap: 1em;
+	}
+}
+
+.primary-menu-container {
+
+	@media (--wide-menu-query) {
+
+		& .asp_w_container {
+			max-width: 150px;
+			position: absolute;
+			z-index: 5;
+			top: 0;
+		}
+
+		& .ajaxsearchpro.vertical {
+			width: 250px;
+			min-width: 250px;
+		}
+	}
+
+	@media (--content-query) { /* for desktop */
+
+		position: relative;
+
+		/* base styles */
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+
+		& .ajax-search-item {
+			top: 0;
+		}
+	}
+}
+
+.grid {
+	display: grid;
+}
+
+.icon {
+	margin-right: 0.5rem;
+
+	& [fill] {
+		fill: var(--color-theme-secondary);
+	}
+}
+
+
+
+
+
+
+.site-footer {
+	margin: 1em 0 0;
+	padding: 2em 0;
+	font-family: var(--highlight-font-family);
+	font-stretch: condensed;
+}
+
+/* Desktop menu to min width tablet */
+.main-navigation_wide-menu {
+	display: none;
+
+	@media (--sidebar-query) {
+		display: block;
+
+		/* position: relative; */
+	}
+}
+
+@media (--narrow-menu-query) {
+
+	.nav--toggle-small.nav--toggled-on .mobile-menu-container {
+		display: block;
+	}
+}
+
+/* flickity */
+
 /*! Flickity v2.3.0
 https://flickity.metafizzy.co
 ---------------------------------------------- */
@@ -160,10 +248,7 @@ button.flickity-prev-next-button {
 	z-index: 1002;
 
 	@media (--content-query) {
-		display: grid;
-		grid-template-columns: auto 2fr;
 		padding: 3em;
-		gap: 1em;
 		position: absolute;
 		bottom: 0;
 	}
@@ -171,7 +256,15 @@ button.flickity-prev-next-button {
 	@media (--sidebar-query) {
 		max-width: 60vw;
 	}
+}
 
+.caption-link {
+
+	@media (--content-query) {
+		display: grid;
+		grid-template-columns: 150px auto;
+		gap: 1em;
+	}
 }
 
 .flickity-lazyloaded,
@@ -228,3 +321,5 @@ button.flickity-prev-next-button {
 .inlinePlayButton {
 	display: none !important;
 }
+
+/* END flickity */
