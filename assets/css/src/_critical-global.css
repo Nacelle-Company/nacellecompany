@@ -61,7 +61,7 @@
 
 	.mobile-menu-search .search {
 		text-align: right;
-		left: 30px;
+		z-index: 9;
 	}
 }
 
@@ -196,8 +196,12 @@
 
 .nav--toggle-sub ul ul .dropdown,
 .nav--toggle-sub ul ul .dropdown-toggle {
-	top: 40%;
+	transform: translateY(0);
 	right: 0.2em;
+}
+
+.menu-toggle.icon svg {
+	fill: #fff;
 }
 
 .nav--toggle-sub ul ul .dropdown-symbol {
@@ -281,10 +285,6 @@
 	padding: 0;
 }
 
-.main-navigation ul ul li {
-	padding-left: 1em;
-}
-
 @media screen and (min-width: 37.5em) {
 
 	.main-navigation ul li a {
@@ -336,6 +336,7 @@
 	text-align: center;
 	padding: 1em 0;
 	margin: 0;
+	z-index: 1;
 }
 
 @media screen and (max-width: 37.5em) {
@@ -343,8 +344,6 @@
 	.site-branding {
 		width: 55%;
 		position: absolute;
-		-webkit-transform: translateX(23vw);
-		transform: translateX(23vw);
 	}
 }
 

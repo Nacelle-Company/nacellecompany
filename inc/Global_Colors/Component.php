@@ -1,11 +1,11 @@
 <?php
 /**
- * WP_Rig\WP_Rig\Custom_Logo\Component class
+ * WP_Rig\WP_Rig\Global_Colors\Component class
  *
  * @package wp_rig
  */
 
-namespace WP_Rig\WP_Rig\Custom_Logo;
+namespace WP_Rig\WP_Rig\Global_Colors;
 
 use WP_Rig\WP_Rig\Component_Interface;
 use function add_action;
@@ -13,9 +13,7 @@ use function add_theme_support;
 use function apply_filters;
 
 /**
- * Class for adding custom logo support.
- *
- * @link https://codex.wordpress.org/Theme_Logo
+ * Class for adding custom colors support.
  */
 class Component implements Component_Interface {
 
@@ -25,29 +23,27 @@ class Component implements Component_Interface {
 	 * @return string Component slug.
 	 */
 	public function get_slug() : string {
-		return 'custom_logo';
+		return 'global_colors';
 	}
 
 	/**
 	 * Adds the action and filter hooks to integrate with WordPress.
 	 */
 	public function initialize() {
-		add_action( 'after_setup_theme', array( $this, 'action_add_custom_logo_support' ) );
+		add_action( 'after_setup_theme', array( $this, 'action_add_global_colors_support' ) );
 	}
 
 	/**
-	 * Adds support for the Custom Logo feature.
+	 * Adds support for the Custom Colors feature.
 	 */
-	public function action_add_custom_logo_support() {
+	public function action_add_global_colors_support() {
 		add_theme_support(
-			'custom-logo',
+			'global-colors',
 			apply_filters(
-				'wp_rig_custom_logo_args',
+				'wp_rig_global_colors_args',
 				array(
-					'height'      => 56,
-					'width'       => 420,
-					'flex-width'  => false,
-					'flex-height' => false,
+					'default-color' => '000',
+					'default-image' => '',
 				)
 			)
 		);

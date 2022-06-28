@@ -8,8 +8,8 @@
       "priority": 30
     },
     {
-      "id": "about",
-      "title": "About",
+      "id": "global_colors",
+      "title": "WP Rig Colors",
       "priority": 31
     }
   ],
@@ -82,10 +82,139 @@
       "refresh": false
     },
     {
-      "id": "test_title",
-      "label": "Test title",
-      "section": "about",
-      "default": "THis is my content",
+      "id": "nav_bk_color",
+      "label": "Navigation background color",
+      "type": "color",
+      "section": "global_colors",
+      "default": "#121212",
+      "refresh": false
+    },
+    {
+      "id": "global_font_color",
+      "label": "Global font color",
+      "type": "color",
+      "section": "global_colors",
+      "default": "#fff",
+      "refresh": false
+    },
+    {
+      "id": "global_font_color_inverse",
+      "label": "Global font color inverse",
+      "type": "color",
+      "section": "global_colors",
+      "default": "#202020",
+      "refresh": false
+    },
+    {
+      "id": "global_color_dark_overlay",
+      "label": "Global color dark overlay",
+      "type": "color",
+      "section": "global_colors",
+      "default": "rgb(32 32 32 / 85%)",
+      "refresh": false
+    },
+    {
+      "id": "global_color_dark",
+      "label": "Global color dark",
+      "type": "color",
+      "section": "global_colors",
+      "default": "#121212",
+      "refresh": false
+    },
+    {
+      "id": "global_color_grey",
+      "label": "Global color grey",
+      "type": "color",
+      "section": "global_colors",
+      "default": "#484848",
+      "refresh": false
+    },
+    {
+      "id": "global_color_grey_light",
+      "label": "Global color grey light",
+      "type": "color",
+      "section": "global_colors",
+      "default": "#7d7d7d",
+      "refresh": false
+    },
+    {
+      "id": "global_color_grey_dark",
+      "label": "Global color grey dark",
+      "type": "color",
+      "section": "global_colors",
+      "default": "#1b1b1b",
+      "refresh": false
+    },
+    {
+      "id": "border_color_dark",
+      "label": "Border color dark",
+      "type": "color",
+      "section": "global_colors",
+      "default": "#333",
+      "refresh": false
+    },
+    {
+      "id": "border_color_light",
+      "label": "Border color light",
+      "type": "color",
+      "section": "global_colors",
+      "default": "#ffbc00",
+      "refresh": false
+    },
+    {
+      "id": "color_link",
+      "label": "Color Link",
+      "type": "color",
+      "section": "global_colors",
+      "default": "#7fd2e6",
+      "refresh": false
+    },
+    {
+      "id": "color_link_visited",
+      "label": "Color link visited",
+      "type": "color",
+      "section": "global_colors",
+      "default": "#fff",
+      "refresh": false
+    },
+    {
+      "id": "color_link_active",
+      "label": "Color link active",
+      "type": "color",
+      "section": "global_colors",
+      "default": "#ffbc00",
+      "refresh": false
+    },
+    {
+      "id": "color_quote_border",
+      "label": "Color quote border",
+      "type": "color",
+      "section": "global_colors",
+      "default": "#000",
+      "refresh": false
+    },
+    {
+      "id": "color_quote_citation",
+      "label": "Color quote citation",
+      "type": "color",
+      "section": "global_colors",
+      "default": "#6c7781",
+      "refresh": false
+    },
+    {
+      "id": "color_theme_primary",
+      "label": "Primary color",
+      "type": "color",
+      "section": "global_colors",
+      "default": "#ffbc00",
+      "refresh": false
+    },
+    {
+      "id": "color_theme_secondary",
+      "label": "Secondary color",
+      "type": "color",
+      "section": "global_colors",
+      "default": "#7fd2e6",
       "refresh": false
     }
   ]

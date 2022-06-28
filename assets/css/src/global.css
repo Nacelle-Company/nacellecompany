@@ -29,7 +29,8 @@
 @import "_header-search.css";
 @import "_grid.css";
 @import "_icons.css";
-@import "_critical-cd.css";
+@import "_critical-global.css";
+@import "_critical-nacelle.css";
 
 /* @import "_front-page.css"; */
 

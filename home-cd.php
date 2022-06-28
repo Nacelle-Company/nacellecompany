@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Front Page
+ * Template Name: Home CD
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#front-page-display
  *
@@ -12,8 +12,8 @@ namespace WP_Rig\WP_Rig;
 get_header();
 // Use grid layout if blog index is displayed.
 
-	wp_rig()->print_styles( 'wp-rig-content' );
-	wp_rig()->print_styles( 'wp-rig-front-page' );
+wp_rig()->print_styles( 'wp-rig-content' );
+wp_rig()->print_styles( 'wp-rig-front-page' );
 
 ?>
 	<main id="primary" class="site-main">

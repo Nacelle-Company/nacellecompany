@@ -20,10 +20,8 @@ $img_width      = get_post_meta( get_the_ID(), 'layouts_' . $count . '_img_width
 $img_link       = get_post_meta( get_the_ID(), 'layouts_' . $count . '_img_link', true );
 $modal_link     = get_post_meta( get_the_ID(), 'layouts_' . $count . '_modal_link', true );
 $modal_img_link = get_post_meta( get_the_ID(), 'layouts_' . $count . '_modal_img_link', true );
-$modal_img_link = $modal_img_link['url'];
 $modal_link_txt = get_post_meta( get_the_ID(), 'layouts_' . $count . '_modal_link_txt', true );
 $modal_link_url = get_post_meta( get_the_ID(), 'layouts_' . $count . '_modal_link_url', true );
-$modal_link_url = $modal_link_url['url'];
 $btn            = get_post_meta( get_the_ID(), 'layouts_' . $count . '_btn', true );
 $btn_txt        = get_post_meta( get_the_ID(), 'layouts_' . $count . '_btn_txt', true );
 $btn_url        = get_post_meta( get_the_ID(), 'layouts_' . $count . '_btn_url', true );
@@ -68,7 +66,7 @@ style="<?php echo esc_html( $bk_color ); ?><?php echo esc_html( $border ); ?>"<?
 	<div class="col<?php echo esc_html( $flip ); ?>">
 		<?php echo wp_kses( apply_filters( 'the_content', $txt ), 'post' ); ?>
 		<?php if ( $btn ) : ?>
-			<a class="button" href="<?php echo esc_url( $btn_url['url'] ); ?>"
+			<a class="button" href="<?php echo esc_url( $btn_url ); ?>"
 			<?php
 			if ( ! empty( $btn_color ) ) {
 				echo wp_kses( $btn_color, 'post' );
