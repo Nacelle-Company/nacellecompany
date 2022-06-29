@@ -13,6 +13,7 @@ $bk_img   = get_post_meta( get_the_ID(), 'layouts_' . $count . '_bk_img', true )
 $bk_pos   = get_post_meta( get_the_ID(), 'layouts_' . $count . '_bk_pos', true );
 $txt      = get_post_meta( get_the_ID(), 'layouts_' . $count . '_txt', true );
 $btn      = get_post_meta( get_the_ID(), 'layouts_' . $count . '_btn', true );
+
 if ( $bk_color ) {
 	$bk_color = 'background-color:' . $bk_color . ';';
 }
@@ -38,7 +39,9 @@ $the_content = apply_filters( 'the_content', $txt );
 	<div class="wrap grid grid__half">
 		<div class="col">
 			<?php echo wp_kses( $the_content, 'post' ); ?>
-			<a href="<?php echo esc_url( $btn_url ); ?>" <?php echo wp_kses( $btn_color, 'post' ); ?> class="button"><?php echo wp_kses( $btn_txt, 'post' ); ?></a>
+			<?php if ( $btn ) : ?>
+				<a href="<?php echo esc_url( $btn_url ); ?>" <?php echo wp_kses( $btn_color, 'post' ); ?> class="button"><?php echo wp_kses( $btn_txt, 'post' ); ?></a>
+			<?php endif; ?>
 		</div>
 		<div class="col">
 			<blockquote>

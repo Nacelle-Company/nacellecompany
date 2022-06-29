@@ -324,6 +324,34 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					return 'category.php' === basename( $template );
 				},
 			),
+			'wp-rig-wonder'    => array(
+				'file'             => 'wonder.min.css',
+				'preload_callback' => function() {
+					global $template;
+					return 'page-wonder.php' === basename( $template );
+				},
+			),
+			'wp-rig-wonder_txt-quote'    => array(
+				'file'             => 'wonder_txt-quote.min.css',
+				'preload_callback' => function() {
+					global $template;
+					return 'page-wonder.php' === basename( $template );
+				},
+			),
+			'wp-rig-wonder_img-txt'    => array(
+				'file'             => 'wonder_img-txt.min.css',
+				'preload_callback' => function() {
+					global $template;
+					return 'page-wonder.php' === basename( $template );
+				},
+			),
+			'wp-rig-wonder_banner'    => array(
+				'file'             => 'wonder_banner.min.css',
+				'preload_callback' => function() {
+					global $template;
+					return 'page-wonder.php' === basename( $template );
+				},
+			),
 			'wp-rig-card-catalog'    => array(
 				'file'             => 'card-catalog.min.css',
 				'preload_callback' => function() {

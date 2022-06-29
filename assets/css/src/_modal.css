@@ -3,39 +3,36 @@
 /* https://codepen.io/timothylong/pen/AJxrPR */
 
 .modal-window {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	position: fixed;
-	background-color: var(--global-color-dark-overlay);
+	background-color: #000000a3;
 	top: 0;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	height: 100vh;
-	width: 100vw;
 	z-index: 999;
 	visibility: hidden;
 	opacity: 0;
 	pointer-events: none;
-	transition: all 0.3s;
+	transition: opacity 0.3s;
 }
 
 .modal-window:target {
 	visibility: visible;
 	opacity: 1;
 	pointer-events: auto;
+	width: 100%;
+	height: 100%;
 }
 
 .modal-window > div {
 	width: 400px;
 	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%, -50%);
 	padding: 2em;
 	background: var(--global-color-dark);
 }
 
 .modal-window_large > div {
-	width: 50vw;
+	width: auto;
 }
 
 .modal-window header {
@@ -58,11 +55,13 @@
 	text-decoration: none;
 }
 
-.modal-close:target {
+.modal-close:target,
+.modal-window:target {
 	visibility: visible;
 	opacity: 1;
 	pointer-events: auto;
 }
+
 
 .container {
 	display: grid;
@@ -77,4 +76,9 @@
 
 small {
 	color: var(--color-theme-white);
+}
+
+figcaption {
+	padding: 1em 1em 0 1em;
+	text-align: center;
 }

@@ -65,13 +65,15 @@ blockquote {
 	padding: 0.5625rem 1.25rem 0 1.1875rem;
 	border-left: 10px solid var(--color-theme-primary);
 	line-height: 1.6;
-	font-size: 120%;
+	font-size: 140%;
 
 	&::before {
 		content: "\201C";
 		font-size: 4em;
 		line-height: 0.1;
 		vertical-align: -0.4em;
+		color: var(--color-theme-primary);
+		margin-right: 12px;
 	}
 }
 

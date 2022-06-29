@@ -62,22 +62,24 @@ if ( $btn ) {
 <section class="wonder-section banner" style="<?php echo wp_kses( $bk_img, 'post' ); ?><?php echo esc_html( $bk_edge ); ?>">
 	<div class="wrap grid"<?php echo wp_kses( $row_h, 'post' ); ?>>
 		<div class="banner-overlay" style="opacity:0.<?php echo esc_html( $overlay ); ?>"></div>
-		<div class="col">
-			<?php
-			echo wp_kses( apply_filters( 'the_content', $txt ), 'post' );
-			if ( $btn ) {
-				?>
-				<a href="<?php echo esc_url( $btn_url['url'] ); ?>" class="button"
-					<?php
-					if ( $btn_color ) {
-						$btn_color = 'style="background:' . $btn_color . '";';
-						echo wp_kses( $btn_color, 'post' );
-					}
+		<?php if( !empty( $txt ) ) : ?>
+			<div class="col">
+				<?php
+				echo wp_kses( apply_filters( 'the_content', $txt ), 'post' );
+				if ( $btn ) {
 					?>
-				>
-					<?php echo wp_kses( $btn_txt, 'post' ); ?>
-				</a>
-			<?php } ?>
-		</div>
+					<a href="<?php echo esc_url( $btn_url['url'] ); ?>" class="button"
+						<?php
+						if ( $btn_color ) {
+							$btn_color = 'style="background:' . $btn_color . '";';
+							echo wp_kses( $btn_color, 'post' );
+						}
+						?>
+					>
+						<?php echo wp_kses( $btn_txt, 'post' ); ?>
+					</a>
+				<?php } ?>
+			</div>
+		<?php endif; ?>
 	</div>
 </section>
