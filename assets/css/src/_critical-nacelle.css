@@ -72,7 +72,6 @@ div.asp_m.asp_m_2 .probox .promagnifier .innericon svg {
 	/* 	AJAX SEARCH */
 	.primary-menu-container .asp_w_container {
 		max-width: 202px;
-
 	}
 
 	#ajaxsearchpro2_1[asp-compact="open"] .probox {
@@ -99,4 +98,23 @@ div.asp_m.asp_m_2 .probox .promagnifier .innericon svg {
 	.ajax-search__item div.asp_m.asp_m_2 .probox .proinput input.orig {
 		padding: 0 15px !important;
 	}
+}
+
+.press.grid-item {
+	background-color: #fff;
+
+	&:hover {
+
+		& .entry-summary {
+			color: #fff;
+		}
+	}
+}
+
+.primary-sidebar.widget-area {
+	background-color: #fff;
+}
+
+a.button:visited {
+	color: #000;
 }

@@ -373,6 +373,13 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					return 'single-catalog.php' === basename( $template );
 				},
 			),
+			'wp-rig-page-team'    => array(
+				'file'             => 'page-team.min.css',
+				'preload_callback' => function() {
+					global $template;
+					return 'page-team.php' === basename( $template );
+				},
+			),
 			'wp-rig-hero-video'    => array(
 				'file'             => 'hero-video.min.css',
 			),

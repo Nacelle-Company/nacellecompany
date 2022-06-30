@@ -89,10 +89,19 @@
 	}
 }
 
-.banner__feat-img {
+.banner__feat {
 	position: relative;
 	background-repeat: no-repeat;
 	background-position: 50%;
 	background-size: cover;
 	overflow: hidden;
+}
+
+.banner__feat-img_wrap {
+	display: flex;
+	align-items: center;
+}
+
+.banner__feat-img {
+	min-width: 100%;
 }

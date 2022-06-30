@@ -39,7 +39,7 @@ if ( is_404() ) {
 	<?php
 } elseif ( is_page() ) {
 	?>
-	<header class="page-header">
+	<header class="page-header <?php echo get_post_meta( get_the_ID(), 'hide_title', true ); ?>">
 		<h1 class="page-title">
 			<?php single_post_title(); ?>
 		</h1>

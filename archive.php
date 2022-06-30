@@ -14,7 +14,7 @@ get_header();
 wp_rig()->print_styles( 'wp-rig-content' );
 
 $current_post_type = get_post_type();
-if ( 'news' === $current_post_type || 'press_release' === $current_post_type ) {
+if ( 'news' === $current_post_type || 'press_release' === $current_post_type || 'press' === $current_post_type ) {
 	$main_class = 'site-main archive-main';
 } else {
 	$main_class = 'site-main';
