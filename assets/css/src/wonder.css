@@ -1,17 +1,23 @@
 @import "_modal.css";
 
+small {
+	color: var(--color-theme-white);
+}
+
 .wonder-section {
 
 	/* position: relative; */
 	background-repeat: no-repeat;
-	transition: filter 0.4s linear;
+
+	/* transition: filter 0.4s linear; */
 
 	& .wrap {
 		padding-right: 1.25rem;
 		padding-left: 1.25rem;
 		max-width: 1120px;
 		margin: 0 auto;
-		transition: filter 0.4s linear;
+
+		/* transition: filter 0.4s linear; */
 		align-items: center;
 
 		@media (--content-query) {
@@ -19,6 +25,24 @@
 			padding-left: 1.875rem;
 		}
 	}
+
+	& figcaption {
+		padding: 1em 1em 0 1em;
+		text-align: center;
+		opacity: 0;
+		transition: opacity 0.2s linear;
+	}
+
+	& figure {
+
+		&:hover {
+
+			& figcaption {
+				opacity: 1;
+			}
+		}
+	}
+
 
 	& .img-wrap {
 		transition: filter 0.4s linear;
@@ -36,6 +60,14 @@
 
 		@media (--content-query) {
 			grid-gap: 8em;
+		}
+	}
+
+	& .grid__half-flip {
+
+		@media (--content-query) {
+			grid-template-columns: 1fr 1fr;
+			gap: 4em;
 		}
 	}
 

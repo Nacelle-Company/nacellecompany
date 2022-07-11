@@ -9,8 +9,13 @@ namespace WP_Rig\WP_Rig;
 
 global $obj_slug;
 global $searchandfilter;
-$sf_current_query = $searchandfilter->get( 46681 )->current_query();
-
+$host = $_SERVER['SERVER_NAME'];
+if ( 'www.nacellecompany.com' === $host ) {
+} elseif ( 'www.comedydynamics.com' === $host ) {
+	$sf_current_query = $searchandfilter->get( 46681 )->current_query();
+} elseif ( 'localhost' === $host ) {
+	$sf_current_query = $searchandfilter->get( 46681 )->current_query();
+}
 $queried_obj = get_queried_object();
 
 if ( is_404() ) {

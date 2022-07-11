@@ -1,12 +1,24 @@
-.custom-logo {
-	filter: brightness(5);
+
+
+/* NACELLE */
+@media (--sidebar-query) {
+
+	.site-header {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.site-branding {
+		text-align: initial;
+	}
+
+	.main-navigation_wide-menu {
+
+		display: flex;
+		justify-content: flex-end;
+	}
 }
 
-.site-header.front-page {
-	position: relative;
-	background: var(--nav-bk-color);
-}
-
+/* NACELLE end */
 #ajaxsearchpro2_1 .probox .proinput input.orig,
 #ajaxsearchpro2_2 .probox .proinput input.orig,
 div.asp_m.asp_m_2 .probox .proinput input.orig {
@@ -28,36 +40,6 @@ div.asp_m.asp_m_2 .probox .promagnifier .innericon svg {
 	background: var(--color-theme-primary);
 }
 
-@media (--narrow-menu-query) {
-
-	.ajax-search__item {
-		display: none;
-	}
-
-	#ajaxsearchpro2_1,
-	#ajaxsearchpro2_2,
-	div.asp_m.asp_m_2 {
-		max-width: 290px !important;
-		background: #fff !important;
-	}
-}
-
-@media screen and (min-width: 37.5em) {
-
-	.primary-menu-container .asp_w_container {
-		position: relative;
-		transition: ;
-	}
-}
-
-@media screen and (min-width: 48em) {
-
-	.primary-menu-container {
-		grid-template-columns: auto;
-		justify-content: right;
-	}
-}
-
 @media screen and (min-width: 60em) {
 
 	.site-header {
@@ -70,34 +52,10 @@ div.asp_m.asp_m_2 .probox .promagnifier .innericon svg {
 	}
 
 	/* 	AJAX SEARCH */
-	.primary-menu-container .asp_w_container {
-		max-width: 202px;
+	.menu .ajax-search__item {
+		min-width: 49px;
 	}
 
-	#ajaxsearchpro2_1[asp-compact="open"] .probox {
-		width: 300px !important;
-
-	}
-
-	#ajaxsearchprores2_1.vertical,
-	#ajaxsearchprores2_2.vertical,
-	div.asp_r.asp_r_2.vertical {
-		position: absolute !important;
-		left: -50px !important;
-		top: 23px !important;
-	}
-
-	div.asp_m.ajaxsearchpro .probox .proinput,
-	div.asp_m.ajaxsearchpro .probox .proinput form {
-		padding: 0 18px !important;
-
-	}
-
-	.ajax-search__item #ajaxsearchpro2_1 .probox .proinput input.orig,
-	.ajax-search__item #ajaxsearchpro2_2 .probox .proinput input.orig,
-	.ajax-search__item div.asp_m.asp_m_2 .probox .proinput input.orig {
-		padding: 0 15px !important;
-	}
 }
 
 .press.grid-item {

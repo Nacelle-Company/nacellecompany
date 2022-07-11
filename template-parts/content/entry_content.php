@@ -19,6 +19,8 @@ if ( get_the_content() ) {
 }
 if ( $full_width ) {
 	$full_width = ' full-width';
+} else {
+	$full_width = '';
 }
 ?>
 

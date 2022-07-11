@@ -35,6 +35,14 @@
 	width: auto;
 }
 
+.modal-window_absolute {
+	left: 0;
+
+	& > div {
+		width: auto;
+	}
+}
+
 .modal-window header {
 	font-weight: bold;
 }
@@ -72,13 +80,4 @@
 
 .modal-window div:not(:last-of-type) {
 	margin-bottom: 15px;
-}
-
-small {
-	color: var(--color-theme-white);
-}
-
-figcaption {
-	padding: 1em 1em 0 1em;
-	text-align: center;
 }

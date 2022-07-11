@@ -28,9 +28,9 @@
       "refresh": false
     },
     {
-      "id": "desktop_nav_center",
+      "id": "desktop_nav_wide",
       "type": "checkbox",
-      "label": "Desktop navigation center",
+      "label": "Desktop navigation wide",
       "default": false,
       "section": "global",
       "refresh": true
@@ -87,7 +87,8 @@
       "type": "color",
       "section": "global_colors",
       "default": "#121212",
-      "refresh": false
+      "refresh": true,
+      "description": "Nacelle Company: #4591e5"
     },
     {
       "id": "global_font_color",
@@ -95,7 +96,8 @@
       "type": "color",
       "section": "global_colors",
       "default": "#fff",
-      "refresh": false
+      "refresh": true,
+      "description": "Nacelle Company: #1d1d1d"
     },
     {
       "id": "global_font_color_inverse",
@@ -103,7 +105,8 @@
       "type": "color",
       "section": "global_colors",
       "default": "#202020",
-      "refresh": false
+      "refresh": true,
+      "description": "Nacelle Company: #202020"
     },
     {
       "id": "global_color_dark_overlay",
@@ -111,7 +114,8 @@
       "type": "color",
       "section": "global_colors",
       "default": "rgb(32 32 32 / 85%)",
-      "refresh": false
+      "refresh": true,
+      "description": "Nacelle Company: #000000"
     },
     {
       "id": "global_color_dark",
@@ -119,7 +123,8 @@
       "type": "color",
       "section": "global_colors",
       "default": "#121212",
-      "refresh": false
+      "refresh": true,
+      "description": "Nacelle Company: #121212"
     },
     {
       "id": "global_color_grey",
@@ -127,7 +132,8 @@
       "type": "color",
       "section": "global_colors",
       "default": "#484848",
-      "refresh": false
+      "refresh": true,
+      "description": "Nacelle Company: #484848"
     },
     {
       "id": "global_color_grey_light",
@@ -135,7 +141,8 @@
       "type": "color",
       "section": "global_colors",
       "default": "#7d7d7d",
-      "refresh": false
+      "refresh": true,
+      "description": "Nacelle Company: #7d7d7d"
     },
     {
       "id": "global_color_grey_dark",
@@ -143,7 +150,8 @@
       "type": "color",
       "section": "global_colors",
       "default": "#1b1b1b",
-      "refresh": false
+      "refresh": true,
+      "description": "Nacelle Company: #1b1b1b"
     },
     {
       "id": "border_color_dark",
@@ -151,7 +159,8 @@
       "type": "color",
       "section": "global_colors",
       "default": "#333",
-      "refresh": false
+      "refresh": true,
+      "description": "Nacelle Company: #333333"
     },
     {
       "id": "border_color_light",
@@ -159,7 +168,8 @@
       "type": "color",
       "section": "global_colors",
       "default": "#ffbc00",
-      "refresh": false
+      "refresh": true,
+      "description": "Nacelle Company: #d3d3d3"
     },
     {
       "id": "color_link",
@@ -167,7 +177,8 @@
       "type": "color",
       "section": "global_colors",
       "default": "#7fd2e6",
-      "refresh": false
+      "refresh": true,
+      "description": "Nacelle Company: #4591e5"
     },
     {
       "id": "color_link_visited",
@@ -175,7 +186,8 @@
       "type": "color",
       "section": "global_colors",
       "default": "#fff",
-      "refresh": false
+      "refresh": true,
+      "description": "Nacelle Company: #76b5fb"
     },
     {
       "id": "color_link_active",
@@ -183,7 +195,8 @@
       "type": "color",
       "section": "global_colors",
       "default": "#ffbc00",
-      "refresh": false
+      "refresh": true,
+      "description": "Nacelle Company: #306de8"
     },
     {
       "id": "color_quote_border",
@@ -191,7 +204,8 @@
       "type": "color",
       "section": "global_colors",
       "default": "#000",
-      "refresh": false
+      "refresh": true,
+      "description": "Nacelle Company: #4591e5"
     },
     {
       "id": "color_quote_citation",
@@ -199,7 +213,8 @@
       "type": "color",
       "section": "global_colors",
       "default": "#6c7781",
-      "refresh": false
+      "refresh": true,
+      "description": "Nacelle Company: #4591e5"
     },
     {
       "id": "color_theme_primary",
@@ -207,7 +222,8 @@
       "type": "color",
       "section": "global_colors",
       "default": "#ffbc00",
-      "refresh": false
+      "refresh": true,
+      "description": "Nacelle Company: #4591e5"
     },
     {
       "id": "color_theme_secondary",
@@ -215,7 +231,8 @@
       "type": "color",
       "section": "global_colors",
       "default": "#7fd2e6",
-      "refresh": false
+      "refresh": true,
+      "description": "Nacelle Company: #306de8"
     }
   ]
 }

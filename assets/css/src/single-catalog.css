@@ -171,6 +171,7 @@
 .entry.catalog {
 	grid-auto-rows: auto;
 	padding: 0 1em;
+	margin: 1em auto;
 
 	@media (--content-query) {
 		grid-template-columns: 2fr 1fr;
@@ -178,7 +179,7 @@
 
 	@media (--sidebar-query) {
 		max-width: 1444px;
-		margin: 0 auto;
+		margin: 2em auto;
 	}
 }
 

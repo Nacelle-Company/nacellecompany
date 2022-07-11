@@ -11,6 +11,7 @@ $the_title   = get_the_title();
 $permalink   = get_permalink();
 $content_wp  = get_the_content();
 $content_ex  = get_the_excerpt();
+
 $content_acf = get_post_meta( $post->ID, 'synopsis', true );
 $synopsis    = '';
 $trim_length = 17; // ? Trimming the synopsis. desired length of text to display.
@@ -20,10 +21,12 @@ $size        = 'wp-rig-square';
 $queried_id  = get_queried_object();
 $obj_slug    = $queried_id->slug;
 
-if ( 'special-production' === $obj_slug || 'series-production' === $obj_slug || 'production' === $obj_slug ) {
+if ( 'special-production' === $obj_slug || 'series-production' === $obj_slug || 'production' === $obj_slug || 'podcasts' === $obj_slug ) {
 	$img = get_field( 'horizontal_image' );
-} else {
+} elseif ( $obj_slug ) {
 	$img = get_field( 'square_image' );
+} else {
+	$img = get_field( 'horizontal_image' );
 }
 
 // Assign content if avaliable, otherwise use the synopsis acf.

@@ -3,79 +3,51 @@
 /* search for mobile menu */
 .mobile-menu-container {
 
-    @media (--narrow-menu-query) {
+	@media (--narrow-menu-query) {
 
-        & .searchandfilter ul {
-            display: inline-flex;
-            align-items: center;
-        }
+		& .searchandfilter ul {
+			display: inline-flex;
+			align-items: center;
+		}
 
-        & .searchandfilter .sf-field-submit {
-            margin-left: 1em;
-            padding: 10px 0;
-            position: relative;
-        }
+		& .searchandfilter .sf-field-submit {
+			margin-left: 1em;
+			padding: 10px 0;
+			position: relative;
+		}
 
-        & .sf-field-submit input {
-            position: relative;
-            padding: 10px 2em;
-        }
-    }
+		& .sf-field-submit input {
+			position: relative;
+			padding: 10px 2em;
+		}
+	}
 
-    @media (--wide-menu-query) {
+	@media (--wide-menu-query) {
 
-        & .searchandfilter ul {
-            display: flex;
-            justify-content: center;
-        }
-    }
+		& .searchandfilter ul {
+			display: flex;
+			justify-content: center;
+		}
+	}
 }
 
 /* top navigation search */
 
 /* https://codepen.io/dickyal6/pen/rNxKROO */
-.primary-menu-container {
 
-    @media (--wide-menu-query) {
+/* .primary-menu-container {
 
-        & .asp_w_container {
-            max-width: 150px;
-            position: absolute;
-            z-index: 5;
-            top: 0;
-        }
+	@media (--content-query) {
 
-        & .ajaxsearchpro.vertical {
-            width: 250px;
-            min-width: 250px;
-        }
-    }
-
-    @media (--content-query) { /* for desktop */
-
-        position: relative;
-
-        /* base styles */
-        display: grid;
-        grid-template-columns: 2fr 1fr;
-
-        & .ajax-search-item {
-            top: 0;
-        }
-
-        /* & .wpdreams_asp_sc {
-            z-index: 999;
-        }
-
-        & .results {
-            z-index: 9999;
-        } */
-    }
-}
+		position: relative;
+		display: grid;
+		grid-template-columns: 2fr 1fr;
+	}
+} */
 
 .search-results__title {
-    font-size: var(--font-size-regular);
-    line-height: 1;
-    font-weight: 400;
-    text-transform: lowercase;
+	font-size: var(--font-size-regular);
+	line-height: 1;
+	font-weight: 400;
+	text-transform: lowercase;
 }

@@ -283,6 +283,10 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				'file'   => 'global.min.css',
 				'global' => true,
 			),
+			'wp-rig-critical-global'     => array(
+				'file'   => 'critical-global.min.css',
+				'global' => true,
+			),
 			'wp-rig-comments'   => array(
 				'file'             => 'comments.min.css',
 				'preload_callback' => function() {
@@ -302,12 +306,12 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				// return wp_rig()->is_primary_sidebar_active();
 				// },
 			),
-			'wp-rig-widgets'    => array(
-				'file'             => 'widgets.min.css',
-				'preload_callback' => function() {
-					return wp_rig()->is_primary_sidebar_active();
-				},
-			),
+			// 'wp-rig-widgets'    => array(
+			// 	'file'             => 'widgets.min.css',
+			// 	'preload_callback' => function() {
+			// 		return wp_rig()->is_primary_sidebar_active();
+			// 	},
+			// ),
 			'wp-rig-footer-widgets' => array(
 				'file'             => 'footer-widgets.min.css',
 				'preload_callback' => function () {
@@ -338,8 +342,8 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					return 'page-wonder.php' === basename( $template );
 				},
 			),
-			'wp-rig-wonder_img-txt'    => array(
-				'file'             => 'wonder_img-txt.min.css',
+			'wp-rig-wonder_txt-img'    => array(
+				'file'             => 'wonder_txt-img.min.css',
 				'preload_callback' => function() {
 					global $template;
 					return 'page-wonder.php' === basename( $template );
@@ -357,6 +361,13 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				'preload_callback' => function() {
 					global $template;
 					return array( 'archive-catalog.php', 'category.php', 'taxonomy.php' ) === basename( $template );
+				},
+			),
+			'wp-rig-page-products'    => array(
+				'file'             => 'page-products.min.css',
+				'preload_callback' => function() {
+					global $template;
+					return array( 'page-products.php' ) === basename( $template );
 				},
 			),
 			'wp-rig-offcanvas'    => array(

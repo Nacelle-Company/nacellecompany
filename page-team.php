@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying all pages
+ * Template Name: Team
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *

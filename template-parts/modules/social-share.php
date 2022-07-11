@@ -9,13 +9,20 @@ namespace WP_Rig\WP_Rig;
 
 wp_rig()->print_styles( 'wp-rig-social-share' );
 
-$html     = '';
-$url_full = get_permalink( $post->ID );
-$url      = esc_url( $url_full );
+$html          = '';
+$url_full      = get_permalink( $post->ID );
+$url           = esc_url( $url_full );
+$queried_id    = get_queried_object();
+$obj_slug      = $queried_id->post_type;
+$the_post_type = '';
+$hashes        = true;
+if ( 'catalog' === $obj_slug ) {
+	$the_post_type = ' social-share__catalog';
+	$hashes = false;
+}
 ?>
-<div class="social-share">
-
-	<h3 class='share-on'><span class="has-theme-secondary-color">###</span><br>Share</h3>
+<div class="social-share<?php echo esc_html( $the_post_type ); ?>">
+	<h3 class='share-on'><?php if ( true === $hashes ) : ?><span class="has-theme-secondary-color">###</span><br><?php endif; ?>Share</h3>
 	<div class="social-share__icons">
 		<a href="http://www.facebook.com/sharer.php?u=<?php echo wp_kses( $url, 'post' ); ?>" rel="noopener" target="_blank">
 			<svg class="icon" width="25" height="25" xmlns="http://www.w3.org/2000/svg" aria-labelledby="facebookIcon" role="img">

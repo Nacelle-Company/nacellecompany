@@ -8,30 +8,32 @@
 namespace WP_Rig\WP_Rig;
 
 global $count;
-$bk_color       = get_post_meta( get_the_ID(), 'layouts_' . $count . '_bk_color', true );
-$border         = get_post_meta( get_the_ID(), 'layouts_' . $count . '_border', true );
-$flip            = get_post_meta( get_the_ID(), 'layouts_' . $count . '_flip', true );
-$txt            = get_post_meta( get_the_ID(), 'layouts_' . $count . '_txt', true );
-$img            = get_post_meta( get_the_ID(), 'layouts_' . $count . '_img', true );
-$img_large      = wp_get_attachment_image( $img, 'large', array( 'class' => 'grid-item__img' ) );
-$img_full       = wp_get_attachment_image( $img, 'full', array( 'class' => 'grid-item__img' ) );
-$img_fill        = get_post_meta( get_the_ID(), 'layouts_' . $count . '_fill_img', true );
-$img_width      = get_post_meta( get_the_ID(), 'layouts_' . $count . '_img_width', true );
-$modal_or_link  = get_post_meta( get_the_ID(), 'layouts_' . $count . '_modal_or_link', true );
-if ( $modal_or_link === 1 ) {
-	$modal_txt = get_post_meta( get_the_ID(), 'layouts_' . $count . '_modal_txt', true );
+$bk_color      = get_post_meta( get_the_ID(), 'layouts_' . $count . '_bk_color', true );
+$border        = get_post_meta( get_the_ID(), 'layouts_' . $count . '_border', true );
+$flip           = get_post_meta( get_the_ID(), 'layouts_' . $count . '_flip', true );
+$txt           = get_post_meta( get_the_ID(), 'layouts_' . $count . '_txt', true );
+$img           = get_post_meta( get_the_ID(), 'layouts_' . $count . '_img', true );
+$img_large     = wp_get_attachment_image( $img, 'large', array( 'class' => 'grid-item__img' ) );
+$img_full      = wp_get_attachment_image( $img, 'full', array( 'class' => 'grid-item__img' ) );
+$img_fill       = get_post_meta( get_the_ID(), 'layouts_' . $count . '_fill_img', true );
+$img_width     = get_post_meta( get_the_ID(), 'layouts_' . $count . '_img_width', true );
+$modal_or_link = get_post_meta( get_the_ID(), 'layouts_' . $count . '_modal_or_link', true );
+if ( $modal_or_link ) {
+	$modal_txt     = get_post_meta( get_the_ID(), 'layouts_' . $count . '_modal_txt', true );
 	$modal_txt_url = get_post_meta( get_the_ID(), 'layouts_' . $count . '_modal_txt_url', true );
 	$modal_img_url = get_post_meta( get_the_ID(), 'layouts_' . $count . '_modal_img_url', true );
-
 } else {
-	$img_url   = get_post_meta( get_the_ID(), 'layouts_' . $count . '_img_url', true );
-	$img_caption   = get_post_meta( get_the_ID(), 'layouts_' . $count . '_img_caption', true );
-	$img_caption_url   = get_post_meta( get_the_ID(), 'layouts_' . $count . '_img_caption_url', true );
+	$img_url         = get_post_meta( get_the_ID(), 'layouts_' . $count . '_img_url', true );
+	$img_caption     = get_post_meta( get_the_ID(), 'layouts_' . $count . '_img_caption', true );
+	$img_caption_url = get_post_meta( get_the_ID(), 'layouts_' . $count . '_img_caption_url', true );
+	$modal_txt       = '';
+	$modal_img_url   = '';
+	$modal_txt_url   = '';
 }
-$btn            = get_post_meta( get_the_ID(), 'layouts_' . $count . '_btn', true );
-$btn_txt        = get_post_meta( get_the_ID(), 'layouts_' . $count . '_btn_txt', true );
-$btn_url        = get_post_meta( get_the_ID(), 'layouts_' . $count . '_btn_url', true );
-$btn_color      = get_post_meta( get_the_ID(), 'layouts_' . $count . '_btn_color', true );
+$btn       = get_post_meta( get_the_ID(), 'layouts_' . $count . '_btn', true );
+$btn_txt   = get_post_meta( get_the_ID(), 'layouts_' . $count . '_btn_txt', true );
+$btn_url   = get_post_meta( get_the_ID(), 'layouts_' . $count . '_btn_url', true );
+$btn_color = get_post_meta( get_the_ID(), 'layouts_' . $count . '_btn_color', true );
 if ( ! empty( $bk_color ) ) {
 	$bk_color            = 'background-color:' . $bk_color . ';';
 	$bk_link_color_class = ' link-light';
@@ -49,6 +51,7 @@ if ( $img_fill ) {
 	$img_fill_wrap = ' img-fill__wrap';
 } else {
 	$img_fill      = '';
+	$img_fill_wrap = '';
 }
 if ( $flip ) {
 	$flip = ' flip';
@@ -66,6 +69,7 @@ if ( $img_width && '' === $flip ) {
 } else {
 	$img_width = ' grid__half';
 }
+
 ?>
 <section class="wonder-section txt-img"
 <?php
@@ -97,13 +101,25 @@ style="<?php echo esc_html( $bk_color ); ?><?php echo esc_html( $border ); ?>"<?
 				</a>
 			<?php else : ?>
 				<figure class="img-wrap">
-					<a href="<?php echo wp_kses( $img_url, 'post' ); ?>">
+					<?php if ( $img_url ) : ?>
+						<a href="<?php echo wp_kses( $img_url, 'post' ); ?>">
+							<?php echo wp_kses( $img_large, 'post' ); ?>
+						</a>
+					<?php else : ?>
 						<?php echo wp_kses( $img_large, 'post' ); ?>
-					</a>
-				</figure>
-				<?php if ( !$img_fill_wrap ) : ?>
-					<figcaption><a href="<?php echo esc_html( $img_caption_url ); ?>"><?php echo esc_html( $img_caption ); ?></a></figcaption>
+					<?php endif; ?>
+					<?php if ( ! $img_fill_wrap ) : ?>
+					<figcaption>
+					<?php if ( $img_caption_url ) : ?>
+						<a href="<?php echo esc_html( $img_caption_url ); ?>">
+							<?php echo esc_html( $img_caption ); ?>
+						</a>
+						<?php else : ?>
+							<?php echo esc_html( $img_caption ); ?>
+						<?php endif; ?>
+					</figcaption>
 				<?php endif; ?>
+				</figure>
 			<?php endif; ?>
 		</div>
 	<?php endif; ?>
@@ -113,13 +129,21 @@ style="<?php echo esc_html( $bk_color ); ?><?php echo esc_html( $border ); ?>"<?
 		<div>
 			<a href="#!" title="Close" class="modal-close">Close</a>
 			<figure>
-				<a href="<?php echo esc_url( $modal_img_url ); ?>">
+			<?php if ( $modal_img_url ) : ?>
+				<a href="<?php echo wp_kses( $modal_img_url, 'post' ); ?>">
 					<?php echo wp_kses( $img_large, 'post' ); ?>
 				</a>
+			<?php else : ?>
+				<?php echo wp_kses( $img_large, 'post' ); ?>
+			<?php endif; ?>
+				<?php if ( $modal_txt_url ) : ?>
+					<a href="<?php echo wp_kses( $modal_txt_url, 'post' ); ?>" title="<?php echo wp_kses( $modal_txt, 'post' ); ?>">
+						<figcaption><?php echo wp_kses( $modal_txt, 'post' ); ?></figcaption>
+					</a>
+				<?php else : ?>
+					<figcaption><?php echo wp_kses( $modal_txt, 'post' ); ?></figcaption>
+				<?php endif; ?>
 			</figure>
-			<a href="<?php echo esc_html( $modal_txt_url ); ?>" title="<?php echo esc_html( $modal_txt ); ?>">
-				<figcaption><?php echo esc_html( $modal_txt ); ?></figcaption>
-			</a>
 		</div>
 	</div>
 <?php endif; ?>

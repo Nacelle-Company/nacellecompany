@@ -174,10 +174,10 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				'loading' => 'defer',
 				'global'  => false,
 			),
-			'wp-rig-global'   => array(
-				'file'   => 'global.min.js',
-				'global' => true,
-			),
+			// 'wp-rig-global'   => array(
+			// 	'file'   => 'global.min.js',
+			// 	'global' => true,
+			// ),
 			'wp-rig-flickity' => array(
 				'file'   => 'flickity.min.js',
 				'global' => false,

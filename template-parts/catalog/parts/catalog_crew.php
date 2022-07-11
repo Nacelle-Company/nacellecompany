@@ -18,6 +18,7 @@ $imdbv = get_post_meta( get_the_ID(), 'imdb_video', true );
 		<?php get_template_part( 'template-parts/svg/icon-external-link' ); ?>
 	</a>
 	<?php endif; ?>
+	<?php get_template_part( 'template-parts/modules/social-share' ); ?>
 </div>
 <dl class="dl-list dl-list__crew">
 	<?php wp_rig()->display_tax_terms( 'main_talent' ); ?>
