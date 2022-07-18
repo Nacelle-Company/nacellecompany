@@ -1,14 +1,17 @@
 .site-header {
-    z-index: 999;
+    z-index: 8000;
     display: flex;
     align-items: center;
     justify-content: space-around;
     flex-direction: column;
 
-    &.front-page,
-    &.catalog-header:not(.no-post-video) {
-        position: absolute;
-        width: 100%;
+    @media (--sidebar-query) {
+
+        &.front-page,
+        &.catalog-header:not(.no-post-video) {
+            position: absolute;
+            width: 100%;
+        }
     }
 }
 

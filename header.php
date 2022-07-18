@@ -25,27 +25,7 @@ namespace WP_Rig\WP_Rig;
         <script>document.documentElement.classList.remove( 'no-js' );</script>
         <?php
     }
-    if (is_front_page()) :
-        $flickity_slides = get_field( 'home_feat_posts' );
-        if ( $flickity_slides ) :
-            $pre_count = 0;
-            foreach ( $flickity_slides as $slide ) :
-                $pre_count++;
-                $the_slider_img     = get_field( 'home_image', $slide );
-                $the_horizontal_img = get_field( 'horizontal_image', $slide );
-                if ( $the_slider_img ) {
-                    $image = $the_slider_img;
-                } else {
-                    $image = $the_horizontal_img;
-                }
-                $image_url = wp_get_attachment_url( $image );
-                if ( 1 === $pre_count ) :
-                    ?>
-                <link rel="preload" as="image" href="<?php echo esc_html( $image_url ); ?>" type="image/jpeg">
-                <?php endif; ?>
-            <?php endforeach; ?>
-        <?php endif; ?>
-    <?php endif; ?>
+    ?>
     <?php
     wp_head();
     $post_thumb = get_the_post_thumbnail_url();
@@ -59,7 +39,7 @@ namespace WP_Rig\WP_Rig;
             svg.close[fill] {
                 fill: #fff;
             }
-            .site-header:not(.has-post-video) {
+            .site-header {
                 background-color: var(--color-theme-primary);
             }
             @media screen and (max-width: 37.5em) {
@@ -113,6 +93,11 @@ namespace WP_Rig\WP_Rig;
             a.button:visited {
                 color: #000;
             }
+            div.asp_m.asp_m_2 .probox .promagnifier {
+    background-image: none;
+        background-color: var(--nav-bk-color);
+
+}
         </style>
         <?php
     endif;
