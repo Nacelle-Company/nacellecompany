@@ -94,10 +94,9 @@ namespace WP_Rig\WP_Rig;
                 color: #000;
             }
             div.asp_m.asp_m_2 .probox .promagnifier {
-    background-image: none;
-        background-color: var(--nav-bk-color);
-
-}
+                background-image: none;
+                background-color: var(--nav-bk-color);
+            }
         </style>
         <?php
     endif;
