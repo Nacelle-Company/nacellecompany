@@ -1,11 +1,11 @@
 <?php
 /**
- * WP_Rig\WP_Rig\Flickity\Flickity class
+ * WP_Rig\WP_Rig\Lite_YouTube\Lite_YouTube class
  *
  * @package wp_rig
  */
 
-namespace WP_Rig\WP_Rig\Flickity;
+namespace WP_Rig\WP_Rig\Lite_YouTube;
 
 use WP_Rig\WP_Rig\Component_Interface;
 use WP_Rig\WP_Rig\Templating_Component_Interface;
@@ -18,7 +18,7 @@ use function get_theme_file_path;
 use function wp_script_add_data;
 
 /**
- * Class for flickity slider.
+ * Class for lite_youtube slider.
  *
  * Exposes template tags:
  * * `wp_rig()->the_comments( array $args = array() )`
@@ -33,14 +33,14 @@ class Component implements Component_Interface, Templating_Component_Interface {
      * @return string Component slug.
      */
     public function get_slug() : string {
-        return 'flickity';
+        return 'lite_youtube';
     }
 
     /**
      * Adds the action and filter hooks to integrate with WordPress.
      */
     public function initialize() {
-        add_action( 'wp_enqueue_scripts', array( $this, 'action_enqueue_flickity_script' ) );
+        add_action( 'wp_enqueue_scripts', array( $this, 'action_enqueue_lite_youtube_script' ) );
     }
 
     /**
@@ -52,194 +52,32 @@ class Component implements Component_Interface, Templating_Component_Interface {
      */
     public function template_tags() : array {
         return array(
-            'display_flickity' => array( $this, 'display_flickity' ),
+            'display_lite_youtube' => array( $this, 'display_lite_youtube' ),
         );
     }
 
     /**
-     * Enqueues the flickity script file.
+     * Enqueues the lite_youtube script file.
      */
-    public function action_enqueue_flickity_script() {
+    public function action_enqueue_lite_youtube_script() {
 
-        // If the AMP plugin is active, return early.
-        if ( wp_rig()->is_amp() ) {
-            return;
-        }
+        // Enqueue the lite_youtube script.
+        wp_enqueue_script(
+            'wp-rig-lite-youtube',
+            get_theme_file_uri( '/assets/js/lite-youtube.min.js' ),
+            array(),
+            wp_rig()->get_asset_version( get_theme_file_path( '/assets/js/lite-youtube.min.js' ) ),
+            false
+        );
 
-        // Enqueue the navigation script.
-        if ( is_front_page() ) {
-            // ? flickity main file
-            wp_enqueue_script(
-                'wp-rig-flickity',
-                get_theme_file_uri( '/assets/js/flickity.min.js' ),
-                array(),
-                wp_rig()->get_asset_version( get_theme_file_path( '/assets/js/flickity.min.js' ) ),
-                false
-            );
-            wp_script_add_data( 'wp-rig-flickity', 'defer', true );
-        }
     }
 
     /**
-     * Display flickity.
+     * Display lite_youtube.
      *
-     * @param mixed $slides Display flickity slider.
+     * @param mixed $slides Display lite_youtube slider.
      */
-    public function display_flickity( $slides ) {
-        /*
-        *  http://codex.wordpress.org/Template_Tags/get_posts#Reset_after_Postlists_with_offset
-        */
-        if ( get_field( 'group_slides' ) ) {
-            $group_cells           = '"groupCells": true, "groupCells": 2,';
-            $slider_custom_classes = ' group-cells';
-        } else {
-            $group_cells           = '';
-            $slider_custom_classes = '';
-        }
+    public function display_lite_youtube( $slides ) {
 
-        ?>
-
-        <div class="main-carousel<?php echo esc_html( $slider_custom_classes ); ?>" data-flickity='{<?php echo esc_html( $group_cells ); ?>"wrapAround": true,"lazyLoad": false, "setGallerySize": false, "pageDots": false}'>
-            <?php
-            $slider_posts = $slides;
-            if ( $slides ) :
-                foreach ( $slider_posts as $slide ) :
-
-                    /**
-                     * Initial variables.
-                     */
-                    $slide_id      = $slide->ID;
-                    $blog_url      = get_bloginfo( 'url' );
-                    $the_title     = get_the_title( $slide );
-                    $the_permalink = get_the_permalink( $slide );
-
-                    /**
-                     * Slide text content.
-                     */
-                    $the_content = apply_filters( 'the_content', get_the_content( '', '', $slide ) );
-                    // Build the synopsis.
-                    if ( $the_content ) {
-                        $the_synopsis = $the_content;
-                    } else {
-                        $the_synopsis = get_post_meta( $slide->ID, 'synopsis', true );
-                    }
-                    // Trunkate the synopsis.
-                    $the_synopsis = wp_strip_all_tags( $the_synopsis );
-                    $the_synopsis = wp_trim_words( $the_synopsis, 35 );
-
-                    /**
-                     * Slide images.
-                     */
-                    $size               = 'full';
-                    $the_slider_img     = get_field( 'home_image', $slide );
-                    $the_horizontal_img = get_field( 'horizontal_image', $slide );
-                    // Get the background images.
-                    if ( $the_slider_img ) {
-                        $image = $the_slider_img;
-                    } else {
-                        $image = $the_horizontal_img;
-                    }
-
-                        $img = get_field( 'square_image', $slide );
-
-                        $img_src      = wp_get_attachment_image_src( $img, 'thumbnail' );
-                        $img_srcset   = wp_get_attachment_image_srcset( $img, 'thumbnail' );
-                        $img_alt_text = get_post_meta( $img, '_wp_attachment_image_alt', true );
-
-                    /**
-                     * Hero video.
-                     */
-                    $hero_video_show = get_field( 'video_on_homepage_slider', $slide );
-                    // Get the video. As long as the catalog post's t/f switch is on.
-                    if ( true === $hero_video_show ) {
-                        $hero_video          = get_field( 'video_embedd', $slide );
-                        $hero_video_fallback = wp_get_attachment_image_url( $image, $size );
-                    }
-                    ?>
-
-                    <div class="carousel-cell <?php echo esc_html( $slide_id ); ?>">
-                        <figure>
-                            <figcaption class="caption">
-                            <a class="caption-link" href="<?php echo esc_html( $the_permalink ); ?>">
-                                <div class="flickity-image">
-                                    <?php if ( $img_src ) { ?>
-                                        <img class="no-lazy grid-item__img"
-                                        width="150" height="150"
-                                            src="<?php echo esc_url( $img_src[0] ); ?>"
-                                            title="<?php the_title(); ?>"
-                                            srcset="<?php echo esc_url( $img_src[0] ); ?><?php echo esc_html( ' 150w' ); ?>"
-                                            sizes="(max-width: 2000px) 150px"
-                                            alt="<?php echo esc_html( $img_alt_text ); ?>"
-                                        />
-                                    <?php } ?>
-
-
-                                </div>
-                                <div class="flickity-synopsis">
-                                    <h3 class="flickity-title">
-                                        <?php echo esc_html( $the_title ); ?>
-                                    </h3>
-                                    <?php if ( ! empty( $the_synopsis ) ) : ?>
-                                        <div class="synopsis-container">
-                                            <?php echo esc_html( $the_synopsis ); ?>
-                                        </div>
-                                    <?php else : ?>
-                                        <br>
-                                    <?php endif; ?>
-                                </div>
-                                </a>
-
-                            </figcaption>
-                            <?php
-                            if ( true === $hero_video_show ) {
-                                wp_rig()->print_styles( 'wp-rig-hero-video' );
-                                ?>
-                                <div id="hero_video_<?php echo esc_html( $slide_id ); ?>"
-                                class="player"
-                                    data-property="{
-                                        videoURL: '<?php echo esc_html( $hero_video ); ?>',
-                                        mute: true,
-                                        containment:'self',
-                                        showYTLogo: false,
-                                        abundance: 0.3,
-                                        playOnlyIfVisible:true,
-                                        mobileFallbackImage: '<?php echo wp_kses( $hero_video_fallback, 'post' ); ?>',
-                                        mask:'<?php echo wp_kses( $blog_url, 'post' ); ?>/wp-content/themes/wp-rig/assets/images/ytplayer-mask.png'}">
-                                        <?php get_template_part( 'template-parts/modules/icon_volume-toggle' ); ?>
-                                </div>
-                                <?php
-                            } else {
-                                echo wp_get_attachment_image(
-                                    $image,
-                                    'full',
-                                    false,
-                                    array(
-                                        'class'   => 'no-lazy attachment-full',
-                                        'loading' => 'eager',
-                                    )
-                                );
-                            }
-                            ?>
-                        </figure>
-                        <?php if ( true === $hero_video_show ) : ?>
-                        <script>
-                            jQuery(function() {
-                                jQuery("#hero_video_<?php echo esc_html( $slide_id ); ?>").YTPlayer();
-                                var heroVideo = document.querySelector("#hero_video_<?php echo esc_html( $slide_id ); ?>");
-                                var flickityBtn = document.querySelectorAll(".flickity-button");
-                                // console.log(flickityBtn);
-                                jQuery(flickityBtn).on( 'click', '.button', function() {
-                                    jQuery(heroVideo).YTPToggleVolume().YTPToggleMask();
-                                });
-                            });
-                        </script>
-                        <?php endif; ?>
-                    </div>
-                    <?php
-                endforeach;
-            endif;
-            ?>
-        </div>
-        <?php
-    } // END display_flickity().
+    } // END display_lite_youtube().
 }
