@@ -109,15 +109,6 @@
       "description": "Nacelle Company: #202020"
     },
     {
-      "id": "global_color_dark_overlay",
-      "label": "Global color dark overlay",
-      "type": "color",
-      "section": "global_colors",
-      "default": "rgb(32 32 32 / 85%)",
-      "refresh": false,
-      "description": "Nacelle Company: #000000"
-    },
-    {
       "id": "global_color_dark",
       "label": "Global color dark",
       "type": "color",
