@@ -7,7 +7,7 @@
 
 namespace WP_Rig\WP_Rig;
 
-$distribution_album_post   = get_field( 'distribution_album_post', 'option' );
+$distribution_album_post   = get_post_meta( get_the_ID(), 'distribution_album_post', 'option' );
 $img_album                 = get_field( 'square_image', $distribution_album_post );
 $distribution_film_post     = get_field( 'distribution_film_post', 'option' );
 $img_film                   = get_field( 'square_image', $distribution_film_post );

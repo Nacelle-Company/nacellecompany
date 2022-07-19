@@ -10,5 +10,6 @@
         "phpcbf.debug": true,
         "phpcbf.onsave": true,
         "phpcbf.standard": "WordPress",
+        "prettier.useTabs": true,
     }
 }

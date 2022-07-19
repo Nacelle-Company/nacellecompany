@@ -87,7 +87,7 @@
       "type": "color",
       "section": "global_colors",
       "default": "#121212",
-      "refresh": true,
+      "refresh": false,
       "description": "Nacelle Company: #4591e5"
     },
     {
@@ -96,7 +96,7 @@
       "type": "color",
       "section": "global_colors",
       "default": "#fff",
-      "refresh": true,
+      "refresh": false,
       "description": "Nacelle Company: #1d1d1d"
     },
     {
@@ -105,7 +105,7 @@
       "type": "color",
       "section": "global_colors",
       "default": "#202020",
-      "refresh": true,
+      "refresh": false,
       "description": "Nacelle Company: #202020"
     },
     {
@@ -114,7 +114,7 @@
       "type": "color",
       "section": "global_colors",
       "default": "rgb(32 32 32 / 85%)",
-      "refresh": true,
+      "refresh": false,
       "description": "Nacelle Company: #000000"
     },
     {
@@ -123,7 +123,7 @@
       "type": "color",
       "section": "global_colors",
       "default": "#121212",
-      "refresh": true,
+      "refresh": false,
       "description": "Nacelle Company: #121212"
     },
     {
@@ -132,7 +132,7 @@
       "type": "color",
       "section": "global_colors",
       "default": "#484848",
-      "refresh": true,
+      "refresh": false,
       "description": "Nacelle Company: #484848"
     },
     {
@@ -141,7 +141,7 @@
       "type": "color",
       "section": "global_colors",
       "default": "#7d7d7d",
-      "refresh": true,
+      "refresh": false,
       "description": "Nacelle Company: #7d7d7d"
     },
     {
@@ -150,7 +150,7 @@
       "type": "color",
       "section": "global_colors",
       "default": "#1b1b1b",
-      "refresh": true,
+      "refresh": false,
       "description": "Nacelle Company: #1b1b1b"
     },
     {
@@ -159,7 +159,7 @@
       "type": "color",
       "section": "global_colors",
       "default": "#333",
-      "refresh": true,
+      "refresh": false,
       "description": "Nacelle Company: #333333"
     },
     {
@@ -168,7 +168,7 @@
       "type": "color",
       "section": "global_colors",
       "default": "#ffbc00",
-      "refresh": true,
+      "refresh": false,
       "description": "Nacelle Company: #d3d3d3"
     },
     {
@@ -177,7 +177,7 @@
       "type": "color",
       "section": "global_colors",
       "default": "#7fd2e6",
-      "refresh": true,
+      "refresh": false,
       "description": "Nacelle Company: #4591e5"
     },
     {
@@ -186,7 +186,7 @@
       "type": "color",
       "section": "global_colors",
       "default": "#fff",
-      "refresh": true,
+      "refresh": false,
       "description": "Nacelle Company: #76b5fb"
     },
     {
@@ -195,7 +195,7 @@
       "type": "color",
       "section": "global_colors",
       "default": "#ffbc00",
-      "refresh": true,
+      "refresh": false,
       "description": "Nacelle Company: #306de8"
     },
     {
@@ -204,7 +204,7 @@
       "type": "color",
       "section": "global_colors",
       "default": "#000",
-      "refresh": true,
+      "refresh": false,
       "description": "Nacelle Company: #4591e5"
     },
     {
@@ -213,7 +213,7 @@
       "type": "color",
       "section": "global_colors",
       "default": "#6c7781",
-      "refresh": true,
+      "refresh": false,
       "description": "Nacelle Company: #4591e5"
     },
     {
@@ -222,7 +222,7 @@
       "type": "color",
       "section": "global_colors",
       "default": "#ffbc00",
-      "refresh": true,
+      "refresh": false,
       "description": "Nacelle Company: #4591e5"
     },
     {
@@ -231,7 +231,7 @@
       "type": "color",
       "section": "global_colors",
       "default": "#7fd2e6",
-      "refresh": true,
+      "refresh": false,
       "description": "Nacelle Company: #306de8"
     }
   ]

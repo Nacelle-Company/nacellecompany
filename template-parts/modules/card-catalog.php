@@ -7,10 +7,10 @@
 
 namespace WP_Rig\WP_Rig;
 
-$the_title   = get_the_title();
-$permalink   = get_permalink();
-$content_wp  = get_the_content();
-$content_ex  = get_the_excerpt();
+$the_title  = get_the_title();
+$permalink  = get_permalink();
+$content_wp = get_the_content();
+$content_ex = get_the_excerpt();
 
 $content_acf = get_post_meta( $post->ID, 'synopsis', true );
 $synopsis    = '';
@@ -22,11 +22,17 @@ $queried_id  = get_queried_object();
 $obj_slug    = $queried_id->slug;
 
 if ( 'special-production' === $obj_slug || 'series-production' === $obj_slug || 'production' === $obj_slug || 'podcasts' === $obj_slug ) {
-	$img = get_field( 'horizontal_image' );
+	$img    = get_field( 'horizontal_image' );
+	$width  = '320';
+	$height = '182';
 } elseif ( $obj_slug ) {
-	$img = get_field( 'square_image' );
+	$img    = get_field( 'square_image' );
+	$width  = '320';
+	$height = '320';
 } else {
-	$img = get_field( 'horizontal_image' );
+	$img    = get_field( 'horizontal_image' );
+	$width  = '320';
+	$height = '182';
 }
 
 // Assign content if avaliable, otherwise use the synopsis acf.
@@ -55,6 +61,8 @@ if ( ! empty( $img ) ) {
 	?>
 	<?php if ( $img_src ) { ?>
 				<img class="catalog-card__img"
+					width="<?php echo esc_html( $width ); ?>"
+					height="<?php echo esc_html( $height ); ?>"
 					src="<?php echo esc_url( $img_src[0] ); ?>"
 					title="<?php the_title(); ?>"
 					srcset="<?php echo esc_attr( $img_srcset ); ?>"

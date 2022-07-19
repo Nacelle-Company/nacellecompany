@@ -10,7 +10,7 @@ namespace WP_Rig\WP_Rig;
 wp_rig()->print_styles( 'wp-rig-card-catalog' );
 
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'entry' ); ?>>
+<article id="post-<?php the_ID(); ?>">
 <?php
 	get_template_part( 'template-parts/modules/card', get_post_type() );
 ?>

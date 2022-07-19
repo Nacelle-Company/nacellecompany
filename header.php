@@ -43,9 +43,12 @@ namespace WP_Rig\WP_Rig;
 				background-color: var(--color-theme-primary);
 			}
 			@media screen and (max-width: 37.5em) {
+				.site-header {
+					justify-content: flex-end;
+				}
 				.site-branding {
 					padding: 30px 0;
-					max-width: 200px;
+					flex: 0 0 50%;
 				}
 			}
 			/* NACELLE */

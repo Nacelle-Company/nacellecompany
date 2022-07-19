@@ -101,7 +101,7 @@
 
         & .mobile-menu-container {
             display: block;
-            top: 89px;
+            top: 80px;
             opacity: 1;
             z-index: 1001;
             transition: opacity 0.1s, top 0.2s ease-out;

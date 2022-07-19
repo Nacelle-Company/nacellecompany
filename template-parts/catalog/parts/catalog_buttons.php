@@ -14,32 +14,32 @@ wp_rig()->print_styles( 'wp-rig-catalog_buttons' );
 $itunes_video     = get_post_meta( get_the_ID(), 'itunes_video', true );
 $itunes_audio_url = get_post_meta( get_the_ID(), 'itunes_audio_url', true );
 
-if ( get_field( 'show_video_links' ) ) :
+if ( get_post_meta( get_the_ID(), 'show_video_links', true ) ) :
 	?>
 	<?php
 	// REMOVE BELOW after individual link add option is removed.
-	$youTubeV      = get_post_meta( get_the_ID(), 'youtube_video', true );
-	$itunesV       = get_post_meta( get_the_ID(), 'itunes_video', true );
-	$googlePlayV   = get_post_meta( get_the_ID(), 'google_play_video', true );
-	$amazonV       = get_post_meta( get_the_ID(), 'amazon_video', true );
-	$steamV        = get_post_meta( get_the_ID(), 'steam_video', true );
-	$microsoftV    = get_post_meta( get_the_ID(), 'microsoft_video', true );
-	$vuduV         = get_post_meta( get_the_ID(), 'vudu_video', true );
-	$vimeoV        = get_post_meta( get_the_ID(), 'vimeo_video', true );
-	$netflixV      = get_post_meta( get_the_ID(), 'netflix_video', true );
-	$animalNationV = get_post_meta( get_the_ID(), 'animal_nation_video', true );
-	$hooplaV       = get_post_meta( get_the_ID(), 'hoopla_video', true );
-	$tubiV         = get_post_meta( get_the_ID(), 'tubi_video', true );
-	$breakerV      = get_post_meta( get_the_ID(), 'breaker_video', true );
-	$huluV         = get_post_meta( get_the_ID(), 'hulu_video', true );
-	$epixV         = get_post_meta( get_the_ID(), 'epix_video', true );
-	$comcastV      = get_post_meta( get_the_ID(), 'comcast', true );
-	$redboxV       = get_post_meta( get_the_ID(), 'redbox', true );
-	$walmartV      = get_post_meta( get_the_ID(), 'walmart', true );
-	$targetV       = get_post_meta( get_the_ID(), 'target', true );
-	$fandangoV     = get_post_meta( get_the_ID(), 'fandango', true );
-	$mtv2V         = get_post_meta( get_the_ID(), 'mtv2_video', true );
-	// REMOVE ABOVE after individual link add option is removed
+	$you_tube_v      = get_post_meta( get_the_ID(), 'youtube_video', true );
+	$itunes_v        = get_post_meta( get_the_ID(), 'itunes_video', true );
+	$google_play_v   = get_post_meta( get_the_ID(), 'google_play_video', true );
+	$amazon_v        = get_post_meta( get_the_ID(), 'amazon_video', true );
+	$steam_v         = get_post_meta( get_the_ID(), 'steam_video', true );
+	$microsoft_v     = get_post_meta( get_the_ID(), 'microsoft_video', true );
+	$vudu_v          = get_post_meta( get_the_ID(), 'vudu_video', true );
+	$vimeo_v         = get_post_meta( get_the_ID(), 'vimeo_video', true );
+	$netflix_v        = get_post_meta( get_the_ID(), 'netflix_video', true );
+	$animal_nation_v = get_post_meta( get_the_ID(), 'animal_nation_video', true );
+	$hoopla_v        = get_post_meta( get_the_ID(), 'hoopla_video', true );
+	$tubi_v          = get_post_meta( get_the_ID(), 'tubi_video', true );
+	$breaker_v       = get_post_meta( get_the_ID(), 'breaker_video', true );
+	$hulu_v          = get_post_meta( get_the_ID(), 'hulu_video', true );
+	$epix_v          = get_post_meta( get_the_ID(), 'epix_video', true );
+	$comcast_v       = get_post_meta( get_the_ID(), 'comcast', true );
+	$redbox_v        = get_post_meta( get_the_ID(), 'redbox', true );
+	$walmart_v       = get_post_meta( get_the_ID(), 'walmart', true );
+	$target_v        = get_post_meta( get_the_ID(), 'target', true );
+	$fandango_v      = get_post_meta( get_the_ID(), 'fandango', true );
+	$mtv2_v          = get_post_meta( get_the_ID(), 'mtv2_video', true );
+	// REMOVE ABOVE after individual link add option is removed.
 	?>
 	<div class="entry-buttons__wrapper">
 		<h3 class="title h3">
@@ -56,16 +56,16 @@ if ( get_field( 'show_video_links' ) ) :
 			</a>
 	<?php endif; ?>
 	<?php
-	// REMOVE BELOW
-	// REMOVE BELOW
-	// REMOVE BELOW
-	// REMOVE BELOW
+	// REMOVE BELOW.
+	// REMOVE BELOW.
+	// REMOVE BELOW.
+	// REMOVE BELOW.
 	?>
-	<?php if ( $youTubeV ) : ?>
+	<?php if ( $you_tube_v ) : ?>
 
-			<a href="<?php echo $youTubeV; ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo $youTubeV; ?>" target="_blank" rel="noreferrer">
+			<a href="<?php echo esc_attr( $you_tube_v ); ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo esc_attr( $you_tube_v ); ?>" target="_blank" rel="noreferrer">
 				<strong>
-		<?php _e( 'YouTube', 'Nacelle' ); ?>
+				<?php esc_html_e( 'YouTube', 'wp-rig' ); ?>
 				</strong>
 				<svg class="icon" width="15" height="15" xmlns="http://www.w3.org/2000/svg">
 					<path d="M10.938 8.75h-.626a.313.313 0 00-.312.313v2.187H3.75V5h2.813c.172 0 .312-.14.312-.313v-.625a.313.313 0 00-.313-.312H3.438a.938.938 0 00-.937.938v6.875c0 .517.42.937.938.937h6.874c.518 0 .938-.42.938-.938v-2.5a.313.313 0 00-.313-.312zM12.03 2.5h-2.5a.47.47 0 00-.332.8L9.897 4l-4.76 4.758a.469.469 0 000 .664l.442.442a.469.469 0 00.665 0l4.758-4.76.697.698a.47.47 0 00.801-.332v-2.5a.469.469 0 00-.469-.469z" fill-rule="nonzero" />
@@ -74,11 +74,11 @@ if ( get_field( 'show_video_links' ) ) :
 
 	<?php endif; ?>
 
-	<?php if ( $googlePlayV ) : ?>
+	<?php if ( $google_play_v ) : ?>
 
-			<a href="<?php echo $googlePlayV; ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo $googlePlayV; ?>" target="_blank" rel="noreferrer">
+			<a href="<?php echo esc_attr( $google_play_v ); ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo esc_attr( $google_play_v ); ?>" target="_blank" rel="noreferrer">
 				<strong>
-		<?php _e( 'Google Play', 'Nacelle' ); ?>
+		<?php esc_html_e( 'Google Play', 'wp-rig' ); ?>
 				</strong>
 				<svg class="icon" width="15" height="15" xmlns="http://www.w3.org/2000/svg">
 					<path d="M10.938 8.75h-.626a.313.313 0 00-.312.313v2.187H3.75V5h2.813c.172 0 .312-.14.312-.313v-.625a.313.313 0 00-.313-.312H3.438a.938.938 0 00-.937.938v6.875c0 .517.42.937.938.937h6.874c.518 0 .938-.42.938-.938v-2.5a.313.313 0 00-.313-.312zM12.03 2.5h-2.5a.47.47 0 00-.332.8L9.897 4l-4.76 4.758a.469.469 0 000 .664l.442.442a.469.469 0 00.665 0l4.758-4.76.697.698a.47.47 0 00.801-.332v-2.5a.469.469 0 00-.469-.469z" fill-rule="nonzero" />
@@ -86,11 +86,11 @@ if ( get_field( 'show_video_links' ) ) :
 			</a>
 
 	<?php endif; ?>
-	<?php if ( $amazonV ) : ?>
+	<?php if ( $amazon_v ) : ?>
 
-			<a href="<?php echo $amazonV; ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo $amazonV; ?>" target="_blank" rel="noreferrer">
+			<a href="<?php echo esc_html( $amazon_v ); ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo esc_attr( $amazon_v ); ?>" target="_blank" rel="noreferrer">
 				<strong>
-		<?php _e( 'Amazon', 'Nacelle' ); ?>
+		<?php esc_html_e( 'Amazon', 'wp-rig' ); ?>
 				</strong>
 				<svg class="icon" width="15" height="15" xmlns="http://www.w3.org/2000/svg">
 					<path d="M10.938 8.75h-.626a.313.313 0 00-.312.313v2.187H3.75V5h2.813c.172 0 .312-.14.312-.313v-.625a.313.313 0 00-.313-.312H3.438a.938.938 0 00-.937.938v6.875c0 .517.42.937.938.937h6.874c.518 0 .938-.42.938-.938v-2.5a.313.313 0 00-.313-.312zM12.03 2.5h-2.5a.47.47 0 00-.332.8L9.897 4l-4.76 4.758a.469.469 0 000 .664l.442.442a.469.469 0 00.665 0l4.758-4.76.697.698a.47.47 0 00.801-.332v-2.5a.469.469 0 00-.469-.469z" fill-rule="nonzero" />
@@ -98,11 +98,11 @@ if ( get_field( 'show_video_links' ) ) :
 			</a>
 
 	<?php endif; ?>
-	<?php if ( $steamV ) : ?>
+	<?php if ( $steam_v ) : ?>
 
-			<a href="<?php echo $steamV; ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo $steamV; ?>" target="_blank" rel="noreferrer">
+			<a href="<?php echo esc_html( $steam_v ); ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo esc_html( $steam_v ); ?>" target="_blank" rel="noreferrer">
 				<strong>
-		<?php _e( 'Steam', 'Nacelle' ); ?>
+					<?php esc_html_e( 'Steam', 'wp-rig' ); ?>
 				</strong>
 				<svg class="icon" width="15" height="15" xmlns="http://www.w3.org/2000/svg">
 					<path d="M10.938 8.75h-.626a.313.313 0 00-.312.313v2.187H3.75V5h2.813c.172 0 .312-.14.312-.313v-.625a.313.313 0 00-.313-.312H3.438a.938.938 0 00-.937.938v6.875c0 .517.42.937.938.937h6.874c.518 0 .938-.42.938-.938v-2.5a.313.313 0 00-.313-.312zM12.03 2.5h-2.5a.47.47 0 00-.332.8L9.897 4l-4.76 4.758a.469.469 0 000 .664l.442.442a.469.469 0 00.665 0l4.758-4.76.697.698a.47.47 0 00.801-.332v-2.5a.469.469 0 00-.469-.469z" fill-rule="nonzero" />
@@ -110,11 +110,11 @@ if ( get_field( 'show_video_links' ) ) :
 			</a>
 
 	<?php endif; ?>
-	<?php if ( $microsoftV ) : ?>
+	<?php if ( $microsoft_v ) : ?>
 
-			<a href="<?php echo $microsoftV; ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo $microsoftV; ?>" target="_blank" rel="noreferrer">
+			<a href="<?php echo esc_html( $microsoft_v ); ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo esc_html( $microsoft_v ); ?>" target="_blank" rel="noreferrer">
 				<strong>
-		<?php _e( 'Microsoft', 'Nacelle' ); ?>
+		<?php esc_html_e( 'Microsoft', 'wp-rig' ); ?>
 				</strong>
 				<svg class="icon" width="15" height="15" xmlns="http://www.w3.org/2000/svg">
 					<path d="M10.938 8.75h-.626a.313.313 0 00-.312.313v2.187H3.75V5h2.813c.172 0 .312-.14.312-.313v-.625a.313.313 0 00-.313-.312H3.438a.938.938 0 00-.937.938v6.875c0 .517.42.937.938.937h6.874c.518 0 .938-.42.938-.938v-2.5a.313.313 0 00-.313-.312zM12.03 2.5h-2.5a.47.47 0 00-.332.8L9.897 4l-4.76 4.758a.469.469 0 000 .664l.442.442a.469.469 0 00.665 0l4.758-4.76.697.698a.47.47 0 00.801-.332v-2.5a.469.469 0 00-.469-.469z" fill-rule="nonzero" />
@@ -122,11 +122,11 @@ if ( get_field( 'show_video_links' ) ) :
 			</a>
 
 	<?php endif; ?>
-	<?php if ( $vuduV ) : ?>
+	<?php if ( $vudu_v ) : ?>
 
-			<a href="<?php echo $vuduV; ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo $vuduV; ?>" target="_blank" rel="noreferrer">
+			<a href="<?php echo esc_html( $vudu_v ); ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo esc_html( $vudu_v ); ?>" target="_blank" rel="noreferrer">
 				<strong>
-		<?php _e( 'Vudu', 'Nacelle' ); ?>
+		<?php esc_html_e( 'Vudu', 'wp-rig' ); ?>
 				</strong>
 				<svg class="icon" width="15" height="15" xmlns="http://www.w3.org/2000/svg">
 					<path d="M10.938 8.75h-.626a.313.313 0 00-.312.313v2.187H3.75V5h2.813c.172 0 .312-.14.312-.313v-.625a.313.313 0 00-.313-.312H3.438a.938.938 0 00-.937.938v6.875c0 .517.42.937.938.937h6.874c.518 0 .938-.42.938-.938v-2.5a.313.313 0 00-.313-.312zM12.03 2.5h-2.5a.47.47 0 00-.332.8L9.897 4l-4.76 4.758a.469.469 0 000 .664l.442.442a.469.469 0 00.665 0l4.758-4.76.697.698a.47.47 0 00.801-.332v-2.5a.469.469 0 00-.469-.469z" fill-rule="nonzero" />
@@ -134,11 +134,11 @@ if ( get_field( 'show_video_links' ) ) :
 			</a>
 
 	<?php endif; ?>
-	<?php if ( $vimeoV ) : ?>
+	<?php if ( $vimeo_v ) : ?>
 
-			<a href="<?php echo $vimeoV; ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo $vimeoV; ?>" target="_blank" rel="noreferrer">
+			<a href="<?php echo esc_html( $vimeo_v ); ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo esc_html( $vimeo_v ); ?>" target="_blank" rel="noreferrer">
 				<strong>
-		<?php _e( 'Vimeo', 'Nacelle' ); ?>
+		<?php esc_html_e( 'Vimeo', 'wp-rig' ); ?>
 				</strong>
 				<svg class="icon" width="15" height="15" xmlns="http://www.w3.org/2000/svg">
 					<path d="M10.938 8.75h-.626a.313.313 0 00-.312.313v2.187H3.75V5h2.813c.172 0 .312-.14.312-.313v-.625a.313.313 0 00-.313-.312H3.438a.938.938 0 00-.937.938v6.875c0 .517.42.937.938.937h6.874c.518 0 .938-.42.938-.938v-2.5a.313.313 0 00-.313-.312zM12.03 2.5h-2.5a.47.47 0 00-.332.8L9.897 4l-4.76 4.758a.469.469 0 000 .664l.442.442a.469.469 0 00.665 0l4.758-4.76.697.698a.47.47 0 00.801-.332v-2.5a.469.469 0 00-.469-.469z" fill-rule="nonzero" />
@@ -146,11 +146,11 @@ if ( get_field( 'show_video_links' ) ) :
 			</a>
 
 	<?php endif; ?>
-	<?php if ( $netflixV ) : ?>
+	<?php if ( $netflix_v ) : ?>
 
-			<a href="<?php echo $netflixV; ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo $netflixV; ?>" target="_blank" rel="noreferrer">
+			<a href="<?php echo esc_html( $netflix_v ); ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo esc_html( $netflix_v ); ?>" target="_blank" rel="noreferrer">
 				<strong>
-		<?php _e( 'Netflix', 'Nacelle' ); ?>
+		<?php esc_html_e( 'Netflix', 'wp-rig' ); ?>
 				</strong>
 				<svg class="icon" width="15" height="15" xmlns="http://www.w3.org/2000/svg">
 					<path d="M10.938 8.75h-.626a.313.313 0 00-.312.313v2.187H3.75V5h2.813c.172 0 .312-.14.312-.313v-.625a.313.313 0 00-.313-.312H3.438a.938.938 0 00-.937.938v6.875c0 .517.42.937.938.937h6.874c.518 0 .938-.42.938-.938v-2.5a.313.313 0 00-.313-.312zM12.03 2.5h-2.5a.47.47 0 00-.332.8L9.897 4l-4.76 4.758a.469.469 0 000 .664l.442.442a.469.469 0 00.665 0l4.758-4.76.697.698a.47.47 0 00.801-.332v-2.5a.469.469 0 00-.469-.469z" fill-rule="nonzero" />
@@ -158,11 +158,11 @@ if ( get_field( 'show_video_links' ) ) :
 			</a>
 
 	<?php endif; ?>
-	<?php if ( $animalNationV ) : ?>
+	<?php if ( $animal_nation_v ) : ?>
 
-			<a href="<?php echo $animalNationV; ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo $animalNationV; ?>" target="_blank" rel="noreferrer">
+			<a href="<?php echo esc_html( $animal_nation_v ); ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo esc_html( $animal_nation_v ); ?>" target="_blank" rel="noreferrer">
 				<strong>
-		<?php _e( 'Animal Nation', 'Nacelle' ); ?>
+		<?php esc_html_e( 'Animal Nation', 'wp-rig' ); ?>
 				</strong>
 				<svg class="icon" width="15" height="15" xmlns="http://www.w3.org/2000/svg">
 					<path d="M10.938 8.75h-.626a.313.313 0 00-.312.313v2.187H3.75V5h2.813c.172 0 .312-.14.312-.313v-.625a.313.313 0 00-.313-.312H3.438a.938.938 0 00-.937.938v6.875c0 .517.42.937.938.937h6.874c.518 0 .938-.42.938-.938v-2.5a.313.313 0 00-.313-.312zM12.03 2.5h-2.5a.47.47 0 00-.332.8L9.897 4l-4.76 4.758a.469.469 0 000 .664l.442.442a.469.469 0 00.665 0l4.758-4.76.697.698a.47.47 0 00.801-.332v-2.5a.469.469 0 00-.469-.469z" fill-rule="nonzero" />
@@ -170,57 +170,11 @@ if ( get_field( 'show_video_links' ) ) :
 			</a>
 
 	<?php endif; ?>
-	<?php if ( $breakerV ) : ?>
+	<?php if ( $breaker_v ) : ?>
 
-			<a href="<?php echo $breakerV; ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo $breakerV; ?>" target="_blank" rel="noreferrer">
+			<a href="<?php echo esc_html( $breaker_v ); ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo esc_html( $breaker_v ); ?>" target="_blank" rel="noreferrer">
 				<strong>
-		<?php _e( 'Roku', 'Nacelle' ); ?>
-				</strong>
-				<svg class="icon" width="15" height="15" xmlns="http://www.w3.org/2000/svg">
-					<path d="M10.938 8.75h-.626a.313.313 0 00-.312.313v2.187H3.75V5h2.813c.172 0 .312-.14.312-.313v-.625a.313.313 0 00-.313-.312H3.438a.938.938 0 00-.937.938v6.875c0 .517.42.937.938.937h6.874c.518 0 .938-.42.938-.938v-2.5a.313.313 0 00-.313-.312zM12.03 2.5h-2.5a.47.47 0 00-.332.8L9.897 4l-4.76 4.758a.469.469 0 000 .664l.442.442a.469.469 0 00.665 0l4.758-4.76.697.698a.47.47 0 00.801-.332v-2.5a.469.469 0 00-.469-.469z" fill-rule="nonzero" />
-				</svg>
-			</a>
-
-	<?php endif; ?>
-
-	<?php if ( $huluV ) : ?>
-
-			<a href="<?php echo $huluV; ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo $huluV; ?>" target="_blank" rel="noreferrer">
-				<strong>
-		<?php _e( 'HULU', 'Nacelle' ); ?>
-				</strong>
-				<svg class="icon" width="15" height="15" xmlns="http://www.w3.org/2000/svg">
-					<path d="M10.938 8.75h-.626a.313.313 0 00-.312.313v2.187H3.75V5h2.813c.172 0 .312-.14.312-.313v-.625a.313.313 0 00-.313-.312H3.438a.938.938 0 00-.937.938v6.875c0 .517.42.937.938.937h6.874c.518 0 .938-.42.938-.938v-2.5a.313.313 0 00-.313-.312zM12.03 2.5h-2.5a.47.47 0 00-.332.8L9.897 4l-4.76 4.758a.469.469 0 000 .664l.442.442a.469.469 0 00.665 0l4.758-4.76.697.698a.47.47 0 00.801-.332v-2.5a.469.469 0 00-.469-.469z" fill-rule="nonzero" />
-				</svg>
-			</a>
-
-	<?php endif; ?>
-	<?php if ( $epixV ) : ?>
-
-			<a href="<?php echo $epixV; ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo $epixV; ?>" target="_blank" rel="noreferrer">
-				<strong>
-		<?php _e( 'EPIX', 'Nacelle' ); ?>
-				</strong>
-				<svg class="icon" width="15" height="15" xmlns="http://www.w3.org/2000/svg">
-					<path d="M10.938 8.75h-.626a.313.313 0 00-.312.313v2.187H3.75V5h2.813c.172 0 .312-.14.312-.313v-.625a.313.313 0 00-.313-.312H3.438a.938.938 0 00-.937.938v6.875c0 .517.42.937.938.937h6.874c.518 0 .938-.42.938-.938v-2.5a.313.313 0 00-.313-.312zM12.03 2.5h-2.5a.47.47 0 00-.332.8L9.897 4l-4.76 4.758a.469.469 0 000 .664l.442.442a.469.469 0 00.665 0l4.758-4.76.697.698a.47.47 0 00.801-.332v-2.5a.469.469 0 00-.469-.469z" fill-rule="nonzero" />
-				</svg>
-			</a>
-
-	<?php endif; ?>
-	<?php if ( $comcastV ) : ?>
-
-			<a href="<?php echo $comcastV; ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo $comcastV; ?>" target="_blank" rel="noreferrer">
-				<strong>
-		<?php _e( 'Comcast', 'Nacelle' ); ?>
-				</strong>
-			</a>
-
-	<?php endif; ?>
-	<?php if ( $redboxV ) : ?>
-
-			<a href="<?php echo $redboxV; ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo $redboxV; ?>" target="_blank" rel="noreferrer">
-				<strong>
-		<?php _e( 'Redbox', 'Nacelle' ); ?>
+		<?php esc_html_e( 'Roku', 'wp-rig' ); ?>
 				</strong>
 				<svg class="icon" width="15" height="15" xmlns="http://www.w3.org/2000/svg">
 					<path d="M10.938 8.75h-.626a.313.313 0 00-.312.313v2.187H3.75V5h2.813c.172 0 .312-.14.312-.313v-.625a.313.313 0 00-.313-.312H3.438a.938.938 0 00-.937.938v6.875c0 .517.42.937.938.937h6.874c.518 0 .938-.42.938-.938v-2.5a.313.313 0 00-.313-.312zM12.03 2.5h-2.5a.47.47 0 00-.332.8L9.897 4l-4.76 4.758a.469.469 0 000 .664l.442.442a.469.469 0 00.665 0l4.758-4.76.697.698a.47.47 0 00.801-.332v-2.5a.469.469 0 00-.469-.469z" fill-rule="nonzero" />
@@ -229,11 +183,11 @@ if ( get_field( 'show_video_links' ) ) :
 
 	<?php endif; ?>
 
-	<?php if ( $walmartV ) : ?>
+	<?php if ( $hulu_v ) : ?>
 
-			<a href="<?php echo $walmartV; ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo $walmartV; ?>" target="_blank" rel="noreferrer">
+			<a href="<?php echo esc_html( $hulu_v ); ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo esc_html( $hulu_v ); ?>" target="_blank" rel="noreferrer">
 				<strong>
-		<?php _e( 'Walmart', 'Nacelle' ); ?>
+		<?php esc_html_e( 'HULU', 'wp-rig' ); ?>
 				</strong>
 				<svg class="icon" width="15" height="15" xmlns="http://www.w3.org/2000/svg">
 					<path d="M10.938 8.75h-.626a.313.313 0 00-.312.313v2.187H3.75V5h2.813c.172 0 .312-.14.312-.313v-.625a.313.313 0 00-.313-.312H3.438a.938.938 0 00-.937.938v6.875c0 .517.42.937.938.937h6.874c.518 0 .938-.42.938-.938v-2.5a.313.313 0 00-.313-.312zM12.03 2.5h-2.5a.47.47 0 00-.332.8L9.897 4l-4.76 4.758a.469.469 0 000 .664l.442.442a.469.469 0 00.665 0l4.758-4.76.697.698a.47.47 0 00.801-.332v-2.5a.469.469 0 00-.469-.469z" fill-rule="nonzero" />
@@ -241,11 +195,11 @@ if ( get_field( 'show_video_links' ) ) :
 			</a>
 
 	<?php endif; ?>
-	<?php if ( $targetV ) : ?>
+	<?php if ( $epix_v ) : ?>
 
-			<a href="<?php echo $targetV; ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo $targetV; ?>" target="_blank" rel="noreferrer">
+			<a href="<?php echo esc_html( $epix_v ); ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo esc_html( $epix_v ); ?>" target="_blank" rel="noreferrer">
 				<strong>
-		<?php _e( 'Target', 'Nacelle' ); ?>
+		<?php esc_html_e( 'EPIX', 'wp-rig' ); ?>
 				</strong>
 				<svg class="icon" width="15" height="15" xmlns="http://www.w3.org/2000/svg">
 					<path d="M10.938 8.75h-.626a.313.313 0 00-.312.313v2.187H3.75V5h2.813c.172 0 .312-.14.312-.313v-.625a.313.313 0 00-.313-.312H3.438a.938.938 0 00-.937.938v6.875c0 .517.42.937.938.937h6.874c.518 0 .938-.42.938-.938v-2.5a.313.313 0 00-.313-.312zM12.03 2.5h-2.5a.47.47 0 00-.332.8L9.897 4l-4.76 4.758a.469.469 0 000 .664l.442.442a.469.469 0 00.665 0l4.758-4.76.697.698a.47.47 0 00.801-.332v-2.5a.469.469 0 00-.469-.469z" fill-rule="nonzero" />
@@ -253,32 +207,20 @@ if ( get_field( 'show_video_links' ) ) :
 			</a>
 
 	<?php endif; ?>
-	<?php if ( $fandangoV ) : ?>
+	<?php if ( $comcast_v ) : ?>
 
-			<a href="<?php echo $fandangoV; ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo $fandangoV; ?>" target="_blank" rel="noreferrer">
+			<a href="<?php echo esc_html( $comcast_v ); ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo esc_html( $comcast_v ); ?>" target="_blank" rel="noreferrer">
 				<strong>
-		<?php _e( 'Fandango', 'Nacelle' ); ?>
+		<?php esc_html_e( 'Comcast', 'wp-rig' ); ?>
 				</strong>
 			</a>
 
 	<?php endif; ?>
-	<?php if ( $hooplaV ) : ?>
+	<?php if ( $redbox_v ) : ?>
 
-			<a href="<?php echo $hooplaV; ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo $hooplaV; ?>" target="_blank" rel="noreferrer">
+			<a href="<?php echo esc_html( $redbox_v ); ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo esc_html( $redbox_v ); ?>" target="_blank" rel="noreferrer">
 				<strong>
-		<?php _e( 'Hoopla', 'Nacelle' ); ?>
-				</strong>
-				<svg class="icon" width="15" height="15" xmlns="http://www.w3.org/2000/svg">
-					<path d="M10.938 8.75h-.626a.313.313 0 00-.312.313v2.187H3.75V5h2.813c.172 0 .312-.14.312-.313v-.625a.313.313 0 00-.313-.312H3.438a.938.938 0 00-.937.938v6.875c0 .517.42.937.938.937h6.874c.518 0 .938-.42.938-.938v-2.5a.313.313 0 00-.313-.312zM12.03 2.5h-2.5a.47.47 0 00-.332.8L9.897 4l-4.76 4.758a.469.469 0 000 .664l.442.442a.469.469 0 00.665 0l4.758-4.76.697.698a.47.47 0 00.801-.332v-2.5a.469.469 0 00-.469-.469z" fill-rule="nonzero" />
-				</svg>
-			</a>
-
-	<?php endif; ?>
-	<?php if ( $mtv2V ) : ?>
-
-			<a href="<?php echo $mtv2V; ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo $mtv2V; ?>" target="_blank" rel="noreferrer">
-				<strong>
-		<?php _e( 'MTV2', 'Nacelle' ); ?>
+		<?php esc_html_e( 'Redbox', 'wp-rig' ); ?>
 				</strong>
 				<svg class="icon" width="15" height="15" xmlns="http://www.w3.org/2000/svg">
 					<path d="M10.938 8.75h-.626a.313.313 0 00-.312.313v2.187H3.75V5h2.813c.172 0 .312-.14.312-.313v-.625a.313.313 0 00-.313-.312H3.438a.938.938 0 00-.937.938v6.875c0 .517.42.937.938.937h6.874c.518 0 .938-.42.938-.938v-2.5a.313.313 0 00-.313-.312zM12.03 2.5h-2.5a.47.47 0 00-.332.8L9.897 4l-4.76 4.758a.469.469 0 000 .664l.442.442a.469.469 0 00.665 0l4.758-4.76.697.698a.47.47 0 00.801-.332v-2.5a.469.469 0 00-.469-.469z" fill-rule="nonzero" />
@@ -286,11 +228,69 @@ if ( get_field( 'show_video_links' ) ) :
 			</a>
 
 	<?php endif; ?>
-	<?php if ( $tubiV ) : ?>
 
-			<a href="<?php echo $tubiV; ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo $tubiV; ?>" target="_blank" rel="noreferrer">
+	<?php if ( $walmart_v ) : ?>
+
+			<a href="<?php echo esc_html( $walmart_v ); ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo esc_html( $walmart_v ); ?>" target="_blank" rel="noreferrer">
 				<strong>
-		<?php _e( 'Tubi', 'Nacelle' ); ?>
+		<?php esc_html_e( 'Walmart', 'wp-rig' ); ?>
+				</strong>
+				<svg class="icon" width="15" height="15" xmlns="http://www.w3.org/2000/svg">
+					<path d="M10.938 8.75h-.626a.313.313 0 00-.312.313v2.187H3.75V5h2.813c.172 0 .312-.14.312-.313v-.625a.313.313 0 00-.313-.312H3.438a.938.938 0 00-.937.938v6.875c0 .517.42.937.938.937h6.874c.518 0 .938-.42.938-.938v-2.5a.313.313 0 00-.313-.312zM12.03 2.5h-2.5a.47.47 0 00-.332.8L9.897 4l-4.76 4.758a.469.469 0 000 .664l.442.442a.469.469 0 00.665 0l4.758-4.76.697.698a.47.47 0 00.801-.332v-2.5a.469.469 0 00-.469-.469z" fill-rule="nonzero" />
+				</svg>
+			</a>
+
+	<?php endif; ?>
+	<?php if ( $target_v ) : ?>
+
+			<a href="<?php echo esc_html( $target_v ); ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo esc_html( $target_v ); ?>" target="_blank" rel="noreferrer">
+				<strong>
+		<?php esc_html_e( 'Target', 'wp-rig' ); ?>
+				</strong>
+				<svg class="icon" width="15" height="15" xmlns="http://www.w3.org/2000/svg">
+					<path d="M10.938 8.75h-.626a.313.313 0 00-.312.313v2.187H3.75V5h2.813c.172 0 .312-.14.312-.313v-.625a.313.313 0 00-.313-.312H3.438a.938.938 0 00-.937.938v6.875c0 .517.42.937.938.937h6.874c.518 0 .938-.42.938-.938v-2.5a.313.313 0 00-.313-.312zM12.03 2.5h-2.5a.47.47 0 00-.332.8L9.897 4l-4.76 4.758a.469.469 0 000 .664l.442.442a.469.469 0 00.665 0l4.758-4.76.697.698a.47.47 0 00.801-.332v-2.5a.469.469 0 00-.469-.469z" fill-rule="nonzero" />
+				</svg>
+			</a>
+
+	<?php endif; ?>
+	<?php if ( $fandango_v ) : ?>
+
+			<a href="<?php echo esc_html( $fandango_v ); ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo esc_html( $fandango_v ); ?>" target="_blank" rel="noreferrer">
+				<strong>
+		<?php esc_html_e( 'Fandango', 'wp-rig' ); ?>
+				</strong>
+			</a>
+
+	<?php endif; ?>
+	<?php if ( $hoopla_v ) : ?>
+
+			<a href="<?php echo esc_html( $hoopla_v ); ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo esc_html( $hoopla_v ); ?>" target="_blank" rel="noreferrer">
+				<strong>
+		<?php esc_html_e( 'Hoopla', 'wp-rig' ); ?>
+				</strong>
+				<svg class="icon" width="15" height="15" xmlns="http://www.w3.org/2000/svg">
+					<path d="M10.938 8.75h-.626a.313.313 0 00-.312.313v2.187H3.75V5h2.813c.172 0 .312-.14.312-.313v-.625a.313.313 0 00-.313-.312H3.438a.938.938 0 00-.937.938v6.875c0 .517.42.937.938.937h6.874c.518 0 .938-.42.938-.938v-2.5a.313.313 0 00-.313-.312zM12.03 2.5h-2.5a.47.47 0 00-.332.8L9.897 4l-4.76 4.758a.469.469 0 000 .664l.442.442a.469.469 0 00.665 0l4.758-4.76.697.698a.47.47 0 00.801-.332v-2.5a.469.469 0 00-.469-.469z" fill-rule="nonzero" />
+				</svg>
+			</a>
+
+	<?php endif; ?>
+	<?php if ( $mtv2_v ) : ?>
+
+			<a href="<?php echo esc_html( $mtv2_v ); ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo esc_html( $mtv2_v ); ?>" target="_blank" rel="noreferrer">
+				<strong>
+		<?php esc_html_e( 'MTV2', 'wp-rig' ); ?>
+				</strong>
+				<svg class="icon" width="15" height="15" xmlns="http://www.w3.org/2000/svg">
+					<path d="M10.938 8.75h-.626a.313.313 0 00-.312.313v2.187H3.75V5h2.813c.172 0 .312-.14.312-.313v-.625a.313.313 0 00-.313-.312H3.438a.938.938 0 00-.937.938v6.875c0 .517.42.937.938.937h6.874c.518 0 .938-.42.938-.938v-2.5a.313.313 0 00-.313-.312zM12.03 2.5h-2.5a.47.47 0 00-.332.8L9.897 4l-4.76 4.758a.469.469 0 000 .664l.442.442a.469.469 0 00.665 0l4.758-4.76.697.698a.47.47 0 00.801-.332v-2.5a.469.469 0 00-.469-.469z" fill-rule="nonzero" />
+				</svg>
+			</a>
+
+	<?php endif; ?>
+	<?php if ( $tubi_v ) : ?>
+
+			<a href="<?php echo esc_html( $tubi_v ); ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo esc_html( $tubi_v ); ?>" target="_blank" rel="noreferrer">
+				<strong>
+		<?php esc_html_e( 'Tubi', 'wp-rig' ); ?>
 				</strong>
 				<svg class="icon" width="15" height="15" xmlns="http://www.w3.org/2000/svg">
 					<path d="M10.938 8.75h-.626a.313.313 0 00-.312.313v2.187H3.75V5h2.813c.172 0 .312-.14.312-.313v-.625a.313.313 0 00-.313-.312H3.438a.938.938 0 00-.937.938v6.875c0 .517.42.937.938.937h6.874c.518 0 .938-.42.938-.938v-2.5a.313.313 0 00-.313-.312zM12.03 2.5h-2.5a.47.47 0 00-.332.8L9.897 4l-4.76 4.758a.469.469 0 000 .664l.442.442a.469.469 0 00.665 0l4.758-4.76.697.698a.47.47 0 00.801-.332v-2.5a.469.469 0 00-.469-.469z" fill-rule="nonzero" />
@@ -299,11 +299,11 @@ if ( get_field( 'show_video_links' ) ) :
 
 	<?php endif; ?>
 	<?php
-	// REMOVE ABOVE
-	// REMOVE ABOVE
-	// REMOVE ABOVE
-	// REMOVE ABOVE
-	// REMOVE ABOVE
+	// REMOVE ABOVE.
+	// REMOVE ABOVE.
+	// REMOVE ABOVE.
+	// REMOVE ABOVE.
+	// REMOVE ABOVE.
 	?>
 	<?php if ( have_rows( 'new_large_link' ) ) : ?>
 		<?php
@@ -323,17 +323,17 @@ if ( get_field( 'show_video_links' ) ) :
 	</div>
 <?php endif; ?>
 <?php
-if ( get_field( 'show_audio_links' ) ) :
-	$googlePlayA  = get_post_meta( get_the_ID(), 'google_play_audio', true );
-	$youTubeA     = get_post_meta( get_the_ID(), 'you_tube_audio', true );
-	$amazonA      = get_post_meta( get_the_ID(), 'amazon_audio', true );
-	$spotifyA     = get_post_meta( get_the_ID(), 'spotify_audio', true );
-	$pandoraA     = get_post_meta( get_the_ID(), 'pandora_audio', true );
-	$walmartA     = get_post_meta( get_the_ID(), 'walmart_audio', true );
-	$targetA      = get_post_meta( get_the_ID(), 'target_audio', true );
-	$fandangoA    = get_post_meta( get_the_ID(), 'fandango_audio', true );
-	$customA      = get_post_meta( get_the_ID(), 'custom_audio', true );
-	$customAtitle = get_post_meta( get_the_ID(), 'custom_audio_title', true );
+if ( get_post_meta( get_the_ID(), 'show_audio_links', true ) ) :
+	$google_play_a  = get_post_meta( get_the_ID(), 'google_play_audio', true );
+	$you_tube_a     = get_post_meta( get_the_ID(), 'you_tube_audio', true );
+	$amazon_a       = get_post_meta( get_the_ID(), 'amazon_audio', true );
+	$spotify_a      = get_post_meta( get_the_ID(), 'spotify_audio', true );
+	$pandora_a      = get_post_meta( get_the_ID(), 'pandora_audio', true );
+	$walmart_a      = get_post_meta( get_the_ID(), 'walmart_audio', true );
+	$target_a       = get_post_meta( get_the_ID(), 'target_audio', true );
+	$fandango_a     = get_post_meta( get_the_ID(), 'fandango_audio', true );
+	$custom_a       = get_post_meta( get_the_ID(), 'custom_audio', true );
+	$custom_a_title = get_post_meta( get_the_ID(), 'custom_audio_title', true );
 	?>
 	<div class="entry-buttons__wrapper">
 		<h3 class="title h3">
@@ -350,85 +350,85 @@ if ( get_field( 'show_audio_links' ) ) :
 			</a>
 	<?php endif; ?>
 	<?php
-	// REMOVE BELOW
-	// REMOVE BELOW
-	// REMOVE BELOW
-	// REMOVE BELOW
+	// REMOVE BELOW.
+	// REMOVE BELOW.
+	// REMOVE BELOW.
+	// REMOVE BELOW.
 	?>
-	<?php if ( $googlePlayA ) : ?>
-			<a href="<?php echo $googlePlayA; ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo $googlePlayA; ?>" target="_blank" rel="noreferrer">
+	<?php if ( $google_play_a ) : ?>
+			<a href="<?php echo esc_html( $google_play_a ); ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo esc_html( $google_play_a ); ?>" target="_blank" rel="noreferrer">
 				<strong>
-		<?php _e( 'Google Play', 'Nacelle' ); ?>
+		<?php esc_html_e( 'Google Play', 'wp-rig' ); ?>
 				</strong>
 				<svg class="icon" width="15" height="15" xmlns="http://www.w3.org/2000/svg">
 					<path d="M10.938 8.75h-.626a.313.313 0 00-.312.313v2.187H3.75V5h2.813c.172 0 .312-.14.312-.313v-.625a.313.313 0 00-.313-.312H3.438a.938.938 0 00-.937.938v6.875c0 .517.42.937.938.937h6.874c.518 0 .938-.42.938-.938v-2.5a.313.313 0 00-.313-.312zM12.03 2.5h-2.5a.47.47 0 00-.332.8L9.897 4l-4.76 4.758a.469.469 0 000 .664l.442.442a.469.469 0 00.665 0l4.758-4.76.697.698a.47.47 0 00.801-.332v-2.5a.469.469 0 00-.469-.469z" fill-rule="nonzero" />
 				</svg>
 			</a>
 	<?php endif; ?>
-	<?php if ( $youTubeA ) : ?>
-			<a href="<?php echo $youTubeA; ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo $youTubeA; ?>" target="_blank" rel="noreferrer">
+	<?php if ( $you_tube_a ) : ?>
+			<a href="<?php echo esc_html( $you_tube_a ); ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo esc_html( $you_tube_a ); ?>" target="_blank" rel="noreferrer">
 				<strong>
-		<?php _e( 'YouTube Music', 'Nacelle' ); ?>
+		<?php esc_html_e( 'YouTube Music', 'wp-rig' ); ?>
 				</strong>
 				<svg class="icon" width="15" height="15" xmlns="http://www.w3.org/2000/svg">
 					<path d="M10.938 8.75h-.626a.313.313 0 00-.312.313v2.187H3.75V5h2.813c.172 0 .312-.14.312-.313v-.625a.313.313 0 00-.313-.312H3.438a.938.938 0 00-.937.938v6.875c0 .517.42.937.938.937h6.874c.518 0 .938-.42.938-.938v-2.5a.313.313 0 00-.313-.312zM12.03 2.5h-2.5a.47.47 0 00-.332.8L9.897 4l-4.76 4.758a.469.469 0 000 .664l.442.442a.469.469 0 00.665 0l4.758-4.76.697.698a.47.47 0 00.801-.332v-2.5a.469.469 0 00-.469-.469z" fill-rule="nonzero" />
 				</svg>
 			</a>
 	<?php endif; ?>
-	<?php if ( $amazonA ) : ?>
-			<a href="<?php echo $amazonA; ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo $amazonA; ?>" target="_blank" rel="noreferrer">
+	<?php if ( $amazon_a ) : ?>
+			<a href="<?php echo esc_html( $amazon_a ); ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo esc_html( $amazon_a ); ?>" target="_blank" rel="noreferrer">
 				<strong>
-		<?php _e( 'Amazon', 'Nacelle' ); ?>
+		<?php esc_html_e( 'Amazon', 'wp-rig' ); ?>
 				</strong>
 				<svg class="icon" width="15" height="15" xmlns="http://www.w3.org/2000/svg">
 					<path d="M10.938 8.75h-.626a.313.313 0 00-.312.313v2.187H3.75V5h2.813c.172 0 .312-.14.312-.313v-.625a.313.313 0 00-.313-.312H3.438a.938.938 0 00-.937.938v6.875c0 .517.42.937.938.937h6.874c.518 0 .938-.42.938-.938v-2.5a.313.313 0 00-.313-.312zM12.03 2.5h-2.5a.47.47 0 00-.332.8L9.897 4l-4.76 4.758a.469.469 0 000 .664l.442.442a.469.469 0 00.665 0l4.758-4.76.697.698a.47.47 0 00.801-.332v-2.5a.469.469 0 00-.469-.469z" fill-rule="nonzero" />
 				</svg>
 			</a>
 	<?php endif; ?>
-	<?php if ( $spotifyA ) : ?>
-			<a href="<?php echo $spotifyA; ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo $spotifyA; ?>" target="_blank" rel="noreferrer">
+	<?php if ( $spotify_a ) : ?>
+			<a href="<?php echo esc_html( $spotify_a ); ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo esc_html( $spotify_a ); ?>" target="_blank" rel="noreferrer">
 				<strong>
-		<?php _e( 'Spotify', 'Nacelle' ); ?>
+		<?php esc_html_e( 'Spotify', 'wp-rig' ); ?>
 				</strong>
 				<svg class="icon" width="15" height="15" xmlns="http://www.w3.org/2000/svg">
 					<path d="M10.938 8.75h-.626a.313.313 0 00-.312.313v2.187H3.75V5h2.813c.172 0 .312-.14.312-.313v-.625a.313.313 0 00-.313-.312H3.438a.938.938 0 00-.937.938v6.875c0 .517.42.937.938.937h6.874c.518 0 .938-.42.938-.938v-2.5a.313.313 0 00-.313-.312zM12.03 2.5h-2.5a.47.47 0 00-.332.8L9.897 4l-4.76 4.758a.469.469 0 000 .664l.442.442a.469.469 0 00.665 0l4.758-4.76.697.698a.47.47 0 00.801-.332v-2.5a.469.469 0 00-.469-.469z" fill-rule="nonzero" />
 				</svg>
 			</a>
 	<?php endif; ?>
-	<?php if ( $pandoraA ) : ?>
-			<a href="<?php echo $pandoraA; ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo $pandoraA; ?>" target="_blank" rel="noreferrer">
+	<?php if ( $pandora_a ) : ?>
+			<a href="<?php echo esc_html( $pandora_a ); ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo esc_html( $pandora_a ); ?>" target="_blank" rel="noreferrer">
 				<strong>
-		<?php _e( 'Pandora', 'Nacelle' ); ?>
+		<?php esc_html_e( 'Pandora', 'wp-rig' ); ?>
 				</strong>
 				<svg class="icon" width="15" height="15" xmlns="http://www.w3.org/2000/svg">
 					<path d="M10.938 8.75h-.626a.313.313 0 00-.312.313v2.187H3.75V5h2.813c.172 0 .312-.14.312-.313v-.625a.313.313 0 00-.313-.312H3.438a.938.938 0 00-.937.938v6.875c0 .517.42.937.938.937h6.874c.518 0 .938-.42.938-.938v-2.5a.313.313 0 00-.313-.312zM12.03 2.5h-2.5a.47.47 0 00-.332.8L9.897 4l-4.76 4.758a.469.469 0 000 .664l.442.442a.469.469 0 00.665 0l4.758-4.76.697.698a.47.47 0 00.801-.332v-2.5a.469.469 0 00-.469-.469z" fill-rule="nonzero" />
 				</svg>
 			</a>
 	<?php endif; ?>
-	<?php if ( $walmartA ) : ?>
-			<a href="<?php echo $walmartA; ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo $walmartA; ?>" target="_blank" rel="noreferrer">
+	<?php if ( $walmart_a ) : ?>
+			<a href="<?php echo esc_html( $walmart_a ); ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo esc_html( $walmart_a ); ?>" target="_blank" rel="noreferrer">
 				<strong>
-		<?php _e( 'Walmart', 'Nacelle' ); ?>
+		<?php esc_html_e( 'Walmart', 'wp-rig' ); ?>
 				</strong>
 				<svg class="icon" width="15" height="15" xmlns="http://www.w3.org/2000/svg">
 					<path d="M10.938 8.75h-.626a.313.313 0 00-.312.313v2.187H3.75V5h2.813c.172 0 .312-.14.312-.313v-.625a.313.313 0 00-.313-.312H3.438a.938.938 0 00-.937.938v6.875c0 .517.42.937.938.937h6.874c.518 0 .938-.42.938-.938v-2.5a.313.313 0 00-.313-.312zM12.03 2.5h-2.5a.47.47 0 00-.332.8L9.897 4l-4.76 4.758a.469.469 0 000 .664l.442.442a.469.469 0 00.665 0l4.758-4.76.697.698a.47.47 0 00.801-.332v-2.5a.469.469 0 00-.469-.469z" fill-rule="nonzero" />
 				</svg>
 			</a>
 	<?php endif; ?>
-	<?php if ( $targetA ) : ?>
-			<a href="<?php echo $targetA; ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo $targetA; ?>" target="_blank" rel="noreferrer">
+	<?php if ( $target_a ) : ?>
+			<a href="<?php echo esc_html( $target_a ); ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo esc_html( $target_a ); ?>" target="_blank" rel="noreferrer">
 				<strong>
-		<?php _e( 'Target', 'Nacelle' ); ?>
+		<?php esc_html_e( 'Target', 'wp-rig' ); ?>
 				</strong>
 				<svg class="icon" width="15" height="15" xmlns="http://www.w3.org/2000/svg">
 					<path d="M10.938 8.75h-.626a.313.313 0 00-.312.313v2.187H3.75V5h2.813c.172 0 .312-.14.312-.313v-.625a.313.313 0 00-.313-.312H3.438a.938.938 0 00-.937.938v6.875c0 .517.42.937.938.937h6.874c.518 0 .938-.42.938-.938v-2.5a.313.313 0 00-.313-.312zM12.03 2.5h-2.5a.47.47 0 00-.332.8L9.897 4l-4.76 4.758a.469.469 0 000 .664l.442.442a.469.469 0 00.665 0l4.758-4.76.697.698a.47.47 0 00.801-.332v-2.5a.469.469 0 00-.469-.469z" fill-rule="nonzero" />
 				</svg>
 			</a>
 	<?php endif; ?>
-	<?php if ( $fandangoA ) : ?>
-			<a href="<?php echo $fandangoA; ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo $fandangoA; ?>" target="_blank" rel="noreferrer">
+	<?php if ( $fandango_a ) : ?>
+			<a href="<?php echo esc_html( $fandango_a ); ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo esc_html( $fandango_a ); ?>" target="_blank" rel="noreferrer">
 				<strong>
-		<?php _e( 'Fandango', 'Nacelle' ); ?>
+		<?php esc_html_e( 'Fandango', 'wp-rig' ); ?>
 				</strong>
 				<svg class="icon" width="15" height="15" xmlns="http://www.w3.org/2000/svg">
 					<path d="M10.938 8.75h-.626a.313.313 0 00-.312.313v2.187H3.75V5h2.813c.172 0 .312-.14.312-.313v-.625a.313.313 0 00-.313-.312H3.438a.938.938 0 00-.937.938v6.875c0 .517.42.937.938.937h6.874c.518 0 .938-.42.938-.938v-2.5a.313.313 0 00-.313-.312zM12.03 2.5h-2.5a.47.47 0 00-.332.8L9.897 4l-4.76 4.758a.469.469 0 000 .664l.442.442a.469.469 0 00.665 0l4.758-4.76.697.698a.47.47 0 00.801-.332v-2.5a.469.469 0 00-.469-.469z" fill-rule="nonzero" />
@@ -436,11 +436,11 @@ if ( get_field( 'show_audio_links' ) ) :
 			</a>
 	<?php endif; ?>
 	<?php
-	// REMOVE ABOVE
-	// REMOVE ABOVE
-	// REMOVE ABOVE
-	// REMOVE ABOVE
-	// REMOVE ABOVE
+	// REMOVE ABOVE.
+	// REMOVE ABOVE.
+	// REMOVE ABOVE.
+	// REMOVE ABOVE.
+	// REMOVE ABOVE.
 	?>
 	<?php if ( have_rows( 'audio_new_large_link' ) ) : ?>
 		<?php

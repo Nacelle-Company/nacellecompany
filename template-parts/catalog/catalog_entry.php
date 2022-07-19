@@ -43,7 +43,7 @@ endif;
 			<div class="entry-header__breadcrumbs">
 				<?php
 				// ? breadcrumbs
-				if ( function_exists( 'rank_math_the_breadcrumbs' ) || get_field( 'theatres_popup' ) ) {
+				if ( function_exists( 'rank_math_the_breadcrumbs' ) || get_post_meta( get_the_ID(), 'theatres_popup', false ) ) {
 					if ( function_exists( 'rank_math_the_breadcrumbs' ) ) {
 						rank_math_the_breadcrumbs();}
 				}
