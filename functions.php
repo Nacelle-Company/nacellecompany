@@ -115,7 +115,10 @@ function printVar( $post ) {
 
 /**
  * Allow wp_query.
- **/
+ *
+ * @param [type] $type Post type.
+ * @return boolean
+ */
 function is_post_type( $type ) {
 	global $wp_query;
 	if ( get_post_type( $wp_query->post->ID ) === $type ) {
@@ -145,7 +148,7 @@ function wp_rig_nacelle_duplicate_post_as_draft() {
 
 	$post = get_post( $post_id );
 
-	$current_user = wp_get_current_user();
+	$current_user    = wp_get_current_user();
 	$new_post_author = $current_user->ID;
 
 	if ( isset( $post ) && $post != null ) {
@@ -191,7 +194,7 @@ function wp_rig_nacelle_duplicate_post_as_draft() {
 				if ( $meta_key == '_wp_old_slug' ) {
 					continue;
 				}
-				$meta_value = addslashes( $meta_info->meta_value );
+				$meta_value      = addslashes( $meta_info->meta_value );
 				$sql_query_sel[] = "SELECT $new_post_id, '$meta_key', '$meta_value'";
 			}
 			$sql_query .= implode( ' UNION ALL ', $sql_query_sel );
@@ -233,3 +236,32 @@ function wp_rig_nacelle_change_sort_order( $query ) {
 		$query->set( 'orderby', 'title' );
 		endif;
 };
+
+/**
+ * Move plugin scripts
+ *
+ * @param [type] $name Script identifier.
+ * @return void
+ * @link https://techoverflow.net/2019/12/26/wordpress-how-to-move-script-to-footer-if-plugin-doesnt-support-it/
+ */
+function postpone_script( $name ) {
+	global $wp_scripts;
+
+	$thesrc     = $wp_scripts->registered[ $name ]->src;
+	$theversion = $wp_scripts->registered[ $name ]->ver;
+
+	wp_dequeue_script( $name );
+	wp_deregister_script( $name );
+
+	wp_enqueue_script( $name, $thesrc, false, $theversion, true );
+}
+
+/**
+ * Move scripts to the bottom
+ */
+function postpone_plugin_scripts() {
+	postpone_script( 'YTPlayer' );
+	postpone_script( 'wp-rig-lite-youtube' );
+}
+add_action( 'wp_print_scripts', 'postpone_plugin_scripts' );
+

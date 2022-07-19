@@ -64,24 +64,24 @@ class Component implements Component_Interface {
 	 * Outputs extra styles for the custom header, if necessary.
 	 */
 	public function wp_head_callback() {
-		$header_text_color     = get_header_textcolor();
-		$nav_bk_color = get_theme_mod( 'nav_bk_color' );
-		$global_font_color = get_theme_mod( 'global_font_color' );
+		$header_text_color         = get_header_textcolor();
+		$nav_bk_color              = get_theme_mod( 'nav_bk_color' );
+		$global_font_color         = get_theme_mod( 'global_font_color' );
 		$global_font_color_inverse = get_theme_mod( 'global_font_color_inverse' );
 		$global_color_dark_overlay = get_theme_mod( 'global_color_dark_overlay' );
-		$global_color_dark = get_theme_mod( 'global_color_dark' );
-		$global_color_grey = get_theme_mod( 'global_color_grey' );
-		$global_color_grey_light = get_theme_mod( 'global_color_grey_light' );
-		$global_color_grey_dark = get_theme_mod( 'global_color_grey_dark' );
-		$border_color_dark = get_theme_mod( 'border_color_dark' );
-		$border_color_light = get_theme_mod( 'border_color_light' );
-		$color_link = get_theme_mod( 'color_link' );
-		$color_link_visited = get_theme_mod( 'color_link_visited' );
-		$color_link_active = get_theme_mod( 'color_link_active' );
-		$color_quote_border = get_theme_mod( 'color_quote_border' );
-		$color_quote_citation = get_theme_mod( 'color_quote_citation' );
-		$color_theme_primary   = get_theme_mod( 'color_theme_primary' );
-		$color_theme_secondary = get_theme_mod( 'color_theme_secondary' );
+		$global_color_dark         = get_theme_mod( 'global_color_dark' );
+		$global_color_grey         = get_theme_mod( 'global_color_grey' );
+		$global_color_grey_light   = get_theme_mod( 'global_color_grey_light' );
+		$global_color_grey_dark    = get_theme_mod( 'global_color_grey_dark' );
+		$border_color_dark         = get_theme_mod( 'border_color_dark' );
+		$border_color_light        = get_theme_mod( 'border_color_light' );
+		$color_link                = get_theme_mod( 'color_link' );
+		$color_link_visited        = get_theme_mod( 'color_link_visited' );
+		$color_link_active         = get_theme_mod( 'color_link_active' );
+		$color_quote_border        = get_theme_mod( 'color_quote_border' );
+		$color_quote_citation      = get_theme_mod( 'color_quote_citation' );
+		$color_theme_primary       = get_theme_mod( 'color_theme_primary' );
+		$color_theme_secondary     = get_theme_mod( 'color_theme_secondary' );
 
 		if ( get_theme_support( 'custom-header', 'default-text-color' ) === $header_text_color ) {
 			return;

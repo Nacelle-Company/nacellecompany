@@ -5,28 +5,10 @@
         }
     ],
     "settings": {
-        "phpcs.enable": true,
-        "phpcs.composerJsonPath": "./wp-content/themes/wprig-nacelle-dev/composer.json",
-        "phpcs.standard": "config/rulesetsPHPCS.xml",
-        "phpcs.executablePath": "/Users/lukey/.composer/vendor/bin/phpcs",
-        "phpcbf.enable": true,
-        "phpcbf.onsave": true,
-        "phpcbf.executablePath": "/Users/lukey/.composer/vendor/bin/phpcbf",
-        "phpcbf.standard": "WordPress",
-        "phpsab.standard": "WordPress",
-        "editor.renderWhitespace": "all",
         "editor.hover.enabled": true,
-        "php.suggest.basic": false,
         "phpcbf.documentFormattingProvider": true,
-        "html.format.templating": true,
-        "editor.guides.highlightActiveIndentation": true,
-        "editor.guides.indentation": true,
-        "editor.detectIndentation": true,
-        "editor.insertSpaces": false,
-        "remove-tabs-on-save.ignoreMakefiles": false,
-		"prettier.useTabs": true,
-        "php.validate.enable": false,
-        "prettier.bracketSpacing": false,
-        "prettier.tabWidth": 4
+        "phpcbf.debug": true,
+        "phpcbf.onsave": true,
+        "phpcbf.standard": "WordPress",
     }
 }

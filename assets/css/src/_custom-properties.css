@@ -36,25 +36,8 @@
 
 	/* Colors */
 
-	/* --global-font-color: #fff;
-	--global-font-color-inverse: #202020; */
-
-	/* --global-color-dark-overlay: rgb(32 32 32 / 85%);
-	--global-color-dark: #121212;
-	--global-color-grey: #484848;
-	--global-color-grey-light: #7d7d7d;
-	--global-color-grey-dark: #1b1b1b;
-	--border-color-dark: #333;
-	--border-color-light: #ffbc00;
-	--color-link: #7fd2e6;
-	--color-link-visited: #fff;
-	--color-link-active: #ffbc00;
-	--color-quote-border: #000;
-	--color-quote-citation: #6c7781; */
-
 	/* Custom editor colors */
 
-	/* --color-theme-secondary: #7fd2e6; */
 	--color-theme-red: #c0392b;
 	--color-theme-green: #27ae60;
 	--color-theme-blue: #2980b9;

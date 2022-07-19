@@ -279,70 +279,60 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		}
 
 		$css_files = array(
-			'wp-rig-global'     => array(
+			'wp-rig-global'           => array(
 				'file'   => 'global.min.css',
 				'global' => true,
 			),
-			'wp-rig-critical-global'     => array(
-				'file'   => 'critical-global.min.css',
-				'global' => true,
-			),
-			'wp-rig-comments'   => array(
+			'wp-rig-comments'         => array(
 				'file'             => 'comments.min.css',
 				'preload_callback' => function() {
 					return ! post_password_required() && is_singular() && ( comments_open() || get_comments_number() );
 				},
 			),
-			'wp-rig-content'    => array(
+			'wp-rig-content'          => array(
 				'file'             => 'content.min.css',
 				'preload_callback' => function() {
 					global $template;
 					return 'single-catalog.php' !== basename( $template );
 				},
 			),
-			'wp-rig-sidebar'    => array(
+			'wp-rig-sidebar'          => array(
 				'file'             => 'sidebar.min.css',
-				// 'preload_callback' => function() {
-				// return wp_rig()->is_primary_sidebar_active();
-				// },
+				'preload_callback' => function() {
+					return wp_rig()->is_primary_sidebar_active();
+				},
 			),
-			// 'wp-rig-widgets'    => array(
-			// 	'file'             => 'widgets.min.css',
-			// 	'preload_callback' => function() {
-			// 		return wp_rig()->is_primary_sidebar_active();
-			// 	},
-			// ),
-			'wp-rig-footer-widgets' => array(
+			'wp-rig-footer-widgets'   => array(
 				'file'             => 'footer-widgets.min.css',
 				'preload_callback' => function () {
 					return wp_rig()->is_footer_widgets_active();
 				},
 			),
 			'wp-rig-content_posts'    => array(
-				'file'             => 'content_posts.min.css',
+				'file' => 'content_posts.min.css',
 			),
-			'wp-rig-category'    => array(
+			'wp-rig-category'         => array(
 				'file'             => 'category.min.css',
 				'preload_callback' => function() {
 					global $template;
 					return 'category.php' === basename( $template );
 				},
 			),
-			'wp-rig-wonder'    => array(
+			'wp-rig-wonder'           => array(
 				'file'             => 'wonder.min.css',
 				'preload_callback' => function() {
 					global $template;
 					return 'page-wonder.php' === basename( $template );
 				},
 			),
-			'wp-rig-wonder_txt-quote'    => array(
+			'wp-rig-wonder_txt-quote' => array(
 				'file'             => 'wonder_txt-quote.min.css',
 				'preload_callback' => function() {
 					global $template;
 					return 'page-wonder.php' === basename( $template );
 				},
 			),
-			'wp-rig-wonder_txt-img'    => array(
+			'wp-rig-wonder_txt-img'   => array(
 				'file'             => 'wonder_txt-img.min.css',
 				'preload_callback' => function() {
 					global $template;
@@ -356,7 +346,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					return 'page-wonder.php' === basename( $template );
 				},
 			),
-			'wp-rig-card-catalog'    => array(
+			'wp-rig-card-catalog'     => array(
 				'file'             => 'card-catalog.min.css',
 				'preload_callback' => function() {
 					global $template;
@@ -370,69 +360,69 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					return array( 'page-products.php' ) === basename( $template );
 				},
 			),
-			'wp-rig-offcanvas'    => array(
+			'wp-rig-offcanvas'        => array(
 				'file'             => 'offcanvas.min.css',
 				'preload_callback' => function() {
 					global $template;
 					return array( 'archive-catalog.php', 'category.php', 'taxonomy.php' ) === basename( $template );
 				},
 			),
-			'wp-rig-single-catalog'    => array(
+			'wp-rig-single-catalog'   => array(
 				'file'             => 'single-catalog.min.css',
 				'preload_callback' => function() {
 					global $template;
 					return 'single-catalog.php' === basename( $template );
 				},
 			),
-			'wp-rig-page-team'    => array(
+			'wp-rig-page-team'        => array(
 				'file'             => 'page-team.min.css',
 				'preload_callback' => function() {
 					global $template;
 					return 'page-team.php' === basename( $template );
 				},
 			),
-			'wp-rig-hero-video'    => array(
-				'file'             => 'hero-video.min.css',
+			'wp-rig-hero-video'       => array(
+				'file' => 'hero-video.min.css',
 			),
-			'wp-rig-front-page'    => array(
+			'wp-rig-front-page'       => array(
 				'file'             => 'front-page.min.css',
 				'preload_callback' => function() {
 					global $template;
 					return 'front-page.php' === basename( $template );
 				},
 			),
-			'wp-rig-post-grid'    => array(
+			'wp-rig-post-grid'        => array(
 				'file'             => 'post-grid.min.css',
 				'preload_callback' => function() {
 					global $template;
 					return 'front-page.php' === basename( $template );
 				},
 			),
-			'wp-rig-related_content'    => array(
+			'wp-rig-related_content'  => array(
 				'file'             => 'related_content.min.css',
 				'preload_callback' => function() {
 					global $template;
 					return 'related_content.php' === basename( $template );
 				},
 			),
-			'wp-rig-catalog_buttons'    => array(
+			'wp-rig-catalog_buttons'  => array(
 				'file'             => 'catalog_buttons.min.css',
 				'preload_callback' => function() {
 					global $template;
 					return 'single-catalog.php' === basename( $template );
 				},
 			),
-			'wp-rig-social-share'    => array(
-				'file'              => 'social-share.min.css',
+			'wp-rig-social-share'     => array(
+				'file' => 'social-share.min.css',
 			),
 			'wp-rig-related_posts'    => array(
-				'file'           => 'related_posts.min.css',
+				'file' => 'related_posts.min.css',
 			),
-			'wp-rig-pagination'    => array(
-				'file'           => 'pagination.min.css',
+			'wp-rig-pagination'       => array(
+				'file' => 'pagination.min.css',
 			),
 			'wp-rig-extra_content'    => array(
-				'file'           => 'extra_content.min.css',
+				'file' => 'extra_content.min.css',
 			),
 		);
 
