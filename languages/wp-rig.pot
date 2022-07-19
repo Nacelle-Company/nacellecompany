@@ -32,12 +32,16 @@ msgstr[1] ""
 msgid "Comments are closed."
 msgstr ""
 
-#: front-page.php:3
-msgid "Front Page"
+#: header.php:130
+msgid "Skip to content"
 msgstr ""
 
-#: header.php:62
-msgid "Skip to content"
+#: page-products.php:3
+msgid "Products"
+msgstr ""
+
+#: page-team.php:3
+msgid "Team"
 msgstr ""
 
 #: sidebar.php:24
@@ -89,11 +93,15 @@ msgstr ""
 msgid "No theme component with the slug %s exists."
 msgstr ""
 
+#: page-templates/page-home-cd.php:3
+msgid "Home CD"
+msgstr ""
+
 #: page-templates/page-wonder.php:3
 msgid "Wonder"
 msgstr ""
 
-#: page-templates/page-wonder.php:42
+#: page-templates/page-wonder.php:90
 msgid "(Edit)"
 msgstr ""
 
@@ -197,7 +205,7 @@ msgstr ""
 #. translators: %s: Name of current post. Only visible to screen readers
 #. translators: %s: Name of current post. Only visible to screen readers
 #. translators: %s: Name of current post. Only visible to screen readers
-#: inc/Excerpts/Component.php:44, template-parts/content/entry_content-news.php:35, template-parts/content/entry_content-press_release.php:48, template-parts/content/entry_content.php:34
+#: inc/Excerpts/Component.php:44, template-parts/content/entry_content-news.php:35, template-parts/content/entry_content-press.php:48, template-parts/content/entry_content-press_release.php:48, template-parts/content/entry_content.php:37
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
@@ -285,7 +293,7 @@ msgstr ""
 msgid "Read more"
 msgstr ""
 
-#: template-parts/content/entry_content.php:47
+#: template-parts/content/entry_content.php:50
 msgid "Pages:"
 msgstr ""
 
@@ -373,17 +381,17 @@ msgstr ""
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
 
-#: template-parts/content/page_header.php:20
+#: template-parts/content/page_header.php:25
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
-#: template-parts/content/page_header.php:28
+#: template-parts/content/page_header.php:33
 msgid "Nothing Found"
 msgstr ""
 
 #. translators: %s: search query
 #. translators: %s: search query
-#: template-parts/content/page_header.php:93, template-parts/content/page_header.php:161
+#: template-parts/content/page_header.php:98, template-parts/content/page_header.php:166
 msgid "Search Results for: %s"
 msgstr ""
 
@@ -427,34 +435,38 @@ msgstr ""
 msgid "Sort & Filter"
 msgstr ""
 
-#: template-parts/catalog/parts/catalog_accordion.php:27
-msgid "Runtime"
-msgstr ""
-
-#: template-parts/catalog/parts/catalog_accordion.php:33
-msgid "Premiere"
-msgstr ""
-
-#: template-parts/catalog/parts/catalog_accordion.php:40
-msgid "Rating"
-msgstr ""
-
-#: template-parts/catalog/parts/catalog_accordion.php:45
-msgid "Copyright"
-msgstr ""
-
-#: template-parts/catalog/parts/catalog_buttons.php:44
+#: template-parts/catalog/parts/catalog_buttons.php:46
 msgid "Watch Now"
 msgstr ""
 
-#: template-parts/catalog/parts/catalog_buttons.php:49
+#: template-parts/catalog/parts/catalog_buttons.php:51
 msgid "Apple TV"
 msgstr ""
 
-#: template-parts/catalog/parts/catalog_buttons.php:337
+#: template-parts/catalog/parts/catalog_buttons.php:340
 msgid "Listen Now"
 msgstr ""
 
-#: template-parts/catalog/parts/catalog_crew.php:19
+#: template-parts/catalog/parts/catalog_buttons.php:345
+msgid "iTunes"
+msgstr ""
+
+#: template-parts/catalog/parts/catalog_crew.php:17
 msgid "View on IMDB"
+msgstr ""
+
+#: template-parts/catalog/parts/catalog_stats.php:21
+msgid "Runtime"
+msgstr ""
+
+#: template-parts/catalog/parts/catalog_stats.php:27
+msgid "Premiere"
+msgstr ""
+
+#: template-parts/catalog/parts/catalog_stats.php:34
+msgid "Rating"
+msgstr ""
+
+#: template-parts/catalog/parts/catalog_stats.php:39
+msgid "Copyright"
 msgstr ""
