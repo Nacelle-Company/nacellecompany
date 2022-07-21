@@ -62,14 +62,13 @@ class Component implements Component_Interface, Templating_Component_Interface {
     public function action_enqueue_lite_youtube_script() {
 
         // Enqueue the lite_youtube script.
-        wp_enqueue_script(
-            'wp-rig-lite-youtube',
-            get_theme_file_uri( '/assets/js/lite-youtube.min.js' ),
-            array(),
-            wp_rig()->get_asset_version( get_theme_file_path( '/assets/js/lite-youtube.min.js' ) ),
-            false
-        );
-
+		wp_enqueue_script(
+			'wp-rig-lite-youtube',
+			get_theme_file_uri( '/assets/js/lite-youtube.min.js' ),
+			array(),
+			wp_rig()->get_asset_version( get_theme_file_path( '/assets/js/lite-youtube.min.js' ) ),
+			true
+		);
     }
 
     /**
@@ -77,7 +76,5 @@ class Component implements Component_Interface, Templating_Component_Interface {
      *
      * @param mixed $slides Display lite_youtube slider.
      */
-    public function display_lite_youtube( $slides ) {
-
-    } // END display_lite_youtube().
+    public function display_lite_youtube() {}
 }

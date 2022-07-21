@@ -6,4 +6,3 @@
 /**
  * External dependencies
  */
-

@@ -402,6 +402,9 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			'wp-rig-hero-video'       => array(
 				'file' => 'hero-video.min.css',
 			),
+			'wp-rig-lite-youtube'       => array(
+				'file' => 'lite-youtube.min.css',
+			),
 			'wp-rig-front-page'       => array(
 				'file'             => 'front-page.min.css',
 				'preload_callback' => function() {

@@ -9,10 +9,6 @@ namespace WP_Rig\WP_Rig;
 
 wp_rig()->print_styles( 'wp-rig-card-catalog' );
 
-// function postpone_plugin_scripts() {
-	postpone_script( 'YTPlayer' );
-// }
-// add_action( 'wp_print_scripts', 'postpone_plugin_scripts' );
 ?>
 <article id="post-<?php the_ID(); ?>">
 <?php

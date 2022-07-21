@@ -237,35 +237,6 @@ function wp_rig_nacelle_change_sort_order( $query ) {
 		endif;
 };
 
-/**
- * Move plugin scripts
- *
- * @param [type] $name Script identifier.
- * @return void
- * @link https://techoverflow.net/2019/12/26/wordpress-how-to-move-script-to-footer-if-plugin-doesnt-support-it/
- */
-function postpone_script( $name ) {
-	global $wp_scripts;
-
-	$thesrc     = $wp_scripts->registered[ $name ]->src;
-	$theversion = $wp_scripts->registered[ $name ]->ver;
-
-	wp_dequeue_script( $name );
-	wp_deregister_script( $name );
-
-	wp_enqueue_script( $name, $thesrc, false, $theversion, true );
-}
-
-/**
- * Move scripts to the bottom
- */
-function postpone_plugin_scripts() {
-	postpone_script( 'YTPlayer' );
-	postpone_script( 'wp-rig-lite-youtube' );
-}
-add_action( 'wp_print_scripts', 'postpone_plugin_scripts' );
-
-
 add_filter( 'get_custom_logo', 'add_logo_att' );
 function add_logo_att( $html ) {
 	$html = str_replace( 'class="custom-logo"', 'class="custom-logo" fetchpriority="high"', $html );

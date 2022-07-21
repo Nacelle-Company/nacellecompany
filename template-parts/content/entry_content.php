@@ -26,6 +26,8 @@ $content_width = get_post_meta( get_the_ID(), 'content_width', true );
 	} elseif ( is_singular( 'catalog' ) ) {
 		echo wp_kses( $synopsis, 'post' );
 	} else {
+		wp_rig()->print_styles( 'wp-rig-lite-youtube' );
+		wp_rig()->print_scripts( 'wp-rig-lite-youtube' );
 		the_content(
 			sprintf(
 				wp_kses(

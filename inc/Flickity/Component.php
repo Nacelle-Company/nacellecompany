@@ -66,9 +66,9 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			return;
 		}
 
-		// Enqueue the navigation script.
+		// Enqueue the flickity script.
 		if ( is_front_page() ) {
-			// ? flickity main file
+			// Flickity main file.
 			wp_enqueue_script(
 				'wp-rig-flickity',
 				get_theme_file_uri( '/assets/js/flickity.min.js' ),
