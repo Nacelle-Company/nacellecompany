@@ -28,7 +28,6 @@ $hero_video_settings = "
 	playOnlyIfVisible:true,
 	stopMovieOnBlur:true
 ";
-// '$blog_url/wp-content/themes/wprig-nacelle-dev/assets/images/src/ytplayer-mask.png'
 if ( ! empty( $hero_video ) ) :
 	?>
 	<div class="entry-header__video-cover">

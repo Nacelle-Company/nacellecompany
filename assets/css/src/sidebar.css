@@ -12,7 +12,7 @@
 	background-color: var(--global-color-dark);
 
 	@media (--sidebar-query) {
-		max-width: var(--content-width);
+		max-width: 50rem;
 		min-width: none;
 		grid-column: 3;
 		min-width: 100%;

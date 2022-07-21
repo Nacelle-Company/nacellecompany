@@ -113,11 +113,9 @@ namespace WP_Rig\WP_Rig;
 	 * TODO: remove the "<div class="wp-body-open">" container
 	 */
 	wp_body_open();
-
+$has_video_class = '';
 	if ( get_post_meta( get_the_ID(), 'video_embedd', true ) ) {
-		$has_video_class = ' has-post-video';
-	} else {
-		$has_video_class = ' no-post-video';
+		$has_video_class = ' site-header__hero-video';
 	}
 	if ( is_single() && 'catalog' === get_post_type_object( get_post_type() )->has_archive ) {
 		$front_page_class = ' catalog-header';
@@ -129,7 +127,7 @@ namespace WP_Rig\WP_Rig;
 
 	?>
 </div>
-<div id="page" class="site grid">
+<div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'wp-rig' ); ?></a>
 	<header id="masthead" class="site-header<?php echo esc_attr( $front_page_class ); ?><?php echo esc_attr( $has_video_class ); ?>">
 		<?php
@@ -141,3 +139,4 @@ namespace WP_Rig\WP_Rig;
 		<?php get_template_part( 'template-parts/header/navigation_primary' ); ?>
 		<?php get_template_part( 'template-parts/header/navigation_mobile' ); ?>
 	</header>
+	<div id="offcanvasOverlay" class="offcanvas overlay" href="javascript:void(0)" onclick="closeNav()"></div>

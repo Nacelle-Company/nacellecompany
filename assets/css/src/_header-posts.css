@@ -1,12 +1,6 @@
 /*--------------------------------------------------------------
-# Headers (page, archive and search titles)
+# Headers for posts and archives
 --------------------------------------------------------------*/
-@import "_custom-properties.css";
-
-/*--------------------------------------------------------------
-# Header
---------------------------------------------------------------*/
-
 
 .page-header {
 	margin-top: 0;
@@ -14,11 +8,6 @@
 	padding: 0 1em;
 
 	@media (--content-query) {
-		padding: 0.5em 2em;
-		grid-column: 1/-1;
-	}
-
-	@media (--sidebar-query) {
 		padding: 0.5em 2em;
 		grid-column: 1/-1;
 	}
@@ -45,10 +34,6 @@
 			grid-column: 2;
 		}
 	}
-}
-
-.page .page-header {
-	text-align: center;
 }
 
 .page-header__filters {
@@ -100,6 +85,7 @@
 	}
 }
 
+/*
 .header-image {
 	margin: 0 auto;
 }
@@ -107,4 +93,4 @@
 .header-image img {
 	display: block;
 	margin: 0 auto;
-}
+} */

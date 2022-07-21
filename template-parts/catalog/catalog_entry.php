@@ -10,9 +10,9 @@ namespace WP_Rig\WP_Rig;
 
 $video_embedd = get_post_meta( get_the_ID(), 'video_embedd', true );
 if ( ! empty( $video_embedd ) ) :
-	$post_class = 'entry video';
+	$post_class = 'entry catalog type-catalog video';
 else :
-	$post_class = 'entry';
+	$post_class = 'entry catalog type-catalog';
 endif;
 $itunes_video     = get_post_meta( get_the_ID(), 'itunes_video', true );
 $itunes_audio_url = get_post_meta( get_the_ID(), 'itunes_audio_url', true );
@@ -25,7 +25,7 @@ else :
 endif;
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( $post_class ); ?>>
+<article id="post-<?php the_ID(); ?>" class="<?php echo esc_html( $post_class ); ?>">
 		<?php if ( ! empty( $video_embedd ) ) : ?>
 			<?php get_template_part( 'template-parts/catalog/parts/catalog_header', get_post_type() ); ?>
 			<div class="catalog-wrap">
@@ -95,7 +95,7 @@ endif;
 	<?php
 	$ids = get_field( 'related_catalog_items', $post->ID, false );
 	// Pagination.
-	wp_rig()->print_styles( 'wp-rig-pagination' );
+	wp_rig()->print_styles( 'wp-rig-pagination-post' );
 	wp_rig()->display_pagination();
 	// Related posts.
 	if ( $ids ) {

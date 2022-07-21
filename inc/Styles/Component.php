@@ -289,11 +289,19 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					return ! post_password_required() && is_singular() && ( comments_open() || get_comments_number() );
 				},
 			),
-			'wp-rig-content'          => array(
-				'file'             => 'content.min.css',
+
+			'wp-rig-archive'          => array(
+				'file'             => 'archive.min.css',
 				'preload_callback' => function() {
 					global $template;
-					return 'single-catalog.php' !== basename( $template );
+					return 'archive.php' === basename( $template );
+				},
+			),
+			'wp-rig-page'          => array(
+				'file'             => 'page.min.css',
+				'preload_callback' => function() {
+					global $template;
+					return 'page.php' === basename( $template );
 				},
 			),
 			'wp-rig-sidebar'          => array(
@@ -360,6 +368,13 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					return array( 'page-products.php' ) === basename( $template );
 				},
 			),
+			'wp-rig-search'    => array(
+				'file'             => 'search.min.css',
+				'preload_callback' => function() {
+					global $template;
+					return array( 'search.php' ) === basename( $template );
+				},
+			),
 			'wp-rig-offcanvas'        => array(
 				'file'             => 'offcanvas.min.css',
 				'preload_callback' => function() {
@@ -391,13 +406,6 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					return 'front-page.php' === basename( $template );
 				},
 			),
-			'wp-rig-post-grid'        => array(
-				'file'             => 'post-grid.min.css',
-				'preload_callback' => function() {
-					global $template;
-					return 'front-page.php' === basename( $template );
-				},
-			),
 			'wp-rig-related_content'  => array(
 				'file'             => 'related_content.min.css',
 				'preload_callback' => function() {
@@ -418,11 +426,26 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			'wp-rig-related_posts'    => array(
 				'file' => 'related_posts.min.css',
 			),
-			'wp-rig-pagination'       => array(
-				'file' => 'pagination.min.css',
+			'wp-rig-pagination-archive' => array(
+				'file'             => 'pagination-archive.min.css',
+				'preload_callback' => function() {
+					global $template;
+					return array( 'archive-catalog.php', 'category.php', 'taxonomy.php' ) === basename( $template );
+				},
+			),
+			'wp-rig-pagination-post' => array(
+				'file'             => 'pagination-post.min.css',
+				'preload_callback' => function() {
+					global $template;
+					return array( 'single-catalog.php', 'single.php' ) === basename( $template );
+				},
 			),
 			'wp-rig-extra_content'    => array(
-				'file' => 'extra_content.min.css',
+				'file'             => 'extra_content.min.css',
+				'preload_callback' => function() {
+					global $template;
+					return 'category.php' === basename( $template );
+				},
 			),
 		);
 

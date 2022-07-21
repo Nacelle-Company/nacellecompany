@@ -1,5 +1,3 @@
-@import "_custom-properties.css";
-
 /**
  * Icon title
  * Icon on the left title on the right.
@@ -13,19 +11,6 @@
 	}
 }
 
-.menu {
-
-	& svg.icon {
-		fill: var(--color-theme-primary);
-	}
-}
-
-.close-btn {
-	font-size: var(--font-size-larger);
-
-}
-
-.dashicons-arrow-left::before,
-.dashicons-arrow-right::before {
-	color: var(--color-theme-secondary);
+.menu svg.icon {
+	fill: var(--color-theme-secondary);
 }

@@ -32,7 +32,7 @@ msgstr[1] ""
 msgid "Comments are closed."
 msgstr ""
 
-#: header.php:130
+#: header.php:131
 msgid "Skip to content"
 msgstr ""
 
@@ -101,7 +101,7 @@ msgstr ""
 msgid "Wonder"
 msgstr ""
 
-#: page-templates/page-wonder.php:90
+#: page-templates/page-wonder.php:98
 msgid "(Edit)"
 msgstr ""
 
@@ -205,7 +205,7 @@ msgstr ""
 #. translators: %s: Name of current post. Only visible to screen readers
 #. translators: %s: Name of current post. Only visible to screen readers
 #. translators: %s: Name of current post. Only visible to screen readers
-#: inc/Excerpts/Component.php:44, template-parts/content/entry_content-news.php:35, template-parts/content/entry_content-press.php:48, template-parts/content/entry_content-press_release.php:48, template-parts/content/entry_content.php:37
+#: inc/Excerpts/Component.php:44, template-parts/content/entry_content-news.php:35, template-parts/content/entry_content-press.php:48, template-parts/content/entry_content-press_release.php:48, template-parts/content/entry_content.php:32
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
@@ -293,7 +293,7 @@ msgstr ""
 msgid "Read more"
 msgstr ""
 
-#: template-parts/content/entry_content.php:50
+#: template-parts/content/entry_content.php:45
 msgid "Pages:"
 msgstr ""
 
@@ -391,7 +391,7 @@ msgstr ""
 
 #. translators: %s: search query
 #. translators: %s: search query
-#: template-parts/content/page_header.php:98, template-parts/content/page_header.php:166
+#: template-parts/content/page_header.php:101, template-parts/content/page_header.php:169
 msgid "Search Results for: %s"
 msgstr ""
 
@@ -431,7 +431,7 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: template-parts/modules/offcanvas-menu.php:20
+#: template-parts/modules/offcanvas-menu.php:18
 msgid "Sort & Filter"
 msgstr ""
 
@@ -443,12 +443,104 @@ msgstr ""
 msgid "Apple TV"
 msgstr ""
 
+#: template-parts/catalog/parts/catalog_buttons.php:68
+msgid "YouTube"
+msgstr ""
+
+#: template-parts/catalog/parts/catalog_buttons.php:81, template-parts/catalog/parts/catalog_buttons.php:361
+msgid "Google Play"
+msgstr ""
+
+#: template-parts/catalog/parts/catalog_buttons.php:93, template-parts/catalog/parts/catalog_buttons.php:381
+msgid "Amazon"
+msgstr ""
+
+#: template-parts/catalog/parts/catalog_buttons.php:105
+msgid "Steam"
+msgstr ""
+
+#: template-parts/catalog/parts/catalog_buttons.php:117
+msgid "Microsoft"
+msgstr ""
+
+#: template-parts/catalog/parts/catalog_buttons.php:129
+msgid "Vudu"
+msgstr ""
+
+#: template-parts/catalog/parts/catalog_buttons.php:141
+msgid "Vimeo"
+msgstr ""
+
+#: template-parts/catalog/parts/catalog_buttons.php:153
+msgid "Netflix"
+msgstr ""
+
+#: template-parts/catalog/parts/catalog_buttons.php:165
+msgid "Animal Nation"
+msgstr ""
+
+#: template-parts/catalog/parts/catalog_buttons.php:177
+msgid "Roku"
+msgstr ""
+
+#: template-parts/catalog/parts/catalog_buttons.php:190
+msgid "HULU"
+msgstr ""
+
+#: template-parts/catalog/parts/catalog_buttons.php:202
+msgid "EPIX"
+msgstr ""
+
+#: template-parts/catalog/parts/catalog_buttons.php:214
+msgid "Comcast"
+msgstr ""
+
+#: template-parts/catalog/parts/catalog_buttons.php:223
+msgid "Redbox"
+msgstr ""
+
+#: template-parts/catalog/parts/catalog_buttons.php:236, template-parts/catalog/parts/catalog_buttons.php:411
+msgid "Walmart"
+msgstr ""
+
+#: template-parts/catalog/parts/catalog_buttons.php:248, template-parts/catalog/parts/catalog_buttons.php:421
+msgid "Target"
+msgstr ""
+
+#: template-parts/catalog/parts/catalog_buttons.php:260, template-parts/catalog/parts/catalog_buttons.php:431
+msgid "Fandango"
+msgstr ""
+
+#: template-parts/catalog/parts/catalog_buttons.php:269
+msgid "Hoopla"
+msgstr ""
+
+#: template-parts/catalog/parts/catalog_buttons.php:281
+msgid "MTV2"
+msgstr ""
+
+#: template-parts/catalog/parts/catalog_buttons.php:293
+msgid "Tubi"
+msgstr ""
+
 #: template-parts/catalog/parts/catalog_buttons.php:340
 msgid "Listen Now"
 msgstr ""
 
 #: template-parts/catalog/parts/catalog_buttons.php:345
 msgid "iTunes"
+msgstr ""
+
+#: template-parts/catalog/parts/catalog_buttons.php:371
+msgid "YouTube Music"
+msgstr ""
+
+#: template-parts/catalog/parts/catalog_buttons.php:391
+msgid "Spotify"
+msgstr ""
+
+#: template-parts/catalog/parts/catalog_buttons.php:401
+msgid "Pandora"
 msgstr ""
 
 #: template-parts/catalog/parts/catalog_crew.php:17

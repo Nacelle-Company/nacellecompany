@@ -25,7 +25,7 @@ if ( 'special-production' === $obj_slug || 'series-production' === $obj_slug || 
 	$img    = get_field( 'horizontal_image' );
 	$width  = '320';
 	$height = '182';
-} elseif ( $obj_slug ) {
+} elseif ( $obj_slug || get_search_query() ) {
 	$img    = get_field( 'square_image' );
 	$width  = '320';
 	$height = '320';

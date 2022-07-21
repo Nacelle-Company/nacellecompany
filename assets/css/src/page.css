@@ -1,0 +1,48 @@
+@import "_site-main.css";
+@import "_blocks.css";
+
+/*--------------------------------------------------------------
+# Page main styles
+--------------------------------------------------------------*/
+.page-header {
+	text-align: center;
+	margin-top: 0;
+	border-bottom: 2px solid var(--color-theme-primary);
+	padding: 0 1em;
+
+	@media (--content-query) {
+		padding: 0.5em 2em;
+		grid-column: 1/-1;
+	}
+}
+
+.hidden {
+	position: absolute;
+	text-indent: -99vw;
+	opacity: 0;
+}
+
+.site-main__content-width {
+
+	& .entry-content {
+		margin: 0 auto;
+		padding: 0 1em;
+		max-width: 50rem;
+	}
+}
+
+.site-main__full-width {
+
+	& .entry-content {
+		padding: 0;
+	}
+}
+
+.content-width {
+
+	& .wp-block-group__inner-container {
+		margin: 0 auto;
+		padding: 0 1em;
+		max-width: 50rem;
+	}
+}

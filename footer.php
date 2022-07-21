@@ -14,6 +14,8 @@ namespace WP_Rig\WP_Rig;
 global $queried_id;
 $queried_id = get_queried_object_id();
 $hero_video = get_field( 'video_embedd' );
+wp_rig()->print_styles( 'wp-rig-footer-widgets', 'wp-rig-widgets' );
+
 ?>
 
 <footer id="colophon" class="site-footer">

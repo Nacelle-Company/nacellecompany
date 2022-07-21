@@ -11,7 +11,7 @@ namespace WP_Rig\WP_Rig;
 
 get_header();
 
-wp_rig()->print_styles( 'wp-rig-content' );
+wp_rig()->print_styles( 'wp-rig-archive' );
 
 $current_post_type = get_post_type();
 if ( 'news' === $current_post_type || 'press_release' === $current_post_type || 'press' === $current_post_type ) {
@@ -35,7 +35,7 @@ get_template_part( 'template-parts/content/page_header' );
 		} else {
 			get_template_part( 'template-parts/content/error' );
 		}
-		wp_rig()->print_styles( 'wp-rig-pagination' );
+		wp_rig()->print_styles( 'wp-rig-pagination-archive' );
 		get_template_part( 'template-parts/content/pagination' );
 		?>
 	</main>

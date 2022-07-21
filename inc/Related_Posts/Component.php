@@ -105,15 +105,11 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			global $post;
 			?>
 
-
-
 			<!-- Wrapper and header -->
 			<div class="post-footer__related grid">
 				<header class="title">
 					<h2>RELATED</h2>
 				</header>
-
-
 
 				<!-- Press releases -->
 				<?php

@@ -20,15 +20,33 @@
 /*--------------------------------------------------------------
 # Imports
 --------------------------------------------------------------*/
-@import "_custom-properties.css";
-@import "_reset.css";
-@import "_typography.css";
-@import "_elements.css";
+@import "_custom-fonts.css";
+@import "_icons.css";
+@import "_reset-min.css";
+@import "_typography-min.css";
 @import "_links.css";
 @import "_navigation.css";
-@import "_headers.css";
-@import "_grid.css";
-@import "_icons.css";
+
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+.entry-content {
+	padding: 0 1em;
+}
+
+.button,
+[type="button"] {
+	box-shadow: var(--color-theme-secondary) 0 1px 5px, var(--color-theme-secondary) 0 1px 2px;
+	border-radius: 6px;
+	padding: 10px 1em;
+	background-color: transparent;
+
+	&:hover {
+		box-shadow: var(--color-theme-secondary) 0 0 1px, var(--color-theme-secondary) 0 1px 2px;
+	}
+}
 
 /*--------------------------------------------------------------
 # Accessibility
@@ -73,166 +91,6 @@
 }
 
 /*--------------------------------------------------------------
-# Layouts
---------------------------------------------------------------*/
-.site {
-	margin: 0 auto;
-	max-width: 100%;
-}
-
-.site-main {
-	display: grid;
-
-}
-
-/*--------------------------------------------------------------
-# Forms
---------------------------------------------------------------*/
-/* stylelint-disable */
-textarea {
-	width: 100%;
-}
-/* stylelint-enable */
-
-/* stylelint-disable */
-button:not(.dropdown-toggle),
-.button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-	border: 1px solid;
-	border-color: var(--color-theme-secondary) var(--color-theme-secondary) var(--color-theme-secondary);
-	border-radius: 3px;
-	background: transparent;
-	color: var(--global-font-color);
-	font-size: 0.75rem;
-	line-height: 1;
-	padding: 0.85em 2em;
-	cursor: pointer;
-
-	& .icon {
-		fill: var(--global-font-color);
-	}
-}
-/* stylelint-enable */
-
-button:hover,
-.button:hover,
-input[type="button"]:hover,
-input[type="reset"]:hover,
-input[type="submit"]:hover {
-	background-color: var(--color-theme-secondary);
-	color: var(--global-font-color-inverse);
-	border-color: var(--color-theme-secondary) var(--color-theme-secondary) var(--color-theme-secondary);
-
-	& .icon {
-		fill: var(--global-font-color-inverse);
-	}
-}
-
-button:active,
-button:focus,
-input[type="button"]:active,
-input[type="button"]:focus,
-input[type="reset"]:active,
-input[type="reset"]:focus,
-input[type="submit"]:active,
-input[type="submit"]:focus {
-	border-color: #aaa #bbb #bbb;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"],
-input[type="number"],
-input[type="tel"],
-input[type="range"],
-input[type="date"],
-input[type="month"],
-input[type="week"],
-input[type="time"],
-input[type="datetime"],
-input[type="datetime-local"],
-input[type="color"],
-textarea {
-	color: #666;
-	border: 1px solid var(--border-color-light);
-	border-radius: 3px;
-	padding: 5px;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="password"]:focus,
-input[type="search"]:focus,
-input[type="number"]:focus,
-input[type="tel"]:focus,
-input[type="range"]:focus,
-input[type="date"]:focus,
-input[type="month"]:focus,
-input[type="week"]:focus,
-input[type="time"]:focus,
-input[type="datetime"]:focus,
-input[type="datetime-local"]:focus,
-input[type="color"]:focus,
-textarea:focus {
-	color: #111;
-}
-
-select {
-	color: var(--global-font-color-inverse);
-	border: 1px solid var(--border-color-light);
-	border-radius: var(--border-radius);
-	max-width: 170px;
-}
-
-.custom-logo-link {
-	display: inline-block;
-}
-
-.site-title {
-	margin: 0 1em;
-	font-family: var(--highlight-font-family);
-	font-stretch: condensed;
-	font-size: 38px;
-	font-weight: 700;
-	line-height: 1.2;
-}
-
-.site-title a {
-	text-decoration: none;
-	color: inherit;
-}
-
-.site-description {
-	margin: 0.4375em 0 0;
-	font-family: var(--highlight-font-family);
-	font-stretch: condensed;
-	font-size: 17px;
-	font-weight: inherit;
-	line-height: 1.4;
-	word-wrap: break-word;
-	color: #757575;
-}
-
-/*--------------------------------------------------------------
-# Footer
---------------------------------------------------------------*/
-.site-footer {
-	margin: 1em 0 0;
-	padding: 2em 0;
-	font-family: var(--highlight-font-family);
-	font-stretch: condensed;
-}
-
-.site-info {
-	text-align: center;
-}
-
-/*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
 
@@ -250,17 +108,3 @@ were hidden (via .neverending) before. */
 .infinity-end.neverending .site-footer {
 	display: block;
 }
-
-/* Main menu and hamburger menu responsive display */
-
-/* Min width possible up to tablet max size */
-
-/* --narrow-menu-query: (max-width: 37.5em) */
-
-/* --tablet-menu-query: (max-width: 48em) */
-
-/* --wide-menu-query: (min-width: 37.5em) */
-
-/* --content-query: (min-width: 48em) */
-
-/* --sidebar-query: (min-width: 60em) */

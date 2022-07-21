@@ -1,4 +1,3 @@
-@import "_custom-properties.css";
 
 /*--------------------------------------------------------------
 # Links
@@ -20,19 +19,6 @@ a {
 
 			& .icon {
 				fill: var(--global-color-grey-light);
-			}
-		}
-	}
-
-	&.button-return {
-		max-width: max-content;
-		justify-self: center;
-		display: flex;
-
-		&:hover {
-
-			& .icon [fill] {
-				fill: var(--global-color-dark);
 			}
 		}
 	}

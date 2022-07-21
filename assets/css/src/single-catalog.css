@@ -2,10 +2,15 @@
 # Single catalog post
 --------------------------------------------------------------*/
 
-.single-catalog .site-main {
+.single-catalog {
 
-	@media (--wide-menu-query) {
-		gap: 4em;
+	& .site-header__hero-video {
+
+		@media (--sidebar-query) {
+			position: absolute;
+			width: 100%;
+			background-color: transparent;
+		}
 	}
 }
 
@@ -35,6 +40,9 @@
 	}
 }
 
+dd {
+	margin-bottom: 2em;
+}
 
 /* crew */
 .crew-title__wrapper {
@@ -174,6 +182,19 @@
 		max-width: 1444px;
 		margin: 2em auto;
 	}
+
+	&.video {
+		grid-template-rows: 35vh 1fr auto auto auto;
+		padding: unset;
+		margin: 0;
+		max-width: unset;
+
+		@media (--content-query) {
+			grid-template-columns: 1fr;
+			grid-template-rows: 60vh auto;
+			grid-row-gap: 1em;
+		}
+	}
 }
 
 /* if video present the info is wrapped in .entry-catalog__content-wrap */
@@ -237,19 +258,6 @@
 				position: absolute;
 			}
 		}
-	}
-}
-
-.catalog.video {
-	grid-template-rows: 35vh 1fr auto auto auto;
-	padding: unset;
-
-	@media (--content-query) {
-		grid-template-columns: 1fr;
-		grid-template-rows: 60vh auto;
-		grid-row-gap: 1em;
-		max-width: unset;
-		margin: unset;
 	}
 }
 

@@ -14,7 +14,6 @@ namespace WP_Rig\WP_Rig;
 
 get_header();
 
-wp_rig()->print_styles( 'wp-rig-pagination' );
 
 // Globals.
 $queried_obj = get_queried_object();
@@ -35,6 +34,7 @@ $sf_current_query = $searchandfilter->get( 46681 )->current_query();
 			get_template_part( 'template-parts/content/error' );
 		}
 		// Pagination.
+		wp_rig()->print_styles( 'wp-rig-pagination-archive' );
 		get_template_part( 'template-parts/content/pagination' );
 		?>
 	</main>

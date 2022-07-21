@@ -62,6 +62,8 @@ if ( is_404() ) {
 		array( '_sft_producers', '_sft_directors', '_sft_writers', '_sft_main_talent' ),
 		$sf_tax_args
 	);
+	wp_rig()->print_styles( 'wp-rig-offcanvas' );
+
 	?>
 	<header class="page-header page-header__filters">
 		<div class="filters-wrap">
@@ -82,8 +84,9 @@ if ( is_404() ) {
 	</header>
 	<?php
 } elseif ( is_archive() && is_post_type( 'catalog' ) && ! $sf_current_query->is_filtered() ) {
+		wp_rig()->print_styles( 'wp-rig-offcanvas' );
+
 	?>
-	<div id="offcanvasOverlay" class="offcanvas overlay" href="javascript:void(0)" onclick="closeNav()"></div>
 	<header class="page-header page-header__filters">
 		<div class="filters-wrap">
 			<h1 class="page-title">

@@ -1,0 +1,37 @@
+/*--------------------------------------------------------------
+# Typography
+--------------------------------------------------------------*/
+/* stylelint-disable */
+/* stylelint-enable */
+body,
+button,
+input,
+select,
+optgroup,
+textarea {
+	color: var(--global-font-color);
+	font-family: var(--global-font-family);
+	font-size: var(--font-size-regular);
+	line-height: var(--global-font-line-height);
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--highlight-font-family);
+	letter-spacing: 1px;
+	font-stretch: condensed;
+	clear: both;
+	color: var(--color-theme-primary);
+}
+
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+}

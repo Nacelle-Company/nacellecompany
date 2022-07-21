@@ -12,6 +12,7 @@
 	z-index: 5;
 	top: 0;
 	right: 0;
+	z-index: 9999;
 	background-color: var(--global-color-dark);
 	overflow-x: hidden;
 	transition: 0.5s;
@@ -87,8 +88,8 @@
 }
 
 .offcanvas.overlay {
-	background-color: rgba(0, 0, 0, 0.372);
-	z-index: 1;
+	background-color: rgba(0, 0, 0, 0.58);
+	z-index: 10;
 	width: 100vw;
 	height: 100%;
 	position: absolute;

@@ -1,10 +1,27 @@
 @import "_modal.css";
 
+
 small {
 	color: var(--color-theme-white);
 }
 
+@media screen and (--wide-menu-query) {
+
+	.grid__full {
+		grid-template-columns: auto;
+	}
+
+	.grid__half {
+		grid-template-columns: 1fr 1fr;
+		gap: 2em;
+	}
+}
+
 .wonder-section {
+
+	& .grid {
+		display: grid;
+	}
 
 	/* position: relative; */
 	background-repeat: no-repeat;

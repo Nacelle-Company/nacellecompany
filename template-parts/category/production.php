@@ -13,8 +13,8 @@ $production_special_post_one = get_field( 'production_special_post_one', 'option
 $img_special_one             = get_field( 'horizontal_image', $production_special_post_one );
 $size                        = 'medium_large';
 ?>
-<div class="parent-cat__container grid prod">
-	<div class="category-wrapper grid">
+<div class="parent-cat__container prod">
+	<div class="category-wrapper">
 		<a href="<?php echo esc_html( get_home_url() ); ?>/category/production/series/" class="link-absolute" title="<?php esc_html_e( 'Series', 'wp-rig' ); ?>"></a>
 		<div class="title-wrap title-wrap__icon">
 			<?php get_template_part( 'template-parts/svg/icon-series' ); ?>
@@ -27,7 +27,7 @@ $size                        = 'medium_large';
 		?>
 	</div>
 
-	<div class="category-wrapper grid">
+	<div class="category-wrapper">
 		<a href="<?php echo esc_html( get_home_url() ); ?>/category/production/special/" class="link-absolute" title="<?php esc_html_e( 'Specials', 'wp-rig' ); ?>"></a>
 		<div class="title-wrap title-wrap__icon">
 			<?php get_template_part( 'template-parts/svg/icon-specials' ); ?>

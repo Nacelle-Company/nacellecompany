@@ -1,134 +1,133 @@
-/* CSS Tricks!!! https://codepen.io/chriscoyier/pen/xBmYJN */
+/* stylelint-disable no-descending-specificity */
+@import "_site-main.css";
+@import "_header-posts.css";
+@import "_forms.css";
 
 /* grid item's wrapper */
 .site-main__catalog {
-    display: grid;
-    grid-gap: var(--grid-item-row-gap-sm) 0;
+	display: grid;
+	grid-gap: 2rem 0;
 
-    @media (--content-query) {
-        grid-template-columns: 1fr 1fr;
-    }
+	@media (--content-query) {
+		grid-template-columns: 1fr 1fr;
+	}
 
-    @media (--sidebar-query) {
-        grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-        gap: var(--grid-item-row-bottom-spacing) 0;
-    }
+	@media (--sidebar-query) {
+		grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+		gap: 0;
+	}
 }
 
 /* grid item */
 .gi {
-    position: relative;
-    color: var(--global-color-dark);
+	position: relative;
+	color: var(--global-color-dark);
 
-    @media (--content-query) {
-        padding-bottom: var(--grid-item-row-gap);
-    }
+	@media (--content-query) {
+		padding-bottom: 7rem;
+	}
+}
 
-    & .title {
-        color: var(--global-color-dark);
-        margin: 0;
-        font-size: var(--font-size-normal);
-    }
+.title {
+	color: var(--global-color-dark);
+	margin: 0;
+	font-size: var(--font-size-normal);
 
-    & .catalog-card__img {
+	@media (--content-query) {
 
-        @media (--narrow-menu-query) {
-            min-width: 100%;
-        }
-    }
-
-    @media (--content-query) {
-
-        & .title {
-            padding-top: 0.5em;
-            margin: 0;
-            font-size: var(--font-size-small);
-        }
-    }
+		padding-top: 0.5em;
+		font-size: var(--font-size-small);
+	}
 }
 
 .gi__content {
 
-    @media (--narrow-menu-query) {
-        padding: 1em;
-        background-color: var(--color-theme-primary);
-    }
+	@media (--narrow-menu-query) {
+		padding: 1em;
+		background-color: var(--color-theme-primary);
+	}
 
-    @media (--wide-menu-query) {
-        position: absolute;
-        height: var(--grid-item-row-gap);
-        padding: 0 1rem;
-        top: calc(100% - 14rem);
-        transition: all 0.4s ease-in-out;
-        z-index: -1;
-        min-width: 100%;
-    }
+	@media (--wide-menu-query) {
+		position: absolute;
+		height: 7rem;
+		padding: 0 1rem;
+		top: calc(100% - 14rem);
+		transition: all 0.4s ease-in-out;
+		z-index: -1;
+	}
 }
 
-.gi.distribution + .production {
+/* Grid item without an image */
+.gi__plain .gi__content {
 
-    & .gi__content {
+	height: 70%;
+	background-color: var(--color-theme-primary);
+	top: unset;
+	color: var(--global-color-dark);
 
-        @media (--wide-menu-query) {
-            top: calc(100% - 20.65rem);
-        }
-    }
+	&:hover .gi__content {
+		transform: none;
+	}
 }
 
-/* hover actions! */
-@media (--wide-menu-query) {
+/* grid item's content on hover */
+.gi:hover .gi__content,
+.gi a:hover .gi__content {
 
-    /* grid item's content on hover */
-    .gi:hover .gi__content,
-    .gi a:hover .gi__content {
-        background-color: var(--color-theme-primary);
-        opacity: 1;
-        transform: translateY(100%);
-    }
+	@media (--wide-menu-query) {
+		background-color: var(--color-theme-primary);
+		opacity: 1;
+		transform: translateY(100%);
+	}
+}
+
+.gi.distribution + .production .gi__content {
+
+	@media (--wide-menu-query) {
+		top: calc(100% - 20.65rem);
+	}
 }
 
 /* Random styles */
 
-/* Grid item without an image */
-.gi__plain {
 
-    & .gi__content {
-        height: 70%;
-        background-color: var(--color-theme-primary);
-        top: unset;
-        color: var(--global-color-dark);
-    }
-
-    &:hover {
-
-        & .gi__content {
-            transform: none;
-        }
-    }
-}
 
 
 .title-wrap {
-    line-height: 1.75;
+	line-height: 1.75;
 
-    & h5 {
-        margin: 1em 0;
-    }
+	& h5 {
+		margin: 1em 0;
+	}
 
-    & .title {
-        text-transform: capitalize;
-        display: flex;
-        align-items: center;
-    }
+	& .title {
+		text-transform: capitalize;
+		display: flex;
+		align-items: center;
+	}
 
-    &.grid {
-        grid-template-columns: min-content auto;
-        align-items: center;
-        column-gap: 1em;
-    }
+	/* &.grid {
+		grid-template-columns: min-content auto;
+		align-items: center;
+		column-gap: 1em;
+	} */
 }
 
 .title-wrap__icon {
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
+	margin-bottom: 0.5em;
+
+}
+
+.icon {
+	margin-right: 0.5rem;
+
+	& [fill] {
+		fill: var(--color-theme-secondary);
+	}
+}
+
+.catalog-card__img {
+	min-width: 100%;
 }

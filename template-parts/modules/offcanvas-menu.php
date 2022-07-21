@@ -7,8 +7,6 @@
 
 namespace WP_Rig\WP_Rig;
 
-wp_rig()->print_styles( 'wp-rig-offcanvas' );
-
 global $searchandfilter;
 $sf_current_query = $searchandfilter->get( 46687 )->current_query();
 ?>

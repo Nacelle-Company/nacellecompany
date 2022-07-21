@@ -12,6 +12,16 @@
    # Elements
    # Links
 # Adjustments for the editor
+/*--------------------------------------------------------------
+# Imports
+--------------------------------------------------------------*/
+
+@import "../_custom-properties.css";
+@import "../_typography.css";
+@import "../_elements.css";
+@import "../_links.css";
+@import "../_media.css";
+@import "../_blocks.css";
 
 --------------------------------------------------------------*/
 body,
@@ -23,16 +33,7 @@ textarea {
 	color: #000;
 }
 
-/*--------------------------------------------------------------
-# Imports
---------------------------------------------------------------*/
 
-@import "../_custom-properties.css";
-@import "../_typography.css";
-@import "../_elements.css";
-@import "../_links.css";
-@import "../_media.css";
-@import "../_blocks.css";
 
 /*--------------------------------------------------------------
 # Adjustments for the editor
@@ -65,13 +66,13 @@ option {
 
 /* Main column width */
 .wp-block {
-	max-width: calc(var(--content-width) + 30px);
+	max-width: calc(50rem + 30px);
 	color: var(--global-color-dark);
 }
 
 /* Width of "wide" blocks */
 .wp-block[data-align="wide"] {
-	max-width: calc(50% + var(--content-width) / 2 + 76px);
+	max-width: calc(50% + 50rem / 2 + 76px);
 }
 
 /* Width of "full-wide" blocks */

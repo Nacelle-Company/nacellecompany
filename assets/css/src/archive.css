@@ -1,0 +1,69 @@
+@import "_site-main-sidebar.css";
+@import "_header-posts.css";
+@import "_post-grid.css";
+@import "_forms.css";
+
+/*--------------------------------------------------------------
+# Archive main grid
+--------------------------------------------------------------*/
+.archive-main {
+	display: grid;
+	gap: 1em;
+	margin: 1em;
+}
+
+.archive-main {
+
+	@media (--content-query) {
+		grid-template-columns: repeat(auto-fill, minmax(435px, 1fr));
+	}
+}
+
+.archive-main {
+
+	@media (--sidebar-query) {
+		grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
+	}
+}
+
+.entry-meta,
+.entry-footer,
+.entry-taxonomies {
+	font-stretch: condensed;
+}
+
+.entry-meta {
+	margin: 1em 0;
+}
+
+.entry-actions {
+	position: absolute;
+	right: 1em;
+	bottom: 1em;
+}
+
+/* Hides the update date and time. */
+.updated:not(.published) {
+	display: none;
+}
+
+.page-content,
+.entry-summary {
+	margin: 1em 0 0;
+}
+
+.entry-footer span {
+	margin-right: 1em;
+}
+
+.entry-footer {
+	clear: both;
+}
+
+@media (--content-query) {
+
+	.entry-footer {
+		padding-right: 0;
+		padding-left: 0;
+	}
+}

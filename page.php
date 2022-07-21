@@ -11,11 +11,12 @@ namespace WP_Rig\WP_Rig;
 
 get_header();
 
-wp_rig()->print_styles( 'wp-rig-content' );
+wp_rig()->print_styles( 'wp-rig-page' );
 get_template_part( 'template-parts/content/page_header' );
+$page_width = get_post_meta( get_the_ID(), 'page_width', true );
 
 ?>
-	<main id="primary" class="site-main">
+	<main id="primary" class="site-main <?php echo esc_html( $page_width ); ?>">
 		<?php
 
 		while ( have_posts() ) {

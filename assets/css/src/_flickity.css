@@ -131,7 +131,7 @@ button.flickity-prev-next-button {
 	}
 
 	@media (--sidebar-query) {
-		height: var(--flickity-desktop-height);
+		height: 80vh;
 	}
 
 }
@@ -142,7 +142,7 @@ button.flickity-prev-next-button {
 	width: 100vw;
 
 	@media (--sidebar-query) {
-		height: var(--flickity-desktop-height);
+		height: 80vh;
 	}
 }
 
@@ -151,7 +151,7 @@ button.flickity-prev-next-button {
 
 	@media (--sidebar-query) {
 		position: relative;
-		height: var(--flickity-desktop-height);
+		height: 80vh;
 	}
 }
 
