@@ -46,8 +46,8 @@ class Component implements Component_Interface {
 				array(
 					'height'      => 56,
 					'width'       => 420,
-					'flex-width'  => false,
-					'flex-height' => false,
+					'flex-width'  => true,
+					'flex-height' => true,
 				)
 			)
 		);

@@ -265,3 +265,9 @@ function postpone_plugin_scripts() {
 }
 add_action( 'wp_print_scripts', 'postpone_plugin_scripts' );
 
+
+add_filter( 'get_custom_logo', 'add_logo_att' );
+function add_logo_att( $html ) {
+	$html = str_replace( 'class="custom-logo"', 'class="custom-logo" fetchpriority="high"', $html );
+	return $html;
+}

@@ -31,9 +31,12 @@ namespace WP_Rig\WP_Rig;
 	?>
 	<?php
 	wp_head();
-	$post_thumb = get_the_post_thumbnail_url();
-	?>
+	if ( is_single() && is_post_type( 'catalog' ) ) :
+		$post_thumb = get_the_post_thumbnail_url();
+		?>
 	<link rel="preload" as="image" href="<?php echo esc_attr( $post_thumb ); ?>">
+	<?php endif; ?>
+	<link rel="preload" as="image" href="<?php echo esc_url( wp_get_attachment_url( get_theme_mod( 'custom_logo' ) ) ); ?>">
 	<?php
 	if ( get_theme_mod( 'desktop_nav_wide' ) ) :
 		?>
