@@ -1,4 +1,8 @@
 /*--------------------------------------------------------------
+>>> !!!! All global styles have been moved to the header.php as inline styles.
+>>> to bring them back uncomment from line #28 to END and uncomment Styles/Component global.min.css call.
+----------------------------------------------------------------
+/*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
 # Imports
@@ -20,6 +24,8 @@
 /*--------------------------------------------------------------
 # Imports
 --------------------------------------------------------------*/
+
+/*
 @import "_custom-fonts.css";
 @import "_icons.css";
 @import "_reset-min.css";
@@ -48,15 +54,6 @@ img {
 	}
 }
 
-/*--------------------------------------------------------------
-# Accessibility
---------------------------------------------------------------*/
-
-/**
- * Text meant only for screen readers.
- * Re: word-wrap: Many screen reader and browser combinations announce broken
- * words as they would appear visually.
- */
 .screen-reader-text {
 	clip: rect(1px, 1px, 1px, 1px);
 	position: absolute !important;
@@ -82,29 +79,20 @@ img {
 	text-decoration: none;
 	top: 5px;
 	width: auto;
-	z-index: 100000; /* Above WP toolbar. */
+	z-index: 100000;
 }
 
-/* Do not show the outline on the skip link target. */
 #primary[tabindex="-1"]:focus {
 	outline: 0;
 }
 
-/*--------------------------------------------------------------
-# Infinite scroll
---------------------------------------------------------------*/
-
-/* Globally hidden elements when Infinite Scroll is supported and in use. */
 .infinite-scroll .posts-navigation,
 .infinite-scroll .pagination,
 .infinite-scroll.neverending .site-footer {
-
-	/* Theme Footer (when set to scrolling) */
 	display: none;
 }
 
-/* When Infinite Scroll has reached its end we need to re-display elements that
-were hidden (via .neverending) before. */
 .infinity-end.neverending .site-footer {
 	display: block;
 }
+*/
