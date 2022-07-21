@@ -46,6 +46,14 @@ if ( $content_acf ) {
 	$content_wp = wp_trim_words( $content_wp, $trim_length, $value_more ); // Final synopsis.
 	$synopsis   = $content_wp;
 }
+global $count_cat;
+if ( $count_cat <= 9 ) {
+	$no_lazy_class = ' no-lazy';
+	$fetch_priority = 'high';
+} else {
+	$no_lazy_class = '';
+	$fetch_priority = 'low';
+}
 
 if ( ! empty( $img ) ) {
 	?>
@@ -60,7 +68,7 @@ if ( ! empty( $img ) ) {
 		$img_alt_text = get_post_meta( $img, '_wp_attachment_image_alt', true );
 	?>
 	<?php if ( $img_src ) { ?>
-				<img class="catalog-card__img"
+				<img class="catalog-card__img<?php echo esc_html( $no_lazy_class ); ?>"
 					width="<?php echo esc_html( $width ); ?>"
 					height="<?php echo esc_html( $height ); ?>"
 					src="<?php echo esc_url( $img_src[0] ); ?>"
@@ -68,6 +76,7 @@ if ( ! empty( $img ) ) {
 					srcset="<?php echo esc_attr( $img_srcset ); ?>"
 					sizes="(max-width: 709px) 85vw, (max-width: 909px) 67vw, (max-width: 1100px) 62vw, 840px"
 					alt="<?php echo esc_html( $img_alt_text ); ?>"
+					fetchpriority="<?php echo esc_html( $fetch_priority ); ?>"
 				/>
 			<?php } ?>
 

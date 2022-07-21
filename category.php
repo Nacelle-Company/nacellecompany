@@ -24,11 +24,12 @@ $sf_current_query = $searchandfilter->get( 46681 )->current_query();
 		<?php
 		if ( have_posts() ) {
 			get_template_part( 'template-parts/content/page_header' );
-
+			$count_cat = 0;
 			while ( have_posts() ) {
 				the_post();
 
 				get_template_part( 'template-parts/content/entry', get_post_type() );
+				$count_cat++;
 			}
 		} else {
 			get_template_part( 'template-parts/content/error' );
