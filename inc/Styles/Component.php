@@ -289,7 +289,10 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			// 		return ! post_password_required() && is_singular() && ( comments_open() || get_comments_number() );
 			// 	},
 			// ),
-
+			'wp-rig-global-min'           => array(
+				'file'   => 'global-min.min.css',
+				'global' => true,
+			),
 			'wp-rig-archive'          => array(
 				'file'             => 'archive.min.css',
 				'preload_callback' => function() {
