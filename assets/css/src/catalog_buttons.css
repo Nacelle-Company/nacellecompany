@@ -25,11 +25,6 @@
 			box-shadow: var(--color-theme-secondary) 0 0 1px, var(--color-theme-secondary) 0 1px 2px;
 		}
 	}
-
-	& .icon {
-		margin-left: 5px;
-		fill: var(--color-theme-secondary);
-	}
 }
 
 .entry-buttons__wrapper {
