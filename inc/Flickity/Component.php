@@ -74,7 +74,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				get_theme_file_uri( '/assets/js/flickity.min.js' ),
 				array(),
 				wp_rig()->get_asset_version( get_theme_file_path( '/assets/js/flickity.min.js' ) ),
-				false
+				true
 			);
 			wp_script_add_data( 'wp-rig-flickity', 'defer', true );
 		}
@@ -142,8 +142,8 @@ class Component implements Component_Interface, Templating_Component_Interface {
 
 						$img = get_field( 'square_image', $slide );
 
-						$img_src      = wp_get_attachment_image_src( $img, 'thumbnail' );
-						$img_srcset   = wp_get_attachment_image_srcset( $img, 'thumbnail' );
+						$img_src      = wp_get_attachment_image_src( $img, 'wp-rig-square' );
+						$img_srcset   = wp_get_attachment_image_srcset( $img, 'wp-rig-square' );
 						$img_alt_text = get_post_meta( $img, '_wp_attachment_image_alt', true );
 
 					/**
@@ -157,18 +157,18 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					}
 					?>
 
-					<div class="carousel-cell <?php echo esc_html( $slide_id ); ?>">
+					<div class="carousel-cell <?php echo esc_html( $slide_id ); ?>" tabindex='-1'>
 						<figure>
 							<figcaption class="caption">
 							<a class="caption-link" href="<?php echo esc_html( $the_permalink ); ?>">
 								<div class="flickity-image">
 									<?php if ( $img_src ) { ?>
 										<img class="no-lazy grid-item__img"
-										width="150" height="150"
+										width="300" height="300"
 											src="<?php echo esc_url( $img_src[0] ); ?>"
 											title="<?php the_title(); ?>"
-											srcset="<?php echo esc_url( $img_src[0] ); ?><?php echo esc_html( ' 150w' ); ?>"
-											sizes="(max-width: 2000px) 150px"
+											srcset="<?php echo esc_url( $img_src[0] ); ?><?php echo esc_html( ' 300w' ); ?>"
+											sizes="(max-width: 2000px) 300px"
 											alt="<?php echo esc_html( $img_alt_text ); ?>"
 										/>
 									<?php } ?>

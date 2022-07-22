@@ -17,23 +17,10 @@ $synopsis    = '';
 $trim_length = 17; // ? Trimming the synopsis. desired length of text to display.
 $value_more  = ' . . . '; // ? What to add at the end of the trimmed text.
 $image       = '';
-$size        = 'wp-rig-square';
 $queried_id  = get_queried_object();
 $obj_slug    = $queried_id->slug;
 
-if ( 'special-production' === $obj_slug || 'series-production' === $obj_slug || 'production' === $obj_slug || 'podcasts' === $obj_slug ) {
-	$img    = get_field( 'horizontal_image' );
-	$width  = '320';
-	$height = '182';
-} elseif ( $obj_slug || get_search_query() ) {
-	$img    = get_field( 'square_image' );
-	$width  = '320';
-	$height = '320';
-} else {
-	$img    = get_field( 'horizontal_image' );
-	$width  = '320';
-	$height = '182';
-}
+
 
 // Assign content if avaliable, otherwise use the synopsis acf.
 if ( $content_acf ) {
@@ -48,13 +35,30 @@ if ( $content_acf ) {
 }
 global $count_cat;
 if ( $count_cat <= 9 ) {
-	$no_lazy_class = ' no-lazy';
+	$no_lazy_class  = ' no-lazy';
 	$fetch_priority = 'high';
 } else {
-	$no_lazy_class = '';
+	$no_lazy_class  = '';
 	$fetch_priority = 'low';
 }
 
+// // // // //
+// IMAGE WORK
+// // // // //
+
+if ( 'special-production' === $obj_slug || 'series-production' === $obj_slug || 'production' === $obj_slug || 'podcasts' === $obj_slug ) {
+	$img    = get_post_meta( $post->ID, 'horizontal_image', true );
+	$width  = '320';
+	$height = '182';
+} elseif ( $obj_slug || get_search_query() ) {
+	$img    = get_post_meta( $post->ID, 'square_image', true );
+	$width  = '768';
+	$height = '768';
+} else {
+	$img    = get_field( 'horizontal_image' );
+	$width  = '320';
+	$height = '182';
+}
 if ( ! empty( $img ) ) {
 	?>
 	<div class="gi">
@@ -63,10 +67,11 @@ if ( ! empty( $img ) ) {
 		// ACF Variables.
 		// https://pixelsandthings.co.uk/srcset-images-in-wordpress-using-advanced-custom-fields/.
 
-		$img_src      = wp_get_attachment_image_src( $img, 'wp-rig-square' );
-		$img_srcset   = wp_get_attachment_image_srcset( $img, 'wp-rig-square' );
+		$img_src      = wp_get_attachment_image_src( $img, 'medium' );
+		$img_srcset   = wp_get_attachment_image_srcset( $img, 'medium' );
 		$img_alt_text = get_post_meta( $img, '_wp_attachment_image_alt', true );
 	?>
+
 	<?php if ( $img_src ) { ?>
 				<img class="catalog-card__img<?php echo esc_html( $no_lazy_class ); ?>"
 					width="<?php echo esc_html( $width ); ?>"
@@ -74,7 +79,7 @@ if ( ! empty( $img ) ) {
 					src="<?php echo esc_url( $img_src[0] ); ?>"
 					title="<?php the_title(); ?>"
 					srcset="<?php echo esc_attr( $img_srcset ); ?>"
-					sizes="(max-width: 709px) 85vw, (max-width: 909px) 67vw, (max-width: 1100px) 62vw, 840px"
+					sizes="(min-width: 2980px) calc(10vw - 27px), (min-width: 2700px) 10vw, (min-width: 2440px) 11.25vw, (min-width: 2160px) 12.69vw, (min-width: 1900px) 14.58vw, (min-width: 1620px) 16.54vw, (min-width: 1360px) 20vw, (min-width: 1080px) 25vw, (min-width: 960px) 33vw, (min-width: 780px) 50vw, 100vw"
 					alt="<?php echo esc_html( $img_alt_text ); ?>"
 					fetchpriority="<?php echo esc_html( $fetch_priority ); ?>"
 				/>
