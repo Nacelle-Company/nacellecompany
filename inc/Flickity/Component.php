@@ -128,23 +128,13 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					$the_synopsis = wp_trim_words( $the_synopsis, 35 );
 
 					/**
-					 * Slide images.
+					 * Slide thumb image.
 					 */
-					$size               = 'full';
-					$the_slider_img     = get_field( 'home_image', $slide );
-					$the_horizontal_img = get_field( 'horizontal_image', $slide );
-					// Get the background images.
-					if ( $the_slider_img ) {
-						$image = $the_slider_img;
-					} else {
-						$image = $the_horizontal_img;
-					}
+					$img = get_field( 'square_image', $slide );
 
-						$img = get_field( 'square_image', $slide );
-
-						$img_src      = wp_get_attachment_image_src( $img, 'wp-rig-square' );
-						$img_srcset   = wp_get_attachment_image_srcset( $img, 'wp-rig-square' );
-						$img_alt_text = get_post_meta( $img, '_wp_attachment_image_alt', true );
+					$img_src      = wp_get_attachment_image_src( $img, 'wp-rig-square' );
+					$img_srcset   = wp_get_attachment_image_srcset( $img, 'wp-rig-square' );
+					$img_alt_text = get_post_meta( $img, '_wp_attachment_image_alt', true );
 
 					/**
 					 * Hero video.
@@ -152,43 +142,43 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					$hero_video_show = get_field( 'video_on_homepage_slider', $slide );
 					// Get the video. As long as the catalog post's t/f switch is on.
 					if ( true === $hero_video_show ) {
+						$the_horizontal_img = get_field( 'horizontal_image', $slide );
 						$hero_video          = get_field( 'video_embedd', $slide );
-						$hero_video_fallback = wp_get_attachment_image_url( $image, $size );
+						$hero_video_fallback = wp_get_attachment_image_url( $the_horizontal_img, 'large' );
 					}
 					?>
 
 					<div class="carousel-cell <?php echo esc_html( $slide_id ); ?>" tabindex='-1'>
 						<figure>
 							<figcaption class="caption">
-							<a class="caption-link" href="<?php echo esc_html( $the_permalink ); ?>">
-								<div class="flickity-image">
-									<?php if ( $img_src ) { ?>
-										<img class="no-lazy grid-item__img"
-										width="300" height="300"
-											src="<?php echo esc_url( $img_src[0] ); ?>"
-											title="<?php the_title(); ?>"
-											srcset="<?php echo esc_url( $img_src[0] ); ?><?php echo esc_html( ' 300w' ); ?>"
-											sizes="(max-width: 2000px) 300px"
-											alt="<?php echo esc_html( $img_alt_text ); ?>"
-										/>
-									<?php } ?>
+								<a class="caption-link" href="<?php echo esc_html( $the_permalink ); ?>">
+									<div class="flickity-image">
+										<?php if ( $img_src ) { ?>
+											<img class="no-lazy grid-item__img"
+											width="267" height="267"
+												src="<?php echo esc_url( $img_src[0] ); ?>"
+												title="<?php the_title(); ?>"
+												srcset="<?php echo esc_html( $img_srcset ); ?>"
+												sizes="(min-width: 620px) 267px, 200px"
+												alt="<?php echo esc_html( $img_alt_text ); ?>"
+											/>
+										<?php } ?>
 
 
-								</div>
-								<div class="flickity-synopsis">
-									<h3 class="flickity-title">
-										<?php echo esc_html( $the_title ); ?>
-									</h3>
-									<?php if ( ! empty( $the_synopsis ) ) : ?>
-										<div class="synopsis-container">
-											<?php echo esc_html( $the_synopsis ); ?>
-										</div>
-									<?php else : ?>
-										<br>
-									<?php endif; ?>
-								</div>
+									</div>
+									<div class="flickity-synopsis">
+										<h3 class="flickity-title">
+											<?php echo esc_html( $the_title ); ?>
+										</h3>
+										<?php if ( ! empty( $the_synopsis ) ) : ?>
+											<div class="synopsis-container">
+												<?php echo esc_html( $the_synopsis ); ?>
+											</div>
+										<?php else : ?>
+											<br>
+										<?php endif; ?>
+									</div>
 								</a>
-
 							</figcaption>
 							<?php
 							if ( true === $hero_video_show ) {
@@ -209,11 +199,23 @@ class Component implements Component_Interface, Templating_Component_Interface {
 								</div>
 								<?php
 							} else {
+								/**
+								 * Slide background image.
+								 */
+								$the_slider_img     = get_field( 'home_image', $slide );
+								$the_horizontal_img = get_field( 'horizontal_image', $slide );
+								if ( $the_slider_img ) {
+									$image = $the_slider_img;
+								} else {
+									$image = $the_horizontal_img;
+								}
 								echo wp_get_attachment_image(
 									$image,
-									'full',
+									'large',
 									false,
 									array(
+										'src'     => wp_get_attachment_image_url( $image, 'large' ),
+										'srcset'  => wp_get_attachment_image_srcset( $image, 'large' ),
 										'class'   => 'no-lazy attachment-full',
 										'loading' => 'eager',
 									)

@@ -237,8 +237,8 @@ function wp_rig_nacelle_change_sort_order( $query ) {
 		endif;
 };
 
-add_filter( 'get_custom_logo', 'add_logo_att' );
-function add_logo_att( $html ) {
+add_filter( 'get_custom_logo', 'wp_rig_add_logo_att' );
+function wp_rig_add_logo_att( $html ) {
 	$html = str_replace( 'class="custom-logo"', 'class="custom-logo" fetchpriority="high"', $html );
 	$html = str_replace( 'sizes="(min-width: 960px) 75vw, 100vw"', 'sizes="(min-width: 960px) 200px, 50vw" ', $html );
 	return $html;

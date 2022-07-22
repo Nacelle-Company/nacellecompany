@@ -81,6 +81,10 @@ sub {
 	vertical-align: baseline;
 }
 
+pre {
+	background: blueviolet;
+	padding: 2em;
+}
 
 /* Embedded content
    ========================================================================== */
