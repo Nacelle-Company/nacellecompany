@@ -1,156 +1,156 @@
 @import "_modal.css";
-
+@import "_block-library.css";
 
 small {
-	color: var(--color-theme-white);
+    color: var(--color-theme-white);
 }
 
 @media screen and (--wide-menu-query) {
 
-	.grid__full {
-		grid-template-columns: auto;
-	}
+    .grid__full {
+        grid-template-columns: auto;
+    }
 
-	.grid__half {
-		grid-template-columns: 1fr 1fr;
-		gap: 2em;
-	}
+    .grid__half {
+        grid-template-columns: 1fr 1fr;
+        gap: 2em;
+    }
 }
 
 .wonder-section {
 
-	& .grid {
-		display: grid;
-	}
+    & .grid {
+        display: grid;
+    }
 
-	/* position: relative; */
-	background-repeat: no-repeat;
+    /* position: relative; */
+    background-repeat: no-repeat;
 
-	/* transition: filter 0.4s linear; */
+    /* transition: filter 0.4s linear; */
 
-	& .wrap {
-		padding-right: 1.25rem;
-		padding-left: 1.25rem;
-		max-width: 1120px;
-		margin: 0 auto;
+    & .wrap {
+        padding-right: 1.25rem;
+        padding-left: 1.25rem;
+        max-width: 1120px;
+        margin: 0 auto;
 
-		/* transition: filter 0.4s linear; */
-		align-items: center;
+        /* transition: filter 0.4s linear; */
+        align-items: center;
 
-		@media (--content-query) {
-			padding-right: 1.875rem;
-			padding-left: 1.875rem;
-		}
-	}
+        @media (--content-query) {
+            padding-right: 1.875rem;
+            padding-left: 1.875rem;
+        }
+    }
 
-	& figcaption {
-		padding: 1em 1em 0 1em;
-		text-align: center;
-		opacity: 0;
-		transition: opacity 0.2s linear;
-	}
+    & figcaption {
+        padding: 1em 1em 0 1em;
+        text-align: center;
+        opacity: 0;
+        transition: opacity 0.2s linear;
+    }
 
-	& figure {
+    & figure {
 
-		&:hover {
+        &:hover {
 
-			& figcaption {
-				opacity: 1;
-			}
-		}
-	}
+            & figcaption {
+                opacity: 1;
+            }
+        }
+    }
 
 
-	& .img-wrap {
-		transition: filter 0.4s linear;
-	}
+    & .img-wrap {
+        transition: filter 0.4s linear;
+    }
 
-	/* TODO: bring back the hover! */
-	&:hover {
+    /* TODO: bring back the hover! */
+    &:hover {
 
-		& .wrap .img-wrap {
-			filter: drop-shadow(2px 4px 6px #000);
-		}
-	} /* END hover */
+        & .wrap .img-wrap {
+            filter: drop-shadow(2px 4px 6px #000);
+        }
+    } /* END hover */
 
-	& .grid__half {
+    & .grid__half {
 
-		@media (--content-query) {
-			grid-gap: 8em;
-		}
-	}
+        @media (--content-query) {
+            grid-gap: 8em;
+        }
+    }
 
-	& .grid__half-flip {
+    & .grid__half-flip {
 
-		@media (--content-query) {
-			grid-template-columns: 1fr 1fr;
-			gap: 4em;
-		}
-	}
+        @media (--content-query) {
+            grid-template-columns: 1fr 1fr;
+            gap: 4em;
+        }
+    }
 
-	& .grid__third {
+    & .grid__third {
 
-		@media (--content-query) {
-			grid-template-columns: 1fr 2fr;
-			gap: 4em;
-		}
-	}
+        @media (--content-query) {
+            grid-template-columns: 1fr 2fr;
+            gap: 4em;
+        }
+    }
 
-	& .grid__third-flip {
+    & .grid__third-flip {
 
-		@media (--content-query) {
-			grid-template-columns: 2fr 1fr;
-			gap: 4em;
-		}
-	}
+        @media (--content-query) {
+            grid-template-columns: 2fr 1fr;
+            gap: 4em;
+        }
+    }
 
-	& .img-fill__wrap {
+    & .img-fill__wrap {
 
-		@media (--content-query) {
-			align-items: end;
-		}
-	}
+        @media (--content-query) {
+            align-items: end;
+        }
+    }
 
-	& .col {
-		margin-top: 1.25rem;
-		margin-bottom: 1.25rem;
+    & .col {
+        margin-top: 1.25rem;
+        margin-bottom: 1.25rem;
 
-		@media (--content-query) {
-			padding-top: 1.875rem;
-			padding-bottom: 1.875rem;
+        @media (--content-query) {
+            padding-top: 1.875rem;
+            padding-bottom: 1.875rem;
 
-			&.img-fill {
-				padding-bottom: 0;
-				margin-bottom: 0;
+            &.img-fill {
+                padding-bottom: 0;
+                margin-bottom: 0;
 
-				& .img-wrap {
-					margin-bottom: 0;
-				}
-			}
-		}
-	}
+                & .img-wrap {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
 
-	& .flip {
+    & .flip {
 
-		@media (--content-query) {
-			order: 2;
-		}
-	}
+        @media (--content-query) {
+            order: 2;
+        }
+    }
 }
 
 .banner__feat {
-	position: relative;
-	background-repeat: no-repeat;
-	background-position: 50%;
-	background-size: cover;
-	overflow: hidden;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    overflow: hidden;
 }
 
 .banner__feat-img_wrap {
-	display: flex;
-	align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .banner__feat-img {
-	min-width: 100%;
+    min-width: 100%;
 }

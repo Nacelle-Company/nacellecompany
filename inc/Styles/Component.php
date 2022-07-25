@@ -103,7 +103,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		// Enqueue Google Fonts.
 		// $google_fonts_url = $this->get_google_fonts_url();
 		// if ( ! empty( $google_fonts_url ) ) {
-		// 	wp_enqueue_style( 'wp-rig-fonts', $google_fonts_url, array(), null ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
+		// wp_enqueue_style( 'wp-rig-fonts', $google_fonts_url, array(), null ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
 		// }
 
 		$css_uri = get_theme_file_uri( '/assets/css/' );
@@ -183,7 +183,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		// Enqueue Google Fonts.
 		// $google_fonts_url = $this->get_google_fonts_url();
 		// if ( ! empty( $google_fonts_url ) ) {
-		// 	add_editor_style( $this->get_google_fonts_url() );
+		// add_editor_style( $this->get_google_fonts_url() );
 		// }
 
 		// Enqueue block editor stylesheet.
@@ -280,156 +280,156 @@ class Component implements Component_Interface, Templating_Component_Interface {
 
 		$css_files = array(
 			// 'wp-rig-global'           => array(
-			// 	'file'   => 'global.min.css',
-			// 	'global' => true,
+			// 'file'   => 'global.min.css',
+			// 'global' => true,
 			// ),
 			// 'wp-rig-comments'         => array(
-			// 	'file'             => 'comments.min.css',
-			// 	'preload_callback' => function() {
-			// 		return ! post_password_required() && is_singular() && ( comments_open() || get_comments_number() );
-			// 	},
+			// 'file'             => 'comments.min.css',
+			// 'preload_callback' => function() {
+			// return ! post_password_required() && is_singular() && ( comments_open() || get_comments_number() );
+			// },
 			// ),
-			'wp-rig-global-min'           => array(
+			'wp-rig-global-min'         => array(
 				'file'   => 'global-min.min.css',
 				'global' => true,
 			),
-			'wp-rig-archive'          => array(
+			'wp-rig-archive'            => array(
 				'file'             => 'archive.min.css',
 				'preload_callback' => function() {
 					global $template;
 					return 'archive.php' === basename( $template );
 				},
 			),
-			'wp-rig-page'          => array(
+			'wp-rig-page'               => array(
 				'file'             => 'page.min.css',
 				'preload_callback' => function() {
 					global $template;
 					return 'page.php' === basename( $template );
 				},
 			),
-			'wp-rig-sidebar'          => array(
+			'wp-rig-sidebar'            => array(
 				'file'             => 'sidebar.min.css',
 				'preload_callback' => function() {
 					return wp_rig()->is_primary_sidebar_active();
 				},
 			),
-			'wp-rig-footer-widgets'   => array(
+			'wp-rig-footer-widgets'     => array(
 				'file'             => 'footer-widgets.min.css',
 				'preload_callback' => function () {
 					return wp_rig()->is_footer_widgets_active();
 				},
 			),
-			'wp-rig-content_posts'    => array(
+			'wp-rig-content_posts'      => array(
 				'file' => 'content_posts.min.css',
 			),
-			'wp-rig-category'         => array(
+			'wp-rig-category'           => array(
 				'file'             => 'category.min.css',
 				'preload_callback' => function() {
 					global $template;
 					return 'category.php' === basename( $template );
 				},
 			),
-			'wp-rig-wonder'           => array(
+			'wp-rig-wonder'             => array(
 				'file'             => 'wonder.min.css',
 				'preload_callback' => function() {
 					global $template;
 					return 'page-wonder.php' === basename( $template );
 				},
 			),
-			'wp-rig-wonder_txt-quote' => array(
+			'wp-rig-wonder_txt-quote'   => array(
 				'file'             => 'wonder_txt-quote.min.css',
 				'preload_callback' => function() {
 					global $template;
 					return 'page-wonder.php' === basename( $template );
 				},
 			),
-			'wp-rig-wonder_txt-img'   => array(
+			'wp-rig-wonder_txt-img'     => array(
 				'file'             => 'wonder_txt-img.min.css',
 				'preload_callback' => function() {
 					global $template;
 					return 'page-wonder.php' === basename( $template );
 				},
 			),
-			'wp-rig-wonder_banner'    => array(
+			'wp-rig-wonder_banner'      => array(
 				'file'             => 'wonder_banner.min.css',
 				'preload_callback' => function() {
 					global $template;
 					return 'page-wonder.php' === basename( $template );
 				},
 			),
-			'wp-rig-card-catalog'     => array(
+			'wp-rig-card-catalog'       => array(
 				'file'             => 'card-catalog.min.css',
 				'preload_callback' => function() {
 					global $template;
 					return array( 'archive-catalog.php', 'category.php', 'taxonomy.php' ) === basename( $template );
 				},
 			),
-			'wp-rig-page-products'    => array(
+			'wp-rig-page-products'      => array(
 				'file'             => 'page-products.min.css',
 				'preload_callback' => function() {
 					global $template;
 					return array( 'page-products.php' ) === basename( $template );
 				},
 			),
-			'wp-rig-search'    => array(
+			'wp-rig-search'             => array(
 				'file'             => 'search.min.css',
 				'preload_callback' => function() {
 					global $template;
 					return array( 'search.php' ) === basename( $template );
 				},
 			),
-			'wp-rig-offcanvas'        => array(
+			'wp-rig-offcanvas'          => array(
 				'file'             => 'offcanvas.min.css',
 				'preload_callback' => function() {
 					global $template;
 					return array( 'archive-catalog.php', 'category.php', 'taxonomy.php' ) === basename( $template );
 				},
 			),
-			'wp-rig-single-catalog'   => array(
+			'wp-rig-single-catalog'     => array(
 				'file'             => 'single-catalog.min.css',
 				'preload_callback' => function() {
 					global $template;
 					return 'single-catalog.php' === basename( $template );
 				},
 			),
-			'wp-rig-page-team'        => array(
+			'wp-rig-page-team'          => array(
 				'file'             => 'page-team.min.css',
 				'preload_callback' => function() {
 					global $template;
 					return 'page-team.php' === basename( $template );
 				},
 			),
-			'wp-rig-hero-video'       => array(
+			'wp-rig-hero-video'         => array(
 				'file' => 'hero-video.min.css',
 			),
 			'wp-rig-lite-youtube'       => array(
 				'file' => 'lite-youtube.min.css',
 			),
-			'wp-rig-front-page'       => array(
-				'file'             => 'front-page.min.css',
+			'wp-rig-page-home-cd'       => array(
+				'file'             => 'page-home-cd.min.css',
 				'preload_callback' => function() {
 					global $template;
-					return 'front-page.php' === basename( $template );
+					return 'page-home-cd.php' === basename( $template );
 				},
 			),
-			'wp-rig-related_content'  => array(
+			'wp-rig-related_content'    => array(
 				'file'             => 'related_content.min.css',
 				'preload_callback' => function() {
 					global $template;
 					return 'related_content.php' === basename( $template );
 				},
 			),
-			'wp-rig-catalog_buttons'  => array(
+			'wp-rig-catalog_buttons'    => array(
 				'file'             => 'catalog_buttons.min.css',
 				'preload_callback' => function() {
 					global $template;
 					return 'single-catalog.php' === basename( $template );
 				},
 			),
-			'wp-rig-social-share'     => array(
+			'wp-rig-social-share'       => array(
 				'file' => 'social-share.min.css',
 			),
-			'wp-rig-related_posts'    => array(
+			'wp-rig-related_posts'      => array(
 				'file' => 'related_posts.min.css',
 			),
 			'wp-rig-pagination-archive' => array(
@@ -439,14 +439,14 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					return array( 'archive-catalog.php', 'category.php', 'taxonomy.php' ) === basename( $template );
 				},
 			),
-			'wp-rig-pagination-post' => array(
+			'wp-rig-pagination-post'    => array(
 				'file'             => 'pagination-post.min.css',
 				'preload_callback' => function() {
 					global $template;
 					return array( 'single-catalog.php', 'single.php' ) === basename( $template );
 				},
 			),
-			'wp-rig-extra_content'    => array(
+			'wp-rig-extra_content'      => array(
 				'file'             => 'extra_content.min.css',
 				'preload_callback' => function() {
 					global $template;
@@ -521,32 +521,32 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	 * @return string Google Fonts URL, or empty string if no Google Fonts should be used.
 	 */
 	// protected function get_google_fonts_url() : string {
-	// 	$google_fonts = $this->get_google_fonts();
+	// $google_fonts = $this->get_google_fonts();
 
-	// 	if ( empty( $google_fonts ) ) {
-	// 		return '';
-	// 	}
+	// if ( empty( $google_fonts ) ) {
+	// return '';
+	// }
 
-	// 	$font_families = array();
+	// $font_families = array();
 
-	// 	foreach ( $google_fonts as $font_name => $font_variants ) {
-	// 		if ( ! empty( $font_variants ) ) {
-	// 			if ( ! is_array( $font_variants ) ) {
-	// 				$font_variants = explode( ',', str_replace( ' ', '', $font_variants ) );
-	// 			}
+	// foreach ( $google_fonts as $font_name => $font_variants ) {
+	// if ( ! empty( $font_variants ) ) {
+	// if ( ! is_array( $font_variants ) ) {
+	// $font_variants = explode( ',', str_replace( ' ', '', $font_variants ) );
+	// }
 
-	// 			$font_families[] = $font_name . ':' . implode( ',', $font_variants );
-	// 			continue;
-	// 		}
+	// $font_families[] = $font_name . ':' . implode( ',', $font_variants );
+	// continue;
+	// }
 
-	// 		$font_families[] = $font_name;
-	// 	}
+	// $font_families[] = $font_name;
+	// }
 
-	// 	$query_args = array(
-	// 		'family'  => implode( '|', $font_families ),
-	// 		'display' => 'swap',
-	// 	);
+	// $query_args = array(
+	// 'family'  => implode( '|', $font_families ),
+	// 'display' => 'swap',
+	// );
 
-	// 	return add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+	// return add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
 	// }
 }
