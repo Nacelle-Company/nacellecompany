@@ -74,6 +74,7 @@ if ( ! empty( $img ) ) {
 
 	<?php if ( $img_src ) { ?>
 				<img class="catalog-card__img<?php echo esc_html( $no_lazy_class ); ?>"
+					loading="lazy"
 					width="<?php echo esc_html( $width ); ?>"
 					height="<?php echo esc_html( $height ); ?>"
 					src="<?php echo esc_url( $img_src[0] ); ?>"
