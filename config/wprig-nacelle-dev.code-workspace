@@ -11,6 +11,5 @@
         "phpcbf.onsave": true,
         "phpcbf.standard": "WordPress",
         "prettier.useTabs": true,
-        "editor.detectIndentation": false,
     }
 }
