@@ -313,11 +313,8 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					return wp_rig()->is_primary_sidebar_active();
 				},
 			),
-			'wp-rig-footer-widgets'     => array(
-				'file'             => 'footer-widgets.min.css',
-				'preload_callback' => function () {
-					return wp_rig()->is_footer_widgets_active();
-				},
+			'wp-rig-footer-widgets' => array(
+				'file' => 'footer-widgets.min.css',
 			),
 			'wp-rig-content_posts'      => array(
 				'file' => 'content_posts.min.css',
@@ -404,6 +401,9 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			),
 			'wp-rig-lite-youtube'       => array(
 				'file' => 'lite-youtube.min.css',
+			),
+			'wp-rig-entry-content'       => array(
+				'file' => 'entry-content.min.css',
 			),
 			'wp-rig-page-home-cd'       => array(
 				'file'             => 'page-home-cd.min.css',

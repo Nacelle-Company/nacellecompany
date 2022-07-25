@@ -39,7 +39,7 @@ if ( is_post_type_archive() || $sf_current_query->is_filtered() ) {
 		get_template_part( 'template-parts/content/entry_thumbnail', get_post_type() );
 		get_template_part( 'template-parts/content/entry_title', get_post_type() );
 	} else { // ? if not a search results page
-
+		wp_rig()->print_styles( 'wp-rig-entry-content' );
 		get_template_part( 'template-parts/content/entry_content', get_post_type() );
 
 	}
