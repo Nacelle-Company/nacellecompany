@@ -57,23 +57,23 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			setup_postdata( $ids );
 			$catalog_query = new \WP_Query(
 				array(
-					'post_type'       => 'catalog',
-					'post__in'        => $ids,
-					'posts_per_page'  => 5,
+					'post_type'      => 'catalog',
+					'post__in'       => $ids,
+					'posts_per_page' => 5,
 				)
 			);
 			$pr_query      = new \WP_Query(
 				array(
-					'post_type'       => 'press_release',
-					'post__in'        => $ids,
-					'posts_per_page'  => 5,
+					'post_type'      => 'press_release',
+					'post__in'       => $ids,
+					'posts_per_page' => 5,
 				)
 			);
 			$news_query    = new \WP_Query(
 				array(
-					'post_type'       => 'news',
-					'post__in'        => $ids,
-					'posts_per_page'  => 5,
+					'post_type'      => 'news',
+					'post__in'       => $ids,
+					'posts_per_page' => 5,
 				)
 			);
 							// ? get each post type's # of posts

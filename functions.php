@@ -283,3 +283,40 @@ function wp_rig_sgo_css_combine_exclude( $exclude_list ) {
 
 	return $exclude_list;
 }
+
+
+
+/**
+ * Modify the main query
+ *
+ * @param [type] $query Combine press_release & news post types.
+ * @return void
+ */
+function custom_archive_query( $query ){
+	if( is_admin() || ! $query->is_main_query() ) {
+		return;
+	}
+	$cpts = array( 'press_release', 'news' );
+	if ( is_post_type_archive( $cpts ) ) {
+		$query->set( 'post_type', $cpts );
+		return;
+	}
+}
+add_action( 'pre_get_posts', 'custom_archive_query' );
+
+/**
+ * Add the template redirect
+ *
+ * @param [type] $template Redirect.
+ * @return void
+ */
+function custom_archive_template( $template ) {
+	$cpts = array( 'press_release', 'news' );
+	if ( is_post_type_archive( $cpts ) ) {
+		$new_template = locate_template( array( 'custom_archive-template.php' ) );
+		if( ! empty( $new_template ) )
+		return $new_template;
+	}
+	return $template;
+}
+add_filter( 'template_include', 'custom_archive_template' );
