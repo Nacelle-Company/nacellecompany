@@ -52,6 +52,8 @@ if ( has_post_thumbnail() ) :
         <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
     <?php endif; ?>
 
+</div>
+<div class="post-content">
     <h3 class="post-intro">
         <?php
         if ( ! empty( $press_release_intro ) ) {
@@ -59,9 +61,6 @@ if ( has_post_thumbnail() ) :
         }
         ?>
     </h3>
-
-</div>
-<div class="post-content">
     <?php
     the_content(
         sprintf(

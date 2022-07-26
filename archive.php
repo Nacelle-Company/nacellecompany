@@ -9,6 +9,10 @@
 
 namespace WP_Rig\WP_Rig;
 
+global $queried_obj;
+global $obj_slug;
+
+printVar( $obj_slug );
 get_header();
 
 wp_rig()->print_styles( 'wp-rig-archive' );
@@ -29,14 +33,13 @@ get_template_part( 'template-parts/content/page_header' );
 
 			while ( have_posts() ) {
 				the_post();
-
 				get_template_part( 'template-parts/content/entry', get_post_type() );
 			}
+			wp_rig()->print_styles( 'wp-rig-pagination-archive' );
+			wp_rig()->display_pagination_archive( $obj_slug );
 		} else {
 			get_template_part( 'template-parts/content/error' );
 		}
-		wp_rig()->print_styles( 'wp-rig-pagination-archive' );
-		get_template_part( 'template-parts/content/pagination' );
 		?>
 	</main>
 <?php
