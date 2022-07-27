@@ -5,12 +5,15 @@
         }
     ],
     "settings": {
+        "phpcs.enable": true,
+        "phpcs.composerJsonPath": "../composer.json",
+        "phpcs.standard": "WordPress",
+        "editor.renderWhitespace": "all",
         "editor.hover.enabled": true,
         "phpcbf.documentFormattingProvider": true,
         "phpcbf.debug": true,
         "phpcbf.onsave": true,
         "phpcbf.standard": "WordPress",
-		"prettier.useTabs": true,
-		"editor.insertSpaces": false,
+        "prettier.useTabs": true,
     }
 }

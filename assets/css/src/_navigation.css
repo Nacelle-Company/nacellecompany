@@ -1,20 +1,110 @@
 .site-header {
 	z-index: 9;
 	display: flex;
-	flex-direction: row-reverse;
-	justify-content: space-between;
 	align-items: center;
 	background-color: var(--nav-bk-color);
+	justify-content: space-evenly;
+	grid-column: 1/-1;
+
+	@media (--content-query) {
+		justify-content: space-between;
+	}
 
 	@media (--sidebar-query) {
 		flex-direction: row;
-		justify-content: center;
+		justify-content: space-between;
 	}
 }
 
+.primary-nav {
+	display: none;
+
+	@media (--narrow-menu-query) {
+		width: 90%;
+		padding: 1em 0;
+	}
+
+	@media (--sidebar-query) {
+		display: flex;
+	}
+}
+
+.primary-menu-container {
+	display: none;
+
+	@media (--sidebar-query) {
+		display: flex;
+	}
+
+	& > .menu > li {
+
+		@media (--wide-menu-query) {
+			margin: 0 1em;
+		}
+	}
+}
+
+.main-navigation__wrap {
+	order: 2;
+
+	@media (--sidebar-query) {
+		display: flex;
+		order: 1;
+	}
+}
+
+.secondary-nav {
+	display: none;
+
+	@media (--sidebar-query) {
+		display: flex;
+		order: 2;
+		padding-right: 2em;
+	}
+}
+
+.secondary-menu-container {
+	display: none;
+
+	@media (--sidebar-query) {
+		display: flex;
+		flex-direction: row;
+	}
+
+	& > .menu > li {
+
+		@media (--wide-menu-query) {
+			margin: 0 0.25em;
+		}
+	}
+
+	& li.search-icon {
+
+		@media (--sidebar-query) {
+			margin-right: 5em;
+		}
+	}
+}
+
+.mobile-menu__search {
+	order: 3;
+
+	@media (--content-query) {
+		padding-right: 2em;
+	}
+
+	@media (--sidebar-query) {
+		display: none;
+	}
+}
+
+
 .site-branding {
 	padding: 1em 0;
-	flex: 0 0 50%;
+
+	@media (--content-query) {
+		flex: 0 0 30%;
+	}
 
 	@media (--sidebar-query) {
 		flex: initial;
@@ -22,34 +112,21 @@
 	}
 }
 
-.custom-logo {
-	object-fit: contain;
-	width: 100%;
-}
 
 /*--------------------------------------------------------------
 ## Basic navigation menus - handles submenu and small screen toggle
 --------------------------------------------------------------*/
 .nav--toggle-small {
 	text-align: center;
+	display: flex;
+	order: 1;
 
-	& .mobile-menu-container { /* mobile menu container */
-		position: absolute;
-		background: var(--global-color-dark);
-		width: 100vw;
-		transform: translateY(-85vh);
-		text-align: left;
-		opacity: 0;
-		z-index: 1;
-		transition: opacity 0.3s ease-in, transform 0.6s ease-in;
+	@media (--content-query) {
+		padding-left: 2em;
+	}
 
-		& > ul {
-			padding: 0 1em;
-		}
-
-		@media (--sidebar-query) {
-			display: none;
-		}
+	@media (--sidebar-query) {
+		display: none;
 	}
 
 	&.nav--toggled-on { /* hamburger is active */
@@ -57,7 +134,7 @@
 		& .mobile-menu-container {
 			z-index: 9;
 			opacity: 1;
-			transform: translateY(10px);
+			transform: translateY(80px);
 			transition: transform 0.3s ease-out, opacity 0.6s ease-out;
 		}
 
@@ -75,8 +152,6 @@
 	}
 
 	& .menu-toggle {
-
-		/* display: block; */
 		margin: 0 auto;
 		padding: 0.5em;
 		font-stretch: condensed;
@@ -86,8 +161,31 @@
 		border-radius: 0;
 		background: transparent;
 
-		@media (--sidebar-query) {
-			display: none;
+	}
+}
+
+.mobile-menu-container { /* mobile menu container */
+	position: absolute;
+	background: var(--global-color-dark);
+	width: 100vw;
+	left: 0;
+	top: 0;
+	transform: translateY(-85vh);
+	text-align: left;
+	opacity: 0;
+	z-index: 1;
+	transition: opacity 0.3s ease-in, transform 0.6s ease-in;
+
+	@media (--content-query) {
+		width: 50vw;
+	}
+
+	& > .menu {
+		padding: 0 1em;
+		flex-direction: column;
+
+		@media (--content-query) {
+			padding: 0 2em;
 		}
 	}
 }
@@ -103,6 +201,17 @@
 		position: relative;
 		max-width: 90%;
 		padding-left: 2em;
+	}
+
+	@media (--sidebar-query) {
+		padding: 0 1em;
+	}
+}
+
+.sub-menu {
+
+	@media (--sidebar-query) {
+		padding: 0 1em;
 	}
 }
 
@@ -125,7 +234,7 @@
 	overflow: visible;
 
 	@media (--content-query) {
-		top: 50%;
+		top: 1.5em;
 	}
 }
 
@@ -142,17 +251,6 @@
 	transform: translateY(-50%) rotate(45deg);
 }
 
-/*
-.nav--toggle-sub ul ul .dropdown,
-.nav--toggle-sub ul ul .dropdown-toggle {
-	top: 40%;
-	right: 0.2em;
-}
-
-.nav--toggle-sub ul ul .dropdown-symbol {
-	transform: rotate(-45deg);
-} */
-
 .nav--toggle-sub .dropdown-toggle:hover,
 .nav--toggle-sub .menu-item--has-toggle:hover .dropdown-toggle {
 	pointer-events: none;
@@ -162,13 +260,33 @@
 .nav--toggle-sub li.menu-item-has-children,
 .nav--toggle-sub li.menu-item--has-toggle {
 	position: relative;
-	padding-right: 1.6em;
+	padding-right: 2em;
+	margin-right: 0;
+}
+
+.nav--toggle-sub ul li.menu-item-has-children:hover .sub-menu {
+
+	@media (--content-query) {
+		position: relative;
+	}
+
+	@media (--sidebar-query) {
+		position: absolute;
+	}
+}
+
+.nav--toggle-sub ul ul {
+	padding-left: 1em;
+
+	& li.menu-item-has-children:hover .sub-menu {
+		position: relative;
+	}
 }
 
 /*
-     * If the dropdown toggle is active with JS, then
-     * we'll take care of showing the submenu with JS.
-     */
+* If the dropdown toggle is active with JS, then
+* we'll take care of showing the submenu with JS.
+*/
 .nav--toggle-sub li:hover > ul,
 .nav--toggle-sub li.menu-item--toggled-on > ul,
 .nav--toggle-sub li:not(.menu-item--has-toggle):focus > ul {
@@ -176,13 +294,13 @@
 }
 
 /*
-     * "focus-within" is an alternative to focus class for
-     * supporting browsers (all but IE/Edge) for no-JS context
-     * (e.g. AMP) See https://caniuse.com/#feat=css-focus-within
-     *
-     * This selector needs to stay separated, otherwise submenus
-     * will not be displayed with IE/Edge.
-     */
+* "focus-within" is an alternative to focus class for
+* supporting browsers (all but IE/Edge) for no-JS context
+* (e.g. AMP) See https://caniuse.com/#feat=css-focus-within
+*
+* This selector needs to stay separated, otherwise submenus
+* will not be displayed with IE/Edge.
+*/
 .nav--toggle-sub li:not(.menu-item--has-toggle):focus-within > ul {
 	display: block;
 }
@@ -191,19 +309,9 @@
 ## Main navigation menu
 --------------------------------------------------------------*/
 .main-navigation {
-	flex: 0 0 25%;
 
 	@media (--sidebar-query) {
 		flex: inherit;
-	}
-
-	& .menu {
-
-		@media (--wide-menu-query) {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-		}
 	}
 
 	& a {
@@ -211,36 +319,32 @@
 		text-decoration: none;
 		color: var(--global-font-color);
 		padding: 1em 0;
+		max-width: 75%;
 
-		@media (--narrow-menu-query) {
-			width: 90%;
-			padding: 1em 0;
+		@media (--sidebar-query) {
+			max-width: 100%;
+
 		}
 
-		@media (--content-query) {
+		@media (--sidebar-query) {
 			width: 100%;
-			padding: 0.5em 1em 0.5em 0;
-		}
-	}
-
-	& ul.menu li {
-
-		@media (--wide-menu-query) {
-			margin: 0 0 0 0.5em;
 		}
 	}
 
 	& ul {
 		display: flex;
-		list-style: none;
 		margin: 0;
 		padding: 0;
-		display: block;
 		list-style: none;
-		margin: 0;
-		padding: 0;
+
+		@media (--sidebar-query) {
+			align-items: center;
+		}
 	}
 }
+
+
+
 
 .main-navigation a:hover,
 .main-navigation a:focus {
@@ -254,16 +358,6 @@
 
 /* Desktop menu to min width tablet */
 
-.secondary-menu-container,
-.primary-menu-container,
-.primary-nav {
-	display: none;
-
-	@media (--sidebar-query) {
-
-		display: flex;
-	}
-}
 
 .menu {
 

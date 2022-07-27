@@ -12,7 +12,6 @@ namespace WP_Rig\WP_Rig;
 global $queried_obj;
 global $obj_slug;
 
-printVar( $obj_slug );
 get_header();
 
 wp_rig()->print_styles( 'wp-rig-archive' );

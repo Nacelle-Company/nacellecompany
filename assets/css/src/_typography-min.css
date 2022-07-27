@@ -29,6 +29,11 @@ h6 {
 	color: var(--color-theme-primary);
 }
 
+.h1 {
+	font-size: 2em;
+	margin: 0.67em 0;
+}
+
 dfn,
 cite,
 em,

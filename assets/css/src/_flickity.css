@@ -139,7 +139,7 @@ button.flickity-prev-next-button {
 /* cell inherit height from carousel */
 .carousel-cell {
 	max-height: -webkit-fill-available;
-	width: 100vw;
+	width: 60vw;
 
 	@media (--sidebar-query) {
 		height: 80vh;

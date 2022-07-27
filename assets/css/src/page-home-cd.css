@@ -43,14 +43,14 @@
 	}
 }
 
-.site-header.front-page {
+/* .site-header.front-page {
 
 	@media (--sidebar-query) {
 		position: absolute;
 		background-color: transparent;
 		width: 100%;
 	}
-}
+} */
 
 .flickity-enabled {
 	position: relative;
@@ -190,8 +190,20 @@ button.flickity-prev-next-button {
 	width: 100vw;
 
 	@media (--sidebar-query) {
+		width: 50%;
 		height: 80vh;
 	}
+}
+
+.carousel-cell:not(.is-selected)::before {
+	box-shadow: inset 0 0 203px 170px #121212;
+	content: "";
+	display: block;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 9;
 }
 
 .carousel-cell figure {
@@ -205,7 +217,7 @@ button.flickity-prev-next-button {
 
 .caption {
 	padding: 1em;
-	z-index: 1002;
+	z-index: 5;
 
 	@media (--content-query) {
 		padding: 3em;

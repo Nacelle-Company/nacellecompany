@@ -16,18 +16,17 @@ $post_type_name = $the_post_type->labels->singular_name;
 
 get_header();
 
-wp_rig()->print_styles( 'wp-rig-content' );
 get_template_part( 'template-parts/content/page_header' );
 ?>
-	<main id="primary" class="site-main">
-		<?php
-		while ( have_posts() ) {
-			the_post();
+    <main id="primary" class="site-main">
+        <?php
+        while ( have_posts() ) {
+            the_post();
 
-			get_template_part( 'template-parts/content/entry', get_post_type() );
-		}
-		?>
-	</main>
+            get_template_part( 'template-parts/content/entry', get_post_type() );
+        }
+        ?>
+    </main>
 <?php
 get_sidebar();
 get_footer();
