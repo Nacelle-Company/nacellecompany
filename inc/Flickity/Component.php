@@ -86,24 +86,23 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	 * @param mixed $slides Display flickity slider.
 	 */
 	public function display_flickity( $the_post_type, $the_posts, $slider_id  ) {
+
 		if ( 'posts press' === $slider_id ) :
 			$group = true;
 			$btn   = false;
 			$meta  = true;
 			$title = true;
-			$img_size = 'medium';
+
 		elseif ( 'posts catalog' === $slider_id ) :
 			$group = true;
 			$btn   = true;
 			$meta  = false;
 			$title = false;
-			$img_size = 'medium';
 		else :
 			$group = false;
 			$btn   = true;
 			$meta  = false;
 			$title = true;
-			$img_size = 'large';
 		endif;
 
 		if ( 'recent_posts' === $the_posts ) :
@@ -128,14 +127,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		<div class="main-carousel main-carousel__<?php echo esc_html( $slider_id ); ?>" data-flickity='{"groupCells":"<?php echo esc_html( $group ); ?>", "wrapAround": true, "lazyLoad": false, "setGallerySize": true, "adaptiveHeight": false, "pageDots": false, "selectedAttraction": 0.01, "friction": 0.15}'>
 			<?php
 			if ( $slides ) :
-				$count = 0;
 				foreach ( $slides as $slide ) :
-					$count++;
-					if ( 1 === $count ) {
-					echo $count;
-						$img_class = 'no-lazy attachment-full';
-					}
-
 					if ( $title ) {
 						$the_title = get_the_title( $slide );
 						$the_title = wp_trim_words( $the_title, 9 );
@@ -158,12 +150,12 @@ class Component implements Component_Interface, Templating_Component_Interface {
 								$image = $the_slider_img;
 								echo wp_get_attachment_image(
 									$image,
-									$img_size,
+									'large',
 									false,
 									array(
-										'src'     => wp_get_attachment_image_url( $image, $img_size ),
-										'srcset'  => wp_get_attachment_image_srcset( $image, $img_size ),
-										'class'   => $img_class,
+										'src'     => wp_get_attachment_image_url( $image, 'large' ),
+										'srcset'  => wp_get_attachment_image_srcset( $image, 'large' ),
+										'class'   => 'no-lazy attachment-full',
 										'loading' => 'eager',
 									)
 								);
