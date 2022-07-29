@@ -21,6 +21,7 @@
 !style.css
 !/*.php
 !/inc/
+!/template-parts/
 !/config/
 /config/config.local.json
 !/tests/

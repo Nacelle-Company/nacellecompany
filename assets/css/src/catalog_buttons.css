@@ -10,20 +10,6 @@
 
 			grid-column: 1/span 3;
 		}
-
-	}
-
-	& .button {
-		display: inline-flex;
-		justify-content: center;
-		align-items: center;
-		box-shadow: var(--color-theme-secondary) 0 1px 5px, var(--color-theme-secondary) 0 1px 2px;
-		border-radius: 6px;
-		padding: 10px 0;
-
-		&:hover {
-			box-shadow: var(--color-theme-secondary) 0 0 1px, var(--color-theme-secondary) 0 1px 2px;
-		}
 	}
 }
 
@@ -31,6 +17,7 @@
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(47%, 1fr));
 	gap: 1em;
+	align-items: baseline;
 
 	@media (--content-query) {
 		grid-template-columns: auto;

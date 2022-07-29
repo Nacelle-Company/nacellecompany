@@ -46,6 +46,7 @@
 		& hr {
 			border-top-color: var(--color-theme-primary);
 			border-top-style: solid;
+			border-bottom-color: var(--color-theme-primary);
 		}
 	}
 }

@@ -124,7 +124,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		}
 		?>
 
-		<div class="main-carousel main-carousel__<?php echo esc_html( $slider_id ); ?>" data-flickity='{"groupCells":"<?php echo esc_html( $group ); ?>", "wrapAround": true, "lazyLoad": false, "setGallerySize": true, "adaptiveHeight": false, "pageDots": false, "selectedAttraction": 0.01, "friction": 0.15}'>
+		<div class="main-carousel main-carousel__<?php echo esc_html( $slider_id ); ?>" data-flickity='{"groupCells":"<?php echo esc_html( $group ); ?>", "wrapAround": true, "lazyLoad": false, "setGallerySize": true, "adaptiveHeight": false, "pageDots": false, "selectedAttraction": 0.015, "friction": 0.28}'>
 			<?php
 			if ( $slides ) :
 				foreach ( $slides as $slide ) :
@@ -150,11 +150,11 @@ class Component implements Component_Interface, Templating_Component_Interface {
 								$image = $the_slider_img;
 								echo wp_get_attachment_image(
 									$image,
-									'large',
+									'full',
 									false,
 									array(
-										'src'     => wp_get_attachment_image_url( $image, 'large' ),
-										'srcset'  => wp_get_attachment_image_srcset( $image, 'large' ),
+										'src'     => wp_get_attachment_image_url( $image, 'full' ),
+										'srcset'  => wp_get_attachment_image_srcset( $image, 'full' ),
 										'class'   => 'no-lazy attachment-full',
 										'loading' => 'eager',
 									)
@@ -200,7 +200,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 								<?php endif; ?>
 
 								<?php if ( $btn ) : ?>
-									<a class="button" href="<?php echo esc_html( $the_permalink ); ?>" title="Discover more <?php echo esc_html( $the_title ); ?>">Discover More</a>
+									<a class="button center" href="<?php echo esc_html( $the_permalink ); ?>" title="Discover more <?php echo esc_html( $the_title ); ?>">Discover More</a>
 								<?php endif; ?>
 							</figcaption>
 						</figure>

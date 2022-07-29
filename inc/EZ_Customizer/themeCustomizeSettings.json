@@ -176,7 +176,7 @@
       "label": "Color link visited",
       "type": "color",
       "section": "global_colors",
-      "default": "#fff",
+      "default": "#ffbc00",
       "refresh": false,
       "description": "Nacelle Company: #76b5fb"
     },
@@ -185,7 +185,7 @@
       "label": "Color link active",
       "type": "color",
       "section": "global_colors",
-      "default": "#ffbc00",
+      "default": "#7fd2e6",
       "refresh": false,
       "description": "Nacelle Company: #306de8"
     },

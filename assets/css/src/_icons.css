@@ -7,10 +7,12 @@
 	margin-right: 0.5rem;
 
 	& [fill] {
-		fill: var(--color-theme-secondary);
+		fill: var(--color-theme-primary);
+		transition: fill 0.2s ease-out;
 	}
-}
 
-.menu svg.icon {
-	fill: var(--color-theme-secondary);
+	&:hover [fill] {
+		fill: var(--color-theme-secondary);
+		transition: fill 0.2s ease-out;
+	}
 }

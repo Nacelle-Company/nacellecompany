@@ -317,7 +317,7 @@
 	& a {
 		display: block;
 		text-decoration: none;
-		color: var(--global-font-color);
+		color: var(--color-theme-primary);
 		padding: 1em 0;
 		max-width: 75%;
 
@@ -343,25 +343,9 @@
 	}
 }
 
-
-
-
-.main-navigation a:hover,
-.main-navigation a:focus {
-	text-decoration: underline;
-}
-
 .main-navigation .current-menu-item > a,
 .main-navigation .current-menu-ancestor > a {
 	font-weight: 700;
 }
 
 /* Desktop menu to min width tablet */
-
-
-.menu {
-
-	& svg.icon {
-		fill: var(--color-theme-primary);
-	}
-}
