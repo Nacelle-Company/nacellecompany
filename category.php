@@ -35,8 +35,10 @@ $sf_current_query = $searchandfilter->get( 46681 )->current_query();
 			get_template_part( 'template-parts/content/error' );
 		}
 		// Pagination.
-		wp_rig()->print_styles( 'wp-rig-pagination-archive' );
-		get_template_part( 'template-parts/content/pagination' );
+		// wp_rig()->print_styles( 'wp-rig-pagination-archive' );
+		// get_template_part( 'template-parts/content/pagination' );
+					wp_rig()->print_styles( 'wp-rig-pagination-archive' );
+			wp_rig()->display_pagination_archive( $obj_slug );
 		?>
 	</main>
 <?php

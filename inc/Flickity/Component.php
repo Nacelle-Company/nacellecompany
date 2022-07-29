@@ -85,130 +85,67 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	 *
 	 * @param mixed $slides Display flickity slider.
 	 */
-	public function display_flickity( $slides ) {
-		/*
-		*  http://codex.wordpress.org/Template_Tags/get_posts#Reset_after_Postlists_with_offset
-		*/
-		if ( get_field( 'group_slides' ) ) {
-			$group_cells           = '"groupCells": true, "groupCells": 2,';
-			$slider_custom_classes = ' group-cells';
-		} else {
-			$group_cells           = '';
-			$slider_custom_classes = '';
-		}
+	public function display_flickity( $the_post_type, $the_posts, $slider_id  ) {
+		if ( 'press' === $the_post_type ) :
+			$group = true;
+			$btn   = false;
+			$meta  = true;
+			$title = true;
+		elseif ( 'catalog' === $the_post_type && 'recent_posts' === $the_posts ) :
+			$group = true;
+			$btn   = true;
+			$meta  = false;
+			$title = false;
+		else :
+			$group = false;
+			$btn   = true;
+			$meta  = false;
+			$title = true;
+		endif;
 
+		if ( 'recent_posts' === $the_posts ) :
+			$args = array(
+				'numberposts' => 6,
+				'post_type'   => $the_post_type,
+				'orderby'     => 'date',
+				'order'       => 'DESC',
+			);
+			$slides = get_posts( $args );
+		else :
+			$slides = $the_posts;
+		endif;
+
+		if ( $group ) {
+			$group = '100%';
+		} else {
+			$group = 'false';
+		}
 		?>
 
-		<div class="main-carousel<?php echo esc_html( $slider_custom_classes ); ?>" data-flickity='{<?php echo esc_html( $group_cells ); ?>"wrapAround": true,"lazyLoad": false, "setGallerySize": false, "pageDots": false}'>
+		<div class="main-carousel main-carousel__<?php echo esc_html( $slider_id ); ?>" data-flickity='{"groupCells":"<?php echo esc_html( $group ); ?>", "wrapAround": true, "lazyLoad": false, "setGallerySize": true, "adaptiveHeight": false, "pageDots": false, "selectedAttraction": 0.01, "friction": 0.15}'>
 			<?php
-			$slider_posts = $slides;
 			if ( $slides ) :
-				foreach ( $slider_posts as $slide ) :
-
-					/**
-					 * Initial variables.
-					 */
-					$slide_id      = $slide->ID;
-					$blog_url      = get_bloginfo( 'url' );
-					$the_title     = get_the_title( $slide );
-					$the_permalink = get_the_permalink( $slide );
-
-					/**
-					 * Slide text content.
-					 */
-					$the_content = apply_filters( 'the_content', get_the_content( '', '', $slide ) );
-					// Build the synopsis.
-					if ( $the_content ) {
-						$the_synopsis = $the_content;
-					} else {
-						$the_synopsis = get_post_meta( $slide->ID, 'synopsis', true );
+				foreach ( $slides as $slide ) :
+					if ( $title ) {
+						$the_title = get_the_title( $slide );
+						$the_title = wp_trim_words( $the_title, 9 );
 					}
-					// Trunkate the synopsis.
-					$the_synopsis = wp_strip_all_tags( $the_synopsis );
-					$the_synopsis = wp_trim_words( $the_synopsis, 35 );
-
-					/**
-					 * Slide thumb image.
-					 */
-					$img = get_field( 'square_image', $slide );
-
-					$img_src      = wp_get_attachment_image_src( $img, 'wp-rig-square' );
-					$img_srcset   = wp_get_attachment_image_srcset( $img, 'wp-rig-square' );
-					$img_alt_text = get_post_meta( $img, '_wp_attachment_image_alt', true );
-
-					/**
-					 * Hero video.
-					 */
-					$hero_video_show = get_field( 'video_on_homepage_slider', $slide );
-					// Get the video. As long as the catalog post's t/f switch is on.
-					if ( true === $hero_video_show ) {
-						$the_horizontal_img = get_field( 'horizontal_image', $slide );
-						$hero_video          = get_field( 'video_embedd', $slide );
-						$hero_video_fallback = wp_get_attachment_image_url( $the_horizontal_img, 'large' );
-					}
+					$the_permalink      = get_the_permalink( $slide );
+					$the_slider_img     = get_field( 'home_image', $slide );
+					$the_horizontal_img = get_field( 'horizontal_image', $slide );
+					if ( $meta ) :
+						$source   = get_field( 'source', $slide ) . ' |';
+						$time     = get_the_time( 'F j, Y', $slide );
+						$time_att = get_the_time( 'Y-m-d', $slide );
+					endif;
 					?>
 
-					<div class="carousel-cell <?php echo esc_html( $slide_id ); ?>" tabindex='-1'>
+					<div class="carousel-cell <?php echo esc_html( $slide->ID ); ?>" tabindex='-1'>
 						<figure>
-							<figcaption class="caption">
-								<a class="caption-link" href="<?php echo esc_html( $the_permalink ); ?>">
-									<div class="flickity-image">
-										<?php if ( $img_src ) { ?>
-											<img class="no-lazy grid-item__img"
-											width="267" height="267"
-												src="<?php echo esc_url( $img_src[0] ); ?>"
-												title="<?php the_title(); ?>"
-												srcset="<?php echo esc_html( $img_srcset ); ?>"
-												sizes="(min-width: 620px) 267px, 200px"
-												alt="<?php echo esc_html( $img_alt_text ); ?>"
-											/>
-										<?php } ?>
-
-
-									</div>
-									<div class="flickity-synopsis">
-										<h3 class="flickity-title">
-											<?php echo esc_html( $the_title ); ?>
-										</h3>
-										<?php if ( ! empty( $the_synopsis ) ) : ?>
-											<div class="synopsis-container">
-												<?php echo esc_html( $the_synopsis ); ?>
-											</div>
-										<?php else : ?>
-											<br>
-										<?php endif; ?>
-									</div>
-								</a>
-							</figcaption>
+							<a class="link-absolute" href="<?php echo esc_html( $the_permalink ); ?>" title="<?php echo esc_html( $the_title ); ?>"></a>
 							<?php
-							if ( true === $hero_video_show ) {
-								wp_rig()->print_styles( 'wp-rig-hero-video' );
-								?>
-								<div id="hero_video_<?php echo esc_html( $slide_id ); ?>"
-								class="player"
-									data-property="{
-										videoURL: '<?php echo esc_html( $hero_video ); ?>',
-										mute: true,
-										containment:'self',
-										showYTLogo: false,
-										abundance: 0.3,
-										playOnlyIfVisible:true,
-										mobileFallbackImage: '<?php echo wp_kses( $hero_video_fallback, 'post' ); ?>',
-										mask:'<?php echo wp_kses( $blog_url, 'post' ); ?>/wp-content/themes/wp-rig/assets/images/ytplayer-mask.png'}">
-										<?php get_template_part( 'template-parts/modules/icon_volume-toggle' ); ?>
-								</div>
-								<?php
-							} else {
-								/**
-								 * Slide background image.
-								 */
-								$the_slider_img     = get_field( 'home_image', $slide );
-								$the_horizontal_img = get_field( 'horizontal_image', $slide );
-								if ( $the_slider_img ) {
-									$image = $the_slider_img;
-								} else {
-									$image = $the_horizontal_img;
-								}
+							if ( $the_slider_img ) :
+								$image = $the_slider_img;
 								echo wp_get_attachment_image(
 									$image,
 									'large',
@@ -220,22 +157,51 @@ class Component implements Component_Interface, Templating_Component_Interface {
 										'loading' => 'eager',
 									)
 								);
-							}
+							elseif ( $the_horizontal_img ) :
+								$image = $the_horizontal_img;
+								echo wp_get_attachment_image(
+									$image,
+									'large',
+									false,
+									array(
+										'src'     => wp_get_attachment_image_url( $image, 'large' ),
+										'srcset'  => wp_get_attachment_image_srcset( $image, 'large' ),
+										'class'   => 'no-lazy attachment-full',
+										'loading' => 'eager',
+									)
+								);
+							elseif ( get_the_post_thumbnail( $slide ) ) :
+								echo get_the_post_thumbnail( $slide, 'medium' );
+							else :
+								?>
+								<img src="<?php bloginfo( 'template_directory' ); ?>/assets/images/comedy-dynamics-default.jpg" class="wp-post-image" alt="<?php echo esc_html( $the_title ); ?>" />
+								<?php
+							endif;
 							?>
+							<figcaption class="caption caption__<?php echo esc_html( $the_post_type ); ?>">
+								<?php if ( $meta ) : ?>
+									<p>
+										<a href="<?php echo esc_html( $the_permalink ); ?>" title="<?php echo esc_html( $the_title ); ?>">
+											<?php echo esc_html( $the_title ); ?>
+										</a>
+									</p>
+									<sub class="post-source">
+										<?php echo esc_html( $source ); ?>
+										<time class="post-date" datetime="<?php echo esc_html( $time_att ); ?>">
+											<?php echo esc_html( $time ); ?>
+										</time>
+									</sub>
+								<?php elseif ( $title ) : ?>
+									<h2 class="flickity-title">
+										<?php echo esc_html( $the_title ); ?>
+									</h2>
+								<?php endif; ?>
+
+								<?php if ( $btn ) : ?>
+									<a class="button" href="<?php echo esc_html( $the_permalink ); ?>" title="Discover more <?php echo esc_html( $the_title ); ?>">Discover More</a>
+								<?php endif; ?>
+							</figcaption>
 						</figure>
-						<?php if ( true === $hero_video_show ) : ?>
-						<script>
-							jQuery(function() {
-								jQuery("#hero_video_<?php echo esc_html( $slide_id ); ?>").YTPlayer();
-								var heroVideo = document.querySelector("#hero_video_<?php echo esc_html( $slide_id ); ?>");
-								var flickityBtn = document.querySelectorAll(".flickity-button");
-								// console.log(flickityBtn);
-								jQuery(flickityBtn).on( 'click', '.button', function() {
-									jQuery(heroVideo).YTPToggleVolume().YTPToggleMask();
-								});
-							});
-						</script>
-						<?php endif; ?>
 					</div>
 					<?php
 				endforeach;

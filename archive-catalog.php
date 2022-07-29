@@ -27,7 +27,8 @@ wp_rig()->print_styles( 'wp-rig-content' );
 				the_post();
 				get_template_part( 'template-parts/content/entry', get_post_type() );
 			}
-			get_template_part( 'template-parts/content/pagination' );
+			wp_rig()->print_styles( 'wp-rig-pagination-archive' );
+			wp_rig()->display_pagination_archive( $obj_slug );
 		} else {
 			get_template_part( 'template-parts/content/error' );
 		}

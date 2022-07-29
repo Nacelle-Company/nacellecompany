@@ -12,7 +12,10 @@ $related_posts       = get_post_meta( get_the_ID(), 'talent_name', true );
 $related_posts_news  = get_post_meta( get_the_ID(), 'related_to', true );
 $boilerplate         = get_option( 'options_boilerplate' );
 $news_link           = get_post_meta( get_the_ID(), 'link_to_article', true );
-
+$source              = get_post_meta( get_the_ID(), 'source', true );
+$location            = get_post_meta( get_the_ID(), 'location', true );
+$time                = get_the_time( 'F j, Y' );
+$time_att            = get_the_time( 'Y-m-d' );
 ?>
 <?php
 // The post thumbnail.
@@ -30,17 +33,16 @@ if ( has_post_thumbnail() ) :
 	<?php endif; ?>
 <?php endif; ?>
 <div class="post-title">
-	<div class="post-date">
-		<?php
-		$location = get_post_meta( get_the_ID(), 'location', true );
-		$time     = get_the_time( 'm.j.y' );
-		echo '<p><strong>';
-		echo esc_html( $location ) . ' ';
-		echo '</strong>';
-		echo esc_html( $time );
-		echo '</p>';
-		?>
-	</div>
+	<p class="post-source">
+		<?php echo esc_html( $source ); ?> |
+		<time class="post-date" datetime="<?php echo esc_html( $time_att ); ?>">
+			<?php echo esc_html( $time ); ?>
+		</time>
+		<br>
+		<strong>
+			<?php echo esc_html( $location ); ?>
+		</strong>
+	</p>
 	<?php
 	if ( $news_link ) :
 		?>

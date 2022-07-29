@@ -18,9 +18,11 @@ $trim_length = 17; // ? Trimming the synopsis. desired length of text to display
 $value_more  = ' . . . '; // ? What to add at the end of the trimmed text.
 $image       = '';
 $queried_id  = get_queried_object();
-$obj_slug    = $queried_id->slug;
-
-
+if ( 'catalog' === $queried_id->name ) {
+	$obj_slug = 'catalog';
+} else {
+	$obj_slug = $queried_id->slug;
+}
 
 // Assign content if avaliable, otherwise use the synopsis acf.
 if ( $content_acf ) {

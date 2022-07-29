@@ -159,6 +159,7 @@ class Theme {
 			new Pagination\Component(),
 			new Post_Grid\Component(),
 			new Flickity\Component(),
+			new Section_Header\Component(),
 			new Lite_YouTube\Component(),
 			new Tax_Posts\Component(),
 			new Extra_Content\Component(),

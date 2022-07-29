@@ -35,6 +35,18 @@
 	grid-column: 3/-1;
 }
 
+.entry-title {
+
+	margin-top: 0;
+}
+
+.post-source {
+
+	@media (--content-query) {
+		margin-top: 0;
+	}
+}
+
 .post-title__link {
 
 	& h4 {
