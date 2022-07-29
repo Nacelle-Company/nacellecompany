@@ -72,7 +72,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				$out[]        = "\n</ul>\n";
 			}
 
-			$terms_list = '<dd>' . join( ', ', $terms_list ) . '</dd>';
+			$terms_list = '<dd>' . join( '<br>', $terms_list ) . '</dd>';
 
 		endif;
 		if ( $terms_list ) {

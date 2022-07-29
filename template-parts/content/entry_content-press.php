@@ -88,11 +88,13 @@ if ( has_post_thumbnail() ) :
 	<?php
 	get_template_part( 'template-parts/modules/social-share' );
 	if ( get_post_meta( get_the_ID(), 'show_boilerplate', true ) ) {
-		if ( ! empty( $boilerplate ) ) {
-			echo '<div class="boilerplate">';
-			echo wp_kses( $boilerplate, 'post' );
-			echo '</div>';
-		}
+		if ( ! empty( $boilerplate ) ) :
+			?>
+			<div class="boilerplate">
+				<?php echo wp_kses( $boilerplate, 'post' ); ?>
+			</div>
+			<?php
+		endif;
 	}
 	// Related posts.
 	if ( $related_posts ) {

@@ -60,8 +60,8 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			if ( 'post' === get_post_type() || get_post_type_object( get_post_type() )->has_archive ) {
 				the_post_navigation(
 					array(
-						'prev_text' => '<div class="post-navigation-sub"><span class="arrow-left"><svg width="37" height="19" class="icon" xmlns="http://www.w3.org/2000/svg"><path d="M37 9.25a2.31 2.31 0 0 1-2.312 2.312H11.572v5.202a1.738 1.738 0 0 1-2.916 1.271L.554 10.522a1.734 1.734 0 0 1 0-2.543l8.1-7.515A1.738 1.738 0 0 1 10.53.144c.63.275 1.042.904 1.042 1.525v5.268h23.116A2.31 2.31 0 0 1 37 9.25Z" fill="#000" fill-rule="nonzero"/></svg></span></div>%title',
-						'next_text' => '<div class="post-navigation-sub"><span class="arrow-right"><svg width="37" height="19" class="icon" xmlns="http://www.w3.org/2000/svg"><path d="m36.441 10.521-8.1 7.515a1.738 1.738 0 0 1-1.875.318c-.633-.275-1.042-.9-1.042-1.524l.005-5.268H2.312C1.035 11.562 0 10.528 0 9.184s1.035-2.247 2.312-2.247H25.43V1.734c0-.69.409-1.314 1.042-1.59a1.738 1.738 0 0 1 1.874.319l8.1 7.515a1.73 1.73 0 0 1-.004 2.543Z" fill="#000" fill-rule="nonzero"/></svg></span></div>%title',
+						'prev_text' => '<div class="post-navigation-sub"><span class="arrow-left"><svg width="37" height="19" class="icon" xmlns="http://www.w3.org/2000/svg"><path d="M37 9.25a2.31 2.31 0 0 1-2.312 2.312H11.572v5.202a1.738 1.738 0 0 1-2.916 1.271L.554 10.522a1.734 1.734 0 0 1 0-2.543l8.1-7.515A1.738 1.738 0 0 1 10.53.144c.63.275 1.042.904 1.042 1.525v5.268h23.116A2.31 2.31 0 0 1 37 9.25Z" fill="#000" fill-rule="nonzero"/></svg></span></div><p>%title</p>',
+						'next_text' => '<div class="post-navigation-sub"><span class="arrow-right"><svg width="37" height="19" class="icon" xmlns="http://www.w3.org/2000/svg"><path d="m36.441 10.521-8.1 7.515a1.738 1.738 0 0 1-1.875.318c-.633-.275-1.042-.9-1.042-1.524l.005-5.268H2.312C1.035 11.562 0 10.528 0 9.184s1.035-2.247 2.312-2.247H25.43V1.734c0-.69.409-1.314 1.042-1.59a1.738 1.738 0 0 1 1.874.319l8.1 7.515a1.73 1.73 0 0 1-.004 2.543Z" fill="#000" fill-rule="nonzero"/></svg></span></div><p>%title</p>',
 					)
 				);
 			}

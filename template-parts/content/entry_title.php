@@ -7,6 +7,7 @@
 
 namespace WP_Rig\WP_Rig;
 
+$title_visibility = '';
 if ( is_page() ) {
 	$hide_title = get_post_meta( get_the_ID(), 'hide_title', true );
 	if ( $hide_title ) {
