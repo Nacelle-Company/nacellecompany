@@ -16,13 +16,7 @@ img {
 	max-width: 100%;
 }
 /* stylelint-enable */
-.button {
 
-	& .icon {
-		margin: 0 0 0 5px;
-		fill: var(--color-theme-secondary);
-	}
-}
 
 blockquote,
 q {

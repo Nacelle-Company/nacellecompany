@@ -6,7 +6,7 @@
 	padding: 1.5rem;
 	font-family: var(--highlight-font-family);
 	font-stretch: condensed;
-	background-color: var(--global-color-dark);
+	background-color: var(--nav-bk-color);
 
 	@media (--sidebar-query) {
 		grid-column: 3/span 1;
@@ -15,6 +15,10 @@
 		margin-right: auto;
 		position: sticky;
 		top: 0;
+	}
+
+	& ul {
+		padding-left: 0;
 	}
 
 	& .sf_date_field {

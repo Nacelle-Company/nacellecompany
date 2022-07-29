@@ -47,7 +47,8 @@ a:not(.button):active {
 	height: 100%;
 }
 /* stylelint-enable */
-.button {
+.button,
+input[type="submit"] {
 	display: inline-flex;
 	align-items: center;
 	width: fit-content;

@@ -9,24 +9,33 @@
 
 namespace WP_Rig\WP_Rig;
 
-$queried_obj = get_queried_object();
-$obj_slug    = $queried_obj->name;
-// printVar( $queried_obj );
+wp_rig()->print_styles( 'wp-rig-sidebar', 'wp-rig-widgets' );
 
 if ( ! wp_rig()->is_primary_sidebar_active() ) {
 	return;
 }
 
-wp_rig()->print_styles( 'wp-rig-sidebar', 'wp-rig-widgets' );
-
 ?>
 <aside id="secondary" class="primary-sidebar widget-area">
 	<h2 class="screen-reader-text"><?php esc_attr_e( 'Asides', 'wp-rig' ); ?></h2>
 	<?php
-	if ( 'news' === $obj_slug || is_post_type( 'news' ) ) :
 		wp_rig()->display_primary_sidebar();
-	else :
-		wp_rig()->display_secondary_sidebar();
-	endif;
+		$pdf          = get_post_meta( get_the_ID(), 'pdf_download', true );
+		$stills       = get_post_meta( get_the_ID(), 'stills_download', true );
+		$pdf_title    = get_post_meta( get_the_ID(), 'pdf_title', true );
+		$stills_title = get_post_meta( get_the_ID(), 'stills_title', true );
 	?>
+		<?php if ( ! empty( $stills ) || ! empty( $pdf ) ) : ?>
+			<h4>Downloads</h4>
+		<?php endif; ?>
+		<?php if ( ! empty( $pdf ) ) : ?>
+			<p>
+				<a href="<?php echo esc_html( $stills ); ?>" download title="<?php echo esc_html( $stills_title ); ?>"><?php echo esc_html( $stills_title ); ?></a>
+			</p>
+		<?php endif; ?>
+		<?php if ( ! empty( $stills ) ) : ?>
+			<p>
+				<a href="<?php echo esc_attr( $pdf ); ?>" download title="<?php echo esc_html( $pdf_title ); ?>"><?php echo esc_html( $pdf_title ); ?></a>
+			</p>
+		<?php endif; ?>
 </aside>

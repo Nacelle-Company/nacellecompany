@@ -21,33 +21,12 @@
       "refresh": false
     },
     {
-      "id": "show_search",
-      "type": "checkbox",
-      "label": "Show search",
-      "section": "global",
-      "refresh": false
-    },
-    {
       "id": "desktop_nav_wide",
       "type": "checkbox",
       "label": "Desktop navigation wide",
       "default": false,
       "section": "global",
       "refresh": true
-    },
-    {
-      "id": "homepage_heading",
-      "label": "Homepage heading",
-      "section": "global",
-      "description": "Leave blank to not display",
-      "refresh": false
-    },
-    {
-      "id": "boilerplate",
-      "label": "Boilerplate",
-      "type": "textarea",
-      "section": "global",
-      "refresh": false
     },
     {
       "id": "site_branding",
@@ -86,7 +65,7 @@
       "label": "Navigation background color",
       "type": "color",
       "section": "global_colors",
-      "default": "#121212",
+      "default": "#1c1c1c",
       "refresh": false,
       "description": "Nacelle Company: #4591e5"
     },
