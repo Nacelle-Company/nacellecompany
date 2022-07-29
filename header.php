@@ -83,10 +83,6 @@ if ( 'www.nacellecompany.com' === $host ) :
 		}
 	</style>
 	<?php
-elseif ( 'www.comedydynamics.com' === $host ) :
-	$sf_current_query = $searchandfilter->get( 46681 )->current_query();
-elseif ( 'localhost' === $host ) :
-	// $sf_current_query = $searchandfilter->get( 46681 )->current_query();
 endif;
 ?>
 <!doctype html>

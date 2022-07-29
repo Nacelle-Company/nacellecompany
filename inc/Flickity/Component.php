@@ -86,12 +86,13 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	 * @param mixed $slides Display flickity slider.
 	 */
 	public function display_flickity( $the_post_type, $the_posts, $slider_id  ) {
-		if ( 'press' === $the_post_type ) :
+		if ( 'posts press' === $slider_id ) :
 			$group = true;
 			$btn   = false;
 			$meta  = true;
 			$title = true;
-		elseif ( 'catalog' === $the_post_type && 'recent_posts' === $the_posts ) :
+
+		elseif ( 'posts catalog' === $slider_id ) :
 			$group = true;
 			$btn   = true;
 			$meta  = false;

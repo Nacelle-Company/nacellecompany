@@ -181,11 +181,17 @@
 
 /* cell inherit height from carousel */
 .button {
+	background-color: rgba(0, 0, 0, 0.479);
+	transition: background-color 0.2s linear;
 
 	@media (--content-query) { /* __top */
 
 		max-width: 150px;
 		margin: 0 auto;
+	}
+
+	&:hover {
+		background-color: rgba(0, 0, 0, 0.8);
 	}
 }
 
@@ -282,6 +288,7 @@
 
 	& figure { /* __three */
 		grid-template-rows: 20vh 14vh;
+		height: 100%;
 	}
 
 	&.catalog figure {
@@ -429,7 +436,13 @@ figure {
 
 	& .flickity-title {
 		margin: 0;
-		line-height: 25px;
+		line-height: 1;
+		font-size: 110%;
+
+		@media (--content-query) {
+			margin: 5px 0;
+			font-size: initial;
+		}
 	}
 }
 
