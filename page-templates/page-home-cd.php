@@ -28,13 +28,17 @@ wp_rig()->print_styles( 'wp-rig-page-home-cd' );
 			wp_rig()->print_styles( 'wp-rig-flickity' );
 			wp_rig()->display_flickity( 'catalog', get_field( 'home_feat_posts' ), 'top' );
 			get_template_part( 'template-parts/content/entry', get_post_type() );
-			?>
-			<div class="archive-main post-grid">
-				<h2 class="entry-title">Latest Independent Comedy News</h2>
-				<?php wp_rig()->display_post_grid( 'news', '' ); ?>
-			</div>
+
+			if ( get_field( 'display_post_grid' ) ) :
+				?>
+				<div class="archive-main post-grid">
+					<h2 class="entry-title">Latest Independent Comedy News</h2>
+					<?php wp_rig()->display_post_grid( 'news', '' ); ?>
+				</div>
+			<?php endif; ?>
 			<article class="type-page">
 				<?php
+				// Post slider.
 				if ( have_rows( 'post_slider' ) ) :
 
 					while ( have_rows( 'post_slider' ) ) :
@@ -63,9 +67,7 @@ wp_rig()->print_styles( 'wp-rig-page-home-cd' );
 				if ( get_field( 'featured_trailer_one' ) ) :
 					wp_rig()->display_section_header( 'featured trailers', 'catalog' );
 				endif;
-				?>
-				<!-- Featured trailers-->
-				<?php
+				// Featured trailers.
 				if ( get_field( 'featured_trailer_one' ) ) :
 					?>
 					<div class="featured-trailers">
@@ -168,77 +170,75 @@ wp_rig()->print_styles( 'wp-rig-page-home-cd' );
 					</div>
 					<?php
 				endif;
-				?>
-				<!-- Catalog GRID -->
-				<?php if ( get_field( 'specials' ) ) :
-				?>
-				<?php wp_rig()->display_section_header( 'Catalog', 'catalog' ); ?>
-				<div class="featured-trailers featured-trailers__catalog">
-					<div class="trailer">
-						<figure>
-							<a class="link-absolute" href="/category/distribution/special/" title="Specials"></a>
-							<?php
-							$specials_img = get_field( 'specials' );
-							if ( ! empty( $specials_img ) ) :
-								?>
-								<img src="<?php echo esc_url( $specials_img['url'] ); ?>" alt="<?php echo esc_attr( $specials_img['alt'] ); ?>" loading="lazy" />
-							<?php endif; ?>
-							<figcaption class="caption caption__press">
-								<h2 class="flickity-title">
-									<a href="/category/distribution/special/" title="Specials">Specials</a>
-								</h2>
-							</figcaption>
-						</figure>
+				// Catalog grid.
+				if ( get_field( 'specials' ) ) :
+					wp_rig()->display_section_header( 'Catalog', 'catalog' ); ?>
+					<div class="featured-trailers featured-trailers__catalog">
+						<div class="trailer">
+							<figure>
+								<a class="link-absolute" href="/category/distribution/special/" title="Specials"></a>
+								<?php
+								$specials_img = get_field( 'specials' );
+								if ( ! empty( $specials_img ) ) :
+									?>
+									<img src="<?php echo esc_url( $specials_img['url'] ); ?>" alt="<?php echo esc_attr( $specials_img['alt'] ); ?>" loading="lazy" />
+								<?php endif; ?>
+								<figcaption class="caption caption__press">
+									<h2 class="flickity-title">
+										<a href="/category/distribution/special/" title="Specials">Specials</a>
+									</h2>
+								</figcaption>
+							</figure>
+						</div>
+						<div class="trailer">
+							<figure>
+								<a class="link-absolute" href="/category/distribution/film/" title="Films"></a>
+								<?php
+								$films_img = get_field( 'films' );
+								if ( ! empty( $films_img ) ) :
+									?>
+									<img src="<?php echo esc_url( $films_img['url'] ); ?>" alt="<?php echo esc_attr( $films_img['alt'] ); ?>" loading="lazy" />
+								<?php endif; ?>
+								<figcaption class="caption caption__press">
+									<h2 class="flickity-title">
+										<a href="/category/distribution/film/" title="Films">Films</a>
+									</h2>
+								</figcaption>
+							</figure>
+						</div>
+						<div class="trailer">
+							<figure>
+								<a class="link-absolute" href="/category/distribution/series/" title="Series"></a>
+								<?php
+								$series_img = get_field( 'series' );
+								if ( ! empty( $series_img ) ) :
+									?>
+									<img src="<?php echo esc_url( $series_img['url'] ); ?>" alt="<?php echo esc_attr( $series_img['alt'] ); ?>" loading="lazy" />
+								<?php endif; ?>
+								<figcaption class="caption caption__press">
+									<h2 class="flickity-title">
+										<a href="/category/distribution/series/" title="Series">Series</a>
+									</h2>
+								</figcaption>
+							</figure>
+						</div>
+						<div class="trailer">
+							<figure>
+								<a class="link-absolute" href="/category/distribution/album/" title="Albums"></a>
+								<?php
+								$albums_img = get_field( 'albums' );
+								if ( ! empty( $specials_img ) ) :
+									?>
+									<img src="<?php echo esc_url( $albums_img['url'] ); ?>" alt="<?php echo esc_attr( $albums_img['alt'] ); ?>" loading="lazy" />
+								<?php endif; ?>
+								<figcaption class="caption caption__press">
+									<h2 class="flickity-title">
+										<a href="/category/distribution/album/" title="Albums">Albums</a>
+									</h2>
+								</figcaption>
+							</figure>
+						</div>
 					</div>
-					<div class="trailer">
-						<figure>
-							<a class="link-absolute" href="/category/distribution/film/" title="Films"></a>
-							<?php
-							$films_img = get_field( 'films' );
-							if ( ! empty( $films_img ) ) :
-								?>
-								<img src="<?php echo esc_url( $films_img['url'] ); ?>" alt="<?php echo esc_attr( $films_img['alt'] ); ?>" loading="lazy" />
-							<?php endif; ?>
-							<figcaption class="caption caption__press">
-								<h2 class="flickity-title">
-									<a href="/category/distribution/film/" title="Films">Films</a>
-								</h2>
-							</figcaption>
-						</figure>
-					</div>
-					<div class="trailer">
-						<figure>
-							<a class="link-absolute" href="/category/distribution/series/" title="Series"></a>
-							<?php
-							$series_img = get_field( 'series' );
-							if ( ! empty( $series_img ) ) :
-								?>
-								<img src="<?php echo esc_url( $series_img['url'] ); ?>" alt="<?php echo esc_attr( $series_img['alt'] ); ?>" loading="lazy" />
-							<?php endif; ?>
-							<figcaption class="caption caption__press">
-								<h2 class="flickity-title">
-									<a href="/category/distribution/series/" title="Series">Series</a>
-								</h2>
-							</figcaption>
-						</figure>
-					</div>
-					<div class="trailer">
-						<figure>
-							<a class="link-absolute" href="/category/distribution/album/" title="Albums"></a>
-							<?php
-							$albums_img = get_field( 'albums' );
-							if ( ! empty( $specials_img ) ) :
-								?>
-								<img src="<?php echo esc_url( $albums_img['url'] ); ?>" alt="<?php echo esc_attr( $albums_img['alt'] ); ?>" loading="lazy" />
-							<?php endif; ?>
-							<figcaption class="caption caption__press">
-								<h2 class="flickity-title">
-									<a href="/category/distribution/album/" title="Albums">Albums</a>
-								</h2>
-							</figcaption>
-						</figure>
-					</div>
-				</div>
 					<?php
 				endif;
 				?>

@@ -22,6 +22,7 @@
 !/*.php
 !/inc/
 !/template-parts/
+!/page-templates/
 !/config/
 /config/config.local.json
 !/tests/
