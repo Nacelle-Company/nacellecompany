@@ -92,7 +92,6 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			$btn   = false;
 			$meta  = true;
 			$title = true;
-
 		elseif ( 'posts catalog' === $slider_id ) :
 			$group = true;
 			$btn   = true;
@@ -128,13 +127,11 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			<?php
 			if ( $slides ) :
 				foreach ( $slides as $slide ) :
+					$the_permalink = get_the_permalink( $slide );
 					if ( $title ) {
 						$the_title = get_the_title( $slide );
 						$the_title = wp_trim_words( $the_title, 9 );
 					}
-					$the_permalink      = get_the_permalink( $slide );
-					$the_slider_img     = get_field( 'home_image', $slide );
-					$the_horizontal_img = get_field( 'horizontal_image', $slide );
 					if ( $meta ) :
 						$source   = get_field( 'source', $slide ) . ' |';
 						$time     = get_the_time( 'F j, Y', $slide );
@@ -146,38 +143,56 @@ class Component implements Component_Interface, Templating_Component_Interface {
 						<figure>
 							<a class="link-absolute" href="<?php echo esc_html( $the_permalink ); ?>" title="<?php echo esc_html( $the_title ); ?>"></a>
 							<?php
-							if ( $the_slider_img ) :
-								$image = $the_slider_img;
-								echo wp_get_attachment_image(
-									$image,
-									'full',
-									false,
-									array(
-										'src'     => wp_get_attachment_image_url( $image, 'full' ),
-										'srcset'  => wp_get_attachment_image_srcset( $image, 'full' ),
-										'class'   => 'no-lazy attachment-full',
-										'loading' => 'eager',
-									)
-								);
-							elseif ( $the_horizontal_img ) :
-								$image = $the_horizontal_img;
-								echo wp_get_attachment_image(
-									$image,
-									'large',
-									false,
-									array(
-										'src'     => wp_get_attachment_image_url( $image, 'large' ),
-										'srcset'  => wp_get_attachment_image_srcset( $image, 'large' ),
-										'class'   => 'no-lazy attachment-full',
-										'loading' => 'eager',
-									)
-								);
-							elseif ( get_the_post_thumbnail( $slide ) ) :
-								echo get_the_post_thumbnail( $slide, 'medium' );
+							// Press slider: wp featured image.
+							if ( 'posts press' === $slider_id ) :
+								if ( get_the_post_thumbnail( $slide ) ) :
+									echo get_the_post_thumbnail( $slide, 'medium' );
+								else :
+									?>
+										<img src="<?php bloginfo( 'template_directory' ); ?>/assets/images/comedy-dynamics-default.jpg" class="wp-post-image" alt="<?php echo esc_html( $the_title ); ?>" />
+									<?php
+								endif;
+							// Catalog slider: square image.
+							elseif ( 'posts catalog' === $slider_id ) :
+								if ( get_field( 'square_image', $slide ) ) :
+									$image   = get_field( 'square_image', $slide );
+									$size    = 'medium';
+									$no_lazy = 'attachment-medium catalog-img';
+									$loading = 'lazy';
+								else :
+									?>
+										<img src="<?php bloginfo( 'template_directory' ); ?>/assets/images/comedy-dynamics-default-square.jpg" class="wp-post-image" alt="<?php echo esc_html( $the_title ); ?>" />
+									<?php
+								endif;
+							// Top slider: home image.
+							elseif ( 'top' === $slider_id ) :
+								if ( get_field( 'home_image', $slide ) ) :
+									$image   = get_field( 'home_image', $slide );
+									$size    = 'full';
+									$no_lazy = 'no-lazy attachment-full';
+									$loading = 'eager';
+								else :
+									?>
+										<img src="<?php bloginfo( 'template_directory' ); ?>/assets/images/comedy-dynamics-default.jpg" class="wp-post-image" alt="<?php echo esc_html( $the_title ); ?>" />
+									<?php
+								endif;
 							else :
 								?>
-								<img src="<?php bloginfo( 'template_directory' ); ?>/assets/images/comedy-dynamics-default.jpg" class="wp-post-image" alt="<?php echo esc_html( $the_title ); ?>" />
+									<img src="<?php bloginfo( 'template_directory' ); ?>/assets/images/comedy-dynamics-default.jpg" class="wp-post-image" alt="<?php echo esc_html( $the_title ); ?>" />
 								<?php
+							endif;
+							if ( $image ) :
+								echo wp_get_attachment_image(
+									$image,
+									$size,
+									false,
+									array(
+										'src'     => wp_get_attachment_image_url( $image, $size ),
+										'srcset'  => wp_get_attachment_image_srcset( $image, $size ),
+										'class'   => $no_lazy,
+										'loading' => $loading,
+									)
+								);
 							endif;
 							?>
 							<figcaption class="caption caption__<?php echo esc_html( $the_post_type ); ?>">

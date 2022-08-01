@@ -399,6 +399,9 @@ figure {
 	}
 }
 
+.catalog-img {
+	width: 100%;
+}
 
 .flickity-title {
 	text-transform: uppercase;
