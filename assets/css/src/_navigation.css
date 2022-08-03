@@ -49,6 +49,7 @@
 
 	@media (--sidebar-query) {
 		display: flex;
+		flex-wrap: wrap;
 		order: 1;
 	}
 }
@@ -81,13 +82,17 @@
 	& li.search-icon {
 
 		@media (--sidebar-query) {
-			margin-right: 5em;
+			transform: translateX(-55px);
+			position: relative;
 		}
 	}
 }
 
 .mobile-menu__search {
 	order: 3;
+	position: relative;
+	width: 35px;
+	height: 35px;
 
 	@media (--content-query) {
 		padding-right: 2em;

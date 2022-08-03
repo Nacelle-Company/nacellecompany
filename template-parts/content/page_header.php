@@ -9,14 +9,9 @@ namespace WP_Rig\WP_Rig;
 
 global $obj_slug;
 global $searchandfilter;
-$host = $_SERVER['SERVER_NAME'];
-if ( 'www.nacellecompany.com' === $host ) {
-} elseif ( 'www.comedydynamics.com' === $host ) {
-	$sf_current_query = $searchandfilter->get( 46681 )->current_query();
-} elseif ( 'localhost' === $host ) {
-	$sf_current_query = $searchandfilter->get( 46681 )->current_query();
-}
-$queried_obj = get_queried_object();
+
+$sf_current_query = $searchandfilter->get( 46681 )->current_query();
+$queried_obj      = get_queried_object();
 
 if ( is_404() ) {
 	?>
@@ -44,17 +39,17 @@ if ( is_404() ) {
 	<?php
 } elseif ( is_page() ) {
 	?>
-	<header class="page-header <?php echo get_post_meta( get_the_ID(), 'hide_title', true ); ?>">
+	<header class="page-header <?php echo esc_html( get_post_meta( get_the_ID(), 'hide_title', true ) ); ?>">
 		<h1 class="page-title">
 			<?php single_post_title(); ?>
 		</h1>
 	</header>
 	<?php
 } elseif ( is_post_type( 'catalog' ) && $sf_current_query->is_filtered() ) {
-	$sf_tax_args             = array(
+	$sf_tax_args = array(
 		'str'               => '%1$s: %2$s',
 		'delim'             => array( ', ', ' - ' ),
-		'field_delim'        => ', ',
+		'field_delim'       => ', ',
 		'show_all_if_empty' => false,
 	);
 	// $tax_names = $sf_current_query->get_fields_html( array( '_sft_genre' ), $sf_tax_args );
@@ -71,7 +66,6 @@ if ( is_404() ) {
 				<h1 class="page-title">
 					<?php
 					echo single_term_title();
-					// echo esc_html( $tax_names );
 					?>
 					<br>
 				</h1>
@@ -164,7 +158,7 @@ if ( is_404() ) {
 } elseif ( is_search() ) {
 	?>
 	<header class="page-header">
-		<h1 class="page-title">
+		<h1 class="page-title h2">
 			<?php
 			printf(
 				/* translators: %s: search query */
@@ -173,6 +167,7 @@ if ( is_404() ) {
 			);
 			?>
 		</h1>
+		<span class="page-header__line"><hr></span>
 	</header>
 	<?php
 } else {

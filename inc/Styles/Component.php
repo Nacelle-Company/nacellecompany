@@ -412,13 +412,6 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					return 'page-home-cd.php' === basename( $template );
 				},
 			),
-			'wp-rig-related_content'    => array(
-				'file'             => 'related_content.min.css',
-				'preload_callback' => function() {
-					global $template;
-					return 'related_content.php' === basename( $template );
-				},
-			),
 			'wp-rig-catalog_buttons'    => array(
 				'file'             => 'catalog_buttons.min.css',
 				'preload_callback' => function() {

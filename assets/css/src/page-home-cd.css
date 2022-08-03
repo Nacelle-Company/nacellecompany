@@ -1,6 +1,8 @@
 @import "_site-main.css";
 @import "_section-header.css";
 @import "_post-grid.css";
+@import "_modal.css";
+@import "_yt-player.css";
 
 .type-page {
 
@@ -24,6 +26,16 @@
 	}
 }
 
+.icon-play {
+	position: absolute;
+	justify-self: center;
+	align-self: center;
+
+	& [fill] {
+		fill: var(--color-link);
+	}
+}
+
 .archive-main {
 	display: grid;
 	gap: 1em;
@@ -34,6 +46,8 @@
 	}
 
 	@media (--sidebar-query) {
+		max-width: 1080px;
+		margin: 0 auto;
 		grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
 	}
 }
@@ -188,7 +202,6 @@
 		@media (--content-query) {
 			justify-items: center;
 			grid-template-rows: unset;
-
 		}
 	}
 
@@ -197,10 +210,11 @@
 
 		@media (--sidebar-query) { /* __top */
 			width: 68%;
+			max-height: 100%;
 		}
 
 		&.is-selected::before {
-			box-shadow: inset 0 0 100px 6px rgb(18 18 18 / 17%);
+			box-shadow: inset 0 0 0 0 rgb(18 18 18 / 0);
 			content: "";
 			display: block;
 			height: 100%;
@@ -231,10 +245,11 @@
 		text-align: center;
 
 		@media (--content-query) { /* __top */
-			position: absolute;
-			bottom: 0;
-			padding: 3em;
-			max-width: 60%;
+			transform: translateY(-15vh);
+		}
+
+		@media (--sidebar-query) { /* __top */
+			transform: translateY(-20vh);
 		}
 	}
 
@@ -378,13 +393,15 @@ figure {
 }
 
 .caption__catalog {
-	position: absolute;
-	bottom: 0;
+
+	/* position: absolute;
+	bottom: 0; */
 
 	@media (--content-query) { /* __top */
 		max-width: 70%;
 		justify-content: center;
 		padding: 1em;
+		align-content: flex-start;
 	}
 
 	@media (--sidebar-query) { /* __top */
@@ -420,6 +437,10 @@ figure {
 
 	@media (--sidebar-query) {
 		gap: 1em;
+	}
+
+	& .caption p {
+		margin-bottom: 0;
 	}
 }
 

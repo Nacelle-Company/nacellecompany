@@ -6,53 +6,31 @@
  */
 
 namespace WP_Rig\WP_Rig;
-// TODO: 404 page finish.
+
+wp_rig()->print_styles( 'wp-rig-page' );
 ?>
-<section class="error">
+<section class="error site-main__content-width">
+	<img src="<?php bloginfo( 'template_directory' ); ?>/assets/images/bamford-is-sad-you-are-on-404-page.png" class="img-404" alt="404 image" />
 	<?php get_template_part( 'template-parts/content/page_header' ); ?>
 
-	<div class="page-content" style="display: flex; flex-direction:column;">
-		<p style="text-align: center;">
+	<div class="page-content entry-content content-width">
+		<p>
 			<?php esc_html_e( 'The page you are looking for may have been moved, had its name changed or we’re working on it.', 'wp-rig' ); ?>
 		</p>
-		<h2 style="text-align: center;">
+		<h2>
 			<?php echo sprintf( esc_html__( 'Maybe try one of these? %1$s', 'wp-rig' ), convert_smilies( ':)' ) ); ?>
 		</h2>
-		<a href="<?php bloginfo( 'url' ); ?>" class="button large">
-			<?php get_template_part( 'template-parts/svg/icon', 'home' ); ?>
-			<span><?php _e( 'Home', 'nacelle' ); ?></span>
-		</a>
-
-		<a href="
-		<?php
-		bloginfo( 'url' );
-							echo $catalogPath;
-		?>
-							" class="button large flex-container">
-			<?php get_template_part( 'template-parts/svg/icon', 'disk-lg', array( 'fill' => $fillColor ) ); ?>
-			<span><?php _e( 'Catalog', 'nacelle' ); ?></span>
-		</a>
-
-		<?php if ( ! empty( $hasNewsPosts ) ) : ?>
-			<a href="<?php bloginfo( 'url' ); ?>/in-the-news" class="button large">
-				<?php get_template_part( 'template-parts/svg/icon', 'newspaper', array( 'fill' => $fillColor ) ); ?>
-				<span><?php _e( 'News', 'nacelle' ); ?></span>
+		<div class="button-wrap">
+			<a href="<?php bloginfo( 'url' ); ?>" class="button">
+				<span><?php esc_html( 'Home', 'wp-rig' ); ?></span>
+				<?php get_template_part( 'template-parts/svg/icon', 'home' ); ?>
 			</a>
-		<?php endif; ?>
 
-		<?php if ( ! empty( $hasPressPosts ) ) : ?>
-			<a href="<?php bloginfo( 'url' ); ?>/press" class="button large">
-				<?php get_template_part( 'template-parts/svg/icon', 'press', array( 'fill' => $fillColor ) ); ?>
-				<span><?php _e( 'Press', 'nacelle' ); ?></span>
+			<a href="<?php bloginfo( 'url' ); ?>/catalog" class="button">
+				<span><?php esc_html( 'Catalog', 'wp-rig' ); ?></span>
+				<?php get_template_part( 'template-parts/svg/icon', 'albums' ); ?>
 			</a>
-		<?php endif; ?>
-
-		<?php if ( ! empty( $hasPRPosts ) ) : ?>
-			<a href="<?php bloginfo( 'url' ); ?>/press-release" class="button large">
-				<?php get_template_part( 'template-parts/svg/icon', 'pressrelease', array( 'fill' => $fillColor ) ); ?>
-				<span><?php _e( 'Releases', 'nacelle' ); ?></span>
-			</a>
-		<?php endif; ?>
+		</div>
 		<div class="widget widget_categories">
 			<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'wp-rig' ); ?></h2>
 			<ul>
@@ -70,4 +48,4 @@ namespace WP_Rig\WP_Rig;
 			</ul>
 		</div>
 	</div>
-</section
+</section>

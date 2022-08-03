@@ -9,17 +9,20 @@ namespace WP_Rig\WP_Rig;
 
 wp_rig()->print_styles( 'wp-rig-social-share' );
 
-$html          = '';
-$url_full      = get_permalink( $post->ID );
-$url           = esc_url( $url_full );
-$queried_id    = get_queried_object();
-$obj_slug      = $queried_id->post_type;
-$hashes        = true;
+$html        = '';
+$url_full    = get_permalink( $post->ID );
+$url         = esc_url( $url_full );
+$queried_id  = get_queried_object();
+$obj_slug    = $queried_id->post_type;
+$hashes      = true;
+$posts_class = '';
 if ( 'catalog' === $obj_slug ) {
 	$hashes = false;
+} else {
+	$posts_class = ' ss-posts';
 }
 ?>
-<div class="social-share">
+<div class="social-share<?php echo esc_html( $posts_class ); ?>">
 	<h3 class='share-on'>
 	<?php
 	if ( $hashes ) :

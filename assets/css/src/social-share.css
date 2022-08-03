@@ -1,5 +1,5 @@
 
-.social-share {
+.social-share:not(.ss-posts) {
 	display: inline-flex;
 	align-items: baseline;
 	grid-column: 2/span 1;
@@ -13,6 +13,10 @@
 	@media (--sidebar-query) {
 		justify-content: end;
 	}
+}
+
+.ss-posts {
+	text-align: center;
 }
 
 .social-share__icons {

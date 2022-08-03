@@ -23,17 +23,14 @@ wp_rig()->print_styles( 'wp-rig-page-home-cd' );
 		<?php
 		while ( have_posts() ) :
 			the_post();
-			// get_template_part( 'template-parts/hero/hero_flickity', get_post_type() );
-			// Top slider.
-			wp_rig()->print_styles( 'wp-rig-flickity' );
 			wp_rig()->display_flickity( 'catalog', get_field( 'home_feat_posts' ), 'top' );
 			get_template_part( 'template-parts/content/entry', get_post_type() );
 
 			if ( get_field( 'display_post_grid' ) ) :
 				?>
-				<div class="archive-main post-grid">
+				<div class="archive-main type-page post-grid">
 					<h2 class="entry-title">Latest Independent Comedy News</h2>
-					<?php wp_rig()->display_post_grid( 'news', '' ); ?>
+					<?php wp_rig()->display_post_grid( 'press' ); ?>
 				</div>
 			<?php endif; ?>
 			<article class="type-page">
@@ -60,7 +57,6 @@ wp_rig()->print_styles( 'wp-rig-page-home-cd' );
 						wp_rig()->display_section_header( $the_title, $the_post_type );
 						wp_rig()->display_flickity( $the_post_type, $the_posts, $slider_id );
 					endwhile;
-				else :
 				endif;
 				?>
 				<?php
@@ -73,6 +69,8 @@ wp_rig()->print_styles( 'wp-rig-page-home-cd' );
 					<div class="featured-trailers">
 						<?php
 						$featured_post = get_field( 'featured_trailer_one' );
+						$hero_video    = get_field( 'video_embedd', $featured_post );
+
 						if ( $featured_post ) :
 							$trailer_title      = $featured_post->post_title;
 							$the_permalink      = get_the_permalink( $featured_post );
@@ -84,43 +82,57 @@ wp_rig()->print_styles( 'wp-rig-page-home-cd' );
 							?>
 							<div class="trailer">
 								<figure>
-									<a class="link-absolute" href="<?php echo esc_html( $the_permalink ); ?>" title="<?php echo esc_html( $trailer_title ); ?>"></a>
-									<?php
-									if ( $the_horizontal_img ) :
-										echo wp_get_attachment_image(
-											$image,
-											'medium_large',
-											false,
-											array(
-												'src'     => wp_get_attachment_image_url( $image, 'medium_large' ),
-												'srcset'  => wp_get_attachment_image_srcset( $image, 'medium_large' ),
-												'class'   => 'attachment-full',
-												'loading' => 'lazy',
-											)
-										);
-									else :
-										?>
-										<img src="<?php bloginfo( 'template_directory' ); ?>/assets/images/comedy-dynamics-default.jpg" class="wp-post-image" alt="<?php echo esc_html( $the_title ); ?>" loading="lazy" />
+									<a href="#open-modal-one" class="open-modal" onclick="jQuery('#feat_modal_vid_one').YTPPlay()">
 										<?php
-									endif;
-									?>
+										if ( $the_horizontal_img ) :
+											echo wp_get_attachment_image(
+												$image,
+												'medium_large',
+												false,
+												array(
+													'src'     => wp_get_attachment_image_url( $image, 'medium_large' ),
+													'srcset'  => wp_get_attachment_image_srcset( $image, 'medium_large' ),
+													'class'   => 'attachment-full',
+													'loading' => 'lazy',
+												)
+											);
+										else :
+											?>
+											<img src="<?php bloginfo( 'template_directory' ); ?>/assets/images/comedy-dynamics-default.jpg" class="wp-post-image" alt="<?php echo esc_html( $the_title ); ?>" loading="lazy" />
+											<?php
+										endif;
+										?>
+										<?php get_template_part( 'template-parts/svg/icon-play' ); ?>
+									</a>
 									<figcaption class="caption caption__press">
 										<p>
 											<a href="<?php echo esc_html( $the_permalink ); ?>" title="<?php echo esc_html( $trailer_title ); ?>">
 												<?php echo esc_html( $trailer_title ); ?>
 											</a>
 										</p>
-										<sub class="post-source">
-											<?php echo esc_html( $source ); ?>
-											<time class="post-date" datetime="<?php echo esc_html( $time_att ); ?>">
-												<?php echo esc_html( $time ); ?>
-											</time>
-										</sub>
-								</figcaption>
+									</figcaption>
+								</figure>
+							</div>
+							<!-- modal one -->
+							<div id="open-modal-one" class="modal-window modal-window_large">
+								<div class="modal-content">
+									<a href="#!" title="Close" class="modal-close" onclick="jQuery('#feat_modal_vid_one').YTPPause()"><?php echo file_get_contents( get_theme_file_path() . '/assets/svg/close-icon.svg' ); ?></a>
+									<figure>
+										<?php if ( $hero_video ) : ?>
+										<div id="feat_modal_vid_one" class="player" data-property="{videoURL:'<?php echo esc_html( $hero_video ); ?>',containment:'self', abundance: 0, autoPlay:false, showYTLogo:true, mute:false, startAt:0, opacity:1}"></div>
+										<?php else : ?>
+											<?php the_field('modal_url_one'); ?>
+										<?php endif; ?>
+									</figure>
+								</div>
 							</div>
 						<?php endif; ?>
 						<?php
+						// FEAT VIDEO TWO
 						$featured_post = get_field( 'featured_trailer_two' );
+						$modal_url_two = get_post_meta( get_the_ID(), 'modal_url_two', true );
+						$hero_video    = get_field( 'video_embedd', $featured_post );
+
 						if ( $featured_post ) :
 							$trailer_title      = $featured_post->post_title;
 							$the_permalink      = get_the_permalink( $featured_post );
@@ -132,39 +144,49 @@ wp_rig()->print_styles( 'wp-rig-page-home-cd' );
 							?>
 							<div class="trailer">
 								<figure>
-									<a class="link-absolute" href="<?php echo esc_html( $the_permalink ); ?>" title="<?php echo esc_html( $trailer_title ); ?>"></a>
-									<?php
-									if ( $the_horizontal_img ) :
-										echo wp_get_attachment_image(
-											$image,
-											'medium_large',
-											false,
-											array(
-												'src'     => wp_get_attachment_image_url( $image, 'medium_large' ),
-												'srcset'  => wp_get_attachment_image_srcset( $image, 'medium_large' ),
-												'class'   => 'attachment-full',
-												'loading' => 'lazy',
-											)
-										);
-									else :
-										?>
-										<img src="<?php bloginfo( 'template_directory' ); ?>/assets/images/comedy-dynamics-default.jpg" class="wp-post-image" alt="<?php echo esc_html( $the_title ); ?>" loading="lazy" />
+									<a href="#open-modal-two" class="open-modal" onclick="jQuery('#feat_modal_vid_two').YTPPlay()">
 										<?php
-									endif;
-									?>
+										if ( $the_horizontal_img ) :
+											echo wp_get_attachment_image(
+												$image,
+												'medium_large',
+												false,
+												array(
+													'src'     => wp_get_attachment_image_url( $image, 'medium_large' ),
+													'srcset'  => wp_get_attachment_image_srcset( $image, 'medium_large' ),
+													'class'   => 'attachment-full',
+													'loading' => 'lazy',
+												)
+											);
+										else :
+											?>
+											<img src="<?php bloginfo( 'template_directory' ); ?>/assets/images/comedy-dynamics-default.jpg" class="wp-post-image" alt="<?php echo esc_html( $the_title ); ?>" loading="lazy" />
+											<?php
+										endif;
+										?>
+										<?php get_template_part( 'template-parts/svg/icon-play' ); ?>
+									</a>
 									<figcaption class="caption caption__press">
 										<p>
 											<a href="<?php echo esc_html( $the_permalink ); ?>" title="<?php echo esc_html( $trailer_title ); ?>">
 												<?php echo esc_html( $trailer_title ); ?>
 											</a>
 										</p>
-										<sub class="post-source">
-											<?php echo esc_html( $source ); ?>
-											<time class="post-date" datetime="<?php echo esc_html( $time_att ); ?>">
-												<?php echo esc_html( $time ); ?>
-											</time>
-										</sub>
-								</figcaption>
+									</figcaption>
+								</figure>
+							</div>
+							<!-- modal two -->
+							<div id="open-modal-two" class="modal-window modal-window_large">
+								<div class="modal-content">
+									<a href="#!" title="Close" class="modal-close" onclick="jQuery('#feat_modal_vid_two').YTPPause()"><?php echo file_get_contents( get_theme_file_path() . '/assets/svg/close-icon.svg' ); ?></a>
+									<figure>
+										<?php if ( $hero_video ) : ?>
+										<div id="feat_modal_vid_two" class="player" data-property="{videoURL:'<?php echo esc_html( $hero_video ); ?>',containment:'self', abundance: 0, autoPlay:false, showYTLogo:true, mute:false, startAt:0, opacity:1}"></div>
+										<?php else : ?>
+											<?php the_field('modal_url_two'); ?>
+										<?php endif; ?>
+									</figure>
+								</div>
 							</div>
 						<?php endif; ?>
 					</div>

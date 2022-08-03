@@ -41,7 +41,7 @@
 	}
 
 	@media (--sidebar-query) {
-		width: fit-content;
+		width: auto;
 	}
 
 }

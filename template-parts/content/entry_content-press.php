@@ -96,14 +96,14 @@ if ( has_post_thumbnail() ) :
 			<?php
 		endif;
 	}
+	// Pagination.
+	wp_rig()->print_styles( 'wp-rig-pagination-post' );
+	wp_rig()->display_pagination();
 	// Related posts.
 	if ( $related_posts ) {
 		wp_rig()->print_styles( 'wp-rig-related_posts' );
 	}
 	wp_rig()->display_related_posts( $related_posts );
-	// Pagination.
-	wp_rig()->print_styles( 'wp-rig-pagination-post' );
-	wp_rig()->display_pagination();
 	get_template_part( 'template-parts/modules/post-back-btn' );
 	?>
 

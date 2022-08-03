@@ -47,3 +47,46 @@
 		max-width: 50rem;
 	}
 }
+
+
+
+.error {
+	position: relative;
+
+	@media (--content-query) {
+		min-height: 87vh;
+	}
+
+	& .entry-content {
+		display: grid;
+		z-index: 2;
+		justify-items: center;
+	}
+}
+
+.error .button-wrap {
+	display: flex;
+
+	& .button {
+		margin: 0 1em;
+	}
+}
+
+.img-404 {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 75%;
+	height: auto;
+	z-index: -1;
+
+	@media (--content-query) {
+		height: 30vh;
+		width: auto;
+	}
+
+	@media (--sidebar-query) {
+		height: 50vh;
+	}
+}
+

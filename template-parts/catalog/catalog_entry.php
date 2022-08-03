@@ -85,7 +85,7 @@ endif;
 		<?php endif; ?>
 </article>
 
-<footer class="post-footer">
+<footer class="post-footer post-footer__catalog">
 	<?php
 	$ids = get_field( 'related_catalog_items', $post->ID, false );
 	// Pagination.

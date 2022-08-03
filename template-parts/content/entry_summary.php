@@ -15,8 +15,10 @@ $synopsis = get_field( 'synopsis', $post->ID );
 	<?php
 	if ( get_the_excerpt() ) {
 		the_excerpt();
-	} else {
+	} elseif ( get_field( 'synopsis', $post->ID ) ) {
 		echo wp_kses( $synopsis, 'post' );
+	} else {
+		the_content();
 	}
 	?>
 </div>

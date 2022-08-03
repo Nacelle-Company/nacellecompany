@@ -16,8 +16,6 @@ namespace WP_Rig\WP_Rig;
 
 get_header();
 
-wp_rig()->print_styles( 'wp-rig-content' );
-
 // Globals.
 $current_post_type = get_post_type();
 $queried_obj       = get_queried_object();

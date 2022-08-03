@@ -1,6 +1,8 @@
 <?php
 /**
  * Films Icon.
+ *
+ * @package category
  */
 
 ?>

@@ -59,36 +59,23 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				array(
 					'post_type'      => 'catalog',
 					'post__in'       => $ids,
-					'posts_per_page' => 5,
 				)
 			);
-			$pr_query      = new \WP_Query(
+			$press_query    = new \WP_Query(
 				array(
-					'post_type'      => 'press_release',
+					'post_type'      => 'press',
 					'post__in'       => $ids,
-					'posts_per_page' => 5,
 				)
 			);
-			$news_query    = new \WP_Query(
-				array(
-					'post_type'      => 'news',
-					'post__in'       => $ids,
-					'posts_per_page' => 5,
-				)
-			);
-							// ? get each post type's # of posts
-				$catalog_post_count = $catalog_query->post_count;
-				$pr_post_count      = $pr_query->post_count;
-				$news_post_count    = $news_query->post_count;
-				$post_count_all     = 0;
+			// ? get each post type's # of posts
+			$catalog_post_count = $catalog_query->post_count;
+			$press_post_count    = $press_query->post_count;
+			$post_count_all     = 0;
 				// ? if post type has posts add one to $post_count_all variable
 			if ( $catalog_post_count > 0 ) {
 				$post_count_all++;
 			}
-			if ( $pr_post_count > 0 ) {
-				$post_count_all++;
-			}
-			if ( $news_post_count > 0 ) {
+			if ( $press_post_count > 0 ) {
 				$post_count_all++;
 			}
 				// ? if only one post type on medium-up screens make layout 3 columns
@@ -110,16 +97,14 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				<header class="title">
 					<h2>RELATED</h2>
 				</header>
-
-				<!-- Press releases -->
 				<?php
-				if ( $pr_query->have_posts() ) :
+				if ( $press_query->have_posts() ) :
 					$count = 0;
 					?>
 					<div class="related-posts__wrap">
 						<?php
-						while ( $pr_query->have_posts() ) :
-							$pr_query->the_post();
+						while ( $press_query->have_posts() ) :
+							$press_query->the_post();
 							$count++;
 							$the_title     = get_the_title();
 							$permalink     = get_permalink();
@@ -169,41 +154,12 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					</div>
 				<?php endif; ?>
 				<?php
-				if ( $news_query->have_posts() ) :
-					$count = 0;
-					?>
-					<div class="related-posts__wrap">
-						<?php
-						while ( $news_query->have_posts() ) :
-							$news_query->the_post();
-							$count++;
-							$the_title     = get_the_title();
-							$permalink     = get_permalink();
-							$the_post_type = get_post_type_object( get_post_type() );
-							$the_post_type = strtoupper( $the_post_type->labels->singular_name );
-							?>
-							<?php if ( 1 === $count ) : ?>
-								<h4 class="related-posts__title">
-									<?php echo esc_html( $the_post_type ); ?>
-								</h4>
-								<?php
-							endif;
-							?>
-							<a href="<?php echo wp_kses( $permalink, 'post' ); ?>" class="related-posts__card grid <?php echo wp_kses( $columns, 'post' ); ?>">
-								<p class="related_posts__post-title"><?php echo wp_kses( $the_title, 'post' ); ?></p>
-								<?php echo get_the_post_thumbnail( $post->ID, 'thumbnail', array( 'class' => 'related-posts__image' ) ); ?>
-							</a>
-						<?php endwhile; ?>
-					</div>
-				<?php endif; ?>
-
-				<?php
 				// Main talent list.
 				if ( ! is_singular( 'catalog' ) ) {
 					?>
 					<div class="related-posts__wrap">
 						<h4 class="related-posts__title">
-							<?php echo esc_html( 'Featured Talent' ); ?>
+							<?php echo esc_html( 'FEATURED TALENT' ); ?>
 						</h4>
 						<?php
 						foreach ( $ids as $post ) {
@@ -224,7 +180,6 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			</div>
 					<?php
 		endif;
-
 		wp_reset_postdata();
 	}
 }

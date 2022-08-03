@@ -123,7 +123,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		}
 		?>
 
-		<div class="main-carousel main-carousel__<?php echo esc_html( $slider_id ); ?>" data-flickity='{"groupCells":"<?php echo esc_html( $group ); ?>", "wrapAround": true, "lazyLoad": false, "setGallerySize": true, "adaptiveHeight": false, "pageDots": false, "selectedAttraction": 0.015, "friction": 0.28}'>
+		<div class="main-carousel main-carousel__<?php echo esc_html( $slider_id ); ?>" data-flickity='{"groupCells":"<?php echo esc_html( $group ); ?>", "wrapAround": true, "lazyLoad": false, "setGallerySize": false, "adaptiveHeight": true, "pageDots": false, "selectedAttraction": 0.015, "friction": 0.28}'>
 			<?php
 			if ( $slides ) :
 				foreach ( $slides as $slide ) :
@@ -141,7 +141,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 
 					<div class="carousel-cell <?php echo esc_html( $slide->ID ); ?>" tabindex='-1'>
 						<figure>
-							<a class="link-absolute" href="<?php echo esc_html( $the_permalink ); ?>" title="<?php echo esc_html( $the_title ); ?>"></a>
+							<a class="link-absolute" href="<?php echo esc_html( $the_permalink ); ?>" title="<?php if ( $title ) : echo esc_html( $the_title ); endif; ?>"></a>
 							<?php
 							// Press slider: wp featured image.
 							if ( 'posts press' === $slider_id ) :
@@ -159,6 +159,17 @@ class Component implements Component_Interface, Templating_Component_Interface {
 									$size    = 'medium';
 									$no_lazy = 'attachment-medium catalog-img';
 									$loading = 'lazy';
+									echo wp_get_attachment_image(
+										$image,
+										$size,
+										false,
+										array(
+											'src'     => wp_get_attachment_image_url( $image, $size ),
+											'srcset'  => wp_get_attachment_image_srcset( $image, $size ),
+											'class'   => $no_lazy,
+											'loading' => $loading,
+										)
+									);
 								else :
 									?>
 										<img src="<?php bloginfo( 'template_directory' ); ?>/assets/images/comedy-dynamics-default-square.jpg" class="wp-post-image" alt="<?php echo esc_html( $the_title ); ?>" />
@@ -171,6 +182,17 @@ class Component implements Component_Interface, Templating_Component_Interface {
 									$size    = 'full';
 									$no_lazy = 'no-lazy attachment-full';
 									$loading = 'eager';
+									echo wp_get_attachment_image(
+										$image,
+										$size,
+										false,
+										array(
+											'src'     => wp_get_attachment_image_url( $image, $size ),
+											'srcset'  => wp_get_attachment_image_srcset( $image, $size ),
+											'class'   => $no_lazy,
+											'loading' => $loading,
+										)
+									);
 								else :
 									?>
 										<img src="<?php bloginfo( 'template_directory' ); ?>/assets/images/comedy-dynamics-default.jpg" class="wp-post-image" alt="<?php echo esc_html( $the_title ); ?>" />
@@ -180,19 +202,6 @@ class Component implements Component_Interface, Templating_Component_Interface {
 								?>
 									<img src="<?php bloginfo( 'template_directory' ); ?>/assets/images/comedy-dynamics-default.jpg" class="wp-post-image" alt="<?php echo esc_html( $the_title ); ?>" />
 								<?php
-							endif;
-							if ( $image ) :
-								echo wp_get_attachment_image(
-									$image,
-									$size,
-									false,
-									array(
-										'src'     => wp_get_attachment_image_url( $image, $size ),
-										'srcset'  => wp_get_attachment_image_srcset( $image, $size ),
-										'class'   => $no_lazy,
-										'loading' => $loading,
-									)
-								);
 							endif;
 							?>
 							<figcaption class="caption caption__<?php echo esc_html( $the_post_type ); ?>">
@@ -215,7 +224,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 								<?php endif; ?>
 
 								<?php if ( $btn ) : ?>
-									<a class="button center" href="<?php echo esc_html( $the_permalink ); ?>" title="Discover more <?php echo esc_html( $the_title ); ?>">Discover More</a>
+									<a class="button center" href="<?php echo esc_html( $the_permalink ); ?>" title="Discover more <?php if ( $title ) : echo esc_html( $the_title ); endif; ?>">Discover More</a>
 								<?php endif; ?>
 							</figcaption>
 						</figure>

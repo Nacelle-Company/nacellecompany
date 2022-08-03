@@ -28,7 +28,6 @@ $content_width = ' ' . get_post_meta( get_the_ID(), 'content_width', true );
 	} else {
 		wp_rig()->print_styles( 'wp-rig-lite-youtube' );
 		wp_rig()->print_scripts( 'wp-rig-lite-youtube' );
-		wp_rig()->print_styles( 'wp-rig-content' );
 		the_content(
 			sprintf(
 				wp_kses(

@@ -18,10 +18,6 @@
 	overflow: hidden;
 	font-family: var(--highlight-font-family);
 	font-stretch: condensed;
-
-	@media (--content-query) {
-		padding: 2em;
-	}
 }
 
 .nav-links {

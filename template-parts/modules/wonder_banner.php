@@ -62,7 +62,7 @@ if ( $btn ) {
 <section class="wonder-section banner" style="<?php echo wp_kses( $bk_img, 'post' ); ?><?php echo esc_html( $bk_edge ); ?>">
 	<div class="wrap grid"<?php echo wp_kses( $row_h, 'post' ); ?>>
 		<div class="banner-overlay" style="opacity:0.<?php echo esc_html( $overlay ); ?>"></div>
-		<?php if( !empty( $txt ) ) : ?>
+		<?php if ( ! empty( $txt ) ) : ?>
 			<div class="col">
 				<?php
 				echo wp_kses( apply_filters( 'the_content', $txt ), 'post' );

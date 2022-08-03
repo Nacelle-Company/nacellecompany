@@ -60,6 +60,14 @@ wp_rig()->print_styles( 'wp-rig-footer-widgets' );
 			});
 		</script>
 	<?php endif; ?>
+	<script>
+		jQuery(function(){
+			jQuery("#feat_modal_vid_one").YTPlayer();
+		});
+		jQuery(function(){
+			jQuery("#feat_modal_vid_two").YTPlayer();
+		});
+	</script>
 	<?php get_template_part( 'template-parts/footer/footer-widgets' ); ?>
 </footer>
 </div>
