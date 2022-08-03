@@ -120,14 +120,6 @@
 
 }
 
-.icon {
-	margin-right: 0.5rem;
-
-	& [fill] {
-		fill: var(--color-theme-secondary);
-	}
-}
-
 .catalog-card__img {
 	min-width: 100%;
 }

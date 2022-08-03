@@ -67,6 +67,9 @@ wp_rig()->print_styles( 'wp-rig-footer-widgets' );
 		jQuery(function(){
 			jQuery("#feat_modal_vid_two").YTPlayer();
 		});
+		mobileMenu = document.querySelector('.mobile-menu__search');
+		magnifier = mobileMenu.querySelector('.promagnifier');
+		magnifier.setAttribute('tabindex', 1);
 	</script>
 	<?php get_template_part( 'template-parts/footer/footer-widgets' ); ?>
 </footer>

@@ -409,6 +409,11 @@ figure {
 	}
 }
 
+.catalog .caption__catalog {
+	position: absolute;
+	top: 73%;
+}
+
 .flickity-image {
 
 	@media (--narrow-menu-query) {
@@ -441,6 +446,14 @@ figure {
 
 	& .caption p {
 		margin-bottom: 0;
+	}
+
+	& .icon {
+		margin-right: 0.5rem;
+
+		& [fill] {
+			fill: var(--color-theme-secondary);
+		}
 	}
 }
 

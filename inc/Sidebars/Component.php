@@ -29,6 +29,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 
 	const PRIMARY_SIDEBAR_SLUG   = 'sidebar-1';
 	const SECONDARY_SIDEBAR_SLUG = 'sidebar-2';
+	const OFFCANVAS_SIDEBAR_SLUG = 'sidebar-3';
 	const FOOTER_WIDGETS_SLUG    = 'footer-widgets';
 
 	/**
@@ -61,6 +62,8 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			'display_primary_sidebar'     => array( $this, 'display_primary_sidebar' ),
 			'is_secondary_sidebar_active' => array( $this, 'is_secondary_sidebar_active' ),
 			'display_secondary_sidebar'   => array( $this, 'display_secondary_sidebar' ),
+			'is_offcanvas_sidebar_active' => array( $this, 'is_offcanvas_sidebar_active' ),
+			'display_offcanvas_sidebar'   => array( $this, 'display_offcanvas_sidebar' ),
 			'is_footer_widgets_active'    => array( $this, 'is_footer_widgets_active' ),
 			'display_footer_widgets'      => array( $this, 'display_footer_widgets' ),
 		);
@@ -83,8 +86,19 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		);
 		register_sidebar(
 			array(
-				'name'          => esc_html__( 'Press Release Sidebar', 'wp-rig' ),
+				'name'          => esc_html__( 'Search Sidebar', 'wp-rig' ),
 				'id'            => static::SECONDARY_SIDEBAR_SLUG,
+				'description'   => esc_html__( 'Add widgets here.', 'wp-rig' ),
+				'before_widget' => '<section id="%1$s" class="widget %2$s">',
+				'after_widget'  => '</section>',
+				'before_title'  => '<h3 class="widget-title">',
+				'after_title'   => '</h3>',
+			)
+		);
+		register_sidebar(
+			array(
+				'name'          => esc_html__( 'Offcanvas Sidebar', 'wp-rig' ),
+				'id'            => static::OFFCANVAS_SIDEBAR_SLUG,
 				'description'   => esc_html__( 'Add widgets here.', 'wp-rig' ),
 				'before_widget' => '<section id="%1$s" class="widget %2$s">',
 				'after_widget'  => '</section>',
@@ -152,6 +166,22 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	 */
 	public function display_secondary_sidebar() {
 		dynamic_sidebar( static::SECONDARY_SIDEBAR_SLUG );
+	}
+
+	/**
+	 * Checks whether the offcanvas sidebar is active.
+	 *
+	 * @return bool True if the offcanvas sidebar is active, false otherwise.
+	 */
+	public function is_offcanvas_sidebar_active() : bool {
+		return (bool) is_active_sidebar( static::OFFCANVAS_SIDEBAR_SLUG );
+	}
+
+	/**
+	 * Displays the offcanvas sidebar.
+	 */
+	public function display_offcanvas_sidebar() {
+		dynamic_sidebar( static::OFFCANVAS_SIDEBAR_SLUG );
 	}
 
 	/**

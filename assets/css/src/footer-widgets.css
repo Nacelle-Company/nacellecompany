@@ -7,78 +7,79 @@
 	font-family: var(--highlight-font-family);
 	font-stretch: condensed;
 	background-color: var(--nav-bk-color);
-}
 
-/*--------------------------------------------------------------
+
+	/*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
 
-.widget {
-	margin-top: 0 0 1.5em 0;
-}
+	& .widget {
+		margin-top: 0 0 1.5em 0;
+	}
 
-.widget li {
-	line-height: 1.8;
-}
+	& .widget li {
+		line-height: 1.8;
+	}
 
-.widget_archive ul,
-.widget_categories ul,
-.widget_meta ul,
-.widget_nav_menu ul,
-.widget_recent_comments ul,
-.widget_pages ul,
-.widget_recent_entries ul,
-.widget_rss ul {
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
-}
+	& .widget_archive ul,
+	& .widget_categories ul,
+	& .widget_meta ul,
+	& .widget_nav_menu ul,
+	& .widget_recent_comments ul,
+	& .widget_pages ul,
+	& .widget_recent_entries ul,
+	& .widget_rss ul {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+	}
 
-.widget_pages a,
-.widget_nav_menu a {
-	display: block;
-	padding: 0.6em 0;
-	text-decoration: none;
-}
+	& .widget_pages a,
+	& .widget_nav_menu a {
+		display: block;
+		padding: 0.6em 0;
+		text-decoration: none;
+	}
 
-.widget_pages li,
-.widget_nav_menu li {
-	padding: 0;
-}
+	& .widget_pages li,
+	& .widget_nav_menu li {
+		padding: 0;
+	}
 
-.textwidget {
-	font-size: 80%;
-	line-height: 1.3;
-}
+	& .textwidget {
+		font-size: 80%;
+		line-height: 1.3;
+	}
 
-.footer-widgets-area {
-	display: grid;
-	justify-items: center;
-	align-items: center;
-	padding: 0 2em;
-
-	@media (--wide-menu-query) {
-		grid-template-columns: 1fr;
+	& .footer-widgets-area {
+		display: grid;
 		justify-items: center;
-		gap: 1em;
+		align-items: center;
+		padding: 0 2em;
+
+		@media (--wide-menu-query) {
+			grid-template-columns: 1fr;
+			justify-items: center;
+			gap: 1em;
+		}
+
+		@media (--content-query) {
+			justify-items: normal;
+			grid-template-columns: repeat(3, 1fr);
+			grid-gap: 2rem;
+		}
 	}
 
-	@media (--content-query) {
-		justify-items: normal;
-		grid-template-columns: repeat(3, 1fr);
-		grid-gap: 2rem;
+	& .footer-widgets-area * {
+		min-width: 0;
 	}
-}
 
-.footer-widgets-area * {
-	min-width: 0;
-}
+	& .menu-footer-social-container .menu {
+		display: flex;
+		justify-content: flex-end;
+	}
 
-.menu-footer-social-container .menu {
-	display: flex;
-	justify-content: flex-end;
-}
-
-.menu-footer-social-container .menu-item {
-	padding: 1em 2px;
+	& .menu-footer-social-container .menu-item {
+		padding: 1em 2px;
+	}
 }

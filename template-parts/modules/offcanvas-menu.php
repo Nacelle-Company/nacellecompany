@@ -26,13 +26,12 @@ $sf_current_query = $searchandfilter->get( 46687 )->current_query();
 </span>
 <div id="offcanvasMenu" class="offcanvas-menu">
 	<a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
-	<h3 class="offcanvas-title">Sort & Filter</h3>
-	<?php echo do_shortcode( '[searchandfilter slug="comedy-filters-2"]' ); ?>
+	<?php wp_rig()->display_offcanvas_sidebar(); ?>
 </div>
 <script>
 	/* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
 	function openOffcanvas() {
-	document.getElementById("offcanvasMenu").style.width = "250px";
+	document.getElementById("offcanvasMenu").style.width = "20em";
 	document.getElementById('offcanvasOverlay').style.visibility = "visible";
 	}
 

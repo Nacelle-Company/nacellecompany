@@ -10,8 +10,13 @@ namespace WP_Rig\WP_Rig;
 global $obj_slug;
 global $searchandfilter;
 
-$sf_current_query = $searchandfilter->get( 46681 )->current_query();
-$queried_obj      = get_queried_object();
+$sf_current_query = $searchandfilter->get( 46579 )->current_query();
+$queried_obj = get_queried_object();
+$search_filter_or_catalog = false;
+
+if ( $sf_current_query->is_filtered() || is_search() || is_post_type( 'catalog' ) ) {
+	$search_filter_or_catalog = true;
+}
 
 if ( is_404() ) {
 	?>
@@ -19,6 +24,30 @@ if ( is_404() ) {
 		<h1 class="page-title">
 			<?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'wp-rig' ); ?>
 		</h1>
+	</header>
+	<?php
+} elseif ( $search_filter_or_catalog ) {
+	wp_rig()->print_styles( 'wp-rig-offcanvas' );
+	?>
+	<header class="page-header page-header__filters">
+		<div class="filters-wrap">
+			<div class="page-title__wrap">
+				<h1 class="page-title">
+					<?php
+					if ( $sf_current_query->is_filtered() ) {
+						echo 'Filter by: ' . $sf_current_query->get_fields_html(
+							array( '_sft_category' )
+						);
+					} else {
+						echo single_term_title();
+					}
+					?>
+				</h1>
+			</div>
+			<div class="page-header__offcanvas">
+				<?php get_template_part( 'template-parts/modules/offcanvas-menu' ); ?>
+			</div>
+		</div>
 	</header>
 	<?php
 } elseif ( is_home() && ! have_posts() ) {
@@ -46,37 +75,7 @@ if ( is_404() ) {
 	</header>
 	<?php
 } elseif ( is_post_type( 'catalog' ) && $sf_current_query->is_filtered() ) {
-	$sf_tax_args = array(
-		'str'               => '%1$s: %2$s',
-		'delim'             => array( ', ', ' - ' ),
-		'field_delim'       => ', ',
-		'show_all_if_empty' => false,
-	);
-	// $tax_names = $sf_current_query->get_fields_html( array( '_sft_genre' ), $sf_tax_args );
-	$team = $sf_current_query->get_fields_html(
-		array( '_sft_producers', '_sft_directors', '_sft_writers', '_sft_main_talent' ),
-		$sf_tax_args
-	);
-	wp_rig()->print_styles( 'wp-rig-offcanvas' );
 
-	?>
-	<header class="page-header page-header__filters">
-		<div class="filters-wrap">
-			<div class="page-title__wrap">
-				<h1 class="page-title">
-					<?php
-					echo single_term_title();
-					?>
-					<br>
-				</h1>
-				<h3 class="page-title__sub"><sub><?php echo esc_html( $team ); ?></sub></h3>
-			</div>
-			<div class="page-header__offcanvas">
-				<?php get_template_part( 'template-parts/modules/offcanvas-menu' ); ?>
-			</div>
-		</div>
-	</header>
-	<?php
 } elseif ( is_archive() && is_post_type( 'catalog' ) && ! $sf_current_query->is_filtered() ) {
 		wp_rig()->print_styles( 'wp-rig-offcanvas' );
 
@@ -158,6 +157,7 @@ if ( is_404() ) {
 } elseif ( is_search() ) {
 	?>
 	<header class="page-header">
+		<h2>is_search!!!</h2>
 		<h1 class="page-title h2">
 			<?php
 			printf(

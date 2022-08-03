@@ -9,19 +9,16 @@
 	height: 100%;
 	width: 0;
 	position: fixed;
-	z-index: 5;
 	top: 0;
-	right: 0;
+	right: -2.5em;
 	z-index: 9999;
 	background-color: var(--global-color-dark);
 	overflow-x: hidden;
 	transition: 0.5s;
-	padding-top: 60px;
+	padding: 1em 2em;
 
 	& .close-btn {
-		position: absolute;
-		top: 0;
-		right: 25px;
+
 		font-size: 36px;
 		cursor: pointer;
 	}

@@ -33,5 +33,6 @@ get_template_part( 'template-parts/content/page_header' );
 		?>
 	</main>
 <?php
-get_sidebar();
+// get_sidebar();
+wp_rig()->display_secondary_sidebar();
 get_footer();
