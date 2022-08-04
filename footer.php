@@ -21,6 +21,7 @@ wp_rig()->print_styles( 'wp-rig-footer-widgets' );
 <footer id="colophon" class="site-footer">
 	<?php if ( ! empty( $hero_video ) ) : ?>
 		<script type="text/javascript">
+
 			const video = '#hero_video_<?php echo esc_html( $queried_id ); ?>';
 			// let videoCoverWrap = document.getElementById('video_cover_img_wrap');
 			let videoCoverImg = document.getElementById('video_cover_img');
@@ -70,6 +71,7 @@ wp_rig()->print_styles( 'wp-rig-footer-widgets' );
 		mobileMenu = document.querySelector('.mobile-menu__search');
 		magnifier = mobileMenu.querySelector('.promagnifier');
 		magnifier.setAttribute('tabindex', 1);
+
 	</script>
 	<?php get_template_part( 'template-parts/footer/footer-widgets' ); ?>
 </footer>

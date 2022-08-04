@@ -85,7 +85,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	 *
 	 * @param mixed $slides Display flickity slider.
 	 */
-	public function display_flickity( $the_post_type, $the_posts, $slider_id  ) {
+	public function display_flickity( $the_post_type, $the_posts, $slider_id ) {
 
 		if ( 'posts press' === $slider_id ) :
 			$group = true;
@@ -105,7 +105,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		endif;
 
 		if ( 'recent_posts' === $the_posts ) :
-			$args = array(
+			$args   = array(
 				'numberposts' => 6,
 				'post_type'   => $the_post_type,
 				'orderby'     => 'date',
@@ -141,7 +141,13 @@ class Component implements Component_Interface, Templating_Component_Interface {
 
 					<div class="carousel-cell <?php echo esc_html( $slide->ID ); ?>" tabindex='-1'>
 						<figure>
-							<a class="link-absolute" href="<?php echo esc_html( $the_permalink ); ?>" title="<?php if ( $title ) : echo esc_html( $the_title ); endif; ?>"></a>
+							<a class="link-absolute" href="<?php echo esc_html( $the_permalink ); ?>" title="
+																	  <?php
+																		if ( $title ) :
+																			echo esc_html( $the_title );
+endif;
+																		?>
+							"></a>
 							<?php
 							// Press slider: wp featured image.
 							if ( 'posts press' === $slider_id ) :
@@ -152,7 +158,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 										<img src="<?php bloginfo( 'template_directory' ); ?>/assets/images/comedy-dynamics-default.jpg" class="wp-post-image" alt="<?php echo esc_html( $the_title ); ?>" />
 									<?php
 								endif;
-							// Catalog slider: square image.
+								// Catalog slider: square image.
 							elseif ( 'posts catalog' === $slider_id ) :
 								if ( get_field( 'square_image', $slide ) ) :
 									$image   = get_field( 'square_image', $slide );
@@ -175,7 +181,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 										<img src="<?php bloginfo( 'template_directory' ); ?>/assets/images/comedy-dynamics-default-square.jpg" class="wp-post-image" alt="<?php echo esc_html( $the_title ); ?>" />
 									<?php
 								endif;
-							// Top slider: home image.
+								// Top slider: home image.
 							elseif ( 'top' === $slider_id ) :
 								if ( get_field( 'home_image', $slide ) ) :
 									$image   = get_field( 'home_image', $slide );
@@ -224,7 +230,13 @@ class Component implements Component_Interface, Templating_Component_Interface {
 								<?php endif; ?>
 
 								<?php if ( $btn ) : ?>
-									<a class="button center" href="<?php echo esc_html( $the_permalink ); ?>" title="Discover more <?php if ( $title ) : echo esc_html( $the_title ); endif; ?>">Discover More</a>
+									<a class="button center" href="<?php echo esc_html( $the_permalink ); ?>" title="Discover more
+																			  <?php
+																				if ( $title ) :
+																					echo esc_html( $the_title );
+endif;
+																				?>
+									">Discover More</a>
 								<?php endif; ?>
 							</figcaption>
 						</figure>
