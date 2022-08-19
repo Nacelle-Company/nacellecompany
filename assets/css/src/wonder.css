@@ -1,4 +1,7 @@
+/* stylelint-disable CssSyntaxError */
 @import "_modal.css";
+
+/* stylelint-disable */
 
 small {
 	color: var(--color-theme-white);
@@ -17,15 +20,11 @@ small {
 }
 
 .wonder-section {
+	background-repeat: no-repeat;
 
 	& .grid {
 		display: grid;
 	}
-
-	/* position: relative; */
-	background-repeat: no-repeat;
-
-	/* transition: filter 0.4s linear; */
 
 	& .wrap {
 		padding-right: 1.25rem;
@@ -153,3 +152,4 @@ small {
 .banner__feat-img {
 	min-width: 100%;
 }
+/* stylelint-enable */

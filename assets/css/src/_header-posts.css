@@ -75,6 +75,7 @@
 
 .page-title__wrap {
 
+	/* stylelint-disable-next-line no-descending-specificity */
 	& .page-title {
 		margin-bottom: 0;
 	}

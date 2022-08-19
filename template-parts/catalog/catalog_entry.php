@@ -12,6 +12,7 @@ $video_embedd     = get_post_meta( get_the_ID(), 'video_embedd', true );
 $itunes_video     = get_post_meta( get_the_ID(), 'itunes_video', true );
 $itunes_audio_url = get_post_meta( get_the_ID(), 'itunes_audio_url', true );
 $imdbv            = get_post_meta( get_the_ID(), 'imdb_video', true );
+$review_shortcode = get_post_meta( get_the_ID(), 'review_shortcode', true );
 $video_class      = '';
 $itunes_url       = '';
 
@@ -32,12 +33,12 @@ endif;
 			<div class="catalog-video">
 		<?php endif; ?>
 		<div class="entry-header<?php echo esc_html( $video_class ); ?>">
-			<?php
-				// Breadcrumbs.
-				if ( function_exists( 'rank_math_the_breadcrumbs' ) ) {
-					rank_math_the_breadcrumbs();
-				}
-			?>
+		<?php
+		// Breadcrumbs.
+		if ( function_exists( 'rank_math_the_breadcrumbs' ) ) {
+			rank_math_the_breadcrumbs();
+		}
+		?>
 			<?php get_template_part( 'template-parts/content/entry_title', get_post_type() ); ?>
 			<?php get_template_part( 'template-parts/content/entry_content', get_post_type() ); ?>
 			<?php if ( $imdbv ) : ?>
@@ -62,6 +63,13 @@ endif;
 					);
 					?>
 				</a>
+				<?php
+				if ( ! empty( $review_shortcode ) ) :
+					?>
+					<a href="<?php echo wp_kses( $imdbv, 'post' ); ?>" target="_blank">
+						<?php echo do_shortcode( $review_shortcode ); ?>
+					</a>
+				<?php endif; ?>
 			<?php else : ?>
 				<?php
 				the_post_thumbnail(
@@ -72,6 +80,13 @@ endif;
 					)
 				);
 				?>
+				<?php
+				if ( ! empty( $review_shortcode ) ) :
+					?>
+					<a href="<?php echo wp_kses( $imdbv, 'post' ); ?>" target="_blank">
+						<?php echo do_shortcode( $review_shortcode ); ?>
+					</a>
+				<?php endif; ?>
 			<?php endif; ?>
 		</div>
 		<div class="entry-main<?php echo esc_html( $video_class ); ?>">
@@ -83,6 +98,7 @@ endif;
 		<?php if ( $video_embedd ) : ?>
 			</div>
 		<?php endif; ?>
+		<?php get_template_part( 'template-parts/catalog/parts/catalog_additional-content' ); ?>
 </article>
 
 <footer class="post-footer post-footer__catalog">

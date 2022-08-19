@@ -389,6 +389,9 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					return 'single-catalog.php' === basename( $template );
 				},
 			),
+			'wp-rig-catalog_additional-content' => array(
+				'file' => 'catalog_additional-content.min.css',
+			),
 			'wp-rig-page-team'          => array(
 				'file'             => 'page-team.min.css',
 				'preload_callback' => function() {

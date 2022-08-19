@@ -1,19 +1,23 @@
 {
     "folders": [
         {
-            "path": ".."
+            "path": "../../wprig-nacelle-dev"
         }
     ],
     "settings": {
         "phpcs.enable": true,
-        "phpcs.composerJsonPath": "../composer.json",
+        "phpcs.composerJsonPath": "./wp-content/themes/wprig-nacelle-dev/composer.json",
         "phpcs.standard": "WordPress",
         "editor.renderWhitespace": "all",
         "editor.hover.enabled": true,
-        "phpcbf.documentFormattingProvider": true,
-        "phpcbf.debug": true,
-        "phpcbf.onsave": true,
-        "phpcbf.standard": "WordPress",
-        "prettier.useTabs": true,
+		"css.validate": false,
+		"scss.validate": false,
+        "prettier.stylelintIntegration": true,
+		"prettier.useTabs": true,
+		"stylelint.enable": true,
+		"stylelint.validate": ["css"],
+		"stylelint.autoFixOnSave": true,
+		"stylelint.disableErrorMessage": false,
+		"stylelint.ignoreDisables": false,
     }
 }

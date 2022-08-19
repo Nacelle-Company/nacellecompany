@@ -39,5 +39,8 @@
     ],
     "phpunit-dev": "\"vendor/bin/phpunit\"",
     "phpunit-integration-dev": "\"vendor/bin/phpunit\" -c \"phpunit.integration.xml.dist\""
+  },
+  "require": {
+    "squizlabs/php_codesniffer": "3.*"
   }
 }

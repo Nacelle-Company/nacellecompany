@@ -242,3 +242,17 @@ dd::after {
 		grid-template-columns: repeat(12, 1fr);
 	}
 }
+
+/* rank math review shortcode */
+.rank-math-review-data > p,
+.rank-math-review-image,
+#rank-math-rich-snippet-wrapper h5.rank-math-title,
+.rank-math-total-wrapper > strong,
+.rank-math-total {
+	opacity: 0 !important;
+	position: absolute !important;
+}
+
+#rank-math-rich-snippet-wrapper {
+	position: relative !important;
+}

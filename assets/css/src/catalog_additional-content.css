@@ -1,0 +1,23 @@
+/*--------------------------------------------------------------
+# Single catalog post additional content.
+--------------------------------------------------------------*/
+.catalog-additional-content__wrapper {
+
+	@media (--content-query) {
+		grid-column: 1 /-1;
+	}
+
+	@media (--sidebar-query) {
+		margin: 0 auto;
+		width: 100%;
+	}
+
+	&.video {
+		padding: 0 1em;
+
+		@media (--content-query) {
+			max-width: 1200px;
+		}
+	}
+}
+

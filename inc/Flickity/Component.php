@@ -128,9 +128,12 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			if ( $slides ) :
 				foreach ( $slides as $slide ) :
 					$the_permalink = get_the_permalink( $slide );
-					if ( $title ) {
+
+					if ( 'posts press' === $slider_id ) {
 						$the_title = get_the_title( $slide );
-						$the_title = wp_trim_words( $the_title, 9 );
+						$the_title = wp_trim_words( $the_title, 11 );
+					} else {
+						$the_title = get_the_title( $slide );
 					}
 					if ( $meta ) :
 						$source   = get_field( 'source', $slide ) . ' |';
@@ -141,13 +144,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 
 					<div class="carousel-cell <?php echo esc_html( $slide->ID ); ?>" tabindex='-1'>
 						<figure>
-							<a class="link-absolute" href="<?php echo esc_html( $the_permalink ); ?>" title="
-																	  <?php
-																		if ( $title ) :
-																			echo esc_html( $the_title );
-endif;
-																		?>
-							"></a>
+							<a class="link-absolute" href="<?php echo esc_html( $the_permalink ); ?>" title="<?php echo esc_html( $the_title ); ?>"></a>
 							<?php
 							// Press slider: wp featured image.
 							if ( 'posts press' === $slider_id ) :
