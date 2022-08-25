@@ -248,6 +248,7 @@ function wp_rig_add_logo_att( $html ) {
 function wp_rig_remove_wp_css() {
 	wp_dequeue_style( 'wp-block-library' );
 	wp_dequeue_style( 'YTPlayer_css' );
+	wp_dequeue_style( 'wpdreams-ajaxsearchpro-instances' );
 }
 add_action( 'wp_enqueue_scripts', 'wp_rig_remove_wp_css', 100 );
 
@@ -292,7 +293,7 @@ function wp_rig_sgo_css_combine_exclude( $exclude_list ) {
  * @param [type] $query Combine press_release & news post types.
  * @return void
  */
-function custom_archive_query( $query ){
+function wp_rig_custom_archive_query( $query ){
 	if( is_admin() || ! $query->is_main_query() ) {
 		return;
 	}
@@ -302,7 +303,7 @@ function custom_archive_query( $query ){
 		return;
 	}
 }
-add_action( 'pre_get_posts', 'custom_archive_query' );
+add_action( 'pre_get_posts', 'wp_rig_custom_archive_query' );
 
 /**
  * Add the template redirect
@@ -310,7 +311,7 @@ add_action( 'pre_get_posts', 'custom_archive_query' );
  * @param [type] $template Redirect.
  * @return void
  */
-function custom_archive_template( $template ) {
+function wp_rig_custom_archive_template( $template ) {
 	$cpts = array( 'press_release', 'news' );
 	if ( is_post_type_archive( $cpts ) ) {
 		$new_template = locate_template( array( 'custom_archive-template.php' ) );
@@ -319,4 +320,7 @@ function custom_archive_template( $template ) {
 	}
 	return $template;
 }
-add_filter( 'template_include', 'custom_archive_template' );
+add_filter( 'template_include', 'wp_rig_custom_archive_template' );
+
+// GETTING YOUR SCRIPT HANDLES:
+// https://wpshout.com/defer-parsing-javascript-wordpress/.

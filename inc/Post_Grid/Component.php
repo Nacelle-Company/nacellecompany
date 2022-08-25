@@ -49,7 +49,6 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	 * @param var $query Pull post data.
 	 */
 	public function display_post_grid( $query ) {
-		// var_dump( $query );
 		// OLD CODE.
 			$args = array(
 				'numberposts' => 6,

@@ -23,7 +23,7 @@
 		grid-template-areas:
 			"image header"
 			"image summary"
-			"footer summary";
+			"footer footer";
 	}
 
 	&:not(.has-post-thumbnail) {
@@ -172,4 +172,9 @@
 .home .entry-title {
 	grid-column: 1/-1;
 	justify-self: center;
+}
+
+.term-links,
+.entry-meta {
+	font-size: var(--font-size-small);
 }

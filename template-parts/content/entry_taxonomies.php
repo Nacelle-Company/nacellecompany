@@ -27,13 +27,12 @@ $taxonomies = wp_list_filter(
 
 			/* translators: separator between taxonomy terms */
 			$separator = _x( ', ', 'list item separator', 'wp-rig' );
-
 			switch ( $taxonomy->name ) {
 				case 'category':
 					$class = 'category-links term-links';
 					$list  = get_the_category_list( esc_html( $separator ), '', $post->ID );
 					/* translators: %s: list of taxonomy terms */
-					$placeholder_text = __( 'Posted in %s', 'wp-rig' );
+					$placeholder_text = __( 'Category: %s', 'wp-rig' );
 					break;
 				case 'post_tag':
 					$class = 'tag-links term-links';
@@ -43,12 +42,10 @@ $taxonomies = wp_list_filter(
 					break;
 				default:
 					$class            = str_replace( '_', '-', $taxonomy->name ) . '-links term-links';
-					$list             = get_the_term_list( $post->ID, $taxonomy->name, '', esc_html( $separator ), '' );
-					$placeholder_text = sprintf(
-						/* translators: %s: taxonomy name */
-						__( '%s:', 'wp-rig' ),
-						$taxonomy->labels->name // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-					);
+					$tax_terms        = get_the_term_list( $post->ID, $taxonomy->name, '', esc_html( $separator ), '' );
+					$tax_name         = $taxonomy->label;
+					$placeholder_text = __( $tax_name . ": %s", 'wp-rig' );
+					$list             = $tax_terms;
 			}
 
 			if ( empty( $list ) ) {
@@ -62,7 +59,7 @@ $taxonomies = wp_list_filter(
 					$list // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				);
 				?>
-			</span>
+			</span><span>|</span>
 			<?php
 		}
 	}

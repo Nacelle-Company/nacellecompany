@@ -32,7 +32,7 @@ msgstr[1] ""
 msgid "Comments are closed."
 msgstr ""
 
-#: header.php:137
+#: header.php:72
 msgid "Skip to content"
 msgstr ""
 
@@ -44,7 +44,7 @@ msgstr ""
 msgid "Team"
 msgstr ""
 
-#: sidebar.php:24
+#: sidebar.php:20
 msgid "Asides"
 msgstr ""
 
@@ -205,7 +205,7 @@ msgstr ""
 #. translators: %s: Name of current post. Only visible to screen readers
 #. translators: %s: Name of current post. Only visible to screen readers
 #. translators: %s: Name of current post. Only visible to screen readers
-#: inc/Excerpts/Component.php:44, template-parts/content/entry_content-news.php:35, template-parts/content/entry_content-press.php:48, template-parts/content/entry_content-press_release.php:48, template-parts/content/entry_content.php:34
+#: inc/Excerpts/Component.php:44, template-parts/content/entry_content-news.php:35, template-parts/content/entry_content-press.php:74, template-parts/content/entry_content-press_release.php:48, template-parts/content/entry_content.php:35
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
@@ -213,24 +213,24 @@ msgstr ""
 msgid "Mobile"
 msgstr ""
 
-#: inc/Nav_Menus/Component.php:226, template-parts/header/navigation_mobile.php:41
+#: inc/Nav_Menus/Component.php:223, template-parts/header/navigation_mobile.php:41
 msgid "Open menu"
 msgstr ""
 
-#: inc/Nav_Menus/Component.php:238
+#: inc/Nav_Menus/Component.php:235
 msgid "main-navigation main-navigation_wide-menu nav--toggle-sub"
 msgstr ""
 
-#: inc/Nav_Menus/Component.php:247
+#: inc/Nav_Menus/Component.php:244
 msgid "main-navigation nav--toggle-sub nav--toggle-small icon-nav"
 msgstr ""
 
-#: inc/Pagination/Component.php:63, template-parts/content/entry-attachment.php:33
-msgid "Previous:"
+#: inc/Pagination_Archive/Component.php:70, template-parts/content/pagination.php:13
+msgid "&larr;"
 msgstr ""
 
-#: inc/Pagination/Component.php:64, template-parts/content/entry-attachment.php:43
-msgid "Next:"
+#: inc/Pagination_Archive/Component.php:71, template-parts/content/pagination.php:14
+msgid "&rarr;"
 msgstr ""
 
 #. translators: %s: JS handle
@@ -238,25 +238,33 @@ msgstr ""
 msgid "Invalid theme JS handle: %s"
 msgstr ""
 
-#: inc/Sidebars/Component.php:75
-msgid "News Sidebar"
+#: inc/Sidebars/Component.php:78
+msgid "Primary Sidebar"
 msgstr ""
 
-#: inc/Sidebars/Component.php:77, inc/Sidebars/Component.php:88, inc/Sidebars/Component.php:99
+#: inc/Sidebars/Component.php:80, inc/Sidebars/Component.php:91, inc/Sidebars/Component.php:102, inc/Sidebars/Component.php:113
 msgid "Add widgets here."
 msgstr ""
 
-#: inc/Sidebars/Component.php:86
-msgid "Press Release Sidebar"
+#: inc/Sidebars/Component.php:89
+msgid "Search Sidebar"
 msgstr ""
 
-#: inc/Sidebars/Component.php:97
+#: inc/Sidebars/Component.php:100
+msgid "Offcanvas Sidebar"
+msgstr ""
+
+#: inc/Sidebars/Component.php:111
 msgid "Footer widgets"
 msgstr ""
 
 #. translators: %s: stylesheet handle
 #: inc/Styles/Component.php:237
 msgid "Invalid theme stylesheet handle: %s"
+msgstr ""
+
+#: template-parts/catalog/catalog_entry.php:46
+msgid "View on IMDB"
 msgstr ""
 
 #: template-parts/category/distribution.php:26, template-parts/category/distribution.php:29
@@ -275,6 +283,14 @@ msgstr ""
 msgid "Specials"
 msgstr ""
 
+#: template-parts/content/entry-attachment.php:33
+msgid "Previous:"
+msgstr ""
+
+#: template-parts/content/entry-attachment.php:43
+msgid "Next:"
+msgstr ""
+
 #: template-parts/content/entry-attachment.php:49
 msgid "Post navigation"
 msgstr ""
@@ -289,11 +305,11 @@ msgstr ""
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
-#: template-parts/content/entry_content-news.php:25
+#: template-parts/content/entry_content-news.php:25, template-parts/content/entry_content-press.php:52
 msgid "Read more"
 msgstr ""
 
-#: template-parts/content/entry_content.php:47
+#: template-parts/content/entry_content.php:48
 msgid "Pages:"
 msgstr ""
 
@@ -334,29 +350,24 @@ msgid ", "
 msgstr ""
 
 #. translators: %s: list of taxonomy terms
-#: template-parts/content/entry_taxonomies.php:36
-msgid "Posted in %s"
+#: template-parts/content/entry_taxonomies.php:35
+msgid "Category: %s"
 msgstr ""
 
 #. translators: %s: list of taxonomy terms
-#: template-parts/content/entry_taxonomies.php:42
+#: template-parts/content/entry_taxonomies.php:41
 msgid "Tagged %s"
 msgstr ""
 
-#. translators: %s: taxonomy name
-#: template-parts/content/entry_taxonomies.php:49
-msgid "%s:"
-msgstr ""
-
-#: template-parts/content/error-404.php:16
+#: template-parts/content/error-404.php:18
 msgid "The page you are looking for may have been moved, had its name changed or we’re working on it."
 msgstr ""
 
-#: template-parts/content/error-404.php:19
+#: template-parts/content/error-404.php:21
 msgid "Maybe try one of these? %1$s"
 msgstr ""
 
-#: template-parts/content/error-404.php:57
+#: template-parts/content/error-404.php:35
 msgid "Most Used Categories"
 msgstr ""
 
@@ -385,24 +396,14 @@ msgstr ""
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
-#: template-parts/content/page_header.php:33
+#: template-parts/content/page_header.php:57
 msgid "Nothing Found"
 msgstr ""
 
 #. translators: %s: search query
 #. translators: %s: search query
-#: template-parts/content/page_header.php:101, template-parts/content/page_header.php:169
+#: template-parts/content/page_header.php:94, template-parts/content/page_header.php:165
 msgid "Search Results for: %s"
-msgstr ""
-
-#: template-parts/content/pagination.php:13
-msgctxt "previous set of search results"
-msgid "Previous"
-msgstr ""
-
-#: template-parts/content/pagination.php:14
-msgctxt "next set of search results"
-msgid "Next"
 msgstr ""
 
 #: template-parts/content/pagination.php:15
@@ -541,10 +542,6 @@ msgstr ""
 
 #: template-parts/catalog/parts/catalog_buttons.php:401
 msgid "Pandora"
-msgstr ""
-
-#: template-parts/catalog/parts/catalog_crew.php:17
-msgid "View on IMDB"
 msgstr ""
 
 #: template-parts/catalog/parts/catalog_stats.php:21

@@ -122,6 +122,7 @@
     "lint:gulp:fix": "eslint --fix gulp/"
   },
   "dependencies": {
-    "flickity": "^3.0.0"
+    "flickity": "^3.0.0",
+    "puppeteer": "^16.2.0"
   }
 }

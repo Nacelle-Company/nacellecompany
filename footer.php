@@ -20,7 +20,7 @@ wp_rig()->print_styles( 'wp-rig-footer-widgets' );
 
 <footer id="colophon" class="site-footer">
 	<?php if ( ! empty( $hero_video ) ) : ?>
-		<script type="text/javascript">
+		<script type="text/javascript" id="hero_video_script">
 
 			const video = '#hero_video_<?php echo esc_html( $queried_id ); ?>';
 			// let videoCoverWrap = document.getElementById('video_cover_img_wrap');

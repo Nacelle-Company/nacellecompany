@@ -11,6 +11,9 @@ namespace WP_Rig\WP_Rig;
 
 get_header();
 
+// Globals.
+$sf_current_query = $searchandfilter->get( 46579 )->current_query();
+
 wp_rig()->print_styles( 'wp-rig-archive' );
 get_template_part( 'template-parts/content/page_header' );
 

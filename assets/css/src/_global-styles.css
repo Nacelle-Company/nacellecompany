@@ -1,0 +1,115 @@
+
+/*--------------------------------------------------------------
+# Select styles below
+--------------------------------------------------------------*/
+/* stylelint-disable */
+img {
+	display: block;
+	height: auto;
+	max-width: 100%;
+}
+/* stylelint-enable */
+
+
+blockquote,
+q {
+	quotes: "" "";
+}
+
+.wp-block-quote,
+blockquote {
+	margin: 0 0 1rem;
+	padding: 0.5625rem 1.25rem 0 1.1875rem;
+	border-left: 10px solid var(--color-theme-primary);
+	line-height: 1.6;
+	font-size: 140%;
+}
+
+.wp-block-quote::before,
+blockquote::before {
+	content: "\201C";
+	font-size: 4em;
+	line-height: 0.1;
+	vertical-align: -0.4em;
+	color: var(--color-theme-primary);
+	margin-right: 12px;
+}
+
+.wp-block-quote p,
+blockquote p {
+	margin-top: 0;
+}
+
+.entry-content > blockquote {
+	padding-left: 1em;
+	margin-left: 1.5rem;
+}
+
+@media screen and (min-width: 48em) {
+
+	.entry-content > blockquote {
+		margin-left: auto;
+	}
+}
+
+blockquote cite {
+	color: var(--color-quote-citation);
+	font-size: 13px;
+	margin-top: 1em;
+	position: relative;
+	font-style: normal;
+}
+
+cite::before {
+	content: "— ";
+}
+
+.hidden {
+	position: absolute;
+	left: -100vw;
+	height: 0;
+	font-size: 1px;
+	z-index: -1;
+}
+
+/*--------------------------------------------------------------
+# Accessibility
+--------------------------------------------------------------*/
+
+/**
+ * Text meant only for screen readers.
+ * Re: word-wrap: Many screen reader and browser combinations announce broken
+ * words as they would appear visually.
+ */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	word-wrap: normal !important;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 0.875rem;
+	font-weight: 700;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar. */
+}
+
+/* Do not show the outline on the skip link target. */
+#primary[tabindex="-1"]:focus {
+	outline: 0;
+}

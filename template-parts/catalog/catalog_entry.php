@@ -59,6 +59,7 @@ endif;
 						array(
 							'class'         => 'attachment-medium_large size-medium_large wp-post-image no-lazy',
 							'fetchpriority' => 'high',
+							'loading'       => 'auto',
 						)
 					);
 					?>

@@ -1,0 +1,1674 @@
+@font-face {
+	font-family: "asppsicons2";
+	src: url(//localhost:10009/wp-content/plugins/ajax-search-pro/css/fonts/icons/icons2.woff2) format("woff2");
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+@-webkit-keyframes rotate-simple {
+
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+
+	50% {
+		-webkit-transform: rotate(180deg);
+		transform: rotate(180deg);
+	}
+
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes rotate-simple {
+
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+
+	50% {
+		-webkit-transform: rotate(180deg);
+		transform: rotate(180deg);
+	}
+
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+@-webkit-keyframes asp_an_fadeInDown {
+
+	0% {
+		opacity: 0;
+		-webkit-transform: translateY(-20px);
+	}
+
+	100% {
+		opacity: 1;
+		-webkit-transform: translateY(0);
+	}
+}
+
+@keyframes asp_an_fadeInDown {
+
+	0% {
+		opacity: 0;
+		transform: translateY(-20px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes aspAnFadeInDrop {
+
+	0% {
+		opacity: 0;
+		transform: translate(0, -50px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translate(0, 0);
+	}
+}
+
+@-webkit-keyframes aspAnFadeInDrop {
+
+	0% {
+		opacity: 0;
+		transform: translate(0, -50px);
+		-webkit-transform: translate(0, -50px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translate(0, 0);
+		-webkit-transform: translate(0, 0);
+	}
+}
+
+@keyframes aspAnFadeOutDrop {
+
+	0% {
+		opacity: 1;
+		transform: translate(0, 0);
+		-webkit-transform: translate(0, 0);
+	}
+
+	100% {
+		opacity: 0;
+		transform: translate(0, -50px);
+		-webkit-transform: translate(0, -50px);
+	}
+}
+
+@-webkit-keyframes aspAnFadeOutDrop {
+
+	0% {
+		opacity: 1;
+		transform: translate(0, 0);
+		-webkit-transform: translate(0, 0);
+	}
+
+	100% {
+		opacity: 0;
+		transform: translate(0, -50px);
+		-webkit-transform: translate(0, -50px);
+	}
+}
+
+div.ajaxsearchpro.asp_an_fadeIn,
+div.ajaxsearchpro.asp_an_fadeOut,
+div.ajaxsearchpro.asp_an_fadeInDrop,
+div.ajaxsearchpro.asp_an_fadeOutDrop {
+	-webkit-animation-duration: 100ms;
+	animation-duration: 100ms;
+	-webkit-animation-fill-mode: forwards;
+	animation-fill-mode: forwards;
+}
+
+div.ajaxsearchpro.asp_an_fadeInDrop {
+	animation-name: aspAnFadeInDrop;
+	-webkit-animation-name: aspanfadeindrop;
+}
+
+div.ajaxsearchpro.asp_an_fadeOutDrop {
+	animation-name: aspAnFadeOutDrop;
+	-webkit-animation-name: aspanfadeoutdrop;
+}
+
+div.ajaxsearchpro.asp_main_container {
+	transition: width 130ms linear;
+	-webkit-transition: width 130ms linear;
+}
+
+asp_w_container,
+div.asp_w.ajaxsearchpro,
+div.asp_w.asp_r,
+div.asp_w.asp_s,
+div.asp_w.asp_sb,
+div.asp_w.asp_sb * {
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	-ms-box-sizing: content-box;
+	-o-box-sizing: content-box;
+	box-sizing: content-box;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	border-radius: 0;
+	text-transform: none;
+	text-shadow: none;
+	box-shadow: none;
+	text-decoration: none;
+	text-align: left;
+	text-indent: initial;
+	letter-spacing: normal;
+	font-display: swap;
+}
+
+div.asp_w_container div[id*="__original__"] {
+	display: none !important;
+}
+
+div.asp_w.asp_r,
+div.asp_w.asp_r * {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+div.asp_w.ajaxsearchpro input[type="search"]::-webkit-search-decoration,
+div.asp_w.ajaxsearchpro input[type="search"]::-webkit-search-cancel-button,
+div.asp_w.ajaxsearchpro input[type="search"]::-webkit-search-results-button,
+div.asp_w.ajaxsearchpro input[type="search"]::-webkit-search-results-decoration {
+	display: none;
+}
+
+div.asp_w.ajaxsearchpro input[type="search"] {
+	appearance: auto !important;
+	-webkit-appearance: none !important;
+}
+
+.clear {
+	clear: both;
+}
+
+.asp_clear {
+	clear: both !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	width: auto !important;
+	height: 0 !important;
+}
+
+.hiddend {
+	display: none !important;
+}
+
+#ajaxsearchpro2_1 .probox .promagnifier .innericon,
+#ajaxsearchpro2_2 .probox .promagnifier .innericon,
+div.asp_m.asp_m_2 .probox .promagnifier .innericon {
+	background-image: url(https://www.comedydynamics.com/wp-content/uploads/2022/08/icon-search-1.svg);
+}
+
+div.asp_w.ajaxsearchpro {
+	width: 100%;
+	height: auto;
+	border-radius: 0;
+	background: var(--nav-bk-color);
+	overflow: hidden;
+	box-sizing: border-box;
+}
+
+#asp_absolute_overlay {
+	width: 0;
+	height: 0;
+	position: fixed;
+	text-align: center;
+	background: rgba(255, 255, 255, 0.5);
+	top: 0;
+	left: 0;
+	display: block;
+	z-index: 0;
+	opacity: 0;
+	transition: opacity 200ms linear;
+	-webkit-transition: opacity 200ms linear;
+}
+
+div.asp_w.ajaxsearchpro textarea:focus,
+div.asp_w.ajaxsearchpro input:focus {
+	outline: none;
+}
+
+div.asp_m.ajaxsearchpro .probox {
+	width: auto;
+	border-radius: 5px;
+	background: #fff;
+	overflow: hidden;
+	border: 1px solid #fff;
+	box-shadow: 1px 0 3px #ccc inset;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-flex-direction: row;
+	flex-direction: row;
+	direction: ltr;
+	align-items: stretch;
+	isolation: isolate;
+}
+
+div.asp_m.ajaxsearchpro .probox .proinput {
+	width: 1px;
+	height: 100%;
+	margin: 0 0 0 10px;
+	padding: 0 5px;
+	float: left;
+	box-shadow: none;
+	position: relative;
+	flex: 1 1 auto;
+	-webkit-flex: 1 1 auto;
+	z-index: 0;
+}
+
+div.asp_m.ajaxsearchpro .probox .proinput form {
+	height: 100%;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+div.asp_m.ajaxsearchpro .probox .proinput input {
+	height: 100%;
+	width: 100%;
+	border: 0;
+	background: transparent;
+	width: auto;
+	box-shadow: none;
+	margin: -1px;
+	padding: 0;
+	left: 0;
+	padding-top: 2px;
+	min-width: 120px;
+}
+
+div.asp_m.ajaxsearchpro .probox .proinput input.autocomplete {
+	border: 0;
+	background: transparent;
+	width: 100%;
+	box-shadow: none;
+	margin: 0;
+	padding: 0;
+	left: 0;
+}
+
+div.asp_m.ajaxsearchpro .probox .proinput.iepaddingfix {
+	padding-top: 0;
+}
+
+div.asp_m.ajaxsearchpro .probox .proloading,
+div.asp_m.ajaxsearchpro .probox .proclose,
+div.asp_m.ajaxsearchpro .probox .promagnifier,
+div.asp_m.ajaxsearchpro .probox .prosettings {
+	width: 20px;
+	height: 20px;
+	background: none;
+	background-size: 20px 20px;
+	float: right;
+	box-shadow: none;
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	z-index: 1;
+}
+
+div.asp_m.ajaxsearchpro .probox .proloading,
+div.asp_m.ajaxsearchpro .probox .proclose {
+	background-position: center center;
+	display: none;
+	background-size: auto;
+	background-repeat: no-repeat;
+	background-color: transparent;
+}
+
+div.asp_m.ajaxsearchpro .probox .proloading {
+	padding: 2px;
+	box-sizing: border-box;
+}
+
+div.asp_m.ajaxsearchpro .probox .proclose {
+	position: relative;
+	cursor: pointer;
+	z-index: 2;
+}
+
+div.asp_m.ajaxsearchpro .probox .promagnifier .innericon,
+div.asp_m.ajaxsearchpro .probox .prosettings .innericon,
+div.asp_m.ajaxsearchpro .probox .proclose .innericon {
+	background-size: 20px 20px;
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-color: transparent;
+	width: 100%;
+	height: 100%;
+	line-height: initial;
+	text-align: center;
+	overflow: hidden;
+}
+
+div.asp_m.ajaxsearchpro .probox .promagnifier .innericon svg,
+div.asp_m.ajaxsearchpro .probox .prosettings .innericon svg,
+div.asp_m.ajaxsearchpro .probox .proloading svg {
+	height: 100%;
+	width: 22px;
+	vertical-align: baseline;
+	display: inline-block;
+}
+
+div.asp_m.ajaxsearchpro .probox .proclose svg {
+	background: #333;
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	width: 20px;
+	height: 20px;
+	margin-top: -10px;
+	left: 50%;
+	margin-left: -10px;
+	fill: #fefefe;
+	padding: 4px;
+	box-sizing: border-box;
+	box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.9);
+}
+
+.opacityOne {
+	opacity: 1;
+}
+
+.opacityZero {
+	opacity: 0;
+}
+
+div.asp_hidden_data,
+div.asp_hidden_data * {
+	display: none;
+}
+
+div.asp_w.asp_r {
+	display: none;
+}
+
+div.asp_w.asp_r * {
+	text-decoration: none;
+	text-shadow: none;
+}
+
+div.asp_w.asp_r .results {
+	overflow: hidden;
+	width: auto;
+	height: 0;
+	margin: 0;
+	padding: 0;
+}
+
+div.asp_w.asp_r .results .item {
+	overflow: hidden;
+	width: auto;
+	margin: 0;
+	padding: 3px;
+	position: relative;
+	background: #f4f4f4;
+	border-left: 1px solid rgba(255, 255, 255, 0.6);
+	border-right: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+div.asp_w.asp_r .results .item,
+div.asp_w.asp_r .results .asp_group_header {
+	animation-delay: 0s;
+	animation-duration: 0.5s;
+	animation-fill-mode: both;
+	animation-timing-function: ease;
+	backface-visibility: hidden;
+	-webkit-animation-delay: 0s;
+	-webkit-animation-duration: 0.5s;
+	-webkit-animation-fill-mode: both;
+	-webkit-animation-timing-function: ease;
+	-webkit-backface-visibility: hidden;
+}
+
+div.asp_w.asp_r .results .item .asp_image {
+	overflow: hidden;
+	background: transparent;
+	padding: 0;
+	float: left;
+	background-position: center;
+	background-size: cover;
+	position: relative;
+}
+
+div.asp_w.asp_r a.asp_res_image_url,
+div.asp_w.asp_r a.asp_res_image_url:hover,
+div.asp_w.asp_r a.asp_res_image_url:focus,
+div.asp_w.asp_r a.asp_res_image_url:active {
+	box-shadow: none !important;
+	border: none !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	display: inline !important;
+}
+
+div.asp_w.asp_r .results a span.overlap {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 1;
+}
+
+div.asp_w.asp_r .resdrg {
+	height: auto;
+}
+
+div.asp_w.asp_r.vertical .results .item:first-child {
+	border-radius: 0;
+}
+
+div.asp_w.asp_r.vertical .results .item:last-child {
+	border-radius: 0;
+	margin-bottom: 0;
+}
+
+div.asp_w.asp_r.vertical .results .item:last-child::after {
+	height: 0;
+	margin: 0;
+	width: 0;
+}
+
+div.asp_w.asp_s.searchsettings {
+	width: auto;
+	height: auto;
+	position: absolute;
+	display: none;
+	z-index: 11001;
+	border-radius: 0 0 3px 3px;
+	visibility: hidden;
+	opacity: 0;
+	overflow: visible;
+}
+
+[data-asp_simplebar] {
+	position: relative;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-content: flex-start;
+	align-items: flex-start;
+}
+
+.asp_simplebar-wrapper {
+	overflow: hidden;
+	width: inherit;
+	height: inherit;
+	max-width: inherit;
+	max-height: inherit;
+}
+
+.asp_simplebar-mask {
+	direction: inherit;
+	position: absolute;
+	overflow: hidden;
+	padding: 0;
+	margin: 0;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	width: auto !important;
+	height: auto !important;
+	z-index: 0;
+}
+
+.asp_simplebar-offset {
+	direction: inherit !important;
+	box-sizing: inherit !important;
+	resize: none !important;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	padding: 0;
+	margin: 0;
+	-webkit-overflow-scrolling: touch;
+}
+
+.asp_simplebar-content-wrapper {
+	direction: inherit;
+	box-sizing: border-box !important;
+	position: relative;
+	display: block;
+	height: 100%;
+	width: auto;
+	visibility: visible;
+	max-width: 100%;
+	max-height: 100%;
+	scrollbar-width: none;
+}
+
+.asp_simplebar-content-wrapper::-webkit-scrollbar,
+.asp_simplebar-hide-scrollbar::-webkit-scrollbar {
+	display: none;
+}
+
+.asp_simplebar-content::before,
+.asp_simplebar-content::after {
+	content: " ";
+	display: table;
+}
+
+.asp_simplebar-placeholder {
+	max-height: 100%;
+	max-width: 100%;
+	width: 100%;
+	pointer-events: none;
+}
+
+.asp_simplebar-height-auto-observer-wrapper {
+	box-sizing: inherit !important;
+	height: 100%;
+	width: 100%;
+	max-width: 1px;
+	position: relative;
+	float: left;
+	max-height: 1px;
+	overflow: hidden;
+	z-index: -1;
+	padding: 0;
+	margin: 0;
+	pointer-events: none;
+	flex-grow: inherit;
+	flex-shrink: 0;
+	flex-basis: 0%;
+}
+
+.asp_simplebar-height-auto-observer {
+	box-sizing: inherit;
+	display: block;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 1000%;
+	width: 1000%;
+	min-height: 1px;
+	min-width: 1px;
+	overflow: hidden;
+	pointer-events: none;
+	z-index: -1;
+}
+
+.asp_simplebar-track {
+	z-index: 1;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	pointer-events: none;
+	overflow: hidden;
+}
+
+.asp_simplebar-scrollbar {
+	position: absolute;
+	right: 2px;
+	width: 7px;
+	min-height: 10px;
+}
+
+.asp_simplebar-scrollbar::before {
+	position: absolute;
+	content: "";
+	background: rgba(0, 0, 0, 0.5);
+	border-radius: 7px;
+	left: 0;
+	right: 0;
+	opacity: 0;
+	transition: opacity 0.2s linear;
+}
+
+.asp_simplebar-scrollbar.asp_simplebar-visible::before {
+	opacity: 1;
+	transition: opacity 0s linear;
+}
+
+.asp_simplebar-track.asp_simplebar-vertical {
+	top: 0;
+	width: 11px;
+	margin-top: 4px !important;
+	margin-bottom: 4px !important;
+}
+
+.asp_simplebar-track.asp_simplebar-vertical .asp_simplebar-scrollbar::before {
+	top: 2px;
+	bottom: 2px;
+}
+
+.asp_simplebar-track.asp_simplebar-horizontal {
+	left: 0;
+	height: 11px;
+	margin-left: 12px !important;
+	margin-right: 12px !important;
+}
+
+.asp_simplebar-track.asp_simplebar-horizontal .asp_simplebar-scrollbar {
+	right: auto;
+	left: 0;
+	top: 2px;
+	height: 7px;
+	min-height: 0;
+	min-width: 10px;
+	width: auto;
+}
+
+.asp_an_fadeInDown {
+	-webkit-animation-name: asp_an_fadeindown;
+	animation-name: asp_an_fadeInDown;
+}
+
+.wpdreams_clear {
+	clear: both;
+}
+
+div[id*="ajaxsearchpro2_"] div.asp_loader,
+div[id*="ajaxsearchpro2_"] div.asp_loader * {
+	box-sizing: border-box !important;
+	margin: 0;
+	padding: 0;
+	box-shadow: none;
+}
+
+div[id*="ajaxsearchpro2_"] div.asp_loader {
+	box-sizing: border-box;
+	display: flex;
+	flex: 0 1 auto;
+	flex-direction: column;
+	flex-grow: 0;
+	flex-shrink: 0;
+	flex-basis: 28px;
+	max-width: 100%;
+	max-height: 100%;
+	align-items: center;
+	justify-content: center;
+}
+
+div[id*="ajaxsearchpro2_"] div.asp_loader-inner {
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	height: 100%;
+}
+
+div[id*="ajaxsearchpro2_"] div.asp_simple-circle {
+	margin: 0;
+	height: 100%;
+	width: 100%;
+	animation: rotate-simple 0.8s infinite linear;
+	-webkit-animation: rotate-simple 0.8s infinite linear;
+	border: 4px solid rgb(0, 0, 0);
+	border-right-color: transparent;
+	border-radius: 50%;
+	box-sizing: border-box;
+}
+
+div[id*="ajaxsearchprores2_"] .asp_res_loader div.asp_loader,
+div[id*="ajaxsearchprores2_"] .asp_res_loader div.asp_loader * {
+	box-sizing: border-box !important;
+	margin: 0;
+	padding: 0;
+	box-shadow: none;
+}
+
+div[id*="ajaxsearchprores2_"] .asp_res_loader div.asp_loader {
+	box-sizing: border-box;
+	display: flex;
+	flex: 0 1 auto;
+	flex-direction: column;
+	flex-grow: 0;
+	flex-shrink: 0;
+	flex-basis: 28px;
+	max-width: 100%;
+	max-height: 100%;
+	align-items: center;
+	justify-content: center;
+}
+
+div[id*="ajaxsearchprores2_"] .asp_res_loader div.asp_loader-inner {
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	height: 100%;
+}
+
+#ajaxsearchpro2_1 div.asp_loader,
+#ajaxsearchpro2_2 div.asp_loader,
+#ajaxsearchpro2_1 div.asp_loader *,
+#ajaxsearchpro2_2 div.asp_loader * {
+	box-sizing: border-box !important;
+	margin: 0;
+	padding: 0;
+	box-shadow: none;
+}
+
+#ajaxsearchpro2_1 div.asp_loader,
+#ajaxsearchpro2_2 div.asp_loader {
+	box-sizing: border-box;
+	display: flex;
+	flex: 0 1 auto;
+	flex-direction: column;
+	flex-grow: 0;
+	flex-shrink: 0;
+	flex-basis: 28px;
+	max-width: 100%;
+	max-height: 100%;
+	align-items: center;
+	justify-content: center;
+}
+
+#ajaxsearchpro2_1 div.asp_loader-inner,
+#ajaxsearchpro2_2 div.asp_loader-inner {
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+	height: 100%;
+}
+
+#ajaxsearchpro2_1 div.asp_simple-circle,
+#ajaxsearchpro2_2 div.asp_simple-circle {
+	margin: 0;
+	height: 100%;
+	width: 100%;
+	animation: rotate-simple 0.8s infinite linear;
+	-webkit-animation: rotate-simple 0.8s infinite linear;
+	border: 4px solid rgb(0, 0, 0);
+	border-right-color: transparent;
+	border-radius: 50%;
+	box-sizing: border-box;
+}
+
+div.asp_r.asp_r_2,
+div.asp_r.asp_r_2 *,
+div.asp_m.asp_m_2,
+div.asp_m.asp_m_2 *,
+div.asp_s.asp_s_2,
+div.asp_s.asp_s_2 * {
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	-ms-box-sizing: content-box;
+	-o-box-sizing: content-box;
+	box-sizing: content-box;
+	border: 0;
+	border-radius: 0;
+	text-transform: none;
+	text-shadow: none;
+	box-shadow: none;
+	text-decoration: none;
+	text-align: left;
+	letter-spacing: normal;
+}
+
+div.asp_r.asp_r_2,
+div.asp_m.asp_m_2,
+div.asp_s.asp_s_2 {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+div.asp_r.asp_r_2,
+div.asp_r.asp_r_2 *,
+div.asp_m.asp_m_2,
+div.asp_m.asp_m_2 *,
+div.asp_s.asp_s_2,
+div.asp_s.asp_s_2 * {
+	padding: 0;
+	margin: 0;
+}
+
+.wpdreams_clear {
+	clear: both;
+}
+
+.asp_w_container_2 {
+	width: 100%;
+}
+
+@media only screen and (min-width: 641px) and (max-width: 1024px) {
+
+	.asp_w_container_2 {
+		width: 50px;
+	}
+
+	div.asp_main_container.asp_w + [id*="asp-try-2"] {
+		width: 50px;
+	}
+}
+
+@media only screen and (max-width: 640px) {
+
+	.asp_w_container_2 {
+		width: 34px;
+	}
+
+	div.asp_main_container.asp_w + [id*="asp-try-2"] {
+		width: 34px;
+	}
+}
+
+#ajaxsearchpro2_1 .probox,
+#ajaxsearchpro2_2 .probox,
+div.asp_m.asp_m_2 .probox {
+	margin: 0;
+	height: 35px;
+	background-image: none;
+	border: none;
+	border-radius: 0;
+	box-shadow: none;
+}
+
+#asp_absolute_overlay {
+	background: rgba(0, 0, 0, 0.7);
+}
+
+#ajaxsearchpro2_1 .probox,
+#ajaxsearchpro2_2 .probox,
+div.asp_m.asp_m_2 .probox {
+	width: 35px;
+}
+
+#ajaxsearchpro2_1,
+#ajaxsearchpro2_2,
+div.asp_m.asp_m_2 {
+	width: auto;
+	display: inline-block;
+	float: right;
+	position: absolute;
+	top: 0;
+	bottom: auto;
+	right: 0;
+	left: auto;
+	z-index: 9000;
+	border-radius: 0;
+	box-shadow: none;
+	border: none;
+
+	@media (--content-query) {
+		top: 10px;
+	}
+}
+
+
+#ajaxsearchpro2_1 .probox .proinput,
+#ajaxsearchpro2_2 .probox .proinput,
+div.asp_m.asp_m_2 .probox .proinput {
+	font-weight: 400;
+	font-family: inherit;
+	color: var(--nav-bk-color);
+	font-size: 12px;
+	line-height: 38px;
+	text-shadow: none;
+	line-height: normal;
+	flex-grow: 1;
+	order: 5;
+	-webkit-flex-grow: 1;
+	-webkit-order: 5;
+}
+
+#ajaxsearchpro2_1 .probox .proinput input.orig,
+#ajaxsearchpro2_2 .probox .proinput input.orig,
+div.asp_m.asp_m_2 .probox .proinput input.orig {
+	font-weight: 400;
+	font-family: inherit;
+	color: var(--nav-bk-color);
+	font-size: 12px;
+	line-height: 38px;
+	text-shadow: none;
+	line-height: normal;
+	border: 0;
+	box-shadow: none;
+	height: 35px;
+	position: relative;
+	z-index: 2;
+	padding: 0 !important;
+	padding-top: 2px !important;
+	margin: -1px 0 0 -4px !important;
+	width: 100%;
+	background: transparent !important;
+}
+
+#ajaxsearchpro2_1 .probox .proinput input.autocomplete,
+#ajaxsearchpro2_2 .probox .proinput input.autocomplete,
+div.asp_m.asp_m_2 .probox .proinput input.autocomplete {
+	font-weight: 400;
+	font-family: inherit;
+	color: var(--nav-bk-color);
+	font-size: 12px;
+	line-height: 38px;
+	text-shadow: none;
+	line-height: normal;
+	opacity: 0.25;
+	height: 35px;
+	display: block;
+	position: relative;
+	z-index: 1;
+	padding: 0 !important;
+	margin: -1px 0 0 -4px !important;
+	margin-top: -35px !important;
+	width: 100%;
+	background: transparent !important;
+}
+
+.rtl #ajaxsearchpro2_1 .probox .proinput input.orig,
+.rtl #ajaxsearchpro2_2 .probox .proinput input.orig,
+.rtl #ajaxsearchpro2_1 .probox .proinput input.autocomplete,
+.rtl #ajaxsearchpro2_2 .probox .proinput input.autocomplete,
+.rtl div.asp_m.asp_m_2 .probox .proinput input.orig,
+.rtl div.asp_m.asp_m_2 .probox .proinput input.autocomplete {
+	font-weight: 400;
+	font-family: inherit;
+	color: var(--nav-bk-color);
+	font-size: 12px;
+	line-height: 38px;
+	text-shadow: none;
+	line-height: normal;
+	direction: rtl;
+	text-align: right;
+}
+
+.rtl #ajaxsearchpro2_1 .probox .proinput,
+.rtl #ajaxsearchpro2_2 .probox .proinput,
+.rtl div.asp_m.asp_m_2 .probox .proinput {
+	margin-right: 2px;
+}
+
+.rtl #ajaxsearchpro2_1 .probox .proloading,
+.rtl #ajaxsearchpro2_1 .probox .proclose,
+.rtl #ajaxsearchpro2_2 .probox .proloading,
+.rtl #ajaxsearchpro2_2 .probox .proclose,
+.rtl div.asp_m.asp_m_2 .probox .proloading,
+.rtl div.asp_m.asp_m_2 .probox .proclose {
+	order: 3;
+}
+
+div.asp_m.asp_m_2 .probox .proinput input.orig::-webkit-input-placeholder {
+	font-weight: 400;
+	font-family: inherit;
+	color: var(--nav-bk-color);
+	font-size: 12px;
+	text-shadow: none;
+	opacity: 0.85;
+}
+
+div.asp_m.asp_m_2 .probox .proinput input.orig::-moz-placeholder {
+	font-weight: 400;
+	font-family: inherit;
+	color: var(--nav-bk-color);
+	font-size: 12px;
+	text-shadow: none;
+	opacity: 0.85;
+}
+
+div.asp_m.asp_m_2 .probox .proinput input.orig:-ms-input-placeholder {
+	font-weight: 400;
+	font-family: inherit;
+	color: var(--nav-bk-color);
+	font-size: 12px;
+	text-shadow: none;
+	opacity: 0.85;
+}
+
+div.asp_m.asp_m_2 .probox .proinput input.orig:-moz-placeholder {
+	font-weight: 400;
+	font-family: inherit;
+	color: var(--nav-bk-color);
+	font-size: 12px;
+	text-shadow: none;
+	opacity: 0.85;
+	line-height: normal !important;
+}
+
+#ajaxsearchpro2_1 .probox .proinput input.autocomplete,
+#ajaxsearchpro2_2 .probox .proinput input.autocomplete,
+div.asp_m.asp_m_2 .probox .proinput input.autocomplete {
+	font-weight: 400;
+	font-family: inherit;
+	color: var(--nav-bk-color);
+	font-size: 12px;
+	line-height: 38px;
+	text-shadow: none;
+	line-height: normal;
+	border: 0;
+	box-shadow: none;
+}
+
+#ajaxsearchpro2_1 .probox .proloading,
+#ajaxsearchpro2_1 .probox .proclose,
+#ajaxsearchpro2_1 .probox .promagnifier,
+#ajaxsearchpro2_1 .probox .prosettings,
+#ajaxsearchpro2_2 .probox .proloading,
+#ajaxsearchpro2_2 .probox .proclose,
+#ajaxsearchpro2_2 .probox .promagnifier,
+#ajaxsearchpro2_2 .probox .prosettings,
+div.asp_m.asp_m_2 .probox .proloading,
+div.asp_m.asp_m_2 .probox .proclose,
+div.asp_m.asp_m_2 .probox .promagnifier,
+div.asp_m.asp_m_2 .probox .prosettings {
+	width: 35px;
+	height: 35px;
+	flex: 0 0 35px;
+	flex-grow: 0;
+	order: 7;
+	-webkit-flex: 0 0 35px;
+	-webkit-flex-grow: 0;
+	-webkit-order: 7;
+}
+
+#ajaxsearchpro2_1 .probox .proclose svg,
+#ajaxsearchpro2_2 .probox .proclose svg,
+div.asp_m.asp_m_2 .probox .proclose svg {
+	fill: rgb(0, 0, 0);
+	background: rgb(255, 255, 255);
+	box-shadow: 0 0 0 2px rgba(18, 18, 18, 0);
+}
+
+#ajaxsearchpro2_1 .probox .proloading,
+#ajaxsearchpro2_2 .probox .proloading,
+div.asp_m.asp_m_2 .probox .proloading {
+	width: 35px;
+	height: 35px;
+	min-width: 35px;
+	min-height: 35px;
+	max-width: 35px;
+	max-height: 35px;
+}
+
+#ajaxsearchpro2_1 .probox .proloading .asp_loader,
+#ajaxsearchpro2_2 .probox .proloading .asp_loader,
+div.asp_m.asp_m_2 .probox .proloading .asp_loader {
+	width: 31px;
+	height: 31px;
+	min-width: 31px;
+	min-height: 31px;
+	max-width: 31px;
+	max-height: 31px;
+}
+
+#ajaxsearchpro2_1 .probox .promagnifier,
+#ajaxsearchpro2_2 .probox .promagnifier,
+div.asp_m.asp_m_2 .probox .promagnifier {
+	width: auto;
+	height: 35px;
+	flex: 0 0 auto;
+	order: 7;
+	-webkit-flex: 0 0 auto;
+	-webkit-order: 7;
+}
+
+#ajaxsearchpro2_1 .probox .promagnifier div.innericon,
+#ajaxsearchpro2_2 .probox .promagnifier div.innericon,
+div.asp_m.asp_m_2 .probox .promagnifier div.innericon {
+	width: 35px;
+	height: 35px;
+	float: right;
+}
+
+#ajaxsearchpro2_1 .probox .promagnifier div.asp_text_button,
+#ajaxsearchpro2_2 .probox .promagnifier div.asp_text_button,
+div.asp_m.asp_m_2 .probox .promagnifier div.asp_text_button {
+	width: auto;
+	height: 35px;
+	float: right;
+	margin: 0;
+	padding: 0 10px 0 2px;
+	font-weight: 400;
+	font-family: inherit;
+	color: rgb(51, 51, 51);
+	font-size: 15px;
+	line-height: normal;
+	text-shadow: none;
+	line-height: 35px;
+}
+
+#ajaxsearchpro2_1 .probox .promagnifier .innericon svg,
+#ajaxsearchpro2_2 .probox .promagnifier .innericon svg,
+div.asp_m.asp_m_2 .probox .promagnifier .innericon svg {
+	fill: rgba(255, 188, 0, 1);
+}
+
+#ajaxsearchpro2_1 .probox .prosettings .innericon svg,
+#ajaxsearchpro2_2 .probox .prosettings .innericon svg,
+div.asp_m.asp_m_2 .probox .prosettings .innericon svg {
+	fill: rgb(54, 54, 54);
+}
+
+#ajaxsearchpro2_1 .probox .promagnifier,
+#ajaxsearchpro2_2 .probox .promagnifier,
+div.asp_m.asp_m_2 .probox .promagnifier {
+	width: 35px;
+	height: 35px;
+	background-image: none;
+	background-color: var(--nav-bk-color);
+	order: 11;
+	-webkit-order: 11;
+	float: right;
+	border: none;
+	border-radius: 0;
+	box-shadow: none;
+	cursor: pointer;
+}
+
+#ajaxsearchpro2_1 .probox .prosettings,
+#ajaxsearchpro2_2 .probox .prosettings,
+div.asp_m.asp_m_2 .probox .prosettings {
+	width: 35px;
+	height: 35px;
+	background: transparent;
+	order: 1;
+	-webkit-order: 1;
+	float: left;
+	border: 0 solid rgb(255, 255, 255);
+	border-radius: 0;
+	box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.64);
+	cursor: pointer;
+	align-self: flex-end;
+}
+
+#ajaxsearchprores2_1,
+#ajaxsearchprores2_2,
+div.asp_r.asp_r_2 {
+	position: absolute;
+	z-index: 11000;
+	width: auto;
+	margin: 12px 0 0 0;
+}
+
+#ajaxsearchprores2_1 .results .asp_nores .asp_keyword,
+#ajaxsearchprores2_2 .results .asp_nores .asp_keyword,
+div.asp_r.asp_r_2 .results .asp_nores .asp_keyword {
+	padding: 0 6px;
+	cursor: pointer;
+	font-weight: 400;
+	font-family: inherit;
+	color: rgb(251, 251, 251);
+	font-size: 13px;
+	line-height: 1.35em;
+	text-shadow: none;
+	font-weight: 700;
+}
+
+#ajaxsearchprores2_1 .asp_results_top,
+#ajaxsearchprores2_2 .asp_results_top,
+div.asp_r.asp_r_2 .asp_results_top {
+	background: rgba(18, 18, 18, 1);
+	border: 1px none rgb(81, 81, 81);
+	border-radius: 0;
+	padding: 6px 12px 6px 12px;
+	margin: 0 0 4px 0;
+	text-align: center;
+	font-weight: 400;
+	font-family: inherit;
+	color: rgb(255, 255, 255);
+	font-size: 13px;
+	line-height: 16px;
+	text-shadow: none;
+}
+
+#ajaxsearchprores2_1 .results .item,
+#ajaxsearchprores2_2 .results .item,
+div.asp_r.asp_r_2 .results .item {
+	height: auto;
+	background: var(--nav-bk-color);
+}
+
+#ajaxsearchprores2_1 .results .item.hovered,
+#ajaxsearchprores2_2 .results .item.hovered,
+div.asp_r.asp_r_2 .results .item.hovered {
+	background-image: -moz-radial-gradient(center, ellipse cover, rgba(18, 18, 18, 1), rgba(18, 18, 18, 1));
+	background-image: -webkit-gradient(radial, center center, 0, center center, 100%, rgba(18, 18, 18, 1), rgba(18, 18, 18, 1));
+	background-image: -webkit-radial-gradient(center, ellipse cover, rgba(18, 18, 18, 1), rgba(18, 18, 18, 1));
+	background-image: -o-radial-gradient(center, ellipse cover, rgba(18, 18, 18, 1), rgba(18, 18, 18, 1));
+	background-image: -ms-radial-gradient(center, ellipse cover, rgba(18, 18, 18, 1), rgba(18, 18, 18, 1));
+	background-image: radial-gradient(ellipse at center, rgba(18, 18, 18, 1), rgba(18, 18, 18, 1));
+}
+
+#ajaxsearchprores2_1 .results .item .asp_image,
+#ajaxsearchprores2_2 .results .item .asp_image,
+div.asp_r.asp_r_2 .results .item .asp_image {
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#ajaxsearchprores2_1 .results .item .asp_item_overlay_img,
+#ajaxsearchprores2_2 .results .item .asp_item_overlay_img,
+div.asp_r.asp_r_2 .results .item .asp_item_overlay_img {
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+#ajaxsearchprores2_1 .results .item .asp_content,
+#ajaxsearchprores2_2 .results .item .asp_content,
+div.asp_r.asp_r_2 .results .item .asp_content {
+	overflow: hidden;
+	background: transparent;
+	margin: 0;
+	padding: 0 10px;
+}
+
+#ajaxsearchprores2_1 .results .item .asp_content h3,
+#ajaxsearchprores2_2 .results .item .asp_content h3,
+div.asp_r.asp_r_2 .results .item .asp_content h3 {
+	margin: 0;
+	padding: 0;
+	display: inline-block;
+	line-height: inherit;
+	font-weight: 700;
+	font-family: inherit;
+	color: rgba(255, 188, 0, 1);
+	font-size: 14px;
+	line-height: 1.55em;
+	text-shadow: none;
+}
+
+#ajaxsearchprores2_1 .results .item .asp_content h3 a,
+#ajaxsearchprores2_2 .results .item .asp_content h3 a,
+div.asp_r.asp_r_2 .results .item .asp_content h3 a {
+	margin: 0;
+	padding: 0;
+	line-height: inherit;
+	display: block;
+	font-weight: 700;
+	font-family: inherit;
+	color: rgba(255, 188, 0, 1);
+	font-size: 14px;
+	line-height: 1.55em;
+	text-shadow: none;
+}
+
+#ajaxsearchprores2_1 .results .item .asp_content h3 a:hover,
+#ajaxsearchprores2_2 .results .item .asp_content h3 a:hover,
+div.asp_r.asp_r_2 .results .item .asp_content h3 a:hover {
+	font-weight: 700;
+	font-family: inherit;
+	color: rgba(255, 188, 0, 1);
+	font-size: 14px;
+	line-height: 1.55em;
+	text-shadow: none;
+}
+
+#ajaxsearchprores2_1 .results .item div.etc,
+#ajaxsearchprores2_2 .results .item div.etc,
+div.asp_r.asp_r_2 .results .item div.etc {
+	padding: 0;
+	font-size: 13px;
+	line-height: 1.3em;
+	margin-bottom: 6px;
+}
+
+#ajaxsearchprores2_1 .results .item .etc .asp_author,
+#ajaxsearchprores2_2 .results .item .etc .asp_author,
+div.asp_r.asp_r_2 .results .item .etc .asp_author {
+	padding: 0;
+	font-weight: 700;
+	font-family: inherit;
+	color: rgb(161, 161, 161);
+	font-size: 11px;
+	line-height: 13px;
+	text-shadow: none;
+}
+
+#ajaxsearchprores2_1 .results .item .etc .asp_date,
+#ajaxsearchprores2_2 .results .item .etc .asp_date,
+div.asp_r.asp_r_2 .results .item .etc .asp_date {
+	margin: 0 0 0 10px;
+	padding: 0;
+	font-weight: 400;
+	font-family: inherit;
+	color: rgba(127, 210, 230, 1);
+	font-size: 11px;
+	line-height: 15px;
+	text-shadow: none;
+}
+
+#ajaxsearchprores2_1 .results .item div.asp_content,
+#ajaxsearchprores2_2 .results .item div.asp_content,
+div.asp_r.asp_r_2 .results .item div.asp_content {
+	margin: 0;
+	padding: 0;
+	font-weight: 400;
+	font-family: inherit;
+	color: rgb(251, 251, 251);
+	font-size: 13px;
+	line-height: 1.35em;
+	text-shadow: none;
+}
+
+#ajaxsearchprores2_1 span.highlighted,
+#ajaxsearchprores2_2 span.highlighted,
+div.asp_r.asp_r_2 span.highlighted {
+	font-weight: 700;
+	color: rgba(217, 49, 43, 1);
+	background-color: rgba(238, 238, 238, 1);
+}
+
+#ajaxsearchprores2_1 p.showmore,
+#ajaxsearchprores2_2 p.showmore,
+div.asp_r.asp_r_2 p.showmore {
+	text-align: center;
+	margin: 5px 0 0;
+	font-weight: 400;
+	font-family: inherit;
+	color: rgba(127, 210, 230, 1);
+	font-size: 12px;
+	line-height: 15px;
+	text-shadow: none;
+}
+
+#ajaxsearchprores2_1 p.showmore a,
+#ajaxsearchprores2_2 p.showmore a,
+div.asp_r.asp_r_2 p.showmore a {
+	font-weight: 400;
+	font-family: inherit;
+	color: rgba(127, 210, 230, 1);
+	font-size: 12px;
+	line-height: 15px;
+	text-shadow: none;
+	padding: 10px 5px;
+	margin: 0 auto;
+	background: rgb(255, 255, 255);
+	display: block;
+	text-align: center;
+}
+
+#ajaxsearchprores2_1 .asp_res_loader,
+#ajaxsearchprores2_2 .asp_res_loader,
+div.asp_r.asp_r_2 .asp_res_loader {
+	background: var(--nav-bk-color);
+	height: 200px;
+	padding: 10px;
+}
+
+#ajaxsearchprores2_1.isotopic .asp_res_loader,
+#ajaxsearchprores2_2.isotopic .asp_res_loader,
+div.asp_r.asp_r_2.isotopic .asp_res_loader {
+	background: rgba(255, 255, 255, 0);
+}
+
+#ajaxsearchprores2_1 .asp_res_loader .asp_loader,
+#ajaxsearchprores2_2 .asp_res_loader .asp_loader,
+div.asp_r.asp_r_2 .asp_res_loader .asp_loader {
+	height: 200px;
+	width: 200px;
+	margin: 0 auto;
+}
+
+div.asp_s.asp_s_2.searchsettings,
+div.asp_s.asp_s_2.searchsettings,
+div.asp_s.asp_s_2.searchsettings {
+	direction: ltr;
+	padding: 0;
+	background-image: -webkit-linear-gradient(185deg, var(--nav-bk-color), var(--nav-bk-color));
+	background-image: -moz-linear-gradient(185deg, var(--nav-bk-color), var(--nav-bk-color));
+	background-image: -o-linear-gradient(185deg, var(--nav-bk-color), var(--nav-bk-color));
+	background-image: -ms-linear-gradient(185deg, var(--nav-bk-color) 0, var(--nav-bk-color) 100%);
+	background-image: linear-gradient(185deg, var(--nav-bk-color), var(--nav-bk-color));
+	box-shadow: none;
+	max-width: 208px;
+	z-index: 2;
+}
+
+div.asp_s.asp_s_2.searchsettings.asp_s,
+div.asp_s.asp_s_2.searchsettings.asp_s,
+div.asp_s.asp_s_2.searchsettings.asp_s {
+	z-index: 11001;
+}
+
+#ajaxsearchprobsettings2_1.searchsettings,
+#ajaxsearchprobsettings2_2.searchsettings,
+div.asp_sb.asp_sb_2.searchsettings {
+	max-width: none;
+}
+
+div.asp_s.asp_s_2.searchsettings form,
+div.asp_s.asp_s_2.searchsettings form,
+div.asp_s.asp_s_2.searchsettings form {
+	display: flex;
+}
+
+div.asp_sb.asp_sb_2.searchsettings form,
+div.asp_sb.asp_sb_2.searchsettings form,
+div.asp_sb.asp_sb_2.searchsettings form {
+	display: flex;
+}
+
+#ajaxsearchprosettings2_1.searchsettings div.asp_option_label,
+#ajaxsearchprosettings2_2.searchsettings div.asp_option_label,
+#ajaxsearchprosettings2_1.searchsettings .asp_label,
+#ajaxsearchprosettings2_2.searchsettings .asp_label,
+div.asp_s.asp_s_2.searchsettings div.asp_option_label,
+div.asp_s.asp_s_2.searchsettings .asp_label {
+	font-weight: 700;
+	font-family: inherit;
+	color: rgb(255, 255, 255);
+	font-size: 12px;
+	line-height: 15px;
+	text-shadow: none;
+}
+
+#ajaxsearchprosettings2_1.searchsettings .asp_option_inner label,
+#ajaxsearchprosettings2_2.searchsettings .asp_option_inner label,
+div.asp_sb.asp_sb_2.searchsettings .asp_option_inner label,
+div.asp_s.asp_s_2.searchsettings .asp_option_inner label {
+	background-image: -webkit-linear-gradient(180deg, rgb(34, 34, 34), rgb(69, 72, 77));
+	background-image: -moz-linear-gradient(180deg, rgb(34, 34, 34), rgb(69, 72, 77));
+	background-image: -o-linear-gradient(180deg, rgb(34, 34, 34), rgb(69, 72, 77));
+	background-image: -ms-linear-gradient(180deg, rgb(34, 34, 34) 0, rgb(69, 72, 77) 100%);
+	background-image: linear-gradient(180deg, rgb(34, 34, 34), rgb(69, 72, 77));
+}
+
+#ajaxsearchprosettings2_1.searchsettings .asp_option_inner label::after,
+#ajaxsearchprosettings2_2.searchsettings .asp_option_inner label::after,
+#ajaxsearchprobsettings2_1.searchsettings .asp_option_inner label::after,
+#ajaxsearchprobsettings2_2.searchsettings .asp_option_inner label::after,
+div.asp_sb.asp_sb_2.searchsettings .asp_option_inner label::after,
+div.asp_s.asp_s_2.searchsettings .asp_option_inner label::after {
+	font-family: "asppsicons2";
+	border: none;
+	content: "\e800";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	font-size: 11px;
+	color: rgb(255, 255, 255);
+	margin: 1px 0 0 0 !important;
+	line-height: 17px;
+	text-align: center;
+	text-decoration: none;
+	text-shadow: none;
+}
+
+#ajaxsearchprosettings2_1.searchsettings .asp_sett_scroll,
+#ajaxsearchprosettings2_2.searchsettings .asp_sett_scroll,
+div.asp_s.asp_s_2.searchsettings .asp_sett_scroll {
+	max-height: 220px;
+	overflow: auto;
+}
+
+#ajaxsearchprobsettings2_1.searchsettings .asp_sett_scroll,
+#ajaxsearchprobsettings2_2.searchsettings .asp_sett_scroll,
+div.asp_sb.asp_sb_2.searchsettings .asp_sett_scroll {
+	max-height: 220px;
+	overflow: auto;
+}
+
+#ajaxsearchprosettings2_1.searchsettings fieldset,
+#ajaxsearchprosettings2_2.searchsettings fieldset,
+div.asp_s.asp_s_2.searchsettings fieldset {
+	width: 200px;
+	min-width: 200px;
+	max-width: 10000px;
+}
+
+#ajaxsearchprobsettings2_1.searchsettings fieldset,
+#ajaxsearchprobsettings2_2.searchsettings fieldset,
+div.asp_sb.asp_sb_2.searchsettings fieldset {
+	width: 200px;
+	min-width: 200px;
+	max-width: 10000px;
+}
+
+#ajaxsearchprosettings2_1.searchsettings fieldset legend,
+#ajaxsearchprosettings2_2.searchsettings fieldset legend,
+div.asp_s.asp_s_2.searchsettings fieldset legend {
+	padding: 0 0 0 10px;
+	margin: 0;
+	background: transparent;
+	font-weight: 400;
+	font-family: inherit;
+	color: rgb(0, 0, 0);
+	font-size: 13px;
+	line-height: 15px;
+	text-shadow: none;
+}
+
+#ajaxsearchprosettings2_1.searchsettings .asp_simplebar-scrollbar::before,
+#ajaxsearchprosettings2_2.searchsettings .asp_simplebar-scrollbar::before,
+div.asp_s.asp_s_2.searchsettings .asp_simplebar-scrollbar::before {
+	background: transparent;
+	background-image: -moz-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+	background-image: -webkit-gradient(radial, center center, 0, center center, 100%, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+	background-image: -webkit-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+	background-image: -o-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+	background-image: -ms-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+	background-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+}
+
+#ajaxsearchprobsettings2_1.searchsettings .asp_simplebar-scrollbar::before,
+#ajaxsearchprobsettings2_2.searchsettings .asp_simplebar-scrollbar::before,
+div.asp_sb.asp_sb_2.searchsettings .asp_simplebar-scrollbar::before {
+	background: transparent;
+	background-image: -moz-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+	background-image: -webkit-gradient(radial, center center, 0, center center, 100%, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+	background-image: -webkit-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+	background-image: -o-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+	background-image: -ms-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+	background-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+}
+
+#ajaxsearchprores2_1.vertical,
+#ajaxsearchprores2_2.vertical,
+div.asp_r.asp_r_2.vertical {
+	padding: 4px;
+	background: rgba(18, 18, 18, 1);
+	border-radius: 3px;
+	border: 0 solid rgba(18, 18, 18, 1);
+	border-radius: 4px 4px 4px 4px;
+	box-shadow: 0 0 9px -7px #000 inset;
+	visibility: hidden;
+	display: none;
+}
+
+#ajaxsearchprores2_1.vertical .results,
+#ajaxsearchprores2_2.vertical .results,
+div.asp_r.asp_r_2.vertical .results {
+	max-height: none;
+}
+
+#ajaxsearchprores2_1.vertical .item,
+#ajaxsearchprores2_2.vertical .item,
+div.asp_r.asp_r_2.vertical .item {
+	position: relative;
+	box-sizing: border-box;
+}
+
+#ajaxsearchprores2_1.vertical .item .asp_content h3,
+#ajaxsearchprores2_2.vertical .item .asp_content h3,
+div.asp_r.asp_r_2.vertical .item .asp_content h3 {
+	display: inline;
+}
+
+#ajaxsearchprores2_1.vertical .results .item .asp_content,
+#ajaxsearchprores2_2.vertical .results .item .asp_content,
+div.asp_r.asp_r_2.vertical .results .item .asp_content {
+	overflow: hidden;
+	width: auto;
+	height: auto;
+	background: transparent;
+	margin: 0;
+	padding: 8px;
+}
+
+#ajaxsearchprores2_1.vertical .results .item .asp_image,
+#ajaxsearchprores2_2.vertical .results .item .asp_image,
+div.asp_r.asp_r_2.vertical .results .item .asp_image {
+	width: 70px;
+	height: 70px;
+	margin: 2px 8px 0 0;
+}
+
+#ajaxsearchprores2_1.vertical .asp_simplebar-scrollbar::before,
+#ajaxsearchprores2_2.vertical .asp_simplebar-scrollbar::before,
+div.asp_r.asp_r_2.vertical .asp_simplebar-scrollbar::before {
+	background: transparent;
+	background-image: -moz-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+	background-image: -webkit-gradient(radial, center center, 0, center center, 100%, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+	background-image: -webkit-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+	background-image: -o-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+	background-image: -ms-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+	background-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+}
+
+#ajaxsearchprores2_1.vertical .results .item::after,
+#ajaxsearchprores2_2.vertical .results .item::after,
+div.asp_r.asp_r_2.vertical .results .item::after {
+	display: block;
+	position: absolute;
+	bottom: 0;
+	content: "";
+	height: 1px;
+	width: 100%;
+	background: rgb(59, 59, 59);
+}
+
+#ajaxsearchprores2_1.vertical .results .item.asp_last_item::after,
+#ajaxsearchprores2_2.vertical .results .item.asp_last_item::after,
+div.asp_r.asp_r_2.vertical .results .item.asp_last_item::after {
+	display: none;
+}
+
+#ajaxsearchpro3_1 div.asp_simple-circle,
+#ajaxsearchpro3_2 div.asp_simple-circle {
+	margin: 0;
+	height: 100%;
+	width: 100%;
+	animation: rotate-simple 0.8s infinite linear;
+	-webkit-animation: rotate-simple 0.8s infinite linear;
+	border: 4px solid rgb(0, 0, 0);
+	border-right-color: transparent;
+	border-radius: 50%;
+	box-sizing: border-box;
+}
+
+.wpdreams_clear {
+	clear: both;
+}

@@ -10,7 +10,7 @@ namespace WP_Rig\WP_Rig;
 global $searchandfilter;
 global $sf_current_query;
 
-$sf_current_query = $searchandfilter->get( 46681 )->current_query();
+$sf_current_query = $searchandfilter->get( 46579 )->current_query();
 
 if ( is_search() ) {
 	$article_class = 'entry grid-item archive-grid__item';

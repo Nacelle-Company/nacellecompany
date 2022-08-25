@@ -10,17 +10,17 @@
 	width: 0;
 	position: fixed;
 	top: 0;
-	right: -2.5em;
+	right: 0;
 	z-index: 9999;
 	background-color: var(--global-color-dark);
 	overflow-x: hidden;
 	transition: 0.5s;
-	padding: 1em 2em;
 
 	& .close-btn {
 
 		font-size: 36px;
 		cursor: pointer;
+		padding-left: 40px;
 	}
 
 	@media (--narrow-menu-query) {

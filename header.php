@@ -11,246 +11,40 @@
 
 namespace WP_Rig\WP_Rig;
 
-$host = wp_unslash( $_SERVER['SERVER_NAME'] );
+use WP_Filesystem_Direct;
 
-if ( 'www.nacellecompany.com' === $host ) :
-	?>
-	<style>
-		svg.open-menu[fill],
-		svg.close[fill] {
-			fill: #fff;
-		}
-		.site-header {
-			background-color: var(--color-theme-primary);
-		}
-		@media screen and (max-width: 37.5em) {
-			.site-header {
-				justify-content: flex-end;
-			}
-			.site-branding {
-				padding: 30px 0;
-				flex: 0 0 50%;
-			}
-		}
-		/* NACELLE */
-		@media screen and (min-width: 60em) {
-			.site-header {
-				justify-content: space-between;
-			}
-			.site-branding {
-				text-align: left;
-				padding-left: 1em;
-			}
-			.main-navigation_wide-menu {
-				margin: 0 0 0 auto;
-			}
-			.search-menu-item {
-				width: 50px;
-			}
-			.mobile-menu-container {
-				display: none;
-			}
-		}
-		#ajaxsearchpro2_1 .probox .proinput input.orig,
-		#ajaxsearchpro2_2 .probox .proinput input.orig,
-		div.asp_m.asp_m_2 .probox .proinput input.orig {
-			background-color: #fff !important;
-		}
-		.sub-menu .menu-item a {
-			color: #fff;
-		}
-		.main-navigation.nav--toggle-small .mobile-menu-container,
-		.menu .sub-menu {
-			background: var(--color-theme-primary);
-		}
-		#ajaxsearchpro2_2 .probox .promagnifier .innericon svg,
-		div.asp_m.asp_m_2 .probox .promagnifier .innericon svg {
-			fill: #fff !important;
-			background: var(--color-theme-primary);
-		}
-		.press.grid-item:hover .entry-summary {
-					color: #fff;
-				}
-		.primary-sidebar.widget-area {
-			background-color: #fff;
-		}
-		a.button:visited {
-			color: #000;
-		}
-		div.asp_m.asp_m_2 .probox .promagnifier {
-			background-image: none;
-			background-color: var(--nav-bk-color);
-		}
-	</style>
-	<?php
-endif;
+$blog_url     = get_bloginfo( 'url' );
+$critical_css = get_template_directory() . '/assets/css/global-min.min.css';
+$filesystem   = new WP_Filesystem_Direct( $critical_css );
+$critical_css = $filesystem->get_contents( $critical_css );
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?> class="no-js">
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+	<link rel="preload" as="style" href="<?php echo esc_html( $blog_url ); ?>/wp-content/uploads/asp_upload/wpdreams-ajaxsearchpro-instances.min.css">
+	<link rel="preload" as="style" href="<?php echo esc_html( $blog_url ); ?>/wp-content/plugins/search-filter-pro/public/assets/css/search-filter.min.css">
+	<link rel="preload" as="script" href="<?php echo esc_html( $blog_url ); ?>/wp-includes/js/jquery/jquery.min.js">
+	<link rel="preload" as="script" href="https://www.youtube.com/s/player/0c356943/www-widgetapi.vflset/www-widgetapi.js">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel='dns-prefetch' href='//fonts.googleapis.com' />
-	<style>
-
-		@font-face {
-			font-family: Montserrat;
-			font-style: normal;
-			font-weight: 400;
-			font-display: swap;
-			src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459WRhyyTh89ZNpQ.woff2) format('woff2');
-			unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F
-		}
-
-		@font-face {
-			font-family: Montserrat;
-			font-style: normal;
-			font-weight: 400;
-			font-display: swap;
-			src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459W1hyyTh89ZNpQ.woff2) format('woff2');
-			unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116
-		}
-
-		@font-face {
-			font-family: Montserrat;
-			font-style: normal;
-			font-weight: 400;
-			font-display: swap;
-			src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459WZhyyTh89ZNpQ.woff2) format('woff2');
-			unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB
-		}
-
-		@font-face {
-			font-family: Montserrat;
-			font-style: normal;
-			font-weight: 400;
-			font-display: swap;
-			src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459WdhyyTh89ZNpQ.woff2) format('woff2');
-			unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF
-		}
-
-		@font-face {
-			font-family: Montserrat;
-			font-style: normal;
-			font-weight: 400;
-			font-display: swap;
-			src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2) format('woff2');
-			unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD
-		}
-
-		@font-face {
-			font-family: Montserrat;
-			font-style: normal;
-			font-weight: 700;
-			font-display: swap;
-			src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459WRhyyTh89ZNpQ.woff2) format('woff2');
-			unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F
-		}
-
-		@font-face {
-			font-family: Montserrat;
-			font-style: normal;
-			font-weight: 700;
-			font-display: swap;
-			src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459W1hyyTh89ZNpQ.woff2) format('woff2');
-			unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116
-		}
-
-		@font-face {
-			font-family: Montserrat;
-			font-style: normal;
-			font-weight: 700;
-			font-display: swap;
-			src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459WZhyyTh89ZNpQ.woff2) format('woff2');
-			unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB
-		}
-
-		@font-face {
-			font-family: Montserrat;
-			font-style: normal;
-			font-weight: 700;
-			font-display: swap;
-			src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459WdhyyTh89ZNpQ.woff2) format('woff2');
-			unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF
-		}
-
-		@font-face {
-			font-family: Montserrat;
-			font-style: normal;
-			font-weight: 700;
-			font-display: swap;
-			src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2) format('woff2');
-			unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD
-		}
-
-		@font-face {
-			font-family: Montserrat;
-			font-style: normal;
-			font-weight: 900;
-			font-display: swap;
-			src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459WRhyyTh89ZNpQ.woff2) format('woff2');
-			unicode-range: U+0460-052F,U+1C80-1C88,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F
-		}
-
-		@font-face {
-			font-family: Montserrat;
-			font-style: normal;
-			font-weight: 900;
-			font-display: swap;
-			src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459W1hyyTh89ZNpQ.woff2) format('woff2');
-			unicode-range: U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116
-		}
-
-		@font-face {
-			font-family: Montserrat;
-			font-style: normal;
-			font-weight: 900;
-			font-display: swap;
-			src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459WZhyyTh89ZNpQ.woff2) format('woff2');
-			unicode-range: U+0102-0103,U+0110-0111,U+0128-0129,U+0168-0169,U+01A0-01A1,U+01AF-01B0,U+1EA0-1EF9,U+20AB
-		}
-
-		@font-face {
-			font-family: Montserrat;
-			font-style: normal;
-			font-weight: 900;
-			font-display: swap;
-			src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459WdhyyTh89ZNpQ.woff2) format('woff2');
-			unicode-range: U+0100-024F,U+0259,U+1E00-1EFF,U+2020,U+20A0-20AB,U+20AD-20CF,U+2113,U+2C60-2C7F,U+A720-A7FF
-		}
-
-		@font-face {
-			font-family: Montserrat;
-			font-style: normal;
-			font-weight: 900;
-			font-display: swap;
-			src: url(https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2) format('woff2');
-			unicode-range: U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+2074,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD
-		}
-	</style>
 	<?php
-	if ( ! wp_rig()->is_amp() ) {
+	if ( ! wp_rig()->is_amp() ) :
 		?>
 		<script>document.documentElement.classList.remove( 'no-js' );</script>
-		<?php
-	}
-	?>
+	<?php endif; ?>
 	<?php
 	wp_head();
 	if ( is_single() && is_post_type( 'catalog' ) ) :
 		$post_thumb = get_the_post_thumbnail_url();
 		?>
-	<link rel="preload" as="image" href="<?php echo esc_attr( $post_thumb ); ?>">
-	<?php endif; ?>
-	<link rel="preload" as="image" href="<?php echo esc_url( wp_get_attachment_url( get_theme_mod( 'custom_logo' ) ) ); ?>">
-	<?php
-	// if ( get_theme_mod( 'desktop_nav_wide' ) ) :
-	?>
-
+		<link rel="preload" as="image" href="<?php echo esc_attr( $post_thumb ); ?>">
 		<?php
-		// endif;
-		?>
+	endif;
+	?>
+	<link rel="preload" as="image" href="<?php echo esc_url( wp_get_attachment_url( get_theme_mod( 'custom_logo' ) ) ); ?>">
+	<?php echo '<style type="text/css" id="wp_rig_critical_css">' . $critical_css . '</style>'; ?>
 </head>
 
 <body <?php body_class(); ?>>

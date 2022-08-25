@@ -279,20 +279,6 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		}
 
 		$css_files = array(
-			// 'wp-rig-global'           => array(
-			// 'file'   => 'global.min.css',
-			// 'global' => true,
-			// ),
-			// 'wp-rig-comments'         => array(
-			// 'file'             => 'comments.min.css',
-			// 'preload_callback' => function() {
-			// return ! post_password_required() && is_singular() && ( comments_open() || get_comments_number() );
-			// },
-			// ),
-			'wp-rig-global-min'         => array(
-				'file'   => 'global-min.min.css',
-				'global' => true,
-			),
 			'wp-rig-archive'            => array(
 				'file'             => 'archive.min.css',
 				'preload_callback' => function() {
@@ -315,9 +301,11 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			),
 			'wp-rig-footer-widgets' => array(
 				'file' => 'footer-widgets.min.css',
+				'preload_callback' => '__return_true',
 			),
 			'wp-rig-content_posts'      => array(
 				'file' => 'content_posts.min.css',
+				'preload_callback' => '__return_true',
 			),
 			'wp-rig-category'           => array(
 				'file'             => 'category.min.css',
@@ -391,6 +379,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			),
 			'wp-rig-catalog_additional-content' => array(
 				'file' => 'catalog_additional-content.min.css',
+				'preload_callback' => '__return_true',
 			),
 			'wp-rig-page-team'          => array(
 				'file'             => 'page-team.min.css',
@@ -401,12 +390,15 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			),
 			'wp-rig-hero-video'         => array(
 				'file' => 'hero-video.min.css',
+				'preload_callback' => '__return_true',
 			),
 			'wp-rig-lite-youtube'       => array(
 				'file' => 'lite-youtube.min.css',
+				'preload_callback' => '__return_true',
 			),
 			'wp-rig-entry-content'       => array(
 				'file' => 'entry-content.min.css',
+				'preload_callback' => '__return_true',
 			),
 			'wp-rig-page-home-cd'       => array(
 				'file'             => 'page-home-cd.min.css',
@@ -424,9 +416,11 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			),
 			'wp-rig-social-share'       => array(
 				'file' => 'social-share.min.css',
+				'preload_callback' => '__return_true',
 			),
 			'wp-rig-related_posts'      => array(
 				'file' => 'related_posts.min.css',
+				'preload_callback' => '__return_true',
 			),
 			'wp-rig-pagination-archive' => array(
 				'file'             => 'pagination-archive.min.css',

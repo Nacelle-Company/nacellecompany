@@ -8,7 +8,7 @@
 namespace WP_Rig\WP_Rig;
 
 global $searchandfilter;
-$sf_current_query = $searchandfilter->get( 46687 )->current_query();
+$sf_current_query = $searchandfilter->get( 46579 )->current_query();
 ?>
 
 <span id="offcanvasToggle" class="offcanvas-toggle" onclick="openOffcanvas()" style="cursor:pointer" title="Offcanvas sort & filter menu">
@@ -18,7 +18,7 @@ $sf_current_query = $searchandfilter->get( 46687 )->current_query();
 		echo esc_html__( 'Sort & Filter', 'wp-rig' );
 		if ( $sf_current_query->is_filtered() ) :
 			?>
-		<a href="#" class="search-filter-reset" data-search-form-id="46687" data-sf-submit-form="always">Reset</a>
+			<!-- <a href="#" class="search-filter-reset" data-search-form-id="46579" data-sf-submit-form="always">Reset</a> -->
 			<?php
 		endif;
 		?>
@@ -31,7 +31,7 @@ $sf_current_query = $searchandfilter->get( 46687 )->current_query();
 <script>
 	/* Set the width of the side navigation to 250px and the left margin of the page content to 250px and add a black background color to body */
 	function openOffcanvas() {
-	document.getElementById("offcanvasMenu").style.width = "20em";
+	document.getElementById("offcanvasMenu").style.width = "250px";
 	document.getElementById('offcanvasOverlay').style.visibility = "visible";
 	}
 

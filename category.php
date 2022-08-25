@@ -18,7 +18,7 @@ get_header();
 // Globals.
 $queried_obj = get_queried_object();
 $obj_slug    = $queried_obj->slug;
-$sf_current_query = $searchandfilter->get( 46681 )->current_query();
+$sf_current_query = $searchandfilter->get( 46579 )->current_query();
 ?>
 	<main id="primary" class="site-main site-main__catalog">
 		<?php
