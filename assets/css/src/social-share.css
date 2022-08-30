@@ -1,16 +1,11 @@
 .social-share:not(.ss-posts) {
 	display: inline-flex;
-	align-items: baseline;
+	align-items: center;
 	grid-column: 2/span 1;
+	justify-content: flex-end;
 
 	@media (--content-query) {
 		grid-column: 7/span 6;
-
-		line-height: 0;
-	}
-
-	@media (--sidebar-query) {
-		justify-content: end;
 	}
 }
 

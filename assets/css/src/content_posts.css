@@ -90,3 +90,12 @@
 	padding: 2em;
 	background-color: var(--nav-bk-color);
 }
+
+.wp-block-embed {
+	margin: 0;
+
+	& iframe {
+		max-width: 100%;
+	}
+}
+
