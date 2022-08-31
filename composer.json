@@ -10,7 +10,8 @@
     "phpunit/phpunit": "^6",
     "brain/monkey": "^2",
     "phpcompatibility/php-compatibility": "^9",
-    "yoast/phpunit-polyfills": "^1.0"
+    "yoast/phpunit-polyfills": "^1.0",
+    "squizlabs/php_codesniffer": "^3.7"
   },
   "config": {
     "platform": {
@@ -39,8 +40,5 @@
     ],
     "phpunit-dev": "\"vendor/bin/phpunit\"",
     "phpunit-integration-dev": "\"vendor/bin/phpunit\" -c \"phpunit.integration.xml.dist\""
-  },
-  "require": {
-    "squizlabs/php_codesniffer": "3.*"
   }
 }

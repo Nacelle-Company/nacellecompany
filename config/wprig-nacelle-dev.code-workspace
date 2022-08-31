@@ -18,6 +18,9 @@
 		"stylelint.validate": ["css"],
 		"stylelint.autoFixOnSave": true,
 		"stylelint.disableErrorMessage": false,
-		"stylelint.ignoreDisables": false,
+        "stylelint.ignoreDisables": false,
+        "phpcs.showSources": true,
+        "phpsab.snifferShowSources": true,
+        "phpsab.snifferMode": "onType",
     }
 }

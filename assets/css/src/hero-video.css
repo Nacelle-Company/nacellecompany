@@ -29,10 +29,10 @@
 .video-cover__img {
 	position: absolute;
 	min-width: 100vw;
-	animation: 40s ease-out 0s infinite running slideUpAndDownSM;
+	animation: 40s linear 0s infinite running slideUpAndDown;
 
 	@media (--content-query) {
-		animation: 80s ease-out 0s infinite running slideUpAndDown;
+		animation: 80s linear 0s infinite running slideUpAndDown;
 	}
 }
 
@@ -124,18 +124,30 @@
 @keyframes slideUpAndDown {
 
 	0% {
-		transform: translateY(0);
+		transform: translateY(0%);
 	}
 
-	25% {
-		transform: translateY(-25%);
+	15% {
+		transform: translateY(-20%);
 	}
 
-	50% {
-		transform: translateY(-50%);
+	30% {
+		transform: translateY(-40%);
+	}
+
+	45% {
+		transform: translateY(-60%);
+	}
+
+	65% {
+		transform: translateY(-40%);
+	}
+
+	80% {
+		transform: translateY(-20%);
 	}
 
 	100% {
-		transform: translateY(-80%);
+		transform: translateY(0%);
 	}
 }

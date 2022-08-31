@@ -19,6 +19,73 @@ ul {
 	box-sizing: border-box;
 }
 
+
+.wp-block-image.aligncenter {
+	text-align: center;
+}
+
+.wp-block-image.alignfull img,
+.wp-block-image.alignwide img {
+	height: auto;
+	width: 100%;
+}
+
+.wp-block-image.aligncenter,
+.wp-block-image .aligncenter,
+.wp-block-image.alignleft,
+.wp-block-image .alignleft,
+.wp-block-image.alignright,
+.wp-block-image .alignright {
+	display: table;
+}
+
+.wp-block-image.aligncenter > figcaption,
+.wp-block-image .aligncenter > figcaption,
+.wp-block-image.alignleft > figcaption,
+.wp-block-image .alignleft > figcaption,
+.wp-block-image.alignright > figcaption,
+.wp-block-image .alignright > figcaption {
+	display: table-caption;
+	caption-side: bottom;
+}
+
+
+.wp-block-image .alignleft {
+	float: left;
+	margin: 0.5em 1em 0.5em 0;
+}
+
+.wp-block-image .alignright {
+	float: right;
+	margin: 0.5em 0 0.5em 1em;
+}
+
+.wp-block-image .aligncenter {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.wp-block-image figcaption {
+	margin-top: 0.5em;
+	margin-bottom: 1em;
+}
+
+.has-text-align-center {
+	text-align: center;
+}
+
+.has-text-align-left {
+	text-align: left;
+}
+
+.has-text-align-right {
+	text-align: right;
+}
+
+.aligncenter {
+	clear: both;
+}
+
 .wp-block-quote {
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
