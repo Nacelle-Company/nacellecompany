@@ -101,10 +101,10 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	public function action_enqueue_styles() {
 
 		// Enqueue Google Fonts.
-		// $google_fonts_url = $this->get_google_fonts_url();
-		// if ( ! empty( $google_fonts_url ) ) {
-		// wp_enqueue_style( 'wp-rig-fonts', $google_fonts_url, array(), null ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
-		// }
+		$google_fonts_url = $this->get_google_fonts_url();
+		if ( ! empty( $google_fonts_url ) ) {
+		wp_enqueue_style( 'wp-rig-fonts', $google_fonts_url, array(), null ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
+		}
 
 		$css_uri = get_theme_file_uri( '/assets/css/' );
 		$css_dir = get_theme_file_path( '/assets/css/' );
@@ -181,10 +181,10 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	public function action_add_editor_styles() {
 
 		// Enqueue Google Fonts.
-		// $google_fonts_url = $this->get_google_fonts_url();
-		// if ( ! empty( $google_fonts_url ) ) {
-		// add_editor_style( $this->get_google_fonts_url() );
-		// }
+		$google_fonts_url = $this->get_google_fonts_url();
+		if ( ! empty( $google_fonts_url ) ) {
+		add_editor_style( $this->get_google_fonts_url() );
+		}
 
 		// Enqueue block editor stylesheet.
 		add_editor_style( 'assets/css/editor/editor-styles.min.css' );
@@ -510,33 +510,33 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	 *
 	 * @return string Google Fonts URL, or empty string if no Google Fonts should be used.
 	 */
-	// protected function get_google_fonts_url() : string {
-	// $google_fonts = $this->get_google_fonts();
+	protected function get_google_fonts_url() : string {
+		$google_fonts = $this->get_google_fonts();
 
-	// if ( empty( $google_fonts ) ) {
-	// return '';
-	// }
+		if ( empty( $google_fonts ) ) {
+			return '';
+		}
 
-	// $font_families = array();
+		$font_families = array();
 
-	// foreach ( $google_fonts as $font_name => $font_variants ) {
-	// if ( ! empty( $font_variants ) ) {
-	// if ( ! is_array( $font_variants ) ) {
-	// $font_variants = explode( ',', str_replace( ' ', '', $font_variants ) );
-	// }
+		foreach ( $google_fonts as $font_name => $font_variants ) {
+			if ( ! empty( $font_variants ) ) {
+				if ( ! is_array( $font_variants ) ) {
+					$font_variants = explode( ',', str_replace( ' ', '', $font_variants ) );
+				}
 
-	// $font_families[] = $font_name . ':' . implode( ',', $font_variants );
-	// continue;
-	// }
+				$font_families[] = $font_name . ':' . implode( ',', $font_variants );
+				continue;
+			}
 
-	// $font_families[] = $font_name;
-	// }
+			$font_families[] = $font_name;
+		}
 
-	// $query_args = array(
-	// 'family'  => implode( '|', $font_families ),
-	// 'display' => 'swap',
-	// );
+		$query_args = array(
+			'family'  => implode( '|', $font_families ),
+			'display' => 'swap',
+		);
 
-	// return add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
-	// }
+		return add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+	}
 }

@@ -24,15 +24,7 @@ wp_rig()->print_styles( 'wp-rig-page-home-cd' );
 		while ( have_posts() ) :
 			the_post();
 			wp_rig()->display_flickity( 'catalog', get_field( 'home_feat_posts' ), 'top' );
-			get_template_part( 'template-parts/content/entry', get_post_type() );
-
-			if ( get_field( 'display_post_grid' ) ) :
-				?>
-				<div class="archive-main type-page post-grid">
-					<h2 class="entry-title">Latest Independent Comedy News</h2>
-					<?php wp_rig()->display_post_grid( 'press' ); ?>
-				</div>
-			<?php endif; ?>
+			?>
 			<article class="type-page">
 				<?php
 				// Post slider.
@@ -121,7 +113,7 @@ wp_rig()->print_styles( 'wp-rig-page-home-cd' );
 										<?php if ( $hero_video ) : ?>
 										<div id="feat_modal_vid_one" class="player" data-property="{videoURL:'<?php echo esc_html( $hero_video ); ?>',containment:'self', abundance: 0, autoPlay:false, showYTLogo:true, mute:false, startAt:0, opacity:1}"></div>
 										<?php else : ?>
-											<?php the_field('modal_url_one'); ?>
+											<?php the_field( 'modal_url_one' ); ?>
 										<?php endif; ?>
 									</figure>
 								</div>
@@ -183,7 +175,7 @@ wp_rig()->print_styles( 'wp-rig-page-home-cd' );
 										<?php if ( $hero_video ) : ?>
 										<div id="feat_modal_vid_two" class="player" data-property="{videoURL:'<?php echo esc_html( $hero_video ); ?>',containment:'self', abundance: 0, autoPlay:false, showYTLogo:true, mute:false, startAt:0, opacity:1}"></div>
 										<?php else : ?>
-											<?php the_field('modal_url_two'); ?>
+											<?php the_field( 'modal_url_two' ); ?>
 										<?php endif; ?>
 									</figure>
 								</div>
@@ -194,7 +186,8 @@ wp_rig()->print_styles( 'wp-rig-page-home-cd' );
 				endif;
 				// Catalog grid.
 				if ( get_field( 'specials' ) ) :
-					wp_rig()->display_section_header( 'Catalog', 'catalog' ); ?>
+					wp_rig()->display_section_header( 'Catalog', 'catalog' );
+					?>
 					<div class="featured-trailers featured-trailers__catalog">
 						<div class="trailer">
 							<figure>
@@ -261,10 +254,17 @@ wp_rig()->print_styles( 'wp-rig-page-home-cd' );
 							</figure>
 						</div>
 					</div>
-					<?php
-				endif;
-				?>
+				<?php endif; ?>
 			</article>
+			<?php
+			if ( get_field( 'display_post_grid' ) ) :
+				?>
+				<div class="archive-main type-page post-grid">
+					<h2 class="entry-title">Latest Independent Comedy News</h2>
+				<?php wp_rig()->display_post_grid( 'press' ); ?>
+				</div>
+			<?php endif; ?>
+			<?php get_template_part( 'template-parts/content/entry', get_post_type() ); ?>
 		<?php endwhile; ?>
 	</main>
 <?php

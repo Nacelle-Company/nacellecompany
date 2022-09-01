@@ -131,13 +131,8 @@
 /* ---- previous/next buttons ---- */
 
 .flickity-prev-next-button {
-	width: 35px;
-	height: 35px;
-
-	@media (--content-query) {
-		width: 45px;
-		height: 45px;
-	}
+	width: 48px;
+	height: 48px;
 
 	@media (--sidebar-query) {
 		width: 65px;
@@ -269,14 +264,16 @@
 
 		@media (--content-query) {
 			z-index: 9;
-			align-content: flex-end;
-			align-self: auto;
-			padding-bottom: 4em;
+			transform: translateY(25vh);
+		}
+
+		@media (--sidebar-query) {
+			transform: translateY(40vh);
 		}
 	}
 
 	& .flickity-prev-next-button { /* __top */
-		top: 40%;
+		top: 27%;
 		transform: translateY(-60%);
 
 		@media (--content-query) { /* __top */
@@ -457,7 +454,7 @@ figure {
 .featured-trailers {
 	display: grid;
 	gap: 0;
-	margin-bottom: 7em;
+	margin-bottom: 4em;
 
 	@media (--content-query) {
 		grid-template-columns: 1fr 1fr;

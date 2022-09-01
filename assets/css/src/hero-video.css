@@ -29,7 +29,8 @@
 .video-cover__img {
 	position: absolute;
 	min-width: 100vw;
-	animation: 40s linear 0s infinite running slideUpAndDown;
+
+	/* animation: 40s linear 0s infinite running slideUpAndDown; */
 
 	@media (--content-query) {
 		animation: 80s linear 0s infinite running slideUpAndDown;

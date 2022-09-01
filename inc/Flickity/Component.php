@@ -92,16 +92,19 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			$btn   = false;
 			$meta  = true;
 			$title = true;
+			$top_a = '';
 		elseif ( 'posts catalog' === $slider_id ) :
 			$group = true;
 			$btn   = true;
 			$meta  = false;
 			$title = false;
+			$top_a = '';
 		else :
 			$group = false;
 			$btn   = true;
 			$meta  = false;
 			$title = true;
+			$top_a = '"setGallerySize": false, "adaptiveHeight": true,';
 		endif;
 
 		if ( 'recent_posts' === $the_posts ) :
@@ -123,7 +126,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		}
 		?>
 
-		<div class="main-carousel main-carousel__<?php echo esc_html( $slider_id ); ?>" data-flickity='{"groupCells":"<?php echo esc_html( $group ); ?>", "wrapAround": true, "lazyLoad": false, "setGallerySize": false, "adaptiveHeight": true, "pageDots": false, "selectedAttraction": 0.015, "friction": 0.28}'>
+		<div class="main-carousel main-carousel__<?php echo esc_html( $slider_id ); ?>" data-flickity='{"groupCells":"<?php echo esc_html( $group ); ?>", "wrapAround": true, "lazyLoad": false,<? echo esc_html( $top_a ); ?>"pageDots": false, "selectedAttraction": 0.015, "friction": 0.28}'>
 			<?php
 			if ( $slides ) :
 				foreach ( $slides as $slide ) :
