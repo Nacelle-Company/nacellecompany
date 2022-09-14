@@ -10,6 +10,7 @@
         "phpcs.standard": "WordPress",
         "editor.renderWhitespace": "all",
         "editor.hover.enabled": true,
+		"editor.snippetSuggestions": "top",
 		"css.validate": false,
 		"scss.validate": false,
         "prettier.stylelintIntegration": true,
@@ -22,5 +23,8 @@
         "phpcs.showSources": true,
         "phpsab.snifferShowSources": true,
         "phpsab.snifferMode": "onType",
+        "intelephense.environment.includePaths": [
+            "/Users/lukey/Sites/nacelle/app/public"
+        ],
     }
 }

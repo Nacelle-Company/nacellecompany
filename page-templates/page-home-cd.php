@@ -11,10 +11,6 @@ namespace WP_Rig\WP_Rig;
 
 get_header();
 
-// Use grid layout if blog index is displayed.
-// $top_slider_posts   = get_field( 'home_feat_posts' );
-
-
 wp_rig()->print_styles( 'wp-rig-page-home-cd' );
 
 ?>
@@ -82,9 +78,9 @@ wp_rig()->print_styles( 'wp-rig-page-home-cd' );
 												'medium_large',
 												false,
 												array(
-													'src'     => wp_get_attachment_image_url( $image, 'medium_large' ),
-													'srcset'  => wp_get_attachment_image_srcset( $image, 'medium_large' ),
-													'class'   => 'attachment-full',
+													'src' => wp_get_attachment_image_url( $image, 'medium_large' ),
+													'srcset' => wp_get_attachment_image_srcset( $image, 'medium_large' ),
+													'class' => 'attachment-full',
 													'loading' => 'lazy',
 												)
 											);
@@ -120,7 +116,7 @@ wp_rig()->print_styles( 'wp-rig-page-home-cd' );
 							</div>
 						<?php endif; ?>
 						<?php
-						// FEAT VIDEO TWO
+						// FEAT VIDEO TWO.
 						$featured_post = get_field( 'featured_trailer_two' );
 						$modal_url_two = get_post_meta( get_the_ID(), 'modal_url_two', true );
 						$hero_video    = get_field( 'video_embedd', $featured_post );
@@ -144,9 +140,9 @@ wp_rig()->print_styles( 'wp-rig-page-home-cd' );
 												'medium_large',
 												false,
 												array(
-													'src'     => wp_get_attachment_image_url( $image, 'medium_large' ),
-													'srcset'  => wp_get_attachment_image_srcset( $image, 'medium_large' ),
-													'class'   => 'attachment-full',
+													'src' => wp_get_attachment_image_url( $image, 'medium_large' ),
+													'srcset' => wp_get_attachment_image_srcset( $image, 'medium_large' ),
+													'class' => 'attachment-full',
 													'loading' => 'lazy',
 												)
 											);

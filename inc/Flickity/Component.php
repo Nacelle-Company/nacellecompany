@@ -83,7 +83,9 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	/**
 	 * Display flickity.
 	 *
-	 * @param mixed $slides Display flickity slider.
+	 * @param mixed $the_post_type The post type.
+	 * @param mixed $the_posts The posts.
+	 * @param mixed $slider_id Id of the slider.
 	 */
 	public function display_flickity( $the_post_type, $the_posts, $slider_id ) {
 
@@ -161,21 +163,11 @@ class Component implements Component_Interface, Templating_Component_Interface {
 								// Catalog slider: square image.
 							elseif ( 'posts catalog' === $slider_id ) :
 								if ( get_field( 'square_image', $slide ) ) :
-									$image   = get_field( 'square_image', $slide );
-									$size    = 'medium';
-									$no_lazy = 'attachment-medium catalog-img';
-									$loading = 'lazy';
-									echo wp_get_attachment_image(
-										$image,
-										$size,
-										false,
-										array(
-											'src'     => wp_get_attachment_image_url( $image, $size ),
-											'srcset'  => wp_get_attachment_image_srcset( $image, $size ),
-											'class'   => $no_lazy,
-											'loading' => $loading,
-										)
-									);
+									$image = get_field( 'square_image', $slide );
+									$size  = 'medium';
+									if ( $image ) :
+										echo wp_get_attachment_image( $image, $size );
+									endif;
 								else :
 									?>
 										<img src="<?php bloginfo( 'template_directory' ); ?>/assets/images/comedy-dynamics-default-square.jpg" class="wp-post-image" alt="<?php echo esc_html( $the_title ); ?>" />
@@ -231,11 +223,11 @@ class Component implements Component_Interface, Templating_Component_Interface {
 
 								<?php if ( $btn ) : ?>
 									<a class="button center" href="<?php echo esc_html( $the_permalink ); ?>" title="Discover more
-																			  <?php
-																				if ( $title ) :
-																					echo esc_html( $the_title );
-endif;
-																				?>
+									<?php
+									if ( $title ) :
+										echo esc_html( $the_title );
+									endif;
+									?>
 									">Discover More</a>
 								<?php endif; ?>
 							</figcaption>
