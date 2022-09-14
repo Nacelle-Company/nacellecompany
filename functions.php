@@ -243,12 +243,17 @@ function wp_rig_add_logo_att( $html ) {
 	$html = str_replace( 'sizes="(min-width: 960px) 75vw, 100vw"', 'sizes="(min-width: 960px) 200px, 50vw" ', $html );
 	return $html;
 }
+/**
+ * <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+ * <noscript><link rel="stylesheet" href="styles.css"></noscript>
+ */
 
 // Remove CSS files from loading on the frontend
 function wp_rig_remove_wp_css() {
 	wp_dequeue_style( 'wp-block-library' );
 	wp_dequeue_style( 'YTPlayer_css' );
 	wp_dequeue_style( 'wpdreams-ajaxsearchpro-instances' );
+	// wp_dequeue_style( 'search-filter-plugin-styles' );
 }
 add_action( 'wp_enqueue_scripts', 'wp_rig_remove_wp_css', 100 );
 
@@ -284,8 +289,6 @@ function wp_rig_sgo_css_combine_exclude( $exclude_list ) {
 
 	return $exclude_list;
 }
-
-
 
 /**
  * Modify the main query
@@ -324,3 +327,10 @@ add_filter( 'template_include', 'wp_rig_custom_archive_template' );
 
 // GETTING YOUR SCRIPT HANDLES:
 // https://wpshout.com/defer-parsing-javascript-wordpress/.
+// add_action( 'wp_print_styles', 'wsds_detect_enqueued_scripts' );
+// function wsds_detect_enqueued_scripts() {
+// 	global $wp_styles;
+// 	foreach( $wp_styles->queue as $handle ) :
+// 		echo $handle . ' | ';
+// 	endforeach;
+// }

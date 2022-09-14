@@ -1,3 +1,12 @@
+@charset "UTF-8";
+
+/*--------------------------------------------------------------
+## WordPress Block Library CSS MIN STYLES
+WordPress block library dequeue'd in functions.php so we can load
+the minimal styles only on the pages they're needed.
+Unminified styles are in _block-library.css.
+--------------------------------------------------------------*/
+
 .wp-block-image {
 	margin: 0 0 1em;
 }
@@ -101,3 +110,4 @@ html :where(img[class*="wp-image-"]) {
 	height: auto;
 	max-width: 100%;
 }
+

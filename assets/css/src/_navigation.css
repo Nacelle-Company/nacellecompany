@@ -61,7 +61,6 @@
 	@media (--sidebar-query) {
 		display: flex;
 		order: 2;
-		padding-right: 2em;
 	}
 }
 
@@ -266,7 +265,7 @@
 	top: 35%;
 	width: 60%;
 	height: 60%;
-	border: solid var(--border-color-dark);
+	border: solid var(--color-theme-primary);
 	border-width: 0 2px 2px 0;
 	transform: translateY(-50%) rotate(45deg);
 }

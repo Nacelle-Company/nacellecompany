@@ -79,3 +79,18 @@ input[type="submit"] {
 	}
 }
 
+/* Hover classes */
+.hover-brightness > div {
+
+	@media (--sidebar-query) {
+		filter: brightness(0.75);
+		transition: filter 0.2s ease-out;
+	}
+}
+
+.hover-brightness > div:hover {
+
+	@media (--sidebar-query) {
+		filter: brightness(1);
+	}
+}

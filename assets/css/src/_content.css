@@ -18,7 +18,7 @@
 
 /* @import "_blocks.css"; */
 
-/* @import "_media.css"; */
+@import "_media.css";
 
 /*--------------------------------------------------------------
 # Post and page content
@@ -125,7 +125,7 @@
 .content-width {
 
 	& .wp-block-group__inner-container {
-		max-width: 50rem;
+		max-width: var(--content-width);
 		margin: 0 auto;
 	}
 }

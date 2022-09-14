@@ -15,7 +15,7 @@
 		"footer"
 		"image"
 		"summary";
-	align-content: baseline;
+	align-content: inherit;
 
 	@media (--wide-menu-query) {
 		grid-template-columns: 1fr 1fr;
