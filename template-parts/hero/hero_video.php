@@ -37,7 +37,7 @@ if ( ! empty( $hero_video ) ) :
 					<?php get_template_part( 'template-parts/svg/icon-play' ); ?>
 					<h3 class="icon-play__title">Watch Trailer</h3>
 					<div class="video-volume-btn" onclick="jQuery('#hero_video_<?php echo esc_html( $queried_id ); ?>').YTPToggleVolume()">
-						<?php get_template_part( 'template-parts/svg/icon-volume' ); ?>
+						<?php echo file_get_contents( get_template_directory() . '/assets/images/src/icon-volume.svg' ); ?>
 					</div>
 				</div>
 

@@ -26,6 +26,7 @@ $size                      = 'wp-rig-square';
 			<a href="<?php echo esc_html( get_home_url() ); ?>/category/distribution/album/" class="link-absolute" title="<?php esc_html_e( 'Albums', 'wp-rig' ); ?>"></a>
 			<div class="title-wrap title-wrap__icon">
 				<?php get_template_part( 'template-parts/svg/icon-albums' ); ?>
+				<?php echo file_get_contents( get_template_directory() . '/assets/images/src/icon-albums.svg' ); ?>
 				<h2 class="title"><?php esc_html_e( 'Albums', 'wp-rig' ); ?></h2>
 			</div>
 			<?php
@@ -59,7 +60,7 @@ $size                      = 'wp-rig-square';
 		<div class="category-wrapper">
 			<a href="<?php echo esc_html( get_home_url() ); ?>/category/distribution/series/" class="link-absolute" title="<?php esc_html_e( 'Series', 'wp-rig' ); ?>"></a>
 			<div class="title-wrap title-wrap__icon">
-				<?php get_template_part( 'template-parts/svg/icon-series' ); ?>
+				<?php echo file_get_contents( get_template_directory() . '/assets/images/src/icon-series.svg' ); ?>
 				<h2 class="title"><?php esc_html_e( 'Series', 'wp-rig' ); ?></h2>
 			</div>
 			<?php
