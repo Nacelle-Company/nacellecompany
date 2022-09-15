@@ -4,15 +4,10 @@ $obj_slug    = $queried_obj->post_type;
 $the_post_type  = get_post_type_object( get_post_type( $queried_obj ) );
 $post_type_name = $the_post_type->labels->singular_name;
 ?>
-<style>
-	.post-back-btn {
-		display: flex;
-		justify-content: center;
-	}
-	.post-back-btn .icon {
-		margin-right: 0.5em;
-	}
-</style>
+
 <div class="post-back-btn">
-	<a class="button button-return" href="<?php echo wp_kses( get_post_type_archive_link( $obj_slug ), 'post' ); ?>"><svg class="icon" width="7" height="11" xmlns="http://www.w3.org/2000/svg"><path d="M6.01.972v8.652c0 .599-.725.899-1.148.475L.535 5.773a.673.673 0 010-.95L4.862.495A.672.672 0 016.01.972z" fill-rule="nonzero" /></svg>Return to <?php echo esc_html( $post_type_name ); ?> Archive</a>
+	<a class="button button-return" href="<?php echo wp_kses( get_post_type_archive_link( $obj_slug ), 'post' ); ?>">
+		<?php echo file_get_contents( get_template_directory() . '/assets/images/src/icon-carat-left.svg' ); ?>
+		Return to <?php echo esc_html( $post_type_name ); ?> Archive
+	</a>
 </div>

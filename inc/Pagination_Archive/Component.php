@@ -59,7 +59,6 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		<nav class="navigation pagination" aria-label="Page navigation">
 			<h2 class="screen-reader-text"><?php echo esc_html( $obj_slug ); ?> category navigation</h2>
 			<?php
-			$prev_icon = '<svg width="37" height="19" class="icon" xmlns="http://www.w3.org/2000/svg"><path d="M37 9.25a2.31 2.31 0 0 1-2.312 2.312H11.572v5.202a1.738 1.738 0 0 1-2.916 1.271L.554 10.522a1.734 1.734 0 0 1 0-2.543l8.1-7.515A1.738 1.738 0 0 1 10.53.144c.63.275 1.042.904 1.042 1.525v5.268h23.116A2.31 2.31 0 0 1 37 9.25Z" fill="#000" fill-rule="nonzero"/></svg>';
 			echo wp_kses(
 				paginate_links(
 					array(

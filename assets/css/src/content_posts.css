@@ -99,3 +99,11 @@
 	}
 }
 
+.post-back-btn {
+	display: flex;
+	justify-content: center;
+}
+
+.post-back-btn .icon {
+	margin-right: 0.5em;
+}
