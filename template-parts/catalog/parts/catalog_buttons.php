@@ -24,7 +24,7 @@ if ( get_post_meta( get_the_ID(), 'show_video_links', true ) ) :
 				<strong>
 					<?php esc_html_e( 'Apple TV', 'wp-rig' ); ?>
 				</strong>
-				<?php echo file_get_contents( get_template_directory() . '/assets/images/src/icon-external-link.svg' ); ?>
+				<?php echo file_get_contents( get_template_directory() . '/assets/images/icon-external-link.svg' ); ?>
 			</a>
 	<?php endif; ?>
 	<?php if ( have_rows( 'new_large_link' ) ) : ?>
@@ -36,7 +36,7 @@ if ( get_post_meta( get_the_ID(), 'show_video_links', true ) ) :
 			?>
 				<a href="<?php echo esc_html( $video_link ); ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo esc_html( $video_title ); ?>" target="_blank" rel="noreferrer">
 					<strong><?php echo esc_html( $video_title ); ?></strong>
-					<?php echo file_get_contents( get_template_directory() . '/assets/images/src/icon-external-link.svg' ); ?>
+					<?php echo file_get_contents( get_template_directory() . '/assets/images/icon-external-link.svg' ); ?>
 				</a>
 		<?php endwhile; ?>
 	<?php endif; ?>
@@ -54,7 +54,7 @@ if ( get_post_meta( get_the_ID(), 'show_audio_links', true ) ) :
 				<strong>
 		<?php esc_html_e( 'iTunes', 'wp-rig' ); ?>
 				</strong>
-<?php echo file_get_contents( get_template_directory() . '/assets/images/src/icon-external-link.svg' ); ?>
+<?php echo file_get_contents( get_template_directory() . '/assets/images/icon-external-link.svg' ); ?>
 			</a>
 	<?php endif; ?>
 	<?php if ( have_rows( 'audio_new_large_link' ) ) : ?>
@@ -66,7 +66,7 @@ if ( get_post_meta( get_the_ID(), 'show_audio_links', true ) ) :
 			?>
 				<a href="<?php echo esc_html( $audio_link ); ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo esc_html( $audio_title ); ?>" target="_blank" rel="noreferrer">
 					<strong><?php echo esc_html( $audio_title ); ?></strong>
-					<?php echo file_get_contents( get_template_directory() . '/assets/images/src/icon-external-link.svg' ); ?>
+					<?php echo file_get_contents( get_template_directory() . '/assets/images/icon-external-link.svg' ); ?>
 				</a>
 		<?php endwhile; ?>
 	<?php endif; ?>

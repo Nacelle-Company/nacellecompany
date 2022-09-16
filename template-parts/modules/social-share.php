@@ -30,9 +30,9 @@ if ( 'catalog' === $obj_slug ) {
 		<span class="has-theme-secondary-color">###</span><br>
 	<?php endif; ?>Share <?php the_title( '<span class="hidden">', '</span>' ); ?></h3>
 	<a href="http://www.facebook.com/sharer.php?u=<?php echo wp_kses( $url, 'post' ); ?>" rel="noopener" target="_blank">
-		<?php echo file_get_contents( get_template_directory() . '/assets/images/src/icon-facebook.svg' ); ?>
+		<?php echo file_get_contents( get_template_directory() . '/assets/images/icon-facebook.svg' ); ?>
 	</a>
 	<a href="https://twitter.com/intent/tweet?url=https:<?php echo wp_kses( $url_full, 'post' ); ?>" data-size="large" target="_blank" rel="noopener">
-		<?php echo file_get_contents( get_template_directory() . '/assets/images/src/icon-twitter.svg' ); ?>
+		<?php echo file_get_contents( get_template_directory() . '/assets/images/icon-twitter.svg' ); ?>
 	</a>
 </div>

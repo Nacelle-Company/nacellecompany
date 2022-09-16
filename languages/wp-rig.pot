@@ -205,7 +205,7 @@ msgstr ""
 #. translators: %s: Name of current post. Only visible to screen readers
 #. translators: %s: Name of current post. Only visible to screen readers
 #. translators: %s: Name of current post. Only visible to screen readers
-#: inc/Excerpts/Component.php:44, template-parts/content/entry_content-news.php:35, template-parts/content/entry_content-press.php:74, template-parts/content/entry_content-press_release.php:48, template-parts/content/entry_content.php:34
+#: inc/Excerpts/Component.php:44, template-parts/content/entry_content-news.php:35, template-parts/content/entry_content-press.php:74, template-parts/content/entry_content-press_release.php:48, template-parts/content/entry_content.php:35
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
@@ -225,11 +225,11 @@ msgstr ""
 msgid "main-navigation nav--toggle-sub nav--toggle-small icon-nav"
 msgstr ""
 
-#: inc/Pagination_Archive/Component.php:70, template-parts/content/pagination.php:13
+#: inc/Pagination_Archive/Component.php:69, template-parts/content/pagination.php:13
 msgid "&larr;"
 msgstr ""
 
-#: inc/Pagination_Archive/Component.php:71, template-parts/content/pagination.php:14
+#: inc/Pagination_Archive/Component.php:70, template-parts/content/pagination.php:14
 msgid "&rarr;"
 msgstr ""
 
@@ -267,19 +267,19 @@ msgstr ""
 msgid "View on IMDB"
 msgstr ""
 
-#: template-parts/category/distribution.php:26, template-parts/category/distribution.php:29
+#: template-parts/category/distribution.php:26, template-parts/category/distribution.php:30
 msgid "Albums"
 msgstr ""
 
-#: template-parts/category/distribution.php:43, template-parts/category/distribution.php:46
+#: template-parts/category/distribution.php:44, template-parts/category/distribution.php:47
 msgid "Films"
 msgstr ""
 
-#: template-parts/category/distribution.php:60, template-parts/category/distribution.php:63, template-parts/category/production.php:18, template-parts/category/production.php:21
+#: template-parts/category/distribution.php:61, template-parts/category/distribution.php:64, template-parts/category/production.php:18, template-parts/category/production.php:21
 msgid "Series"
 msgstr ""
 
-#: template-parts/category/distribution.php:77, template-parts/category/distribution.php:80, template-parts/category/production.php:31, template-parts/category/production.php:34
+#: template-parts/category/distribution.php:78, template-parts/category/distribution.php:81, template-parts/category/production.php:31, template-parts/category/production.php:34
 msgid "Specials"
 msgstr ""
 
@@ -309,7 +309,7 @@ msgstr ""
 msgid "Read more"
 msgstr ""
 
-#: template-parts/content/entry_content.php:47
+#: template-parts/content/entry_content.php:48
 msgid "Pages:"
 msgstr ""
 
@@ -436,112 +436,20 @@ msgstr ""
 msgid "Sort & Filter"
 msgstr ""
 
-#: template-parts/catalog/parts/catalog_buttons.php:46
+#: template-parts/catalog/parts/catalog_buttons.php:20
 msgid "Watch Now"
 msgstr ""
 
-#: template-parts/catalog/parts/catalog_buttons.php:51
+#: template-parts/catalog/parts/catalog_buttons.php:25
 msgid "Apple TV"
 msgstr ""
 
-#: template-parts/catalog/parts/catalog_buttons.php:68
-msgid "YouTube"
-msgstr ""
-
-#: template-parts/catalog/parts/catalog_buttons.php:81, template-parts/catalog/parts/catalog_buttons.php:361
-msgid "Google Play"
-msgstr ""
-
-#: template-parts/catalog/parts/catalog_buttons.php:93, template-parts/catalog/parts/catalog_buttons.php:381
-msgid "Amazon"
-msgstr ""
-
-#: template-parts/catalog/parts/catalog_buttons.php:105
-msgid "Steam"
-msgstr ""
-
-#: template-parts/catalog/parts/catalog_buttons.php:117
-msgid "Microsoft"
-msgstr ""
-
-#: template-parts/catalog/parts/catalog_buttons.php:129
-msgid "Vudu"
-msgstr ""
-
-#: template-parts/catalog/parts/catalog_buttons.php:141
-msgid "Vimeo"
-msgstr ""
-
-#: template-parts/catalog/parts/catalog_buttons.php:153
-msgid "Netflix"
-msgstr ""
-
-#: template-parts/catalog/parts/catalog_buttons.php:165
-msgid "Animal Nation"
-msgstr ""
-
-#: template-parts/catalog/parts/catalog_buttons.php:177
-msgid "Roku"
-msgstr ""
-
-#: template-parts/catalog/parts/catalog_buttons.php:190
-msgid "HULU"
-msgstr ""
-
-#: template-parts/catalog/parts/catalog_buttons.php:202
-msgid "EPIX"
-msgstr ""
-
-#: template-parts/catalog/parts/catalog_buttons.php:214
-msgid "Comcast"
-msgstr ""
-
-#: template-parts/catalog/parts/catalog_buttons.php:223
-msgid "Redbox"
-msgstr ""
-
-#: template-parts/catalog/parts/catalog_buttons.php:236, template-parts/catalog/parts/catalog_buttons.php:411
-msgid "Walmart"
-msgstr ""
-
-#: template-parts/catalog/parts/catalog_buttons.php:248, template-parts/catalog/parts/catalog_buttons.php:421
-msgid "Target"
-msgstr ""
-
-#: template-parts/catalog/parts/catalog_buttons.php:260, template-parts/catalog/parts/catalog_buttons.php:431
-msgid "Fandango"
-msgstr ""
-
-#: template-parts/catalog/parts/catalog_buttons.php:269
-msgid "Hoopla"
-msgstr ""
-
-#: template-parts/catalog/parts/catalog_buttons.php:281
-msgid "MTV2"
-msgstr ""
-
-#: template-parts/catalog/parts/catalog_buttons.php:293
-msgid "Tubi"
-msgstr ""
-
-#: template-parts/catalog/parts/catalog_buttons.php:340
+#: template-parts/catalog/parts/catalog_buttons.php:50
 msgid "Listen Now"
 msgstr ""
 
-#: template-parts/catalog/parts/catalog_buttons.php:345
+#: template-parts/catalog/parts/catalog_buttons.php:55
 msgid "iTunes"
-msgstr ""
-
-#: template-parts/catalog/parts/catalog_buttons.php:371
-msgid "YouTube Music"
-msgstr ""
-
-#: template-parts/catalog/parts/catalog_buttons.php:391
-msgid "Spotify"
-msgstr ""
-
-#: template-parts/catalog/parts/catalog_buttons.php:401
-msgid "Pandora"
 msgstr ""
 
 #: template-parts/catalog/parts/catalog_stats.php:21

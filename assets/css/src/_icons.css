@@ -6,12 +6,12 @@
 .icon {
 	margin-right: 0.5rem;
 
-	& [fill] {
+	& path {
 		fill: var(--color-theme-primary);
 		transition: fill 0.2s ease-out;
 	}
 
-	&:hover [fill] {
+	&:hover path {
 		fill: var(--color-theme-secondary);
 		transition: fill 0.2s ease-out;
 	}

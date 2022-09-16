@@ -10,9 +10,27 @@ namespace WP_Rig\WP_Rig;
 global $obj_slug;
 global $searchandfilter;
 
-$sf_current_query = $searchandfilter->get( 46579 )->current_query();
-$queried_obj = get_queried_object();
+$sf_current_query         = $searchandfilter->get( 46579 )->current_query();
+$queried_obj              = get_queried_object();
 $search_filter_or_catalog = false;
+$category_name;
+// Header icon.
+// var_dump($queried_obj);
+if ( str_contains( $queried_obj->name, 'catalog' ) ) {
+	$category_name = 'series';
+} elseif ( str_contains( $queried_obj->name, 'press' ) ) {
+	$category_name = 'press';
+} elseif ( str_contains( $queried_obj->slug, 'series' ) ) {
+	$category_name = 'series';
+} elseif ( str_contains( $queried_obj->slug, 'special' ) || str_contains( $queried_obj->slug, 'production' ) ) {
+	$category_name = 'special';
+} elseif ( str_contains( $queried_obj->slug, 'album' ) || str_contains( $queried_obj->slug, 'distribution' ) ) {
+	$category_name = 'album';
+} elseif ( str_contains( $queried_obj->slug, 'film' ) ) {
+	$category_name = 'film';
+} else {
+	$category_name = 'filter';
+}
 
 if ( $sf_current_query->is_filtered() || is_search() || is_post_type( 'catalog' ) ) {
 	$search_filter_or_catalog = true;
@@ -26,18 +44,23 @@ if ( is_404() ) {
 		</h1>
 	</header>
 	<?php
-} elseif ( $search_filter_or_catalog ) {
+} elseif ( $search_filter_or_catalog ) { // Search filter and catalog category header.
 	wp_rig()->print_styles( 'wp-rig-offcanvas' );
 	?>
 	<header class="page-header page-header__filters">
 		<div class="filters-wrap">
 			<div class="page-title__wrap">
 				<h1 class="page-title">
+					<?php echo file_get_contents( get_template_directory() . '/assets/images/icon-' . $category_name . '.svg' ) ?>
 					<?php
 					if ( $sf_current_query->is_filtered() ) {
 						echo 'Filter by: ' . $sf_current_query->get_fields_html(
 							array( '_sft_category' )
 						);
+					} elseif ( single_term_title() ) {
+						echo single_term_title();
+					} elseif ( $queried_obj->name = 'catalog' ) {
+						echo $queried_obj->label;
 					} else {
 						echo single_term_title();
 					}
@@ -74,11 +97,8 @@ if ( is_404() ) {
 		</h1>
 	</header>
 	<?php
-} elseif ( is_post_type( 'catalog' ) && $sf_current_query->is_filtered() ) {
-
 } elseif ( is_archive() && is_post_type( 'catalog' ) && ! $sf_current_query->is_filtered() ) {
-		wp_rig()->print_styles( 'wp-rig-offcanvas' );
-
+	wp_rig()->print_styles( 'wp-rig-offcanvas' );
 	?>
 	<header class="page-header page-header__filters">
 		<div class="filters-wrap">
@@ -126,11 +146,12 @@ if ( is_404() ) {
 		?>
 	</header>
 	<?php
-} elseif ( is_archive() ) {
+} elseif ( is_archive() ) { // Press archive header.
 	?>
 	<header class="page-header">
 		<h1 class="page-title">
 			<?php
+			echo file_get_contents( get_template_directory() . '/assets/images/icon-' . $category_name . '.svg' );
 			$the_post_type = get_queried_object();
 			echo esc_html( $the_post_type->labels->singular_name );
 			echo single_term_title();

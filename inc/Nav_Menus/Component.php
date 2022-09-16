@@ -221,8 +221,8 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	 */
 	public function customize_mobile_menu_toggle() {
 		return '<button class="menu-toggle icon" aria-label="' . esc_html__( 'Open menu', 'wp-rig' ) . '" aria-controls="primary-menu" aria-expanded="false">
-					' . file_get_contents( get_theme_file_path() . '/assets/svg/menu-icon.svg' ) . '
-					' . file_get_contents( get_theme_file_path() . '/assets/svg/close-icon.svg' ) . '
+					' . file_get_contents( get_theme_file_path() . '/assets/images/menu-icon.svg' ) . '
+					' . file_get_contents( get_theme_file_path() . '/assets/images/close-icon.svg' ) . '
 					</button>';
 	}
 

@@ -191,7 +191,7 @@ dd::after {
 
 .entry-title,
 .entry-content,
-.rank-math-breadcrumb {
+.breadcrumbs {
 	grid-column: 1/span 3;
 
 	@media (--content-query) {
@@ -201,6 +201,11 @@ dd::after {
 
 .entry-title {
 	margin: 0;
+}
+
+.breadcrumbs {
+	display: flex;
+	align-items: center;
 }
 
 .rank-math-breadcrumb p {
@@ -255,3 +260,4 @@ dd::after {
 #rank-math-rich-snippet-wrapper {
 	position: relative !important;
 }
+

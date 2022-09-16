@@ -62,7 +62,7 @@
 	& .filters-wrap {
 		display: grid;
 		grid-template-columns: auto auto;
-		align-items: center;
+		align-items: baseline;
 		justify-content: space-between;
 		border-bottom: 2px solid var(--color-theme-primary);
 		padding: 0 1em;

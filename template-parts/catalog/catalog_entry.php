@@ -33,18 +33,22 @@ endif;
 			<div class="catalog-video">
 		<?php endif; ?>
 		<div class="entry-header<?php echo esc_html( $video_class ); ?>">
-		<?php
-		// Breadcrumbs.
-		if ( function_exists( 'rank_math_the_breadcrumbs' ) ) {
-			rank_math_the_breadcrumbs();
-		}
-		?>
+			<div class="breadcrumbs">
+				<?php
+				// Breadcrumbs.
+				if ( function_exists( 'rank_math_the_breadcrumbs' ) ) {
+							echo file_get_contents( get_template_directory() . '/assets/images/icon-bookmark.svg' );
+
+					rank_math_the_breadcrumbs();
+				}
+				?>
+			</div>
 			<?php get_template_part( 'template-parts/content/entry_title', get_post_type() ); ?>
 			<?php get_template_part( 'template-parts/content/entry_content', get_post_type() ); ?>
 			<?php if ( $imdbv ) : ?>
 				<a href="<?php echo wp_kses( $imdbv, 'post' ); ?>" class="button imdb-button" title="Watch <?php the_title_attribute(); ?> on <?php echo wp_kses( $imdbv, 'post' ); ?>" target="_blank">
 					<strong><?php esc_html_e( 'View on IMDB', 'wp-rig' ); ?></strong>
-					<?php echo file_get_contents( get_template_directory() . '/assets/images/src/icon-external-link.svg' ); ?>
+					<?php echo file_get_contents( get_template_directory() . '/assets/images/icon-external-link.svg' ); ?>
 				</a>
 			<?php endif; ?>
 			<?php get_template_part( 'template-parts/modules/social-share' ); ?>

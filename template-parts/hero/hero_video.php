@@ -34,10 +34,10 @@ if ( ! empty( $hero_video ) ) :
 		<div id="video_cover_img_wrap" class="video-cover__img-wrap">
 			<div class="video-play__wrap" id="video_play_wrap">
 				<div class="video-play__btns" id="video_play_btns">
-					<?php echo file_get_contents( get_template_directory() . '/assets/images/src/icon-play.svg' ); ?>
+					<?php echo file_get_contents( get_template_directory() . '/assets/images/icon-play.svg' ); ?>
 					<h3 class="icon-play__title">Watch Trailer</h3>
 					<div class="video-volume-btn" onclick="jQuery('#hero_video_<?php echo esc_html( $queried_id ); ?>').YTPToggleVolume()">
-						<?php echo file_get_contents( get_template_directory() . '/assets/images/src/icon-volume.svg' ); ?>
+						<?php echo file_get_contents( get_template_directory() . '/assets/images/icon-volume.svg' ); ?>
 					</div>
 				</div>
 
