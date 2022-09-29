@@ -15,7 +15,6 @@ textarea {
 	line-height: var(--global-font-line-height);
 }
 
-
 h1,
 h2,
 h3,
@@ -43,7 +42,19 @@ h6 {
 	font-size: 1.5em;
 	margin: 0.67em 0;
 	text-transform: uppercase;
+}
 
+.h6 {
+	font-size: 70%;
+
+	@media (--content-query) {
+		font-size: 75%;
+	}
+}
+
+.sub {
+	color: var(--color-theme-secondary);
+	text-transform: uppercase;
 }
 
 dfn,

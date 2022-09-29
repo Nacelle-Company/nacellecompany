@@ -203,9 +203,7 @@ msgstr ""
 
 #. translators: %s: Post title.
 #. translators: %s: Name of current post. Only visible to screen readers
-#. translators: %s: Name of current post. Only visible to screen readers
-#. translators: %s: Name of current post. Only visible to screen readers
-#: inc/Excerpts/Component.php:44, template-parts/content/entry_content-news.php:35, template-parts/content/entry_content-press.php:74, template-parts/content/entry_content-press_release.php:48, template-parts/content/entry_content.php:35
+#: inc/Excerpts/Component.php:44, template-parts/content/entry_content-press.php:74, template-parts/content/entry_content.php:35
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
@@ -263,24 +261,8 @@ msgstr ""
 msgid "Invalid theme stylesheet handle: %s"
 msgstr ""
 
-#: template-parts/catalog/catalog_entry.php:46
+#: template-parts/catalog/catalog_entry.php:50
 msgid "View on IMDB"
-msgstr ""
-
-#: template-parts/category/distribution.php:26, template-parts/category/distribution.php:30
-msgid "Albums"
-msgstr ""
-
-#: template-parts/category/distribution.php:44, template-parts/category/distribution.php:47
-msgid "Films"
-msgstr ""
-
-#: template-parts/category/distribution.php:61, template-parts/category/distribution.php:64, template-parts/category/production.php:18, template-parts/category/production.php:21
-msgid "Series"
-msgstr ""
-
-#: template-parts/category/distribution.php:78, template-parts/category/distribution.php:81, template-parts/category/production.php:31, template-parts/category/production.php:34
-msgid "Specials"
 msgstr ""
 
 #: template-parts/content/entry-attachment.php:33
@@ -305,7 +287,7 @@ msgstr ""
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
-#: template-parts/content/entry_content-news.php:25, template-parts/content/entry_content-press.php:52
+#: template-parts/content/entry_content-press.php:52
 msgid "Read more"
 msgstr ""
 
@@ -392,17 +374,17 @@ msgstr ""
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
 
-#: template-parts/content/page_header.php:25
+#: template-parts/content/page_header.php:43
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
-#: template-parts/content/page_header.php:57
+#: template-parts/content/page_header.php:80
 msgid "Nothing Found"
 msgstr ""
 
 #. translators: %s: search query
 #. translators: %s: search query
-#: template-parts/content/page_header.php:94, template-parts/content/page_header.php:165
+#: template-parts/content/page_header.php:114, template-parts/content/page_header.php:186
 msgid "Search Results for: %s"
 msgstr ""
 

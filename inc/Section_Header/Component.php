@@ -56,6 +56,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	public function display_section_header( $title, $link ) {
 		?>
 		<header class="section-header">
+			<h3 class="sub h6">Independent comedy </h3>
 			<h2 class="section-title h1">
 				<?php echo esc_html( $title ); ?>
 			</h2>
