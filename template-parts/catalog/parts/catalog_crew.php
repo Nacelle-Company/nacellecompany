@@ -6,10 +6,21 @@
  */
 
 namespace WP_Rig\WP_Rig;
+$the_title = get_the_title();
+$colon = ": ";
 
 ?>
-
-<h2 class="crew-title">CREDITS</h2>
+<?php if(strpos($the_title, $colon) !== false) : ?>
+	<div class="crew-title">
+		<?php $the_title = substr($the_title, strpos($the_title, ":") + 1); ?>
+		<h3 class="sub h6" style="margin-bottom: 0;">
+			<?php echo esc_html($the_title); ?>
+		</h3>
+		<h2 style="margin: 0;">CREDITS</h2>
+	</div>
+<?php else : ?>
+	<h2 class="crew-title">CREDITS</h2>
+<?php endif; ?>
 <dl class="crew-list people">
 	<?php wp_rig()->display_tax_terms( 'main_talent' ); ?>
 
