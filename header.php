@@ -28,7 +28,6 @@ $critical_css = $filesystem->get_contents( $critical_css );
 	<link rel="preload" as="script" href="<?php echo esc_html( $blog_url ); ?>/wp-includes/js/jquery/jquery.min.js">
 	<link rel="preload" as="script" href="https://www.youtube.com/s/player/0c356943/www-widgetapi.vflset/www-widgetapi.js">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
-	<link rel='dns-prefetch' href='//fonts.googleapis.com' />
 	<?php
 	if ( ! wp_rig()->is_amp() ) :
 		?>

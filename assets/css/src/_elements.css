@@ -1,3 +1,4 @@
+@import "_custom-properties.css";
 
 /*--------------------------------------------------------------
 # Elements
@@ -22,7 +23,6 @@ html {
 /* stylelint-disable */
 body {
 	background: #fff;
-	min-height: 100%;
 
 	/* Fallback for when there is no custom background color defined. */
 }

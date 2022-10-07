@@ -32,7 +32,7 @@ msgstr[1] ""
 msgid "Comments are closed."
 msgstr ""
 
-#: header.php:72
+#: header.php:71
 msgid "Skip to content"
 msgstr ""
 

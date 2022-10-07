@@ -1,9 +1,17 @@
+/* my custom imports
 @import "_custom-fonts.css";
 @import "_typography-min.css";
 @import "_reset.css";
+@import "_links.css";
+*/
+
+/* og imports */
+@import "_custom-properties.css";
+@import "_reset.css";
+@import "_typography-min.css";
+@import "_elements.css";
 @import "_links.css";
 @import "_icons.css";
 @import "_navigation.css";
 @import "_ajaxsearchpro-min.css";
 @import "_global-styles.css";
-

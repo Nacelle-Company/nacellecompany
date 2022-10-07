@@ -33,7 +33,6 @@
 }
 
 @media (--content-query) {
-
 	.children {
 		margin-left: 2em;
 	}
@@ -117,7 +116,6 @@
 }
 
 @media (--content-query) {
-
 	.comment-content ul,
 	.comment-content ol {
 		padding-right: 1.5em;
@@ -179,7 +177,7 @@
 
 /* stylelint-disable */
 .comment-form a {
-	font-weight: 500;
+	font-weight: 400;
 }
 /* stylelint-enable */
 

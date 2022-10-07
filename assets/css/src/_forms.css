@@ -15,7 +15,8 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 	border: 1px solid;
-	border-color: var(--color-theme-secondary) var(--color-theme-secondary) var(--color-theme-secondary);
+	border-color: var(--color-theme-secondary) var(--color-theme-secondary)
+		var(--color-theme-secondary);
 	border-radius: 3px;
 	background: transparent;
 	color: var(--global-font-color);
@@ -37,7 +38,8 @@ input[type="reset"]:hover,
 input[type="submit"]:hover {
 	background-color: var(--color-theme-secondary);
 	color: var(--global-font-color-inverse);
-	border-color: var(--color-theme-secondary) var(--color-theme-secondary) var(--color-theme-secondary);
+	border-color: var(--color-theme-secondary) var(--color-theme-secondary)
+		var(--color-theme-secondary);
 
 	& .icon {
 		fill: var(--global-font-color-inverse);
@@ -128,8 +130,17 @@ input:-webkit-autofill {
 
 input:focus,
 textarea:focus {
-	border-color: hsl(var(--input-focus-h), var(--input-focus-s), var(--input-focus-l));
-	box-shadow: 0 0 0 3px hsla(var(--input-focus-h), var(--input-focus-s), calc(var(--input-focus-l)));
+	border-color: hsl(
+		var(--input-focus-h),
+		var(--input-focus-s),
+		var(--input-focus-l)
+	);
+	box-shadow: 0 0 0 3px
+		hsla(
+			var(--input-focus-h),
+			var(--input-focus-s),
+			calc(var(--input-focus-l))
+		);
 	outline: 3px solid transparent;
 }
 
@@ -138,7 +149,7 @@ input:not(textarea) {
 	height: 2.25rem;
 }
 
-input[type=file] {
+input[type="file"] {
 	font-size: 0.9em;
 	padding-top: 0.35rem;
 }
@@ -159,9 +170,10 @@ input[disabled] {
 	cursor: not-allowed;
 }
 
-label {
+label,
+.nf-form-cont .nf-field-label label {
 	font-size: 1.125rem;
-	font-weight: 500;
+	font-weight: 400;
 	line-height: 1;
 }
 

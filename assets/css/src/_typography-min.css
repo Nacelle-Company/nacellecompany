@@ -1,3 +1,5 @@
+@import "_custom-properties.css";
+
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
@@ -28,6 +30,28 @@ h6 {
 	color: var(--color-theme-primary);
 }
 
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+/* stylelint-disable */
+pre {
+	background: #696969;
+	color: rgb(199, 199, 199);
+	font-family: "Courier 10 Pitch", Courier, monospace;
+	font-size: 0.9375rem;
+	line-height: 1.6;
+	margin-bottom: 1.5em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.5em;
+	overflow: visible;
+}
+/* stylelint-enable */
+
 .h1 {
 	font-size: 1.5em;
 	margin: 0.67em 0;
@@ -55,11 +79,4 @@ h6 {
 .sub {
 	color: var(--color-theme-secondary);
 	text-transform: uppercase;
-}
-
-dfn,
-cite,
-em,
-i {
-	font-style: italic;
 }

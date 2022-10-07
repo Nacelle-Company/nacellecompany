@@ -27,7 +27,7 @@ wp_rig()->print_styles( 'wp-rig-footer-widgets' );
 			let videoCoverImg = document.getElementById('video_cover_img');
 			let videoPlayWrap = document.getElementById('video_play_wrap');
 			let videoWrapper = document.getElementById('entry_header_video');
-			let iconPlay = document.getElementById('icon_play');
+			let iconPlay = document.getElementById('video_play_btns');
 			let videoPlayBtns = document.getElementById('video_play_btns');
 			const delayOneSec = 1000;
 			const delayHalfSec = 500;
