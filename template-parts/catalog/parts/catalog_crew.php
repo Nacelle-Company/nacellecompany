@@ -13,7 +13,7 @@ $colon = ": ";
 <?php if(strpos($the_title, $colon) !== false) : ?>
 	<div class="crew-title">
 		<?php $the_title = substr($the_title, strpos($the_title, ":") + 1); ?>
-		<h3 class="sub h6" style="margin-bottom: 0;">
+		<h3 class="sub h6" style="margin-bottom: 0;font-weight: 100;">
 			<?php echo esc_html($the_title); ?>
 		</h3>
 		<h2 style="margin: 0;">CREDITS</h2>
