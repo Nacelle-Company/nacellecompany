@@ -157,7 +157,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 									echo get_the_post_thumbnail( $slide, 'medium' );
 								else :
 									?>
-										<img src="<?php bloginfo( 'template_directory' ); ?>/assets/images/comedy-dynamics-default.jpg" class="wp-post-image" alt="<?php echo esc_html( $the_title ); ?>" />
+										<img src="<?php bloginfo( 'template_directory' ); ?>/assets/images/comedy-dynamics-default.webp" class="wp-post-image" alt="<?php echo esc_html( $the_title ); ?>" />
 									<?php
 								endif;
 								// Catalog slider: square image.
@@ -166,11 +166,18 @@ class Component implements Component_Interface, Templating_Component_Interface {
 									$image = get_field( 'square_image', $slide );
 									$size  = 'medium';
 									if ( $image ) :
-										echo wp_get_attachment_image( $image, $size );
+										echo wp_get_attachment_image(
+											$image,
+											$size,
+											false,
+											array(
+												'loading' => 'lazy',
+											)
+										);
 									endif;
 								else :
 									?>
-										<img src="<?php bloginfo( 'template_directory' ); ?>/assets/images/comedy-dynamics-default-square.jpg" class="wp-post-image" alt="<?php echo esc_html( $the_title ); ?>" />
+										<img src="<?php bloginfo( 'template_directory' ); ?>/assets/images/comedy-dynamics-default-square.webp" class="wp-post-image" alt="<?php echo esc_html( $the_title ); ?>" />
 									<?php
 								endif;
 								// Top slider: home image.
@@ -193,12 +200,12 @@ class Component implements Component_Interface, Templating_Component_Interface {
 									);
 								else :
 									?>
-										<img src="<?php bloginfo( 'template_directory' ); ?>/assets/images/comedy-dynamics-default.jpg" class="wp-post-image" alt="<?php echo esc_html( $the_title ); ?>" />
+										<img src="<?php bloginfo( 'template_directory' ); ?>/assets/images/comedy-dynamics-default.webp" class="wp-post-image" alt="<?php echo esc_html( $the_title ); ?>" />
 									<?php
 								endif;
 							else :
 								?>
-									<img src="<?php bloginfo( 'template_directory' ); ?>/assets/images/comedy-dynamics-default.jpg" class="wp-post-image" alt="<?php echo esc_html( $the_title ); ?>" />
+									<img src="<?php bloginfo( 'template_directory' ); ?>/assets/images/comedy-dynamics-default.webp" class="wp-post-image" alt="<?php echo esc_html( $the_title ); ?>" />
 								<?php
 							endif;
 							?>

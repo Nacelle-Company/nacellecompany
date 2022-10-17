@@ -86,7 +86,7 @@ wp_rig()->print_styles( 'wp-rig-page-home-cd' );
 											);
 										else :
 											?>
-											<img src="<?php bloginfo( 'template_directory' ); ?>/assets/images/comedy-dynamics-default.jpg" class="wp-post-image" alt="<?php echo esc_html( $the_title ); ?>" loading="lazy" />
+											<img src="<?php bloginfo( 'template_directory' ); ?>/assets/images/comedy-dynamics-default.webp" class="wp-post-image" alt="<?php echo esc_html( $the_title ); ?>" loading="lazy" />
 											<?php
 										endif;
 										?>
@@ -148,7 +148,7 @@ wp_rig()->print_styles( 'wp-rig-page-home-cd' );
 											);
 										else :
 											?>
-											<img src="<?php bloginfo( 'template_directory' ); ?>/assets/images/comedy-dynamics-default.jpg" class="wp-post-image" alt="<?php echo esc_html( $the_title ); ?>" loading="lazy" />
+											<img src="<?php bloginfo( 'template_directory' ); ?>/assets/images/comedy-dynamics-default.webp" class="wp-post-image" alt="<?php echo esc_html( $the_title ); ?>" loading="lazy" />
 											<?php
 										endif;
 										?>

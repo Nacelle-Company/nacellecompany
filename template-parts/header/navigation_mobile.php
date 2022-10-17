@@ -47,6 +47,6 @@ if ( ! wp_rig()->is_mobile_nav_menu_active() ) {
 	<?php echo $menu_toggle_button; /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */ ?>
 
 	<div class="mobile-menu-container">
-		<?php wp_rig()->display_mobile_nav_menu( array( 'menu_id' => 'mobile-menu' ) ); ?>&#9776;
+		<?php wp_rig()->display_mobile_nav_menu( array( 'menu_id' => 'mobile-menu' ) ); ?>
 	</div>
 </nav>

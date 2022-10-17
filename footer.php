@@ -17,13 +17,11 @@ $hero_video = get_field( 'video_embedd' );
 wp_rig()->print_styles( 'wp-rig-footer-widgets' );
 
 ?>
-
 <footer id="colophon" class="site-footer">
-	<?php if ( ! empty( $hero_video ) ) : ?>
+	<?php if ( is_single() && 'catalog' == get_post_type() && !empty( $hero_video ) ) : ?>
+		<?php wp_rig()->print_scripts( 'wp-rig-lite-youtube' ); ?>
 		<script type="text/javascript" id="hero_video_script">
-
 			const video = '#hero_video_<?php echo esc_html( $queried_id ); ?>';
-			// let videoCoverWrap = document.getElementById('video_cover_img_wrap');
 			let videoCoverImg = document.getElementById('video_cover_img');
 			let videoPlayWrap = document.getElementById('video_play_wrap');
 			let videoWrapper = document.getElementById('entry_header_video');
@@ -31,47 +29,38 @@ wp_rig()->print_styles( 'wp-rig-footer-widgets' );
 			let videoPlayBtns = document.getElementById('video_play_btns');
 			const delayOneSec = 1000;
 			const delayHalfSec = 500;
-
-			// activate YTP Player only once
 			var activateVideo = function () {
 				jQuery(video).YTPlayer();
 			};
 			videoWrapper.addEventListener("click", activateVideo, {once: true});
 			iconPlay.addEventListener("click", activateVideo, {once: true});
-
-			// initialize ytp player, hide feat img cover, hide play icon & play icon container
 			videoWrapper.addEventListener("click", function( event ) {
 				videoPlayWrap.classList.toggle("active");
 				if ( !videoPlayWrap.classList.contains("active") ) {
 					videoPlayBtns.style.backgroundColor = 'rgba(0,0,0,.7)';
 					videoPlayBtns.style.zIndex = 9;
 				}
-
 				setTimeout(function() {
 					jQuery(video).on("YTPStart",function(e){
 						jQuery(video).YTPUnmute().YTPSetVolume(50);
 					});
 				}, delayOneSec);
 			});
-
-
-			// YTPlayer hero video jquery call
 			jQuery(function() {
 				jQuery("#hero_video__desktop_<?php echo esc_html( $queried_id ); ?>").YTPlayer();
 			});
+			jQuery(function(){
+				jQuery("#feat_modal_vid_one").YTPlayer();
+			});
+			jQuery(function(){
+				jQuery("#feat_modal_vid_two").YTPlayer();
+			});
 		</script>
 	<?php endif; ?>
-	<script>
-		jQuery(function(){
-			jQuery("#feat_modal_vid_one").YTPlayer();
-		});
-		jQuery(function(){
-			jQuery("#feat_modal_vid_two").YTPlayer();
-		});
+	<script type="text/javascript">
 		mobileMenu = document.querySelector('.mobile-menu__search');
 		magnifier = mobileMenu.querySelector('.promagnifier');
 		magnifier.setAttribute('tabindex', 1);
-
 	</script>
 	<?php get_template_part( 'template-parts/footer/footer-widgets' ); ?>
 </footer>

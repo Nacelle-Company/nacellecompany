@@ -1,13 +1,13 @@
 <?php
 /**
- * WP Rig functions and definitions
- *
- * This file must be parseable by PHP 5.2.
- *
- * @link https://developer.wordpress.org/themes/basics/theme-functions/
- *
- * @package wp_rig
- */
+* WP Rig functions and definitions
+*
+* This file must be parseable by PHP 5.2.
+*
+* @link https://developer.wordpress.org/themes/basics/theme-functions/
+*
+* @package wp_rig
+*/
 
 define( 'WP_RIG_MINIMUM_WP_VERSION', '4.7' );
 define( 'WP_RIG_MINIMUM_PHP_VERSION', '7.0' );
@@ -26,13 +26,13 @@ if ( file_exists( get_template_directory() . '/vendor/autoload.php' ) ) {
 	require get_template_directory() . '/vendor/autoload.php';
 } else {
 	/**
-	 * Custom autoloader function for theme classes.
-	 *
-	 * @access private
-	 *
-	 * @param string $class_name Class name to load.
-	 * @return bool True if the class was loaded, false otherwise.
-	 */
+	* Custom autoloader function for theme classes.
+	*
+	* @access private
+	*
+	* @param string $class_name Class name to load.
+	* @return bool True if the class was loaded, false otherwise.
+	*/
 	function _wp_rig_autoload( $class_name ) {
 		$namespace = 'WP_Rig\WP_Rig';
 
@@ -73,27 +73,27 @@ if ( function_exists( 'acf_add_options_page' ) ) {
 }
 
 /**
- * Show Custom Post Types in Category Archive Page
- * By default WordPress custom post types do not appear in a category or tag archive page
- *
- * @param posts custom post types
- * @return $query
- * @link https://wpbeaches.com/show-custom-post-types-category-archive-page/, https://www.smashingmagazine.com/2014/08/customizing-wordpress-archives-categories-terms-taxonomies/#adding-custom-post-types-to-category-or-tag-archives
- */
+* Show Custom Post Types in Category Archive Page
+* By default WordPress custom post types do not appear in a category or tag archive page
+*
+* @param posts custom post types
+* @return $query
+* @link https://wpbeaches.com/show-custom-post-types-category-archive-page/, https://www.smashingmagazine.com/2014/08/customizing-wordpress-archives-categories-terms-taxonomies/#adding-custom-post-types-to-category-or-tag-archives
+*/
 
 add_filter( 'pre_get_posts', '_wp_rig_cpt_category_archives' );
 /**
- * CPT Archives
- *
- * @param variable $query Description.
- **/
+* CPT Archives
+*
+* @param variable $query Description.
+**/
 function _wp_rig_cpt_category_archives( $query ) {
-	if ( $query->is_category() && $query->is_main_query() ) {
-		$query->set(
-			'post_type',
-			array(
-				'post',
-				'catalog',
+if ( $query->is_category() && $query->is_main_query() ) {
+	$query->set(
+		'post_type',
+		array(
+			'post',
+			'catalog',
 			)
 		);
 	}
@@ -101,12 +101,12 @@ function _wp_rig_cpt_category_archives( $query ) {
 }
 
 /**
- * Prints the post object.
- *
- * TODO: delete this on production
- *
- * @param Type $post The post object or whichever variable.
- **/
+* Prints the post object.
+*
+* TODO: delete this on production
+*
+* @param Type $post The post object or whichever variable.
+**/
 function printVar( $post ) {
 	echo '<pre style="color:#fff">';
 	print_r( $post );
@@ -114,11 +114,11 @@ function printVar( $post ) {
 }
 
 /**
- * Allow wp_query.
- *
- * @param [type] $type Post type.
- * @return boolean
- */
+* Allow wp_query.
+*
+* @param [type] $type Post type.
+* @return boolean
+*/
 function is_post_type( $type ) {
 	global $wp_query;
 	if ( get_post_type( $wp_query->post->ID ) === $type ) {
@@ -128,9 +128,9 @@ function is_post_type( $type ) {
 }
 
 /**
- *
- * TODO: Move category acf fields to parent categories: https://www.advancedcustomfields.com/resources/custom-location-rules/.
- **/
+*
+* TODO: Move category acf fields to parent categories: https://www.advancedcustomfields.com/resources/custom-location-rules/.
+**/
 function wp_rig_nacelle_duplicate_post_as_draft() {
 	global $wpdb;
 	if ( ! ( isset( $_GET['post'] ) || isset( $_POST['post'] ) || ( isset( $_REQUEST['action'] ) && 'wp_rig_nacelle_duplicate_post_as_draft' == $_REQUEST['action'] ) ) ) {
@@ -213,8 +213,8 @@ function wp_rig_nacelle_duplicate_post_as_draft() {
 add_action( 'admin_action_wp_rig_nacelle_duplicate_post_as_draft', 'wp_rig_nacelle_duplicate_post_as_draft' );
 
 /*
- * Add the duplicate link to action list for post_row_actions
- */
+* Add the duplicate link to action list for post_row_actions
+*/
 function wp_rig_nacelle_duplicate_post_link( $actions, $post ) {
 	if ( current_user_can( 'edit_posts' ) ) {
 		$actions['duplicate'] = '<a href="' . wp_nonce_url( 'admin.php?action=wp_rig_nacelle_duplicate_post_as_draft&post=' . $post->ID, basename( __FILE__ ), 'duplicate_nonce' ) . '" title="Duplicate this item" rel="permalink">Duplicate</a>';
@@ -234,7 +234,7 @@ function wp_rig_nacelle_change_sort_order( $query ) {
 		$query->set( 'order', 'ASC' );
 		// Set the orderby
 		$query->set( 'orderby', 'title' );
-		endif;
+	endif;
 };
 
 add_filter( 'get_custom_logo', 'wp_rig_add_logo_att' );
@@ -244,9 +244,9 @@ function wp_rig_add_logo_att( $html ) {
 	return $html;
 }
 /**
- * <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
- * <noscript><link rel="stylesheet" href="styles.css"></noscript>
- */
+* <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+* <noscript><link rel="stylesheet" href="styles.css"></noscript>
+*/
 
 // Remove CSS files from loading on the frontend
 function wp_rig_remove_wp_css() {
@@ -291,11 +291,11 @@ function wp_rig_sgo_css_combine_exclude( $exclude_list ) {
 }
 
 /**
- * Modify the main query
- *
- * @param [type] $query Combine press_release & news post types.
- * @return void
- */
+* Modify the main query
+*
+* @param [type] $query Combine press_release & news post types.
+* @return void
+*/
 function wp_rig_custom_archive_query( $query ){
 	if( is_admin() || ! $query->is_main_query() ) {
 		return;
@@ -309,11 +309,11 @@ function wp_rig_custom_archive_query( $query ){
 add_action( 'pre_get_posts', 'wp_rig_custom_archive_query' );
 
 /**
- * Add the template redirect
- *
- * @param [type] $template Redirect.
- * @return void
- */
+* Add the template redirect
+*
+* @param [type] $template Redirect.
+* @return void
+*/
 function wp_rig_custom_archive_template( $template ) {
 	$cpts = array( 'press_release', 'news' );
 	if ( is_post_type_archive( $cpts ) ) {
@@ -325,12 +325,38 @@ function wp_rig_custom_archive_template( $template ) {
 }
 add_filter( 'template_include', 'wp_rig_custom_archive_template' );
 
+// Allow webp image uploads
+// https://preventdirectaccess.com/how-to-upload-webp-image-in-wordpress/#:~:text=How%20To%20Upload%20WebP%20Image,them%20anywhere%20in%20your%20content
+function webp_upload_mimes( $existing_mimes ) {
+	// add webp to the list of mime types
+	$existing_mimes['webp'] = 'image/webp';
+	// return the array back to the function with our added mime type
+	return $existing_mimes;
+}
+add_filter( 'mime_types', 'webp_upload_mimes' );
+//** * Enable preview / thumbnail for webp image files.*/
+function webp_is_displayable($result, $path) {
+	if ($result === false) {
+		$displayable_image_types = array( IMAGETYPE_WEBP );
+		$info = @getimagesize( $path );
+		if (empty($info)) {
+			$result = false;
+		} elseif (!in_array($info[2], $displayable_image_types)) {
+			$result = false;
+		} else {
+			$result = true;
+		}
+	}
+	return $result;
+}
+add_filter('file_is_displayable_image', 'webp_is_displayable', 10, 2);
+
 // GETTING YOUR SCRIPT HANDLES:
 // https://wpshout.com/defer-parsing-javascript-wordpress/.
 // add_action( 'wp_print_styles', 'wsds_detect_enqueued_scripts' );
 // function wsds_detect_enqueued_scripts() {
-// 	global $wp_styles;
-// 	foreach( $wp_styles->queue as $handle ) :
-// 		echo $handle . ' | ';
-// 	endforeach;
-// }
+	// 	global $wp_styles;
+	// 	foreach( $wp_styles->queue as $handle ) :
+		// 		echo $handle . ' | ';
+		// 	endforeach;
+		// }

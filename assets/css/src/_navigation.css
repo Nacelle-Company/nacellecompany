@@ -47,11 +47,13 @@
 
 .main-navigation__wrap {
 	order: 2;
+	flex: 0 0 190px;
 
 	@media (--sidebar-query) {
 		display: flex;
 		flex-wrap: wrap;
 		order: 1;
+		flex: unset;
 	}
 }
 
@@ -133,10 +135,9 @@
 	}
 
 	@media (--sidebar-query) {
-		flex: initial;
+		flex: 0 1 175px;
 	}
 }
-
 
 /*--------------------------------------------------------------
 ## Basic navigation menus - handles submenu and small screen toggle
@@ -150,7 +151,9 @@
 		display: none;
 	}
 
-	&.nav--toggled-on { /* hamburger is active */
+	&.nav--toggled-on {
+
+		/* hamburger is active */
 
 		& .mobile-menu-container {
 			z-index: 99999;
@@ -187,7 +190,9 @@
 	}
 }
 
-.mobile-menu-container { /* mobile menu container */
+.mobile-menu-container {
+
+	/* mobile menu container */
 	position: absolute;
 	background: var(--global-color-dark);
 	width: 100vw;
@@ -342,7 +347,6 @@
 
 		@media (--sidebar-query) {
 			max-width: 100%;
-
 		}
 
 		@media (--sidebar-query) {

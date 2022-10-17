@@ -16,7 +16,7 @@ $colon = ": ";
 		<h3 class="sub h6" style="margin-bottom: 0;font-weight: 100;">
 			<?php echo esc_html($the_title); ?>
 		</h3>
-		<h2 style="margin: 0;">CREDITS</h2>
+		<h4 class="h2" style="margin: 0;">CREDITS</h4>
 	</div>
 <?php else : ?>
 	<h2 class="crew-title">CREDITS</h2>

@@ -13,7 +13,7 @@ $border        = get_post_meta( get_the_ID(), 'layouts_' . $count . '_border', t
 $flip          = get_post_meta( get_the_ID(), 'layouts_' . $count . '_flip', true );
 $txt           = get_post_meta( get_the_ID(), 'layouts_' . $count . '_txt', true );
 $img           = get_post_meta( get_the_ID(), 'layouts_' . $count . '_img', true );
-$img_large     = wp_get_attachment_image( $img, 'large', array( 'class' => 'grid-item__img' ) );
+$img_large     = wp_get_attachment_image( $img, 'medium_large', array( 'class' => 'grid-item__img' ) );
 $img_full      = wp_get_attachment_image( $img, 'full', array( 'class' => 'grid-item__img' ) );
 $img_fill      = get_post_meta( get_the_ID(), 'layouts_' . $count . '_fill_img', true );
 $img_width     = get_post_meta( get_the_ID(), 'layouts_' . $count . '_img_width', true );

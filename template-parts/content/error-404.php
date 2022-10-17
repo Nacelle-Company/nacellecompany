@@ -10,7 +10,7 @@ namespace WP_Rig\WP_Rig;
 wp_rig()->print_styles( 'wp-rig-page' );
 ?>
 <section class="error site-main__content-width">
-	<img src="<?php bloginfo( 'template_directory' ); ?>/assets/images/bamford-is-sad-you-are-on-404-page.png" class="img-404" alt="404 image" />
+	<img src="<?php bloginfo( 'template_directory' ); ?>/assets/images/bamford-is-sad-you-are-on-404-page.webp" class="img-404" alt="404 image" />
 	<?php get_template_part( 'template-parts/content/page_header' ); ?>
 
 	<div class="page-content entry-content content-width">

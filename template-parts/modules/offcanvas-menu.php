@@ -13,7 +13,7 @@ $sf_current_query = $searchandfilter->get( 46579 )->current_query();
 
 <span id="offcanvasToggle" class="offcanvas-toggle" onclick="openOffcanvas()" style="cursor:pointer" title="Offcanvas sort & filter menu">
 	&#9776;
-	<span class="offcanvas-toggle_title">
+	<h3 class="offcanvas-toggle_title">
 		<?php
 		echo esc_html__( 'Sort & Filter', 'wp-rig' );
 		if ( $sf_current_query->is_filtered() ) :
@@ -22,7 +22,7 @@ $sf_current_query = $searchandfilter->get( 46579 )->current_query();
 			<?php
 		endif;
 		?>
-	</span>
+	</h3>
 </span>
 <div id="offcanvasMenu" class="offcanvas-menu">
 	<a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>

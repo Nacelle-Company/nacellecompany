@@ -37,10 +37,10 @@ if ( $content_acf ) {
 }
 global $count_cat;
 if ( $count_cat <= 9 ) {
-	$no_lazy_class  = ' no-lazy';
+	$lazy_load  = 'eager';
 	$fetch_priority = 'high';
 } else {
-	$no_lazy_class  = '';
+	$lazy_load  = 'lazy';
 	$fetch_priority = 'low';
 }
 
@@ -75,8 +75,8 @@ if ( ! empty( $img ) ) {
 	?>
 
 	<?php if ( $img_src ) { ?>
-				<img class="catalog-card__img<?php echo esc_html( $no_lazy_class ); ?>"
-					loading="lazy"
+				<img class="catalog-card__img"
+					loading="<?php echo esc_html( $lazy_load ); ?>"
 					width="<?php echo esc_html( $width ); ?>"
 					height="<?php echo esc_html( $height ); ?>"
 					src="<?php echo esc_url( $img_src[0] ); ?>"

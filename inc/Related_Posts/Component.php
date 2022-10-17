@@ -95,7 +95,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			<!-- Wrapper and header -->
 			<div class="post-footer__related grid">
 				<header class="title">
-					<h2>RELATED</h2>
+					<h2 class="sub">RELATED</h2>
 				</header>
 				<?php
 				if ( $press_query->have_posts() ) :
@@ -112,9 +112,9 @@ class Component implements Component_Interface, Templating_Component_Interface {
 							$the_post_type = strtoupper( $the_post_type->labels->singular_name );
 							?>
 							<?php if ( 1 === $count ) : ?>
-								<h4 class="related-posts__title">
+								<h5 class="h2 related-posts__title">
 									<?php echo esc_html( $the_post_type ); ?>
-								</h4>
+								</h5>
 								<?php
 							endif; // ? CARDS
 							?>
@@ -140,9 +140,9 @@ class Component implements Component_Interface, Templating_Component_Interface {
 							$the_post_type = strtoupper( $the_post_type->labels->singular_name );
 							?>
 							<?php if ( 1 === $count ) : ?>
-								<h4 class="related-posts__title">
+								<h5 class="h2 related-posts__title">
 									<?php echo esc_html( $the_post_type ); ?>
-								</h4>
+								</h5>
 								<?php
 							endif; // ? CARDS
 							?>
@@ -158,9 +158,9 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				if ( ! is_singular( 'catalog' ) ) {
 					?>
 					<div class="related-posts__wrap">
-						<h4 class="related-posts__title">
+						<h5 class="h2 related-posts__title">
 							<?php echo esc_html( 'FEATURED TALENT' ); ?>
-						</h4>
+						</h5>
 						<?php
 						foreach ( $ids as $post ) {
 							$the_terms = get_field( 'talent' );

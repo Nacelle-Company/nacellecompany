@@ -62,7 +62,7 @@ if ( $feat_img_row_h ) {
 	the_post_thumbnail(
 		'full',
 		array(
-			'class' => 'banner__feat-img',
+			'class' => 'banner__feat-img no-lazy',
 			'title' => 'Feature image',
 		)
 	);
