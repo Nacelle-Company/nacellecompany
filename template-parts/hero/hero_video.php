@@ -43,7 +43,15 @@ if ( ! empty( $hero_video ) ) :
 
 				<div class="entry-header__video" id="entry_header_video" onclick="jQuery('#hero_video_<?php echo esc_html( $queried_id ); ?>').YTPToggleVolume()"></div>
 			</div>
-			<?php the_post_thumbnail( 'medium_large', array( 'class' => 'attachment-medium_large size-medium_large wp-post-image no-lazy video-cover__img', 'id' => 'video_cover_img' ) ); ?>
+			<?php the_post_thumbnail(
+				'medium_large',
+				array(
+					'class' => 'attachment-medium_large size-medium_large wp-post-image no-lazy video-cover__img',
+					'id' => 'video_cover_img',
+					'fetchpriority' => 'high',
+					'loading'       => 'auto',
+					)
+				); ?>
 		</div>
 	</div>
 	<!-- THE player -->
