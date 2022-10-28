@@ -98,12 +98,26 @@
 	max-width: 650px;
 }
 
-.nf-field-element {
+.nf-field-container {
+	margin-bottom: 15px;
+}
+
+.nf-field-element,
+.nf-checked-label,
+.nf-field-label {
 	color: var(--global-font-color);
 }
 
-.nf-form-fields-required,
-.nf-field-label,
+.nf-before-form-content,
+.html-container {
+	margin-bottom: 0;
+}
+
+.nf-form-fields-required {
+	color: #f00;
+	font-size: var(--font-size-small);
+}
+
 .field-wrap input[type="button"] {
 	color: var(--global-font-color-inverse);
 }

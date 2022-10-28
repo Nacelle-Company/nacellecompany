@@ -25,7 +25,7 @@
 .modal-window > div {
 	width: 400px;
 	position: absolute;
-	padding: 3em 2em 2em 2em;
+	padding: 2em 3em 0 3em;
 	background: var(--border-color-light);
 }
 
@@ -85,10 +85,6 @@
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
-}
-
-.modal-window div:not(:last-of-type):not(.buttonBar) {
-	margin-bottom: 15px;
 }
 
 .embed-container {
