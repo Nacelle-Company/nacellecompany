@@ -135,7 +135,7 @@ $books_args   = array(
 						<div id="open-modal-books" class="modal-window modal-window_absolute">
 							<div>
 								<a href="#!" title="Close" class="modal-close">Close</a>
-								<?php echo do_shortcode( '[ninja_form id=4]' ); ?>
+								<?php echo do_shortcode( '[ninja_form id=2]' ); ?>
 							</div>
 						</div>
 					<?php endif;
