@@ -22,12 +22,12 @@ wp_rig()->print_styles( 'wp-rig-page' );
 		</h2>
 		<div class="button-wrap">
 			<a href="<?php bloginfo( 'url' ); ?>" class="button">
-				<span><?php esc_html( 'Home', 'wp-rig' ); ?></span>
+				<span>Home</span>
 				<?php get_template_part( 'template-parts/svg/icon', 'home' ); ?>
 			</a>
 
 			<a href="<?php bloginfo( 'url' ); ?>/catalog" class="button">
-				<span><?php esc_html( 'Catalog', 'wp-rig' ); ?></span>
+				<span>Catalog</span>
 				<?php get_template_part( 'template-parts/svg/icon', 'albums' ); ?>
 			</a>
 		</div>

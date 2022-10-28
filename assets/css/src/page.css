@@ -67,7 +67,6 @@
 	}
 }
 
-
 .error {
 	position: relative;
 
@@ -93,8 +92,8 @@
 .img-404 {
 	position: absolute;
 	right: 0;
-	bottom: 0;
-	width: 75%;
+	bottom: -16px;
+	width: 65%;
 	height: auto;
 	z-index: -1;
 
