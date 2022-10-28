@@ -16,7 +16,10 @@ $content_acf = get_post_meta( $post->ID, 'synopsis', true );
 $synopsis    = '';
 $trim_length = 17; // ? Trimming the synopsis. desired length of text to display.
 $value_more  = ' . . . '; // ? What to add at the end of the trimmed text.
-$image       = '';
+// images
+$sq_img = get_post_meta( $post->ID, 'square_image', true );
+$hz_img = get_post_meta( $post->ID, 'horizontal_image', true );
+
 $queried_id  = get_queried_object();
 if ( 'catalog' === $queried_id->name ) {
 	$obj_slug = 'catalog';
@@ -52,15 +55,20 @@ if ( 'special-production' === $obj_slug || 'series-production' === $obj_slug || 
 	$img    = get_post_meta( $post->ID, 'horizontal_image', true );
 	$width  = '320';
 	$height = '182';
-} elseif ( $obj_slug || get_search_query() ) {
+} else if ( !empty($sq_img) ) {
 	$img    = get_post_meta( $post->ID, 'square_image', true );
 	$width  = '768';
 	$height = '768';
-} else {
-	$img    = get_field( 'horizontal_image' );
+} else if ( !empty($hz_img) ) {
+	$img    = get_post_meta( $post->ID, 'horizontal_image', true );
 	$width  = '320';
 	$height = '182';
+} else {
+	$img    = get_post_thumbnail_id($post->ID);
+	$width  = '320';
+	$height = '768';
 }
+
 if ( ! empty( $img ) ) {
 	?>
 	<div class="gi">

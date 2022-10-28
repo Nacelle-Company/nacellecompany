@@ -33,11 +33,13 @@ if ( get_post_meta( get_the_ID(), 'show_video_links', true ) ) :
 			the_row();
 			$video_title = get_sub_field( 'link_title' );
 			$video_link  = get_sub_field( 'link_url' );
-			?>
+			if(!empty($video_title && $video_link)) :
+				?>
 				<a href="<?php echo esc_html( $video_link ); ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo esc_html( $video_title ); ?>" target="_blank" rel="noreferrer">
 					<strong><?php echo esc_html( $video_title ); ?></strong>
 					<?php echo file_get_contents( get_template_directory() . '/assets/images/icon-external-link.svg' ); ?>
 				</a>
+			<?php endif; ?>
 		<?php endwhile; ?>
 	<?php endif; ?>
 	</div>
@@ -52,9 +54,9 @@ if ( get_post_meta( get_the_ID(), 'show_audio_links', true ) ) :
 	<?php if ( $itunes_audio_url ) : ?>
 			<a href="<?php echo esc_attr( $itunes_audio_url ); ?>" class="button apple-link" title="Listen <?php the_title_attribute(); ?> on iTunes" target="_blank" rel="noreferrer">
 				<strong>
-		<?php esc_html_e( 'iTunes', 'wp-rig' ); ?>
+					<?php esc_html_e( 'iTunes', 'wp-rig' ); ?>
 				</strong>
-<?php echo file_get_contents( get_template_directory() . '/assets/images/icon-external-link.svg' ); ?>
+				<?php echo file_get_contents( get_template_directory() . '/assets/images/icon-external-link.svg' ); ?>
 			</a>
 	<?php endif; ?>
 	<?php if ( have_rows( 'audio_new_large_link' ) ) : ?>
@@ -63,11 +65,13 @@ if ( get_post_meta( get_the_ID(), 'show_audio_links', true ) ) :
 			the_row();
 			$audio_title = get_sub_field( 'audio_link_title' );
 			$audio_link  = get_sub_field( 'audio_link_url' );
-			?>
+			if(!empty($audio_title && $audio_link)) :
+				?>
 				<a href="<?php echo esc_html( $audio_link ); ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo esc_html( $audio_title ); ?>" target="_blank" rel="noreferrer">
 					<strong><?php echo esc_html( $audio_title ); ?></strong>
 					<?php echo file_get_contents( get_template_directory() . '/assets/images/icon-external-link.svg' ); ?>
 				</a>
+			<?php endif; ?>
 		<?php endwhile; ?>
 	<?php endif; ?>
 	</div>
