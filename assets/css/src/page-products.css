@@ -6,13 +6,12 @@
 		position: relative;
 		grid-template-columns: repeat(12, 1fr);
 	}
-
 }
 
 .product-tabs__wrap {
 
 	@media (--sidebar-query) {
-		grid-column: 2/span 2;
+		grid-column: 2 / span 2;
 	}
 }
 
@@ -33,7 +32,7 @@
 .product-tabs__content {
 
 	@media (--sidebar-query) {
-		grid-column: 4/span 8;
+		grid-column: 4 / span 8;
 	}
 }
 
@@ -55,7 +54,6 @@
 		opacity: 1;
 	}
 }
-
 
 .form-widget__wrap {
 	position: fixed;
@@ -100,10 +98,13 @@
 	max-width: 650px;
 }
 
-.nf-field-element,
+.nf-field-element {
+	color: var(--global-font-color);
+}
+
 .nf-form-fields-required,
 .nf-field-label,
-input.nf-element {
+.field-wrap input[type="button"] {
 	color: var(--global-font-color-inverse);
 }
 
