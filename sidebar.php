@@ -14,16 +14,20 @@ wp_rig()->print_styles( 'wp-rig-sidebar' );
 if ( ! wp_rig()->is_primary_sidebar_active() ) {
 	return;
 }
-
 ?>
 <aside id="secondary" class="primary-sidebar widget-area">
 	<h2 class="screen-reader-text"><?php esc_attr_e( 'Asides', 'wp-rig' ); ?></h2>
 	<?php
-		wp_rig()->display_primary_sidebar();
-		$pdf          = get_post_meta( get_the_ID(), 'pdf_download', true );
-		$stills       = get_post_meta( get_the_ID(), 'stills_download', true );
-		$pdf_title    = get_post_meta( get_the_ID(), 'pdf_title', true );
-		$stills_title = get_post_meta( get_the_ID(), 'stills_title', true );
+		if (is_single() && is_post_type('press')) {
+			wp_rig()->display_single_press_sidebar();
+		} else {
+			wp_rig()->display_primary_sidebar();
+			$pdf          = get_post_meta( get_the_ID(), 'pdf_download', true );
+			$stills       = get_post_meta( get_the_ID(), 'stills_download', true );
+			$pdf_title    = get_post_meta( get_the_ID(), 'pdf_title', true );
+			$stills_title = get_post_meta( get_the_ID(), 'stills_title', true );
+		}
+
 	?>
 		<?php if ( ! empty( $stills ) || ! empty( $pdf ) ) : ?>
 			<h4>Downloads</h4>

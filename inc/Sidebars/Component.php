@@ -27,10 +27,11 @@ use function dynamic_sidebar;
  */
 class Component implements Component_Interface, Templating_Component_Interface {
 
-	const PRIMARY_SIDEBAR_SLUG   = 'sidebar-1';
-	const SECONDARY_SIDEBAR_SLUG = 'sidebar-2';
-	const OFFCANVAS_SIDEBAR_SLUG = 'sidebar-3';
-	const FOOTER_WIDGETS_SLUG    = 'footer-widgets';
+	const PRIMARY_SIDEBAR_SLUG   	= 'sidebar-1';
+	const SECONDARY_SIDEBAR_SLUG 	= 'sidebar-2';
+	const OFFCANVAS_SIDEBAR_SLUG 	= 'sidebar-3';
+	const SINGLE_PRESS_SIDEBAR_SLUG = 'sidebar-4';
+	const FOOTER_WIDGETS_SLUG    	= 'footer-widgets';
 
 	/**
 	 * Gets the unique identifier for the theme component.
@@ -58,14 +59,16 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	 */
 	public function template_tags() : array {
 		return array(
-			'is_primary_sidebar_active'   => array( $this, 'is_primary_sidebar_active' ),
-			'display_primary_sidebar'     => array( $this, 'display_primary_sidebar' ),
-			'is_secondary_sidebar_active' => array( $this, 'is_secondary_sidebar_active' ),
-			'display_secondary_sidebar'   => array( $this, 'display_secondary_sidebar' ),
-			'is_offcanvas_sidebar_active' => array( $this, 'is_offcanvas_sidebar_active' ),
-			'display_offcanvas_sidebar'   => array( $this, 'display_offcanvas_sidebar' ),
-			'is_footer_widgets_active'    => array( $this, 'is_footer_widgets_active' ),
-			'display_footer_widgets'      => array( $this, 'display_footer_widgets' ),
+			'is_primary_sidebar_active'   		=> array( $this, 'is_primary_sidebar_active' ),
+			'display_primary_sidebar'     		=> array( $this, 'display_primary_sidebar' ),
+			'is_single_press_sidebar_active'	=> array( $this, 'is_single_press_sidebar_active' ),
+			'display_single_press_sidebar'		=> array( $this, 'display_single_press_sidebar' ),
+			'is_secondary_sidebar_active' 		=> array( $this, 'is_secondary_sidebar_active' ),
+			'display_secondary_sidebar'   		=> array( $this, 'display_secondary_sidebar' ),
+			'is_offcanvas_sidebar_active' 		=> array( $this, 'is_offcanvas_sidebar_active' ),
+			'display_offcanvas_sidebar'   		=> array( $this, 'display_offcanvas_sidebar' ),
+			'is_footer_widgets_active'    		=> array( $this, 'is_footer_widgets_active' ),
+			'display_footer_widgets'      		=> array( $this, 'display_footer_widgets' ),
 		);
 	}
 
@@ -77,6 +80,17 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			array(
 				'name'          => esc_html__( 'Primary Sidebar', 'wp-rig' ),
 				'id'            => static::PRIMARY_SIDEBAR_SLUG,
+				'description'   => esc_html__( 'Add widgets here.', 'wp-rig' ),
+				'before_widget' => '<section id="%1$s" class="widget %2$s">',
+				'after_widget'  => '</section>',
+				'before_title'  => '<h3 class="widget-title">',
+				'after_title'   => '</h3>',
+			)
+		);
+		register_sidebar(
+			array(
+				'name'          => esc_html__( 'Single Press Sidebar', 'wp-rig' ),
+				'id'            => static::SINGLE_PRESS_SIDEBAR_SLUG,
 				'description'   => esc_html__( 'Add widgets here.', 'wp-rig' ),
 				'before_widget' => '<section id="%1$s" class="widget %2$s">',
 				'after_widget'  => '</section>',
@@ -150,6 +164,22 @@ class Component implements Component_Interface, Templating_Component_Interface {
 	 */
 	public function display_primary_sidebar() {
 		dynamic_sidebar( static::PRIMARY_SIDEBAR_SLUG );
+	}
+
+		/**
+	 * Checks whether the primary sidebar is active.
+	 *
+	 * @return bool True if the primary sidebar is active, false otherwise.
+	 */
+	public function is_single_press_sidebar_active() : bool {
+		return (bool) is_active_sidebar( static::SINGLE_PRESS_SIDEBAR_SLUG );
+	}
+
+	/**
+	 * Displays the primary sidebar.
+	 */
+	public function display_single_press_sidebar() {
+		dynamic_sidebar( static::SINGLE_PRESS_SIDEBAR_SLUG );
 	}
 
 	/**

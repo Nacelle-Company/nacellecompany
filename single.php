@@ -28,5 +28,5 @@ get_template_part( 'template-parts/content/page_header' );
 		?>
 	</main>
 <?php
-get_sidebar();
+get_sidebar('Offcanvas Sidebar');
 get_footer();
