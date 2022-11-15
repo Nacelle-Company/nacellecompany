@@ -49,12 +49,15 @@ wp_rig()->print_styles( 'wp-rig-footer-widgets' );
 			jQuery(function() {
 				jQuery("#hero_video__desktop_<?php echo esc_html( $queried_id ); ?>").YTPlayer();
 			});
-			jQuery(function(){
-				jQuery("#feat_modal_vid_one").YTPlayer();
-			});
-			jQuery(function(){
-				jQuery("#feat_modal_vid_two").YTPlayer();
-			});
+		</script>
+	<?php elseif(is_front_page()) : ?>
+		<script type="text/javascript" >
+		jQuery(function(){
+			jQuery("#feat_modal_vid_one").YTPlayer();
+		});
+		jQuery(function(){
+			jQuery("#feat_modal_vid_two").YTPlayer();
+		});
 		</script>
 	<?php endif; ?>
 	<script type="text/javascript">
