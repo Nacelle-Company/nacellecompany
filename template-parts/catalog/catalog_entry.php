@@ -15,7 +15,7 @@ $imdbv            = get_post_meta( get_the_ID(), 'imdb_video', true );
 $review_shortcode = get_post_meta( get_the_ID(), 'review_shortcode', true );
 $video_class      = '';
 $itunes_url       = '';
-
+$title			  = the_title('','',false);
 if ( ! empty( $video_embedd ) ) :
 	$video_class = ' video';
 endif;
@@ -64,6 +64,7 @@ endif;
 							'class'         => 'attachment-medium_large size-medium_large wp-post-image no-lazy',
 							'fetchpriority' => 'high',
 							'loading'       => 'auto',
+							'title'			=> $title,
 						)
 					);
 					?>

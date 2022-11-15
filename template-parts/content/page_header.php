@@ -167,6 +167,7 @@ if ( is_404() ) {
 			<?php
 			$the_post      = get_queried_object();
 			$the_post_type = get_post_type_object( get_post_type( $the_post ) );
+			echo file_get_contents( get_template_directory() . '/assets/images/icon-' . $the_post_type->name . '.svg' );
 			if ( $the_post_type ) {
 				echo esc_html( $the_post_type->labels->singular_name );
 			}
@@ -178,7 +179,6 @@ if ( is_404() ) {
 } elseif ( is_search() ) {
 	?>
 	<header class="page-header">
-		<h2>is_search!!!</h2>
 		<h1 class="page-title h2">
 			<?php
 			printf(
