@@ -104,7 +104,7 @@ wp_rig()->print_styles( 'wp-rig-page-home-cd' );
 							<!-- modal one -->
 							<div id="open-modal-one" class="modal-window modal-window_large">
 								<div class="modal-content">
-									<a href="#!" title="Close" class="modal-close" onclick="jQuery('#feat_modal_vid_one').YTPPause()"><?php echo file_get_contents( get_theme_file_path() . '/assets/images/close-icon.svg' ); ?></a>
+									<a href="#!" title="Close" class="modal-close" onclick="jQuery('#feat_modal_vid_one').YTPPause()"><?php echo file_get_contents( get_theme_file_path() . '/assets/images/icon-close.svg' ); ?></a>
 									<figure>
 										<?php if ( $hero_video ) : ?>
 										<div id="feat_modal_vid_one" class="player" data-property="{videoURL:'<?php echo esc_html( $hero_video ); ?>',containment:'self', abundance: 0, autoPlay:false, showYTLogo:true, mute:false, startAt:0, opacity:1}"></div>
