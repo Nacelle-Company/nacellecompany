@@ -24,7 +24,7 @@ $hero_video_settings = "
 	useOnMobile: true,
 	optimizedDisplay:true,
 	abundance:0.01,
-	anchor: 'center,center',
+	anchor: 'top,center',
 	playOnlyIfVisible:true,
 	stopMovieOnBlur:true
 ";

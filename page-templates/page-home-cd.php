@@ -90,7 +90,8 @@ wp_rig()->print_styles( 'wp-rig-page-home-cd' );
 											<?php
 										endif;
 										?>
-										<?php get_template_part( 'template-parts/svg/icon-play' ); ?>
+										<div class="trailer-overlay"></div>
+										<?php echo file_get_contents( get_template_directory() . '/assets/images/icon-play.svg' ); ?>
 									</a>
 									<figcaption class="caption caption__press">
 										<p>
@@ -152,7 +153,8 @@ wp_rig()->print_styles( 'wp-rig-page-home-cd' );
 											<?php
 										endif;
 										?>
-										<?php get_template_part( 'template-parts/svg/icon-play' ); ?>
+										<div class="trailer-overlay"></div>
+										<?php echo file_get_contents( get_template_directory() . '/assets/images/icon-play.svg' ); ?>
 									</a>
 									<figcaption class="caption caption__press">
 										<p>
