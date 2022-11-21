@@ -26,7 +26,16 @@
 		}
 	}
 }
-
+.trailer-overlay {
+	background: #000000a3;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	transition: background 0.1s linear;
+}
+.open-modal:hover .trailer-overlay {
+	background: #00000082;
+}
 .icon-play {
 	position: absolute;
 	justify-self: center;
