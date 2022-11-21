@@ -181,6 +181,7 @@ dt {
 dd {
 	margin-left: 50%;
 	margin-bottom: 1em;
+	font-size: var(--font-size-small);
 }
 
 dd::after {

@@ -490,7 +490,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		}
 
 		$google_fonts = array(
-			'Montserrat' => array( '100', '400', '700', '900' ),
+			'Montserrat' => array( '400', '700', '900' ),
 		);
 
 		/**

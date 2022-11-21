@@ -161,17 +161,19 @@ if ( is_404() ) {
 	</header>
 	<?php
 } elseif ( is_singular() ) {
+	$the_post      = get_queried_object();
+	$the_post_type = get_post_type_object( get_post_type( $the_post ) );
 	?>
 	<header class="page-header">
 		<h2 class="page-title h1">
+			<a href="/<?php echo esc_html( strtolower($the_post_type->labels->singular_name) ); ?>">
 			<?php
-			$the_post      = get_queried_object();
-			$the_post_type = get_post_type_object( get_post_type( $the_post ) );
 			echo file_get_contents( get_template_directory() . '/assets/images/icon-' . $the_post_type->name . '.svg' );
 			if ( $the_post_type ) {
 				echo esc_html( $the_post_type->labels->singular_name );
 			}
 			?>
+			</a>
 		</h2>
 		<span class="page-header__line"><hr></span>
 	</header>
