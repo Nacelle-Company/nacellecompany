@@ -103,9 +103,10 @@ select {
 	color: var(--global-font-color-inverse);
 	border: 1px solid var(--border-color-light);
 	border-radius: 2px;
-	max-width: 170px;
 	height: 28px;
 	padding: 0 0 0 10px;
+	width: 200px;
+    max-width: 200px;
 }
 
 :root {
@@ -147,6 +148,9 @@ textarea:focus {
 input:not(textarea) {
 	line-height: 1;
 	height: 2.25rem;
+	@media (--content-query) {
+		max-width: 200px;
+	}
 }
 
 input[type="file"] {

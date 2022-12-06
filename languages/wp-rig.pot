@@ -44,7 +44,7 @@ msgstr ""
 msgid "Team"
 msgstr ""
 
-#: sidebar.php:20
+#: sidebar.php:19
 msgid "Asides"
 msgstr ""
 
@@ -236,23 +236,27 @@ msgstr ""
 msgid "Invalid theme JS handle: %s"
 msgstr ""
 
-#: inc/Sidebars/Component.php:78
+#: inc/Sidebars/Component.php:81
 msgid "Primary Sidebar"
 msgstr ""
 
-#: inc/Sidebars/Component.php:80, inc/Sidebars/Component.php:91, inc/Sidebars/Component.php:102, inc/Sidebars/Component.php:113
+#: inc/Sidebars/Component.php:83, inc/Sidebars/Component.php:94, inc/Sidebars/Component.php:105, inc/Sidebars/Component.php:116, inc/Sidebars/Component.php:127
 msgid "Add widgets here."
 msgstr ""
 
-#: inc/Sidebars/Component.php:89
+#: inc/Sidebars/Component.php:92
+msgid "Single Press Sidebar"
+msgstr ""
+
+#: inc/Sidebars/Component.php:103
 msgid "Search Sidebar"
 msgstr ""
 
-#: inc/Sidebars/Component.php:100
+#: inc/Sidebars/Component.php:114
 msgid "Offcanvas Sidebar"
 msgstr ""
 
-#: inc/Sidebars/Component.php:111
+#: inc/Sidebars/Component.php:125
 msgid "Footer widgets"
 msgstr ""
 
@@ -374,17 +378,16 @@ msgstr ""
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
 
-#: template-parts/content/page_header.php:43
+#: template-parts/content/page_header.php:71
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
-#: template-parts/content/page_header.php:80
+#: template-parts/content/page_header.php:155
 msgid "Nothing Found"
 msgstr ""
 
 #. translators: %s: search query
-#. translators: %s: search query
-#: template-parts/content/page_header.php:114, template-parts/content/page_header.php:186
+#: template-parts/content/page_header.php:213
 msgid "Search Results for: %s"
 msgstr ""
 
@@ -418,16 +421,8 @@ msgstr ""
 msgid "Sort & Filter"
 msgstr ""
 
-#: template-parts/catalog/parts/catalog_buttons.php:20
-msgid "Watch Now"
-msgstr ""
-
-#: template-parts/catalog/parts/catalog_buttons.php:25
+#: template-parts/catalog/parts/catalog_buttons.php:27
 msgid "Apple TV"
-msgstr ""
-
-#: template-parts/catalog/parts/catalog_buttons.php:50
-msgid "Listen Now"
 msgstr ""
 
 #: template-parts/catalog/parts/catalog_buttons.php:55
