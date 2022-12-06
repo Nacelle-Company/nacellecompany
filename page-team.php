@@ -12,7 +12,7 @@ namespace WP_Rig\WP_Rig;
 get_header();
 wp_rig()->print_styles( 'wp-rig-page' );
 wp_rig()->print_styles( 'wp-rig-page-team' );
-get_template_part( 'template-parts/content/page_header' );
+get_template_part( 'template-parts/header/page_header' );
 
 ?>
 <main id="primary" class="site-main site-main__team">

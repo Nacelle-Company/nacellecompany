@@ -23,7 +23,7 @@ if ( 'news' === $current_post_type || 'press_release' === $current_post_type || 
 	$main_class = 'site-main';
 }
 
-get_template_part( 'template-parts/content/page_header' );
+get_template_part( 'template-parts/header/page_header' );
 
 ?>
 	<main id="primary" class="<?php echo esc_html( $main_class ); ?>">

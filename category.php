@@ -23,7 +23,7 @@ $sf_current_query = $searchandfilter->get( 46579 )->current_query();
 	<main id="primary" class="site-main site-main__catalog">
 		<?php
 		if ( have_posts() ) {
-			get_template_part( 'template-parts/content/page_header' );
+			get_template_part( 'template-parts/header/page_header' );
 			$count_cat = 0;
 			while ( have_posts() ) {
 				the_post();
@@ -36,7 +36,7 @@ $sf_current_query = $searchandfilter->get( 46579 )->current_query();
 		}
 		// Pagination.
 		// wp_rig()->print_styles( 'wp-rig-pagination-archive' );
-		// get_template_part( 'template-parts/content/pagination' );
+		// get_template_part( 'template-parts/nav/pagination' );
 					wp_rig()->print_styles( 'wp-rig-pagination-archive' );
 			wp_rig()->display_pagination_archive( $obj_slug );
 		?>

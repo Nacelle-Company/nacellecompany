@@ -21,7 +21,7 @@ wp_rig()->print_styles( 'wp-rig-content' );
 		<?php
 		if ( have_posts() ) {
 
-			get_template_part( 'template-parts/content/page_header' );
+			get_template_part( 'template-parts/header/page_header' );
 
 			while ( have_posts() ) {
 				the_post();
@@ -29,7 +29,7 @@ wp_rig()->print_styles( 'wp-rig-content' );
 				get_template_part( 'template-parts/content/entry', get_post_type() );
 			}
 
-			get_template_part( 'template-parts/content/pagination' );
+			get_template_part( 'template-parts/nav/pagination' );
 		} else {
 			get_template_part( 'template-parts/content/error' );
 		}

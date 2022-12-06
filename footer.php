@@ -18,7 +18,6 @@ wp_rig()->print_styles( 'wp-rig-footer-widgets' );
 
 ?>
 <footer id="colophon" class="site-footer">
-	<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 	<?php if ( is_single() && 'catalog' == get_post_type() && !empty( $hero_video ) ) : ?>
 		<?php wp_rig()->print_scripts( 'wp-rig-lite-youtube' ); ?>
 		<script type="text/javascript" id="hero_video_script">

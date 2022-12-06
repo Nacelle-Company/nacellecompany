@@ -19,5 +19,8 @@
         "intelephense.environment.includePaths": [
             "/Users/lukey/Sites/nacelle/app/public"
         ],
+		"editor.codeActionsOnSave": {
+			"source.fixAll": true
+		}
     }
 }

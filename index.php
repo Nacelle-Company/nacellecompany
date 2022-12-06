@@ -22,7 +22,7 @@ $queried_obj       = get_queried_object();
 $queried_id        = get_queried_object_id();
 $obj_slug          = $queried_obj->name;
 
-get_template_part( 'template-parts/content/page_header' ); // ? PAGE HEADER
+get_template_part( 'template-parts/header/page_header' ); // ? PAGE HEADER
 
 ?>
 	<main id="primary" class="site-main<?php echo esc_html( $post_class ); ?>">

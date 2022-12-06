@@ -15,7 +15,7 @@ get_header();
 $sf_current_query = $searchandfilter->get( 46579 )->current_query();
 
 wp_rig()->print_styles( 'wp-rig-archive' );
-get_template_part( 'template-parts/content/page_header' );
+get_template_part( 'template-parts/header/page_header' );
 
 ?>
 	<main id="primary" class="site-main site-main__catalog">
@@ -28,7 +28,7 @@ get_template_part( 'template-parts/content/page_header' );
 				get_template_part( 'template-parts/content/entry', get_post_type() );
 			}
 			wp_rig()->print_styles( 'wp-rig-pagination-archive' );
-			get_template_part( 'template-parts/content/pagination' );
+			get_template_part( 'template-parts/nav/pagination' );
 		} else {
 			get_template_part( 'template-parts/content/error' );
 		}

@@ -72,13 +72,13 @@ $critical_css = $filesystem->get_contents( $critical_css );
 	<header id="masthead" class="site-header<?php echo esc_attr( $front_page_class ); ?><?php echo esc_attr( $has_video_class ); ?>">
 		<div class="main-navigation__wrap">
 			<?php
-				get_template_part( 'template-parts/header/branding' );
-				get_template_part( 'template-parts/header/navigation_primary' );
+				get_template_part( 'template-parts/nav/branding' );
+				get_template_part( 'template-parts/nav/navigation_primary' );
 			?>
 		</div>
 		<?php
-		get_template_part( 'template-parts/header/navigation_secondary' );
-		get_template_part( 'template-parts/header/navigation_mobile' );
+		get_template_part( 'template-parts/nav/navigation_secondary' );
+		get_template_part( 'template-parts/nav/navigation_mobile' );
 		?>
 		<div class="mobile-menu__search">
 			<?php echo do_shortcode( '[wpdreams_ajaxsearchpro id=2]' ); ?>

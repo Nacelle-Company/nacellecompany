@@ -13,11 +13,10 @@ global $searchandfilter;
 $sf_catalog_query	= $searchandfilter->get( 46579 )->current_query();
 $sf_press_query		= $searchandfilter->get( 47395 )->current_query();
 $queried_obj		= get_queried_object();
-
 $post_name = $queried_obj->labels->singular_name;
-
 $search_filter_or_catalog 	= false;
 $cat_name					= $queried_obj->name;
+
 
 $args = array(
 	"str" 				=> '%1$s: %2$s',
@@ -32,6 +31,16 @@ $name_only_args = array(
 	"show_all_if_empty"	=> false
 );
 $category_name = 'series';
+
+
+	if ($sf_catalog_query->is_filtered()) :
+		echo 'is_filtered = TRUE';
+		if (is_category()) :
+			echo 'poop<pre>';
+			var_dump( get_post_taxonomies('category') );
+			echo '</pre>';
+		endif;
+	endif;
 
 if ( str_contains( $cat_name, 'catalog' ) ) {
 	$category_name = 'series';
