@@ -52,6 +52,7 @@
 	}
 }
 .page-title_meta-title {
+	text-transform: uppercase;
 	color: var(--color-theme-secondary);
 }
 /*--------------------------------------------------------------

@@ -7,6 +7,11 @@
 
 namespace WP_Rig\WP_Rig;
 
+global $searchandfilter;
+global $sf_catalog_query;
+
+$sf_catalog_query = $searchandfilter->get(46579)->current_query();
+
 $the_title  = get_the_title();
 $permalink  = get_permalink();
 $content_wp = get_the_content();
@@ -21,7 +26,11 @@ $sq_img = get_post_meta( $post->ID, 'square_image', true );
 $hz_img = get_post_meta( $post->ID, 'horizontal_image', true );
 
 $queried_id  = get_queried_object();
-if ( 'catalog' === $queried_id->name ) {
+if ($sf_catalog_query->is_filtered()) {
+	$obj_slug = 'catalog';
+} elseif ( is_post_type('catalog') ) {
+	$obj_slug = 'catalog';
+} elseif ( 'catalog' === $queried_id->name ) {
 	$obj_slug = 'catalog';
 } else {
 	$obj_slug = $queried_id->slug;

@@ -168,12 +168,12 @@
 	background: #eaeaea;
 }
 
-/* stylelint-disable */
+
 .widget_calendar a {
 	font-weight: 900;
 	text-decoration: none;
 }
-/* stylelint-enable */
+
 
 /* Text widget */
 .textwidget {

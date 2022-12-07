@@ -3,8 +3,8 @@
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
-/* stylelint-disable */
-/* stylelint-enable */
+
+
 body,
 button,
 input,
@@ -96,7 +96,7 @@ address {
 	margin: 0 0 1.5em;
 }
 
-/* stylelint-disable */
+
 pre {
 	background: #696969;
 	color: rgb(199, 199, 199);
@@ -109,7 +109,7 @@ pre {
 	padding: 1.5em;
 	overflow: visible;
 }
-/* stylelint-enable */
+
 
 code,
 kbd,

@@ -12,10 +12,6 @@ global $searchandfilter;
 $sf_catalog_query = $searchandfilter->get( 46579 )->current_query();
 $sf_press_query   = $searchandfilter->get( 47395 )->current_query();
 
-// echo '<pre>';
-// 	echo 'this is the page_header.php file';
-// echo '</pre>';
-
 if ( is_404() ) {
 	?>
 	<header class="page-header">
@@ -60,9 +56,9 @@ if ( is_404() ) {
 } elseif ( is_archive() ) {
 
 	if(is_post_type_archive('press') || $sf_press_query->is_filtered()) :
-		get_template_part( 'template-parts/header/page_header_press' );
+		get_template_part( 'template-parts/header/page-header_press' );
 	elseif(is_post_type_archive('catalog') || $sf_catalog_query->is_filtered()) :
-		get_template_part( 'template-parts/header/page_header_catalog' );
+		get_template_part( 'template-parts/header/page-header_catalog' );
 	elseif (is_category()) :
 		echo 'YES is_category';
 	endif;
@@ -73,7 +69,6 @@ if ( is_404() ) {
 } elseif ( is_archive() ) {
 } elseif ( is_page() ) {
 	?>
-	<pre>is_page()</pre>
 	<header class="page-header <?php echo esc_html( get_post_meta( get_the_ID(), 'hide_title', true ) ); ?>">
 		<h1 class="page-title">
 			<?php single_post_title(); ?>

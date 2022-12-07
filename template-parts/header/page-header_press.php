@@ -1,6 +1,9 @@
 <?php
 /**
- * Template part for displaying the page header of the currently displayed page
+ * Template part for displaying the page header for the
+ * press archive
+ * press single pages
+ * press filter & search pages
  *
  * @package wp_rig
  */
@@ -16,7 +19,6 @@ $filter_data    = '';
 $post_name      = 'Press';
 
 if( $sf_press_query->is_filtered() ) :
-
 	$array_data   = $sf_press_query->get_array();
 	$typeOfSearch = $array_data['_sf_sort_order']['active_terms'][0]['value'];
 	$filter_data  =  $typeOfSearch;
@@ -30,12 +32,10 @@ elseif(get_search_query()) :
 	$search_data  = ' "' . $search_query . '"';
 
 elseif ( is_post_type_archive() ) :
-	// echo 'ARCHIVE PAGE - not PRESS filter page';
 	$post_name = $queried_obj->name;
 
 elseif (is_single()) :
-	echo 'is_single()';
-	$post_name			= $queried_obj->name;
+	$post_name = $queried_obj->name;
 
 endif;
 ?>
@@ -50,6 +50,9 @@ endif;
 			<?php if($sf_press_query->is_filtered() ) : ?>
 				<span class="page-title_meta-title">Filter – </span>
 				<?php echo $filter_data; ?>
+			<?php endif; ?>
+			<?php if($sf_press_query->is_filtered() && get_search_query()) : ?>
+				<span>|</span>
 			<?php endif; ?>
 			<?php if( get_search_query() ) : ?>
 				<span class="page-title_meta-title">Search – </span>

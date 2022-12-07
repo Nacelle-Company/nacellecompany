@@ -21,7 +21,7 @@ wp_rig()->print_styles( 'wp-rig-content' );
 		<?php
 		if ( have_posts() ) {
 
-			get_template_part( 'template-parts/header/page_header' );
+			get_template_part( 'template-parts/header/page-header' );
 
 			while ( have_posts() ) {
 				the_post();

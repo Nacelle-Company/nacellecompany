@@ -92,11 +92,11 @@
 	padding-bottom: 0.5em;
 }
 
-/* stylelint-disable */
+
 .comment-content a {
 	word-wrap: break-word;
 }
-/* stylelint-enable */
+
 
 .comment-content ul,
 .comment-content ol {
@@ -175,11 +175,11 @@
 	background: hsl(0, 0%, 95%);
 }
 
-/* stylelint-disable */
+
 .comment-form a {
 	font-weight: 400;
 }
-/* stylelint-enable */
+
 
 .comment-form label {
 	width: 13em;
@@ -194,11 +194,11 @@
 	display: flex;
 }
 
-/* stylelint-disable */
+
 .comment-form .comment-form-cookies-consent input {
 	margin-top: 0.2em;
 }
-/* stylelint-enable */
+
 
 .comment-form .comment-form-cookies-consent label {
 	display: inline-block;
@@ -217,9 +217,9 @@
 	padding: 1em 0;
 }
 
-/* stylelint-disable */
+
 .pingback a {
 	font-style: italic;
 	text-decoration: none;
 }
-/* stylelint-enable */
+

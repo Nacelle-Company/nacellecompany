@@ -184,7 +184,7 @@ lite-youtube > .lty-playbtn {
 	transition: filter 0.1s cubic-bezier(0, 0, 0.2, 1);
 	border: none;
 }
-/* stylelint-disable */
+
 lite-youtube:hover > .lty-playbtn,
 lite-youtube .lty-playbtn:focus {
 	filter: none;
@@ -200,7 +200,7 @@ lite-youtube.lyt-activated > .lty-playbtn {
 	opacity: 0;
 	pointer-events: none;
 }
-/* stylelint-enable */
+
 .lyt-visually-hidden {
 	clip: rect(0 0 0 0);
 	clip-path: inset(50%);

@@ -3,8 +3,8 @@
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
-/* stylelint-disable */
-/* stylelint-enable */
+
+
 body,
 button,
 input,
@@ -37,7 +37,7 @@ i {
 	font-style: italic;
 }
 
-/* stylelint-disable */
+
 pre {
 	background: #fff;
 	color: rgb(199, 199, 199);
@@ -50,7 +50,7 @@ pre {
 	padding: 1.5em;
 	overflow: visible;
 }
-/* stylelint-enable */
+
 
 .h1 {
 	font-size: 1.5em;

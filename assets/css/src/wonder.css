@@ -1,7 +1,7 @@
 /* stylelint-disable CssSyntaxError */
 @import "_modal.css";
 
-/* stylelint-disable */
+
 
 small {
 	color: var(--color-theme-white);
@@ -152,4 +152,4 @@ small {
 .banner__feat-img {
 	min-width: 100%;
 }
-/* stylelint-enable */
+

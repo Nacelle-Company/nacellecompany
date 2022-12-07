@@ -353,11 +353,11 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					return 'page-wonder.php' === basename( $template );
 				},
 			),
-			'wp-rig-archive_catalog'       => array(
-				'file'             => 'archive_catalog.min.css',
+			'wp-rig-catalog-categories'       => array(
+				'file'             => 'catalog-categories.min.css',
 				'preload_callback' => function() {
 					global $template;
-					return array( 'archive-catalog.php', 'category.php', 'taxonomy.php' ) === basename( $template );
+					return array( 'category.php', 'taxonomy.php', 'search-catalog.php' ) === basename( $template );
 				},
 			),
 			'wp-rig-page-products'      => array(
@@ -378,7 +378,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				'file'             => 'offcanvas.min.css',
 				'preload_callback' => function() {
 					global $template;
-					return array( 'archive-catalog.php', 'category.php', 'taxonomy.php' ) === basename( $template );
+					return array( 'category.php', 'taxonomy.php', 'search-catalog.php' ) === basename( $template );
 				},
 			),
 			'wp-rig-single-catalog'     => array(

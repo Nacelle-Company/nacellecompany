@@ -19,11 +19,12 @@ $current_post_type = get_post_type();
 if ( 'press' === $current_post_type ) {
 	wp_rig()->print_styles( 'wp-rig-archive_press' );
 	$main_class = 'site-main archive-main';
-	get_template_part( 'template-parts/header/page_header_press' );
+	get_template_part( 'template-parts/header/page-header_press' );
+
 } else {
 	wp_rig()->print_styles( 'wp-rig-archive' );
 	$main_class = 'site-main';
-	get_template_part( 'template-parts/header/page_header' );
+	get_template_part( 'template-parts/header/page-header' );
 }
 
 

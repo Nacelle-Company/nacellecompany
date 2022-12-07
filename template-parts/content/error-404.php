@@ -11,7 +11,7 @@ wp_rig()->print_styles( 'wp-rig-page' );
 ?>
 <section class="error site-main__content-width">
 	<img src="<?php bloginfo( 'template_directory' ); ?>/assets/images/bamford-is-sad-you-are-on-404-page.webp" class="img-404" alt="404 image" />
-	<?php get_template_part( 'template-parts/header/page_header' ); ?>
+	<?php get_template_part( 'template-parts/header/page-header' ); ?>
 
 	<div class="page-content entry-content content-width">
 		<p>

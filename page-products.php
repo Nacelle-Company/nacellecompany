@@ -12,7 +12,7 @@ namespace WP_Rig\WP_Rig;
 get_header();
 
 wp_rig()->print_styles( 'wp-rig-page-products' );
-get_template_part( 'template-parts/header/page_header' );
+get_template_part( 'template-parts/header/page-header' );
 
 ?>
 	<main id="primary" class="site-main site-main__products">
