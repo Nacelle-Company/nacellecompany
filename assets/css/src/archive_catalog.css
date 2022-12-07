@@ -1,4 +1,6 @@
-@import "_site-main-sidebar.css";
+@import "_site-main.css";
+@import "_page-header-filters.css";
+@import "_archive_catalog_card.css";
 @import "_post-grid.css";
 @import "_forms.css";
 

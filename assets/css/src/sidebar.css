@@ -15,6 +15,7 @@
 		margin-right: auto;
 		position: sticky;
 		top: 0;
+		border-radius: var(--border-radius);
 	}
 
 	& ul {

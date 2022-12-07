@@ -14,16 +14,18 @@ global $obj_slug;
 
 get_header();
 
-wp_rig()->print_styles( 'wp-rig-archive' );
-
 $current_post_type = get_post_type();
-if ( 'news' === $current_post_type || 'press_release' === $current_post_type || 'press' === $current_post_type ) {
+
+if ( 'press' === $current_post_type ) {
+	wp_rig()->print_styles( 'wp-rig-archive_press' );
 	$main_class = 'site-main archive-main';
+	get_template_part( 'template-parts/header/page_header_press' );
 } else {
+	wp_rig()->print_styles( 'wp-rig-archive' );
 	$main_class = 'site-main';
+	get_template_part( 'template-parts/header/page_header' );
 }
 
-get_template_part( 'template-parts/header/page_header' );
 
 ?>
 	<main id="primary" class="<?php echo esc_html( $main_class ); ?>">

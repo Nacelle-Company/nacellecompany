@@ -29,7 +29,7 @@ endif;
 
 <article id="post-<?php the_ID(); ?>" class="entry catalog<?php echo esc_html( $video_class ); ?>">
 		<?php if ( $video_embedd ) : ?>
-			<?php get_template_part( 'template-parts/catalog/parts/catalog_header', get_post_type() ); ?>
+			<?php get_template_part( 'template-parts/content/entry_catalog_header', get_post_type() ); ?>
 			<div class="catalog-video">
 		<?php endif; ?>
 		<div class="entry-header<?php echo esc_html( $video_class ); ?>">
@@ -96,15 +96,15 @@ endif;
 			<?php endif; ?>
 		</div>
 		<div class="entry-main<?php echo esc_html( $video_class ); ?>">
-			<?php get_template_part( 'template-parts/catalog/parts/catalog_crew', get_post_type() ); ?>
+			<?php get_template_part( 'template-parts/content/entry_catalog_crew', get_post_type() ); ?>
 		</div>
 		<div class="entry-buttons<?php echo esc_html( $video_class ); ?>">
-			<?php get_template_part( 'template-parts/catalog/parts/catalog_buttons' ); ?>
+			<?php get_template_part( 'template-parts/content/entry_catalog_buttons' ); ?>
 		</div>
 		<?php if ( $video_embedd ) : ?>
 			</div>
 		<?php endif; ?>
-		<?php get_template_part( 'template-parts/catalog/parts/catalog_additional-content' ); ?>
+		<?php get_template_part( 'template-parts/catalog/parts/entry_catalog_additional_content' ); ?>
 </article>
 
 <footer class="post-footer post-footer__catalog">

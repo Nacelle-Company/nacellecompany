@@ -31,5 +31,5 @@ $colon = ": ";
 	<?php wp_rig()->display_tax_terms( 'writers' ); ?>
 </dl>
 <dl class="crew-list data">
-	<?php get_template_part( 'template-parts/catalog/parts/catalog_stats', get_post_type() ); ?>
+	<?php get_template_part( 'template-parts/content/entry_catalog_stats', get_post_type() ); ?>
 </dl>

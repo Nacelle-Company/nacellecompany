@@ -1,14 +1,7 @@
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
-/* stylelint-disable */
 
-/* textarea {
-	width: 100%;
-} */
-/* stylelint-enable */
-
-/* stylelint-disable */
 button:not(.dropdown-toggle),
 .button,
 input[type="button"],
@@ -16,8 +9,8 @@ input[type="reset"],
 input[type="submit"] {
 	border: 1px solid;
 	border-color: var(--color-theme-secondary) var(--color-theme-secondary)
-		var(--color-theme-secondary);
-	border-radius: 3px;
+	var(--color-theme-secondary);
+	border-radius: var(--border-radius);
 	background: transparent;
 	color: var(--global-font-color);
 	font-size: 0.75rem;
@@ -29,7 +22,6 @@ input[type="submit"] {
 		fill: var(--global-font-color);
 	}
 }
-/* stylelint-enable */
 
 button:hover,
 .button:hover,
@@ -45,17 +37,6 @@ input[type="submit"]:hover {
 		fill: var(--global-font-color-inverse);
 	}
 }
-
-/* button:active,
-button:focus,
-input[type="button"]:active,
-input[type="button"]:focus,
-input[type="reset"]:active,
-input[type="reset"]:focus,
-input[type="submit"]:active,
-input[type="submit"]:focus {
-	border-color: #aaa #bbb #bbb;
-} */
 
 input[type="text"],
 input[type="email"],
@@ -73,14 +54,10 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-	color: #fff;
-
-	/* border: 1px solid var(--border-color-light);
-	border-radius: 3px;
-	padding: 5px; */
+	color: var(--global-font-color-inverse);
 }
 
-/* input[type="text"]:focus,
+input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="url"]:focus,
 input[type="password"]:focus,
@@ -96,17 +73,14 @@ input[type="datetime"]:focus,
 input[type="datetime-local"]:focus,
 input[type="color"]:focus,
 textarea:focus {
-	color: #111;
-} */
+	color: var(--global-font-color-inverse);
+}
 
 select {
 	color: var(--global-font-color-inverse);
 	border: 1px solid var(--border-color-light);
-	border-radius: 2px;
+	border-radius: var(--border-radius);
 	height: 28px;
-	padding: 0 0 0 10px;
-	width: 200px;
-    max-width: 200px;
 }
 
 :root {
@@ -116,17 +90,24 @@ select {
 	--input-focus-l: 70%;
 }
 
-input,
+input[type="text"],
 textarea,
-input:-webkit-autofill {
-	font-size: 16px;
-	font-size: max(16px, 1em);
+input:-webkit-autofill,
+select {
 	font-family: inherit;
-	padding: 0.25em 0.5em;
-	background-color: #333 !important;
+	background-color: var(--global-color-light);
 	border: 2px solid var(--input-border);
-	border-radius: 4px;
+	height: 28px;
+	border-radius: var(--border-radius-lg);
+	padding: 0 0 0 5px;
 	transition: 180ms box-shadow ease-in-out;
+	min-width: 165px;
+    max-width: 175px;
+}
+
+input[type="text"]::placeholder,
+select {
+	color: var(--global-color-grey);
 }
 
 input:focus,
@@ -147,7 +128,6 @@ textarea:focus {
 
 input:not(textarea) {
 	line-height: 1;
-	height: 2.25rem;
 	@media (--content-query) {
 		max-width: 200px;
 	}

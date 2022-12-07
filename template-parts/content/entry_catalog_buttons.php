@@ -7,7 +7,7 @@
 
 namespace WP_Rig\WP_Rig;
 
-wp_rig()->print_styles( 'wp-rig-catalog_buttons' );
+wp_rig()->print_styles( 'wp-rig-entry_catalog_buttons' );
 ?>
 
 <?php

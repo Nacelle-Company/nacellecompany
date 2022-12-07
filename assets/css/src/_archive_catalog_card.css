@@ -1,6 +1,3 @@
-@import "_site-main.css";
-@import "_header-posts.css";
-@import "_forms.css";
 
 /* grid item's wrapper */
 .site-main__catalog {
@@ -70,7 +67,6 @@
 }
 
 /* grid item's content on hover */
-/* stylelint-disable */
 .gi a:hover .gi__content,
 .gi:hover .gi__content {
 
@@ -80,7 +76,7 @@
 		transform: translateY(100%);
 	}
 }
-/* stylelint-enable rule */
+
 .gi.distribution + .production .gi__content {
 
 	@media (--wide-menu-query) {

@@ -263,8 +263,9 @@ function wp_rig_sgo_css_combine_exclude( $exclude_list ) {
 	// Add the style handle to exclude list.
 	$exclude_list[] = 'wp-block-library';
 	$exclude_list[] = 'wp-rig-archive';
-	$exclude_list[] = 'wp-rig-card-catalog';
-	$exclude_list[] = 'wp-rig-catalog_buttons';
+	$exclude_list[] = 'wp-rig-archive_press';
+	$exclude_list[] = 'wp-rig-archive_catalog_card';
+	$exclude_list[] = 'wp-rig-entry_catalog_buttons';
 	$exclude_list[] = 'wp-rig-category';
 	$exclude_list[] = 'wp-rig-content_posts';
 	$exclude_list[] = 'wp-rig-entry-content';

@@ -79,7 +79,7 @@
 	display: grid;
 	grid-auto-flow: row;
 	background: var(--nav-bk-color);
-	border-radius: 6px;
+	border-radius: var(--border-radius-lg);
 	padding: 0 1em;
 	align-items: self-end;
 

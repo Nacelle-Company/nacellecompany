@@ -11,12 +11,8 @@
 
 namespace WP_Rig\WP_Rig;
 
-use WP_Filesystem_Direct;
-
 $blog_url     = get_bloginfo( 'url' );
-$critical_css = get_template_directory() . '/assets/css/global-min.min.css';
-$filesystem   = new WP_Filesystem_Direct( $critical_css );
-$critical_css = $filesystem->get_contents( $critical_css );
+
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?> class="no-js">
@@ -43,7 +39,6 @@ $critical_css = $filesystem->get_contents( $critical_css );
 	endif;
 	?>
 	<link rel="preload" as="image" href="<?php echo esc_url( wp_get_attachment_url( get_theme_mod( 'custom_logo' ) ) ); ?>">
-	<?php echo '<style type="text/css" id="wp_rig_critical_css">' . $critical_css . '</style>'; ?>
 </head>
 
 <body <?php body_class(); ?>>

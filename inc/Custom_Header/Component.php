@@ -68,6 +68,7 @@ class Component implements Component_Interface {
 		$nav_bk_color              = get_theme_mod( 'nav_bk_color' );
 		$global_font_color         = get_theme_mod( 'global_font_color' );
 		$global_font_color_inverse = get_theme_mod( 'global_font_color_inverse' );
+		$global_color_light        = get_theme_mod( 'global_color_light' );
 		$global_color_dark         = get_theme_mod( 'global_color_dark' );
 		$global_color_grey         = get_theme_mod( 'global_color_grey' );
 		$global_color_grey_light   = get_theme_mod( 'global_color_grey_light' );
@@ -98,6 +99,7 @@ class Component implements Component_Interface {
 	--nav-bk-color: ' . esc_attr( $nav_bk_color ) . ';
 	--global-font-color: ' . esc_attr( $global_font_color ) . ';
 	--global-font-color-inverse: ' . esc_attr( $global_font_color_inverse ) . ';
+	--global-color-light: ' . esc_attr( $global_color_light ) . ';
 	--global-color-dark: ' . esc_attr( $global_color_dark ) . ';
 	--global-color-grey: ' . esc_attr( $global_color_grey ) . ';
 	--global-color-grey-light: ' . esc_attr( $global_color_grey_light ) . ';

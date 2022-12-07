@@ -18,7 +18,7 @@ wp_rig()->print_styles( 'wp-rig-single-catalog' );
 	<?php
 	while ( have_posts() ) {
 		the_post();
-		get_template_part( 'template-parts/catalog/catalog_entry', get_post_type() );
+		get_template_part( 'template-parts/content/entry_catalog' );
 	}
 	?>
 </main>

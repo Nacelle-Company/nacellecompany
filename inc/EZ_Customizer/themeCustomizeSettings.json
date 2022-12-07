@@ -88,6 +88,15 @@
       "description": "Nacelle Company: #202020"
     },
     {
+      "id": "global_color_light",
+      "label": "Global color light",
+      "type": "color",
+      "section": "global_colors",
+      "default": "#fff",
+      "refresh": false,
+      "description": "Nacelle Company: #fff"
+    },
+    {
       "id": "global_color_dark",
       "label": "Global color dark",
       "type": "color",

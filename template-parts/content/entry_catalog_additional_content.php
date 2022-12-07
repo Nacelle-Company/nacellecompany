@@ -19,7 +19,7 @@ endif;
 if ( have_rows( 'additional_content' ) ) :
 	?>
 	<div id="additional-content" class="catalog-additional-content__wrapper<?php echo esc_html( $video_class ); ?>">
-		<?php wp_rig()->print_styles( 'wp-rig-catalog_additional-content' ); ?>
+		<?php wp_rig()->print_styles( 'wp-rig-entry_catalog_additional_content' ); ?>
 		<div class="catalog-additional-content">
 		<?php
 		while ( have_rows( 'additional_content' ) ) :

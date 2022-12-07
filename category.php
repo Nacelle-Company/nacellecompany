@@ -28,7 +28,7 @@ $sf_current_query = $searchandfilter->get( 46579 )->current_query();
 			while ( have_posts() ) {
 				the_post();
 
-				get_template_part( 'template-parts/content/entry', get_post_type() );
+				get_template_part( 'template-parts/content/entry_archive_catalog' );
 				$count_cat++;
 			}
 		} else {
