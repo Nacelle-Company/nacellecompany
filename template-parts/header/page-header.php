@@ -24,7 +24,11 @@ if ( is_404() ) {
 	?>
 	<header class="page-header">
 		<h1 class="page-title">
-			is_home() && ! have_posts()
+			<?php
+			echo '<pre>';
+			var_dump( 'is_home() && ! have_posts()' );
+			echo '</pre>';
+			?>
 			<?php esc_html_e( 'Nothing Found', 'wp-rig' ); ?>
 		</h1>
 	</header><!-- .page-header -->
@@ -33,7 +37,11 @@ if ( is_404() ) {
 	?>
 	<header class="page-header">
 		<h1 class="page-title">
-			is_home() && ! is_front_page()
+			<?php
+			echo '<pre>';
+			var_dump( 'is_home() && ! is_front_page()' );
+			echo '</pre>';
+			?>
 			<?php single_post_title(); ?>
 		</h1>
 	</header><!-- .page-header -->
@@ -42,8 +50,11 @@ if ( is_404() ) {
 	?>
 	<header class="page-header">
 		<h1 class="page-title">
-			is_search()
+
 			<?php
+			echo '<pre>';
+			var_dump( 'is_search' );
+			echo '</pre>';
 			printf(
 				/* translators: %s: search query */
 				esc_html__( 'Search Results for: %s', 'wp-rig' ),
@@ -54,19 +65,18 @@ if ( is_404() ) {
 	</header><!-- .page-header -->
 	<?php
 } elseif ( is_archive() ) {
-
 	if(is_post_type_archive('press') || $sf_press_query->is_filtered()) :
 		get_template_part( 'template-parts/header/page-header_press' );
 	elseif(is_post_type_archive('catalog') || $sf_catalog_query->is_filtered()) :
 		get_template_part( 'template-parts/header/page-header_catalog' );
 	elseif (is_category()) :
-		echo 'YES is_category';
+		echo '<pre>';
+		var_dump( 'is_archive > is_category' );
+		echo '</pre>';
 	endif;
-
 	?>
 
 	<?php
-} elseif ( is_archive() ) {
 } elseif ( is_page() ) {
 	?>
 	<header class="page-header <?php echo esc_html( get_post_meta( get_the_ID(), 'hide_title', true ) ); ?>">

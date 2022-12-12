@@ -1,3 +1,8 @@
+@import "_site-main.css";
+@import "_page-header_filters.css";
+@import "_catalog-categories_card.css";
+@import "_post-grid.css";
+@import "_forms.css";
 @import "_modal.css";
 
 .site-main__products {
@@ -11,7 +16,8 @@
 .product-tabs__wrap {
 
 	@media (--sidebar-query) {
-		grid-column: 2 / span 2;
+		grid-column: 1 / span 2;
+		padding: 0.5em 2em;
 	}
 }
 
@@ -32,7 +38,7 @@
 .product-tabs__content {
 
 	@media (--sidebar-query) {
-		grid-column: 4 / span 8;
+		grid-column: 3 / span 10;
 	}
 }
 

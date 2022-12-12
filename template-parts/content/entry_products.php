@@ -94,7 +94,7 @@ $books_args   = array(
 					$post_terms   = wp_get_object_terms( $post->ID, $the_taxonomy, array( 'fields' => 'ids' ) );
 					$separator    = '/ ';
 					if ( ! empty( $post_terms ) && ! is_wp_error( $post_terms ) ) {
-						get_template_part( 'template-parts/content/entry_catalog' );
+						get_template_part( 'template-parts/content/entry_archive_catalog' );
 					}
 				endwhile;
 			endif;
@@ -109,7 +109,7 @@ $books_args   = array(
 					$the_taxonomy = 'category';
 					$post_terms   = wp_get_object_terms( $post->ID, $the_taxonomy, array( 'fields' => 'ids' ) );
 					if ( ! empty( $post_terms ) && ! is_wp_error( $post_terms ) ) {
-						get_template_part( 'template-parts/content/entry_catalog' );
+						get_template_part( 'template-parts/content/entry_archive_catalog' );
 					}
 				endwhile;
 			endif;
@@ -125,7 +125,7 @@ $books_args   = array(
 					$the_taxonomy = 'category';
 					$post_terms   = wp_get_object_terms( $post->ID, $the_taxonomy, array( 'fields' => 'ids' ) );
 					if ( ! empty( $post_terms ) && ! is_wp_error( $post_terms ) ) {
-						get_template_part( 'template-parts/content/entry_catalog' );
+						get_template_part( 'template-parts/content/entry_archive_catalog' );
 					}
 					$count++;
 					if ($count === 1) : ?>

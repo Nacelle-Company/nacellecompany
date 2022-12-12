@@ -77,14 +77,16 @@ elseif( $sf_catalog_query->is_filtered() ) : // Get the filter terms & the sorti
 
 elseif(get_search_query()) :
 	echo 'YES search query';
-
-elseif ( is_category() ) :
+elseif ( is_category() || is_page('products') ) :
 	$category_name = $queried_obj->name;
 	$category_slug = $queried_obj->slug;
-	if ( is_category('series-production') || is_category('podcast') ) :
+	if ( is_category('series-production') ) :
 		$category_slug = 'series';
 	elseif (is_category('special-production') || is_category('production') ) :
 		$category_slug = 'special';
+	elseif (is_page('products')) :
+		$category_slug = 'film';
+		$category_name = 'Products';
 	endif;
 	$category_icon = file_get_contents( get_template_directory() . '/assets/images/icon-' . $category_slug . '.svg' );
 else :
@@ -113,9 +115,11 @@ endif;
 				</sub>
 			</div>
 		<?php endif; ?>
-		<div class="page-title__offcanvas">
-			<?php get_template_part( 'template-parts/modules/offcanvas-menu' ); ?>
-		</div>
+		<?php if( ! is_page('products')) : ?>
+			<div class="page-title__offcanvas">
+				<?php get_template_part( 'template-parts/modules/offcanvas-menu' ); ?>
+			</div>
+		<?php endif; ?>
 	</div>
 
 </header>
