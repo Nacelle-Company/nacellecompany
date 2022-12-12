@@ -76,7 +76,9 @@ elseif( $sf_catalog_query->is_filtered() ) : // Get the filter terms & the sorti
 
 
 elseif(get_search_query()) :
-	echo 'YES search query';
+	$category_name = 'Results: "' . get_search_query() . '"';
+	$category_slug = 'search';
+	$category_icon = file_get_contents( get_template_directory() . '/assets/images/icon-' . $category_slug . '.svg' );
 elseif ( is_category() || is_page('products') ) :
 	$category_name = $queried_obj->name;
 	$category_slug = $queried_obj->slug;

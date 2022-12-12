@@ -83,7 +83,10 @@
 		top: calc(100% - 20.65rem);
 	}
 }
-
+.catalog-card__img {
+	min-width: 100%;
+}
+/* NOT USED:
 .title-wrap {
 	line-height: 1.75;
 
@@ -97,11 +100,11 @@
 		align-items: center;
 	}
 
-	/* &.grid {
+	&.grid {
 		grid-template-columns: min-content auto;
 		align-items: center;
 		column-gap: 1em;
-	} */
+	}
 }
 
 .title-wrap__icon {
@@ -110,7 +113,4 @@
 	margin-bottom: 0.5em;
 
 }
-
-.catalog-card__img {
-	min-width: 100%;
-}
+*/

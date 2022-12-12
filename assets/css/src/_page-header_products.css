@@ -1,5 +1,5 @@
 /*--------------------------------------------------------------
-# _page-header-filters.css : Headers for posts and archives
+# _page-header_products.css : Headers for posts and archives
 --------------------------------------------------------------*/
 
 .page-header {
@@ -43,36 +43,3 @@
 		padding: 0.5em 2em;
 	}
 }
-
-.page-title_meta {
-	display: flex;
-	flex-flow: column wrap;
-	align-self: center;
-	& sub {
-		line-height: 1.25;
-	}
-}
-
-.page-title_meta-title {
-	text-transform: uppercase;
-	color: var(--color-theme-secondary);
-}
-
-.page-title__offcanvas {
-	position: relative;
-	justify-self: end;
-	grid-column: 3/span 1;
-}
-
-/* .entry-header__breadcrumbs {
-	font-size: var(--font-size-small);
-
-	@media (--wide-menu-query) {
-		text-align: right;
-		justify-content: flex-end;
-	}
-} */
-
-/*--------------------------------------------------------------
-#  END _page-header-filters.css
---------------------------------------------------------------*/

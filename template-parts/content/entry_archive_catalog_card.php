@@ -21,9 +21,6 @@ $content_acf = get_post_meta( $post->ID, 'synopsis', true );
 $synopsis    = '';
 $trim_length = 17; // ? Trimming the synopsis. desired length of text to display.
 $value_more  = ' . . . '; // ? What to add at the end of the trimmed text.
-// images
-$sq_img = get_post_meta( $post->ID, 'square_image', true );
-$hz_img = get_post_meta( $post->ID, 'horizontal_image', true );
 
 $queried_id  = get_queried_object();
 if ($sf_catalog_query->is_filtered()) {
@@ -60,6 +57,10 @@ if ( $count_cat <= 9 ) {
 // IMAGE WORK
 // // // // //
 
+$sq_img   = get_post_meta( $post->ID, 'square_image', true );
+$hz_img   = get_post_meta( $post->ID, 'horizontal_image', true );
+$feat_img = get_post_thumbnail_id($post->ID);
+
 if ( 'special-production' === $obj_slug || 'series-production' === $obj_slug || 'production' === $obj_slug || 'podcasts' === $obj_slug ) {
 	$img    = get_post_meta( $post->ID, 'horizontal_image', true );
 	$width  = '320';
@@ -73,7 +74,7 @@ if ( 'special-production' === $obj_slug || 'series-production' === $obj_slug || 
 	$width  = '320';
 	$height = '182';
 } else {
-	$img    = get_post_thumbnail_id($post->ID);
+	$img = $feat_img;
 	$width  = '320';
 	$height = '768';
 }
@@ -85,7 +86,6 @@ if ( ! empty( $img ) ) {
 	<?php
 		// ACF Variables.
 		// https://pixelsandthings.co.uk/srcset-images-in-wordpress-using-advanced-custom-fields/.
-
 		$img_src      = wp_get_attachment_image_src( $img, 'medium' );
 		$img_srcset   = wp_get_attachment_image_srcset( $img, 'medium' );
 		$img_alt_text = get_post_meta( $img, '_wp_attachment_image_alt', true );
