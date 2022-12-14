@@ -3,7 +3,7 @@
  * Icon on the left title on the right.
  */
 
-.icon {
+.icon:not(.icon-arrow-up) {
 	margin-right: 0.5rem;
 
 	& path {

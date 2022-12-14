@@ -4,11 +4,37 @@
  * Handles global javascript for your theme.
  */
 
-const promagnifier = document.getElementsByClassName( 'promagnifier' );
+// Search icon add SEO/accessibility attributes
+const promagnifier = document.querySelector( '.search-icon .promagnifier' );
+promagnifier.setAttribute( 'tabindex', '0' );
+promagnifier.setAttribute( 'id', 'icon_search' );
+const promagnifierText = promagnifier.querySelector( '.asp_text_button' );
+promagnifierText.setAttribute( 'aria-labelledby', 'icon_search' );
 
-for ( let i = 0; i < promagnifier.length; i++ ) {
-	promagnifier[ i ].setAttribute( 'tabindex', '0' );
-	promagnifier[ i ].setAttribute( 'id', 'Search' );
-	const promagnifierText = promagnifier[ i ].getElementsByClassName( 'asp_text_button' );
-	promagnifierText[ i ].setAttribute( 'aria-labelledby', 'Search' );
-}
+// Back to top button
+const showOnPx = 100;
+const backToTopButton = document.querySelector( '.back-to-top' );
+
+const scrollContainer = () => {
+	return document.documentElement || document.body;
+};
+
+const goToTop = () => {
+	document.body.scrollIntoView( {
+		behavior: 'smooth',
+	} );
+};
+
+document.addEventListener( 'scroll', () => {
+	// console.log( 'Scroll Height: ', scrollContainer().scrollHeight );
+	// console.log( 'Client Height: ', scrollContainer().clientHeight );
+
+	if ( scrollContainer().scrollTop > showOnPx ) {
+		backToTopButton.classList.remove( 'invisible' );
+	} else {
+		backToTopButton.classList.add( 'invisible' );
+	}
+} );
+
+backToTopButton.addEventListener( 'click', goToTop );
+// END Back to top button

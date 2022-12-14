@@ -5,14 +5,21 @@
         }
     ],
     "settings": {
-        "phpcs.enable": true,
-        "phpcs.standard": "WordPress",
-        "phpcs.executablePath": "/Users/lukey/.composer/vendor/bin/phpcs",
-        "phpcs.composerJsonPath": "/usr/local/bin/composer",
+		"phpsab.fixerEnable": true,
+		"phpsab.executablePathCBF": "/Users/lukey/wpcs/WordPress-Coding-Standards/vendor/squizlabs/php_codesniffer/bin/phpcbf",
+		"phpsab.executablePathCS": "/Users/lukey/wpcs/WordPress-Coding-Standards/vendor/squizlabs/php_codesniffer/bin/phpcs",
+		"phpsab.autoRulesetSearch": false,
+		"phpsab.standard": "WordPress",
+		"phpsab.snifferArguments": [
+			"--ignore=*/wp-admin/*,*/wp-includes/*"
+		],
         "editor.renderWhitespace": "all",
         "editor.hover.enabled": true,
 		"editor.snippetSuggestions": "top",
 		"prettier.useTabs": true,
+		"[css]": {
+			"editor.formatOnSave": true
+		},
         "stylelint.enable": true,
         "css.validate": false,
         "scss.validate": false,
@@ -21,6 +28,7 @@
         ],
 		"editor.codeActionsOnSave": {
 			"source.fixAll": true
-		}
+		},
+		"phpsab.debug": true
     }
 }

@@ -46,55 +46,6 @@
 		align-items: center;
 	}
 }
-/* .page-header {
-	margin-top: 0;
-	padding: 0 1em;
-
-	@media (--content-query) {
-		padding: 0.5em 2em;
-		grid-column: 1/-1;
-	}
-
-	& .archive-title {
-		color: var(--color-theme-primary);
-	}
-
-	& .title {
-		color: var(--color-theme-primary);
-	}
-} */
-
-/* .page-header:not(.page-header__filters) {
-
-	@media (--sidebar-query) {
-		display: grid;
-		grid-template-columns: 1fr auto 5fr 1fr;
-		align-items: center;
-	}
-
-	& .page-title {
-		text-transform: uppercase;
-
-		@media (--sidebar-query) {
-			grid-column: 2/span 1;
-		}
-	}
-
-	& .page-header__line {
-
-		@media (--sidebar-query) {
-			grid-column: 3/span 1;
-			padding-left: 2em;
-		}
-
-		& hr {
-			border-top-color: var(--color-theme-primary);
-			border-top-style: solid;
-			border-bottom-color: var(--color-theme-primary);
-		}
-	}
-} */
-
 /*--------------------------------------------------------------
 #  END _page-header.css
 --------------------------------------------------------------*/

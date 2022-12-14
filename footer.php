@@ -17,7 +17,9 @@ $hero_video = get_field( 'video_embedd' );
 wp_rig()->print_styles( 'wp-rig-footer-widgets' );
 
 ?>
+
 <footer id="colophon" class="site-footer">
+	<?php get_template_part( 'template-parts/modules/button-to-top' ); ?>
 	<?php if ( is_single() && 'catalog' == get_post_type() && !empty( $hero_video ) ) : ?>
 		<?php wp_rig()->print_scripts( 'wp-rig-lite-youtube' ); ?>
 		<script type="text/javascript" id="hero_video_script">
