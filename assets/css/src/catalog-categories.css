@@ -46,10 +46,6 @@
 	margin: 1em 0 0;
 }
 
-/* .entry-footer span {
-	margin-right: 1em;
-} */
-
 .entry-footer {
 	clear: both;
 }
@@ -59,5 +55,15 @@
 	.entry-footer {
 		padding-right: 0;
 		padding-left: 0;
+	}
+}
+
+.error {
+	padding: 0 1em;
+	@media (--wide-menu-query) {
+		grid-column: 1/span 4;
+	}
+	@media (--sidebar-query) {
+		grid-column: 1/span 5;
 	}
 }

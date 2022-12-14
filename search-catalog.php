@@ -28,7 +28,8 @@ wp_rig()->print_styles( 'wp-rig-catalog-categories' );
 
 			get_template_part( 'template-parts/nav/pagination' );
 		} else {
-			get_template_part( 'template-parts/content/error' );
+			get_template_part( 'template-parts/header/page-header_catalog' );
+			get_template_part( 'template-parts/content/error', 'catalog' );
 		}
 		?>
 	</main>

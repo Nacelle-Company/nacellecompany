@@ -22,15 +22,18 @@ $synopsis    = '';
 $trim_length = 17; // ? Trimming the synopsis. desired length of text to display.
 $value_more  = ' . . . '; // ? What to add at the end of the trimmed text.
 
-$queried_id  = get_queried_object();
-if ($sf_catalog_query->is_filtered()) {
-	$obj_slug = 'catalog';
-} elseif ( is_post_type('catalog') ) {
-	$obj_slug = 'catalog';
-} elseif ( 'catalog' === $queried_id->name ) {
-	$obj_slug = 'catalog';
-} else {
-	$obj_slug = $queried_id->slug;
+if(get_queried_object()) {
+	$queried_id  = get_queried_object();
+
+	if ($sf_catalog_query->is_filtered()) {
+		$obj_slug = 'catalog';
+	} elseif ( is_post_type('catalog') ) {
+		$obj_slug = 'catalog';
+	} elseif ( 'catalog' === $queried_id->name ) {
+		$obj_slug = 'catalog';
+	} else {
+		$obj_slug = 'special-production';
+	}
 }
 
 // Assign content if avaliable, otherwise use the synopsis acf.
@@ -61,11 +64,7 @@ $sq_img   = get_post_meta( $post->ID, 'square_image', true );
 $hz_img   = get_post_meta( $post->ID, 'horizontal_image', true );
 $feat_img = get_post_thumbnail_id($post->ID);
 
-if ( 'special-production' === $obj_slug || 'series-production' === $obj_slug || 'production' === $obj_slug || 'podcasts' === $obj_slug ) {
-	$img    = get_post_meta( $post->ID, 'horizontal_image', true );
-	$width  = '320';
-	$height = '182';
-} else if ( !empty($sq_img) ) {
+if ( !empty($sq_img) ) {
 	$img    = get_post_meta( $post->ID, 'square_image', true );
 	$width  = '768';
 	$height = '768';

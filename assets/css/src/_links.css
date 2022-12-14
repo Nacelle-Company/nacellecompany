@@ -79,6 +79,14 @@ input[type="submit"] {
 	}
 }
 
+.button-icon {
+	column-gap: 1em;
+
+	&:hover path {
+		fill: var(--global-color-dark);
+	}
+}
+
 /* Hover classes */
 .hover-brightness > div {
 

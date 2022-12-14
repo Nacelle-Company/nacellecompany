@@ -7,7 +7,6 @@
 # Page main styles
 --------------------------------------------------------------*/
 .page-header {
-	text-align: center;
 	margin-top: 0;
 	border-bottom: 2px solid var(--color-theme-primary);
 	padding: 0 1em;
@@ -16,6 +15,10 @@
 		padding: 0.5em 2em;
 		grid-column: 1/-1;
 	}
+}
+
+.page-title {
+	text-align: center;
 }
 
 .hidden {
@@ -83,7 +86,13 @@
 
 .error .button-wrap {
 	display: flex;
+	flex-flow: column wrap;
+	row-gap: 1em;
+	align-items: center;
 
+	@media (--wide-menu-query) {
+		flex-flow: row nowrap;
+	}
 	& .button {
 		margin: 0 1em;
 	}
