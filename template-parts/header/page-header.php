@@ -77,6 +77,8 @@ if ( is_404() ) {
 	?>
 
 	<?php
+} elseif(is_single()) {
+	get_template_part( 'template-parts/header/page-header_press' );
 } elseif ( is_page() ) {
 	?>
 	<header class="page-header <?php echo esc_html( get_post_meta( get_the_ID(), 'hide_title', true ) ); ?>">

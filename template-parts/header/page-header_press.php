@@ -35,7 +35,7 @@ elseif ( is_post_type_archive() ) :
 	$post_name = $queried_obj->name;
 
 elseif (is_single()) :
-	$post_name = $queried_obj->name;
+	$post_name = 'Press';
 
 endif;
 ?>
