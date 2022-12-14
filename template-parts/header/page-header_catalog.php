@@ -15,9 +15,9 @@ wp_rig()->print_styles( 'wp-rig-offcanvas' );
 
 $queried_obj      = get_queried_object();
 $sf_catalog_query = $searchandfilter->get( 46579 )->current_query();
-$category_icon    = file_get_contents( get_template_directory() . '/assets/images/icon-catalog.svg' );
-$url = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
-$sorting = false;
+$category_icon    = load_inline_svg( 'icon-catalog.svg' );
+$url              = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
+$sorting          = false;
 
 // THE IF STATEMENT TO SAVE IT ALL
 if ( is_404() ) :
@@ -60,7 +60,7 @@ elseif( $sf_catalog_query->is_filtered() || get_search_query() ) : // Get the fi
 			else :
 				$category_slug = substr($category_slug, 0, -1); // remove the ending "s"
 			endif;
-			$category_icon =  file_get_contents( get_template_directory() . '/assets/images/icon-' . $category_slug . '.svg' );
+			// $category_icon =  load_inline_svg( '/assets/images/icon-' . $category_slug . '.svg' );
 		}
 
 		// Search & filter: SORTING
@@ -72,13 +72,15 @@ elseif( $sf_catalog_query->is_filtered() || get_search_query() ) : // Get the fi
 
 		// Filter Category
 		$filter_category = $sf_catalog_query->get_fields_html(array( '_sft_category' ), $name_only_args );
+
 		if ( $filter_category ) :
 			$category_name = $filter_category;
 			$filter_query = $sf_catalog_query->get_fields_html( array( '_sft_genre', '_sft_main_talent', '_sft_producers', '_sft_directors', '_sft_writers' ), $args );
+			$category_icon = load_inline_svg( 'icon-' . strtolower( $filter_category ) . '.svg' );
 		else :
 			$filter_query = $sf_catalog_query->get_fields_html( array( '_sft_genre', '_sft_main_talent', '_sft_producers', '_sft_directors', '_sft_writers' ), $args );
 			// if we reset the form the /catalog page loads, this takes care of that.
-			$category_icon = file_get_contents( get_template_directory() . '/assets/images/icon-catalog.svg' );
+			$category_icon = load_inline_svg( 'icon-catalog.svg' );
 			$category_name = 'Catalog';
 		endif;
 	endif;
@@ -86,8 +88,7 @@ elseif( $sf_catalog_query->is_filtered() || get_search_query() ) : // Get the fi
 	// SEARCH QUERY
 	if(get_search_query()) :
 		$category_name = 'Search results';
-		$category_slug = 'search';
-		$category_icon = file_get_contents( get_template_directory() . '/assets/images/icon-' . $category_slug . '.svg' );
+		$category_icon = load_inline_svg( 'icon-search.svg' );
 		$search_query  = get_search_query();
 	endif;
 
@@ -102,7 +103,7 @@ elseif ( is_category() || is_page('products') ) :
 		$category_slug = 'film';
 		$category_name = 'Products';
 	endif;
-	$category_icon = file_get_contents( get_template_directory() . '/assets/images/icon-' . $category_slug . '.svg' );
+	$category_icon = load_inline_svg( 'icon-catalog.svg' );
 else :
 	$category_name = 'Catalog';
 endif;
@@ -142,66 +143,3 @@ endif;
 	</div>
 
 </header>
-
-<?php
-// $filter_category = $sf_catalog_query->get_fields_html(
-// 							array( '_sft_category' ),
-// 							$name_only_args
-// 						);
-// 	if ( $filter_category ) {
-// 		echo file_get_contents( get_template_directory() . '/assets/images/icon-' . $category_name . '.svg' );
-// 		echo $filter_category;
-// 	} else {
-// 		echo file_get_contents( get_template_directory() . '/assets/images/icon-series.svg' );
-// 		echo 'Catalog';
-// 	}
-
-
-/*
-	echo '<span style="color:var(--color-theme-primary);">Filter – </span>' . $sf_catalog_query->get_fields_html(
-	array( '_sft_genre', '_sft_main_talent', '_sft_producers', '_sft_directors', '_sft_writers' ),
-		$args
-	);
-*/
-/*
-	echo file_get_contents( get_template_directory() . '/assets/images/icon-' . $category_name . '.svg' );
-	if ($category_name) {
-		echo $category_name . ' ' . ucfirst($category_name);
-	} elseif ($queried_obj) {
-		echo ucfirst($queried_obj->name);
-	} else {
-		echo 'Comedy Catalog';
-	}
-*/
-/*
-	if ( str_contains( $category_name, 'catalog' ) ) {
-		$category_name = 'series';
-	} elseif ( str_contains( $category_name, 'press' ) ) {
-		$category_name = 'press';
-	} elseif ( str_contains( $queried_obj->slug, 'series' ) ) {
-		$category_name = 'series';
-	} elseif ( str_contains( $queried_obj->slug, 'special' ) || str_contains( $queried_obj->slug, 'production' ) ) {
-		$category_name = 'special';
-	} elseif ( str_contains( $queried_obj->slug, 'album' ) || str_contains( $queried_obj->slug, 'distribution' ) ) {
-		$category_name = 'album';
-	} elseif ( str_contains( $queried_obj->slug, 'film' ) ) {
-		$category_name = 'film';
-	} elseif ($sf_catalog_query->get_fields_html(array( '_sft_category' ), $args)) {
-		$sf_catalog_title = $sf_catalog_query->get_fields_html(array( '_sft_category' ), $name_only_args);
-
-		if ( ! str_contains( $sf_catalog_title, 'Series' ) ) {
-			$category_name = substr(strtolower($sf_catalog_title), 0, -1);
-
-		} else {
-			$category_name = strtolower($sf_catalog_title);
-
-		}
-
-		$icon_filter = file_get_contents( get_template_directory() . '/assets/images/icon-filter.svg' );
-
-	} else {
-		$category_name = 'series';
-
-	}
-*/
-?>

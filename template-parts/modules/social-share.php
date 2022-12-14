@@ -31,10 +31,10 @@ if ( 'catalog' === $obj_slug ) {
 	<?php endif; ?>Share <?php the_title( '<span class="hidden">', '</span>' ); ?></h2>
 	<a href="http://www.facebook.com/sharer.php?u=<?php echo wp_kses( $url, 'post' ); ?>" rel="noopener" target="_blank">
 		<span class="screen-reader-text">Share <?php echo esc_html( the_title() ); ?> on Facebook</span>
-		<?php echo file_get_contents( get_template_directory() . '/assets/images/icon-facebook.svg' ); ?>
+		<?php echo load_inline_svg( 'icon-facebook.svg' ); ?>
 	</a>
 	<a href="https://twitter.com/intent/tweet?url=https:<?php echo wp_kses( $url_full, 'post' ); ?>" data-size="large" target="_blank" rel="noopener">
 		<span class="screen-reader-text">Share <?php echo esc_html( the_title() ); ?> on Twitter</span>
-		<?php echo file_get_contents( get_template_directory() . '/assets/images/icon-twitter.svg' ); ?>
+		<?php echo load_inline_svg( 'icon-twitter.svg' ); ?>
 	</a>
 </div>

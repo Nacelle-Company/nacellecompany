@@ -127,7 +127,7 @@ style="<?php echo esc_html( $bk_color ); ?><?php echo esc_html( $border ); ?>"<?
 <?php if ( $modal_or_link ) : ?>
 	<div id="open-modal-<?php echo esc_html( $count ); ?>" class="modal-window modal-window_large">
 		<div>
-			<a href="#!" title="Close" class="modal-close"><?php echo file_get_contents( get_theme_file_path() . '/assets/svg/close-icon.svg' ); ?></a>
+			<a href="#!" title="Close" class="modal-close"><?php echo load_inline_svg( 'icon-close.svg' ); ?></a>
 			<figure>
 			<?php if ( $modal_img_url ) : ?>
 				<a href="<?php echo wp_kses( $modal_img_url, 'post' ); ?>">

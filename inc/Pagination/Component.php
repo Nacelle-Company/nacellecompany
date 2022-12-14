@@ -54,8 +54,8 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		/**
 		 * Catalog pagination
 		 */
-		$next_arrow = file_get_contents( get_template_directory() . '/assets/images/icon-arrow-right.svg' );
-		$prev_arrow = file_get_contents( get_template_directory() . '/assets/images/icon-arrow-left.svg' );
+		$next_arrow = load_inline_svg( 'icon-arrow-right.svg' );
+		$prev_arrow = load_inline_svg( 'icon-arrow-left.svg' );
 		if ( is_singular( get_post_type() ) ) {
 
 			if ( 'post' === get_post_type() || get_post_type_object( get_post_type() )->has_archive ) {

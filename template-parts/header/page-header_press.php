@@ -14,9 +14,12 @@ global $searchandfilter;
 
 $queried_obj    = get_queried_object();
 $sf_press_query = $searchandfilter->get( 47395 )->current_query();
-$press_icon     = file_get_contents( get_template_directory() . '/assets/images/icon-press.svg' );
+$press_icon     = load_inline_svg( 'icon-press.svg' );
 $filter_data    = '';
 $post_name      = 'Press';
+$obj_slug    	= $queried_obj->post_type;
+$the_post_type  = get_post_type_object( get_post_type( $queried_obj ) );
+$post_type_name = $the_post_type->labels->singular_name;
 
 if( $sf_press_query->is_filtered() ) :
 	$array_data   = $sf_press_query->get_array();
@@ -45,6 +48,10 @@ endif;
 		<?php echo $press_icon . esc_html($post_name); ?>
 	</h1>
 	<div class="page-title_meta">
+		<a href="<?php echo wp_kses( get_post_type_archive_link( $obj_slug ), 'post' ); ?>">
+			<?php echo load_inline_svg('icon-carat-left.svg'); ?>
+			<?php echo esc_html( $post_type_name ); ?> Archive
+		</a>
 		<?php if($sf_press_query->is_filtered() || get_search_query()) : ?>
 		<sub>
 			<?php if($sf_press_query->is_filtered() ) : ?>

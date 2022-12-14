@@ -37,8 +37,7 @@ endif;
 				<?php
 				// Breadcrumbs.
 				if ( function_exists( 'rank_math_the_breadcrumbs' ) ) {
-							echo file_get_contents( get_template_directory() . '/assets/images/icon-bookmark.svg' );
-
+							echo load_inline_svg( 'icon-bookmark.svg' );
 					rank_math_the_breadcrumbs();
 				}
 				?>
@@ -48,7 +47,7 @@ endif;
 			<?php if ( $imdbv ) : ?>
 				<a href="<?php echo wp_kses( $imdbv, 'post' ); ?>" class="button imdb-button" title="Watch <?php the_title_attribute(); ?> on <?php echo wp_kses( $imdbv, 'post' ); ?>" target="_blank">
 					<strong><?php esc_html_e( 'View on IMDB', 'wp-rig' ); ?></strong>
-					<?php echo file_get_contents( get_template_directory() . '/assets/images/icon-external-link.svg' ); ?>
+					<?php echo load_inline_svg( 'icon-external-link.svg' ); ?>
 				</a>
 			<?php endif; ?>
 			<?php get_template_part( 'template-parts/modules/social-share' ); ?>

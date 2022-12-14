@@ -7,7 +7,7 @@ $post_type_name = $the_post_type->labels->singular_name;
 
 <div class="post-back-btn">
 	<a class="button button-return" href="<?php echo wp_kses( get_post_type_archive_link( $obj_slug ), 'post' ); ?>">
-		<?php echo file_get_contents( get_template_directory() . '/assets/images/icon-carat-left.svg' ); ?>
+		<?php echo load_inline_svg( 'icon-carat-left.svg' ); ?>
 		Return to <?php echo esc_html( $post_type_name ); ?> Archive
 	</a>
 </div>

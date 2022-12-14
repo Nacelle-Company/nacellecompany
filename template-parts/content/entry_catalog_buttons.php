@@ -26,7 +26,7 @@ $audio_btn_title	= get_post_meta(get_the_ID(), 'audio_btn_title', true);
 		<strong>
 		<?php esc_html_e( 'Apple TV', 'wp-rig' ); ?>
 		</strong>
-		<?php echo file_get_contents( get_template_directory() . '/assets/images/icon-external-link.svg' ); ?>
+		<?php echo load_inline_svg('icon-external-link.svg'); ?>
 	</a>
 	<?php endif; ?>
 	<?php
@@ -38,7 +38,7 @@ $audio_btn_title	= get_post_meta(get_the_ID(), 'audio_btn_title', true);
 			?>
 			<a href="<?php echo esc_html( $video_link ); ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo esc_html( $video_title ); ?>" target="_blank" rel="noreferrer">
 				<strong><?php echo esc_html( $video_title ); ?></strong>
-				<?php echo file_get_contents( get_template_directory() . '/assets/images/icon-external-link.svg' ); ?>
+				<?php echo load_inline_svg('icon-external-link.svg'); ?>
 			</a>
 		<?php endif; ?>
 	<?php endwhile; ?>
@@ -54,7 +54,7 @@ $audio_btn_title	= get_post_meta(get_the_ID(), 'audio_btn_title', true);
 		<strong>
 			<?php esc_html_e( 'iTunes', 'wp-rig' ); ?>
 		</strong>
-		<?php echo file_get_contents( get_template_directory() . '/assets/images/icon-external-link.svg' ); ?>
+		<?php echo load_inline_svg( 'icon-external-link.svg' ); ?>
 	</a>
 	<?php endif; ?>
 	<?php
@@ -66,7 +66,7 @@ $audio_btn_title	= get_post_meta(get_the_ID(), 'audio_btn_title', true);
 			?>
 			<a href="<?php echo esc_html( $audio_link ); ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo esc_html( $audio_title ); ?>" target="_blank" rel="noreferrer">
 				<strong><?php echo esc_html( $audio_title ); ?></strong>
-				<?php echo file_get_contents( get_template_directory() . '/assets/images/icon-external-link.svg' ); ?>
+				<?php echo load_inline_svg( 'icon-external-link.svg' ); ?>
 			</a>
 		<?php endif; ?>
 	<?php endwhile; ?>

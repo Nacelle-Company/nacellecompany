@@ -50,7 +50,7 @@ if ( has_post_thumbnail() ) :
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 			<h4>
 				<?php esc_html_e( 'Read more', 'wp-rig' ); ?>
-				<?php echo file_get_contents( get_template_directory() . '/assets/images/icon-external-link.svg' ); ?>
+				<?php echo load_inline_svg( 'icon-external-link.svg' ); ?>
 			</h4>
 		</a>
 	<?php else : ?>
