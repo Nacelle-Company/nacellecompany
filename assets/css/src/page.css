@@ -1,7 +1,6 @@
 @import "_site-main.css";
 @import "_blocks.css";
 @import "_block-library.css";
-@import "_forms.css";
 
 /*--------------------------------------------------------------
 # Page main styles
@@ -33,6 +32,10 @@
 		margin: 0 auto;
 		padding: 0 1em;
 		max-width: var(--content-width);
+
+		@media (--content-query) {
+			padding: 0 4em;
+		}
 	}
 }
 
@@ -93,6 +96,7 @@
 	@media (--wide-menu-query) {
 		flex-flow: row nowrap;
 	}
+
 	& .button {
 		margin: 0 1em;
 	}

@@ -6,13 +6,11 @@ a {
 	color: var(--color-link);
 	text-decoration: none;
 
-	&.button {
-		&:visited {
-			color: var(--global-color-grey-light);
+	&:visited {
+		color: var(--color-link-visited);
 
-			& .icon {
-				fill: var(--global-color-grey-light);
-			}
+		& .icon {
+			fill: var(--global-color-grey-light);
 		}
 	}
 }
@@ -42,48 +40,6 @@ a:not(.button):active {
 	position: absolute;
 	width: 100%;
 	height: 100%;
-}
-
-.button,
-input[type="submit"] {
-	display: inline-flex;
-	align-items: center;
-	width: fit-content;
-	box-shadow: var(--color-theme-secondary) 0 1px 5px,
-		var(--color-theme-secondary) 0 1px 2px;
-	background-color: rgba(0, 0, 0, 0.479);
-	transition: background-color 0.2s linear;
-	border-radius: var(--border-radius-lg);
-	padding: 0.5em 2em;
-	white-space: nowrap;
-
-	& .icon {
-		margin: 0 0 0 5px;
-		fill: var(--color-theme-secondary);
-	}
-
-	&.center {
-		margin: 0 auto;
-	}
-
-	&:hover {
-		color: var(--color-theme-primary);
-		box-shadow: var(--color-theme-primary) 0 0 1px,
-			var(--color-theme-primary) 0 1px 2px;
-		background-color: rgba(0, 0, 0, 0.8);
-
-		& .icon {
-			fill: var(--color-theme-primary);
-		}
-	}
-}
-
-.button-icon {
-	column-gap: 1em;
-
-	&:hover path {
-		fill: var(--global-color-dark);
-	}
 }
 
 /* Back to top button */
@@ -135,3 +91,6 @@ input[type="submit"] {
 		filter: brightness(1);
 	}
 }
+/*--------------------------------------------------------------
+# END Links
+--------------------------------------------------------------*/

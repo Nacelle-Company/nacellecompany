@@ -95,7 +95,8 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			<!-- Wrapper and header -->
 			<div class="post-footer__related grid">
 				<header class="title">
-					<h2 class="sub">RELATED</h2>
+					<h5><?php echo the_title(); ?></h5>
+					<h2 class="sub h1">RELATED</h2>
 				</header>
 				<?php
 				if ( $press_query->have_posts() ) :

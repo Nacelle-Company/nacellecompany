@@ -10,9 +10,11 @@
 	display: grid;
 	padding: 1em;
 	margin: 2em 0;
+	background-color: var(--color-quote-border);
 
 	@media (--content-query) {
 		grid-template-columns: repeat(auto-fit, minmax(31%, 1fr));
+		padding: 1em 2em;
 		column-gap: 2em;
 		margin-bottom: 4em;
 	}
@@ -57,7 +59,7 @@
 
 .related-posts__title {
 	grid-column: 1/span 2;
-	border-bottom: 2px solid var(--color-theme-secondary);
+	border-bottom: 1px solid var(--color-theme-primary);
 }
 
 .related_posts__post-title {

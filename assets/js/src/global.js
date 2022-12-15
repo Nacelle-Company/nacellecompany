@@ -5,11 +5,17 @@
  */
 
 // Search icon add SEO/accessibility attributes
-const promagnifier = document.querySelector( '.search-icon .promagnifier' );
-promagnifier.setAttribute( 'tabindex', '0' );
-promagnifier.setAttribute( 'id', 'icon_search' );
-const promagnifierText = promagnifier.querySelector( '.asp_text_button' );
-promagnifierText.setAttribute( 'aria-labelledby', 'icon_search' );
+const searchIcon = document.querySelector( '.search-icon a' );
+
+if ( searchIcon.childElementCount !== 0 ) {
+	const promagnifier = document.querySelector( '.search-icon .promagnifier' );
+	promagnifier.setAttribute( 'tabindex', '0' );
+	promagnifier.setAttribute( 'id', 'icon_search' );
+	const promagnifierText = promagnifier.querySelector( '.asp_text_button' );
+	promagnifierText.setAttribute( 'aria-labelledby', 'icon_search' );
+} else {
+	searchIcon.style.display = 'none';
+}
 
 // Back to top button
 const showOnPx = 100;

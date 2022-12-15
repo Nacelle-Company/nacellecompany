@@ -34,8 +34,7 @@
 	--border-radius: 2px;
 	--border-radius-lg: 4px;
 	--flickity-desktop-height: 80vh;
-
-	/* Colors */
+	--button-shadow: 2px 2px 0 0 darken(var(--border-color-dark), 5%);
 
 	/* Custom editor colors */
 

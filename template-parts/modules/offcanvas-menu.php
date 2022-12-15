@@ -8,7 +8,19 @@
 namespace WP_Rig\WP_Rig;
 
 global $searchandfilter;
-$sf_current_query = $searchandfilter->get( 46579 )->current_query();
+
+// check for plugin using plugin name
+if(in_array('search-filter-pro/search-filter-pro.php', apply_filters('active_plugins', get_option('active_plugins')))){
+	$sf_current_query = $searchandfilter->get( 46579 )->current_query();
+	if($sf_current_query->is_filtered()) {
+		$sf_filtered = true;
+	} else {
+		$sf_filtered = false;
+	}
+} else {
+	$sf_filtered = false;
+}
+
 ?>
 
 <span id="offcanvasToggle" class="offcanvas-toggle" onclick="openOffcanvas()" style="cursor:pointer" title="Offcanvas sort & filter menu">
@@ -16,7 +28,7 @@ $sf_current_query = $searchandfilter->get( 46579 )->current_query();
 	<h3 class="offcanvas-toggle_title">
 		<?php
 		echo esc_html__( 'Sort & Filter', 'wp-rig' );
-		if ( $sf_current_query->is_filtered() ) :
+		if ( $sf_filtered === true ) :
 			?>
 			<!-- <a href="#" class="search-filter-reset" data-search-form-id="46579" data-sf-submit-form="always">Reset</a> -->
 			<?php

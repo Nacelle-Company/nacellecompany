@@ -10,7 +10,18 @@ namespace WP_Rig\WP_Rig;
 global $searchandfilter;
 global $sf_catalog_query;
 
-$sf_catalog_query = $searchandfilter->get(46579)->current_query();
+
+// check for plugin using plugin name
+if(in_array('search-filter-pro/search-filter-pro.php', apply_filters('active_plugins', get_option('active_plugins')))){
+	$sf_catalog_query = $searchandfilter->get(46579)->current_query();
+	if($sf_catalog_query->is_filtered()) {
+		$sf_filtered = true;
+	} else {
+		$sf_filtered = false;
+	}
+} else {
+	$sf_filtered = false;
+}
 
 $the_title  = get_the_title();
 $permalink  = get_permalink();
@@ -25,7 +36,7 @@ $value_more  = ' . . . '; // ? What to add at the end of the trimmed text.
 if(get_queried_object()) {
 	$queried_id  = get_queried_object();
 
-	if ($sf_catalog_query->is_filtered()) {
+	if ($sf_filtered === true) {
 		$obj_slug = 'catalog';
 	} elseif ( is_post_type('catalog') ) {
 		$obj_slug = 'catalog';

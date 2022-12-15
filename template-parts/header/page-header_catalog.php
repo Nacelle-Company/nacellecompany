@@ -10,19 +10,30 @@
 namespace WP_Rig\WP_Rig;
 
 global $searchandfilter;
-
-wp_rig()->print_styles( 'wp-rig-offcanvas' );
-
 $queried_obj      = get_queried_object();
-$sf_catalog_query = $searchandfilter->get( 46579 )->current_query();
 $category_icon    = load_inline_svg( 'icon-catalog.svg' );
 $url              = 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
 $sorting          = false;
+$sf_filtered      = false;
+$offcanvas        = false;
+
+wp_rig()->print_styles( 'wp-rig-offcanvas' );
+
+// check for plugin using plugin name
+if(in_array('search-filter-pro/search-filter-pro.php', apply_filters('active_plugins', get_option('active_plugins')))) :
+	$sf_catalog_query = $searchandfilter->get( 46579 )->current_query();
+	$offcanvas        = true;
+	if($sf_catalog_query->is_filtered()) {
+		$sf_filtered = true;
+	} else {
+		$sf_filtered = false;
+	}
+endif;
 
 // THE IF STATEMENT TO SAVE IT ALL
 if ( is_404() ) :
 	$page_title = 'Oops! That page can&rsquo;t be found.';
-elseif( $sf_catalog_query->is_filtered() || get_search_query() ) : // Get the filter terms & the sorting selection
+elseif( $sf_filtered === true || get_search_query() ) : // Get the filter terms & the sorting selection
 	$filter_query = '';
 
 	// SEARCH & FILTER
@@ -95,6 +106,7 @@ elseif( $sf_catalog_query->is_filtered() || get_search_query() ) : // Get the fi
 elseif ( is_category() || is_page('products') ) :
 	$category_name = $queried_obj->name;
 	$category_slug = $queried_obj->slug;
+
 	if ( is_category('series-production') ) :
 		$category_slug = 'series';
 	elseif (is_category('special-production') || is_category('production') ) :
@@ -102,8 +114,13 @@ elseif ( is_category() || is_page('products') ) :
 	elseif (is_page('products')) :
 		$category_slug = 'film';
 		$category_name = 'Products';
+	elseif (is_category()) :
+		$category_slug = $category_slug;
+		$category_name = $category_name;
+	else :
+		$category_icon = load_inline_svg( 'icon-catalog.svg' );
 	endif;
-	$category_icon = load_inline_svg( 'icon-catalog.svg' );
+	$category_icon = load_inline_svg( 'icon-' . $category_slug . '.svg' );
 else :
 	$category_name = 'Catalog';
 endif;
@@ -114,7 +131,7 @@ endif;
 		<h1 class="page-title">
 			<?php echo $category_icon . esc_html( $category_name ); ?>
 		</h1>
-		<?php if($sf_catalog_query->is_filtered() || get_search_query()) : ?>
+		<?php if( $sf_filtered === true || get_search_query() ) : ?>
 			<div class="page-title_meta">
 				<?php if( get_search_query() ) : // SEARCH QUERY ?>
 					<sub>
@@ -135,7 +152,7 @@ endif;
 				<?php endif; ?>
 			</div>
 		<?php endif; ?>
-		<?php if( ! is_page('products')) : // if not the products page, show the filter hamburger icon ?>
+		<?php if( ! is_page('products') && $offcanvas ) : // if not the products page, show the filter hamburger icon ?>
 			<div class="page-title__offcanvas">
 				<?php get_template_part( 'template-parts/modules/offcanvas-menu' ); ?>
 			</div>

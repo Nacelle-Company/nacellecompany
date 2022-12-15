@@ -39,7 +39,7 @@
 .entry-header {
 	display: grid;
 	grid-row: 2/span 1;
-	grid-template-columns: max-content 1fr;
+	grid-template-columns: 1fr 1fr;
 	align-items: flex-end;
 	gap: 1em;
 

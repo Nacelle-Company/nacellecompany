@@ -7,6 +7,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Last-Translator: The WP Rig Contributors\n"
+"POT-Creation-Date: 2022-12-14 22:40+0000\n"
 "Report-Msgid-Bugs-To: WP Rig\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
@@ -14,11 +15,6 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-
-#. translators: 1: title.
-#: comments.php:38
-msgid "One thought on &ldquo;%1$s&rdquo;"
-msgstr ""
 
 #. translators: 1: comment count number, 2: title.
 #: comments.php:44
@@ -28,11 +24,15 @@ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
+#: comments.php:38
+msgid "One thought on &ldquo;%1$s&rdquo;"
+msgstr ""
+
 #: comments.php:60
 msgid "Comments are closed."
 msgstr ""
 
-#: header.php:71
+#: header.php:66
 msgid "Skip to content"
 msgstr ""
 
@@ -211,7 +211,7 @@ msgstr ""
 msgid "Mobile"
 msgstr ""
 
-#: inc/Nav_Menus/Component.php:223, template-parts/header/navigation_mobile.php:41
+#: inc/Nav_Menus/Component.php:223, template-parts/nav/navigation_mobile.php:41
 msgid "Open menu"
 msgstr ""
 
@@ -223,11 +223,11 @@ msgstr ""
 msgid "main-navigation nav--toggle-sub nav--toggle-small icon-nav"
 msgstr ""
 
-#: inc/Pagination_Archive/Component.php:69, template-parts/content/pagination.php:13
+#: inc/Pagination_Archive/Component.php:69, template-parts/nav/pagination.php:13
 msgid "&larr;"
 msgstr ""
 
-#: inc/Pagination_Archive/Component.php:70, template-parts/content/pagination.php:14
+#: inc/Pagination_Archive/Component.php:70, template-parts/nav/pagination.php:14
 msgid "&rarr;"
 msgstr ""
 
@@ -261,12 +261,8 @@ msgid "Footer widgets"
 msgstr ""
 
 #. translators: %s: stylesheet handle
-#: inc/Styles/Component.php:237
+#: inc/Styles/Comp.php:237, inc/Styles/Component.php:237
 msgid "Invalid theme stylesheet handle: %s"
-msgstr ""
-
-#: template-parts/catalog/catalog_entry.php:50
-msgid "View on IMDB"
 msgstr ""
 
 #: template-parts/content/entry-attachment.php:33
@@ -289,6 +285,34 @@ msgstr ""
 #. translators: %s: post title
 #: template-parts/content/entry_actions.php:40
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr ""
+
+#: template-parts/content/entry_catalog.php:49
+msgid "View on IMDB"
+msgstr ""
+
+#: template-parts/content/entry_catalog_buttons.php:27
+msgid "Apple TV"
+msgstr ""
+
+#: template-parts/content/entry_catalog_buttons.php:55
+msgid "iTunes"
+msgstr ""
+
+#: template-parts/content/entry_catalog_stats.php:21
+msgid "Runtime"
+msgstr ""
+
+#: template-parts/content/entry_catalog_stats.php:27
+msgid "Premiere"
+msgstr ""
+
+#: template-parts/content/entry_catalog_stats.php:34
+msgid "Rating"
+msgstr ""
+
+#: template-parts/content/entry_catalog_stats.php:39
+msgid "Copyright"
 msgstr ""
 
 #: template-parts/content/entry_content-press.php:52
@@ -345,54 +369,32 @@ msgstr ""
 msgid "Tagged %s"
 msgstr ""
 
-#: template-parts/content/error-404.php:18
-msgid "The page you are looking for may have been moved, had its name changed or we’re working on it."
-msgstr ""
-
-#: template-parts/content/error-404.php:21
-msgid "Maybe try one of these? %1$s"
-msgstr ""
-
-#: template-parts/content/error-404.php:35
-msgid "Most Used Categories"
-msgstr ""
-
 #: template-parts/content/error-500.php:14
 msgid "Oops! Something went wrong."
 msgstr ""
 
-#: template-parts/content/error-offline.php:14
-msgid "Oops! It looks like you&#8217;re offline."
-msgstr ""
-
-#. translators: 1: link to WP admin new post page.
-#: template-parts/content/error.php:22
-msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr ""
-
-#: template-parts/content/error.php:37
-msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
-msgstr ""
-
-#: template-parts/content/error.php:43
+#: template-parts/content/error-content.php:45, template-parts/content/error.php:43
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
 
-#: template-parts/content/page_header.php:71
-msgid "Oops! That page can&rsquo;t be found."
+#: template-parts/content/error-content.php:39, template-parts/content/error.php:37
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
 msgstr ""
 
-#: template-parts/content/page_header.php:155
-msgid "Nothing Found"
+#: template-parts/content/error-content.php:24, template-parts/content/error.php:22
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#. translators: %s: search query
-#: template-parts/content/page_header.php:213
-msgid "Search Results for: %s"
+#: template-parts/content/error-content.php:53
+msgid "Maybe try one of these? %1$s"
 msgstr ""
 
-#: template-parts/content/pagination.php:15
-msgid "Page navigation"
+#: template-parts/content/error-content.php:73
+msgid "Most Used Categories"
+msgstr ""
+
+#: template-parts/content/error-offline.php:14
+msgid "Oops! It looks like you&#8217;re offline."
 msgstr ""
 
 #: template-parts/footer/info.php:13
@@ -409,38 +411,31 @@ msgstr ""
 msgid "Theme: %s by the contributors."
 msgstr ""
 
-#: template-parts/header/navigation_mobile.php:15, template-parts/header/navigation_primary.php:15, template-parts/header/navigation_secondary.php:15
-msgid "Main menu"
+#. translators: %s: search query
+#: template-parts/header/page-header.php:47
+msgid "Search Results for: %s"
 msgstr ""
 
-#: template-parts/header/navigation_mobile.php:42
-msgid "Menu"
+#: template-parts/header/page-header.php:27
+msgid "Nothing Found"
+msgstr ""
+
+#: template-parts/header/page-header.php:19
+msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
 #: template-parts/modules/offcanvas-menu.php:18
 msgid "Sort & Filter"
 msgstr ""
 
-#: template-parts/catalog/parts/catalog_buttons.php:27
-msgid "Apple TV"
+#: template-parts/nav/navigation_mobile.php:15, template-parts/nav/navigation_primary.php:15, template-parts/nav/navigation_secondary.php:15
+msgid "Main menu"
 msgstr ""
 
-#: template-parts/catalog/parts/catalog_buttons.php:55
-msgid "iTunes"
+#: template-parts/nav/navigation_mobile.php:42
+msgid "Menu"
 msgstr ""
 
-#: template-parts/catalog/parts/catalog_stats.php:21
-msgid "Runtime"
-msgstr ""
-
-#: template-parts/catalog/parts/catalog_stats.php:27
-msgid "Premiere"
-msgstr ""
-
-#: template-parts/catalog/parts/catalog_stats.php:34
-msgid "Rating"
-msgstr ""
-
-#: template-parts/catalog/parts/catalog_stats.php:39
-msgid "Copyright"
+#: template-parts/nav/pagination.php:15
+msgid "Page navigation"
 msgstr ""

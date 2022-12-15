@@ -1,11 +1,9 @@
 @import "_site-main.css";
 @import "_page-header_products.css";
 @import "_catalog-categories_card.css";
-@import "_forms.css";
 @import "_modal.css";
 
 .site-main__products {
-
 	@media (--sidebar-query) {
 		position: relative;
 		grid-template-columns: repeat(12, 1fr);
@@ -13,7 +11,6 @@
 }
 
 .product-tabs__wrap {
-
 	@media (--sidebar-query) {
 		grid-column: 1 / span 2;
 		padding: 0.5em 2em;
@@ -35,7 +32,6 @@
 }
 
 .product-tabs__content {
-
 	@media (--sidebar-query) {
 		grid-column: 3 / span 10;
 	}
@@ -50,7 +46,6 @@
 }
 
 @keyframes opac {
-
 	from {
 		opacity: 0;
 	}
@@ -70,7 +65,6 @@
 }
 
 @media (--sidebar-query) {
-
 	.form-widget__wrap {
 		top: unset;
 		position: absolute;

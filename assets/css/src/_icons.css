@@ -3,9 +3,7 @@
  * Icon on the left title on the right.
  */
 
-.icon:not(.icon-arrow-up) {
-	margin-right: 0.5rem;
-
+.icon {
 	& path {
 		fill: var(--color-theme-primary);
 		transition: fill 0.2s ease-out;
@@ -15,4 +13,8 @@
 		fill: var(--color-theme-secondary);
 		transition: fill 0.2s ease-out;
 	}
+}
+
+.icon:not(.icon-arrow-up):not(.icon-external) {
+	margin-right: 0.5rem;
 }

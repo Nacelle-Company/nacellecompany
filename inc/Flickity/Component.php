@@ -229,7 +229,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 								<?php endif; ?>
 
 								<?php if ( $btn ) : ?>
-									<a class="button center" href="<?php echo esc_html( $the_permalink ); ?>" title="Discover more
+									<a class="button justify-self-center" href="<?php echo esc_html( $the_permalink ); ?>" title="Discover more
 									<?php
 									if ( $title ) :
 										echo esc_html( $the_title );

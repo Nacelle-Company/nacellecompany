@@ -1,7 +1,6 @@
 @import "_site-main.css";
 @import "_page-header_filters.css";
 @import "_catalog-categories_card.css";
-@import "_forms.css";
 
 /*--------------------------------------------------------------
 # Archive main grid
@@ -51,7 +50,6 @@
 }
 
 @media (--content-query) {
-
 	.entry-footer {
 		padding-right: 0;
 		padding-left: 0;
@@ -61,9 +59,9 @@
 .error {
 	padding: 0 1em;
 	@media (--wide-menu-query) {
-		grid-column: 1/span 4;
+		grid-column: 1 / span 4;
 	}
 	@media (--sidebar-query) {
-		grid-column: 1/span 5;
+		grid-column: 1 / span 5;
 	}
 }

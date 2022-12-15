@@ -1,4 +1,4 @@
-
+/* stylelint-disable */
 .has-sidebar .site {
 
 	display: grid;
@@ -28,4 +28,6 @@
 	display: grid;
 	grid-column: 1/-1;
 }
+
+/* stylelint-enable */
 

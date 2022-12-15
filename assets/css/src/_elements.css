@@ -8,7 +8,6 @@ html {
 	box-sizing: border-box;
 }
 
-
 /**
  * Inherit box-sizing to make it easier to change the property for
  * components that leverage other behavior; see
@@ -20,14 +19,11 @@ html {
 	box-sizing: inherit;
 }
 
-
 body {
 	background: #fff;
 
 	/* Fallback for when there is no custom background color defined. */
 }
-
-
 
 hr {
 	background-color: var(--border-color-light);
@@ -35,7 +31,6 @@ hr {
 	height: 1px;
 	margin-bottom: 1.5em;
 }
-
 
 ul,
 ol {
@@ -64,13 +59,11 @@ dd {
 	margin: 0 1.5em 1.5em;
 }
 
-
 img {
 	display: block;
 	height: auto;
 	max-width: 100%;
 }
-
 
 /* Extra wide images within figure tags don't overflow the content area. */
 figure {
@@ -80,4 +73,8 @@ figure {
 table {
 	margin: 0 0 1.5em;
 	width: 100%;
+}
+
+.justify-self-center {
+	justify-self: center;
 }

@@ -65,8 +65,7 @@ require get_template_directory() . '/inc/functions.php';
 // Initialize the theme.
 call_user_func( 'WP_Rig\WP_Rig\wp_rig' );
 
-
-// ? ACF options page
+// ACF options page
 if ( function_exists( 'acf_add_options_page' ) ) {
 
 	acf_add_options_page();
@@ -82,18 +81,19 @@ if ( function_exists( 'acf_add_options_page' ) ) {
 */
 
 add_filter( 'pre_get_posts', '_wp_rig_cpt_category_archives' );
+
 /**
 * CPT Archives
 *
 * @param variable $query Description.
 **/
 function _wp_rig_cpt_category_archives( $query ) {
-if ( $query->is_category() && $query->is_main_query() ) {
-	$query->set(
-		'post_type',
-		array(
-			'post',
-			'catalog',
+	if ( $query->is_category() && $query->is_main_query() ) {
+		$query->set(
+			'post_type',
+			array(
+				'post',
+				'catalog',
 			)
 		);
 	}
@@ -223,10 +223,9 @@ function wp_rig_nacelle_duplicate_post_link( $actions, $post ) {
 }
 add_filter( 'page_row_actions', 'wp_rig_nacelle_duplicate_post_link', 10, 2 );
 
-// Duplicate pages END.
-
-// Set default post order.
-add_action( 'pre_get_posts', 'wp_rig_nacelle_change_sort_order' );
+/*
+* Set default post order.
+*/
 function wp_rig_nacelle_change_sort_order( $query ) {
 	if ( is_category() ) :
 		// If you wanted it for the archive of a custom post type use: is_post_type_archive( $post_type )
@@ -235,20 +234,22 @@ function wp_rig_nacelle_change_sort_order( $query ) {
 		// Set the orderby
 		$query->set( 'orderby', 'title' );
 	endif;
-};
+}
+add_action( 'pre_get_posts', 'wp_rig_nacelle_change_sort_order' );
 
-add_filter( 'get_custom_logo', 'wp_rig_add_logo_att' );
+/*
+* Add logo attributes
+*/
 function wp_rig_add_logo_att( $html ) {
 	$html = str_replace( 'class="custom-logo"', 'class="custom-logo" fetchpriority="high"', $html );
 	$html = str_replace( 'sizes="(min-width: 960px) 75vw, 100vw"', 'sizes="(min-width: 960px) 200px, 50vw" ', $html );
 	return $html;
 }
-/**
-* <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-* <noscript><link rel="stylesheet" href="styles.css"></noscript>
-*/
+add_filter( 'get_custom_logo', 'wp_rig_add_logo_att' );
 
-// Remove CSS files from loading on the frontend
+/*
+* Remove CSS files from loading on the frontend
+*/
 function wp_rig_remove_wp_css() {
 	wp_dequeue_style( 'wp-block-library' );
 	wp_dequeue_style( 'YTPlayer_css' );
@@ -257,8 +258,9 @@ function wp_rig_remove_wp_css() {
 }
 add_action( 'wp_enqueue_scripts', 'wp_rig_remove_wp_css', 100 );
 
-// Siteground Optimizer: exclude styles from being combined
-add_filter( 'sgo_css_combine_exclude', 'wp_rig_sgo_css_combine_exclude' );
+/*
+* Siteground Optimizer: exclude styles from being combined
+*/
 function wp_rig_sgo_css_combine_exclude( $exclude_list ) {
 	// Add the style handle to exclude list.
 	$exclude_list[] = 'wp-block-library';
@@ -290,6 +292,7 @@ function wp_rig_sgo_css_combine_exclude( $exclude_list ) {
 
 	return $exclude_list;
 }
+add_filter( 'sgo_css_combine_exclude', 'wp_rig_sgo_css_combine_exclude' );
 
 /**
 * Modify the main query
@@ -326,8 +329,12 @@ function wp_rig_custom_archive_template( $template ) {
 }
 add_filter( 'template_include', 'wp_rig_custom_archive_template' );
 
-// Allow webp image uploads
-// https://preventdirectaccess.com/how-to-upload-webp-image-in-wordpress/#:~:text=How%20To%20Upload%20WebP%20Image,them%20anywhere%20in%20your%20content
+/**
+ * Allow webp image uploads
+ *
+ * @link https://preventdirectaccess.com/how-to-upload-webp-image-in-wordpress/#:~:text=How%20To%20Upload%20WebP%20Image,them%20anywhere%20in%20your%20content
+ *
+ */
 function webp_upload_mimes( $existing_mimes ) {
 	// add webp to the list of mime types
 	$existing_mimes['webp'] = 'image/webp';
@@ -335,7 +342,11 @@ function webp_upload_mimes( $existing_mimes ) {
 	return $existing_mimes;
 }
 add_filter( 'mime_types', 'webp_upload_mimes' );
-//** * Enable preview / thumbnail for webp image files.*/
+
+/**
+ * Enable preview / thumbnail for webp image files.
+ *
+ */
 function webp_is_displayable($result, $path) {
 	if ($result === false) {
 		$displayable_image_types = array( IMAGETYPE_WEBP );
@@ -375,12 +386,16 @@ function load_inline_svg( $filename ) {
     return '';
 }
 
-// GETTING YOUR SCRIPT HANDLES:
-// https://wpshout.com/defer-parsing-javascript-wordpress/.
-// add_action( 'wp_print_styles', 'wsds_detect_enqueued_scripts' );
-// function wsds_detect_enqueued_scripts() {
-	// 	global $wp_styles;
-	// 	foreach( $wp_styles->queue as $handle ) :
-		// 		echo $handle . ' | ';
-		// 	endforeach;
-		// }
+/**
+ * GETTING YOUR SCRIPT HANDLES
+ * @link https://wpshout.com/defer-parsing-javascript-wordpress/
+ */
+/*
+add_action( 'wp_print_styles', 'wsds_detect_enqueued_scripts' );
+function wsds_detect_enqueued_scripts() {
+	global $wp_styles;
+	foreach( $wp_styles->queue as $handle ) :
+		echo $handle . ' | ';
+	endforeach;
+}
+*/

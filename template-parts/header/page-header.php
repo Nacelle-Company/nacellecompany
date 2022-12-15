@@ -9,8 +9,20 @@ namespace WP_Rig\WP_Rig;
 
 global $searchandfilter;
 
-$sf_catalog_query = $searchandfilter->get( 46579 )->current_query();
-$sf_press_query   = $searchandfilter->get( 47395 )->current_query();
+// check for plugin using plugin name
+if(in_array('search-filter-pro/search-filter-pro.php', apply_filters('active_plugins', get_option('active_plugins')))){
+	$sf_catalog_query = $searchandfilter->get( 46579 )->current_query();
+	$sf_press_query   = $searchandfilter->get( 47395 )->current_query();
+
+	if($sf_catalog_query->is_filtered()) {
+		$sf_catalog_filtered = true;
+	} elseif($sf_press_query->is_filtered()) {
+		$sf_press_filtered = true;
+	}
+} else {
+	$sf_press_filtered = false;
+	$sf_catalog_filtered = false;
+}
 
 if ( is_404() ) {
 	?>
@@ -24,11 +36,6 @@ if ( is_404() ) {
 	?>
 	<header class="page-header">
 		<h1 class="page-title">
-			<?php
-			echo '<pre>';
-			var_dump( 'is_home() && ! have_posts()' );
-			echo '</pre>';
-			?>
 			<?php esc_html_e( 'Nothing Found', 'wp-rig' ); ?>
 		</h1>
 	</header><!-- .page-header -->
@@ -37,11 +44,6 @@ if ( is_404() ) {
 	?>
 	<header class="page-header">
 		<h1 class="page-title">
-			<?php
-			echo '<pre>';
-			var_dump( 'is_home() && ! is_front_page()' );
-			echo '</pre>';
-			?>
 			<?php single_post_title(); ?>
 		</h1>
 	</header><!-- .page-header -->
@@ -52,9 +54,6 @@ if ( is_404() ) {
 		<h1 class="page-title">
 
 			<?php
-			echo '<pre>';
-			var_dump( 'is_search' );
-			echo '</pre>';
 			printf(
 				/* translators: %s: search query */
 				esc_html__( 'Search Results for: %s', 'wp-rig' ),
@@ -65,14 +64,12 @@ if ( is_404() ) {
 	</header><!-- .page-header -->
 	<?php
 } elseif ( is_archive() ) {
-	if(is_post_type_archive('press') || $sf_press_query->is_filtered()) :
+	if( is_post_type_archive('press') || $sf_press_filtered === true ) :
 		get_template_part( 'template-parts/header/page-header_press' );
-	elseif(is_post_type_archive('catalog') || $sf_catalog_query->is_filtered()) :
+	elseif( is_post_type_archive('catalog') || $sf_catalog_filtered === true ) :
 		get_template_part( 'template-parts/header/page-header_catalog' );
-	elseif (is_category()) :
-		echo '<pre>';
-		var_dump( 'is_archive > is_category' );
-		echo '</pre>';
+	else :
+		get_template_part( 'template-parts/header/page-header' );
 	endif;
 	?>
 

@@ -41,6 +41,12 @@
 		max-width: 170px;
 		margin: 0 auto 0 1.5em !important;
 	}
+
+	& input:not([type="submit"]),
+	& select {
+		min-width: 165px;
+		max-width: 180px;
+	}
 }
 
 .offcanvas-title {

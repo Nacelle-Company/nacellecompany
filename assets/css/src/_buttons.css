@@ -1,0 +1,93 @@
+
+.button,
+input[type="submit"],
+input[type="button"] {
+	display: inline-flex;
+	align-items: center;
+	position: relative;
+	width: max-content;
+	min-width: -webkit-fill-available;
+	justify-content: center;
+	overflow: hidden;
+	color: var(--color-theme-secondary);
+	background-color: var(--global-color-grey-dark);
+	padding: 1.25em 1em;
+	outline: 0;
+	border: 1px solid var(--color-theme-secondary);
+	border-radius: var(--border-radius-lg);
+	box-shadow: 2px 2px 0 0 #121212;
+	transition: all 0.2s ease;
+	cursor: pointer;
+	word-wrap: normal;
+	font-size: 12px;
+
+	@media (--wide-menu-query) {
+		font-size: revert;
+		padding: 1em 2em;
+	}
+
+	&:hover,
+	&:focus {
+		background: darken(var(--global-color-dark), 5%);
+		border: 1px solid var(--color-theme-secondary);
+		outline: 1px solid var(--color-theme-secondary);
+		text-decoration: none;
+
+		& .icon {
+			opacity: 1;
+		}
+	}
+
+	&:visited {
+
+		color: var(--border-color-light);
+	}
+
+	&:not(:disabled) {
+
+		cursor: pointer;
+	}
+
+	& .icon {
+		transform: translate(-15px, 19px);
+		position: absolute;
+		top: 0;
+		right: 0;
+		opacity: 0;
+		transition: opacity 0.2s linear;
+
+		& path {
+			fill: var(--color-theme-secondary);
+		}
+	}
+}
+
+input[type="submit"],
+input[type="button"],
+.button-return,
+.success,
+.caption .button {
+	min-width: unset;
+}
+
+.button:active {
+	background-color: #6eb9f7;
+	background-size: 100%;
+	transition: background 0s;
+}
+
+span.ripple {
+	position: absolute;
+	border-radius: 50%;
+	transform: scale(0);
+	animation: ripple 600ms linear;
+	background-color: rgba(255, 255, 255, 0.7);
+}
+
+@keyframes ripple {
+
+	to {
+		transform: scale(4);
+		opacity: 0;
+	}
+}
