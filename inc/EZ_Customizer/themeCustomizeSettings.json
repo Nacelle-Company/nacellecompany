@@ -212,6 +212,24 @@
       "default": "#7fd2e6",
       "refresh": false,
       "description": "Nacelle Company: #306de8"
+    },
+    {
+      "id": "color_theme_button",
+      "label": "Button color",
+      "type": "color",
+      "section": "global_colors",
+      "default": "#ffbc00",
+      "refresh": false,
+      "description": "Buttons with a solid background."
+    },
+    {
+      "id": "color_theme_button_transparent",
+      "label": "Transparent button color",
+      "type": "text",
+      "section": "global_colors",
+      "default": "rgba(230, 161, 0, 0.14)",
+      "refresh": false,
+      "description": "Buttons with a transparent background. Copy the rbga code from here: <a href='https://www.hexcolortool.com/' target='_blank'>Hex Color Tool</a>!"
     }
   ]
 }

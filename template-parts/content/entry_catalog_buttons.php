@@ -22,7 +22,7 @@ $audio_btn_title	= get_post_meta(get_the_ID(), 'audio_btn_title', true);
 		<?php esc_html_e( $vid_btn_title ); ?>
 	</h3>
 	<?php if ( $itunes_video ) : ?>
-	<a href="<?php echo esc_attr( $itunes_video ); ?>" class="button apple-link" title="Watch <?php the_title_attribute(); ?> on Apple TV" target="_blank" rel="noreferrer">
+	<a href="<?php echo esc_attr( $itunes_video ); ?>" class="button button-transparent apple-link" title="Watch <?php the_title_attribute(); ?> on Apple TV" target="_blank" rel="noreferrer">
 		<strong>
 		<?php esc_html_e( 'Apple TV', 'wp-rig' ); ?>
 		</strong>
@@ -36,7 +36,7 @@ $audio_btn_title	= get_post_meta(get_the_ID(), 'audio_btn_title', true);
 		$video_link  = get_sub_field( 'link_url' );
 		if(!empty($video_title && $video_link)) :
 			?>
-			<a href="<?php echo esc_html( $video_link ); ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo esc_html( $video_title ); ?>" target="_blank" rel="noreferrer">
+			<a href="<?php echo esc_html( $video_link ); ?>" class="button button-transparent" title="Watch <?php the_title_attribute(); ?> on <?php echo esc_html( $video_title ); ?>" target="_blank" rel="noreferrer">
 				<strong><?php echo esc_html( $video_title ); ?></strong>
 				<?php echo load_inline_svg('icon-external-link.svg'); ?>
 			</a>

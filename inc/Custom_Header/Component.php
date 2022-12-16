@@ -82,6 +82,8 @@ class Component implements Component_Interface {
 		$color_quote_citation      = get_theme_mod( 'color_quote_citation' );
 		$color_theme_primary       = get_theme_mod( 'color_theme_primary' );
 		$color_theme_secondary     = get_theme_mod( 'color_theme_secondary' );
+		$color_theme_button        = get_theme_mod( 'color_theme_button' );
+		$color_theme_button_transparent = get_theme_mod( 'color_theme_button_transparent' );
 
 		if ( get_theme_support( 'custom-header', 'default-text-color' ) === $header_text_color ) {
 			return;
@@ -113,7 +115,9 @@ class Component implements Component_Interface {
 	--color-quote-citation: ' . esc_attr( $color_quote_citation ) . ';
 	--color-theme-primary: ' . esc_attr( $color_theme_primary ) . ';
 	--color-theme-secondary: ' . esc_attr( $color_theme_secondary ) . ';
-}
+	--color-theme-button: ' . esc_attr( $color_theme_button ) . ';
+	--color-theme-button-transparent: ' . esc_attr( $color_theme_button_transparent ) . ';
+
 .site-title a, .site-description, .main-navigation a { color: #' . esc_attr( $header_text_color ) . ';} </style>';
 	}
 }

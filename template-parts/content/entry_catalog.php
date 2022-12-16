@@ -45,7 +45,7 @@ endif;
 			<?php get_template_part( 'template-parts/content/entry_title', get_post_type() ); ?>
 			<?php get_template_part( 'template-parts/content/entry_content', get_post_type() ); ?>
 			<?php if ( $imdbv ) : ?>
-				<a href="<?php echo wp_kses( $imdbv, 'post' ); ?>" class="button imdb-button" title="Watch <?php the_title_attribute(); ?> on <?php echo wp_kses( $imdbv, 'post' ); ?>" target="_blank">
+				<a href="<?php echo wp_kses( $imdbv, 'post' ); ?>" class="button imdb-button button-transparent" title="Watch <?php the_title_attribute(); ?> on <?php echo wp_kses( $imdbv, 'post' ); ?>" target="_blank">
 					<strong><?php esc_html_e( 'View on IMDB', 'wp-rig' ); ?></strong>
 					<?php echo load_inline_svg( 'icon-external-link.svg' ); ?>
 				</a>
