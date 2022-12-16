@@ -15,10 +15,13 @@ global $queried_id;
 $queried_id = get_queried_object_id();
 $hero_video = get_field( 'video_embedd' );
 wp_rig()->print_styles( 'wp-rig-footer-widgets' );
-
 ?>
 
 <footer id="colophon" class="site-footer">
+	<!-- TODO: remove get_num_queries on production site -->
+	<?php if ( WP_LOCAL_DEV === true ) : ?>
+	<span class="get_num_queries" style="position:absolute;top:40px;right:6px;color: #535050;z-index:9;"><?php echo get_num_queries(); ?></span>
+	<?php endif; ?>
 	<?php get_template_part( 'template-parts/modules/button-to-top' ); ?>
 	<?php if ( is_single() && 'catalog' == get_post_type() && !empty( $hero_video ) ) : ?>
 		<?php wp_rig()->print_scripts( 'wp-rig-lite-youtube' ); ?>

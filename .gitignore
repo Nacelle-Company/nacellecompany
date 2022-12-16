@@ -27,6 +27,7 @@
 /config/config.local.json
 !/tests/
 !/optional/
+!/acf-json/
 
 !.babelrc
 !composer.json

@@ -1,0 +1,113 @@
+{
+    "key": "group_6244c832271d6",
+    "title": "Page Settings",
+    "fields": [
+        {
+            "key": "field_62bc8f42646c5",
+            "label": "Page width",
+            "name": "page_width",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "site-main__default-width": "Default",
+                "site-main__content-width": "Content width",
+                "site-main__full-width": "Full width"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_62d94b65ae10b",
+            "label": "Content width",
+            "name": "content_width",
+            "aria-label": "",
+            "type": "radio",
+            "instructions": "** the block must be a \"Group\" block.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "default-width": "Default",
+                "content-width": "Content width",
+                "content-width-lg": "Content width LG"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        },
+        {
+            "key": "field_62bc996f72b02",
+            "label": "Hide title",
+            "name": "hide_title",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "visible": "No",
+                "hidden": "Yes"
+            },
+            "default_value": "visible",
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "!=",
+                "value": "catalog"
+            },
+            {
+                "param": "post_type",
+                "operator": "!=",
+                "value": "press"
+            },
+            {
+                "param": "post_type",
+                "operator": "!=",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "BOTH - Page settings",
+    "show_in_rest": 0,
+    "modified": 1671149777
+}

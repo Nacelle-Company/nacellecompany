@@ -1,0 +1,448 @@
+{
+    "key": "group_5f74a10f94913",
+    "title": "Sliders",
+    "fields": [
+        {
+            "key": "field_5f74a10f9d78b",
+            "label": "Top carousel slider",
+            "name": "home_feat_posts",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "** Try and keep below 5 slides. Otherwise it's hard for the slider to build while the page loads.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "catalog",
+                "page"
+            ],
+            "taxonomy": "",
+            "allow_null": 0,
+            "multiple": 1,
+            "return_format": "object",
+            "ui": 1
+        },
+        {
+            "key": "field_62e1d09fff56e",
+            "label": "Post slider",
+            "name": "post_slider",
+            "aria-label": "",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Add Row",
+            "rows_per_page": 20,
+            "sub_fields": [
+                {
+                    "key": "field_62e197ed39711",
+                    "label": "Title",
+                    "name": "title",
+                    "aria-label": "",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "100",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "Latest News",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": "",
+                    "parent_repeater": "field_62e1d09fff56e"
+                },
+                {
+                    "key": "field_62e1db50e0a31",
+                    "label": "Post type",
+                    "name": "post_type",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "33.333",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "catalog": "Catalog",
+                        "press": "Press"
+                    },
+                    "default_value": false,
+                    "allow_null": 0,
+                    "multiple": 0,
+                    "ui": 1,
+                    "ajax": 0,
+                    "return_format": "value",
+                    "placeholder": "",
+                    "parent_repeater": "field_62e1d09fff56e"
+                },
+                {
+                    "key": "field_62e1abc1149bd",
+                    "label": "Select posts or use recent posts",
+                    "name": "choose_or_recent",
+                    "aria-label": "",
+                    "type": "true_false",
+                    "instructions": "If you choose recent posts they will automatically fill the slides.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_62e1db50e0a31",
+                                "operator": "!=empty"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "33.333",
+                        "class": "",
+                        "id": ""
+                    },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 1,
+                    "ui_on_text": "Select posts",
+                    "ui_off_text": "Recent posts",
+                    "parent_repeater": "field_62e1d09fff56e"
+                },
+                {
+                    "key": "field_62e13e20fbcfc",
+                    "label": "Select press posts",
+                    "name": "press",
+                    "aria-label": "",
+                    "type": "post_object",
+                    "instructions": "** please select at least 3 posts",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_62e1db50e0a31",
+                                "operator": "==",
+                                "value": "press"
+                            },
+                            {
+                                "field": "field_62e1abc1149bd",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "100",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "press"
+                    ],
+                    "taxonomy": "",
+                    "allow_null": 0,
+                    "multiple": 1,
+                    "return_format": "object",
+                    "ui": 1,
+                    "parent_repeater": "field_62e1d09fff56e"
+                },
+                {
+                    "key": "field_62e1dd115771b",
+                    "label": "Select catalog posts",
+                    "name": "catalog",
+                    "aria-label": "",
+                    "type": "post_object",
+                    "instructions": "** please select at least 3 posts",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_62e1db50e0a31",
+                                "operator": "==",
+                                "value": "catalog"
+                            },
+                            {
+                                "field": "field_62e1abc1149bd",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "100",
+                        "class": "",
+                        "id": ""
+                    },
+                    "post_type": [
+                        "catalog"
+                    ],
+                    "taxonomy": "",
+                    "allow_null": 0,
+                    "multiple": 1,
+                    "return_format": "object",
+                    "ui": 1,
+                    "parent_repeater": "field_62e1d09fff56e"
+                }
+            ]
+        },
+        {
+            "key": "field_62e30f883e8c1",
+            "label": "Featured Catalog Trailer",
+            "name": "featured_trailer_one",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "catalog"
+            ],
+            "taxonomy": "",
+            "allow_null": 1,
+            "multiple": 0,
+            "return_format": "object",
+            "ui": 1
+        },
+        {
+            "key": "field_62ea71c7b466a",
+            "label": "Featured Trailer Video URL",
+            "name": "modal_url_one",
+            "aria-label": "",
+            "type": "oembed",
+            "instructions": "If the catalog you choose has a \"hero video\" already set, then you don't need to enter the URL here! Only if you want a specific trailer :)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "width": "",
+            "height": ""
+        },
+        {
+            "key": "field_62e30ff13e8c2",
+            "label": "Featured Catalog Trailer",
+            "name": "featured_trailer_two",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "catalog"
+            ],
+            "taxonomy": "",
+            "allow_null": 1,
+            "multiple": 0,
+            "return_format": "object",
+            "ui": 1
+        },
+        {
+            "key": "field_62ea722db466c",
+            "label": "Featured Trailer Two Video URL",
+            "name": "modal_url_two",
+            "aria-label": "",
+            "type": "oembed",
+            "instructions": "If the catalog you choose has a \"hero video\" already set, then you don't need to enter the URL here! Only if you want a specific trailer :)",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "width": "",
+            "height": ""
+        },
+        {
+            "key": "field_62e319b85250a",
+            "label": "Specials",
+            "name": "specials",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium_large",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_62e3197c52509",
+            "label": "Films",
+            "name": "films",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium_large",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_62e319c95250b",
+            "label": "Series",
+            "name": "series",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium_large",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_62e319d65250c",
+            "label": "Albums",
+            "name": "albums",
+            "aria-label": "",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium_large",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_62e83c58e95b5",
+            "label": "Display post grid",
+            "name": "display_post_grid",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "<em>Turn on to view screenshot example.<\/em>",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_62e83d25b60da",
+            "label": "Post grid example screenshot",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_62e83c58e95b5",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "message": "<img src=\"http:\/\/localhost:10009\/wp-content\/uploads\/2022\/08\/cd-post-grid.png\" width=\"300\"\/>",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page_template",
+                "operator": "==",
+                "value": "page-templates\/page-home-cd.php"
+            }
+        ]
+    ],
+    "menu_order": 2,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "COMEDY DYNAMICS",
+    "show_in_rest": 0,
+    "modified": 1671149832
+}

@@ -1,0 +1,43 @@
+{
+    "key": "group_6321e9b32cef6",
+    "title": "Where to Watch Instructions",
+    "fields": [
+        {
+            "key": "field_6321e9c128b3d",
+            "label": "",
+            "name": "",
+            "aria-label": "",
+            "type": "message",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "To add a new icon duplicate an existing icon by selecting the icon, open List View, click the three dots and select duplicate.\r\n<img src=\"https:\/\/i.ibb.co\/nCsjmwK\/Where-to-Watch-Instructions.png\" \/>",
+            "new_lines": "wpautop",
+            "esc_html": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "32344"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "COMEDY DYNAMICS",
+    "show_in_rest": 0,
+    "modified": 1671149654
+}

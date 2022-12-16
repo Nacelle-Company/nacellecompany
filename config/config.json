@@ -42,7 +42,10 @@
       "assets/js/vendor/**/*.js",
       "assets/svg/*.svg",
       "assets/images/*.webp",
-      "inc/EZ_Customizer/themeCustomizeSettings.json"
+      "inc/EZ_Customizer/themeCustomizeSettings.json",
+      "acf-json/*.json",
+      "acf-json/editor/*.css",
+      "acf-json/index.php"
     ]
   }
 }
