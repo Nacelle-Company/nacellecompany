@@ -13,7 +13,17 @@
 	margin-bottom: 0;
 
 	@media (--wide-menu-query) { /* __top */
+		max-height: 75vh;
+		min-height: 70vh;
+	}
+
+	@media (--content-query) { /* __top */
 		height: 100vh;
+		max-height: 60vh;
+		min-height: 60vh;
+	}
+
+	@media (--sidebar-query) { /* __top */
 		max-height: 75vh;
 		min-height: 70vh;
 	}

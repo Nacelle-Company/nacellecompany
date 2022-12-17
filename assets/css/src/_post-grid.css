@@ -160,20 +160,3 @@
 .entry-meta {
 	font-size: var(--font-size-small);
 }
-
-/* page-home-cd styles */
-.archive-main {
-	display: grid;
-	gap: 1em;
-	margin: 1em;
-
-	@media (--content-query) {
-		grid-template-columns: repeat(auto-fill, minmax(435px, 1fr));
-	}
-
-	@media (--sidebar-query) {
-		max-width: 1080px;
-		margin: 0 auto;
-		grid-template-columns: repeat(auto-fill, minmax(480px, 1fr));
-	}
-}

@@ -9,6 +9,7 @@
 
 	@media (--content-query) {
 		justify-content: space-between;
+		grid-column: 1/span 2;
 	}
 
 	@media (--sidebar-query) {

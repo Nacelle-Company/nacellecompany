@@ -257,7 +257,7 @@ wp_rig()->print_styles( 'wp-rig-page-home-cd' );
 			<?php
 			if ( get_field( 'display_post_grid' ) ) :
 				?>
-				<div class="archive-main type-page post-grid">
+				<div class="archive-main post-grid">
 					<h2 class="entry-title">Latest Independent Comedy News</h2>
 				<?php wp_rig()->display_post_grid( 'press' ); ?>
 				</div>
