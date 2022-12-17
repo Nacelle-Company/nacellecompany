@@ -50,7 +50,7 @@ $audio_btn_title	= get_post_meta(get_the_ID(), 'audio_btn_title', true);
 		<?php esc_html_e( $audio_btn_title ); ?>
 	</h3>
 	<?php if ( $itunes_audio_url ) : ?>
-	<a href="<?php echo esc_attr( $itunes_audio_url ); ?>" class="button apple-link" title="Listen <?php the_title_attribute(); ?> on iTunes" target="_blank" rel="noreferrer">
+	<a href="<?php echo esc_attr( $itunes_audio_url ); ?>" class="button button-transparent apple-link" title="Listen <?php the_title_attribute(); ?> on iTunes" target="_blank" rel="noreferrer">
 		<strong>
 			<?php esc_html_e( 'iTunes', 'wp-rig' ); ?>
 		</strong>
@@ -64,7 +64,7 @@ $audio_btn_title	= get_post_meta(get_the_ID(), 'audio_btn_title', true);
 		$audio_link  = get_sub_field( 'audio_link_url' );
 		if(!empty($audio_title && $audio_link)) :
 			?>
-			<a href="<?php echo esc_html( $audio_link ); ?>" class="button" title="Watch <?php the_title_attribute(); ?> on <?php echo esc_html( $audio_title ); ?>" target="_blank" rel="noreferrer">
+			<a href="<?php echo esc_html( $audio_link ); ?>" class="button button-transparent" title="Watch <?php the_title_attribute(); ?> on <?php echo esc_html( $audio_title ); ?>" target="_blank" rel="noreferrer">
 				<strong><?php echo esc_html( $audio_title ); ?></strong>
 				<?php echo load_inline_svg( 'icon-external-link.svg' ); ?>
 			</a>

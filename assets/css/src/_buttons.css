@@ -7,18 +7,19 @@ input[type="button"] {
 	position: relative;
 	width: max-content;
 	min-width: -webkit-fill-available;
+	text-decoration: none;
 	justify-content: center;
 	overflow: hidden;
 	padding: 1.25em 1em;
 	outline: 0;
 	border-radius: var(--border-radius-lg);
-	box-shadow: 2px 2px 0 0 #121212;
+	box-shadow: var(--button-shadow);
 	transition: all 0.2s ease;
 	cursor: pointer;
 	word-wrap: normal;
 	font-size: 12px;
 	color: var(--global-font-color-inverse);
-	background-color: var(--color-theme-button);
+	background-color: var(--color-theme-secondary);
 	border: 1px solid var(--color-theme-button);
 
 	@media (--wide-menu-query) {
@@ -53,7 +54,7 @@ input[type="button"] {
 
 	&:visited {
 
-		color: var(--border-color-light);
+		background-color: var(--color-link-visited);
 	}
 
 	&:not(:disabled) {

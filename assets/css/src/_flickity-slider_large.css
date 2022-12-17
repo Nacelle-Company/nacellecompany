@@ -1,0 +1,120 @@
+.main-carousel {
+	width: 100%;
+	margin-bottom: 3em;
+
+	@media (--sidebar-query) {
+		margin-bottom: 7em;
+	}
+}
+
+/* __top carousel */
+.main-carousel__top {
+	height: 50vh;
+	margin-bottom: 0;
+
+	@media (--wide-menu-query) { /* __top */
+		height: 100vh;
+		max-height: 75vh;
+		min-height: 70vh;
+	}
+
+	& img {
+		max-height: 80vh;
+		width: 100%;
+		object-fit: cover;
+
+		@media (--sidebar-query) {
+			max-height: 60vh;
+		}
+	}
+
+	& .flickity-prev-next-button { /* __top */
+		top: 27%;
+		transform: translateY(-60%);
+
+		@media (--content-query) { /* __top */
+			top: 40%;
+			transform: translateY(-60%);
+		}
+	}
+
+	& .flickity-prev-next-button.previous { /* __top */
+
+		left: 10px;
+	}
+
+	& .flickity-prev-next-button.next { /* __top */
+		right: 10px;
+	}
+
+	/* ^^^^^^ END DEFAULTS ^^^^^^ */
+
+	/* ^^^^^^ END DEFAULTS ^^^^^^ */
+
+	/* ^^^^^^ END DEFAULTS ^^^^^^ */
+
+	& .caption { /* __top */
+		text-align: center;
+		padding: 0;
+
+		@media (--sidebar-query) {
+			z-index: -1;
+			max-height: 0;
+			height: max-content;
+			transform: translateY(-160px);
+
+			/* caption transition */
+			transition:
+				z-index 0.2s ease-in 0s,
+				max-height 0.3s ease-out 0.7s,
+				transform 0.2s ease-in 0.1s;
+		}
+	}
+
+	& .carousel-cell { /* __top */
+		width: 100%;
+
+		@media (--sidebar-query) { /* __top */
+			width: 68%;
+		}
+
+		&:not(.is-selected) figure::before {
+
+			@media (--sidebar-query) {
+				background-color: rgba(0, 0, 0, 0.7);
+				content: "";
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				transition: background-color 0.3s ease-in-out 0.2s;
+			}
+		}
+
+		&.is-selected {
+
+			& figure::before {
+				background-color: rgba(0, 0, 0, 0);
+				content: "";
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				transition: background-color 0.3s ease-in-out 0.2s;
+			}
+
+			& .caption {
+
+				@media (--sidebar-query) {
+					z-index: 0;
+					max-height: auto;
+					transform: translateY(0);
+
+					/* caption transition */
+					transition:
+						z-index 0.3s ease-out 0.5s,
+						max-height 0.2s ease-in 0.7s,
+						transform 0.4s ease-out 0.2s;
+				}
+			}
+		}
+	}
+}

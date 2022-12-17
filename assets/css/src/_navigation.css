@@ -341,7 +341,6 @@
 	& a {
 		display: block;
 		text-decoration: none;
-		color: var(--color-theme-primary);
 		padding: 1em 0;
 		max-width: 75%;
 

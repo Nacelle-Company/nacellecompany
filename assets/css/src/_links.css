@@ -2,7 +2,7 @@
 # Links
 --------------------------------------------------------------*/
 
-a {
+a:not(.button) {
 	color: var(--color-link);
 	text-decoration: none;
 
@@ -54,6 +54,7 @@ a:not(.button):active {
 	cursor: pointer;
 	opacity: 100%;
 	transition: opacity 0.5s;
+
 	& path {
 		fill: var(--color-theme-primary);
 		transition: fill 0.2s ease-out;
@@ -62,6 +63,7 @@ a:not(.button):active {
 
 .back-to-top:hover {
 	background: var(--border-color-dark);
+
 	& path {
 		fill: var(--color-theme-secondary);
 		transition: fill 0.2s ease-out;
@@ -80,6 +82,7 @@ a:not(.button):active {
 
 /* Hover classes */
 .hover-brightness > div {
+
 	@media (--sidebar-query) {
 		filter: brightness(0.75);
 		transition: filter 0.2s ease-out;
@@ -87,10 +90,12 @@ a:not(.button):active {
 }
 
 .hover-brightness > div:hover {
+
 	@media (--sidebar-query) {
 		filter: brightness(1);
 	}
 }
+
 /*--------------------------------------------------------------
 # END Links
 --------------------------------------------------------------*/

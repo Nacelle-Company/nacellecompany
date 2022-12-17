@@ -1,0 +1,73 @@
+/* Featured trailers */
+.featured-trailers {
+	display: grid;
+	gap: 0;
+	margin-bottom: 4em;
+
+	@media (--content-query) {
+		grid-template-columns: 1fr 1fr;
+		grid-column: 3/span 8;
+	}
+
+	@media (--sidebar-query) {
+		gap: 1em;
+	}
+
+	& .caption p {
+		margin-bottom: 0;
+	}
+
+	& .icon {
+		margin-right: 0.5rem;
+
+		& [fill] {
+			fill: var(--color-theme-secondary);
+		}
+	}
+}
+
+.featured-trailers__catalog {
+	gap: 0;
+}
+
+.trailer {
+	position: relative;
+
+	@media (--content-query) {
+		margin: 0.5em;
+
+	}
+
+	& .flickity-title {
+		margin: 0;
+		line-height: 1;
+		font-size: 110%;
+
+		@media (--content-query) {
+			margin: 5px 0;
+			font-size: initial;
+		}
+	}
+}
+
+.trailer-overlay {
+	background: #000000a3;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	transition: background 0.1s linear;
+}
+
+.open-modal:hover .trailer-overlay {
+	background: #00000082;
+}
+
+.icon-play {
+	position: absolute;
+	justify-self: center;
+	align-self: center;
+
+	& [fill] {
+		fill: var(--color-link);
+	}
+}

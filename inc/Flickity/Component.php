@@ -149,7 +149,6 @@ class Component implements Component_Interface, Templating_Component_Interface {
 
 					<div class="carousel-cell <?php echo esc_html( $slide->ID ); ?>" tabindex='-1'>
 						<figure>
-							<a class="link-absolute" href="<?php echo esc_html( $the_permalink ); ?>" title="<?php echo esc_html( $the_title ); ?>"></a>
 							<?php
 							// Press slider: wp featured image.
 							if ( 'posts press' === $slider_id ) :
@@ -183,6 +182,9 @@ class Component implements Component_Interface, Templating_Component_Interface {
 								// Top slider: home image.
 							elseif ( 'top' === $slider_id ) :
 								if ( get_field( 'home_image', $slide ) ) :
+									?>
+
+									<?php
 									$image   = get_field( 'home_image', $slide );
 									$size    = 'full';
 									$no_lazy = 'no-lazy attachment-full';
@@ -200,11 +202,13 @@ class Component implements Component_Interface, Templating_Component_Interface {
 									);
 								else :
 									?>
+
 										<img src="<?php bloginfo( 'template_directory' ); ?>/assets/images/comedy-dynamics-default.webp" class="wp-post-image" alt="<?php echo esc_html( $the_title ); ?>" />
 									<?php
 								endif;
 							else :
 								?>
+
 									<img src="<?php bloginfo( 'template_directory' ); ?>/assets/images/comedy-dynamics-default.webp" class="wp-post-image" alt="<?php echo esc_html( $the_title ); ?>" />
 								<?php
 							endif;
@@ -223,9 +227,11 @@ class Component implements Component_Interface, Templating_Component_Interface {
 										</time>
 									</sub>
 								<?php elseif ( $title ) : ?>
-									<h2 class="flickity-title">
-										<?php echo esc_html( $the_title ); ?>
-									</h2>
+									<a href="<?php echo esc_html( $the_permalink ); ?>">
+										<h2 class="flickity-title">
+												<?php echo esc_html( $the_title ); ?>
+										</h2>
+									</a>
 								<?php endif; ?>
 
 								<?php if ( $btn ) : ?>

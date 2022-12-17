@@ -218,7 +218,7 @@
       "label": "Button color",
       "type": "color",
       "section": "global_colors",
-      "default": "#ffbc00",
+      "default": "#e6a100",
       "refresh": false,
       "description": "Buttons with a solid background."
     },
