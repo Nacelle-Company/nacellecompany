@@ -357,7 +357,14 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				'file'             => 'catalog-categories.min.css',
 				'preload_callback' => function() {
 					global $template;
-					return array( 'category.php', 'taxonomy.php', 'search-catalog.php' ) === basename( $template );
+					return array( 'category.php', 'search-catalog.php' ) === basename( $template );
+				},
+			),
+			'wp-rig-catalog-taxonomies'       => array(
+				'file'             => 'catalog-taxonomies.min.css',
+				'preload_callback' => function() {
+					global $template;
+					return array( 'taxonomy.php' ) === basename( $template );
 				},
 			),
 			'wp-rig-page-products'      => array(

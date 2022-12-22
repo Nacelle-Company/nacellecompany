@@ -9,6 +9,6 @@ namespace WP_Rig\WP_Rig;
 
 ?>
 
-<button class="back-to-top invisible" title="Scroll to top">
+<button class="button-to-top invisible" title="Scroll to top">
 <?php echo load_inline_svg( 'icon-arrow-up.svg' ); ?>
 </button>

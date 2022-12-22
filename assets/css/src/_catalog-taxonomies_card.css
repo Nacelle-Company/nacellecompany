@@ -28,7 +28,6 @@
 	color: var(--global-color-dark);
 	margin: 0;
 	font-size: var(--font-size-normal);
-	padding-bottom: 0.5em;
 
 	@media (--content-query) {
 
@@ -54,6 +53,17 @@
 	}
 }
 
+/* grid item's content on hover */
+.gi a:hover .gi__content,
+.gi:hover .gi__content {
+
+	@media (--wide-menu-query) {
+		background-color: var(--color-theme-primary);
+		opacity: 1;
+		transform: translateY(100%);
+	}
+}
+
 /* Grid item without an image */
 .gi__plain .gi__content {
 
@@ -64,17 +74,6 @@
 
 	&:hover .gi__content {
 		transform: none;
-	}
-}
-
-/* grid item's content on hover */
-.gi a:hover .gi__content,
-.gi:hover .gi__content {
-
-	@media (--wide-menu-query) {
-		background-color: var(--color-theme-primary);
-		opacity: 1;
-		transform: translateY(100%);
 	}
 }
 

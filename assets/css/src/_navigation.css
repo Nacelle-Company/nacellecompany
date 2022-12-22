@@ -8,6 +8,7 @@
 	padding: 1em;
 
 	@media (--content-query) {
+		grid-column: 1/span 2;
 		justify-content: space-between;
 	}
 
@@ -343,6 +344,7 @@
 		text-decoration: none;
 		padding: 1em 0;
 		max-width: 75%;
+		font-size: var(--font-size-menu);
 
 		@media (--sidebar-query) {
 			max-width: 100%;

@@ -7,6 +7,12 @@
 	font-family: var(--highlight-font-family);
 	font-stretch: condensed;
 	background-color: var(--nav-bk-color);
+	min-width: 100vw;
+
+	@media (--content-query) {
+		display: grid;
+		grid-column: 1/-1;
+	}
 
 
 	/*--------------------------------------------------------------

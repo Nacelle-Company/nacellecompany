@@ -9,4 +9,9 @@
 
 .site-main {
 	display: grid;
+
+	@media (--content-query) {
+		grid-column: 1/-1;
+
+	}
 }

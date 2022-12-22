@@ -218,7 +218,7 @@ dd::after {
 	grid-column: 1/span 1;
 
 	@media (--content-query) {
-		grid-column: 1/span 6;
+		grid-column: 1/span 7;
 	}
 }
 

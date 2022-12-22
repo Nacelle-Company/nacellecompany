@@ -399,3 +399,9 @@ function wsds_detect_enqueued_scripts() {
 	endforeach;
 }
 */
+
+/**
+ * Number of queries
+ *
+ * echo get_num_queries();
+ */

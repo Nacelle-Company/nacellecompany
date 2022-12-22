@@ -31,21 +31,16 @@
 	& img {
 		max-height: 80vh;
 		width: 100%;
-		object-fit: cover;
+		object-fit: contain;
 
 		@media (--sidebar-query) {
-			max-height: 60vh;
+			max-height: 55vh;
 		}
 	}
 
 	& .flickity-prev-next-button { /* __top */
-		top: 27%;
-		transform: translateY(-60%);
-
-		@media (--content-query) { /* __top */
-			top: 40%;
-			transform: translateY(-60%);
-		}
+		top: 100%;
+		transform: translateY(-165%);
 	}
 
 	& .flickity-prev-next-button.previous { /* __top */

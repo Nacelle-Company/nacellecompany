@@ -54,12 +54,16 @@ $taxonomies = wp_list_filter(
 			?>
 			<span class="<?php echo esc_attr( $class ); ?>">
 				<?php
+				printf( esc_html( $placeholder_text ), null);
+				?>
+			</span>
+			<span class="<?php echo esc_attr( $class . '-terms' ); ?>">
+				<?php
 				printf(
-					esc_html( $placeholder_text ),
 					$list // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				);
 				?>
-			</span><span>|</span>
+			</span>
 			<?php
 		}
 	}

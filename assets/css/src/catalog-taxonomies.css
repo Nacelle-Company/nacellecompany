@@ -1,0 +1,124 @@
+@import "_site-main.css";
+@import "_page-header.css";
+@import "_post-grid.css";
+@import "_content.css";
+
+.page-header {
+	border-bottom: 2px solid var(--color-theme-primary);
+
+	@media (--sidebar-query) {
+		grid-column: 1/span 2;
+	}
+}
+
+.site-main__tax {
+	margin: 1em;
+	gap: 2em 0;
+
+	@media (--content-query) {
+		grid-column: 1/span 2;
+		margin: 1em;
+	}
+
+	@media (--sidebar-query) {
+		grid-column: 1/span 2;
+
+		grid-template-columns: 1fr 5fr 1fr;
+		grid-gap: 2em 0;
+		gap: 2em 0;
+		margin: 1em;
+
+	}
+}
+
+/* PAGE HEADER INTRO */
+.page-header__intro {
+	display: grid;
+	grid-column: 1/-1;
+	margin: 1em;
+
+	@media (--content-query) {
+		grid-column: 1/span 2;
+	}
+
+	@media (--sidebar-query) {
+		grid-template-columns: 1fr 5fr 1fr;
+		grid-column: 1/span 2;
+	}
+
+	& .page-header__intro__wrap p a {
+		color: var(--global-color-grey-dark);
+	}
+}
+
+.page-header__intro__wrap {
+	background: var(--color-theme-secondary);
+	padding: 2em;
+	color: var(--global-font-color-inverse);
+	border-radius: var(--border-radius-lg);
+
+	@media (--sidebar-query) {
+		grid-column: 2;
+
+	}
+}
+
+/* PAGE HEADER INTRO end */
+.grid-item {
+	display: grid;
+	grid-column: 1/span 2;
+	gap: 1em 0;
+
+	@media (--content-query) {
+		grid-column: 2/span 1;
+		grid-template-columns: 1fr 2fr;
+		gap: 1em 2em;
+		grid-template-rows: repeat(4, auto);
+		align-items: start;
+	}
+
+	@media (--sidebar-query) {
+
+		/* grid-column: 2/span 1;
+		grid-template-columns: 1fr 2fr;
+		gap: 1em 2em;
+		grid-template-rows: repeat(4, auto);
+		align-items: start; */
+	}
+}
+
+.post-thumbnail {
+	grid-row: 1;
+
+	/* not phone */
+	@media (--content-query) {
+		grid-column: 1/span 1;
+		grid-row-start: 1;
+		grid-row-end: 5;
+	}
+}
+
+.entry-title,
+.entry-summary,
+.entry-footer {
+
+	@media (--content-query) {
+		grid-column: 2/span 1;
+		grid-auto-rows: min-content;
+	}
+}
+
+.entry-footer {
+	display: grid;
+	gap: 1em;
+}
+
+.entry-title {
+	margin: 0;
+}
+
+.entry-taxonomies {
+	display: grid;
+	grid-template-columns: max-content auto;
+	gap: 1em;
+}

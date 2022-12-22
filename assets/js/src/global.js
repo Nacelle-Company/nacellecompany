@@ -19,7 +19,7 @@ if ( searchIcon.childElementCount !== 0 ) {
 
 // Back to top button
 const showOnPx = 100;
-const backToTopButton = document.querySelector( '.back-to-top' );
+const backToTopButton = document.querySelector( '.button-to-top' );
 
 const scrollContainer = () => {
 	return document.documentElement || document.body;

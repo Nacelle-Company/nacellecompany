@@ -7,7 +7,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Last-Translator: The WP Rig Contributors\n"
-"POT-Creation-Date: 2022-12-14 22:40+0000\n"
 "Report-Msgid-Bugs-To: WP Rig\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
@@ -16,6 +15,11 @@ msgstr ""
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+#. translators: 1: title.
+#: comments.php:38
+msgid "One thought on &ldquo;%1$s&rdquo;"
+msgstr ""
+
 #. translators: 1: comment count number, 2: title.
 #: comments.php:44
 msgctxt "comments title"
@@ -23,10 +27,6 @@ msgid "%1$s thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
-
-#: comments.php:38
-msgid "One thought on &ldquo;%1$s&rdquo;"
-msgstr ""
 
 #: comments.php:60
 msgid "Comments are closed."
@@ -261,7 +261,7 @@ msgid "Footer widgets"
 msgstr ""
 
 #. translators: %s: stylesheet handle
-#: inc/Styles/Comp.php:237, inc/Styles/Component.php:237
+#: inc/Styles/Component.php:237
 msgid "Invalid theme stylesheet handle: %s"
 msgstr ""
 
@@ -373,16 +373,18 @@ msgstr ""
 msgid "Oops! Something went wrong."
 msgstr ""
 
-#: template-parts/content/error-content.php:45, template-parts/content/error.php:43
-msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
+#. translators: 1: link to WP admin new post page.
+#. translators: 1: link to WP admin new post page.
+#: template-parts/content/error-content.php:24, template-parts/content/error.php:22
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
 #: template-parts/content/error-content.php:39, template-parts/content/error.php:37
 msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
 msgstr ""
 
-#: template-parts/content/error-content.php:24, template-parts/content/error.php:22
-msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+#: template-parts/content/error-content.php:45, template-parts/content/error.php:43
+msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr ""
 
 #: template-parts/content/error-content.php:53
@@ -411,20 +413,20 @@ msgstr ""
 msgid "Theme: %s by the contributors."
 msgstr ""
 
-#. translators: %s: search query
-#: template-parts/header/page-header.php:47
-msgid "Search Results for: %s"
-msgstr ""
-
-#: template-parts/header/page-header.php:27
-msgid "Nothing Found"
-msgstr ""
-
-#: template-parts/header/page-header.php:19
+#: template-parts/header/page-header.php:31
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
-#: template-parts/modules/offcanvas-menu.php:18
+#: template-parts/header/page-header.php:39
+msgid "Nothing Found"
+msgstr ""
+
+#. translators: %s: search query
+#: template-parts/header/page-header.php:59
+msgid "Search Results for: %s"
+msgstr ""
+
+#: template-parts/modules/offcanvas-menu.php:30
 msgid "Sort & Filter"
 msgstr ""
 

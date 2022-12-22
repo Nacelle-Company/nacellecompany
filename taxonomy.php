@@ -14,18 +14,15 @@ namespace WP_Rig\WP_Rig;
 
 get_header();
 
-wp_rig()->print_styles( 'wp-rig-pagination' );
-
+wp_rig()->print_styles( 'wp-rig-catalog-taxonomies' );
+get_template_part( 'template-parts/header/page', 'header_taxonomy' );
 ?>
-	<main id="primary" class="site-main site-main__catalog">
+	<main id="primary" class="site-main site-main__tax">
 		<?php
 		if ( have_posts() ) {
 
-			get_template_part( 'template-parts/header/page-header' );
-
 			while ( have_posts() ) {
 				the_post();
-
 				get_template_part( 'template-parts/content/entry', get_post_type() );
 			}
 

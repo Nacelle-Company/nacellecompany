@@ -24,6 +24,11 @@ if(in_array('search-filter-pro/search-filter-pro.php', apply_filters('active_plu
 }
 
 $the_title  = get_the_title();
+$the_title_l = strlen($the_title);
+if($the_title_l >= 28) {
+	$the_title  = substr($the_title,0,28);
+	$the_title  = $the_title . '...';
+}
 $permalink  = get_permalink();
 $content_wp = get_the_content();
 $content_ex = get_the_excerpt();
@@ -116,8 +121,8 @@ if ( ! empty( $img ) ) {
 			<?php } ?>
 
 		<div class="gi__content">
-			<h2 class="title"><?php echo esc_attr( $the_title ); ?></h2>
-			<sub><?php echo esc_html( $synopsis ); ?></sub>
+			<h2 class="title font-size-small"><?php echo esc_attr( $the_title ); ?></h2>
+			<p class="font-size-small"><?php echo esc_html( $synopsis ); ?></p>
 		</div>
 	</div>
 	<?php

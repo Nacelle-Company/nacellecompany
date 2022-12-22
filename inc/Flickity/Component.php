@@ -220,12 +220,12 @@ class Component implements Component_Interface, Templating_Component_Interface {
 											<?php echo esc_html( $the_title ); ?>
 										</a>
 									</p>
-									<sub class="post-source">
+									<p class="post-source font-size-small">
 										<?php echo esc_html( $source ); ?>
 										<time class="post-date" datetime="<?php echo esc_html( $time_att ); ?>">
 											<?php echo esc_html( $time ); ?>
 										</time>
-									</sub>
+									</p>
 								<?php elseif ( $title ) : ?>
 									<a href="<?php echo esc_html( $the_permalink ); ?>">
 										<h2 class="flickity-title">

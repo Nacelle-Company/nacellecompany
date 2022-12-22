@@ -15,16 +15,16 @@ a:not(.button) {
 	}
 }
 
+.current-menu-item a,
+.main-navigation a:hover,
+.main-navigation a:focus {
+	color: var(--color-link);
+}
+
 a:not(.button):hover,
 a:not(.button):focus,
 a:not(.button):active {
 	color: var(--color-link-visited);
-}
-
-.main-navigation a:hover,
-.main-navigation a:focus,
-.current-menu-item a {
-	color: var(--color-link);
 }
 
 a:not(.button):focus {
@@ -43,7 +43,7 @@ a:not(.button):active {
 }
 
 /* Back to top button */
-.back-to-top {
+.button-to-top {
 	position: fixed;
 	right: 2rem;
 	bottom: 2rem;
@@ -52,7 +52,7 @@ a:not(.button):active {
 	padding: 0.9em 1.17em;
 	border: none;
 	cursor: pointer;
-	opacity: 100%;
+	opacity: 1;
 	transition: opacity 0.5s;
 
 	& path {
@@ -61,7 +61,7 @@ a:not(.button):active {
 	}
 }
 
-.back-to-top:hover {
+.button-to-top:hover {
 	background: var(--border-color-dark);
 
 	& path {
@@ -74,7 +74,7 @@ a:not(.button):active {
 	opacity: 0%;
 }
 
-.back-to-top-icon {
+.button-to-top-icon {
 	width: 1rem;
 	height: 1rem;
 	color: var(--color-theme-secondary);
