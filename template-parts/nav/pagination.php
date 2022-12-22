@@ -6,7 +6,7 @@
  */
 
 namespace WP_Rig\WP_Rig;
-
+wp_rig()->print_styles( 'wp-rig-pagination-archive' );
 the_posts_pagination(
 	array(
 		'mid_size'           => 2,
