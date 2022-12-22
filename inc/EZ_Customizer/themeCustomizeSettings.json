@@ -83,7 +83,7 @@
       "label": "Global font color inverse",
       "type": "color",
       "section": "global_colors",
-      "default": "#202020",
+      "default": "#0a0a0a",
       "refresh": false,
       "description": "Nacelle Company: #202020"
     },
@@ -119,7 +119,7 @@
       "label": "Global color grey light",
       "type": "color",
       "section": "global_colors",
-      "default": "#7d7d7d",
+      "default": "#dddddd",
       "refresh": false,
       "description": "Nacelle Company: #7d7d7d"
     },
@@ -164,7 +164,7 @@
       "label": "Color link visited",
       "type": "color",
       "section": "global_colors",
-      "default": "#ffbc00",
+      "default": "#66b9cd",
       "refresh": false,
       "description": "Nacelle Company: #76b5fb"
     },
@@ -218,7 +218,7 @@
       "label": "Button color",
       "type": "color",
       "section": "global_colors",
-      "default": "#e6a100",
+      "default": "#7fd2e6",
       "refresh": false,
       "description": "Buttons with a solid background."
     },
