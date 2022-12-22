@@ -1,7 +1,4 @@
-/* stylelint-disable CssSyntaxError */
 @import "_modal.css";
-
-
 
 small {
 	color: var(--color-theme-white);
@@ -31,8 +28,6 @@ small {
 		padding-left: 1.25rem;
 		max-width: 1120px;
 		margin: 0 auto;
-
-		/* transition: filter 0.4s linear; */
 		align-items: center;
 
 		@media (--content-query) {

@@ -1,3 +1,4 @@
+/* stylelint-disable */
 @font-face {
 	font-family: "asppsicons2";
 	src:
@@ -153,7 +154,7 @@ div.ajaxsearchpro.asp_main_container {
 	-webkit-transition: width 130ms linear;
 }
 
-asp_w_container,
+.asp_w_container,
 div.asp_w.ajaxsearchpro,
 div.asp_w.asp_r,
 div.asp_w.asp_s,
@@ -1239,18 +1240,12 @@ div.asp_r.asp_r_2 .results .item {
 #ajaxsearchprores2_1 .results .item.hovered,
 #ajaxsearchprores2_2 .results .item.hovered,
 div.asp_r.asp_r_2 .results .item.hovered {
-	background-image:
- -moz-radial-gradient(center, ellipse cover, rgba(18, 18, 18, 1), rgba(18, 18, 18, 1));
-	background-image:
- -webkit-gradient(radial, center center, 0, center center, 100%, rgba(18, 18, 18, 1), rgba(18, 18, 18, 1));
-	background-image:
- -webkit-radial-gradient(center, ellipse cover, rgba(18, 18, 18, 1), rgba(18, 18, 18, 1));
-	background-image:
- -o-radial-gradient(center, ellipse cover, rgba(18, 18, 18, 1), rgba(18, 18, 18, 1));
-	background-image:
- -ms-radial-gradient(center, ellipse cover, rgba(18, 18, 18, 1), rgba(18, 18, 18, 1));
-	background-image:
- radial-gradient(ellipse at center, rgba(18, 18, 18, 1), rgba(18, 18, 18, 1));
+	background-image: -moz-radial-gradient(center, ellipse cover, rgba(18, 18, 18, 1), rgba(18, 18, 18, 1));
+	background-image: -webkit-gradient(radial, center center, 0, center center, 100%, rgba(18, 18, 18, 1), rgba(18, 18, 18, 1));
+	background-image: -webkit-radial-gradient(center, ellipse cover, rgba(18, 18, 18, 1), rgba(18, 18, 18, 1));
+	background-image: -o-radial-gradient(center, ellipse cover, rgba(18, 18, 18, 1), rgba(18, 18, 18, 1));
+	background-image: -ms-radial-gradient(center, ellipse cover, rgba(18, 18, 18, 1), rgba(18, 18, 18, 1));
+	background-image: radial-gradient(ellipse at center, rgba(18, 18, 18, 1), rgba(18, 18, 18, 1));
 }
 
 #ajaxsearchprores2_1 .results .item .asp_image,
@@ -1428,16 +1423,11 @@ div.asp_s.asp_s_2.searchsettings,
 div.asp_s.asp_s_2.searchsettings {
 	direction: ltr;
 	padding: 0;
-	background-image:
- -webkit-linear-gradient(185deg, var(--nav-bk-color), var(--nav-bk-color));
-	background-image:
- -moz-linear-gradient(185deg, var(--nav-bk-color), var(--nav-bk-color));
-	background-image:
- -o-linear-gradient(185deg, var(--nav-bk-color), var(--nav-bk-color));
-	background-image:
- -ms-linear-gradient(185deg, var(--nav-bk-color) 0, var(--nav-bk-color) 100%);
-	background-image:
- linear-gradient(185deg, var(--nav-bk-color), var(--nav-bk-color));
+	background-image: -webkit-linear-gradient(185deg, var(--nav-bk-color), var(--nav-bk-color));
+	background-image: -moz-linear-gradient(185deg, var(--nav-bk-color), var(--nav-bk-color));
+	background-image: -o-linear-gradient(185deg, var(--nav-bk-color), var(--nav-bk-color));
+	background-image: -ms-linear-gradient(185deg, var(--nav-bk-color) 0, var(--nav-bk-color) 100%);
+	background-image: linear-gradient(185deg, var(--nav-bk-color), var(--nav-bk-color));
 	box-shadow: none;
 	max-width: 208px;
 	z-index: 2;
@@ -1485,14 +1475,10 @@ div.asp_s.asp_s_2.searchsettings .asp_label {
 #ajaxsearchprosettings2_2.searchsettings .asp_option_inner label,
 div.asp_sb.asp_sb_2.searchsettings .asp_option_inner label,
 div.asp_s.asp_s_2.searchsettings .asp_option_inner label {
-	background-image:
- -webkit-linear-gradient(180deg, rgb(34, 34, 34), rgb(69, 72, 77));
-	background-image:
- -moz-linear-gradient(180deg, rgb(34, 34, 34), rgb(69, 72, 77));
-	background-image:
- -o-linear-gradient(180deg, rgb(34, 34, 34), rgb(69, 72, 77));
-	background-image:
- -ms-linear-gradient(180deg, rgb(34, 34, 34) 0, rgb(69, 72, 77) 100%);
+	background-image: -webkit-linear-gradient(180deg, rgb(34, 34, 34), rgb(69, 72, 77));
+	background-image: -moz-linear-gradient(180deg, rgb(34, 34, 34), rgb(69, 72, 77));
+	background-image: -o-linear-gradient(180deg, rgb(34, 34, 34), rgb(69, 72, 77));
+	background-image: -ms-linear-gradient(180deg, rgb(34, 34, 34) 0, rgb(69, 72, 77) 100%);
 	background-image: linear-gradient(180deg, rgb(34, 34, 34), rgb(69, 72, 77));
 }
 
@@ -1566,36 +1552,24 @@ div.asp_s.asp_s_2.searchsettings fieldset legend {
 #ajaxsearchprosettings2_2.searchsettings .asp_simplebar-scrollbar::before,
 div.asp_s.asp_s_2.searchsettings .asp_simplebar-scrollbar::before {
 	background: transparent;
-	background-image:
- -moz-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-	background-image:
- -webkit-gradient(radial, center center, 0, center center, 100%, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-	background-image:
- -webkit-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-	background-image:
- -o-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-	background-image:
- -ms-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-	background-image:
- radial-gradient(ellipse at center, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+	background-image: -moz-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+	background-image: -webkit-gradient(radial, center center, 0, center center, 100%, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+	background-image: -webkit-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+	background-image: -o-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+	background-image: -ms-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+	background-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
 }
 
 #ajaxsearchprobsettings2_1.searchsettings .asp_simplebar-scrollbar::before,
 #ajaxsearchprobsettings2_2.searchsettings .asp_simplebar-scrollbar::before,
 div.asp_sb.asp_sb_2.searchsettings .asp_simplebar-scrollbar::before {
 	background: transparent;
-	background-image:
- -moz-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-	background-image:
- -webkit-gradient(radial, center center, 0, center center, 100%, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-	background-image:
- -webkit-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-	background-image:
- -o-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-	background-image:
- -ms-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-	background-image:
- radial-gradient(ellipse at center, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+	background-image: -moz-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+	background-image: -webkit-gradient(radial, center center, 0, center center, 100%, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+	background-image: -webkit-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+	background-image: -o-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+	background-image: -ms-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+	background-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
 }
 
 #ajaxsearchprores2_1.vertical,
@@ -1653,18 +1627,12 @@ div.asp_r.asp_r_2.vertical .results .item .asp_image {
 #ajaxsearchprores2_2.vertical .asp_simplebar-scrollbar::before,
 div.asp_r.asp_r_2.vertical .asp_simplebar-scrollbar::before {
 	background: transparent;
-	background-image:
- -moz-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-	background-image:
- -webkit-gradient(radial, center center, 0, center center, 100%, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-	background-image:
- -webkit-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-	background-image:
- -o-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-	background-image:
- -ms-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-	background-image:
- radial-gradient(ellipse at center, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+	background-image: -moz-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+	background-image: -webkit-gradient(radial, center center, 0, center center, 100%, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+	background-image: -webkit-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+	background-image: -o-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+	background-image: -ms-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+	background-image: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
 }
 
 #ajaxsearchprores2_1.vertical .results .item::after,

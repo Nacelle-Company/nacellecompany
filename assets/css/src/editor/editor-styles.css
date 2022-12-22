@@ -1,21 +1,4 @@
-/**
- * Styles for the WordPress post/page editor.
- * Ensures a visual match between back- and front-end.
- */
-
-/*--------------------------------------------------------------
->>> TABLE OF CONTENTS:
-----------------------------------------------------------------
-# Imports
-   # Custom properties
-   # Typography
-   # Elements
-   # Links
-# Adjustments for the editor
-/*--------------------------------------------------------------
-# Imports
---------------------------------------------------------------*/
-
+/* stylelint-disable */
 @import "../_custom-properties.css";
 @import "../_typography.css";
 @import "../_elements.css";
@@ -103,3 +86,4 @@ option {
 	padding-left: 2.5em;
 	padding-right: 2.5em;
 }
+/* stylelint-enable */

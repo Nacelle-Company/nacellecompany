@@ -9,12 +9,14 @@ namespace WP_Rig\WP_Rig;
 
 global $searchandfilter;
 global $sf_current_query;
-$sf_filtered = false;
+
 // check for plugin using plugin name
 if(in_array('search-filter-pro/search-filter-pro.php', apply_filters('active_plugins', get_option('active_plugins')))){
 	$sf_current_query = $searchandfilter->get( 46579 )->current_query();
 	if($sf_current_query->is_filtered()) {
 		$sf_filtered = true;
+	} else {
+		$sf_filtered = false;
 	}
 }
 

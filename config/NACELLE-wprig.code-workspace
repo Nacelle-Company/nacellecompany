@@ -1,33 +1,36 @@
 {
-    "folders": [
-        {
-            "path": "../../wprig-nacelle-dev"
-        }
-    ],
-    "settings": {
+	"folders": [
+		{
+			"path": "../../wprig-nacelle-dev"
+		}
+	],
+	"settings": {
 		"phpsab.fixerEnable": true,
-		"phpsab.executablePathCBF": "/Users/lukey/wpcs/WordPress-Coding-Standards/vendor/squizlabs/php_codesniffer/bin/phpcbf",
-		"phpsab.executablePathCS": "/Users/lukey/wpcs/WordPress-Coding-Standards/vendor/squizlabs/php_codesniffer/bin/phpcs",
+		"phpsab.executablePathCBF": "",
+		"phpsab.executablePathCS": "",
 		"phpsab.autoRulesetSearch": true,
 		"phpsab.standard": "WordPress",
 		"phpsab.snifferArguments": [
 			"--ignore=*/wp-admin/*,*/wp-includes/*"
 		],
-        "editor.renderWhitespace": "all",
-        "editor.hover.enabled": true,
+		"editor.renderWhitespace": "all",
+		"editor.hover.enabled": true,
 		"editor.snippetSuggestions": "top",
 		"prettier.useTabs": true,
-        "stylelint.enable": true,
-        "css.validate": false,
-        "scss.validate": false,
-        "intelephense.environment.includePaths": [
-            "/Users/lukey/Sites/nacelle/app/public"
-        ],
+		"stylelint.enable": true,
+		"stylelint.config": null,
+		"less.validate": false,
+		"stylelint.validate": ["css", "postcss"],
 		"editor.codeActionsOnSave": {
-			"source.fixAll": true
+			"source.fixAll.stylelint": true
 		},
+		"css.validate": false,
+		"scss.validate": false,
+		"intelephense.environment.includePaths": [
+			"/Users/lukey/Sites/nacelle/app/public"
+		],
 		"phpsab.debug": true,
 		"phpsab.snifferEnable": true,
 		"phpsab.snifferShowSources": true
-    }
+	}
 }

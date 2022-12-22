@@ -12,8 +12,18 @@
 	}
 }
 
+.page-title__offcanvas {
+	position: relative;
+	justify-self: end;
+	grid-column: 3;
+
+	& .offcanvas-toggle {
+		text-align: right;
+	}
+}
+
 .page-title {
-    margin: 0.25em 0;
+	margin: 0.25em 0;
 }
 
 .page-header__filters {
@@ -27,7 +37,7 @@
 
 .page-title__wrap {
 	display: grid;
-    column-gap: 2em;
+	column-gap: 2em;
 	align-items: baseline;
 	border-bottom: 2px solid var(--color-theme-primary);
 	grid-template-columns: auto min-content;

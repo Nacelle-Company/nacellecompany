@@ -10,19 +10,19 @@ namespace WP_Rig\WP_Rig;
 global $searchandfilter;
 
 // check for plugin using plugin name
-// if(in_array('search-filter-pro/search-filter-pro.php', apply_filters('active_plugins', get_option('active_plugins')))){
-// 	$sf_catalog_query = $searchandfilter->get( 46579 )->current_query();
-// 	$sf_press_query   = $searchandfilter->get( 47395 )->current_query();
+if(in_array('search-filter-pro/search-filter-pro.php', apply_filters('active_plugins', get_option('active_plugins')))){
+	$sf_catalog_query = $searchandfilter->get( 46579 )->current_query();
+	$sf_press_query   = $searchandfilter->get( 47395 )->current_query();
 
-// 	if($sf_catalog_query->is_filtered()) {
-// 		$sf_catalog_filtered = true;
-// 	} elseif($sf_press_query->is_filtered()) {
-// 		$sf_press_filtered = true;
-// 	}
-// } else {
-// 	$sf_press_filtered = false;
-// 	$sf_catalog_filtered = false;
-// }
+	if($sf_catalog_query->is_filtered()) {
+		$sf_catalog_filtered = true;
+	} elseif($sf_press_query->is_filtered()) {
+		$sf_press_filtered = true;
+	}
+} else {
+	$sf_press_filtered = false;
+	$sf_catalog_filtered = false;
+}
 
 if ( is_404() ) {
 	?>
@@ -64,16 +64,7 @@ if ( is_404() ) {
 	</header><!-- .page-header -->
 	<?php
 } elseif ( is_archive() ) {
-	if( is_post_type_archive('press') || $sf_press_filtered === true ) :
-		get_template_part( 'template-parts/header/page-header_press' );
-	elseif( is_post_type_archive('catalog') || $sf_catalog_filtered === true ) :
-		get_template_part( 'template-parts/header/page-header_catalog' );
-	else :
-		get_template_part( 'template-parts/header/page-header' );
-	endif;
-	?>
-
-	<?php
+	get_template_part( 'template-parts/header/page-header' );
 } elseif(is_single()) {
 	get_template_part( 'template-parts/header/page-header_press' );
 } elseif ( is_page() ) {

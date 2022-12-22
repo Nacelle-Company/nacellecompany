@@ -14,6 +14,7 @@ get_header();
 wp_rig()->print_styles( 'wp-rig-page' );
 get_template_part( 'template-parts/header/page-header' );
 $page_width = get_post_meta( get_the_ID(), 'page_width', true );
+
 ?>
 	<main id="primary" class="site-main <?php echo esc_html( $page_width ); ?>">
 		<?php

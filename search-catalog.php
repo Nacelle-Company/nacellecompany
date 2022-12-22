@@ -9,6 +9,8 @@
 
 namespace WP_Rig\WP_Rig;
 
+require('template-parts/logic/logic_search-and-filter-plugin.php');
+
 get_header();
 
 wp_rig()->print_styles( 'wp-rig-catalog-categories' );

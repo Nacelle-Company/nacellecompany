@@ -1,3 +1,8 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-var */
+/* eslint-disable valid-jsdoc */
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-mixed-operators */
 /* eslint-disable no-redeclare */
 /* eslint-disable eqeqeq */
 /*!
@@ -710,10 +715,10 @@
 
 	const console = window.console;
 	/**
- * allow user to initialize classes via [data-namespace] or .js-namespace class
- * htmlInit( Widget, 'widgetName' )
- * options are parsed from data-namespace-options
- */
+	 * allow user to initialize classes via [data-namespace] or .js-namespace class
+	 * htmlInit( Widget, 'widgetName' )
+	 * options are parsed from data-namespace-options
+	 */
 	utils.htmlInit = function( WidgetClass, namespace ) {
 		utils.docReady( function() {
 			const dashedNamespace = utils.toDashed( namespace );
@@ -819,8 +824,7 @@
 	// setDefaultTarget v1 method, backwards compatibility, remove in v3
 	proto.updateTarget = proto.setDefaultTarget = function() {
 		const marginProperty = this.parent.originSide == 'left' ? 'marginLeft' : 'marginRight';
-		this.target = this.x + this.size[ marginProperty ] +
-    this.size.width * this.parent.cellAlign;
+		this.target = this.x + this.size[ marginProperty ] + this.size.width * this.parent.cellAlign;
 	};
 
 	proto.renderPosition = function( x ) {

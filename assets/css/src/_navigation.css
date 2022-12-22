@@ -118,14 +118,29 @@
 }
 
 /* ajax search pro */
-.asp_w_container {
-	display: flex;
-	align-items: center;
+#masthead {
 
-	& svg {
-		fill: var(--color-theme-primary);
-		width: 25px;
-		height: 25px;
+	&.site-header {
+
+		& .promagnifier {
+			background-color: var(--nav-bk-color);
+			background: var(--nav-bk-color);
+		}
+	}
+
+	& .mobile-menu__search .probox {
+		transform: translateY(15px);
+	}
+
+	& .asp_w_container {
+		display: flex;
+		align-items: center;
+
+		& svg {
+			fill: var(--color-theme-primary);
+			width: 25px;
+			height: 25px;
+		}
 	}
 }
 
@@ -148,11 +163,19 @@
 	display: flex;
 	order: 1;
 
+	& .menu {
+		display: none;
+	}
+
 	@media (--sidebar-query) {
 		display: none;
 	}
 
 	&.nav--toggled-on {
+
+		& .menu {
+			display: flex;
+		}
 
 		/* hamburger is active */
 

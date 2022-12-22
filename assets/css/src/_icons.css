@@ -3,7 +3,8 @@
  * Icon on the left title on the right.
  */
 
-.icon {
+.icon:not(.menu-toggle) {
+
 	& path {
 		fill: var(--color-theme-primary);
 		transition: fill 0.2s ease-out;

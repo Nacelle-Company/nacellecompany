@@ -1,98 +1,15 @@
 <?php
 /**
- * Template part for displaying a post
+ * Template part for displaying a catalog post's card on the archive page.
  *
  * @package wp_rig
  */
 
 namespace WP_Rig\WP_Rig;
 
-global $searchandfilter;
-global $sf_catalog_query;
-
-
-// check for plugin using plugin name
-if(in_array('search-filter-pro/search-filter-pro.php', apply_filters('active_plugins', get_option('active_plugins')))){
-	$sf_catalog_query = $searchandfilter->get(46579)->current_query();
-	if($sf_catalog_query->is_filtered()) {
-		$sf_filtered = true;
-	} else {
-		$sf_filtered = false;
-	}
-} else {
-	$sf_filtered = false;
-}
-
-$the_title  = get_the_title();
-$the_title_l = strlen($the_title);
-if($the_title_l >= 28) {
-	$the_title  = substr($the_title,0,28);
-	$the_title  = $the_title . '...';
-}
-$permalink  = get_permalink();
-$content_wp = get_the_content();
-$content_ex = get_the_excerpt();
-
-$content_acf = get_post_meta( $post->ID, 'synopsis', true );
-$synopsis    = '';
-$trim_length = 17; // ? Trimming the synopsis. desired length of text to display.
-$value_more  = ' . . . '; // ? What to add at the end of the trimmed text.
-
-if(get_queried_object()) {
-	$queried_id  = get_queried_object();
-
-	if ($sf_filtered === true) {
-		$obj_slug = 'catalog';
-	} elseif ( is_post_type('catalog') ) {
-		$obj_slug = 'catalog';
-	} elseif ( 'catalog' === $queried_id->name ) {
-		$obj_slug = 'catalog';
-	} else {
-		$obj_slug = 'special-production';
-	}
-}
-
-// Assign content if avaliable, otherwise use the synopsis acf.
-if ( $content_acf ) {
-	$content_acf = wp_trim_words( $content_acf, $trim_length, $value_more ); // Final synopsis.
-	$synopsis    = $content_acf;
-} elseif ( $content_ex ) {
-	$content_ex = wp_trim_words( $content_ex, $trim_length, $value_more ); // Final synopsis.
-	$synopsis   = $content_ex;
-} elseif ( $content_wp ) {
-	$content_wp = wp_trim_words( $content_wp, $trim_length, $value_more ); // Final synopsis.
-	$synopsis   = $content_wp;
-}
 global $count_cat;
-if ( $count_cat <= 9 ) {
-	$lazy_load  = 'eager';
-	$fetch_priority = 'high';
-} else {
-	$lazy_load  = 'lazy';
-	$fetch_priority = 'low';
-}
 
-// // // // //
-// IMAGE WORK
-// // // // //
-
-$sq_img   = get_post_meta( $post->ID, 'square_image', true );
-$hz_img   = get_post_meta( $post->ID, 'horizontal_image', true );
-$feat_img = get_post_thumbnail_id($post->ID);
-
-if ( !empty($sq_img) ) {
-	$img    = get_post_meta( $post->ID, 'square_image', true );
-	$width  = '768';
-	$height = '768';
-} else if ( !empty($hz_img) ) {
-	$img    = get_post_meta( $post->ID, 'horizontal_image', true );
-	$width  = '320';
-	$height = '182';
-} else {
-	$img = $feat_img;
-	$width  = '320';
-	$height = '768';
-}
+require('logic/logic_entry_archive_catalog_card.php');
 
 if ( ! empty( $img ) ) {
 	?>

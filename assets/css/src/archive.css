@@ -1,3 +1,5 @@
+
+/* stylelint-disable no-descending-specificity */
 @import "_site-main-sidebar.css";
 @import "_post-grid.css";
 
@@ -25,8 +27,8 @@
 	gap: 1em;
 
 	/*--------------------------------------------------------------
-    # Grid areas
-    --------------------------------------------------------------*/
+	# Grid areas
+	--------------------------------------------------------------*/
 	grid-template-areas:
 		"header"
 		"footer"

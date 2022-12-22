@@ -117,10 +117,6 @@ msgstr ""
 msgid "Use excerpts in archive views?"
 msgstr ""
 
-#: inc/Comments/Component.php:149
-msgid "New comment(s)"
-msgstr ""
-
 #: inc/Customizer/Component.php:78
 msgid "Theme Options"
 msgstr ""
@@ -203,7 +199,7 @@ msgstr ""
 
 #. translators: %s: Post title.
 #. translators: %s: Name of current post. Only visible to screen readers
-#: inc/Excerpts/Component.php:44, template-parts/content/entry_content-press.php:74, template-parts/content/entry_content.php:35
+#: inc/Excerpts/Component.php:44, template-parts/content/entry_content-press.php:77, template-parts/content/entry_content.php:35
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
@@ -315,7 +311,7 @@ msgstr ""
 msgid "Copyright"
 msgstr ""
 
-#: template-parts/content/entry_content-press.php:52
+#: template-parts/content/entry_content-press.php:55
 msgid "Read more"
 msgstr ""
 

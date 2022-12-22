@@ -11,7 +11,7 @@
 
 namespace WP_Rig\WP_Rig;
 
-$blog_url     = get_bloginfo( 'url' );
+$blog_url = get_bloginfo( 'url' );
 
 ?>
 <!doctype html>

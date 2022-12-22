@@ -77,7 +77,7 @@ pre {
 	}
 }
 
-.sub {
+.subtitle {
 	color: var(--color-theme-secondary);
 	text-transform: uppercase;
 }

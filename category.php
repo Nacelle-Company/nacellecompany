@@ -12,8 +12,7 @@
 
 namespace WP_Rig\WP_Rig;
 
-$queried_obj = get_queried_object();
-$obj_slug    = $queried_obj->slug;
+require('template-parts/logic/logic_search-and-filter-plugin.php');
 
 get_header();
 
@@ -25,7 +24,7 @@ wp_rig()->print_styles( 'wp-rig-catalog-categories' );
 		<?php
 		if ( have_posts() ) {
 			$count_cat = 0;
-			get_template_part( 'template-parts/header/page-header_catalog' );
+			get_template_part( 'template-parts/header/page-header_catalog');
 
 			while ( have_posts() ) {
 				the_post();
