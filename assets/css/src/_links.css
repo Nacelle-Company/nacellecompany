@@ -1,5 +1,3 @@
-/* stylelint-disable no-descending-specificity */
-
 /*--------------------------------------------------------------
 # Links
 --------------------------------------------------------------*/
@@ -19,7 +17,8 @@ a:not(.button) {
 
 .current-menu-item a,
 .main-navigation a:hover,
-.main-navigation a:focus {
+.main-navigation a:focus,
+.menu .menu-item a {
 	color: var(--color-link);
 }
 

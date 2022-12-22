@@ -444,7 +444,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				'file'             => 'pagination-archive.min.css',
 				'preload_callback' => function() {
 					global $template;
-					return array( 'archive-catalog.php', 'category.php', 'taxonomy.php' ) === basename( $template );
+					return array( 'archive-catalog.php', 'category.php', 'taxonomy.php', 'search-archive.php' ) === basename( $template );
 				},
 			),
 			'wp-rig-pagination-post'    => array(
