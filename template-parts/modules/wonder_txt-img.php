@@ -18,6 +18,7 @@ $img_full      = wp_get_attachment_image( $img, 'full', array( 'class' => 'grid-
 $img_fill      = get_post_meta( get_the_ID(), 'layouts_' . $count . '_fill_img', true );
 $img_width     = get_post_meta( get_the_ID(), 'layouts_' . $count . '_img_width', true );
 $modal_or_link = get_post_meta( get_the_ID(), 'layouts_' . $count . '_modal_or_link', true );
+$section_id    = get_post_meta( get_the_ID(), 'layouts_' . $count . '_section_id', true);
 if ( $modal_or_link ) {
 	$modal_txt     = get_post_meta( get_the_ID(), 'layouts_' . $count . '_modal_txt', true );
 	$modal_txt_url = get_post_meta( get_the_ID(), 'layouts_' . $count . '_modal_txt_url', true );
@@ -70,8 +71,12 @@ if ( $img_width && '' === $flip ) {
 	$img_width = ' grid__half';
 }
 
+// section id
+if ( !empty( $section_id ) ) {
+	$section_id = 'id=' . $section_id . ' ';
+}
 ?>
-<section class="wonder-section txt-img"
+<section <?php echo esc_html( $section_id ); ?> class="wonder-section txt-img"
 <?php
 if ( ! empty( $bk_color ) || ! empty( $border ) ) {
 	?>

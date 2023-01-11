@@ -44,8 +44,8 @@ $the_content = apply_filters( 'the_content', $txt );
 			<?php endif; ?>
 		</div>
 		<div class="col">
-			<blockquote>
-				<?php echo wp_kses( $quote, 'post' ); ?>
+			<blockquote class="wp-block-quote">
+				<p><?php echo wp_kses( $quote, 'post' ); ?></p>
 			</blockquote>
 		</div>
 	</div>

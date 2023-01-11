@@ -26,14 +26,21 @@ blockquote {
 	font-style: italic;
 }
 
-.wp-block-quote::before,
-blockquote::before {
-	content: "\201C";
-	font-size: 4em;
+.wp-block-quote p::before,
+.wp-block-quote p::after {
+	font-size: 3em;
 	line-height: 0.1;
 	vertical-align: -0.4em;
 	color: var(--color-theme-primary);
 	margin-right: 12px;
+}
+
+.wp-block-quote p::before {
+	content: "\201C";
+}
+
+.wp-block-quote p::after {
+	content: "\201D";
 }
 
 .wp-block-quote p,
