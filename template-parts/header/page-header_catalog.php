@@ -15,9 +15,17 @@ require('logic/logic_page-header_catalog.php');
 
 <header class="page-header page-header__filters">
 	<div class="page-title__wrap">
-		<h1 class="page-title">
-			<?php echo $category_icon . esc_html( $category_name ); ?>
-		</h1>
+		<?php if ( is_page() ) :
+			$category_icon = the_post_thumbnail('', ['class' => 'icon']);
+			?>
+			<h1 class="page-title">
+				<?php the_title($category_icon, '', true); ?>
+			</h1>
+		<?php else: ?>
+			<h1 class="page-title">
+				<?php echo $category_icon . esc_html( $category_name ); ?>
+			</h1>
+		<?php endif; ?>
 		<?php if( $sf_filter_on === true || get_search_query() ) : ?>
 			<div class="page-title_meta">
 				<?php if( get_search_query() ) : // SEARCH QUERY ?>

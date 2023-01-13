@@ -37,7 +37,7 @@
 
 .page-title__wrap {
 	display: grid;
-	column-gap: 2em;
+	column-gap: 1em;
 	align-items: baseline;
 	border-bottom: 2px solid var(--color-theme-primary);
 	grid-template-columns: auto min-content;

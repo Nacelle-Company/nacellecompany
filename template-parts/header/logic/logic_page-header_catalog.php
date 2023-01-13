@@ -26,8 +26,14 @@ if ( is_404() ) :
 elseif( $sf_filter_on === true || get_search_query() ) : // Get the filter terms & the sorting selection
 	$filter_query = '';
 
+		// SEARCH QUERY
+	if(get_search_query()) :
+		$category_name = 'Search results';
+		$category_icon = load_inline_svg( 'icon-search.svg' );
+		$search_query  = get_search_query();
+
 	// SEARCH & FILTER
-	if($sf_catalog_query->is_filtered()) :
+	elseif($sf_catalog_query->is_filtered()) :
 		// Search & filter: args
 		$args = array(
 			"str" 				=> '%1$s: %2$s',
@@ -77,13 +83,6 @@ elseif( $sf_filter_on === true || get_search_query() ) : // Get the filter terms
 			$category_icon = load_inline_svg( 'icon-catalog.svg' );
 			$category_name = 'Catalog';
 		endif;
-	endif;
-
-	// SEARCH QUERY
-	if(get_search_query()) :
-		$category_name = 'Search results';
-		$category_icon = load_inline_svg( 'icon-search.svg' );
-		$search_query  = get_search_query();
 	endif;
 
 elseif ( is_category() || is_page('products') ) :
