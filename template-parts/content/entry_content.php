@@ -28,7 +28,7 @@ wp_rig()->print_styles( 'wp-rig-entry-content' );
 		echo wp_kses( $synopsis, 'post' );
 	} else {
 		wp_rig()->print_styles( 'wp-rig-lite-youtube' );
-		wp_rig()->print_scripts( 'wp-rig-lite-youtube' );
+		// wp_rig()->print_scripts( 'wp-rig-lite-youtube' );
 		the_content(
 			sprintf(
 				wp_kses(

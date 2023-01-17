@@ -28,7 +28,7 @@
     },
     "debug": {
       "styles": false,
-      "scripts": false,
+      "scripts": true,
       "phpcs": false
     }
   },

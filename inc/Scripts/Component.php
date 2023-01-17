@@ -171,20 +171,14 @@ class Component implements Component_Interface, Templating_Component_Interface {
 		$js_files = array(
 			'wp-rig-global' => array(
 				'file'    => 'global.min.js',
-				'loading' => 'defer',
+				'loading' => 'async',
 				'global'  => true,
 			),
 			'wp-rig-flickity' => array(
 				'file'    => 'flickity.min.js',
 				'loading' => 'defer',
 				'global'  => false,
-			),
-			'wp-rig-lite-youtube' => array(
-				'file'    => 'lite-youtube.min.js',
-				'global'  => false,
-				'loading' => 'defer',
-				'footer'  => true,
-			),
+			)
 		);
 
 		/**

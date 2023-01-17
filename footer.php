@@ -19,7 +19,6 @@ wp_rig()->print_styles( 'wp-rig-footer-widgets' );
 <?php get_template_part( 'template-parts/modules/button-to-top' ); ?>
 <footer id="colophon" class="site-footer">
 	<?php if ( is_single() && 'catalog' == get_post_type() && !empty( $hero_video ) ) : ?>
-		<?php wp_rig()->print_scripts( 'wp-rig-lite-youtube' ); ?>
 		<script type="text/javascript" id="hero_video_script">
 			const video = '#hero_video_<?php echo esc_html( $queried_id ); ?>';
 			let videoCoverImg = document.getElementById('video_cover_img');

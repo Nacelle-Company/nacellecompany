@@ -1,4 +1,4 @@
-# Copyright (C) 2022 WP Rig
+# Copyright (C) 2023 WP Rig
 # This file is distributed under the same license as the WP Rig package.
 msgid ""
 msgstr ""
