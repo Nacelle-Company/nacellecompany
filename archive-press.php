@@ -13,9 +13,9 @@ get_header();
 
 $queried_obj    = get_queried_object()->name;
 
-wp_rig()->print_styles( 'wp-rig-archive' );
-$main_class = 'site-main';
-get_template_part( 'template-parts/header/page-header' );
+wp_rig()->print_styles( 'wp-rig-archive_press' );
+$main_class = 'site-main archive-main';
+get_template_part( 'template-parts/header/page-header_press' );
 ?>
 	<main id="primary" class="<?php echo esc_html( $main_class ); ?>">
 		<?php

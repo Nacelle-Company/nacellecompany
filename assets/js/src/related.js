@@ -21,8 +21,7 @@ function getFeaturedImage( postObject ) {
 	if ( 0 === postObject.featured_media ) {
 		return '';
 	}
-	const featuredObject = postObject._embedded[ 'wp:featuredmedia' ][ 0 ];
-	console.log( featuredObject );
+	const featuredObject = postObject._embedded[ "wp:featuredmedia" ][ 0 ];
 	const imgWidth = featuredObject.media_details.sizes.wpRigRelated.width;
 	const imgHeight = featuredObject.media_details.sizes.wpRigRelated.height;
 

@@ -176,7 +176,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 									endif;
 								else :
 									?>
-										<img src="<?php bloginfo( 'template_directory' ); ?>/assets/images/comedy-dynamics-default-square.webp" class="wp-post-image" alt="<?php echo esc_html( $the_title ); ?>" />
+										<img src="<?php bloginfo( 'template_directory' ); ?>/assets/images/comedy-dynamics-default-square.webp" class="wp-post-image no-lazy" alt="<?php echo esc_html( $the_title ); ?>" />
 									<?php
 								endif;
 								// Top slider: home image.

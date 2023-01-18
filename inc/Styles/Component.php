@@ -283,6 +283,10 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				'file'   => 'global-min.min.css',
 				'global' => true,
 			),
+			'wp-rig-footer-widgets' => array(
+				'file' => 'footer-widgets.min.css',
+				'global' => true,
+			),
 			'wp-rig-archive'            => array(
 				'file'             => 'archive.min.css',
 				'preload_callback' => function() {
@@ -310,13 +314,12 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					return wp_rig()->is_primary_sidebar_active();
 				},
 			),
-			'wp-rig-footer-widgets' => array(
-				'file' => 'footer-widgets.min.css',
-				'preload_callback' => '__return_true',
-			),
 			'wp-rig-content_posts'      => array(
 				'file' => 'content_posts.min.css',
-				'preload_callback' => '__return_true',
+				'preload_callback' => function() {
+					global $template;
+					return 'single.php' === basename( $template );
+				},
 			),
 			'wp-rig-wonder'             => array(
 				'file'             => 'wonder.min.css',
@@ -390,7 +393,10 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			),
 			'wp-rig-entry_catalog_additional_content' => array(
 				'file' => 'entry_catalog_additional_content.min.css',
-				'preload_callback' => '__return_true',
+				'preload_callback' => function() {
+					global $template;
+					return 'single-catalog.php' === basename( $template );
+				},
 			),
 			'wp-rig-page-team'          => array(
 				'file'             => 'page-team.min.css',
@@ -401,15 +407,24 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			),
 			'wp-rig-hero-video'         => array(
 				'file' => 'hero-video.min.css',
-				'preload_callback' => '__return_true',
+				'preload_callback' => function() {
+					global $template;
+					return 'single-catalog.php' === basename( $template );
+				},
 			),
 			'wp-rig-lite-youtube'       => array(
 				'file' => 'lite-youtube.min.css',
-				'preload_callback' => '__return_true',
+				'preload_callback' => function() {
+					global $template;
+					return 'page-home-cd.php' === basename( $template );
+				},
 			),
 			'wp-rig-entry-content'       => array(
 				'file' => 'entry-content.min.css',
-				'preload_callback' => '__return_true',
+				'preload_callback' => function() {
+					global $template;
+					return 'page.php' === basename( $template );
+				},
 			),
 			'wp-rig-page-home-cd'       => array(
 				'file'             => 'page-home-cd.min.css',
@@ -427,17 +442,23 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			),
 			'wp-rig-social-share'       => array(
 				'file' => 'social-share.min.css',
-				'preload_callback' => '__return_true',
+				'preload_callback' => function() {
+					global $template;
+					return array( 'single.php', 'single-catalog.php' ) === basename( $template );
+				},
 			),
 			'wp-rig-related_posts'      => array(
 				'file' => 'related_posts.min.css',
-				'preload_callback' => '__return_true',
+				'preload_callback' => function() {
+					global $template;
+					return array( 'single.php', 'single-catalog.php' ) === basename( $template );
+				},
 			),
 			'wp-rig-pagination-archive' => array(
 				'file'             => 'pagination-archive.min.css',
 				'preload_callback' => function() {
 					global $template;
-					return array( 'archive-catalog.php', 'category.php', 'taxonomy.php', 'search-archive.php' ) === basename( $template );
+					return array( 'archive-catalog.php', 'category.php', 'taxonomy.php', 'search-archive.php', 'archive-press.php' ) === basename( $template );
 				},
 			),
 			'wp-rig-pagination-post'    => array(

@@ -13,7 +13,6 @@ get_header();
 
 $sf_current_query = $searchandfilter->get( 46579 )->current_query();
 
-// wp_rig()->print_styles( 'wp-rig-archive' );
 wp_rig()->print_styles( 'wp-rig-catalog-categories' );
 if(get_search_query()) :
 
