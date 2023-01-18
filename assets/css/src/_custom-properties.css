@@ -8,6 +8,7 @@
 :root {
 	--page-width: 90rem;
 	--content-width: 50rem;
+	--content-width-lg: 60rem;
 	--dropdown-symbol-width: 0.7em;
 	--dropdown-symbol-width-large: 1.4em;
 

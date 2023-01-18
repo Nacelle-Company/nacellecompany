@@ -271,7 +271,6 @@ function wp_rig_sgo_css_combine_exclude( $exclude_list ) {
 	$exclude_list[] = 'wp-rig-category';
 	$exclude_list[] = 'wp-rig-content_posts';
 	$exclude_list[] = 'wp-rig-entry-content';
-	$exclude_list[] = 'wp-rig-extra_content';
 	$exclude_list[] = 'wp-rig-hero-video';
 	$exclude_list[] = 'wp-rig-lite-youtube';
 	$exclude_list[] = 'wp-rig-offcanvas';
@@ -290,7 +289,6 @@ function wp_rig_sgo_css_combine_exclude( $exclude_list ) {
 	$exclude_list[] = 'wp-rig-wonder_txt-quote';
 	$exclude_list[] = 'wp-rig-wonder';
 	$exclude_list[] = 'wp-rig-entry_catalog_additional_content';
-	$exclude_list[] = 'wp-rig-footer-widgets';
 
 	return $exclude_list;
 }

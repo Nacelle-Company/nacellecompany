@@ -96,8 +96,6 @@ class Component implements Component_Interface {
 
 		echo '<style type="text/css" id="custom_colors">
 :root{
-	--content-width: 50rem;
-	--content-width-lg: 60rem;
 	--nav-bk-color: ' . esc_attr( $nav_bk_color ) . ';
 	--global-font-color: ' . esc_attr( $global_font_color ) . ';
 	--global-font-color-inverse: ' . esc_attr( $global_font_color_inverse ) . ';
