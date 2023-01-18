@@ -20,14 +20,14 @@ if(in_array('search-filter-pro/search-filter-pro.php', apply_filters('active_plu
 	}
 }
 
-if ( is_search() ) {
+if ( is_search() ) { 														// Search.
 	$article_class = 'entry grid-item archive-grid__item';
-} elseif ( is_post_type_archive() || $sf_filtered === true || is_tax()) {
+} elseif ( is_post_type_archive() || $sf_filtered === true || is_tax()) { 	// Archive
 	$article_class = 'entry grid-item archive-grid__item';
-} elseif ( is_single() ) {
+} elseif ( is_single() ) { 													// Single
 	wp_rig()->print_styles( 'wp-rig-content_posts' );
 	$article_class = 'entry single-post';
-} else {
+} else {																	// Page (everything else)
 	wp_rig()->print_styles( 'wp-rig-entry-content' );
 	$article_class = 'entry';
 }

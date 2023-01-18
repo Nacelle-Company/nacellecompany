@@ -1,5 +1,3 @@
-
-/* stylelint-disable max-line-length */
 .site-header {
 	z-index: 9;
 	display: flex;
@@ -126,7 +124,6 @@
 
 		& .promagnifier {
 			background-color: var(--nav-bk-color);
-			/* stylelint-disable-next-line declaration-block-no-shorthand-property-overrides */
 			background: var(--nav-bk-color);
 		}
 	}

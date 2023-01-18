@@ -29,14 +29,15 @@
 
 .page-title {
 	text-transform: uppercase;
-    line-height: 1;
+	line-height: 1;
 
 	@media (--sidebar-query) {
 		grid-column: 2/span 1;
 		margin: 0;
-    	align-items: end;
+		align-items: end;
 	}
 }
+
 .page-title_meta {
 	border-top: 2px solid var(--color-theme-primary);
 
@@ -46,6 +47,7 @@
 		align-items: center;
 	}
 }
+
 /*--------------------------------------------------------------
 #  END _page-header.css
 --------------------------------------------------------------*/

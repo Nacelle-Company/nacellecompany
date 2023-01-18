@@ -16,7 +16,7 @@ get_template_part( 'template-parts/header/page-header' );
 $page_width = get_post_meta( get_the_ID(), 'page_width', true );
 
 ?>
-	<main id="primary" class="site-main <?php echo esc_html( $page_width ); ?>">
+	<main id="primary" class="site-main page_php <?php echo esc_html( $page_width ); ?>">
 		<?php
 
 		while ( have_posts() ) {

@@ -54,7 +54,7 @@
 }
 
 .modal-window header {
-	font-weight: bold;
+	font-weight: var(--global-font-weight-bold);
 }
 
 .modal-window h1 {

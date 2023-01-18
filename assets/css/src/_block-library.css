@@ -17,9 +17,12 @@ it only on the pages it's needed. Which is this file.
 /**
  * SCSS Variables.
  *
- * Please use variables from this sheet to ensure consistency across the UI.
- * Don't add to this sheet unless you're pretty sure the value will be reused in many places.
- * For example, don't add rules to this sheet that affect block visuals. It's purely for UI.
+ * Please use variables from this sheet to ensure
+ * consistency across the UI.
+ * Don't add to this sheet unless you're pretty sure
+ * the value will be reused in many places.
+ * For example, don't add rules to this sheet that
+ * affect block visuals. It's purely for UI.
  */
 
 /**
@@ -223,10 +226,6 @@ it only on the pages it's needed. Which is this file.
 	background-color: transparent;
 }
 
-.wp-block-buttons {
-	/* stylelint-disable indentation */
-}
-
 .wp-block-buttons.is-vertical {
 	flex-direction: column;
 }
@@ -276,7 +275,6 @@ it only on the pages it's needed. Which is this file.
 .is-content-justification-right,
 .is-content-justification-left,
 .is-content-justification-center) .wp-block-button.aligncenter {
-	/* stylelint-enable indentation */
 	margin-left: auto;
 	margin-right: auto;
 	width: 100%;
@@ -509,9 +507,12 @@ it only on the pages it's needed. Which is this file.
 	box-sizing: border-box;
 
 	/**
-   * Set a default background color for has-background-dim _unless_ it includes another
-   * background-color class (e.g. has-green-background-color). The presence of another
-   * background-color class implies that another style will provide the background color
+   * Set a default background color for
+   * has-background-dim _unless_ it includes another
+   * background-color class (e.g. has-green-background-color).
+   * The presence of another
+   * background-color class implies that another style
+   * will provide the background color
    * for the overlay.
    *
    * See:
@@ -3861,8 +3862,6 @@ pre.wp-block-verse {
    * Our classes uses the same values we set for gradient value attributes,
    * and we can not use spacing because of WP multi site kses rule.
    */
-	/* stylelint-disable function-comma-space-after */
-	/* stylelint-enable function-comma-space-after */
 	--wp--preset--font-size--normal: 16px;
 	--wp--preset--font-size--huge: 42px;
 }

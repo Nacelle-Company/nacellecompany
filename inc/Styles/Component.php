@@ -318,13 +318,13 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				'file' => 'content_posts.min.css',
 				'preload_callback' => '__return_true',
 			),
-			'wp-rig-category'           => array(
-				'file'             => 'category.min.css',
-				'preload_callback' => function() {
-					global $template;
-					return 'category.php' === basename( $template );
-				},
-			),
+			// 'wp-rig-category'           => array(
+			// 	'file'             => 'category.min.css',
+			// 	'preload_callback' => function() {
+			// 		global $template;
+			// 		return 'category.php' === basename( $template );
+			// 	},
+			// ),
 			'wp-rig-wonder'             => array(
 				'file'             => 'wonder.min.css',
 				'preload_callback' => function() {

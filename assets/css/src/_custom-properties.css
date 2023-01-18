@@ -20,6 +20,8 @@
 	--global-font-letter-spacing: 1.4px;
 	--global-font-letter-spacing-sm: 1px;
 	--global-button-letter-spacing: 1.25px;
+	--global-font-weight: 400;
+	--global-font-weight-bold: 700;
 
 	/* Custom editor font sizes */
 	--font-size-xsmall: calc(5 / var(--global-font-size) * 2rem);
@@ -28,6 +30,10 @@
 	--font-size-regular: calc(var(--global-font-size) / 16 * 1rem);
 	--font-size-large: calc(36 / var(--global-font-size) * 1rem);
 	--font-size-larger: calc(48 / var(--global-font-size) * 1rem);
+
+	/* block-library font sizes */
+	--wp--preset--font-size--normal: 16px;
+	--wp--preset--font-size--huge: 42px;
 
 	/* Grid items */
 	--grid-item-row-gap: 7rem;
@@ -40,8 +46,13 @@
 	--flickity-desktop-height: 80vh;
 	--button-shadow: 0 1px 5px 1px #121212;
 
-	/* Custom editor colors */
+	/* input elements */
+	--input-border: #8b8a8b;
+	--input-focus-h: 192;
+	--input-focus-s: 67%;
+	--input-focus-l: 70%;
 
+	/* Custom editor colors */
 	--color-theme-red: #c0392b;
 	--color-theme-green: #27ae60;
 	--color-theme-blue: #2980b9;

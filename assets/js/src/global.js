@@ -3,8 +3,12 @@
  *
  * Handles global javascript for your theme.
  */
-
-// Search icon add SEO/accessibility attributes
+/**
+ * Search icon add SEO/accessibility attributes
+ * @kind Element.
+ * @url https://github.com/wprig/wprig
+ * @as This.
+ */
 const searchIcon = document.querySelector( '.search-icon a' );
 
 if ( searchIcon.childElementCount !== 0 ) {

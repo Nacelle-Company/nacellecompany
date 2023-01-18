@@ -254,7 +254,8 @@ function wp_rig_remove_wp_css() {
 	wp_dequeue_style( 'wp-block-library' );
 	wp_dequeue_style( 'YTPlayer_css' );
 	wp_dequeue_style( 'wpdreams-ajaxsearchpro-instances' );
-	// wp_dequeue_style( 'search-filter-plugin-styles' );
+	wp_deregister_style('classic-theme-styles');
+	wp_dequeue_style('classic-theme-styles');
 }
 add_action( 'wp_enqueue_scripts', 'wp_rig_remove_wp_css', 100 );
 
@@ -263,7 +264,6 @@ add_action( 'wp_enqueue_scripts', 'wp_rig_remove_wp_css', 100 );
 */
 function wp_rig_sgo_css_combine_exclude( $exclude_list ) {
 	// Add the style handle to exclude list.
-	$exclude_list[] = 'wp-block-library';
 	$exclude_list[] = 'wp-rig-archive';
 	$exclude_list[] = 'wp-rig-archive_press';
 	$exclude_list[] = 'wp-rig-catalog-categories';
@@ -289,6 +289,8 @@ function wp_rig_sgo_css_combine_exclude( $exclude_list ) {
 	$exclude_list[] = 'wp-rig-wonder_txt-img';
 	$exclude_list[] = 'wp-rig-wonder_txt-quote';
 	$exclude_list[] = 'wp-rig-wonder';
+	$exclude_list[] = 'wp-rig-entry_catalog_additional_content';
+	$exclude_list[] = 'wp-rig-footer-widgets';
 
 	return $exclude_list;
 }
@@ -387,9 +389,37 @@ function load_inline_svg( $filename ) {
 }
 
 /**
- * GETTING YOUR SCRIPT HANDLES
- * @link https://wpshout.com/defer-parsing-javascript-wordpress/
+ * Disable the emoji's
  */
+function disable_emojis() {
+	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+	remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
+	remove_action( 'wp_print_styles', 'print_emoji_styles' );
+	remove_action( 'admin_print_styles', 'print_emoji_styles' );
+	remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
+	remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
+	remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
+
+	// Remove from TinyMCE
+	add_filter( 'tiny_mce_plugins', 'disable_emojis_tinymce' );
+}
+add_action( 'init', 'disable_emojis' );
+
+/**
+ * Filter out the tinymce emoji plugin.
+ */
+function disable_emojis_tinymce( $plugins ) {
+	if ( is_array( $plugins ) ) {
+		return array_diff( $plugins, array( 'wpemoji' ) );
+	} else {
+		return array();
+	}
+}
+
+/**
+  * GETTING YOUR SCRIPT HANDLES
+  * @param https://wpshout.com/defer-parsing-javascript-wordpress/
+*/
 /*
 add_action( 'wp_print_styles', 'wsds_detect_enqueued_scripts' );
 function wsds_detect_enqueued_scripts() {

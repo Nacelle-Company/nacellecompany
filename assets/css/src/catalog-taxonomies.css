@@ -1,7 +1,6 @@
 @import "_site-main.css";
 @import "_page-header.css";
 @import "_post-grid.css";
-@import "_content.css";
 
 .page-header {
 	border-bottom: 2px solid var(--color-theme-primary);

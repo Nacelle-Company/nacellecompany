@@ -67,7 +67,7 @@ a {
 
 b,
 strong {
-	font-weight: bolder;
+	font-weight: var(--global-font-weight-bold);
 }
 
 /**
@@ -83,7 +83,7 @@ sub {
 }
 
 pre {
-	background: blueviolet;
+	background: var(--color-theme-green);
 	padding: 2em;
 }
 

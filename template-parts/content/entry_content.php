@@ -17,7 +17,7 @@ if ( get_the_content() ) {
 }
 $content_width = ' ' . get_post_meta( get_the_ID(), 'content_width', true );
 
-wp_rig()->print_styles( 'wp-rig-entry-content' );
+// wp_rig()->print_styles( 'wp-rig-entry-content' );
 ?>
 
 <div class="entry-content<?php echo esc_html( $content_width ); ?>">

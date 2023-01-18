@@ -46,6 +46,11 @@ ol {
 	list-style: decimal;
 }
 
+ol,
+ul {
+	box-sizing: border-box;
+}
+
 li > ul,
 li > ol {
 	margin-bottom: 0;
@@ -77,4 +82,11 @@ table {
 
 .justify-self-center {
 	justify-self: center;
+}
+
+.font-size-small {
+	font-size: var(--font-size-small);
+	line-height: var(--global-font-line-height-sm);
+	letter-spacing: var(--global-font-letter-spacing-sm);
+	margin: 0;
 }

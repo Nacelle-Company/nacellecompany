@@ -5,6 +5,9 @@
 		}
 	],
 	"settings": {
+		"css.validate": false,
+		"less.validate": false,
+		"scss.validate": false,
 		"phpsab.fixerEnable": true,
 		"phpsab.executablePathCBF": "",
 		"phpsab.executablePathCS": "",
@@ -19,18 +22,22 @@
 		"prettier.useTabs": true,
 		"stylelint.enable": true,
 		"stylelint.config": null,
-		"less.validate": false,
 		"stylelint.validate": ["css", "postcss"],
-		"editor.codeActionsOnSave": {
-			"source.fixAll.stylelint": true
-		},
-		"css.validate": false,
-		"scss.validate": false,
+		"stylelint.snippet": [
+			"css",
+			"postcss"
+		],
 		"intelephense.environment.includePaths": [
 			"/Users/lukey/Sites/nacelle/app/public"
 		],
 		"phpsab.debug": true,
 		"phpsab.snifferEnable": true,
-		"phpsab.snifferShowSources": true
+		"phpsab.snifferShowSources": true,
+		"editor.formatOnSaveMode": "modificationsIfAvailable",
+		"editor.codeActionsOnSave": {
+			"source.fixAll": false,
+			"source.fixAll.stylelint": false
+		},
+		"intelephense.diagnostics.run": "onSave"
 	}
 }

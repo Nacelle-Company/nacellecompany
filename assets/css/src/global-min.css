@@ -1,17 +1,12 @@
+@import "_reset-pseudos.css";
 @import "_custom-properties.css";
-@import "_reset.css";
+@import "_reset-min.css";
 @import "_typography-min.css";
+@import "_navigation.css";
 @import "_elements.css";
 @import "_forms.css";
 @import "_links.css";
 @import "_buttons.css";
 @import "_icons.css";
-@import "_navigation.css";
 @import "_global-styles.css";
-
-.font-size-small {
-	font-size: var(--font-size-small);
-	line-height: var(--global-font-line-height-sm);
-	letter-spacing: var(--global-font-letter-spacing-sm);
-	margin: 0;
-}
+@import "_ajaxsearchpro-min.css";
