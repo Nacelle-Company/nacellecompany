@@ -103,7 +103,9 @@ endif;
 		<?php if ( $video_embedd ) : ?>
 			</div>
 		<?php endif; ?>
-		<?php get_template_part( 'template-parts/catalog/parts/entry_catalog_additional_content' ); ?>
+		<?php if ( have_rows( 'additional_content' ) ) : ?>
+			<?php get_template_part( 'template-parts/content/entry_catalog_additional_content' ); ?>
+		<?php endif; ?>
 </article>
 
 <footer class="post-footer post-footer__catalog">

@@ -20,6 +20,8 @@ wp_rig()->print_styles( 'wp-rig-single-catalog' );
 		the_post();
 		get_template_part( 'template-parts/content/entry_catalog' );
 	}
+				wp_rig()->display_extra_content( );
+
 	?>
 </main>
 <?php

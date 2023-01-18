@@ -74,7 +74,6 @@
 }
 
 .page-content > *,
-.entry-content > *,
 .site-info,
 .post-navigation,
 .page-navigation {
@@ -107,6 +106,13 @@
 			@media (--content-query) {
 				grid-column: 1/-1;
 			}
+		}
+	}
+
+	& .content-width-lg {
+
+		@media (--sidebar-query) {
+			grid-column: 1/-1;
 		}
 	}
 }
