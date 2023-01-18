@@ -447,13 +447,6 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					return array( 'single-catalog.php', 'single.php' ) === basename( $template );
 				},
 			),
-			'wp-rig-extra_content'      => array(
-				'file'             => 'extra_content.min.css',
-				'preload_callback' => function() {
-					global $template;
-					return 'category.php' === basename( $template );
-				},
-			),
 		);
 
 		/**
