@@ -5,6 +5,7 @@
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package wp_rig
+ * TODO: archive page's top two images need to NOT be lazy loaded (remove the loading="lazy" attribute)
  */
 
 namespace WP_Rig\WP_Rig;

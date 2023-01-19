@@ -28,11 +28,6 @@ if(in_array('search-filter-pro/search-filter-pro.php', apply_filters('active_plu
 	<h3 class="offcanvas-toggle_title">
 		<?php
 		echo esc_html__( 'Sort & Filter', 'wp-rig' );
-		if ( $sf_filtered === true ) :
-			?>
-			<!-- <a href="#" class="search-filter-reset" data-search-form-id="46579" data-sf-submit-form="always">Reset</a> -->
-			<?php
-		endif;
 		?>
 	</h3>
 </span>
