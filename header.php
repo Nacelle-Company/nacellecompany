@@ -13,16 +13,16 @@ namespace WP_Rig\WP_Rig;
 
 $blog_url = get_bloginfo( 'url' );
 
+/**
+ * if to add prelaod for a script in header:
+ * 	<link rel="preload" as="style" href="<?php echo esc_html( $blog_url ); ?>/wp-content/plugins/search-filter-pro/public/assets/css/search-filter.min.css">
+ */
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?> class="no-js">
 <head>
-	<!-- <link rel="preload" as="script" href="https://www.youtube.com/s/player/0c356943/www-widgetapi.vflset/www-widgetapi.js"> -->
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-
-	<link rel="preload" as="style" href="<?php echo esc_html( $blog_url ); ?>/wp-content/plugins/search-filter-pro/public/assets/css/search-filter.min.css">
-	<!-- <link rel="preload" as="script" href="<?php // echo esc_html( $blog_url ); ?>/wp-includes/js/jquery/jquery.min.js"> -->
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<?php
 	if ( ! wp_rig()->is_amp() ) :
@@ -42,11 +42,7 @@ $blog_url = get_bloginfo( 'url' );
 </head>
 
 <body <?php body_class(); ?>>
-<div class="wp-body-open">
 	<?php
-	/**
-	 * TODO: remove the "<div class="wp-body-open">" container
-	 */
 	wp_body_open();
 	$has_video_class = '';
 	if ( get_post_meta( get_the_ID(), 'video_embedd', true ) ) {
@@ -61,7 +57,6 @@ $blog_url = get_bloginfo( 'url' );
 	}
 
 	?>
-</div>
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'wp-rig' ); ?></a>
 	<header id="masthead" class="site-header<?php echo esc_attr( $front_page_class ); ?><?php echo esc_attr( $has_video_class ); ?>">
