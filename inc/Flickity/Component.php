@@ -74,9 +74,9 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				get_theme_file_uri( '/assets/js/flickity.min.js' ),
 				array(),
 				wp_rig()->get_asset_version( get_theme_file_path( '/assets/js/flickity.min.js' ) ),
-				true
+				false
 			);
-			wp_script_add_data( 'wp-rig-flickity', 'defer', true );
+			wp_script_add_data( 'wp-rig-flickity', 'async', true );
 		}
 	}
 

@@ -21,7 +21,7 @@ $blog_url = get_bloginfo( 'url' );
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 
-	<!-- <link rel="preload" as="style" href="<?php // echo esc_html( $blog_url ); ?>/wp-content/plugins/search-filter-pro/public/assets/css/search-filter.min.css"> -->
+	<link rel="preload" as="style" href="<?php echo esc_html( $blog_url ); ?>/wp-content/plugins/search-filter-pro/public/assets/css/search-filter.min.css">
 	<!-- <link rel="preload" as="script" href="<?php // echo esc_html( $blog_url ); ?>/wp-includes/js/jquery/jquery.min.js"> -->
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<?php

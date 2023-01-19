@@ -176,7 +176,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			),
 			'wp-rig-flickity' => array(
 				'file'    => 'flickity.min.js',
-				'loading' => 'defer',
+				'loading' => 'async',
 				'global'  => false,
 			),
 			'wp-rig-lite-youtube' => array(

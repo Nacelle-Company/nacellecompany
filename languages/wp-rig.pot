@@ -1,4 +1,4 @@
-# Copyright (C) 2022 WP Rig
+# Copyright (C) 2023 WP Rig
 # This file is distributed under the same license as the WP Rig package.
 msgid ""
 msgstr ""
@@ -199,7 +199,7 @@ msgstr ""
 
 #. translators: %s: Post title.
 #. translators: %s: Name of current post. Only visible to screen readers
-#: inc/Excerpts/Component.php:44, template-parts/content/entry_content-press.php:77, template-parts/content/entry_content.php:35
+#: inc/Excerpts/Component.php:44, template-parts/content/entry_content-press.php:77, template-parts/content/entry_content.php:33
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
@@ -315,7 +315,7 @@ msgstr ""
 msgid "Read more"
 msgstr ""
 
-#: template-parts/content/entry_content.php:48
+#: template-parts/content/entry_content.php:46
 msgid "Pages:"
 msgstr ""
 

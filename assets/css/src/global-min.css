@@ -9,4 +9,15 @@
 @import "_buttons.css";
 @import "_icons.css";
 @import "_global-styles.css";
-@import "_ajaxsearchpro-min.css";
+@import "_footer-widgets.css";
+@import "_lite-youtube.css";
+@import "_sidebar.css"
+
+/*
+ * TODO: outline what the settings are from the CD clone dev site
+ * based on this: https://onlinemediamasters.com/siteground-optimizer-settings/
+ * Siteground optimizer frontend CSS settings:
+ * - Combine CSS Files
+ * - Preload Combined CSS
+ * -
+ */

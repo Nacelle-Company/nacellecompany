@@ -9,8 +9,6 @@
 
 namespace WP_Rig\WP_Rig;
 
-wp_rig()->print_styles( 'wp-rig-sidebar' );
-
 if ( ! wp_rig()->is_primary_sidebar_active() ) {
 	return;
 }
