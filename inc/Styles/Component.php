@@ -304,12 +304,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					return 'page.php' === basename( $template );
 				},
 			),
-			'wp-rig-sidebar'            => array(
-				'file'             => 'sidebar.min.css',
-				'preload_callback' => function() {
-					return wp_rig()->is_primary_sidebar_active();
-				},
-			),
+
 			'wp-rig-content_posts'      => array(
 				'file' => 'content_posts.min.css',
 				'preload_callback' => function() {
@@ -405,7 +400,11 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				'file' => 'hero-video.min.css',
 				'preload_callback' => function() {
 					global $template;
-					return 'single-catalog.php' === basename( $template );
+					if(get_field( 'video_embedd' )) {
+						return 'single-catalog.php' === basename( $template );
+					} else {
+						return;
+					}
 				},
 			),
 			'wp-rig-entry-content'			=> array(

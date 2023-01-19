@@ -416,8 +416,6 @@ function wp_rig_remove_wp_css() {
 		// echo 'What is it? IS FRONT PAGE<br>';
 		wp_deregister_style('search-filter-plugin-styles');
 		wp_dequeue_style('search-filter-plugin-styles');
-		wp_deregister_script( 'YTPlayer' );
-		wp_dequeue_script( 'YTPlayer' );
 	} elseif(is_page()) {
 		// echo 'What is it? IS PAGE<br>';
 		wp_dequeue_script('YTPlayer');

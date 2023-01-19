@@ -17,8 +17,8 @@ $hero_video = get_field( 'video_embedd' );
 ?>
 <?php get_template_part( 'template-parts/modules/button-to-top' ); ?>
 <footer id="colophon" class="site-footer">
-	<?php if ( is_single() && 'catalog' == get_post_type() && !empty( $hero_video ) ) : ?>
-		<?php wp_rig()->print_scripts( 'wp-rig-lite-youtube' ); ?>
+	<?php if ( is_single() && 'catalog' == get_post_type() && !empty( $hero_video ) ) :
+		wp_rig()->print_scripts( 'wp-rig-lite-youtube' ); ?>
 		<script type="text/javascript" id="hero_video_script">
 			const video = '#hero_video_<?php echo esc_html( $queried_id ); ?>';
 			let videoCoverImg = document.getElementById('video_cover_img');
@@ -49,15 +49,19 @@ $hero_video = get_field( 'video_embedd' );
 				jQuery("#hero_video__desktop_<?php echo esc_html( $queried_id ); ?>").YTPlayer();
 			});
 		</script>
-	<?php endif; ?>
-	<?php if(is_front_page()) : ?>
-		<script type="text/javascript" >
+
+	<?php elseif(is_front_page()) : ?>
+		<script type="text/javascript" class="home_ytplayer">
 			jQuery(function(){
 				jQuery("#feat_modal_vid_one").YTPlayer();
 			});
 			jQuery(function(){
 				jQuery("#feat_modal_vid_two").YTPlayer();
 			});
+		</script>
+	<?php else : // mock blank function for YTPlayer's "YTPlayer" function call ?>
+		<script type="text/javascript" class="none_ytplayer">
+			(function($){$.fn.YTPlayer=function(){return this}})(jQuery)
 		</script>
 	<?php endif; ?>
 	<script type="text/javascript">
