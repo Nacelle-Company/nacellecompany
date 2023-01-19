@@ -248,18 +248,6 @@ function wp_rig_add_logo_att( $html ) {
 add_filter( 'get_custom_logo', 'wp_rig_add_logo_att' );
 
 /*
-* Remove CSS files from loading on the frontend
-*/
-function wp_rig_remove_wp_css() {
-	wp_dequeue_style( 'wp-block-library' );
-	wp_dequeue_style( 'YTPlayer_css' );
-	wp_dequeue_style( 'wpdreams-ajaxsearchpro-instances' );
-	wp_deregister_style('classic-theme-styles');
-	wp_dequeue_style('classic-theme-styles');
-}
-add_action( 'wp_enqueue_scripts', 'wp_rig_remove_wp_css', 100 );
-
-/*
 * Siteground Optimizer: exclude styles from being combined
 */
 function wp_rig_sgo_css_combine_exclude( $exclude_list ) {
@@ -412,22 +400,78 @@ function disable_emojis_tinymce( $plugins ) {
 	}
 }
 
+/*
+* Remove CSS files from loading on the frontend
+*/
+function wp_rig_remove_wp_css() {
+	$hero_video = get_field( 'video_embedd' );
+	// Default removals
+	wp_dequeue_style( 'wp-block-library' );
+	wp_dequeue_style( 'YTPlayer_css' ); // YTPlayer styles are included in the theme (/assets/css/_yt-player.css)
+	wp_dequeue_style( 'wpdreams-ajaxsearchpro-instances' );
+	wp_deregister_style('classic-theme-styles');
+	wp_dequeue_style('classic-theme-styles');
+	// Conditional removals.
+	if( is_front_page() ) { 									// Front page.
+		// echo 'What is it? IS FRONT PAGE<br>';
+		wp_deregister_style('search-filter-plugin-styles');
+		wp_dequeue_style('search-filter-plugin-styles');
+		wp_deregister_script( 'YTPlayer' );
+		wp_dequeue_script( 'YTPlayer' );
+	} elseif(is_page()) {
+		// echo 'What is it? IS PAGE<br>';
+		wp_dequeue_script('YTPlayer');
+		wp_dequeue_script('wp-rig-lite-youtube');
+		wp_dequeue_style('search-filter-plugin-styles');
+	} elseif( is_archive() ) { 										// Single archive page.
+		// echo 'What is it? IS ARCHIVE<br>';
+		wp_deregister_script( 'wp-rig-lite-youtube' );
+		wp_dequeue_script( 'wp-rig-lite-youtube' );
+		wp_deregister_script( 'YTPlayer' );
+		wp_dequeue_script( 'YTPlayer' );
+	} elseif(is_single() && !empty($hero_video )) {					// Single and hero video.
+		wp_dequeue_style('search-filter-plugin-styles');
+		wp_dequeue_script( 'wp-rig-lite-youtube' );
+	} elseif( is_single() ) {									// Single without hero video.
+		// echo 'What is it? SINGLE<br>';
+		wp_dequeue_style('search-filter-plugin-styles');
+		wp_dequeue_script( 'wp-rig-lite-youtube' );
+		wp_dequeue_script( 'YTPlayer' );
+	}
+}
+add_action( 'wp_enqueue_scripts', 'wp_rig_remove_wp_css', 100 );
+
 /**
-  * GETTING YOUR SCRIPT HANDLES
+  * GETTING YOUR STYLE HANDLES
   * @param https://wpshout.com/defer-parsing-javascript-wordpress/
 */
-/*
-add_action( 'wp_print_styles', 'wsds_detect_enqueued_scripts' );
-function wsds_detect_enqueued_scripts() {
-	global $wp_styles;
-	foreach( $wp_styles->queue as $handle ) :
-		echo $handle . ' | ';
-	endforeach;
-}
-*/
 
+// add_action( 'wp_print_styles', 'wsds_detect_enqueued_styles' );
+// function wsds_detect_enqueued_styles() {
+// 	global $wp_styles;
+// 	echo 'STYLES: ';
+// 	foreach( $wp_styles->queue as $handle ) :
+// 		echo $handle . ' | ';
+// 	endforeach;
+// 	echo '<br>';
+// }
+
+/**
+  * GETTING YOUR SCRIPT HANDLES
+  * YOU CAN DO THE SAME: in query monitor/scripts(or styles)/Handle column
+  * @param https://wpshout.com/defer-parsing-javascript-wordpress/
+*/
+// add_action( 'wp_print_scripts', 'wsds_detect_enqueued_scripts' );
+// function wsds_detect_enqueued_scripts() {
+// 	global $wp_scripts;
+// 	echo 'SCRIPTS: ';
+// 	foreach( $wp_scripts->queue as $handle ) :
+// 		echo $handle . ' | ';
+// 	endforeach;
+// }
 /**
  * Number of queries
  *
  * echo get_num_queries();
  */
+// echo get_num_queries();
