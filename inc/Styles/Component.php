@@ -282,6 +282,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			'wp-rig-global'     => array(
 				'file'   => 'global-min.min.css',
 				'global' => true,
+				'preload_callback' => '__return_true',
 			),
 			'wp-rig-archive'            => array(
 				'file'             => 'archive.min.css',

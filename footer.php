@@ -51,24 +51,11 @@ $hero_video = get_field( 'video_embedd' );
 		</script>
 
 	<?php elseif(is_front_page()) : ?>
-		<script type="text/javascript" class="home_ytplayer">
-			jQuery(function(){
-				jQuery("#feat_modal_vid_one").YTPlayer();
-			});
-			jQuery(function(){
-				jQuery("#feat_modal_vid_two").YTPlayer();
-			});
-		</script>
+		<script type="text/javascript" class="home_ytplayer">jQuery(function(){jQuery("#feat_modal_vid_one").YTPlayer()});jQuery(function(){jQuery("#feat_modal_vid_two").YTPlayer()});</script>
 	<?php else : // mock blank function for YTPlayer's "YTPlayer" function call ?>
-		<script type="text/javascript" class="none_ytplayer">
-			(function($){$.fn.YTPlayer=function(){return this}})(jQuery)
-		</script>
+		<script type="text/javascript" class="none_ytplayer">(function($){$.fn.YTPlayer=function(){return this}})(jQuery)</script>
 	<?php endif; ?>
-	<script type="text/javascript">
-		mobileMenu = document.querySelector('.mobile-menu__search');
-		magnifier = mobileMenu.querySelector('.promagnifier');
-		magnifier.setAttribute('tabindex', 1);
-	</script>
+	<script type="text/javascript">mobileMenu=document.querySelector('.mobile-menu__search');magnifier=mobileMenu.querySelector('.promagnifier');magnifier.setAttribute('tabindex',1);</script>
 	<?php get_template_part( 'template-parts/footer/footer-widgets' ); ?>
 </footer>
 </div>
