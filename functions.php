@@ -416,6 +416,7 @@ function wp_rig_remove_wp_css() {
 		// echo 'What is it? IS FRONT PAGE<br>';
 		wp_deregister_style('search-filter-plugin-styles');
 		wp_dequeue_style('search-filter-plugin-styles');
+		wp_dequeue_script('wp-rig-lite-youtube');
 	} elseif(is_page()) {
 		// echo 'What is it? IS PAGE<br>';
 		wp_dequeue_script('YTPlayer');
@@ -459,14 +460,15 @@ add_action( 'wp_enqueue_scripts', 'wp_rig_remove_wp_css', 100 );
   * YOU CAN DO THE SAME: in query monitor/scripts(or styles)/Handle column
   * @param https://wpshout.com/defer-parsing-javascript-wordpress/
 */
-// add_action( 'wp_print_scripts', 'wsds_detect_enqueued_scripts' );
-// function wsds_detect_enqueued_scripts() {
-// 	global $wp_scripts;
-// 	echo 'SCRIPTS: ';
-// 	foreach( $wp_scripts->queue as $handle ) :
-// 		echo $handle . ' | ';
-// 	endforeach;
-// }
+add_action( 'wp_print_scripts', 'wsds_detect_enqueued_scripts' );
+function wsds_detect_enqueued_scripts() {
+	global $wp_scripts;
+	echo 'SCRIPTS: ';
+	foreach( $wp_scripts->queue as $handle ) :
+		echo $handle . ' | ';
+	endforeach;
+}
+
 /**
  * Number of queries
  *

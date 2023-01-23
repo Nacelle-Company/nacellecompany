@@ -6,6 +6,7 @@
 @import "_flickity-slider_large.css";
 @import "_flickity-slider_posts.css";
 @import "_featured-trailers.css";
+@import "_block-library-min.css";
 
 .site-main {
 	display: grid;

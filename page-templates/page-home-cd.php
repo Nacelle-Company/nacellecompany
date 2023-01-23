@@ -262,7 +262,7 @@ wp_rig()->print_styles( 'wp-rig-page-home-cd' );
 				<?php wp_rig()->display_post_grid( 'press' ); ?>
 				</div>
 			<?php endif; ?>
-			<?php get_template_part( 'template-parts/content/entry', get_post_type() ); ?>
+			<?php get_template_part( 'template-parts/content/entry', get_post_type() ); // Content editor ?>
 		<?php endwhile; ?>
 	</main>
 <?php

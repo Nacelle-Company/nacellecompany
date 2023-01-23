@@ -726,6 +726,28 @@ h6.has-background {
 	text-align: center;
 }
 
+
+.is-style-outline > :where(.wp-block-button__link),
+:where(.wp-block-button__link).is-style-outline {
+	border: 2px solid currentColor;
+	padding: 0.667em 1.333em;
+}
+
+.is-style-outline > .wp-block-button__link:not(.has-text-color),
+.wp-block-button__link.is-style-outline:not(.has-text-color) {
+	color: currentColor;
+}
+
+.is-style-outline > .wp-block-button__link:not(.has-background),
+.wp-block-button__link.is-style-outline:not(.has-background) {
+	background-color: transparent;
+}
+
+.is-style-outline:hover > .wp-block-button__link {
+	border: 2px solid var(--color-theme-secondary);
+	color: var(--color-theme-secondary);
+}
+
 .screen-reader-text {
 	border: 0;
 	clip: rect(1px, 1px, 1px, 1px);
