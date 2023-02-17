@@ -129,3 +129,46 @@
 select.nf-element {
 	color: var(--global-font-color);
 }
+
+
+/* Submissions form */
+.modal-window:target {
+    overflow: scroll;
+}
+/* form title */
+.nf-form-title {
+    font-weight: 600;
+}
+/* form fields */
+.nf-field-element input,
+.nf-field-element textarea {
+    max-width: 100% !important;
+    border-radius: 6px !important;
+}
+/* form fields bottom margin */
+.nf-field-container:not(.submit-container) {
+    margin-bottom: 10px !important;
+}
+/* select field */
+.field-wrap select {
+    border-radius: 6px;
+}
+/* form button */
+.nf-form-content .field-wrap input[type=submit] {
+    color: var(--color-theme-primary);
+}
+/* modal container */
+.modal-window>div {
+    top: 1em;
+}
+
+@media screen and (max-width: 47.9em) {
+    /* ninja forms half columns */
+    .one-half {
+        width: 100% !important;
+    }
+
+    .one-half.second {
+        margin-left: 0;
+    }
+}

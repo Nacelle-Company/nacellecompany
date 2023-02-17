@@ -3,6 +3,9 @@
  *
  * Handles global javascript for your theme.
  */
+// TODO: VIDEO PLACEHOLDER IMAGE: https://jsfiddle.net/luukee/L10tyrw5/1/
+
+
 /**
  * Search icon add SEO/accessibility attributes
  * @kind Element.

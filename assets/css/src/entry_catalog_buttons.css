@@ -5,7 +5,7 @@
 		margin-bottom: 0;
 
 		@media (--content-query) {
-			grid-column: 1 / span 3;
+			flex: 1 0 100%;
 		}
 	}
 }
@@ -18,22 +18,18 @@
 	align-items: baseline;
 
 	@media (--content-query) {
+		display: flex;
+		flex-wrap: wrap;
 		gap: 1em;
-		grid-template-columns: auto;
 	}
 }
 
 .button {
-
-	@media (--narrow-menu-query) {
-	}
-
 	@media (--content-query) {
-		width: auto;
+		display: block;
 		justify-content: center;
-	}
-
-	@media (--sidebar-query) {
-		width: auto;
+		text-align: center;
+		width: max-content;
+		min-width: auto;
 	}
 }
