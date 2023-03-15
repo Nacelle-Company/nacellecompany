@@ -28,7 +28,7 @@ endif;
 ?>
 
 <article id="post-<?php the_ID(); ?>" class="entry catalog<?php echo esc_html( $video_class ); ?>">
-		<?php if ( $video_embedd ) : ?>
+		<?php if ( $video_embedd ) : // Hero video ?>
 			<?php get_template_part( 'template-parts/content/entry_catalog_header', get_post_type() ); ?>
 			<div class="catalog-video">
 		<?php endif; ?>

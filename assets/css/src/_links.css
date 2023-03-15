@@ -3,6 +3,10 @@
 # Links
 --------------------------------------------------------------*/
 
+.current-menu-item a {
+	color: var(--color-link);
+}
+
 a:not(.button) {
 	color: var(--color-link);
 	text-decoration: none;
@@ -16,7 +20,6 @@ a:not(.button) {
 	}
 }
 
-.current-menu-item a,
 .main-navigation a:hover,
 .main-navigation a:focus,
 .menu .menu-item a {

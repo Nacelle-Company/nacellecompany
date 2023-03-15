@@ -36,6 +36,7 @@ ul,
 ol {
 	margin: 0 0 1.5em 0;
 	padding-left: 1.5em;
+	box-sizing: border-box;
 }
 
 ul {
@@ -44,11 +45,6 @@ ul {
 
 ol {
 	list-style: decimal;
-}
-
-ol,
-ul {
-	box-sizing: border-box;
 }
 
 li > ul,
