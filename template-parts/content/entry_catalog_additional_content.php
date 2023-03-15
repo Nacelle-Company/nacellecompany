@@ -24,7 +24,7 @@ endif;
 
 			if ( get_row_layout() === 'editor' ) :
 				$editor_content = get_sub_field( 'editor_content' );
-				echo wp_kses( $editor_content, 'post' );
+				echo $editor_content;
 
 			elseif ( get_row_layout() === 'quote' ) :
 				$quote_content    = get_sub_field( 'quote_content' );

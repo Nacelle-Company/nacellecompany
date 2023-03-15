@@ -51,10 +51,10 @@ a:not(.button):active {
 .button-to-top {
 	position: fixed;
 	right: 2rem;
-	bottom: 2rem;
+	bottom: 1rem;
 	border-radius: 100%;
 	background: transparent;
-	padding: 0.9em 1.17em;
+	padding: 0.25rem 0.75rem;
 	border: none;
 	cursor: pointer;
 	opacity: 1;

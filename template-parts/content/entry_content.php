@@ -24,7 +24,7 @@ $content_width = ' ' . get_post_meta( get_the_ID(), 'content_width', true );
 	if ( ! is_singular( $the_post_type ) && wp_rig()->using_archive_excerpts() ) {
 		the_excerpt();
 	} elseif ( is_singular( 'catalog' ) ) {
-		echo wp_kses( $synopsis, 'post' );
+		echo $synopsis;
 	} else {
 		if(is_page('about')) {
 			wp_rig()->print_scripts( 'wp-rig-lite-youtube' );
