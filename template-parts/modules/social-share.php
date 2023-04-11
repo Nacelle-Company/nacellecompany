@@ -29,7 +29,7 @@ if ( 'catalog' === $obj_slug ) {
 		?>
 		<span class="has-theme-secondary-color">###</span><br>
 	<?php endif; ?>Share <?php the_title( '<span class="hidden">', '</span>' ); ?></h2>
-	<a href="http://www.facebook.com/sharer.php?u=<?php echo wp_kses( $url, 'post' ); ?>" rel="noopener" target="_blank">
+	<a href="https://www.facebook.com/sharer.php?u=<?php echo wp_kses( $url, 'post' ); ?>" rel="noopener" target="_blank">
 		<span class="screen-reader-text">Share <?php echo esc_html( the_title() ); ?> on Facebook</span>
 		<?php echo load_inline_svg( 'icon-facebook.svg' ); ?>
 	</a>

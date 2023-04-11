@@ -706,7 +706,7 @@
 
 	// ----- htmlInit ----- //
 
-	// http://jamesroberts.name/blog/2010/02/22/string-functions-for-javascript-trim-to-camel-case-to-dashed-and-to-underscore/
+	// https://jamesroberts.name/blog/2010/02/22/string-functions-for-javascript-trim-to-camel-case-to-dashed-and-to-underscore/
 	utils.toDashed = function( str ) {
 		return str.replace( /(.)([A-Z])/g, function( match, $1, $2 ) {
 			return $1 + '-' + $2;
@@ -3059,7 +3059,7 @@ proto.reposition = function() {
 }( window, function factory( window, Flickity, Unipointer, utils ) {
 	'use strict';
 
-	const svgURI = 'http://www.w3.org/2000/svg';
+	const svgURI = 'https://www.w3.org/2000/svg';
 
 	// -------------------------- PrevNextButton -------------------------- //
 
@@ -3081,7 +3081,7 @@ proto.reposition = function() {
 		const element = this.element = document.createElement( 'button' );
 		element.className = 'flickity-button flickity-prev-next-button';
 		element.className += this.isPrevious ? ' previous' : ' next';
-		// prevent button from submitting form http://stackoverflow.com/a/10836076/182183
+		// prevent button from submitting form https://stackoverflow.com/a/10836076/182183
 		element.setAttribute( 'type', 'button' );
 		// init as disabled
 		this.disable();
