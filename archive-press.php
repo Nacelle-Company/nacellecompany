@@ -25,6 +25,7 @@ get_template_part( 'template-parts/header/page-header_press' );
 			while ( have_posts() ) {
 				the_post();
 				get_template_part( 'template-parts/content/entry', get_post_type() );
+				// PRESS: /template-parts/content/entry.php
 			}
 			wp_rig()->print_styles( 'wp-rig-pagination-archive' );
 			wp_rig()->display_pagination_archive( $queried_obj );

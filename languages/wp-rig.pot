@@ -32,7 +32,7 @@ msgstr[1] ""
 msgid "Comments are closed."
 msgstr ""
 
-#: header.php:66
+#: header.php:61
 msgid "Skip to content"
 msgstr ""
 
@@ -44,7 +44,7 @@ msgstr ""
 msgid "Team"
 msgstr ""
 
-#: sidebar.php:19
+#: sidebar.php:17
 msgid "Asides"
 msgstr ""
 
@@ -199,7 +199,7 @@ msgstr ""
 
 #. translators: %s: Post title.
 #. translators: %s: Name of current post. Only visible to screen readers
-#: inc/Excerpts/Component.php:44, template-parts/content/entry_content-press.php:77, template-parts/content/entry_content.php:33
+#: inc/Excerpts/Component.php:44, template-parts/content/entry_content-press.php:77, template-parts/content/entry_content.php:35
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
@@ -315,7 +315,7 @@ msgstr ""
 msgid "Read more"
 msgstr ""
 
-#: template-parts/content/entry_content.php:46
+#: template-parts/content/entry_content.php:48
 msgid "Pages:"
 msgstr ""
 

@@ -29,6 +29,8 @@ $colon = ": ";
 	<?php wp_rig()->display_tax_terms( 'producers' ); ?>
 
 	<?php wp_rig()->display_tax_terms( 'writers' ); ?>
+
+	<?php wp_rig()->display_tax_terms( 'authors' ); ?>
 </dl>
 <dl class="crew-list data">
 	<?php get_template_part( 'template-parts/content/entry_catalog_stats', get_post_type() ); ?>

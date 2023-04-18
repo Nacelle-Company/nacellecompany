@@ -61,11 +61,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			$taxonomy_name = $taxonomy_name->name;
 			$taxonomy_name = str_replace( '_', ' ', $taxonomy_name );
 			$taxonomy_name = ucwords( $taxonomy_name );
-			if (get_field('change_writers_title')) {
-				echo '<dt><h4>' . esc_html( get_field('writers_new_title') ) . '</h4></dt>';
-			} else {
-				echo '<dt><h4>' . esc_html( $taxonomy_name ) . '</h4></dt>';
-			}
+			echo '<dt><h4>' . esc_html( $taxonomy_name ) . '</h4></dt>';
 			foreach ( $terms as $term ) {
 
 				$terms_list[] = sprintf(
