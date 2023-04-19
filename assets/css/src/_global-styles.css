@@ -121,3 +121,6 @@ cite::before {
 	outline: 0;
 }
 
+.text-center {
+	text-align: center;
+}

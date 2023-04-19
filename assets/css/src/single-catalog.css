@@ -176,6 +176,7 @@ dt {
 	float: left;
 	margin-right: 10%;
 	max-width: 40%;
+	font-size: var(--font-size-small);
 }
 
 dd {

@@ -72,22 +72,16 @@
 
 	& .entry-footer {
 		grid-area: footer;
-
-		@media (--content-query) {
-			display: flex;
-			align-items: baseline;
-		}
-
-		@media (--sidebar-query) {
-			flex-direction: column-reverse;
-		}
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
 
 		& .entry-meta {
 			margin: 0;
 		}
 
-		& .entry-taxonomies {
-			line-height: 1;
+		& .entry-taxonomies p {
+			margin: 0;
 		}
 	}
 }

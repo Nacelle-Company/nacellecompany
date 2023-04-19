@@ -58,6 +58,14 @@
 	}
 }
 
+.nacelle-site .grid-item:hover {
+	& .entry-summary,
+	& .entry-taxonomies,
+	& .entry-meta {
+		color: var(--global-font-color-inverse);
+	}
+}
+
 /* HOME POST GRID */
 
 .home .entry-title {
