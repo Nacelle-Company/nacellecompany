@@ -8,6 +8,11 @@
 	font-stretch: condensed;
 	background-color: var(--nav-bk-color);
 
+	@media (--content-query) {
+		grid-column: 1/-1;
+		grid-row-start: auto;
+	}
+
 	@media (--sidebar-query) {
 		grid-column: 3/span 1;
 		padding: 2em;

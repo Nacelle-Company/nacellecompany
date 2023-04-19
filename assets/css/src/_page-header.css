@@ -3,19 +3,23 @@
 --------------------------------------------------------------*/
 
 .page-header {
-	padding: 1em;
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	padding: 0 1em;
+	border-bottom: 2px solid var(--color-theme-primary);
 
 	@media (--content-query) {
-		display: flex;
-		padding: 0 1em;
-		column-gap: 2em;
-		flex-flow: row nowrap;
 		grid-column: 1/span 2;
 	}
 
 	@media (--sidebar-query) {
 		grid-column: 2/span 2;
+		column-gap: 2em;
+		/* flex-flow: row nowrap; */
+		/* align-items: start; */
 		padding: 2em 1em;
+		border-bottom: none;
 	}
 
 	& .archive-title {
@@ -39,12 +43,16 @@
 }
 
 .page-title_meta {
-	border-top: 2px solid var(--color-theme-primary);
 
 	@media (--content-query) {
-		flex-grow: 1;
 		display: flex;
 		align-items: center;
+	}
+	@media (--sidebar-query) {
+		flex-grow: 1;
+		border-top: 2px solid var(--color-theme-primary);
+		padding-top: 0.5em;
+		justify-content: end;
 	}
 }
 
