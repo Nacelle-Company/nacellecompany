@@ -16,6 +16,7 @@ $obj_title      = $queried_obj->label;
 $obj_slug       = strtolower($obj_title);
 $press_icon     = load_inline_svg( 'icon-press.svg' );
 $sf_filter_data = '';
+$blog_url       = get_bloginfo( 'url' );
 
 // check for plugin using plugin name
 if(in_array('search-filter-pro/search-filter-pro.php', apply_filters('active_plugins', get_option('active_plugins')))){
@@ -62,7 +63,7 @@ endif;
 	</h1>
 	<div class="page-title_meta">
 		<?php if(is_single()) : ?>
-			<a href="/<?php echo esc_html( $obj_slug ); ?>">
+			<a href="/<?php echo esc_html( $blog_url . '/' . $obj_slug ); ?>">
 				<?php echo load_inline_svg('icon-carat-left.svg'); ?>
 				<?php echo esc_html( $obj_title ); ?> Archive
 			</a>
