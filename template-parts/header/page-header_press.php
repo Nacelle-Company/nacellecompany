@@ -63,7 +63,7 @@ endif;
 	</h1>
 	<div class="page-title_meta">
 		<?php if(is_single()) : ?>
-			<a href="/<?php echo esc_html( $blog_url . '/' . $obj_slug ); ?>">
+			<a href="<?php echo esc_html( $blog_url . '/' . $obj_slug ); ?>">
 				<?php echo load_inline_svg('icon-carat-left.svg'); ?>
 				<?php echo esc_html( $obj_title ); ?> Archive
 			</a>

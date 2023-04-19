@@ -150,6 +150,8 @@
 }
 
 .crew-list {
+	display: grid;
+	column-gap: 1em;
 
 	&.people {
 
@@ -174,13 +176,12 @@
 
 dt {
 	float: left;
-	margin-right: 10%;
-	max-width: 40%;
+	grid-column: 1;
 	font-size: var(--font-size-small);
 }
 
 dd {
-	margin-left: 50%;
+	grid-column: 2;
 	margin-bottom: 1em;
 	font-size: var(--font-size-small);
 }
