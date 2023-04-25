@@ -9,7 +9,7 @@ namespace WP_Rig\WP_Rig;
 
 wp_rig()->print_styles( 'wp-rig-page' );
 ?>
-<section class="error site-main__content-width">
+<section class="error site-main__content-width-lg">
 
 	<?php get_template_part( 'template-parts/header/page-header' ); ?>
 

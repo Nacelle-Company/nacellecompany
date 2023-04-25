@@ -11,6 +11,7 @@
  */
 
 namespace WP_Rig\WP_Rig;
+global $count_cat;
 
 require('template-parts/logic/logic_search-and-filter-plugin.php');
 

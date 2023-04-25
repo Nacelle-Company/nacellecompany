@@ -6,7 +6,7 @@
  */
 
 namespace WP_Rig\WP_Rig;
-
+global $count_cat;
 $permalink  = get_permalink();
 $content_wp = get_the_content();
 $content_ex = get_the_excerpt();

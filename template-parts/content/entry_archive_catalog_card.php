@@ -7,7 +7,7 @@
 
 namespace WP_Rig\WP_Rig;
 
-global $count_cat;
+global $lazy_load;
 
 require('logic/logic_entry_archive_catalog_card.php');
 

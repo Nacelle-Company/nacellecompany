@@ -12,6 +12,7 @@ namespace WP_Rig\WP_Rig;
 
 get_header();
 wp_rig()->print_styles( 'wp-rig-archive_press' );
+global $count;
 
 define('SITE', "$_SERVER[HTTP_HOST]");
 $nacelle_class = "";
@@ -25,10 +26,12 @@ get_template_part( 'template-parts/header/page-header_press' );
 	<main id="primary" class="<?php echo esc_html( $main_class ); ?>">
 		<?php
 		if ( have_posts() ) {
+			$count = 0;
 			while ( have_posts() ) {
 				the_post();
 				get_template_part( 'template-parts/content/entry', get_post_type() );
 				// PRESS: /template-parts/content/entry.php
+				$count++;
 			}
 			wp_rig()->print_styles( 'wp-rig-pagination-archive' );
 			wp_rig()->display_pagination_archive( $queried_obj );

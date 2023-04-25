@@ -6,7 +6,12 @@
  */
 
 namespace WP_Rig\WP_Rig;
-
+global $count;
+if ($count < 2) {
+	$loading = 'eager';
+} else {
+	$loading = 'lazy';
+}
 // Audio or video attachments can have featured images, so they need to be specifically checked.
 $support_slug = get_post_type();
 if ( 'attachment' === $support_slug ) {
@@ -52,6 +57,7 @@ if ( is_singular( get_post_type() ) ) {
 					'post-thumbnail',
 					array(
 						'class' => 'skip-lazy',
+						'loading' => $loading,
 						'alt'   => the_title_attribute(
 							array(
 								'echo' => false,
@@ -63,6 +69,7 @@ if ( is_singular( get_post_type() ) ) {
 				the_post_thumbnail(
 					'medium',
 					array(
+						'loading' => $loading,
 						'alt' => the_title_attribute(
 							array(
 								'echo' => false,

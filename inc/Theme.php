@@ -141,7 +141,7 @@ class Theme {
 			new Accessibility\Component(),
 			new Image_Sizes\Component(),
 			new AMP\Component(),
-			new PWA\Component(),
+			// new PWA\Component(),
 			new Nav_Menus\Component(),
 			new Sidebars\Component(),
 			new Custom_Background\Component(),

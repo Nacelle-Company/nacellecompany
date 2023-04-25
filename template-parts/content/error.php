@@ -45,7 +45,8 @@ namespace WP_Rig\WP_Rig;
 			<?php
 		}
 
-		get_search_form();
+		// get_search_form();
+		echo do_shortcode('[wpdreams_ajaxsearchpro id=2]');
 		?>
 	</div>
 </section>

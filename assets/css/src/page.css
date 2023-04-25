@@ -89,13 +89,9 @@
 
 .error .button-wrap {
 	display: flex;
-	flex-flow: column wrap;
+	flex-flow: row wrap;
 	row-gap: 1em;
 	align-items: center;
-
-	@media (--wide-menu-query) {
-		flex-flow: row nowrap;
-	}
 
 	& .button {
 		margin: 0 1em;
