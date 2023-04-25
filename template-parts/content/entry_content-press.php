@@ -27,11 +27,11 @@ wp_rig()->print_styles( 'wp-rig-content_posts' );
 			?>
 			<div class="post-image__container">
 				<a href="<?php echo esc_html( $news_link ); ?>" class="post-image link-absolute" target="_blank"><?php the_title( '<span class="hidden">', '</span>' ); ?></a>
-				<?php the_post_thumbnail( 'medium_large', array( 'class' => 'post-image', 'loading' => 'auto' ) ); ?>
+				<?php the_post_thumbnail( 'medium_large', array( 'class' => 'post-image', 'loading' => 'eager' ) ); ?>
 			</div>
 		<?php else : ?>
 			<div class="post-image__container">
-				<?php the_post_thumbnail( 'medium_large', array( 'class' => 'post-image', 'loading' => 'auto' ) ); ?>
+				<?php the_post_thumbnail( 'medium_large', array( 'class' => 'post-image', 'loading' => 'eager' ) ); ?>
 			</div>
 		<?php endif; ?>
 	<?php endif; ?>
