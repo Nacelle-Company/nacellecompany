@@ -9,6 +9,7 @@
 
 .site-main {
 	display: grid;
+    grid-template-columns: 1fr;
 
 	@media (--content-query) {
 		grid-column: 1/-1;

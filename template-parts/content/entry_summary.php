@@ -16,7 +16,7 @@ $content_wp = get_the_content();
 $content_ex = get_the_excerpt();
 $content_acf = get_post_meta( $post->ID, 'synopsis', true );
 $synopsis    = '';
-$trim_length = 17; // ? Trimming the synopsis. desired length of text to display.
+$trim_length = 30; // ? Trimming the synopsis. desired length of text to display.
 $value_more  = ' . . . '; // ? What to add at the end of the trimmed text.
 // Assign content if avaliable, otherwise use the synopsis acf.
 if ( $content_acf ) {
