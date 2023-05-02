@@ -58,9 +58,9 @@ endif;
 ?>
 
 <header class="page-header">
-	<h1 class="page-title">
+	<h2 class="page-title page-title__press">
 		<?php echo $press_icon . esc_html($obj_title); ?>
-	</h1>
+	</h2>
 	<div class="page-title_meta">
 		<?php if(is_single()) : ?>
 			<a href="<?php echo esc_html( $blog_url . '/' . $obj_slug ); ?>">

@@ -24,6 +24,9 @@ if(in_array('search-filter-pro/search-filter-pro.php', apply_filters('active_plu
 	$sf_catalog_filtered = false;
 }
 
+// Hide title
+$title_visible = get_post_meta( get_the_ID(), 'hide_title', true );
+
 if ( is_404() ) {
 	?>
 	<header class="page-header">
@@ -68,6 +71,7 @@ if ( is_404() ) {
 } elseif(is_single()) {
 	get_template_part( 'template-parts/header/page-header_press' );
 } elseif ( is_page() ) {
+	if($title_visible !== 'remove') :
 	?>
 	<header class="page-header <?php echo esc_html( get_post_meta( get_the_ID(), 'hide_title', true ) ); ?>">
 		<h1 class="page-title">
@@ -75,4 +79,5 @@ if ( is_404() ) {
 		</h1>
 	</header>
 	<?php
+	endif;
 }

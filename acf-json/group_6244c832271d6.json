@@ -70,13 +70,14 @@
             },
             "choices": {
                 "visible": "No",
-                "hidden": "Yes"
+                "hidden": "Yes",
+                "remove": "Remove"
             },
             "default_value": "visible",
-            "allow_null": 0,
-            "multiple": 0,
-            "ui": 0,
             "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
             "ajax": 0,
             "placeholder": ""
         }
@@ -109,5 +110,5 @@
     "active": true,
     "description": "BOTH - Page settings",
     "show_in_rest": 0,
-    "modified": 1671149777
+    "modified": 1683032830
 }
