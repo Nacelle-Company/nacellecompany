@@ -440,6 +440,13 @@ function wp_rig_remove_wp_css() {
 }
 add_action( 'wp_enqueue_scripts', 'wp_rig_remove_wp_css', 100 );
 
+// Remove Default Post Type From Admin Menu WordPress
+// https://www.techjunkie.com/remove-default-post-type-from-admin-menu-wordpress/
+add_action('admin_menu','nacelle_remove_default_post_type');
+function nacelle_remove_default_post_type() {
+	remove_menu_page('edit.php');
+}
+
 /**
   * GETTING YOUR STYLE HANDLES
   * @param https://wpshout.com/defer-parsing-javascript-wordpress/
@@ -459,7 +466,7 @@ add_action( 'wp_enqueue_scripts', 'wp_rig_remove_wp_css', 100 );
   * GETTING YOUR SCRIPT HANDLES
   * YOU CAN DO THE SAME: in query monitor/scripts(or styles)/Handle column
   * @param https://wpshout.com/defer-parsing-javascript-wordpress/
-*/
+  **/
 // add_action( 'wp_print_scripts', 'wsds_detect_enqueued_scripts' );
 // function wsds_detect_enqueued_scripts() {
 // 	global $wp_scripts;
