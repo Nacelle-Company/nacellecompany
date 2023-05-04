@@ -90,11 +90,11 @@ class Component implements Component_Interface {
 		}
 
 		if ( ! display_header_text() ) {
-			echo '<style type="text/css">.site-title, .site-description { position: absolute; clip: rect(1px, 1px, 1px, 1px); }</style>';
+			echo '<style>.site-title, .site-description { position: absolute; clip: rect(1px, 1px, 1px, 1px); }</style>';
 			return;
 		}
 
-		echo '<style type="text/css" id="custom_colors">
+		echo '<style id="custom_colors">
 :root{
 	--nav-bk-color: ' . esc_attr( $nav_bk_color ) . ';
 	--global-font-color: ' . esc_attr( $global_font_color ) . ';

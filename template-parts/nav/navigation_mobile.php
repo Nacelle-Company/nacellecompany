@@ -12,7 +12,7 @@ if ( ! wp_rig()->is_mobile_nav_menu_active() ) {
 }
 ?>
 
-<nav id="<?php echo apply_filters( 'wp_rig_site_navigation_id', 'site-navigation' ); /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */ ?>" class="<?php echo apply_filters( 'wp_rig_site__mobile_navigation_classes', 'main-navigation nav--toggle-sub nav--toggle-small' ); /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */ ?>" aria-label="<?php esc_attr_e( 'Main menu', 'wp-rig' ); ?>"
+<nav id="<?php echo apply_filters( 'wp_rig_site_navigation_id', 'site-navigation_mobile' ); /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */ ?>" class="<?php echo apply_filters( 'wp_rig_site__mobile_navigation_classes', 'main-navigation nav--toggle-sub nav--toggle-small' ); /* phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */ ?>" aria-label="<?php esc_attr_e( 'Main menu', 'wp-rig' ); ?>"
 	<?php
 	add_filter( 'filter_nav_menu_dropdown_symbol', 'walker_mobile_nav_menu_start_el', 11, 4 );
 
