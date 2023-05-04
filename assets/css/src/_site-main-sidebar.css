@@ -6,7 +6,8 @@
 
 	@media (--sidebar-query) {
 		display: grid;
-		grid-template-columns: 1fr 8fr 2fr 1fr;
+		grid-template-columns: 1fr 8fr 3fr 1fr;
+		column-gap: 2em;
 		grid-auto-rows: min-content;
 		min-height: 100vh;
 		align-items: flex-start;
@@ -18,7 +19,7 @@
 		}
 
 		& .site-main {
-			grid-column: 2;
+			grid-column: 2/span 1;
 			min-width: 0;
 		}
 	}

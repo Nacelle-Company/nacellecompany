@@ -12,9 +12,14 @@ $related_posts       = get_post_meta( get_the_ID(), 'talent_name', true );
 $related_posts_news  = get_post_meta( get_the_ID(), 'related_to', true );
 $boilerplate         = get_option( 'options_boilerplate' );
 $news_link           = get_post_meta( get_the_ID(), 'link_to_article', true );
-$source              = get_post_meta( get_the_ID(), 'source', true ) . ' | ';
-$source              .= get_post_meta( get_the_ID(), 'location', true ) . ' | ';
-$source              .= '<time datetime="' . get_the_time( 'Y-m-d' ) . '">' . get_the_time( 'F j, Y' ) . '</time>';
+$press_meta          = '';
+$source              = get_post_meta( get_the_ID(), 'source', true );
+if (!empty($source)) {
+	$press_meta .= $source . ' | ';
+}
+$press_meta          .= get_post_meta( get_the_ID(), 'location', true ) . ' | ';
+$press_meta          .= '<time datetime="' . get_the_time( 'Y-m-d' ) . '">' . get_the_time( 'F j, Y' ) . '</time>';
+
 wp_rig()->print_styles( 'wp-rig-content_posts' );
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'single-post' ); ?>>
@@ -35,7 +40,7 @@ wp_rig()->print_styles( 'wp-rig-content_posts' );
 	<?php endif; ?>
 	<div class="post-title">
 		<h6 class="post-source">
-			<?php echo wp_kses($source, array('time' => array('datetime' => array()))); ?>
+			<?php echo wp_kses($press_meta, array('time' => array('datetime' => array()))); ?>
 		</h6>
 		<?php
 		if ( $news_link ) :
