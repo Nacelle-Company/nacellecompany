@@ -36,12 +36,12 @@
 }
 
 .entry-title {
-
 	margin-top: 0;
 }
 
 .post-source {
-
+	display: inline-flex;
+	color: var(--color-theme-secondary);
 	@media (--content-query) {
 		margin-top: 0;
 	}

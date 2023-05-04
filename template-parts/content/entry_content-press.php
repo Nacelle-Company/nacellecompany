@@ -36,16 +36,13 @@ wp_rig()->print_styles( 'wp-rig-content_posts' );
 		<?php endif; ?>
 	<?php endif; ?>
 	<div class="post-title">
-		<p class="post-source">
-			<?php echo esc_html( $source ); ?> |
+		<h6 class="post-source">
+			<?php echo esc_html( $source ) . '&nbsp|&nbsp'; ?>
 			<time class="post-date" datetime="<?php echo esc_html( $time_att ); ?>">
-				<?php echo esc_html( $time ); ?>
+				<?php echo esc_html( $time ) . '&nbsp|&nbsp'; ?>
 			</time>
-			<br>
-			<strong>
-				<?php echo esc_html( $location ); ?>
-			</strong>
-		</p>
+			<?php echo esc_html( $location ); ?>
+		</h6>
 		<?php
 		if ( $news_link ) :
 			?>
