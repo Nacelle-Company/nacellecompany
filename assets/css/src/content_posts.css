@@ -40,7 +40,7 @@
 }
 
 .post-source {
-	display: inline-flex;
+	display: inline;
 	color: var(--color-theme-secondary);
 	@media (--content-query) {
 		margin-top: 0;

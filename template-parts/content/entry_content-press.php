@@ -12,11 +12,9 @@ $related_posts       = get_post_meta( get_the_ID(), 'talent_name', true );
 $related_posts_news  = get_post_meta( get_the_ID(), 'related_to', true );
 $boilerplate         = get_option( 'options_boilerplate' );
 $news_link           = get_post_meta( get_the_ID(), 'link_to_article', true );
-$source              = get_post_meta( get_the_ID(), 'source', true );
-$location            = get_post_meta( get_the_ID(), 'location', true );
-$time                = get_the_time( 'F j, Y' );
-$time_att            = get_the_time( 'Y-m-d' );
-
+$source              = get_post_meta( get_the_ID(), 'source', true ) . ' | ';
+$source              .= get_post_meta( get_the_ID(), 'location', true ) . ' | ';
+$source              .= '<time datetime="' . get_the_time( 'Y-m-d' ) . '">' . get_the_time( 'F j, Y' ) . '</time>';
 wp_rig()->print_styles( 'wp-rig-content_posts' );
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'single-post' ); ?>>
@@ -37,11 +35,7 @@ wp_rig()->print_styles( 'wp-rig-content_posts' );
 	<?php endif; ?>
 	<div class="post-title">
 		<h6 class="post-source">
-			<?php echo esc_html( $source ) . '&nbsp|&nbsp'; ?>
-			<time class="post-date" datetime="<?php echo esc_html( $time_att ); ?>">
-				<?php echo esc_html( $time ) . '&nbsp|&nbsp'; ?>
-			</time>
-			<?php echo esc_html( $location ); ?>
+			<?php echo wp_kses($source, array('time' => array('datetime' => array()))); ?>
 		</h6>
 		<?php
 		if ( $news_link ) :
