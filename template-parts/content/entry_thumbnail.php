@@ -7,6 +7,7 @@
 
 namespace WP_Rig\WP_Rig;
 global $count;
+
 if ($count < 2) {
 	$loading = 'eager';
 } else {
@@ -23,7 +24,11 @@ if ( 'attachment' === $support_slug ) {
 }
 
 // ACF images.
-$size = 'medium_large';
+if($count < 1) {
+	$size = 'wp-rig-featured';
+} else {
+	$size = 'thumbnail';
+}
 if ( get_field( 'square_image' ) ) {
 	$img = get_field( 'square_image' );
 	$img = wp_get_attachment_image( $img, $size );
@@ -54,9 +59,9 @@ if ( is_singular( get_post_type() ) ) {
 			global $wp_query;
 			if ( 4 > $wp_query->current_post ) {
 				the_post_thumbnail(
-					'post-thumbnail',
+					$size,
 					array(
-						'class' => 'skip-lazy',
+						'class' => 'skip-lazy ' . $size,
 						'loading' => $loading,
 						'alt'   => the_title_attribute(
 							array(

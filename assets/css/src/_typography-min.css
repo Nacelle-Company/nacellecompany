@@ -54,6 +54,14 @@ i {
 	text-transform: uppercase;
 }
 
+.h4 {
+	font-size: 80%;
+
+	@media (--content-query) {
+		font-size: 85%;
+	}
+}
+
 .h6 {
 	font-size: 70%;
 

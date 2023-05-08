@@ -41,5 +41,5 @@ get_template_part( 'template-parts/header/page-header_press' );
 		?>
 	</main>
 <?php
-get_sidebar();
+// get_sidebar();
 get_footer();

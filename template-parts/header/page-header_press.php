@@ -59,7 +59,12 @@ endif;
 
 <header class="page-header">
 	<h2 class="page-title page-title__press">
-		<?php echo $press_icon . esc_html($obj_title); ?>
+		<?php
+		if(is_single()) :
+		echo $press_icon . esc_html($obj_title);
+		else :
+		echo '<div class="large-page-title">Latest News</div>';
+		endif; ?>
 	</h2>
 	<div class="page-title_meta">
 		<?php if(is_single()) : ?>

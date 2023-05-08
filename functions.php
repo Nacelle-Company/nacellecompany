@@ -447,6 +447,16 @@ function nacelle_remove_default_post_type() {
 	remove_menu_page('edit.php');
 }
 
+// set urls with parameter to noindex in wordpress?
+// https://stackoverflow.com/questions/35983126/set-urls-with-parameter-to-noindex-in-wordpress
+add_action('wp_head','nacelle_noindex_ajax_search_queries');
+function nacelle_noindex_ajax_search_queries() {
+	$url = $_SERVER['REQUEST_URI'];
+	if (strpos($url,'?') !== false && !is_admin()) {
+		echo '<meta name="robots" content="noindex, follow" />' . "\n";
+	}
+}
+
 /**
   * GETTING YOUR STYLE HANDLES
   * @param https://wpshout.com/defer-parsing-javascript-wordpress/
