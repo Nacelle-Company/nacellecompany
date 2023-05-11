@@ -41,7 +41,7 @@
 
 	& > .menu > li {
 		@media (--wide-menu-query) {
-			margin: 0 1.25em;
+			margin: 0 1em;
 		}
 	}
 }

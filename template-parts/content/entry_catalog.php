@@ -111,13 +111,14 @@ endif;
 
 <footer class="post-footer post-footer__catalog">
 	<?php
+	// Get post id's.
 	$ids = get_field( 'related_catalog_items', $post->ID, false );
+	// Footer styles.
+	wp_rig()->print_styles( 'wp-rig-post-footer' );
 	// Pagination.
-	wp_rig()->print_styles( 'wp-rig-pagination-post' );
 	wp_rig()->display_pagination();
 	// Related posts.
 	if ( $ids ) {
-		wp_rig()->print_styles( 'wp-rig-related_posts' );
 		wp_rig()->display_related_posts( $ids );
 	}
 	?>

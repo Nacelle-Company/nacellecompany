@@ -284,6 +284,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				'global' => true,
 				'preload_callback' => '__return_true',
 			),
+			// Default archive.
 			'wp-rig-archive'            => array(
 				'file'             => 'archive.min.css',
 				'preload_callback' => function() {
@@ -291,6 +292,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					return 'archive.php' === basename( $template );
 				},
 			),
+			// Press archive.
 			'wp-rig-archive_press'            => array(
 				'file'             => 'archive_press.min.css',
 				'preload_callback' => function() {
@@ -305,7 +307,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					return 'page.php' === basename( $template );
 				},
 			),
-
+			// Single posts. ex. Press posts.
 			'wp-rig-content_posts'      => array(
 				'file' => 'content_posts.min.css',
 				'preload_callback' => function() {
@@ -429,20 +431,6 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					return 'single-catalog.php' === basename( $template );
 				},
 			),
-			'wp-rig-social-share'			=> array(
-				'file' => 'social-share.min.css',
-				'preload_callback' => function() {
-					global $template;
-					return array( 'single.php', 'single-catalog.php' ) === basename( $template );
-				},
-			),
-			'wp-rig-related_posts'			=> array(
-				'file' => 'related_posts.min.css',
-				'preload_callback' => function() {
-					global $template;
-					return array( 'single.php', 'single-catalog.php' ) === basename( $template );
-				},
-			),
 			'wp-rig-pagination-archive'		=> array(
 				'file'             => 'pagination-archive.min.css',
 				'preload_callback' => function() {
@@ -450,8 +438,8 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					return array( 'archive-catalog.php', 'category.php', 'taxonomy.php', 'search-archive.php', 'archive-press.php' ) === basename( $template );
 				},
 			),
-			'wp-rig-pagination-post'		=> array(
-				'file'             => 'pagination-post.min.css',
+			'wp-rig-post-footer'		=> array(
+				'file'             => 'post-footer.min.css',
 				'preload_callback' => function() {
 					global $template;
 					return array( 'single-catalog.php', 'single.php' ) === basename( $template );

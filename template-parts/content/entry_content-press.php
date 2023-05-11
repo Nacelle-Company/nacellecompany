@@ -77,7 +77,20 @@ wp_rig()->print_styles( 'wp-rig-content_posts' );
 	</div>
 	<footer class="post-footer">
 		<?php
+		// //
+		// Styles
+		// //
+		// Footer styles.
+		wp_rig()->print_styles( 'wp-rig-post-footer' );
+		// //
+		// Template parts.
+		// //
 		get_template_part( 'template-parts/modules/social-share' );
+		// Pagination template.
+		wp_rig()->display_pagination();
+		// Related posts template.
+		wp_rig()->display_related_posts( $related_posts );
+		// Boilerplate template.
 		if ( get_post_meta( get_the_ID(), 'show_boilerplate', true ) ) {
 			if ( ! empty( $boilerplate ) ) :
 				?>
@@ -87,17 +100,9 @@ wp_rig()->print_styles( 'wp-rig-content_posts' );
 				<?php
 			endif;
 		}
-		// Pagination.
-		wp_rig()->print_styles( 'wp-rig-pagination-post' );
-		wp_rig()->display_pagination();
-		// Related posts.
-		if ( $related_posts ) {
-			wp_rig()->print_styles( 'wp-rig-related_posts' );
-		}
-		wp_rig()->display_related_posts( $related_posts );
+		// Back button.
 		get_template_part( 'template-parts/modules/post-back-btn' );
 		?>
-
 	</footer>
 </article>
 <?php
