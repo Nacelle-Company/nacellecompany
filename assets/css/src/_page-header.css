@@ -1,37 +1,66 @@
 /*--------------------------------------------------------------
 # _page-header.css : Headers for posts and archives
 --------------------------------------------------------------*/
-
 .page-header {
-	display: flex;
-	align-items: baseline;
-	justify-content: space-between;
-	padding: 0 1em;
-	border-bottom: 2px solid var(--color-theme-primary);
-
+	border-bottom: 2px solid var(--global-color-grey);
+	grid-row: 2;
+	position: relative;
+}
+.page-title {
+	font-size: 43px; /* Some tweener fallback that doesn't look awful */
+	font-size: 9vw;
+	font-weight: 900;
+	text-align: center;
+	text-transform: uppercase;
+	line-height: 1;
+	margin: 0 0;
+	padding: 0.5em;
+	@media (--narrow-menu-query) {
+		font-size: 11vw;
+	}
 	@media (--content-query) {
-		grid-column: 1/span 2;
+		margin: 0;
 	}
 
 	@media (--sidebar-query) {
-		grid-column: 2/span 2;
-		column-gap: 2em;
-		/* flex-flow: row nowrap; */
-		/* align-items: start; */
-		padding: 2em 1em;
-		border-bottom: none;
-	}
-
-	& .archive-title {
-		color: var(--color-theme-primary);
-	}
-
-	& .title {
-		color: var(--color-theme-primary);
+		max-width: var(--page-width);
+		margin: 0 auto;
+		grid-column: 2 / span 1;
+		align-items: end;
+		letter-spacing: 12px;
+		padding: 0.25em;
 	}
 }
 
-.page-title {
+.page-title__press-single::after {
+	content: "< Press Archive";
+	font-size: var(--font-size-xsmall);
+	color: var(--color-theme-secondary);
+	font-weight: 400;
+	position: absolute;
+	bottom: 3px;
+	right: 0;
+	left: 0;
+	@media (--content-query) {
+		bottom: 1em;
+	}
+}
+
+/* .page-title_meta {
+	position: absolute;
+	right: 1em;
+	bottom: 5px;
+	font-size: var(--font-size-xsmall);
+	@media (--content-query) {
+	}
+}
+
+.page-title_meta-title {
+	text-transform: uppercase;
+	color: var(--color-theme-secondary);
+} */
+
+/* .page-title {
 	text-transform: uppercase;
 	line-height: 1;
 	font-size: 1.5em;
@@ -57,7 +86,7 @@
 		padding-top: 0.5em;
 		justify-content: end;
 	}
-}
+} */
 
 /*--------------------------------------------------------------
 #  END _page-header.css

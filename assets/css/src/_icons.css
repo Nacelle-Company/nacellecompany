@@ -3,7 +3,7 @@
  * Icon on the left title on the right.
  */
 
-.icon:not(.menu-toggle) {
+.icon:not(.menu-toggle):not(.icon-latest-news) {
 
 	& path {
 		fill: var(--color-theme-primary);
@@ -16,6 +16,6 @@
 	}
 }
 
-.icon:not(.icon-arrow-up):not(.icon-external) {
+.icon:not(.icon-arrow-up):not(.icon-external):not(.icon-latest-news) {
 	margin-right: 0.5rem;
 }

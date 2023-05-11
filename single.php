@@ -32,5 +32,5 @@ if('press' === $post_type) {
 		?>
 	</main>
 <?php
-get_sidebar('Offcanvas Sidebar');
+// get_sidebar('Offcanvas Sidebar');
 get_footer();

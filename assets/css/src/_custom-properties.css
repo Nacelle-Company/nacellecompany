@@ -25,12 +25,12 @@
 	--global-font-weight-bold: 700;
 
 	/* Custom editor font sizes */
-	--font-size-xsmall: calc(5 / var(--global-font-size) * 2rem);
-	--font-size-small: calc(10 / var(--global-font-size) * 1.35rem);
-	--font-size-menu: calc(15 / var(--global-font-size) * 1rem);
-	--font-size-regular: calc(var(--global-font-size) / 16 * 1rem);
-	--font-size-large: calc(36 / var(--global-font-size) * 1rem);
-	--font-size-larger: calc(48 / var(--global-font-size) * 1rem);
+	--font-size-xsmall: calc(8 / var(--global-font-size) * 1.5rem); 	/* 11.2941px */
+	--font-size-small: calc(10 / var(--global-font-size) * 1.35rem); 	/* 12.7059px */
+	--font-size-menu: calc(13 / var(--global-font-size) * 1rem); 		/* 12.2353px */
+	--font-size-regular: calc(var(--global-font-size) / 16 * 1rem); 	/* 17px */
+	--font-size-large: calc(36 / var(--global-font-size) * 1rem); 		/* 33.8824px */
+	--font-size-larger: calc(48 / var(--global-font-size) * 1rem); 		/* 45.1765px */
 
 	/* block-library font sizes */
 	--wp--preset--font-size--normal: 16px;

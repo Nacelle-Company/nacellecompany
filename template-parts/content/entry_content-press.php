@@ -11,7 +11,7 @@ $press_release_intro = get_post_meta( get_the_ID(), 'intro', true );
 $related_posts       = get_post_meta( get_the_ID(), 'talent_name', true );
 $related_posts_news  = get_post_meta( get_the_ID(), 'related_to', true );
 $boilerplate         = get_option( 'options_boilerplate' );
-$news_link           = get_post_meta( get_the_ID(), 'link_to_article', true );
+$press_link           = get_post_meta( get_the_ID(), 'link_to_article', true );
 $press_meta          = '';
 $source              = get_post_meta( get_the_ID(), 'source', true );
 if (!empty($source)) {
@@ -22,30 +22,25 @@ $press_meta          .= '<time datetime="' . get_the_time( 'Y-m-d' ) . '">' . ge
 
 wp_rig()->print_styles( 'wp-rig-content_posts' );
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class( 'single-post' ); ?>>
-	<?php
-	// The post thumbnail.
-	if ( has_post_thumbnail() ) :
-		if ( $news_link ) :
-			?>
-			<div class="post-image__container">
-				<a href="<?php echo esc_html( $news_link ); ?>" class="post-image link-absolute" target="_blank"><?php the_title( '<span class="hidden">', '</span>' ); ?></a>
-				<?php the_post_thumbnail( 'medium_large', array( 'class' => 'post-image', 'loading' => 'eager' ) ); ?>
-			</div>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'single-post' ); ?> >
+	<div class="article-header__image">
+		<?php if ( $press_link && has_post_thumbnail() ) : ?>
+			<a href="<?php echo esc_html( $press_link ); ?>" class="post-image link-absolute" target="_blank"><?php the_title( '<span class="hidden">', '</span>' ); ?></a>
+			<?php the_post_thumbnail( 'medium_large', array( 'class' => 'post-image', 'loading' => 'eager' ) ); ?>
+		<?php elseif ( has_post_thumbnail() ) : ?>
+			<?php the_post_thumbnail( 'medium_large', array( 'class' => 'post-image', 'loading' => 'eager' ) ); ?>
 		<?php else : ?>
-			<div class="post-image__container">
-				<?php the_post_thumbnail( 'medium_large', array( 'class' => 'post-image', 'loading' => 'eager' ) ); ?>
-			</div>
+			<img src="<?php bloginfo( 'template_directory' ); ?>/assets/images/comedy-dynamics-default-square.webp" class="wp-post-image" alt="<?php echo esc_html( $the_title ); ?>" loading="eager" />
 		<?php endif; ?>
-	<?php endif; ?>
-	<div class="post-title">
+	</div>
+	<div class="article-header__title">
 		<h6 class="post-source">
 			<?php echo wp_kses($press_meta, array('time' => array('datetime' => array()))); ?>
 		</h6>
 		<?php
-		if ( $news_link ) :
+		if ( $press_link ) :
 			?>
-			<a href="<?php echo esc_html( $news_link ); ?>" class="post-title__link" target="_blank">
+			<a href="<?php echo esc_html( $press_link ); ?>" class="post-title__link" target="_blank">
 				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 				<h4>
 					<?php esc_html_e( 'Read more', 'wp-rig' ); ?>
@@ -55,16 +50,13 @@ wp_rig()->print_styles( 'wp-rig-content_posts' );
 		<?php else : ?>
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		<?php endif; ?>
-
 	</div>
-	<div class="post-content">
-		<h3 class="post-intro">
-			<?php
-			if ( ! empty( $press_release_intro ) ) {
-				echo wp_kses( $press_release_intro, 'post' );
-			}
-			?>
-		</h3>
+	<div class="article-content">
+		<?php if ( ! empty( $press_release_intro ) ) : ?>
+			<h3 class="post-intro">
+				<?php echo wp_kses( $press_release_intro, 'post' ); ?>
+			</h3>
+		<?php endif; ?>
 		<?php
 		the_content(
 			sprintf(
