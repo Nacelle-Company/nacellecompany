@@ -259,7 +259,7 @@ div.asp_w.ajaxsearchpro input:focus {
 }
 
 div.asp_m.ajaxsearchpro .probox {
-	background: #fff;
+	background: #000;
 	overflow: hidden;
 	display: flex;
 	flex-direction: row;

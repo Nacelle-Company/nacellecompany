@@ -64,10 +64,10 @@ $blog_url = get_bloginfo( 'url' );
 			<?php
 				get_template_part( 'template-parts/nav/branding' );
 				get_template_part( 'template-parts/nav/navigation_primary' );
+				get_template_part( 'template-parts/nav/navigation_secondary' );
 			?>
 		</div>
 		<?php
-		get_template_part( 'template-parts/nav/navigation_secondary' );
 		get_template_part( 'template-parts/nav/navigation_mobile' );
 		?>
 		<div class="mobile-menu__search">
