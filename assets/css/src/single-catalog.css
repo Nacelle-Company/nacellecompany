@@ -233,6 +233,8 @@ dd::after {
 		position: absolute;
 		width: 100%;
 		background-color: transparent;
+		z-index: 9;
+		overflow: visible;
 	}
 }
 
