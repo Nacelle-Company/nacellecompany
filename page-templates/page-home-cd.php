@@ -19,7 +19,8 @@ wp_rig()->print_styles( 'wp-rig-page-home-cd' );
 		<?php
 		while ( have_posts() ) :
 			the_post();
-			wp_rig()->display_flickity( 'catalog', get_field( 'home_feat_posts' ), 'top' );
+			$feat_posts = get_field( 'home_feat_posts');
+			wp_rig()->display_flickity( 'catalog', $feat_posts, 'top' );
 			?>
 			<article class="type-page">
 				<?php

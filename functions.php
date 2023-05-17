@@ -404,7 +404,7 @@ function disable_emojis_tinymce( $plugins ) {
 * Remove CSS files from loading on the frontend
 */
 function wp_rig_remove_wp_css() {
-	$hero_video = get_field( 'video_embedd' );
+	$hero_video = get_post_meta( get_the_ID(), 'video_embedd', true );
 	// Default removals
 	wp_dequeue_style( 'wp-block-library' );
 	wp_dequeue_style( 'YTPlayer_css' ); // YTPlayer styles are included in the theme (/assets/css/_yt-player.css)

@@ -141,7 +141,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 						$the_title = get_the_title( $slide );
 					}
 					if ( $meta ) :
-						$source   = get_field( 'source', $slide ) . ' |';
+						$source   = get_post_meta( $slide, 'source', true) . ' |';
 						$time     = get_the_time( 'F j, Y', $slide );
 						$time_att = get_the_time( 'Y-m-d', $slide );
 					endif;
@@ -161,8 +161,8 @@ class Component implements Component_Interface, Templating_Component_Interface {
 								endif;
 								// Catalog slider: square image.
 							elseif ( 'posts catalog' === $slider_id ) :
-								if ( get_field( 'square_image', $slide ) ) :
-									$image = get_field( 'square_image', $slide );
+								$image = get_post_meta( $slide->ID, 'square_image', true );
+								if ( $image ) :
 									$size  = 'medium';
 									if ( $image ) :
 										echo wp_get_attachment_image(
@@ -181,11 +181,8 @@ class Component implements Component_Interface, Templating_Component_Interface {
 								endif;
 								// Top slider: home image.
 							elseif ( 'top' === $slider_id ) :
-								if ( get_field( 'home_image', $slide ) ) :
-									?>
-
-									<?php
-									$image   = get_field( 'home_image', $slide );
+								$image = get_post_meta( $slide->ID, 'home_image', true );
+								if ( $image ) :
 									$size    = 'full';
 									$no_lazy = 'no-lazy attachment-full';
 									$loading = 'eager';

@@ -70,7 +70,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 					$trim_length  = 15;  // ? desired length of text to display
 					$value_more   = '. . .'; // ? what to add at the end of the trimmed text
 					$custom_field = 'intro';
-					$value        = get_field( 'intro' );
+					$value        = get_post_meta(get_the_ID(), 'intro', true);
 					if ( $value ) {
 						echo wp_kses( wp_trim_words( $value, $trim_length, $value_more ), 'post' );
 					}

@@ -382,7 +382,8 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				'file' => 'hero-video.min.css',
 				'preload_callback' => function() {
 					global $template;
-					if(get_field( 'video_embedd' )) {
+					$video = get_post_meta(get_the_ID(), 'video_embedd', true);
+					if( !empty($video) ) {
 						return 'single-catalog.php' === basename( $template );
 					} else {
 						return;
