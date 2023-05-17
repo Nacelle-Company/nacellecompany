@@ -74,6 +74,10 @@ if ( $feat_img_row_h ) {
 	 * How to speed up ACF queries.
 	 * Link: https://www.brianshim.com/webtricks/speed-up-wordpress-advanced-custom-fields-queries/
 	 * Link: https://www.billerickson.net/advanced-custom-fields-frontend-dependency/
+	 * Performance insights speed test w/ get_field.
+	 * Network: slow 3g
+	 * CPU 4x slowdown
+	 * LOAD TIME: 7.12s
 	 */
 	$rows = get_post_meta( get_the_ID(), 'layouts', true );
 	foreach ( (array) $rows as $count => $row ) {
