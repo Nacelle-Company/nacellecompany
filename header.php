@@ -61,7 +61,7 @@ switch ($blog_name) {
 	<?php
 	wp_body_open();
 	$has_video_class = '';
-	if ( get_post_meta( get_the_ID(), 'video_embedd', true ) ) {
+	if ( get_field('video_embedd') ) {
 		$has_video_class = ' site-header__hero-video';
 	}
 	if ( is_single() && 'catalog' === get_post_type_object( get_post_type() )->has_archive ) {

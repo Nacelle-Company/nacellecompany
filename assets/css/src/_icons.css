@@ -16,6 +16,6 @@
 	}
 }
 
-.icon:not(.icon-arrow-up):not(.icon-external):not(.icon-latest-news) {
+.icon:not(.icon-arrow-up):not(.icon-external):not(.icon-latest-news):not(.menu-toggle) {
 	margin-right: 0.5rem;
 }

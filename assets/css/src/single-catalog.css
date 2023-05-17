@@ -227,16 +227,6 @@ dd::after {
 /*--------------------------------------------------------------
 # Special case classes
 --------------------------------------------------------------*/
-.site-header__hero-video {
-
-	@media (--sidebar-query) {
-		position: absolute;
-		width: 100%;
-		background-color: transparent;
-		z-index: 9;
-		overflow: visible;
-	}
-}
 
 /* if video present the info is wrapped in .catalog-video */
 .catalog-video {
