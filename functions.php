@@ -269,10 +269,6 @@ function wp_rig_sgo_css_combine_exclude( $exclude_list ) {
 	$exclude_list[] = 'wp-rig-pagination-post';
 	$exclude_list[] = 'wp-rig-related_posts';
 	$exclude_list[] = 'wp-rig-single-catalog';
-	$exclude_list[] = 'wp-rig-social-share';
-	$exclude_list[] = 'wp-rig-wonder_banner';
-	$exclude_list[] = 'wp-rig-wonder_txt-img';
-	$exclude_list[] = 'wp-rig-wonder_txt-quote';
 	$exclude_list[] = 'wp-rig-wonder';
 	$exclude_list[] = 'wp-rig-entry_catalog_additional_content';
 

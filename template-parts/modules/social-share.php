@@ -7,8 +7,6 @@
 
 namespace WP_Rig\WP_Rig;
 
-wp_rig()->print_styles( 'wp-rig-social-share' );
-
 $html        = '';
 $url_full    = get_permalink( $post->ID );
 $url         = esc_url( $url_full );
