@@ -11,12 +11,28 @@
 
 namespace WP_Rig\WP_Rig;
 
-$blog_url = get_bloginfo( 'url' );
+$blog_name = get_bloginfo( 'name' );
+$current_site = '';
+
+switch ($blog_name) {
+	case $blog_name === 'Nacelle Company':
+		$current_site = ' nacelle';
+		break;
+	case $blog_name === 'Comedy Dynamics':
+		$current_site = '';
+		break;
+	case $blog_name === 'Dev Nacelle':
+		$current_site = ' dev nacelle';
+		break;
+	case $blog_name === 'Dev Comedy Dynamics':
+		$current_site = ' dev';
+		break;
+}
 
 /**
- * if to add prelaod for a script in header:
- * 	<link rel="preload" as="style" href="<?php echo esc_html( $blog_url ); ?>/wp-content/plugins/search-filter-pro/public/assets/css/search-filter.min.css">
- */
+* if to add prelaod for a script in header:
+* <link rel="preload" as="style" href="<?php echo esc_html( $blog_name ); ?>/wp-content/plugins/search-filter-pro/public/assets/css/search-filter.min.css">
+*/
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?> class="no-js">
@@ -57,7 +73,7 @@ $blog_url = get_bloginfo( 'url' );
 	}
 
 	?>
-<div id="page" class="site">
+<div id="page" class="site<?php echo esc_html($current_site); ?>">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'wp-rig' ); ?></a>
 	<header id="masthead" class="site-header<?php echo esc_attr( $front_page_class ); ?><?php echo esc_attr( $has_video_class ); ?>">
 		<div class="main-navigation__wrap">
@@ -70,7 +86,7 @@ $blog_url = get_bloginfo( 'url' );
 		<?php
 		get_template_part( 'template-parts/nav/navigation_mobile' );
 		?>
-		<div class="mobile-menu__search">
+		<div class="search-icon mobile-menu__search">
 			<?php echo do_shortcode( '[wpdreams_ajaxsearchpro id=2]' ); ?>
 		</div>
 	</header>

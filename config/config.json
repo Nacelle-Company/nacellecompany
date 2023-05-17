@@ -8,7 +8,7 @@
   "dev": {
     "browserSync": {
       "live": true,
-      "proxyURL": "localhost:10009",
+      "proxyURL": "multisite-test.local",
       "bypassPort": "8181",
       "https": false
     },

@@ -10,7 +10,7 @@
 	display: grid;
 	padding: 1em;
 	margin: 2em 0;
-	background-color: var(--nav-bk-color);
+	background-color: var(--global-color-grey-dark);
 
 	@media (--content-query) {
 		grid-template-columns: repeat(auto-fit, minmax(31%, 1fr));

@@ -116,21 +116,21 @@
     },
     {
       "id": "global_color_grey_light",
-      "label": "Global color grey light",
+      "label": "Global color light grey",
       "type": "color",
       "section": "global_colors",
       "default": "#dddddd",
       "refresh": false,
-      "description": "Nacelle Company: #7d7d7d"
+      "description": "Nacelle Company: #e2e2e2"
     },
     {
       "id": "global_color_grey_dark",
-      "label": "Global color grey dark",
+      "label": "Global color dark grey",
       "type": "color",
       "section": "global_colors",
       "default": "#1b1b1b",
       "refresh": false,
-      "description": "Nacelle Company: #1b1b1b"
+      "description": "Nacelle Company: #121212"
     },
     {
       "id": "border_color_dark",

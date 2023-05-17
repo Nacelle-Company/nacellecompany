@@ -84,4 +84,9 @@
 	& .menu-footer-social-container .menu-item {
 		padding: 1em 2px;
 	}
+
+	#menu-footer-social {
+		display: flex;
+		gap: 0.5em;
+	}
 }

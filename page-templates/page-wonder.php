@@ -10,7 +10,7 @@
 namespace WP_Rig\WP_Rig;
 
 get_header();
-wp_rig()->print_styles( 'wp-rig-content', 'wp-rig-wonder' );
+wp_rig()->print_styles( 'wp-rig-wonder' );
 $featured_img_url = get_the_post_thumbnail_url( get_the_ID(), 'full' );
 $feat_img_bk_edge = get_post_meta( get_the_ID(), 'feat_img_bk_edge', true );
 $feat_img_row_h   = get_post_meta( get_the_ID(), 'feat_img_row_h', true );
@@ -80,17 +80,14 @@ if ( $feat_img_row_h ) {
 		switch ( $row ) {
 			// ? Image with Text layout.
 			case 'img_txt':
-				wp_rig()->print_styles( 'wp-rig-wonder_txt-img' );
 				get_template_part( 'template-parts/modules/wonder_txt-img' );
 				break;
 			// Quote with Text layout !
 			case 'txt_quote':
-				wp_rig()->print_styles( 'wp-rig-wonder_txt-quote' );
 				get_template_part( 'template-parts/modules/wonder_txt-quote' );
 				break;
 			// Banner layout !
 			case 'banner':
-				wp_rig()->print_styles( 'wp-rig-wonder_banner' );
 				get_template_part( 'template-parts/modules/wonder_banner' );
 				break;
 		}
