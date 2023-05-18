@@ -91,31 +91,6 @@ body {
 	}
 }
 
-.nacelle {
-
-	& .main-navigation__wrap {
-
-		@media (--sidebar-query) {
-			gap: 1em;
-		}
-	}
-
-	& .primary-nav {
-
-		@media (--sidebar-query) {
-			grid-column: span 3;
-			justify-self: end;
-		}
-	}
-
-	& .secondary-nav {
-
-		@media (--sidebar-query) {
-			grid-column: min-content;
-		}
-	}
-}
-
 /* Secondary nav */
 .secondary-nav {
 	display: none;
@@ -462,35 +437,36 @@ body {
 	font-weight: 700;
 }
 
-/* URL-encoder for SVG:
- * https://yoksel.github.io/url-encoder/
- */
-.menu-icon_facebook {
-	background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 25 25' class='icon' width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg' aria-labelledby='facebookIcon' role='img'%3E%3Ctitle id='facebookIcon'%3Evisit %3C!--%3Fphp echo get_bloginfo(); %3F--%3E facebook%3C/title%3E%3Cpath d='M25 1.38v22.24c0 .76-.62 1.37-1.38 1.37h-6.37v-9.67h3.25l.48-3.77h-3.74V9.14c0-1.1.3-1.84 1.87-1.84h2V3.92c-.35-.04-1.53-.15-2.91-.15-2.88 0-4.86 1.76-4.86 5v2.78h-3.26v3.77h3.26V25H1.38C.62 25 0 24.38 0 23.62V1.38C0 .62.62 0 1.38 0h22.24C24.38 0 25 .62 25 1.38z' fill-rule='nonzero' fill='%23ffbc00'%3E%3C/path%3E%3C/svg%3E");
-}
+/* Nacelle specific styles */
+.nacelle {
 
-.menu-icon_twitter {
-	background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 25 25' class='icon' width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg' aria-labelledby='iconTwitter'%3E%3Ctitle id='iconTwitter'%3Evisit twitter%3C/title%3E%3Cpath d='M22.32 0H2.68A2.68 2.68 0 000 2.68v19.64C0 23.8 1.2 25 2.68 25h19.64C23.8 25 25 23.8 25 22.32V2.68C25 1.2 23.8 0 22.32 0zM19.6 8.86l.01.48c0 4.83-3.68 10.4-10.4 10.4-2.09 0-4.01-.6-5.63-1.63A7.34 7.34 0 009 16.59a3.67 3.67 0 01-3.43-2.54c.55.1 1.12.07 1.66-.07A3.66 3.66 0 014.3 10.4v-.04c.5.28 1.07.44 1.65.46a3.65 3.65 0 01-1.13-4.9 10.4 10.4 0 007.54 3.83A3.67 3.67 0 0118.6 6.4a7.17 7.17 0 002.33-.88 3.65 3.65 0 01-1.61 2.01 7.28 7.28 0 002.1-.57 7.7 7.7 0 01-1.83 1.9z' fill-rule='nonzero' fill='%23ffbc00'%3E%3C/path%3E%3C/svg%3E");
-}
+	& .main-navigation__wrap {
 
-.menu-icon_instagram {
-	background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 25 25' class='icon' width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg' aria-labelledby='iconInstagram'%3E%3Ctitle id='iconInstagram'%3Evisit %3C!--%3Fphp echo get_bloginfo(); %3F--%3E instagram%3C/title%3E%3Cpath d='M13.43 6.91a6.4 6.4 0 100 12.82 6.4 6.4 0 100-12.82zm0 10.58a4.17 4.17 0 11-.52-8.33 4.17 4.17 0 01.52 8.33zm8.16-10.84a1.5 1.5 0 11-2.99 0 1.5 1.5 0 013 0zm4.25 1.52c-.1-2-.55-3.78-2.02-5.24-1.46-1.46-3.24-1.92-5.24-2.02C16.52.8 10.33.8 8.27.91c-2 .1-3.77.55-5.24 2.02-1.47 1.46-1.92 3.23-2.02 5.23-.11 2.07-.11 8.25 0 10.32.1 2 .55 3.77 2.02 5.23 1.47 1.46 3.24 1.92 5.24 2.02 2.06.12 8.25.12 10.31 0 2-.1 3.78-.55 5.24-2.02 1.46-1.46 1.92-3.23 2.02-5.23.11-2.07.11-8.25 0-10.31zm-2.67 12.52a4.22 4.22 0 01-2.37 2.38c-1.65.65-5.55.5-7.37.5-1.82 0-5.73.14-7.37-.5a4.22 4.22 0 01-2.38-2.38c-.65-1.65-.5-5.55-.5-7.37 0-1.82-.14-5.73.5-7.37a4.22 4.22 0 012.38-2.37c1.65-.65 5.55-.5 7.37-.5 1.82 0 5.73-.15 7.37.5a4.22 4.22 0 012.37 2.37c.65 1.65.5 5.55.5 7.37 0 1.82.15 5.73-.5 7.37z' fill-rule='nonzero' fill='%23ffbc00'%3E%3C/path%3E%3C/svg%3E");
-}
+		@media (--sidebar-query) {
+			gap: 1em;
+		}
+	}
 
-.menu-icon_youtube {
-	background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 25 25' class='icon' width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg' aria-labelledby='iconYoutube'%3E%3Ctitle id='iconYoutube'%3Evisit %3C!--%3Fphp echo get_bloginfo(); %3F--%3E YouTube%3C/title%3E%3Cpath d='M10.42 9.5l5.32 3.01-5.32 3.02V9.49zM25 2.67v19.64C25 23.8 23.8 25 22.32 25H2.68A2.68 2.68 0 010 22.32V2.68C0 1.2 1.2 0 2.68 0h19.64C23.8 0 25 1.2 25 2.68zm-2.34 9.84s0-3.33-.43-4.93a2.54 2.54 0 00-1.8-1.8c-1.57-.43-7.93-.43-7.93-.43s-6.36 0-7.94.43c-.87.23-1.56.92-1.8 1.8-.42 1.6-.42 4.93-.42 4.93s0 3.32.43 4.92c.23.87.92 1.55 1.8 1.78 1.57.42 7.93.42 7.93.42s6.36 0 7.94-.43c.87-.22 1.56-.9 1.8-1.78.42-1.59.42-4.91.42-4.91z' fill-rule='nonzero' fill='%23ffbc00'%3E%3C/path%3E%3C/svg%3E");
-}
+	& .primary-nav {
 
-.menu-icon_soundcloud {
-	background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 25 11' class='icon' width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg' aria-labelledby='iconSoundcloud'%3E%3Ctitle id='iconSoundcloud'%3Evisit %3C!--%3Fphp echo get_bloginfo(); %3F--%3E soundcloud%3C/title%3E%3Cpath d='M4.35 5.44l.23 2.54-.23 2.67c-.01.1-.08.17-.17.17a.17.17 0 01-.16-.17L3.8 7.98l.22-2.54c0-.09.07-.16.16-.16s.16.07.17.16zm.84-1.78c-.11 0-.19.09-.2.2l-.2 4.12.2 2.67c.01.1.09.2.2.2.1 0 .18-.1.18-.2l.23-2.67-.23-4.13c0-.1-.08-.2-.18-.2zm1-.94c-.13 0-.21.08-.22.2L5.79 8l.18 2.65c0 .12.1.2.21.2.11 0 .21-.08.21-.2L6.6 8l-.2-5.07a.2.2 0 00-.2-.21zM.28 6.49c-.06 0-.1.04-.1.1L0 7.98l.18 1.37c.02.05.05.1.1.1.06 0 .09-.05.1-.1L.6 7.98l-.22-1.4C.37 6.54.34 6.5.28 6.5zm.91-.85a.1.1 0 00-.1.1L.87 7.97l.25 2.2c0 .06.04.1.1.1.05 0 .1-.04.1-.1l.28-2.2-.28-2.25c0-.05-.05-.1-.1-.1zm1-.45c-.07 0-.13.06-.14.13l-.22 2.66.22 2.57c.01.07.07.12.13.12.07 0 .12-.05.12-.12l.27-2.57-.27-2.66c0-.07-.05-.13-.12-.13zm.98-.09a.14.14 0 00-.14.15L2.8 7.98l.23 2.65c0 .08.07.14.14.14s.14-.06.15-.14l.25-2.65-.25-2.73a.16.16 0 00-.15-.15zM12.61.77a.3.3 0 00-.16-.05.36.36 0 00-.22.07.4.4 0 00-.13.26v.04l-.13 6.9.07 1.27.06 1.24c.01.18.17.33.35.33.18 0 .34-.15.34-.33l.15-2.51-.15-6.94a.38.38 0 00-.18-.28zm-1.04.6a.34.34 0 00-.17-.05.33.33 0 00-.18.05.3.3 0 00-.14.26v.07l-.12 6.28.12 2.56v.01c0 .07.03.13.07.19.06.07.15.12.25.12.09 0 .16-.04.22-.1.06-.05.1-.13.1-.22v-.26L11.86 8l-.13-6.36c0-.1-.07-.2-.15-.26zm-4.35.88c-.13 0-.23.1-.23.24l-.17 5.49.17 2.63c.01.12.1.22.23.22.12 0 .22-.1.23-.22l.2-2.63-.2-5.5c0-.12-.1-.23-.23-.23zM21.93 4.7c-.4 0-.81.08-1.2.24A5.43 5.43 0 0013.38.37c-.24.09-.3.17-.3.36v9.75c0 .2.15.34.33.36h8.53a3.07 3.07 0 000-6.14zM10.34 2.35c-.16 0-.3.13-.3.3L9.9 8l.13 2.56c0 .17.14.3.3.3.16 0 .3-.13.3-.3L10.78 8l-.16-5.34c0-.17-.13-.3-.29-.3zm-2.1-.3c-.12 0-.24.11-.24.25l-.16 5.68.16 2.61c0 .14.12.25.25.25.14 0 .25-.1.26-.25l.17-2.61-.17-5.68c-.01-.14-.12-.26-.26-.26zm1.05.12a.27.27 0 00-.27.27l-.15 5.54.15 2.6a.27.27 0 00.54 0l.16-2.6-.16-5.54a.27.27 0 00-.27-.27z' fill-rule='nonzero' fill='%23ffbc00'%3E%3C/path%3E%3C/svg%3E");
-}
+		@media (--sidebar-query) {
+			grid-column: span 3;
+			justify-self: end;
+			margin-right: 2em;
+		}
+	}
 
-.menu-icon_spotify {
-	background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 25 25' class='icon' width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg' aria-labelledby='iconSpotify'%3E%3Ctitle id='iconSpotify'%3Evisit %3C!--%3Fphp echo get_bloginfo(); %3F--%3E spotify%3C/title%3E%3Cpath d='M12.5 0a12.5 12.5 0 100 25 12.5 12.5 0 000-25zm5.07 18.38c-.21 0-.34-.06-.54-.18-3.14-1.9-6.8-1.97-10.41-1.23-.2.05-.46.13-.6.13a.78.78 0 01-.8-.8c0-.52.3-.76.68-.84 4.13-.91 8.35-.83 11.95 1.32.3.2.48.37.48.83 0 .46-.35.77-.76.77zm1.35-3.3c-.26 0-.43-.12-.62-.21a16.33 16.33 0 00-12.02-1.48c-.24.06-.37.13-.6.13a.98.98 0 01-.97-.98c0-.54.26-.9.78-1.04 1.6-.47 3.26-.7 4.92-.69 3.27 0 6.43.81 8.92 2.3.41.24.57.55.57.99a.98.98 0 01-.98.98zm1.57-3.84c-.24 0-.46-.07-.65-.2-3.6-2.14-10-2.65-14.16-1.5-.18.06-.4.14-.65.14a1.16 1.16 0 01-1.17-1.2c0-.68.42-1.06.88-1.2 1.92-.53 3.92-.79 5.92-.76 3.67 0 7.53.77 10.34 2.4.43.22.69.67.65 1.15 0 .68-.55 1.17-1.16 1.17z' fill-rule='nonzero' fill='%23ffbc00'%3E%3C/path%3E%3C/svg%3E");
-}
+	& .secondary-nav {
 
-.menu-icon_bandcamp {
-	background-image: url("data:image/svg+xml,%3Csvg class='icon' xmlns='http://www.w3.org/2000/svg' width='25' height='25'%3E%3Cpath fill='%23FFBC00' fill-rule='nonzero' d='M12.5 0C5.595 0 0 5.595 0 12.5S5.595 25 12.5 25 25 19.405 25 12.5 19.405 0 12.5 0Zm2.43 16.436H5.805l4.27-7.867h9.123l-4.27 7.867Z'%3E%3C/path%3E%3C/svg%3E");
+		@media (--sidebar-query) {
+			grid-column: min-content;
+		}
+	}
+
+	& .menu-icon,
+	& .search-icon svg {
+		filter: brightness(0) invert(1);
+	}
 }
 
 /* Ajax search pro anoyying search icon background fix */
@@ -515,18 +491,3 @@ body {
 	}
 }
 
-/* Nacelle Specific styles. */
-.nacelle {
-
-	& .main-navigation__wrap {
-
-		@media (--sidebar-query) {
-			width: 100%;
-		}
-	}
-
-	& .menu-icon,
-	& .search-icon svg {
-		filter: brightness(0) invert(1);
-	}
-}
