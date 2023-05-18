@@ -37,6 +37,11 @@ switch ($blog_name) {
 <!doctype html>
 <html <?php language_attributes(); ?> class="no-js">
 <head>
+	<?php if (str_contains($current_site, 'dev')) {
+		echo '<script src="https://cdn.lr-ingest.com/LogRocket.min.js" crossorigin="anonymous"></script>';
+		echo '<script>window.LogRocket && window.LogRocket.init("kjijq4/comedy-dynamics");</script>';
+	}
+	?>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
 	<link rel="profile" href="https://gmpg.org/xfn/11">
@@ -61,7 +66,7 @@ switch ($blog_name) {
 	<?php
 	wp_body_open();
 	$has_video_class = '';
-	if ( get_field('video_embedd') ) {
+	if ( is_single() && get_field('video_embedd') ) {
 		$has_video_class = ' site-header__hero-video';
 	}
 	if ( is_single() && 'catalog' === get_post_type_object( get_post_type() )->has_archive ) {

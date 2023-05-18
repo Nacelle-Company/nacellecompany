@@ -48,6 +48,15 @@
 		padding: 0;
 	}
 
+	& .widget_nav_menu .menu {
+
+		@media (--sidebar-query) {
+			display: flex;
+			gap: 0.5em;
+			justify-content: flex-end;
+		}
+	}
+
 	& .textwidget {
 		font-size: 80%;
 		line-height: 1.3;

@@ -7,6 +7,10 @@
 * {
 	outline: 1px solid #7fd1e65e !important;
 }
+
+body {
+	background-color: aliceblue !important;
+}
 */
 
 .site-header {
@@ -31,13 +35,13 @@
 		z-index: 9;
 	}
 
-	& .search-icon {
+	/* & .search-icon {
 
 		& [id^="ajaxsearchpro"]  .probox .promagnifier {
 			background-image: none !important;
 			background-color: transparent !important;
 		}
-	}
+	} */
 }
 
 /* Main nav wrapper */
