@@ -14,7 +14,7 @@ body {
 */
 
 .site-header {
-	padding: 1.5em 1em;
+	padding: 1em;
 	display: flex;
 	justify-content: space-between;
 	background-color: var(--nav-bk-color);
@@ -70,10 +70,6 @@ body {
 	@media (--content-query) {
 		flex: 0 0 30%;
 	}
-
-	/* @media (--sidebar-query) {
-		grid-column: span 200px;
-	} */
 }
 
 /* Primary nav */
@@ -88,6 +84,25 @@ body {
 	@media (--sidebar-query) {
 		display: flex;
 		justify-self: stretch;
+	}
+
+	& li {
+
+		&:hover {
+			background-image: linear-gradient(var(--color-link-visited), var(--color-link-visited));
+			background-repeat: repeat-x;
+			background-size: 1px 1px;
+			background-position: 0 100%;
+			background-position: 0 calc(100% - 0.1em);
+		}
+	}
+
+	& .current-menu-item {
+		background-image: linear-gradient(var(--color-link-visited), var(--color-link-visited));
+		background-repeat: repeat-x;
+		background-size: 1px 1px;
+		background-position: 0 100%;
+		background-position: 0 calc(100% - 0.1em);
 	}
 }
 
@@ -215,25 +230,6 @@ body {
 			align-items: center;
 			gap: 2em;
 		}
-	}
-
-	& li {
-
-		&:hover {
-			background-image: linear-gradient(var(--color-theme-white), var(--color-theme-white));
-			background-repeat: repeat-x;
-			background-size: 1px 1px;
-			background-position: 0 100%;
-			background-position: 0 calc(100% - 0.1em);
-		}
-	}
-
-	& .current-menu-item {
-		background-image: linear-gradient(var(--color-theme-white), var(--color-theme-white));
-		background-repeat: repeat-x;
-		background-size: 1px 1px;
-		background-position: 0 100%;
-		background-position: 0 calc(100% - 0.1em);
 	}
 }
 
@@ -453,11 +449,6 @@ body {
 		width: 20px;
 		cursor: pointer;
 	}
-}
-
-.main-navigation .current-menu-item > a,
-.main-navigation .current-menu-ancestor > a {
-	font-weight: 700;
 }
 
 /* Nacelle specific styles */

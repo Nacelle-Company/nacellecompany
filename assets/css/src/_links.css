@@ -24,6 +24,7 @@ a:not(.button) {
 .main-navigation a:focus,
 .menu .menu-item a {
 	color: var(--color-link);
+	white-space: nowrap;
 }
 
 a:not(.button):hover,
