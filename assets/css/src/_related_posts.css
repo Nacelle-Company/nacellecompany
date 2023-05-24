@@ -27,6 +27,14 @@
 	}
 }
 
+.post-footer__related-title {
+	margin-top: 0;
+}
+
+.post-footer__related-subtitle {
+	margin-bottom: 0;
+}
+
 .related-posts__card {
 	display: grid;
 	grid-template-columns: 1fr 1fr;

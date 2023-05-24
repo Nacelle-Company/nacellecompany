@@ -27,23 +27,11 @@ input[type="button"] {
 		padding: 1em 2em;
 	}
 
-	&.button-transparent {
-		color: var(--color-theme-secondary);
-		background-color: var(--color-theme-button-transparent);
-
-		& .icon {
-
-			& path {
-				fill: var(--global-font-color-inverse);
-			}
-		}
-	}
-
 	&:hover,
 	&:focus {
 		color: var(--global-font-color-inverse);
 		background-color: var(--color-theme-primary);
-		border: 1px solid var(--global-font-color-inverse);
+		border: 1px solid var(--border-color-light);
 		outline: 1px solid var(--global-font-color-inverse);
 		text-decoration: none;
 
@@ -63,18 +51,64 @@ input[type="button"] {
 	}
 
 	& .icon {
+
 		transform: translate(-15px, 19px);
 		position: absolute;
 		top: 0;
 		right: 0;
+
 		opacity: 0;
 		transition: opacity 0.2s linear;
 
 		& path {
+
 			fill: var(--color-theme-secondary);
 		}
 	}
 
+	&.button-transparent {
+		color: var(--color-theme-secondary);
+		background-color: var(--color-theme-button-transparent);
+
+		& .icon {
+
+			& path {
+				fill: var(--global-font-color-inverse);
+			}
+		}
+
+		&:hover,
+		&:focus {
+			color: var(--border-color-light);
+		}
+	}
+}
+
+.button_slim {
+	display: inline-flex;
+	align-items: center;
+	color: var(--color-theme-button);
+	border: 1px solid var(--color-theme-button);
+	text-decoration: none;
+	padding: 4px 14px;
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: 1px;
+	margin-bottom: 8px;
+
+	& .icon {
+		fill: var(--color-theme-button);
+	}
+
+	&:hover,
+	&:focus {
+		color: var(--global-font-color-inverse);
+		background-color: var(--color-theme-button);
+
+		& .icon {
+			fill: var(--global-font-color-inverse);
+		}
+	}
 }
 
 input[type="submit"],

@@ -21,7 +21,7 @@ if(in_array('search-filter-pro/search-filter-pro.php', apply_filters('active_plu
 		$sf_catalog_query = $searchandfilter->get( 363 )->current_query();
 	else :
 		// comedy dynamics or localhost site
-		$sf_catalog_query = $searchandfilter->get( 46579 )->current_query();
+		$sf_catalog_query = $searchandfilter->get( 47835 )->current_query();
 	endif;
 
 	$offcanvas        = true;

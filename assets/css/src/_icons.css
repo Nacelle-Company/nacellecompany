@@ -5,6 +5,7 @@
 
 .icon:not(.menu-toggle):not(.icon-latest-news) {
 
+	/* TODO: move these to specific modules. Like a button, or a button_slim */
 	& path {
 		fill: var(--color-theme-primary);
 		transition: fill 0.2s ease-out;

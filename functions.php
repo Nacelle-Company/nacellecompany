@@ -1,13 +1,13 @@
 <?php
 /**
-* WP Rig functions and definitions
-*
-* This file must be parseable by PHP 5.2.
-*
-* @link https://developer.wordpress.org/themes/basics/theme-functions/
-*
-* @package wp_rig
-*/
+ * WP Rig functions and definitions
+ *
+ * This file must be parseable by PHP 5.2.
+ *
+ * @link https://developer.wordpress.org/themes/basics/theme-functions/
+ *
+ * @package wp_rig
+ */
 
 define( 'WP_RIG_MINIMUM_WP_VERSION', '4.7' );
 define( 'WP_RIG_MINIMUM_PHP_VERSION', '7.0' );
@@ -67,7 +67,6 @@ call_user_func( 'WP_Rig\WP_Rig\wp_rig' );
 
 // ACF options page
 if ( function_exists( 'acf_add_options_page' ) ) {
-
 	acf_add_options_page();
 }
 
@@ -93,7 +92,7 @@ function _wp_rig_cpt_category_archives( $query ) {
 			'post_type',
 			array(
 				'post',
-				'catalog',
+				'catalog'
 			)
 		);
 	}
@@ -114,11 +113,11 @@ function printVar( $post ) {
 }
 
 /**
-* Allow wp_query.
-*
-* @param [type] $type Post type.
-* @return boolean
-*/
+ * Allow wp_query.
+ *
+ * @param [type] $type Post type.
+ * @return boolean
+ **/
 function is_post_type( $type ) {
 	global $wp_query;
 	if ( get_post_type( $wp_query->post->ID ) === $type ) {
@@ -128,9 +127,12 @@ function is_post_type( $type ) {
 }
 
 /**
-*
-* TODO: Move category acf fields to parent categories: https://www.advancedcustomfields.com/resources/custom-location-rules/.
-**/
+ * Duplicate posts feature
+ *
+ * @param [type] $type Post type.
+ * @return boolean
+ * @todo Move category acf fields to parent categories: https://www.advancedcustomfields.com/resources/custom-location-rules/.
+ **/
 function wp_rig_nacelle_duplicate_post_as_draft() {
 	global $wpdb;
 	if ( ! ( isset( $_GET['post'] ) || isset( $_POST['post'] ) || ( isset( $_REQUEST['action'] ) && 'wp_rig_nacelle_duplicate_post_as_draft' == $_REQUEST['action'] ) ) ) {
@@ -212,9 +214,9 @@ function wp_rig_nacelle_duplicate_post_as_draft() {
 }
 add_action( 'admin_action_wp_rig_nacelle_duplicate_post_as_draft', 'wp_rig_nacelle_duplicate_post_as_draft' );
 
-/*
-* Add the duplicate link to action list for post_row_actions
-*/
+/**
+ * Add the duplicate link to action list for post_row_actions
+ **/
 function wp_rig_nacelle_duplicate_post_link( $actions, $post ) {
 	if ( current_user_can( 'edit_posts' ) ) {
 		$actions['duplicate'] = '<a href="' . wp_nonce_url( 'admin.php?action=wp_rig_nacelle_duplicate_post_as_draft&post=' . $post->ID, basename( __FILE__ ), 'duplicate_nonce' ) . '" title="Duplicate this item" rel="permalink">Duplicate</a>';
@@ -277,11 +279,12 @@ function wp_rig_sgo_css_combine_exclude( $exclude_list ) {
 add_filter( 'sgo_css_combine_exclude', 'wp_rig_sgo_css_combine_exclude' );
 
 /**
-* Modify the main query
-*
-* @param [type] $query Combine press_release & news post types.
-* @return void
-*/
+ * Modify the main query
+ *
+ * @param [type] $query Combine press_release & news post types.
+ * @return void
+ */
+/*
 function wp_rig_custom_archive_query( $query ){
 	if( is_admin() || ! $query->is_main_query() ) {
 		return;
@@ -293,7 +296,7 @@ function wp_rig_custom_archive_query( $query ){
 	}
 }
 add_action( 'pre_get_posts', 'wp_rig_custom_archive_query' );
-
+*/
 /**
 * Add the template redirect
 *
@@ -354,19 +357,29 @@ add_filter('file_is_displayable_image', 'webp_is_displayable', 10, 2);
 */
 function load_inline_svg( $filename ) {
 
-    // Add the path to your SVG directory inside your theme.
-    $svg_path = '/assets/images/';
+	// Add the path to your SVG directory inside your theme.
+	$svg_path = '/assets/images/';
 
-    // Check the SVG file exists
-    if ( file_exists( get_stylesheet_directory() . $svg_path . $filename ) ) {
+	// Check the SVG file exists
+	if ( file_exists( get_stylesheet_directory() . $svg_path . $filename ) ) {
 
-        // Load and return the contents of the file
-        return file_get_contents( get_stylesheet_directory_uri() . $svg_path . $filename );
-    }
+		// Load and return the contents of the file
+		return file_get_contents( get_stylesheet_directory_uri() . $svg_path . $filename );
+	}
 
-    // Return a blank string if we can't find the file.
-    return '';
+	// Return a blank string if we can't find the file.
+	return '';
 }
+
+/**
+ * Allow SVG upload.
+ * @link: https://css-tricks.com/snippets/wordpress/allow-svg-through-wordpress-media-uploader/
+ */
+function cc_mime_types($mimes) {
+	$mimes['svg'] = 'image/svg+xml';
+	return $mimes;
+}
+add_filter('upload_mimes', 'cc_mime_types');
 
 /**
  * Disable the emoji's
@@ -438,10 +451,12 @@ add_action( 'wp_enqueue_scripts', 'wp_rig_remove_wp_css', 100 );
 
 // Remove Default Post Type From Admin Menu WordPress
 // https://www.techjunkie.com/remove-default-post-type-from-admin-menu-wordpress/
+/*
 add_action('admin_menu','nacelle_remove_default_post_type');
 function nacelle_remove_default_post_type() {
 	remove_menu_page('edit.php');
 }
+*/
 
 // set urls with parameter to noindex in wordpress?
 // https://stackoverflow.com/questions/35983126/set-urls-with-parameter-to-noindex-in-wordpress
@@ -488,3 +503,27 @@ function nacelle_noindex_ajax_search_queries() {
  * echo get_num_queries();
  */
 // echo get_num_queries();
+
+/**
+  * Testing geolocation
+  *
+  * @link https://www.geoplugin.com/
+  **/
+/*
+if (!array_key_exists('__vip', $_COOKIE)) {
+	// Set IP and get Geo Data
+	$vip = '35.208.233.190'; // $_SERVER['REMOTE_ADDR'];
+	$geo_data = unserialize(file_get_contents('http://www.geoplugin.net/php.gp?ip=' . $vip));
+	do_action( 'qm/debug', $vip );
+	// Set information from GeoIP
+	$country = $geo_data['geoplugin_countryCode'];
+	$state = $geo_data['geoplugin_regionCode'];
+	$city = $geo_data['geoplugin_city'];
+
+	// Set Cookie values
+	setcookie('__vip', $vip, time() + 3600, '/');
+	setcookie('__country', $country, time() + 3600, '/');
+	setcookie('__state', $state, time() + 3600, '/');
+	setcookie('__city', $city, time() + 3600, '/');
+}
+*/

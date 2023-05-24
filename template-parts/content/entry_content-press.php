@@ -40,12 +40,14 @@ wp_rig()->print_styles( 'wp-rig-content_posts' );
 		<?php
 		if ( $press_link ) :
 			?>
-			<a href="<?php echo esc_html( $press_link ); ?>" class="post-title__link" target="_blank">
-				<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-				<h4>
-					<?php esc_html_e( 'Read more', 'wp-rig' ); ?>
-					<?php echo load_inline_svg( 'icon-external-link.svg' ); ?>
-				</h4>
+			<p>
+				<a href="<?php echo esc_html( $press_link ); ?>" class="post-title__link" target="_blank">
+					<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+				</a>
+			</p>
+			<a href="<?php echo esc_html( $press_link ); ?>" class="button_slim post-title__link" target="_blank">
+				<?php esc_html_e( 'Read more', 'wp-rig' ); ?>
+				<?php echo load_inline_svg( 'icon-external-link.svg' ); ?>
 			</a>
 		<?php else : ?>
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>

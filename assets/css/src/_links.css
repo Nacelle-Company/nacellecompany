@@ -7,7 +7,7 @@
 	color: var(--color-link);
 }
 
-a:not(.button) {
+a:not(.button):not(.button_slim) {
 	color: var(--color-link);
 	text-decoration: none;
 
@@ -27,18 +27,18 @@ a:not(.button) {
 	white-space: nowrap;
 }
 
-a:not(.button):hover,
-a:not(.button):focus,
-a:not(.button):active {
+a:not(.button):not(.button_slim):hover,
+a:not(.button):not(.button_slim):focus,
+a:not(.button):not(.button_slim):active {
 	color: var(--color-link-visited);
 }
 
-a:not(.button):focus {
+a:not(.button):not(.button_slim):focus {
 	outline: thin dotted;
 }
 
-a:not(.button):hover,
-a:not(.button):active {
+a:not(.button):not(.button_slim):hover,
+a:not(.button):not(.button_slim):active {
 	outline: 0;
 }
 
