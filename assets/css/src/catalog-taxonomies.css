@@ -16,13 +16,13 @@
 
 	@media (--content-query) {
 		grid-column: 1/span 2;
+		grid-template-columns: repeat(2, 1fr);
 		margin: 1em;
 	}
 
 	@media (--sidebar-query) {
 		grid-column: 1/span 2;
-
-		grid-template-columns: 1fr 5fr 1fr;
+		grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
 		grid-gap: 2em 0;
 		gap: 2em 0;
 		margin: 1em;

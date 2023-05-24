@@ -13,7 +13,7 @@ $queried_object_taxonomy = $queried_object->taxonomy;
 $taxonomy = get_taxonomy($queried_object_taxonomy);
 $archive_tax_name = $taxonomy->labels->singular_name;
 ?>
-<header class="page-header">
+<header class="page-header page-header__taxonomy">
 	<div class="page-title__wrap">
 		<div class="subtitle">
 			<sub>

@@ -6,6 +6,11 @@
 	grid-row: 2;
 	position: relative;
 }
+
+.page-title__wrap {
+	padding: 1em;
+}
+
 .page-title {
 	font-size: 43px; /* Some tweener fallback that doesn't look awful */
 	font-size: 9vw;
@@ -14,10 +19,11 @@
 	text-transform: uppercase;
 	line-height: 1;
 	margin: 0 0;
-	padding: 0.5em;
+
 	@media (--narrow-menu-query) {
-		font-size: 11vw;
+		font-size: 7vw;
 	}
+
 	@media (--content-query) {
 		margin: 0;
 	}
@@ -28,7 +34,6 @@
 		grid-column: 2 / span 1;
 		align-items: end;
 		letter-spacing: 12px;
-		padding: 0.25em;
 	}
 }
 
@@ -41,8 +46,28 @@
 	bottom: 3px;
 	right: 0;
 	left: 0;
+
 	@media (--content-query) {
 		bottom: 1em;
+	}
+}
+
+.page-header__taxonomy {
+
+	& .page-title__wrap {
+
+	}
+
+	& .page-title {
+
+		@media (--content-query) {
+			font-size: 6vw;
+		}
+	}
+
+	& .subtitle {
+		text-align: center;
+
 	}
 }
 
