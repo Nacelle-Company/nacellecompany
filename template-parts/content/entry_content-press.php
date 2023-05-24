@@ -23,16 +23,18 @@ $press_meta          .= '<time datetime="' . get_the_time( 'Y-m-d' ) . '">' . ge
 wp_rig()->print_styles( 'wp-rig-content_posts' );
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'single-post' ); ?> >
-	<div class="article-header__image">
-		<?php if ( $press_link && has_post_thumbnail() ) : ?>
-			<a href="<?php echo esc_html( $press_link ); ?>" class="post-image link-absolute" target="_blank"><?php the_title( '<span class="hidden">', '</span>' ); ?></a>
+	<?php if ( has_post_thumbnail() ) : ?>
+		<div class="article-header__image article-header__image-link">
 			<?php the_post_thumbnail( 'medium_large', array( 'class' => 'post-image', 'loading' => 'eager' ) ); ?>
-		<?php elseif ( has_post_thumbnail() ) : ?>
-			<?php the_post_thumbnail( 'medium_large', array( 'class' => 'post-image', 'loading' => 'eager' ) ); ?>
-		<?php else : ?>
-			<img src="<?php bloginfo( 'template_directory' ); ?>/assets/images/comedy-dynamics-default-square.webp" class="wp-post-image" alt="<?php echo esc_html( $the_title ); ?>" loading="eager" />
-		<?php endif; ?>
-	</div>
+			<?php if ( $press_link ) : ?>
+				<a href="<?php echo esc_html( $press_link ); ?>" class="post-image link-absolute" target="_blank"><?php the_title( '<span class="hidden">', '</span>' ); ?></a>
+			<?php endif; ?>
+		</div>
+	<?php else : ?>
+		<div class="article-header__image">
+			<img src="<?php bloginfo( 'template_directory' ); ?>/assets/images/comedy-dynamics-default-square.webp" class="wp-post-image" alt="<?php echo esc_html( the_title() ); ?>" loading="eager" />
+		</div>
+	<?php endif; ?>
 	<div class="article-header__title">
 		<h6 class="post-source">
 			<?php echo wp_kses($press_meta, array('time' => array('datetime' => array()))); ?>
