@@ -354,18 +354,18 @@ add_filter('file_is_displayable_image', 'webp_is_displayable', 10, 2);
 */
 function load_inline_svg( $filename ) {
 
-    // Add the path to your SVG directory inside your theme.
-    $svg_path = '/assets/images/';
+	// Add the path to your SVG directory inside your theme.
+	$svg_path = '/assets/images/';
 
-    // Check the SVG file exists
-    if ( file_exists( get_stylesheet_directory() . $svg_path . $filename ) ) {
+	// Check the SVG file exists
+	if ( file_exists( get_stylesheet_directory() . $svg_path . $filename ) ) {
 
-        // Load and return the contents of the file
-        return file_get_contents( get_stylesheet_directory_uri() . $svg_path . $filename );
-    }
+		// Load and return the contents of the file
+		return file_get_contents( get_stylesheet_directory_uri() . $svg_path . $filename );
+	}
 
-    // Return a blank string if we can't find the file.
-    return '';
+	// Return a blank string if we can't find the file.
+	return '';
 }
 
 /**

@@ -101,7 +101,7 @@ msgstr ""
 msgid "Wonder"
 msgstr ""
 
-#: page-templates/page-wonder.php:99
+#: page-templates/page-wonder.php:101
 msgid "(Edit)"
 msgstr ""
 
