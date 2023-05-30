@@ -26,7 +26,7 @@
 	width: 400px;
 	position: absolute;
 	padding: 2em 3em 0 3em;
-	background: var(--border-color-light);
+	background: var(--global-color-light);
 }
 
 .modal-window_large > div {

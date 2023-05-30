@@ -171,11 +171,6 @@ select.nf-element {
 	border-radius: 6px;
 }
 
-/* form button */
-.nf-form-content .field-wrap input[type=submit] {
-	color: var(--color-theme-primary);
-}
-
 /* modal container */
 .modal-window > div {
 	top: 1em;
