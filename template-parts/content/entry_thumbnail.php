@@ -32,11 +32,9 @@ if($count < 1) {
 if ( get_field( 'square_image' ) ) {
 	$img = get_field( 'square_image' );
 	$img = wp_get_attachment_image( $img, $size );
-
 } elseif ( get_field( 'horizontal_image' ) ) {
 	$img = get_field( 'horizontal_image' );
 	$img = wp_get_attachment_image( $img, $size );
-
 } else {
 	$img = get_the_post_thumbnail();
 }
@@ -51,7 +49,7 @@ if ( is_singular( get_post_type() ) ) {
 		<?php the_post_thumbnail( 'medium', array( 'class' => 'skip-lazy' ) ); ?>
 	</div>
 	<?php
-} elseif ( is_post_type_archive() ) {
+} elseif ( is_post_type_archive() || is_tax() ) {
 	?>
 	<div class="entry-thumbnail">
 		<a class="post-thumbnail" href="<?php the_permalink(); ?>">

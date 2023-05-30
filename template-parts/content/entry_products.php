@@ -129,8 +129,10 @@ $books_args   = array(
 					}
 					$count++;
 					if ($count === 1) : ?>
-						<div class="form-widget__wrap">
-							<a href="#open-modal-books" class="form-widget__btn">Author?<br><span>Submit your book pitch here!</span></a>
+						<div class="form-widget__container">
+							<div class="form-widget__wrap">
+								<a href="#open-modal-books" class="form-widget__btn">Author?<br><span>Submit your book pitch here!</span></a>
+							</div>
 						</div>
 						<div id="open-modal-books" class="modal-window modal-window_absolute">
 							<div>

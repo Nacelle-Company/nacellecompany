@@ -1,6 +1,6 @@
 @import "_site-main.css";
 @import "_page-header.css";
-@import "_post-grid.css";
+@import "_catalog-categories_card.css";
 
 .page-header {
 	border-bottom: 2px solid var(--color-theme-primary);
@@ -30,7 +30,7 @@
 	}
 }
 
-/* PAGE HEADER INTRO */
+/* PAGE HEADER INTRO
 .page-header__intro {
 	display: grid;
 	grid-column: 1/-1;
@@ -62,8 +62,9 @@
 	}
 }
 
-/* PAGE HEADER INTRO end */
-.grid-item {
+/* PAGE HEADER INTRO end
+
+/* .grid-item {
 	display: grid;
 	grid-column: 1/span 2;
 	gap: 1em 0;
@@ -78,18 +79,17 @@
 
 	@media (--sidebar-query) {
 
-		/* grid-column: 2/span 1;
+		grid-column: 2/span 1;
 		grid-template-columns: 1fr 2fr;
 		gap: 1em 2em;
 		grid-template-rows: repeat(4, auto);
-		align-items: start; */
+		align-items: start;
 	}
-}
+} */
 
-.post-thumbnail {
+/* .post-thumbnail {
 	grid-row: 1;
 
-	/* not phone */
 	@media (--content-query) {
 		grid-column: 1/span 1;
 		grid-row-start: 1;
@@ -121,3 +121,4 @@
 	grid-template-columns: max-content auto;
 	gap: 1em;
 }
+*/

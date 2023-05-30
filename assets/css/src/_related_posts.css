@@ -16,7 +16,7 @@
 		grid-template-columns: repeat(auto-fit, minmax(31%, 1fr));
 		padding: 1em 2em;
 		column-gap: 2em;
-		margin-bottom: 4em;
+		margin-bottom: 2em;
 	}
 
 	& > .title {
@@ -24,7 +24,28 @@
 		@media (--content-query) {
 			grid-column: 1/-1;
 		}
+
+		& .sub,
+		& h5 {
+			margin-bottom: 0;
+		}
+
+		& h5 {
+
+			@media (--narrow-menu-query) {
+				margin-top: 0;
+			}
+		}
+
+		& .sub {
+			margin-top: 0;
+		}
 	}
+}
+
+.nacelle .post-footer__related {
+	border-top: 1px solid var(--global-color-grey-light);
+	background-color: transparent;
 }
 
 .related-posts__card {

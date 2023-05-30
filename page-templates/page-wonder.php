@@ -54,7 +54,9 @@ if ( $feat_img_row_h ) {
 	}
 }
 ?>
+<?php  if (! empty($feat_img_row_h)) : ?>
 <style>@media screen and (min-width: 60em) {.banner__feat-img_wrap {<?php echo wp_kses( $feat_img_row_h, 'post' ); ?>}}</style>
+<?php endif; ?>
 <main id="primary" class="site-main">
 <section class="wonder-section banner__feat" style="<?php echo wp_kses( $feat_img_bk_edge, 'post' ); ?>">
 	<div class="banner__feat-img_wrap">

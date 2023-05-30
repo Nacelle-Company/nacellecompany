@@ -9,9 +9,9 @@ namespace WP_Rig\WP_Rig;
 
 $press_release_intro = get_post_meta( get_the_ID(), 'intro', true );
 $related_posts       = get_post_meta( get_the_ID(), 'talent_name', true );
-$related_posts_news  = get_post_meta( get_the_ID(), 'related_to', true );
+$related_posts_press  = get_post_meta( get_the_ID(), 'related_to', true );
 $boilerplate         = get_option( 'options_boilerplate' );
-$press_link           = get_post_meta( get_the_ID(), 'link_to_article', true );
+$press_link          = get_post_meta( get_the_ID(), 'link_to_article', true );
 $press_meta          = '';
 $source              = get_post_meta( get_the_ID(), 'source', true );
 if (!empty($source)) {
@@ -92,6 +92,7 @@ wp_rig()->print_styles( 'wp-rig-content_posts' );
 		wp_rig()->display_pagination();
 		// Related posts template.
 		wp_rig()->display_related_posts( $related_posts );
+		// wp_rig()->display_related_posts( $related_posts_press );
 		// Boilerplate template.
 		if ( get_post_meta( get_the_ID(), 'show_boilerplate', true ) ) {
 			if ( ! empty( $boilerplate ) ) :

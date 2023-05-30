@@ -59,24 +59,38 @@
 	}
 }
 
+.form-widget__container {
+	position: fixed;
+	right: 0;
+	bottom: 2em;
+	z-index: 9;
+}
+
 .form-widget__wrap {
 	position: fixed;
 	top: 81vh;
-	right: 2rem;
+	right: 1rem;
 	z-index: 9;
 	background-color: var(--color-theme-primary);
 	border-radius: 50%;
-}
 
-@media (--sidebar-query) {
+	@media (--content-query) {
 
-	.form-widget__wrap {
+		/* position: fixed;
+		bottom: 2em;
+		right: 2rem;
+		z-index: 9; */
+	}
+
+	@media (--sidebar-query) {
 		top: unset;
 		position: absolute;
 		bottom: 0;
-		right: 3rem;
 	}
 }
+
+
+
 
 .form-widget__btn {
 	border-radius: 50%;
@@ -130,45 +144,51 @@ select.nf-element {
 	color: var(--global-font-color);
 }
 
-
 /* Submissions form */
 .modal-window:target {
-    overflow: scroll;
+	overflow: scroll;
 }
+
 /* form title */
 .nf-form-title {
-    font-weight: 600;
+	font-weight: 600;
 }
+
 /* form fields */
 .nf-field-element input,
 .nf-field-element textarea {
-    max-width: 100% !important;
-    border-radius: 6px !important;
+	max-width: 100% !important;
+	border-radius: 6px !important;
 }
+
 /* form fields bottom margin */
 .nf-field-container:not(.submit-container) {
-    margin-bottom: 10px !important;
+	margin-bottom: 10px !important;
 }
+
 /* select field */
 .field-wrap select {
-    border-radius: 6px;
+	border-radius: 6px;
 }
+
 /* form button */
 .nf-form-content .field-wrap input[type=submit] {
-    color: var(--color-theme-primary);
+	color: var(--color-theme-primary);
 }
+
 /* modal container */
-.modal-window>div {
-    top: 1em;
+.modal-window > div {
+	top: 1em;
 }
 
 @media screen and (max-width: 47.9em) {
-    /* ninja forms half columns */
-    .one-half {
-        width: 100% !important;
-    }
 
-    .one-half.second {
-        margin-left: 0;
-    }
+	/* ninja forms half columns */
+	.one-half {
+		width: 100% !important;
+	}
+
+	.one-half.second {
+		margin-left: 0;
+	}
 }

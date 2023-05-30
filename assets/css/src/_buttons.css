@@ -28,7 +28,7 @@ input[type="button"] {
 	}
 
 	&.button-transparent {
-		color: var(--color-theme-secondary);
+		color: var(--color-theme-primary);
 		background-color: var(--color-theme-button-transparent);
 
 		& .icon {

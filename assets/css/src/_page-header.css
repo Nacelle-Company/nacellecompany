@@ -7,6 +7,10 @@
 	position: relative;
 }
 
+.nacelle .page-header {
+	border-bottom: 3px solid var(--color-theme-primary);
+}
+
 .page-title__wrap {
 	padding: 1em;
 }

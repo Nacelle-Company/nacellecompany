@@ -255,3 +255,15 @@ dd::after {
 #rank-math-rich-snippet-wrapper {
 	position: relative !important;
 }
+
+.nacelle {
+
+	& .crew-title {
+		color: var(--global-font-color-inverse);
+	}
+
+	& .crew-list dd,
+	& .crew-list a {
+		color: var(--global-font-color-inverse);
+	}
+}

@@ -15,6 +15,7 @@ namespace WP_Rig\WP_Rig;
 get_header();
 
 wp_rig()->print_styles( 'wp-rig-catalog-taxonomies' );
+
 get_template_part( 'template-parts/header/page', 'header_taxonomy' );
 ?>
 	<main id="primary" class="site-main site-main__tax">
@@ -23,7 +24,9 @@ get_template_part( 'template-parts/header/page', 'header_taxonomy' );
 
 			while ( have_posts() ) {
 				the_post();
-				get_template_part( 'template-parts/content/entry', get_post_type() );
+								get_template_part( 'template-parts/content/entry_archive_catalog' );
+
+				// get_template_part( 'template-parts/content/entry', get_post_type() );
 			}
 			get_template_part( 'template-parts/nav/pagination' );
 		} else {

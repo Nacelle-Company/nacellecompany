@@ -11,6 +11,9 @@
 
 .ss-posts {
 	text-align: center;
+	border-bottom: 1px solid var(--global-color-grey-light);
+	padding-bottom: 2em;
+
 }
 
 .social-share__icons {

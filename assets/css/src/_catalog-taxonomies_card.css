@@ -1,6 +1,6 @@
 
 /* grid item's wrapper */
-.site-main__catalog {
+.site-main__tax {
 	display: grid;
 	grid-gap: 2rem 0;
 
@@ -28,6 +28,7 @@
 	color: var(--global-color-dark);
 	margin: 0;
 	font-size: var(--font-size-normal);
+	padding-bottom: 0.5em;
 
 	@media (--content-query) {
 
@@ -43,7 +44,7 @@
 		background-color: var(--color-theme-primary);
 	}
 
-	@media (--wide-menu-query) {
+	@media (--sidebar-query) {
 		position: absolute;
 		height: 7rem;
 		padding: 0 1rem;
@@ -65,9 +66,8 @@
 }
 
 /* Grid item without an image */
-.gi__plain .gi__content {
+.gi__no-image .gi__content {
 
-	height: 70%;
 	background-color: var(--color-theme-primary);
 	top: unset;
 	color: var(--global-color-dark);

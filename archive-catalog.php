@@ -16,12 +16,10 @@ get_header();
 
 $current_post_type = get_post_type();
 
-	wp_rig()->print_styles( 'wp-rig-catalog-categories' );
-	$main_class = 'site-main site-main__catalog';
-	get_template_part( 'template-parts/header/page-header_catalog' );
+wp_rig()->print_styles( 'wp-rig-catalog-categories' );
 
-
-
+$main_class = 'site-main site-main__catalog';
+get_template_part( 'template-parts/header/page-header_catalog' );
 ?>
 	<main id="primary" class="<?php echo esc_html( $main_class ); ?>">
 		<?php

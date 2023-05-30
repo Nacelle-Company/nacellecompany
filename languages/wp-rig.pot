@@ -32,7 +32,7 @@ msgstr[1] ""
 msgid "Comments are closed."
 msgstr ""
 
-#: header.php:61
+#: header.php:82
 msgid "Skip to content"
 msgstr ""
 
@@ -101,7 +101,7 @@ msgstr ""
 msgid "Wonder"
 msgstr ""
 
-#: page-templates/page-wonder.php:98
+#: page-templates/page-wonder.php:99
 msgid "(Edit)"
 msgstr ""
 
@@ -199,7 +199,7 @@ msgstr ""
 
 #. translators: %s: Post title.
 #. translators: %s: Name of current post. Only visible to screen readers
-#: inc/Excerpts/Component.php:44, template-parts/content/entry_content-press.php:77, template-parts/content/entry_content.php:35
+#: inc/Excerpts/Component.php:44, template-parts/content/entry_content-press.php:67, template-parts/content/entry_content.php:35
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
@@ -311,7 +311,7 @@ msgstr ""
 msgid "Copyright"
 msgstr ""
 
-#: template-parts/content/entry_content-press.php:55
+#: template-parts/content/entry_content-press.php:48
 msgid "Read more"
 msgstr ""
 
@@ -409,16 +409,16 @@ msgstr ""
 msgid "Theme: %s by the contributors."
 msgstr ""
 
-#: template-parts/header/page-header.php:31
+#: template-parts/header/page-header.php:34
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
-#: template-parts/header/page-header.php:39
+#: template-parts/header/page-header.php:42
 msgid "Nothing Found"
 msgstr ""
 
 #. translators: %s: search query
-#: template-parts/header/page-header.php:59
+#: template-parts/header/page-header.php:62
 msgid "Search Results for: %s"
 msgstr ""
 

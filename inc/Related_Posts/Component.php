@@ -158,7 +158,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				// Main talent list.
 				if ( ! is_singular( 'catalog' ) ) {
 					?>
-					<div class="related-posts__wrap">
+					<div class="related-posts__wrap related-talent">
 						<h5 class="h2 related-posts__title">
 							<?php echo esc_html( 'FEATURED TALENT' ); ?>
 						</h5>
