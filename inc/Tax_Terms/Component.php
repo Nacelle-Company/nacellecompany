@@ -61,7 +61,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 			$taxonomy_name = $taxonomy_name->name;
 			$taxonomy_name = str_replace( '_', ' ', $taxonomy_name );
 			$taxonomy_name = ucwords( $taxonomy_name );
-			echo '<dt><h4>' . esc_html( $taxonomy_name ) . '</h4></dt>';
+			echo '<dt><h4>' . esc_html( $taxonomy_name ) . '&nbsp:</h4></dt>';
 			foreach ( $terms as $term ) {
 
 				$terms_list[] = sprintf(
@@ -72,7 +72,7 @@ class Component implements Component_Interface, Templating_Component_Interface {
 				$out[]        = "\n</ul>\n";
 			}
 
-			$terms_list = '<dd>' . join( '<br>', $terms_list ) . '</dd>';
+			$terms_list = '<br><dd>' . join( ', ', $terms_list ) . '</dd>';
 
 		endif;
 		if ( $terms_list ) {

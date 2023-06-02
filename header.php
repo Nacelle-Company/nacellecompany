@@ -37,6 +37,11 @@ switch ($blog_name) {
 <!doctype html>
 <html <?php language_attributes(); ?> class="no-js">
 <head>
+	<?php if ($blog_name === 'Comedy Dynamics') : ?>
+		<!-- Start cookieyes banner -->
+		<script id="cookieyes" type="text/javascript" src="https://cdn-cookieyes.com/client_data/019846e25e782d69dfaa41eb/script.js"></script>
+		<!-- End cookieyes banner -->
+	<?php endif; ?>
 	<?php if (str_contains($current_site, 'dev')) {
 		echo '<script src="https://cdn.lr-ingest.com/LogRocket.min.js" crossorigin="anonymous"></script>';
 		echo '<script>window.LogRocket && window.LogRocket.init("kjijq4/comedy-dynamics");</script>';
