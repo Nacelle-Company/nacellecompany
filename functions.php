@@ -488,3 +488,6 @@ function nacelle_noindex_ajax_search_queries() {
  * echo get_num_queries();
  */
 // echo get_num_queries();
+
+// Show default WP custom fields (acf disables them)
+// add_filter('acf/settings/remove_wp_meta_box', '__return_false');

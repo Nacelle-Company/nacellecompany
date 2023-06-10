@@ -228,7 +228,7 @@ body {
 
 		@media (--sidebar-query) {
 			align-items: center;
-			gap: 2em;
+			gap: 1.5em;
 		}
 	}
 }

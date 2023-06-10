@@ -83,7 +83,12 @@
 			width: 68%;
 		}
 
-		&:not(.is-selected) figure::before {
+		&:not(.is-selected) figure
+		@media (--sidebar-query) {
+			opacity: 0.8;
+		}
+
+		/* ::before {
 
 			@media (--sidebar-query) {
 				background-color: rgba(0, 0, 0, 0.7);
@@ -93,7 +98,7 @@
 				height: 100%;
 				transition: background-color 0.3s ease-in-out 0.2s;
 			}
-		}
+		} */
 
 		&.is-selected {
 

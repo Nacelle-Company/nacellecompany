@@ -52,13 +52,15 @@ wp_rig()->print_styles( 'wp-rig-content_posts' );
 		<?php else : ?>
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		<?php endif; ?>
+		<?php //if ( ! get_the_content() ) : ?>
+			<?php if ( ! empty( $press_release_intro ) ) : ?>
+				<h3 class="post-intro">
+					<?php echo wp_kses( $press_release_intro, 'post' ); ?>
+				</h3>
+			<?php endif; ?>
+		<?php //endif; ?>
 	</div>
 	<div class="article-content">
-		<?php if ( ! empty( $press_release_intro ) ) : ?>
-			<h3 class="post-intro">
-				<?php echo wp_kses( $press_release_intro, 'post' ); ?>
-			</h3>
-		<?php endif; ?>
 		<?php
 		the_content(
 			sprintf(

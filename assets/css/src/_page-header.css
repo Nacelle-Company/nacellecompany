@@ -21,7 +21,7 @@
 	font-weight: 900;
 	text-align: center;
 	text-transform: uppercase;
-	line-height: 1;
+	line-height: normal;
 	margin: 0 0;
 
 	@media (--narrow-menu-query) {
